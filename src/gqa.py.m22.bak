@@ -1,0 +1,446 @@
+"""
+AGT-v3 POC — Grouped Query Attention (GQA)
+
+Causal self-attention with grouped query heads and
+RoPE applied to Q/K.
+
+Supports optional committed/ephemeral KV context for
+token-by-token AGT execution.
+"""
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+from .norms import RMSNorm
+from .rope import precompute_rope_frequencies, apply_rope
+
+
+class GQA(nn.Module):
+    """
+    Grouped Query Attention.
+
+    Queries have more heads than keys/values.
+    Key/value heads are repeated across query groups.
+
+    Input:
+        x: [B, T, dim]
+
+    Output:
+        [B, T, dim]
+
+    Without kv_cache:
+        Standard causal full-sequence attention.
+
+    With kv_cache:
+        Current K/V are supplied as an ephemeral context
+        without mutating persistent cache state.
+
+        Persistent K/V insertion is performed separately by
+        the terminal commit layer.
+    """
+
+    def __init__(
+        self,
+        dim: int,
+        num_query_heads: int,
+        num_kv_heads: int,
+        head_dim: int | None = None,
+        max_seq_len: int = 256,
+        rope_base: float = 10000.0,
+        bias: bool = False,
+    ):
+        super().__init__()
+
+        if num_query_heads <= 0:
+            raise ValueError(
+                "num_query_heads must be positive."
+            )
+
+        if num_kv_heads <= 0:
+            raise ValueError(
+                "num_kv_heads must be positive."
+            )
+
+        if num_query_heads % num_kv_heads != 0:
+            raise ValueError(
+                "num_query_heads must be divisible by "
+                "num_kv_heads."
+            )
+
+        if dim % num_query_heads != 0:
+            raise ValueError(
+                f"dim={dim} must be divisible by "
+                f"num_query_heads={num_query_heads}."
+            )
+
+        expected_head_dim = dim // num_query_heads
+
+        # Retained only for backward compatibility.
+        if (
+            head_dim is not None
+            and head_dim != expected_head_dim
+        ):
+            raise ValueError(
+                f"Invalid head_dim={head_dim} for "
+                f"dim={dim} and "
+                f"num_query_heads={num_query_heads}. "
+                f"Expected head_dim={expected_head_dim}."
+            )
+
+        self.dim = dim
+        self.num_query_heads = num_query_heads
+        self.num_kv_heads = num_kv_heads
+        self.head_dim = expected_head_dim
+        self.max_seq_len = max_seq_len
+
+        self.q_proj = nn.Linear(
+            dim,
+            num_query_heads * self.head_dim,
+            bias=bias,
+        )
+
+        self.k_proj = nn.Linear(
+            dim,
+            num_kv_heads * self.head_dim,
+            bias=bias,
+        )
+
+        self.v_proj = nn.Linear(
+            dim,
+            num_kv_heads * self.head_dim,
+            bias=bias,
+        )
+
+        self.o_proj = nn.Linear(
+            num_query_heads * self.head_dim,
+            dim,
+            bias=bias,
+        )
+
+        self.q_norm = RMSNorm(self.head_dim)
+        self.k_norm = RMSNorm(self.head_dim)
+
+        cos, sin = precompute_rope_frequencies(
+            self.head_dim,
+            max_seq_len,
+            base=rope_base,
+        )
+
+        self.register_buffer(
+            "rope_cos",
+            cos,
+            persistent=False,
+        )
+
+        self.register_buffer(
+            "rope_sin",
+            sin,
+            persistent=False,
+        )
+
+    def _repeat_kv_heads(
+        self,
+        k: torch.Tensor,
+        v: torch.Tensor,
+    ):
+        """
+        Expand KV heads to match query heads.
+
+        Input:
+            k, v: [B, H_kv, T, D]
+
+        Output:
+            k, v: [B, H_q, T, D]
+        """
+
+        groups = (
+            self.num_query_heads
+            // self.num_kv_heads
+        )
+
+        if groups > 1:
+            k = k.repeat_interleave(
+                groups,
+                dim=1,
+            )
+
+            v = v.repeat_interleave(
+                groups,
+                dim=1,
+            )
+
+        return k, v
+
+    def forward(
+        self,
+        x: torch.Tensor,
+        kv_cache=None,
+    ) -> torch.Tensor:
+        """
+        Forward pass.
+
+        Args:
+            x:
+                [B, T, dim]
+
+            kv_cache:
+                Optional KVCache implementing:
+                    make_ephemeral_context()
+                    get_committed_context()
+                    committed_length
+
+                The cache MUST NOT be mutated by this forward call.
+
+        Returns:
+            [B, T, dim]
+        """
+
+        if x.ndim != 3:
+            raise ValueError(
+                "GQA input must have shape [B, T, dim]."
+            )
+
+        B, T, _ = x.shape
+
+        if T <= 0:
+            raise ValueError(
+                "Input sequence length must be positive."
+            )
+
+        # ---------------------------------------------------------
+        # Determine logical sequence position.
+        #
+        # For the pure cache protocol, only committed tokens
+        # determine the next position. Ephemeral K/V are local
+        # tensors and are not stored in the cache.
+        # ---------------------------------------------------------
+
+        if kv_cache is None:
+            cache_position = 0
+        else:
+            cache_position = (
+                kv_cache.committed_length
+            )
+
+        if cache_position + T > self.max_seq_len:
+            raise ValueError(
+                f"Position range "
+                f"[{cache_position}, "
+                f"{cache_position + T}) exceeds "
+                f"max_seq_len={self.max_seq_len}."
+            )
+
+        # ---------------------------------------------------------
+        # Projections
+        # ---------------------------------------------------------
+
+        q = self.q_proj(x)
+        k = self.k_proj(x)
+        v = self.v_proj(x)
+
+        # [B, T, H, D]
+        q = q.view(
+            B,
+            T,
+            self.num_query_heads,
+            self.head_dim,
+        )
+
+        k = k.view(
+            B,
+            T,
+            self.num_kv_heads,
+            self.head_dim,
+        )
+
+        v = v.view(
+            B,
+            T,
+            self.num_kv_heads,
+            self.head_dim,
+        )
+
+        # ---------------------------------------------------------
+        # [B, T, H, D]
+        # ->
+        # [B, H, T, D]
+        #
+        # apply_rope() expects sequence dimension at axis -2.
+        # ---------------------------------------------------------
+
+        q = q.transpose(1, 2)
+        k = k.transpose(1, 2)
+        v = v.transpose(1, 2)
+
+        # ---------------------------------------------------------
+        # Per-head normalization
+        # ---------------------------------------------------------
+
+        q = self.q_norm(q)
+        k = self.k_norm(k)
+
+        # ---------------------------------------------------------
+        # RoPE
+        #
+        # Full sequence:
+        #     position 0 ... T-1
+        #
+        # Cached sequence:
+        #     continue from committed context length.
+        # ---------------------------------------------------------
+
+        rope_cos = self.rope_cos[
+            cache_position:
+            cache_position + T
+        ]
+
+        rope_sin = self.rope_sin[
+            cache_position:
+            cache_position + T
+        ]
+
+        q = apply_rope(
+            q,
+            rope_cos,
+            rope_sin,
+        )
+
+        k = apply_rope(
+            k,
+            rope_cos,
+            rope_sin,
+        )
+
+        # ---------------------------------------------------------
+        # Standard full-sequence path
+        # ---------------------------------------------------------
+
+        if kv_cache is None:
+
+            k_attn, v_attn = (
+                self._repeat_kv_heads(
+                    k,
+                    v,
+                )
+            )
+
+            y = F.scaled_dot_product_attention(
+                q,
+                k_attn,
+                v_attn,
+                attn_mask=None,
+                dropout_p=0.0,
+                is_causal=True,
+            )
+
+        # ---------------------------------------------------------
+        # Pure cached-context path
+        # ---------------------------------------------------------
+
+        else:
+
+            # IMPORTANT:
+            # This does NOT mutate kv_cache.
+            #
+            # The current K/V exist only for this in-flight
+            # computation. Terminal commit will persist them later.
+            k_ctx, v_ctx = (
+                kv_cache.make_ephemeral_context(
+                    k,
+                    v,
+                )
+            )
+
+            if (
+                k_ctx is None
+                or v_ctx is None
+            ):
+                raise RuntimeError(
+                    "KV cache returned empty context "
+                    "from make_ephemeral_context()."
+                )
+
+            k_attn, v_attn = (
+                self._repeat_kv_heads(
+                    k_ctx,
+                    v_ctx,
+                )
+            )
+
+            committed_len = (
+                kv_cache.committed_length
+            )
+
+            # The current K/V are local ephemeral tensors,
+            # not persistent cache entries.
+            ephemeral_len = T
+
+            total_len = (
+                committed_len
+                + ephemeral_len
+            )
+
+            # Current query/chunk corresponds to the final T
+            # positions of the visible context.
+            q_start = (
+                total_len - T
+            )
+
+            key_positions = torch.arange(
+                total_len,
+                device=x.device,
+            )
+
+            query_positions = torch.arange(
+                q_start,
+                total_len,
+                device=x.device,
+            )
+
+            # Causal relation:
+            # query position i sees keys <= i.
+            causal_mask = (
+                key_positions.unsqueeze(0)
+                <= query_positions.unsqueeze(1)
+            )
+
+            attn_mask = torch.zeros(
+                (T, total_len),
+                device=x.device,
+                dtype=q.dtype,
+            )
+
+            attn_mask = attn_mask.masked_fill(
+                ~causal_mask,
+                float("-inf"),
+            )
+
+            y = F.scaled_dot_product_attention(
+                q,
+                k_attn,
+                v_attn,
+                attn_mask=attn_mask,
+                dropout_p=0.0,
+                is_causal=False,
+            )
+
+        # ---------------------------------------------------------
+        # [B, H, T, D]
+        # ->
+        # [B, T, H * D]
+        # ---------------------------------------------------------
+
+        y = y.transpose(
+            1,
+            2,
+        ).contiguous()
+
+        y = y.view(
+            B,
+            T,
+            self.num_query_heads
+            * self.head_dim,
+        )
+
+        return self.o_proj(y)

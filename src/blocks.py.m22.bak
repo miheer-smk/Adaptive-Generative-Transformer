@@ -1,0 +1,342 @@
+import torch
+import torch.nn as nn
+
+from .norms import RMSNorm
+from .gqa import GQA
+from .gdn import GDN
+from .mhc import MHC
+from .swiglu import SwiGLU
+from .rope import apply_rope
+
+
+class SlidingWindowAttention(GQA):
+    """
+    SWA species.
+
+    The exact AGT-v3 window size is still unspecified in the
+    locked source material, so it is supplied explicitly.
+    """
+
+    def __init__(
+        self,
+        dim: int,
+        num_query_heads: int = 8,
+        num_kv_heads: int = 2,
+        window_size: int = 256,
+        max_seq_len: int = 256,
+    ):
+        super().__init__(
+            dim=dim,
+            num_query_heads=num_query_heads,
+            num_kv_heads=num_kv_heads,
+            max_seq_len=max_seq_len,
+        )
+
+        self.window_size = window_size
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        B, T, _ = x.shape
+
+        if T > self.max_seq_len:
+            raise ValueError(
+                f"Sequence length {T} exceeds "
+                f"max_seq_len={self.max_seq_len}."
+            )
+
+        q = self.q_proj(x)
+        k = self.k_proj(x)
+        v = self.v_proj(x)
+
+        q = q.view(
+            B, T,
+            self.num_query_heads,
+            self.head_dim,
+        )
+        k = k.view(
+            B, T,
+            self.num_kv_heads,
+            self.head_dim,
+        )
+        v = v.view(
+            B, T,
+            self.num_kv_heads,
+            self.head_dim,
+        )
+
+        q = self.q_norm(q)
+        k = self.k_norm(k)
+
+        q = apply_rope(
+            q,
+            self.rope_cos,
+            self.rope_sin,
+        )
+        k = apply_rope(
+            k,
+            self.rope_cos,
+            self.rope_sin,
+        )
+
+        q = q.transpose(1, 2)
+        k = k.transpose(1, 2)
+        v = v.transpose(1, 2)
+
+        groups = self.num_query_heads // self.num_kv_heads
+
+        if groups > 1:
+            k = k.repeat_interleave(groups, dim=1)
+            v = v.repeat_interleave(groups, dim=1)
+
+        # Local causal window.
+        if self.window_size < T:
+            mask = torch.full(
+                (T, T),
+                float("-inf"),
+                device=x.device,
+                dtype=x.dtype,
+            )
+
+            positions = torch.arange(
+                T,
+                device=x.device,
+            )
+
+            allowed = (
+                (positions[:, None] >= positions[None, :] - self.window_size + 1)
+                & (positions[:, None] >= positions[None, :])
+            )
+
+            mask = mask.masked_fill(
+                allowed,
+                0.0,
+            )
+        else:
+            mask = torch.triu(
+                torch.full(
+                    (T, T),
+                    float("-inf"),
+                    device=x.device,
+                    dtype=x.dtype,
+                ),
+                diagonal=1,
+            )
+
+        y = torch.nn.functional.scaled_dot_product_attention(
+            q,
+            k,
+            v,
+            attn_mask=mask,
+            dropout_p=0.0,
+            is_causal=False,
+        )
+
+        y = y.transpose(1, 2).contiguous()
+
+        y = y.view(
+            B,
+            T,
+            self.num_query_heads * self.head_dim,
+        )
+
+        return self.o_proj(y)
+
+
+class FFNHeavyCore(nn.Module):
+    """
+    Attention-free FFN-heavy block.
+
+    Exact hidden width is intentionally supplied as an argument because
+    the source specification does not freeze that microarchitecture value.
+    """
+
+    def __init__(
+        self,
+        dim: int,
+        hidden_dim: int,
+    ):
+        super().__init__()
+
+        self.norm = RMSNorm(dim)
+        self.ffn = SwiGLU(
+            dim=dim,
+            hidden_dim=hidden_dim,
+        )
+
+        self.mhc = MHC(dim=dim)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        residual = x
+
+        h = self.norm(x)
+        h = self.ffn(h)
+        h = self.mhc(h)
+
+        return residual + h
+
+
+class AGTBlock(nn.Module):
+    """
+    Single heterogeneous AGT-v3 block.
+
+    Supported species:
+        SWA
+        GQA
+        GDN
+        FFN
+    """
+
+    def __init__(
+        self,
+        dim: int = 768,
+        species: str = "GQA",
+        swa_window: int = 256,
+        ffn_hidden_dim: int = 3072,
+        max_seq_len: int = 256,
+    ):
+        super().__init__()
+
+        self.dim = dim
+        self.species = species.upper()
+
+        self.norm = RMSNorm(dim)
+
+        if self.species == "GQA":
+            self.core = GQA(
+                dim=dim,
+                num_query_heads=8,
+                num_kv_heads=2,
+                max_seq_len=max_seq_len,
+            )
+            self.mhc = MHC(dim=dim)
+
+        elif self.species == "SWA":
+            self.core = SlidingWindowAttention(
+                dim=dim,
+                num_query_heads=8,
+                num_kv_heads=2,
+                window_size=swa_window,
+                max_seq_len=max_seq_len,
+            )
+            self.mhc = MHC(dim=dim)
+
+        elif self.species == "GDN":
+            self.core = GDN(dim=dim)
+            self.mhc = MHC(dim=dim)
+
+        elif self.species == "FFN":
+            self.core = FFNHeavyCore(
+                dim=dim,
+                hidden_dim=ffn_hidden_dim,
+            )
+            self.mhc = None
+
+        else:
+            raise ValueError(
+                f"Unknown AGT block species: {species}"
+            )
+
+    def forward(self, x, **kwargs):
+        if self.species == "FFN":
+            return self.core(x)
+
+        residual = x
+        h = self.norm(x)
+
+        if self.species in {"GQA", "SWA"}:
+            h = self.core(h, **kwargs)
+            h = self.mhc(h)
+            return residual + h
+
+        if self.species == "GDN":
+            h, state = self.core(h, **kwargs)
+            h = self.mhc(h)
+
+            return residual + h, state
+
+        raise RuntimeError(
+            f"Unsupported species: {self.species}"
+        )
+
+
+class HeterogeneousBlockBank(nn.Module):
+    """
+    AGT-v3 heterogeneous block bank.
+
+    Required composition:
+        2 SWA
+        2 GQA
+        2 GDN
+        2 FFN-heavy
+    """
+
+    def __init__(
+        self,
+        dim: int = 768,
+        species_order=None,
+        swa_window: int = 256,
+        ffn_hidden_dim: int = 3072,
+        max_seq_len: int = 256,
+    ):
+        super().__init__()
+
+        if species_order is None:
+            species_order = [
+                "SWA",
+                "SWA",
+                "GQA",
+                "GQA",
+                "GDN",
+                "GDN",
+                "FFN",
+                "FFN",
+            ]
+
+        if len(species_order) != 8:
+            raise ValueError(
+                "AGT-v3 requires exactly 8 blocks."
+            )
+
+        self.species_order = [
+            species.upper()
+            for species in species_order
+        ]
+
+        expected = {
+            "SWA": 2,
+            "GQA": 2,
+            "GDN": 2,
+            "FFN": 2,
+        }
+
+        actual = {
+            species: self.species_order.count(species)
+            for species in expected
+        }
+
+        if actual != expected:
+            raise ValueError(
+                f"Invalid AGT-v3 bank composition: {actual}. "
+                f"Expected: {expected}."
+            )
+
+        self.blocks = nn.ModuleList(
+            [
+                AGTBlock(
+                    dim=dim,
+                    species=species,
+                    swa_window=swa_window,
+                    ffn_hidden_dim=ffn_hidden_dim,
+                    max_seq_len=max_seq_len,
+                )
+                for species in self.species_order
+            ]
+        )
+
+    def __len__(self):
+        return len(self.blocks)
+
+    def forward(self, index, x, **kwargs):
+        return self.blocks[index](
+            x,
+            **kwargs,
+        )

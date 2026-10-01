@@ -1,0 +1,162 @@
+
+import torch
+import torch.nn as nn
+
+from .blocks import HeterogeneousBlockBank
+from .commit import TerminalCommit
+from .controller import Controller
+from .convergence import ConvergenceGate
+from .executor import AdaptiveExecutor
+from .memory import PersistentMemory
+from .output_head import OutputHead
+from .prelude import Prelude
+
+
+class AGTv3(nn.Module):
+    """
+    AGT-v3 top-level assembly.
+
+    Macro pipeline:
+
+        H_{t-1}
+          -> Prelude
+          -> adaptive execution
+          -> TerminalCommit
+          -> H_t
+          -> OutputHead
+          -> p(x_{t+1} | H_t)
+
+    Adaptive routing is intentionally not finalized here yet.
+    """
+
+    def __init__(
+        self,
+        dim: int = 256,
+        num_blocks: int = 8,
+        num_memory_slots: int = 16,
+        vocab_size: int = 50257,
+    ):
+        super().__init__()
+
+        self.dim = dim
+        self.num_blocks = num_blocks
+        self.num_memory_slots = num_memory_slots
+        self.vocab_size = vocab_size
+
+        self.memory = PersistentMemory(
+            dim=dim,
+            num_slots=num_memory_slots,
+        )
+
+        self.prelude = Prelude(
+            dim=dim,
+        )
+
+        self.blocks = HeterogeneousBlockBank(
+            dim=dim,
+        )
+
+        self.controller = Controller(
+            dim=dim,
+            num_blocks=num_blocks,
+        )
+
+        self.convergence = ConvergenceGate(
+            dim=dim,
+        )
+
+        self.executor = AdaptiveExecutor(
+            block_bank=self.blocks,
+            controller=self.controller,
+            convergence=self.convergence,
+            max_execution_depth=256,
+        )
+
+        self.commit = TerminalCommit(
+            dim=dim,
+        )
+
+        self.output_head = OutputHead(
+            dim=dim,
+            vocab_size=vocab_size,
+        )
+
+    def initial_state(
+        self,
+        batch_size,
+        device=None,
+        dtype=None,
+    ):
+        """
+        Create the persistent state required before processing
+        the first token.
+        """
+
+        H_prev = torch.zeros(
+            batch_size,
+            self.dim,
+            device=device,
+            dtype=dtype,
+        )
+
+        M = self.memory.initial_state(
+            batch_size=batch_size,
+            device=device,
+            dtype=dtype,
+        )
+
+        C_prev = torch.zeros(
+            batch_size,
+            self.dim,
+            device=device,
+            dtype=dtype,
+        )
+
+        return H_prev, M, C_prev
+
+    def forward(
+        self,
+        x_t,
+        H_prev,
+        memory_read,
+        C_prev,
+    ):
+        """
+        Assemble one token's basic macro path.
+
+        Full adaptive execution is connected later.
+        """
+
+        h0 = self.prelude(
+            x_t=x_t,
+            H_prev=H_prev,
+            memory_read=memory_read,
+            C_prev=C_prev,
+        )
+
+        execution = self.executor.execute(
+            h0=h0,
+            memory=memory_read,
+            C_prev=C_prev,
+        )
+
+        h_terminal = execution.h_terminal
+
+        H_t = self.commit(
+            h_terminal
+        )
+
+        logits = self.output_head(
+            H_t
+        )
+
+        return {
+            "h0": h0,
+            "h_terminal": h_terminal,
+            "H_t": H_t,
+            "logits": logits,
+            "execution_count": execution.execution_count,
+            "action_history": execution.action_history,
+            "halted": execution.halted,
+            "safety_cap_hit": execution.safety_cap_hit,
+        }

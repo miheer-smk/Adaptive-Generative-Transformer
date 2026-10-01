@@ -1,0 +1,232 @@
+"""
+AGT-v3 terminal commit (blueprint 16, 14.2, 15.1).
+
+H_{t-1} = (s_{t-1}, M_t, C_{t-1})  --commit-->  H_t = (s_t, M_{t+1}, C_t)
+
+  s_t     = RMSNorm_f(h_terminal)
+  M_{t+1} = convex memory write (MemoryWrite)
+  C_t     = every block receives its token entry from the terminal state,
+            visited or not: SWA/GQA (k, v), GDN (S, conv buffer), FFN none,
+            plus the prelude block's SWA entry.
+
+Two phases, so the commit is atomic and happens exactly once per token:
+  build_commit_plan  PURE   computes every entry from pre-commit values (I3)
+  apply_commit_plan  WRITES once; verifies state, token index and cache versions
+
+Nothing else in AGT may call commit_terminal_context for a block cache.
+Cache keys: bank index i (0-based; math block j = i + 1) and PRELUDE_KEY.
+"""
+from dataclasses import dataclass, field
+from typing import Any, List, NamedTuple, Optional, Tuple
+import math
+
+import torch
+import torch.nn as nn
+
+from .caches import ExecutionCache
+from .norms import RMSNorm
+
+PRELUDE_KEY = "pre"
+
+
+class CommitError(RuntimeError):
+    """Violation of the exactly-once / consistent-state commit contract."""
+
+
+class MemoryWriteResult(NamedTuple):
+    memory: torch.Tensor   # [B, S, dM]   M_{t+1}
+    g: torch.Tensor        # [B, 1]       global write gate
+    alpha: torch.Tensor    # [B, S]       write address (softmax over slots)
+    nu: torch.Tensor       # [B, dM]      written value
+
+
+class MemoryWrite(nn.Module):
+    """
+    Blueprint 14.2 memory write, used only at terminal commit.
+
+        alpha_i = softmax_i( (W_q s) . K_M[i] / sqrt(dM) )     K_M from the read
+        g       = sigmoid(w_g^T s + b_g),  b_g init -2
+        w_i     = g * alpha_i
+        nu      = RMSNorm_nu(W_v s)
+        M'[i]   = (1 - w_i) M[i] + w_i nu
+
+    Parameters (d=768, dM=256): 394,241.
+    """
+
+    def __init__(self, dim: int, mem_dim: int):
+        super().__init__()
+        self.dim = dim
+        self.mem_dim = mem_dim
+        self.addr_q = nn.Linear(dim, mem_dim, bias=False)
+        self.val_proj = nn.Linear(dim, mem_dim, bias=False)
+        self.gate_w = nn.Linear(dim, 1, bias=False)
+        self.gate_b = nn.Parameter(torch.full((1,), -2.0))
+        self.val_norm = RMSNorm(mem_dim)
+        for lin in (self.addr_q, self.val_proj, self.gate_w):
+            nn.init.normal_(lin.weight, mean=0.0, std=0.02)   # provisional
+
+    def forward(self, s, memory, memory_keys) -> MemoryWriteResult:
+        if s.ndim != 2 or s.shape[-1] != self.dim:
+            raise ValueError(f"s must be [B, {self.dim}].")
+        B = s.shape[0]
+        if memory.ndim != 3 or memory.shape[0] != B or memory.shape[-1] != self.mem_dim:
+            raise ValueError(f"memory must be [B, S, {self.mem_dim}].")
+        if memory_keys.shape != memory.shape:
+            raise ValueError("memory_keys must have the same shape as memory.")
+
+        q = self.addr_q(s)                                          # [B, dM]
+        scores = torch.einsum("bd,bsd->bs", q, memory_keys) / math.sqrt(self.mem_dim)
+        alpha = torch.softmax(scores, dim=-1)                       # [B, S]
+        g = torch.sigmoid(self.gate_w(s) + self.gate_b)             # [B, 1]
+        w = g * alpha                                               # [B, S]
+        nu = self.val_norm(self.val_proj(s))                        # [B, dM]
+        new = (1.0 - w).unsqueeze(-1) * memory + w.unsqueeze(-1) * nu.unsqueeze(1)
+        return MemoryWriteResult(new, g, alpha, nu)
+
+
+@dataclass
+class AGTPersistentState:
+    """Persistent H_t = (s_t, M_{t+1}, C_t). The live state h_{t,p} is NOT here."""
+    s: torch.Tensor                 # [B, d]
+    memory: torch.Tensor            # [B, S, dM]
+    ctx: ExecutionCache             # C_t (species-typed dictionary of caches)
+    tokens_committed: int = 0
+    _consumed: bool = field(default=False, repr=False)
+
+    @classmethod
+    def initial(cls, s0, M1, species_order, swa_window, batch=1, with_prelude=True):
+        """H_0 = (s0, M1, empty C). Caches are created eagerly so that in-flight
+        execution never has to create persistent state."""
+        if s0.ndim != 1 or M1.ndim != 2:
+            raise ValueError("s0 must be [d] and M1 must be [S, dM].")
+        ctx = ExecutionCache(swa_window=swa_window)
+        for i, sp in enumerate(species_order):
+            sp = sp.upper()
+            if sp == "GQA":
+                ctx.get_kv_cache(i)
+            elif sp == "SWA":
+                ctx.get_swa_cache(i)
+            elif sp == "GDN":
+                ctx.get_gdn_cache(i)
+            elif sp != "FFN":
+                raise ValueError(f"Unknown species {sp!r}.")
+        if with_prelude:
+            ctx.get_swa_cache(PRELUDE_KEY)
+        return cls(
+            s=s0.unsqueeze(0).expand(batch, -1).clone(),
+            memory=M1.unsqueeze(0).expand(batch, -1, -1).clone(),
+            ctx=ctx,
+        )
+
+
+def block_context(ctx: ExecutionCache, key, species: str):
+    """The committed context object for bank block `key` (None for FFN)."""
+    sp = species.upper()
+    try:
+        if sp == "GQA":
+            return ctx.kv[key]
+        if sp == "SWA":
+            return ctx.swa[key]
+        if sp == "GDN":
+            return ctx.gdn[key]
+    except KeyError:
+        raise CommitError(f"no committed context for block {key!r} ({sp}).") from None
+    if sp == "FFN":
+        return None
+    raise ValueError(f"Unknown species {species!r}.")
+
+
+@dataclass
+class CommitPlan:
+    token_index: int
+    s: torch.Tensor
+    memory: torch.Tensor
+    g: torch.Tensor
+    alpha: torch.Tensor
+    entries: List[Tuple[Any, int, Tuple]]      # (cache, version_at_build, payload)
+    state_ref: Any = field(default=None, repr=False)
+
+
+def build_commit_plan(
+    state: AGTPersistentState,
+    *,
+    bank,
+    prelude_block,
+    prelude_input,
+    final_norm,
+    memory_write: MemoryWrite,
+    h_terminal,
+    h0,
+    R_c,
+    memory_keys,
+    token_index: int,
+) -> CommitPlan:
+    """PURE. Nothing persistent is modified."""
+    if state._consumed:
+        raise CommitError("state already consumed by a commit; use the returned state.")
+    if token_index != state.tokens_committed:
+        raise CommitError(
+            f"token_index {token_index} != tokens_committed {state.tokens_committed}."
+        )
+    for name, x in (("h_terminal", h_terminal), ("h0", h0), ("R_c", R_c)):
+        if x.ndim != 3 or x.shape[1] != 1:
+            raise ValueError(f"{name} must be [B, 1, d]; got {tuple(x.shape)}.")
+    if h0.shape != h_terminal.shape or R_c.shape != h_terminal.shape:
+        raise ValueError("h0 and R_c must match h_terminal's shape.")
+
+    # I1: every cache must hold exactly token_index commits before this token.
+    for kind, d in (("kv", state.ctx.kv), ("swa", state.ctx.swa), ("gdn", state.ctx.gdn)):
+        for key, c in d.items():
+            if c.version != token_index:
+                raise CommitError(
+                    f"{kind}[{key!r}] version {c.version} != token_index {token_index}."
+                )
+
+    entries: List[Tuple[Any, int, Tuple]] = []
+    for i, blk in enumerate(bank.blocks):
+        cache = block_context(state.ctx, i, blk.species)
+        payload = blk.commit_entry(h_terminal, h0, R_c, cache)
+        if payload is not None:
+            entries.append((cache, cache.version, tuple(payload)))
+
+    if prelude_block is not None:
+        if prelude_input is None or prelude_input.shape != h_terminal.shape:
+            raise ValueError("prelude_input must be given with h_terminal's shape.")
+        pre_cache = state.ctx.swa.get(PRELUDE_KEY)
+        if pre_cache is None:
+            raise CommitError("state has no prelude cache (with_prelude=False).")
+        payload = prelude_block.attn_commit_entry(prelude_input, None, None, pre_cache)
+        entries.append((pre_cache, pre_cache.version, tuple(payload)))
+
+    s_new = final_norm(h_terminal).squeeze(1)                     # [B, d]
+    mw = memory_write(s_new, state.memory, memory_keys)
+    return CommitPlan(
+        token_index=token_index, s=s_new, memory=mw.memory, g=mw.g, alpha=mw.alpha,
+        entries=entries, state_ref=state,
+    )
+
+
+def apply_commit_plan(state: AGTPersistentState, plan: CommitPlan) -> AGTPersistentState:
+    """The ONLY place persistent context is written. Exactly once per token."""
+    if plan.state_ref is not state:
+        raise CommitError("plan was built for a different state object.")
+    if state._consumed:
+        raise CommitError("state already consumed by a commit.")
+    if plan.token_index != state.tokens_committed:
+        raise CommitError("plan token_index does not match state.")
+    for cache, ver, _ in plan.entries:                            # verify BEFORE writing
+        if cache.version != ver:
+            raise CommitError("a cache changed since the plan was built.")
+    for cache, _, payload in plan.entries:
+        cache.commit_terminal_context(*payload)
+    state._consumed = True
+    return AGTPersistentState(
+        s=plan.s, memory=plan.memory, ctx=state.ctx,
+        tokens_committed=plan.token_index + 1,
+    )
+
+
+def terminal_commit(state, **kw):
+    """build + apply. Returns (new_state, plan)."""
+    plan = build_commit_plan(state, **kw)
+    return apply_commit_plan(state, plan), plan
