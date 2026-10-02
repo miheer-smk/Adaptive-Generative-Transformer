@@ -1,0 +1,42 @@
+{
+  "task": "Task A parity",
+  "device": "cuda",
+  "dim": 64,
+  "batch_size": 8,
+  "steps": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "seed": 3001,
+  "bank": [
+    "SWA",
+    "SWA",
+    "GQA",
+    "GQA",
+    "GDN",
+    "GDN",
+    "FFN",
+    "FFN"
+  ],
+  "controller": "disabled",
+  "loss": "final-token cross-entropy",
+  "first_batch_ce": 0.6453816890716553,
+  "last_batch_ce": 0.680800199508667,
+  "fixed_probe_ce_before": 0.7031984099974999,
+  "fixed_probe_ce_after": 0.6994639772635239,
+  "gradient_coverage": {
+    "memory": 2,
+    "prelude": 7,
+    "blocks": 92,
+    "commit": 1,
+    "memory_write": 4,
+    "output_head": 1
+  },
+  "parameter_update_l1": {
+    "memory": 20.479928413551534,
+    "prelude": 12.543784736790258,
+    "blocks": 1650.6275214860216,
+    "commit": 0.06400007009506226,
+    "memory_write": 16.704842003931844,
+    "output_head": 0.1279996931552887
+  }
+}
