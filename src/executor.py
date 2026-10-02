@@ -1,9 +1,9 @@
-
 from dataclasses import dataclass, field
 
 import torch
 
 from .masks import build_execution_mask, apply_action_mask
+from .terminal_commit import block_context
 
 
 @dataclass
@@ -26,8 +26,20 @@ class AdaptiveExecutor:
 
         ADVANCE(j') : execute selected block and move pointer
         REPEAT      : execute current block again
-        RESTART     : reset live h to h0
+        RESTART     : preserve live h and reset routing position
         HALT        : terminate execution
+
+    `context` is optional for backward compatibility.
+
+    When `context` is supplied, selected blocks receive the same
+    AGTBlock interface used by the validated fixed-route path:
+
+        h, h0, R, C_prev
+
+    where:
+        h0 = read-only anchor
+        R  = memory read
+        C_prev = block-specific committed context
     """
 
     def __init__(
@@ -42,23 +54,82 @@ class AdaptiveExecutor:
         self.convergence = convergence
         self.max_execution_depth = max_execution_depth
 
+    def _run_block(
+        self,
+        block_index,
+        h,
+        h0,
+        memory,
+        context,
+    ):
+        """
+        Execute one bank block using the AGTBlock executor-facing API.
+
+        h        : [B, D]
+        h0       : [B, D]
+        memory   : [B, D] memory read R
+        context  : persistent ExecutionCache or None
+
+        Returns:
+            h_next : [B, D]
+        """
+        block = self.block_bank.blocks[block_index]
+
+        if context is None:
+            out = self.block_bank(
+                block_index,
+                h.unsqueeze(1),
+            )
+        else:
+            cache = block_context(
+                context,
+                block_index,
+                block.species,
+            )
+
+            out = self.block_bank(
+                block_index,
+                h.unsqueeze(1),
+                h0=h0.unsqueeze(1),
+                R=memory.unsqueeze(1),
+                C_prev=cache,
+            )
+
+        # GDN returns:
+        #     (output, ephemeral_state)
+        # All other species return a tensor.
+        #
+        # Use the output structure rather than assuming every bank
+        # implementation exposes a `.species` attribute. Stage-0 tests
+        # intentionally use lightweight toy bank objects.
+        if isinstance(out, (tuple, list)):
+            out = out[0]
+
+        return out.squeeze(1)
+
     def execute(
         self,
         h0,
         memory,
         C_prev,
+        context=None,
     ):
         """
         Execute one token.
 
-        This first implementation establishes the execution-state
-        machinery. Controller routing is performed per execution.
+        `memory` is the D-dimensional memory read R used by AGTBlock.
+        `C_prev` remains the legacy compatibility input.
+
+        `context`, when supplied, is the species-typed committed
+        ExecutionCache carried by AGTPersistentState.
+
+        This milestone validates controller-driven single-pass block
+        execution. Full repeated-block ephemeral-state semantics remain
+        a separate routing milestone.
         """
 
-        # Live state starts from h0.
         h = h0.clone()
 
-        # Explicit execution bookkeeping.
         execution_count = 0
         pointer = 0
         just_restarted = False
@@ -68,13 +139,13 @@ class AdaptiveExecutor:
         halted = False
         safety_cap_hit = False
 
-        # Persistent inputs are intentionally kept untouched.
         frozen_memory = memory
         frozen_C_prev = C_prev
 
+        del frozen_C_prev  # retained only as an explicit compatibility input
+
         while execution_count < self.max_execution_depth:
 
-            # Controller observes the current live state.
             controller_out = self.controller(h)
 
             advance_logits = controller_out["advance"]
@@ -109,20 +180,25 @@ class AdaptiveExecutor:
                 dim=-1,
             )
 
-            # Batch-size-1/per-sequence execution is the current
-            # implementation assumption.
+            # Current executor contract assumes batch-size 1.
             action_id = int(action[0].item())
 
             num_blocks = len(self.block_bank.blocks)
+
+            # Keep the pre-action state for the deterministic convergence gate.
+            h_prev = h
 
             if action_id < num_blocks:
                 # ADVANCE(j')
                 block_index = action_id
 
-                h = self.block_bank(
-                    block_index,
-                    h.unsqueeze(1),
-                ).squeeze(1)
+                h = self._run_block(
+                    block_index=block_index,
+                    h=h,
+                    h0=h0,
+                    memory=frozen_memory,
+                    context=context,
+                )
 
                 pointer = block_index
                 just_restarted = False
@@ -133,10 +209,13 @@ class AdaptiveExecutor:
 
             elif action_id == num_blocks:
                 # REPEAT
-                h = self.block_bank(
-                    pointer,
-                    h.unsqueeze(1),
-                ).squeeze(1)
+                h = self._run_block(
+                    block_index=pointer,
+                    h=h,
+                    h0=h0,
+                    memory=frozen_memory,
+                    context=context,
+                )
 
                 just_restarted = False
 
@@ -145,9 +224,7 @@ class AdaptiveExecutor:
                 )
 
             elif action_id == num_blocks + 1:
-                # RESTART
-                # Preserve the live hidden state exactly.
-                # RESTART resets routing position only.
+                # RESTART intentionally preserves the live hidden state.
                 pointer = 0
                 just_restarted = True
 
@@ -167,11 +244,10 @@ class AdaptiveExecutor:
 
             execution_count += 1
 
-            # Separate convergence signal.
-            # Controller HALT remains independent.
+            # Deterministic convergence gate uses both previous and current h.
             if self.convergence is not None:
                 with torch.no_grad():
-                    if self.convergence.converged(h).all().item():
+                    if self.convergence.converged(h_prev, h).all().item():
                         halted = True
 
                         action_history.append(

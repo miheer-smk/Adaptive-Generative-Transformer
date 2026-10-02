@@ -310,6 +310,87 @@ class AGTv3(nn.Module):
             "commit_plan": plan,
         }
 
+    def adaptive_step(
+        self,
+        x_t,
+        state,
+        C_prev,
+    ):
+        """
+        One-token adaptive execution path using the persistent-state contract.
+
+        This remains separate from step(), which is the frozen fixed-route
+        reference path. The AdaptiveExecutor supplies h_terminal; the same
+        locked terminal commit then produces the new persistent state and logits.
+        """
+        if x_t.ndim != 2 or x_t.shape[-1] != self.dim:
+            raise ValueError(f"x_t must be [B, {self.dim}].")
+
+        if state.s.shape != x_t.shape:
+            raise ValueError("state.s shape must match x_t.")
+
+        if state.memory.shape[0] != x_t.shape[0]:
+            raise ValueError("state.memory batch size must match x_t.")
+
+        if C_prev.ndim != 2 or C_prev.shape != x_t.shape:
+            raise ValueError("C_prev must have shape [B, dim].")
+
+        work_state = state.clone()
+
+        memory_read, memory_attention = self.memory.read(
+            work_state.s,
+            work_state.memory,
+        )
+
+        h0 = self.prelude(
+            x_t=x_t,
+            H_prev=work_state.s,
+            memory_read=memory_read,
+            C_prev=C_prev,
+        )
+
+        execution = self.executor.execute(
+            h0=h0,
+            memory=memory_read,
+            C_prev=C_prev,
+            context=work_state.ctx,
+        )
+
+        h_terminal = execution.h_terminal.unsqueeze(1)
+        h0_3 = h0.unsqueeze(1)
+        R_c = memory_read.unsqueeze(1)
+
+        new_state, plan = terminal_commit(
+            work_state,
+            bank=self.blocks,
+            prelude_block=self.prelude_block,
+            prelude_input=x_t.unsqueeze(1),
+            final_norm=self.commit,
+            memory_write=self.memory_write,
+            h_terminal=h_terminal,
+            h0=h0_3,
+            R_c=R_c,
+            memory_keys=self.memory.memory_keys(work_state.memory),
+            token_index=work_state.tokens_committed,
+        )
+
+        logits = self.output_head(new_state.s)
+
+        return {
+            "state": new_state,
+            "h0": h0,
+            "h_terminal": execution.h_terminal,
+            "H_t": new_state.s,
+            "logits": logits,
+            "memory_read": memory_read,
+            "memory_attention": memory_attention,
+            "commit_plan": plan,
+            "execution_count": execution.execution_count,
+            "action_history": execution.action_history,
+            "halted": execution.halted,
+            "safety_cap_hit": execution.safety_cap_hit,
+        }
+
     def forward(
         self,
         x_t,
