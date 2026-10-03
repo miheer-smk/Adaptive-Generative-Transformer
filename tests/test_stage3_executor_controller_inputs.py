@@ -230,3 +230,53 @@ def test_stage3_differentiable_executor_loop_backpropagates_to_controller():
         and grad.abs().sum() > 0
         for grad in controller_grads
     )
+
+def test_stage3_real_agt_differentiable_step_backpropagates():
+    import torch
+
+    from src.agt import AGTv3
+
+    torch.manual_seed(17)
+
+    model = AGTv3(
+        dim=64,
+        num_memory_slots=16,
+        vocab_size=2,
+    )
+
+    state = model.initial_persistent_state(
+        batch_size=1,
+        device="cpu",
+        dtype=torch.float32,
+    )
+
+    x_t = torch.randn(1, 64)
+    C_prev = torch.zeros(1, 64)
+
+    result = model.adaptive_differentiable_step(
+        x_t=x_t,
+        state=state,
+        C_prev=C_prev,
+        budget=torch.tensor([[0.0, 1.0]]),
+        tau=1.0,
+        training=True,
+    )
+
+    loss = result["logits"].sum()
+    loss.backward()
+
+    assert result["logits"].shape == (1, 2)
+    assert result["execution_count"] == model.executor.max_execution_depth
+
+    controller_grads = [
+        parameter.grad
+        for parameter in model.controller.parameters()
+        if parameter.requires_grad
+    ]
+
+    assert any(
+        grad is not None
+        and torch.isfinite(grad).all()
+        and grad.abs().sum() > 0
+        for grad in controller_grads
+    )

@@ -310,6 +310,138 @@ class AGTv3(nn.Module):
             "commit_plan": plan,
         }
 
+
+    def adaptive_differentiable_step(
+        self,
+        x_t,
+        state,
+        C_prev,
+        memory_mean=None,
+        budget=None,
+        tau=1.0,
+        training=True,
+    ):
+        """
+        One-token differentiable AGT-v3 Stage-3 path.
+
+        Macro path:
+
+            persistent state
+                -> memory read
+                -> Prelude
+                -> differentiable executor
+                -> terminal commit
+                -> output head
+
+        This is intentionally separate from:
+            - step(): frozen fixed-route reference
+            - adaptive_step(): legacy discrete/argmax adaptive path
+
+        Stage-3 scope:
+            - fixed execution depth supplied by executor
+            - ST-Gumbel routing
+            - HALT excluded from successor mixing
+            - terminal commit remains atomic
+            - no learned halting signal
+        """
+        if x_t.ndim != 2 or x_t.shape[-1] != self.dim:
+            raise ValueError(f"x_t must be [B, {self.dim}].")
+
+        if state.s.shape != x_t.shape:
+            raise ValueError("state.s shape must match x_t.")
+
+        if state.memory.shape[0] != x_t.shape[0]:
+            raise ValueError("state.memory batch size must match x_t.")
+
+        if C_prev.ndim != 2 or C_prev.shape != x_t.shape:
+            raise ValueError("C_prev must have shape [B, dim].")
+
+        work_state = state.clone()
+
+        memory_read, memory_attention = self.memory.read(
+            work_state.s,
+            work_state.memory,
+        )
+
+        h0 = self.prelude(
+            x_t=x_t,
+            H_prev=work_state.s,
+            memory_read=memory_read,
+            C_prev=C_prev,
+        )
+
+        # Source-aligned controller slot summary:
+        # mean over the persistent memory slots in d_M=256 space.
+        if memory_mean is None:
+            memory_mean = work_state.memory.mean(dim=1)
+        else:
+            if memory_mean.ndim != 2 or memory_mean.shape != (
+                x_t.shape[0],
+                256,
+            ):
+                raise ValueError(
+                    "memory_mean must have shape [B, 256]."
+                )
+
+        if budget is None:
+            budget = torch.zeros(
+                x_t.shape[0],
+                2,
+                device=x_t.device,
+                dtype=x_t.dtype,
+            )
+        else:
+            if budget.ndim != 2 or budget.shape != (x_t.shape[0], 2):
+                raise ValueError(
+                    "budget must have shape [B, 2]."
+                )
+
+        execution = self.executor.execute_differentiable(
+            h0=h0,
+            memory=memory_read,
+            C_prev=C_prev,
+            context=work_state.ctx,
+            memory_mean=memory_mean,
+            budget=budget,
+            tau=tau,
+            training=training,
+        )
+
+        h_terminal = execution.h_terminal.unsqueeze(1)
+        h0_3 = h0.unsqueeze(1)
+        R_c = memory_read.unsqueeze(1)
+
+        new_state, plan = terminal_commit(
+            work_state,
+            bank=self.blocks,
+            prelude_block=self.prelude_block,
+            prelude_input=x_t.unsqueeze(1),
+            final_norm=self.commit,
+            memory_write=self.memory_write,
+            h_terminal=h_terminal,
+            h0=h0_3,
+            R_c=R_c,
+            memory_keys=self.memory.memory_keys(work_state.memory),
+            token_index=work_state.tokens_committed,
+        )
+
+        logits = self.output_head(new_state.s)
+
+        return {
+            "state": new_state,
+            "h0": h0,
+            "h_terminal": execution.h_terminal,
+            "H_t": new_state.s,
+            "logits": logits,
+            "memory_read": memory_read,
+            "memory_attention": memory_attention,
+            "commit_plan": plan,
+            "execution_count": execution.execution_count,
+            "action_history": execution.action_history,
+            "halted": execution.halted,
+            "safety_cap_hit": execution.safety_cap_hit,
+        }
+
     def adaptive_step(
         self,
         x_t,
