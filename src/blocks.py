@@ -4,7 +4,7 @@ import torch.nn as nn
 
 from .norms import RMSNorm
 from .gqa import GQA
-from .gdn_v3 import GDNv3 as GDN
+from .gdn_v3 import GDNv3 as GDN, GDNStep
 from .mhc import MHC
 from .swiglu import SwiGLU
 from .rope import apply_rope
@@ -374,6 +374,8 @@ class AGTBlock(nn.Module):
         raise RuntimeError(f"Unsupported species: {self.species}")
 
     def forward(self, h, h0=None, R=None, C_prev=None, **kwargs):
+        return_ephemeral = bool(kwargs.pop("return_ephemeral", False))
+
         inj = self.injection(h, h0, R)
 
         if self.species == "FFN":
@@ -409,6 +411,21 @@ class AGTBlock(nn.Module):
 
         if self.species == "GDN":
             call_kw = {**kwargs, **self._gdn_context_kwargs(C_prev)}
+
+            if return_ephemeral:
+                # Opt-in Gate-C path: preserve the complete in-flight
+                # GDN transition, including recurrent state and
+                # convolution buffer. The persistent cache is untouched.
+                step = self.core.forward_ephemeral(u, **call_kw)
+
+                if not isinstance(step, GDNStep):
+                    raise RuntimeError(
+                        "GDN forward_ephemeral() must return GDNStep."
+                    )
+
+                y = self.mhc(step.y)
+                return h + y, step
+
             out = self.core(u, **call_kw)
 
             if not (isinstance(out, tuple) and len(out) == 2):

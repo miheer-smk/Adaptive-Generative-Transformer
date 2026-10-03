@@ -1,9 +1,11 @@
 from dataclasses import dataclass, field
+import inspect
 
 import torch
 
 from .masks import build_execution_mask, apply_action_mask
 from .terminal_commit import block_context
+from .routing import st_gumbel_successor_mix
 
 
 @dataclass
@@ -61,6 +63,7 @@ class AdaptiveExecutor:
         h0,
         memory,
         context,
+        return_ephemeral=False,
     ):
         """
         Execute one bank block using the AGTBlock executor-facing API.
@@ -70,8 +73,19 @@ class AdaptiveExecutor:
         memory   : [B, D] memory read R
         context  : persistent ExecutionCache or None
 
-        Returns:
-            h_next : [B, D]
+        Args:
+            return_ephemeral:
+                When False, preserve the original executor contract and
+                return only h_next.
+
+                When True, return:
+                    (h_next, ephemeral_state)
+
+                For GDN, ephemeral_state is the value produced by the
+                block's pure in-flight execution. For all other species,
+                ephemeral_state is None.
+
+        Persistent caches are never mutated by this method.
         """
         block = self.block_bank.blocks[block_index]
 
@@ -93,19 +107,237 @@ class AdaptiveExecutor:
                 h0=h0.unsqueeze(1),
                 R=memory.unsqueeze(1),
                 C_prev=cache,
+                return_ephemeral=return_ephemeral,
             )
 
         # GDN returns:
         #     (output, ephemeral_state)
         # All other species return a tensor.
         #
-        # Use the output structure rather than assuming every bank
-        # implementation exposes a `.species` attribute. Stage-0 tests
-        # intentionally use lightweight toy bank objects.
-        if isinstance(out, (tuple, list)):
-            out = out[0]
+        # Preserve the ephemeral state when explicitly requested.
+        ephemeral_state = None
 
-        return out.squeeze(1)
+        if isinstance(out, (tuple, list)):
+            if len(out) != 2:
+                raise RuntimeError(
+                    "Tuple/list block output must contain "
+                    "(output, ephemeral_state)."
+                )
+            out, ephemeral_state = out
+
+        h_next = out.squeeze(1)
+
+        if return_ephemeral:
+            return h_next, ephemeral_state
+
+        return h_next
+
+    def candidate_successors(
+        self,
+        h,
+        h0,
+        memory,
+        context,
+        pointer,
+    ):
+        """
+        Generate independent successor states for block-selection actions.
+
+        Ordering:
+            0 ... N-1 : ADVANCE(0 ... N-1)
+            N         : REPEAT
+            N+1       : RESTART
+
+        HALT intentionally has no successor and is therefore excluded
+        from this successor tensor.
+        """
+        if h.ndim != 2:
+            raise ValueError("h must have shape [B, D].")
+
+        if h0.shape != h.shape:
+            raise ValueError("h0 shape must match h shape.")
+
+        if memory.shape != h.shape:
+            raise ValueError("memory shape must match h shape.")
+
+        num_blocks = len(self.block_bank.blocks)
+
+        if not 0 <= pointer < num_blocks:
+            raise ValueError(
+                f"pointer must be in [0, {num_blocks - 1}], "
+                f"got {pointer}."
+            )
+
+        candidate_h = []
+        next_pointer = []
+
+        # ADVANCE(j') for every candidate block.
+        for block_index in range(num_blocks):
+            h_next = self._run_block(
+                block_index=block_index,
+                h=h,
+                h0=h0,
+                memory=memory,
+                context=context,
+            )
+            candidate_h.append(h_next)
+            next_pointer.append(block_index)
+
+        # REPEAT current block.
+        h_repeat = self._run_block(
+            block_index=pointer,
+            h=h,
+            h0=h0,
+            memory=memory,
+            context=context,
+        )
+        candidate_h.append(h_repeat)
+        next_pointer.append(pointer)
+
+        # RESTART is zero-compute and preserves h.
+        candidate_h.append(h)
+        next_pointer.append(0)
+
+        return {
+            "h": torch.stack(candidate_h, dim=1),
+            "next_pointer": next_pointer,
+        }
+
+
+
+    def differentiable_route_step(
+        self,
+        h,
+        h0,
+        memory,
+        context,
+        pointer,
+        action_logits,
+        tau,
+        training=True,
+        execution_count=0,
+        just_restarted=False,
+    ):
+        """
+        Execute one differentiable Gate-C routing decision.
+
+        The candidate successor set is:
+
+            ADVANCE(0 ... N-1), REPEAT, RESTART
+
+        HALT is intentionally excluded because it has no successor state.
+
+        Forward:
+            ST-Gumbel produces a hard one-hot action and therefore selects
+            exactly one candidate successor.
+
+        Backward:
+            the straight-through relaxed routing path carries gradients
+            through action_logits and the candidate successor computation.
+
+        No persistent cache is modified by this method.
+        """
+        if h.ndim != 2:
+            raise ValueError("h must have shape [B, D].")
+
+        if h0.shape != h.shape:
+            raise ValueError("h0 shape must match h shape.")
+
+        if memory.shape != h.shape:
+            raise ValueError("memory shape must match h shape.")
+
+        if action_logits.ndim != 2:
+            raise ValueError(
+                "action_logits must have shape [B, N+3]."
+            )
+
+        num_blocks = len(self.block_bank.blocks)
+        expected_actions = num_blocks + 3
+
+        if action_logits.shape[-1] != expected_actions:
+            raise ValueError(
+                f"action_logits must have {expected_actions} actions "
+                f"for N={num_blocks}; got {action_logits.shape[-1]}."
+            )
+
+        if action_logits.shape[0] != h.shape[0]:
+            raise ValueError(
+                "action_logits batch size must match h batch size."
+            )
+
+        # --------------------------------------------------------
+        # Candidate successor states.
+        #
+        # candidate_successors() returns N+2 states:
+        #   ADVANCE[*], REPEAT, RESTART
+        #
+        # HALT has no successor and is excluded.
+        # --------------------------------------------------------
+        candidates = self.candidate_successors(
+            h=h,
+            h0=h0,
+            memory=memory,
+            context=context,
+            pointer=pointer,
+        )
+
+        candidate_h = candidates["h"]
+
+        # --------------------------------------------------------
+        # Build the legality mask using the existing executor
+        # contract, then remove HALT from the successor space.
+        # --------------------------------------------------------
+        full_mask = build_execution_mask(
+            pointer=pointer,
+            execution_count=execution_count,
+            just_restarted=just_restarted,
+            num_blocks=num_blocks,
+        ).to(device=action_logits.device)
+
+        successor_count = num_blocks + 2
+
+        successor_mask = full_mask[:successor_count]
+        successor_mask = successor_mask.unsqueeze(0).expand(
+            action_logits.shape[0],
+            -1,
+        )
+
+        # --------------------------------------------------------
+        # HALT remains a controller action but has no successor.
+        # Therefore it is not passed to successor mixing.
+        # --------------------------------------------------------
+        block_selection_logits = action_logits[:, :successor_count]
+
+        h_next, action, probs = st_gumbel_successor_mix(
+            candidates=candidate_h,
+            logits=block_selection_logits,
+            mask=successor_mask,
+            tau=tau,
+            training=training,
+        )
+
+        # --------------------------------------------------------
+        # Pointer transition is discrete metadata. It follows the
+        # hard forward action and is intentionally not differentiated.
+        # --------------------------------------------------------
+        selected_action = action.detach().argmax(dim=-1)
+
+        next_pointer_table = torch.tensor(
+            candidates["next_pointer"],
+            device=action.device,
+            dtype=torch.long,
+        )
+
+        next_pointer = next_pointer_table[selected_action]
+
+        return {
+            "h_next": h_next,
+            "action": action,
+            "probs": probs,
+            "candidates": candidate_h,
+            "selected_action": selected_action,
+            "next_pointer": next_pointer,
+        }
 
     def execute(
         self,
@@ -113,6 +345,8 @@ class AdaptiveExecutor:
         memory,
         C_prev,
         context=None,
+        memory_mean=None,
+        budget=None,
     ):
         """
         Execute one token.
@@ -134,6 +368,39 @@ class AdaptiveExecutor:
         pointer = 0
         just_restarted = False
 
+        batch_size = h.shape[0]
+
+        # Gate-C controller inputs.
+        #
+        # memory_mean and budget are explicit inputs. No budget schedule
+        # is invented here. When omitted by legacy callers, zero tensors
+        # preserve backward compatibility.
+        if memory_mean is None:
+            memory_mean = torch.zeros(
+                batch_size,
+                256,
+                device=h.device,
+                dtype=h.dtype,
+            )
+        else:
+            if memory_mean.ndim != 2 or memory_mean.shape != (batch_size, 256):
+                raise ValueError(
+                    "memory_mean must have shape [B, 256]."
+                )
+
+        if budget is None:
+            budget = torch.zeros(
+                batch_size,
+                2,
+                device=h.device,
+                dtype=h.dtype,
+            )
+        else:
+            if budget.ndim != 2 or budget.shape != (batch_size, 2):
+                raise ValueError(
+                    "budget must have shape [B, 2]."
+                )
+
         action_history = []
 
         halted = False
@@ -146,7 +413,43 @@ class AdaptiveExecutor:
 
         while execution_count < self.max_execution_depth:
 
-            controller_out = self.controller(h)
+            pointer_one_hot = torch.zeros(
+                batch_size,
+                len(self.block_bank.blocks) + 1,
+                device=h.device,
+                dtype=h.dtype,
+            )
+            pointer_one_hot[:, pointer] = 1.0
+
+            # Prefer the canonical Stage-3 controller interface.
+            # Legacy controllers remain supported until the executor
+            # itself is migrated to differentiable routing.
+            try:
+                target = getattr(self.controller, "forward", self.controller)
+                signature = inspect.signature(target)
+                canonical_controller = all(
+                    name in signature.parameters
+                    for name in (
+                        "h",
+                        "memory_read",
+                        "memory_mean",
+                        "pointer_one_hot",
+                        "budget",
+                    )
+                )
+            except (AttributeError, TypeError, ValueError):
+                canonical_controller = False
+
+            if canonical_controller:
+                controller_out = self.controller(
+                    h=h,
+                    memory_read=memory,
+                    memory_mean=memory_mean,
+                    pointer_one_hot=pointer_one_hot,
+                    budget=budget,
+                )
+            else:
+                controller_out = self.controller(h)
 
             advance_logits = controller_out["advance"]
             repeat_logits = controller_out["repeat"]

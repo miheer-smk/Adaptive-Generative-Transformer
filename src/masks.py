@@ -2,6 +2,8 @@
 import torch
 
 
+
+
 def build_execution_mask(
     pointer: int,
     execution_count: int,
@@ -9,25 +11,41 @@ def build_execution_mask(
     num_blocks: int,
 ):
     """
-    Build the legal-action mask for one execution state.
+    Exact source-aligned action legality mask.
 
-    Unified controller actions:
+    Internal block indices are 0-based:
+        block 0 == source block j=1
+        block N-1 == source block j=N
 
-        ADVANCE(j') : 0 ... N-1
-        REPEAT      : N
-        RESTART     : N+1
-        HALT        : N+2
+    Action layout:
+        0 ... N-1 : ADVANCE(j')
+        N         : REPEAT
+        N+1       : RESTART
+        N+2       : HALT
 
-    The mask is boolean:
-        True  = legal
-        False = illegal
+    States:
 
-    Contract:
-    - pointer identifies the current block position.
-    - execution_count tracks actual executions.
-    - just_restarted prevents consecutive RESTART actions.
+    Initial state:
+        pointer=0, execution_count=0
+        all ADVANCE(0..N-1) allowed
+        REPEAT masked
+        RESTART masked
+        HALT allowed
+
+    After executing block i within a sweep:
+        pointer=i, execution_count>0
+        ADVANCE(i+1..N-1) allowed
+        REPEAT allowed
+        RESTART allowed unless immediately after RESTART
+        HALT allowed
+
+    Immediately after RESTART:
+        pointer=0, just_restarted=True
+        all ADVANCE(0..N-1) allowed
+        REPEAT masked
+        RESTART masked
+        HALT allowed
     """
-
     if not 0 <= pointer < num_blocks:
         raise ValueError(
             f"pointer must be in [0, {num_blocks - 1}], "
@@ -42,7 +60,7 @@ def build_execution_mask(
 
     num_actions = num_blocks + 3
 
-    mask = torch.ones(
+    mask = torch.zeros(
         num_actions,
         dtype=torch.bool,
     )
@@ -50,23 +68,28 @@ def build_execution_mask(
     # ---------------------------------------------------------
     # ADVANCE(j')
     # ---------------------------------------------------------
-    # Cannot advance beyond the final block.
-    mask[:num_blocks] = True
+    # Initial state and post-RESTART state are represented by
+    # pointer=0 but differ from having already executed block 0.
+    if execution_count == 0 or just_restarted:
+        mask[:num_blocks] = True
+    elif pointer < num_blocks - 1:
+        mask[pointer + 1:num_blocks] = True
 
     # ---------------------------------------------------------
     # REPEAT
     # ---------------------------------------------------------
     repeat_index = num_blocks
-    mask[repeat_index] = True
+
+    if execution_count > 0 and not just_restarted:
+        mask[repeat_index] = True
 
     # ---------------------------------------------------------
     # RESTART
     # ---------------------------------------------------------
     restart_index = num_blocks + 1
 
-    # No consecutive RESTART actions.
-    if just_restarted:
-        mask[restart_index] = False
+    if execution_count > 0 and not just_restarted:
+        mask[restart_index] = True
 
     # ---------------------------------------------------------
     # HALT
@@ -75,6 +98,8 @@ def build_execution_mask(
     mask[halt_index] = True
 
     return mask
+
+
 
 
 def apply_action_mask(
