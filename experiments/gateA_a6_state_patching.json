@@ -1,0 +1,102 @@
+{
+  "gate": "A6",
+  "checkpoint": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "device": "cuda",
+  "dim": 64,
+  "prefix_len": 8,
+  "continuation_token": 0,
+  "patch_point": "H_8 -> before token 9",
+  "target_paths": {
+    "GDN1": "state.ctx.gdn[4].committed_state",
+    "GDN2": "state.ctx.gdn[5].committed_state"
+  },
+  "patch_definition": "copy donor committed_state into recipient committed_state; leave all other persistent context unchanged",
+  "opposite_parity": {
+    "clean_donor": {
+      "mean_p_donor": 0.9981849193572998,
+      "mean_p_recipient": 0.0018150978721678257,
+      "mean_donor_margin": 6.3309006690979,
+      "donor_argmax_rate": 1.0,
+      "recipient_argmax_rate": 0.0,
+      "mean_cross_entropy_to_recipient": 6.332717418670654,
+      "mean_cross_entropy_to_donor": 0.0018168122041970491
+    },
+    "clean_recipient": {
+      "mean_p_donor": 0.001864192308858037,
+      "mean_p_recipient": 0.9981358647346497,
+      "mean_donor_margin": -6.297974109649658,
+      "donor_argmax_rate": 0.0,
+      "recipient_argmax_rate": 1.0,
+      "mean_cross_entropy_to_recipient": 0.001865981612354517,
+      "mean_cross_entropy_to_donor": 6.299839973449707
+    },
+    "GDN1": {
+      "mean_p_donor": 0.0018639115151017904,
+      "mean_p_recipient": 0.9981361031532288,
+      "mean_donor_margin": -6.298069000244141,
+      "donor_argmax_rate": 0.0,
+      "recipient_argmax_rate": 1.0,
+      "mean_cross_entropy_to_recipient": 0.0018656982574611902,
+      "mean_cross_entropy_to_donor": 6.299934387207031,
+      "delta_p_donor": -2.8087833925383165e-07,
+      "delta_donor_margin": -9.442120790481567e-05,
+      "pairwise_donor_probability_increase_rate": 0.4609375,
+      "patch_flip_to_donor_rate": 0.0
+    },
+    "GDN2": {
+      "mean_p_donor": 0.0018672473961487412,
+      "mean_p_recipient": 0.9981327652931213,
+      "mean_donor_margin": -6.296144485473633,
+      "donor_argmax_rate": 0.0,
+      "recipient_argmax_rate": 1.0,
+      "mean_cross_entropy_to_recipient": 0.0018690413562580943,
+      "mean_cross_entropy_to_donor": 6.298013687133789,
+      "delta_p_donor": 3.0550663723261096e-06,
+      "delta_donor_margin": 0.0018294565379619598,
+      "pairwise_donor_probability_increase_rate": 0.5859375,
+      "patch_flip_to_donor_rate": 0.0
+    },
+    "BOTH": {
+      "mean_p_donor": 0.0018672328442335129,
+      "mean_p_recipient": 0.9981327652931213,
+      "mean_donor_margin": -6.2960591316223145,
+      "donor_argmax_rate": 0.0,
+      "recipient_argmax_rate": 1.0,
+      "mean_cross_entropy_to_recipient": 0.0018690277356654406,
+      "mean_cross_entropy_to_donor": 6.297928333282471,
+      "delta_p_donor": 3.0403980417759158e-06,
+      "delta_donor_margin": 0.0019150115549564362,
+      "pairwise_donor_probability_increase_rate": 0.4765625,
+      "patch_flip_to_donor_rate": 0.0
+    },
+    "num_pairs": 128,
+    "prefix_len": 8,
+    "continuation": 0
+  },
+  "same_parity_controls": {
+    "num_pairs": 64,
+    "prefix_len": 8,
+    "continuation": 0,
+    "GDN1": {
+      "mean_p_correct_clean": 0.9981236457824707,
+      "mean_p_correct_patched": 0.9981236457824707,
+      "delta_p_correct": -2.2351741790771484e-08,
+      "patched_correct_argmax_rate": 1.0,
+      "patched_flip_rate": 0.0
+    },
+    "GDN2": {
+      "mean_p_correct_clean": 0.9981236457824707,
+      "mean_p_correct_patched": 0.9981235265731812,
+      "delta_p_correct": -1.51805579662323e-07,
+      "patched_correct_argmax_rate": 1.0,
+      "patched_flip_rate": 0.0
+    },
+    "BOTH": {
+      "mean_p_correct_clean": 0.9981236457824707,
+      "mean_p_correct_patched": 0.9981235265731812,
+      "delta_p_correct": -1.387670636177063e-07,
+      "patched_correct_argmax_rate": 1.0,
+      "patched_flip_rate": 0.0
+    }
+  }
+}

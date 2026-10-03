@@ -1,0 +1,223 @@
+{
+  "gate": "A4",
+  "checkpoint": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "device": "cuda",
+  "dim": 64,
+  "target": "persistent committed GDN recurrent state S",
+  "target_paths": {
+    "GDN1": "state.ctx.gdn[4].committed_state",
+    "GDN2": "state.ctx.gdn[5].committed_state"
+  },
+  "timing": "after token t before token t+1",
+  "conditions": [
+    "clean",
+    "GDN1_ZERO",
+    "GDN2_ZERO",
+    "GDN1_SHUFFLE",
+    "GDN2_SHUFFLE"
+  ],
+  "results": {
+    "L8_clean": {
+      "loss": 0.001761074410751462,
+      "accuracy": 1.0,
+      "final_logit_shape": [
+        256,
+        2
+      ],
+      "intervention_summary": {}
+    },
+    "L8_GDN1_ZERO": {
+      "loss": 1.2000732421875,
+      "accuracy": 0.8125,
+      "final_logit_shape": [
+        256,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 7,
+        "target_shape": [
+          256,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.7357158362865448,
+        "post_norm_mean": 0.0,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L8_GDN1_SHUFFLE": {
+      "loss": 1.098618984222412,
+      "accuracy": 0.828125,
+      "final_logit_shape": [
+        256,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 7,
+        "target_shape": [
+          256,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.8382725247314998,
+        "post_norm_mean": 0.838272533246449,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L8_GDN2_ZERO": {
+      "loss": 0.8015749454498291,
+      "accuracy": 0.875,
+      "final_logit_shape": [
+        256,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 7,
+        "target_shape": [
+          256,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.6215919767107282,
+        "post_norm_mean": 0.0,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L8_GDN2_SHUFFLE": {
+      "loss": 0.25458306074142456,
+      "accuracy": 0.9609375,
+      "final_logit_shape": [
+        256,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 7,
+        "target_shape": [
+          256,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.6978669081415448,
+        "post_norm_mean": 0.6978669336863926,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L128_clean": {
+      "loss": 0.0018182792700827122,
+      "accuracy": 1.0,
+      "final_logit_shape": [
+        512,
+        2
+      ],
+      "intervention_summary": {}
+    },
+    "L128_GDN1_ZERO": {
+      "loss": 1.2745232582092285,
+      "accuracy": 0.798828125,
+      "final_logit_shape": [
+        512,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 127,
+        "target_shape": [
+          512,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.8612345522782934,
+        "post_norm_mean": 0.0,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L128_GDN1_SHUFFLE": {
+      "loss": 1.192087173461914,
+      "accuracy": 0.8125,
+      "final_logit_shape": [
+        512,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 127,
+        "target_shape": [
+          512,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 1.0545190244209108,
+        "post_norm_mean": 1.0545190164423364,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L128_GDN2_ZERO": {
+      "loss": 0.790391206741333,
+      "accuracy": 0.875,
+      "final_logit_shape": [
+        512,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 127,
+        "target_shape": [
+          512,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.6615787918173422,
+        "post_norm_mean": 0.0,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    },
+    "L128_GDN2_SHUFFLE": {
+      "loss": 0.3108043670654297,
+      "accuracy": 0.951171875,
+      "final_logit_shape": [
+        512,
+        2
+      ],
+      "intervention_summary": {
+        "num_interventions": 127,
+        "target_shape": [
+          512,
+          6,
+          128,
+          64
+        ],
+        "target_numel_per_example": 49152,
+        "pre_norm_mean": 0.8037018086027912,
+        "post_norm_mean": 0.8037018104801028,
+        "all_conv_unchanged": true,
+        "all_other_gdn_state_unchanged": true,
+        "all_other_gdn_conv_unchanged": true
+      }
+    }
+  }
+}

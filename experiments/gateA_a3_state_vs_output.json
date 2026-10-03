@@ -1,0 +1,195 @@
+{
+  "gate": "A3",
+  "device": "cuda",
+  "dim": 64,
+  "checkpoint": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "trained_probe_training": {
+    "gdn1_output": {
+      "dim": 64,
+      "train_acc": 0.9899193048477173,
+      "train_ce": 0.05403216555714607
+    },
+    "gdn2_output": {
+      "dim": 64,
+      "train_acc": 1.0,
+      "train_ce": 0.0018639437621459365
+    },
+    "gdn1_state": {
+      "dim": 49152,
+      "train_acc": 1.0,
+      "train_ce": 1.610282751585146e-08
+    },
+    "gdn2_state": {
+      "dim": 49152,
+      "train_acc": 1.0,
+      "train_ce": 0.0
+    }
+  },
+  "trained_evaluation": [
+    {
+      "length": 8,
+      "examples": 256,
+      "gdn1_output_acc": 0.9921875,
+      "gdn1_output_ce": 0.04365137964487076,
+      "gdn2_output_acc": 1.0,
+      "gdn2_output_ce": 0.0018608528189361095,
+      "gdn1_state_acc": 1.0,
+      "gdn1_state_ce": 3.1199228089917597e-08,
+      "gdn2_state_acc": 1.0,
+      "gdn2_state_ce": 0.0
+    },
+    {
+      "length": 16,
+      "examples": 256,
+      "gdn1_output_acc": 0.984375,
+      "gdn1_output_ce": 0.06474611163139343,
+      "gdn2_output_acc": 1.0,
+      "gdn2_output_ce": 0.003146254690364003,
+      "gdn1_state_acc": 1.0,
+      "gdn1_state_ce": 0.0,
+      "gdn2_state_acc": 1.0,
+      "gdn2_state_ce": 0.0
+    },
+    {
+      "length": 32,
+      "examples": 512,
+      "gdn1_output_acc": 0.951171875,
+      "gdn1_output_ce": 0.11836539208889008,
+      "gdn2_output_acc": 1.0,
+      "gdn2_output_ce": 0.00497765839099884,
+      "gdn1_state_acc": 1.0,
+      "gdn1_state_ce": 0.0,
+      "gdn2_state_acc": 1.0,
+      "gdn2_state_ce": 0.0
+    },
+    {
+      "length": 64,
+      "examples": 512,
+      "gdn1_output_acc": 0.939453125,
+      "gdn1_output_ce": 0.15089178085327148,
+      "gdn2_output_acc": 1.0,
+      "gdn2_output_ce": 0.005666736047714949,
+      "gdn1_state_acc": 1.0,
+      "gdn1_state_ce": 0.0,
+      "gdn2_state_acc": 1.0,
+      "gdn2_state_ce": 0.0
+    },
+    {
+      "length": 128,
+      "examples": 512,
+      "gdn1_output_acc": 0.94140625,
+      "gdn1_output_ce": 0.14766499400138855,
+      "gdn2_output_acc": 1.0,
+      "gdn2_output_ce": 0.005514080170542002,
+      "gdn1_state_acc": 1.0,
+      "gdn1_state_ce": 0.0,
+      "gdn2_state_acc": 1.0,
+      "gdn2_state_ce": 0.0
+    }
+  ],
+  "untrained_probe_training": {
+    "gdn1_output": {
+      "dim": 64,
+      "train_acc": 0.4818548262119293,
+      "train_ce": 0.693191647529602
+    },
+    "gdn2_output": {
+      "dim": 64,
+      "train_acc": 0.4899193346500397,
+      "train_ce": 0.6931678056716919
+    },
+    "gdn1_state": {
+      "dim": 49152,
+      "train_acc": 0.5,
+      "train_ce": 2.8198025226593018
+    },
+    "gdn2_state": {
+      "dim": 49152,
+      "train_acc": 0.5080645084381104,
+      "train_ce": 2.6380228996276855
+    }
+  },
+  "untrained_evaluation": [
+    {
+      "length": 8,
+      "examples": 256,
+      "gdn1_output_acc": 0.46484375,
+      "gdn1_output_ce": 0.6931973099708557,
+      "gdn2_output_acc": 0.484375,
+      "gdn2_output_ce": 0.6931835412979126,
+      "gdn1_state_acc": 0.5,
+      "gdn1_state_ce": 2.8263297080993652,
+      "gdn2_state_acc": 0.5,
+      "gdn2_state_ce": 2.572559356689453
+    },
+    {
+      "length": 16,
+      "examples": 256,
+      "gdn1_output_acc": 0.5078125,
+      "gdn1_output_ce": 0.6935326457023621,
+      "gdn2_output_acc": 0.48046875,
+      "gdn2_output_ce": 0.6965723037719727,
+      "gdn1_state_acc": 0.49609375,
+      "gdn1_state_ce": 2.3273863792419434,
+      "gdn2_state_acc": 0.5234375,
+      "gdn2_state_ce": 1.8101087808609009
+    },
+    {
+      "length": 32,
+      "examples": 512,
+      "gdn1_output_acc": 0.513671875,
+      "gdn1_output_ce": 0.692508339881897,
+      "gdn2_output_acc": 0.46875,
+      "gdn2_output_ce": 0.7052305936813354,
+      "gdn1_state_acc": 0.48046875,
+      "gdn1_state_ce": 2.210264205932617,
+      "gdn2_state_acc": 0.478515625,
+      "gdn2_state_ce": 1.8901346921920776
+    },
+    {
+      "length": 64,
+      "examples": 512,
+      "gdn1_output_acc": 0.509765625,
+      "gdn1_output_ce": 0.6933535933494568,
+      "gdn2_output_acc": 0.509765625,
+      "gdn2_output_ce": 0.6961950063705444,
+      "gdn1_state_acc": 0.51953125,
+      "gdn1_state_ce": 2.3269662857055664,
+      "gdn2_state_acc": 0.501953125,
+      "gdn2_state_ce": 1.7921295166015625
+    },
+    {
+      "length": 128,
+      "examples": 512,
+      "gdn1_output_acc": 0.509765625,
+      "gdn1_output_ce": 0.6930030584335327,
+      "gdn2_output_acc": 0.478515625,
+      "gdn2_output_ce": 0.7052972316741943,
+      "gdn1_state_acc": 0.482421875,
+      "gdn1_state_ce": 2.526299238204956,
+      "gdn2_state_acc": 0.5,
+      "gdn2_state_ce": 1.8873242139816284
+    }
+  ],
+  "protocol": {
+    "train_lengths": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "eval_lengths": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "feature_seed": 3002,
+    "task_seed": 3001,
+    "probe_seed": 4401,
+    "probe_steps": 500,
+    "probe_lr": 0.003
+  }
+}
