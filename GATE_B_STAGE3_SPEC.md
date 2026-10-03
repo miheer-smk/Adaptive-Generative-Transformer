@@ -2570,3 +2570,463 @@ Therefore no implementation should begin until those items are explicitly
 resolved.
 
 Gate B ends here.
+
+---
+
+# GATE-B SOURCE RECONCILIATION — FINAL CORRECTION
+
+This section supersedes any earlier Gate-B wording in this document that
+classified the following source-derived items as completely unspecified.
+
+The purpose is to distinguish:
+1. what the original AGT-v3 sources actually define,
+2. what is historical but later revised,
+3. what remains numerically/openly unspecified.
+
+## R1. Stage-3 training objective — corrected classification
+
+**[PARTIALLY SPECIFIED]**
+
+The located dynamical/extensibility source explicitly gives:
+
+L_task = Σ_p ρ_p · CE(LMHead(Norm(h_p)), x_{t+1})
+
+L_deep = (1/|D|) Σ_{p∈D} CE(LMHead(Norm(h_p)), x_{t+1})
+
+L_halt = KL(ρ || Geom(τ))
+
+L_route = κ·E[#switches] − η·H(π̄)
+
+L = L_task + β_d L_deep + β_h L_halt + L_route
+
+Source: `Pasted markdown(20260913-120909).md`, §F.3 / §R.2.
+
+Therefore the existence and symbolic structure of these terms are
+source-defined.
+
+However, the final numerical values of β_d, β_h, κ, η and any additional
+final coefficients are not locked by the latest source set.
+
+No numerical values may be invented.
+
+## R2. Budget-relative conditioning — corrected classification
+
+**[PARTIALLY SPECIFIED]**
+
+The source explicitly defines:
+
+b_p = p / B
+
+with B sampled per training example and gives the training-plan example:
+
+B ~ Uniform{4..24}
+
+The role is to keep budget awareness relative and extensible rather than
+using a raw step index.
+
+The latest architecture treatment presents budget conditioning as optional,
+so the existence of the feature is source-defined but whether it is enabled
+in the final Stage-3 controller remains unresolved.
+
+The old step feature φ(p) is RETRACTED.
+
+## R3. Training-depth sampling
+
+**[SPECIFIED at research-plan level]**
+
+The located source specifies budget-randomized training and gives:
+
+B ~ Uniform{4..24}
+
+The source also recommends deep supervision at sampled depths and inclusion
+of at least one supervised depth beyond the modal budget.
+
+This is source-derived protocol information, not a newly proposed training
+choice.
+
+## R4. Evaluation depths
+
+**[SPECIFIED at research-plan level]**
+
+The located research plan evaluates:
+
+P ∈ {8, 16, 32, 64, 128}
+
+The exact number of seeds is also given in the research plan as ≥8 seeds per
+arm for the main baseline program.
+
+These values belong to the source research protocol and must be distinguished
+from the separate Gate-A D64 parity experiment.
+
+## R5. Task families
+
+**[PARTIALLY SPECIFIED]**
+
+The source research program names graded-difficulty algorithmic families
+including:
+
+- n-digit addition
+- k-hop composition
+- Sudoku-Extreme with graded clue counts
+- state-tracking with graded sequence length
+
+Earlier Level-1 planning also mentions parity, modular arithmetic, sorting,
+cellular automata and related algorithmic tasks.
+
+The source set does not establish one uniquely canonical Stage-3 task arm
+for the present repository.
+
+Therefore the task family is source-defined at the program level, but the
+single repository benchmark remains unresolved.
+
+## R6. Baseline ladder
+
+**[SPECIFIED at research-plan level]**
+
+The source defines the following arm structure:
+
+S
+Static transformer at fixed depth
+
+S'
+Static model at equal active parameter count
+
+H
+Homogeneous looped model with learned halt
+
+H_δ
+Homogeneous looped model with convergence/delta halt
+
+T
+Heterogeneous bank, one monotone sweep, no persistent memory
+
+A
+T + restartable sweeps + delta halt
+
+A_M
+A + persistent slot memory
+
+A_MR
+A_M + state-conditioned routing
+
+R_ctrl
+A with frozen random route of equal length
+
+L_ctrl
+A with route determined by sequence length
+
+The existence of these source-defined comparison arms must be preserved,
+even where the exact implementation parameters remain unresolved.
+
+## R7. Core execution semantics
+
+**[SPECIFIED]**
+
+Current architecture requires:
+
+- one unified execution policy
+- ADVANCE(j')
+- REPEAT
+- RESTART
+- HALT
+- monotone forward advancement inside a sweep
+- restart as a legal sweep boundary
+- no unrestricted backward jumps
+- no unrestricted cyclic routing
+- no top-k simultaneous core execution
+
+RESTART:
+
+j <- 0
+
+while preserving h.
+
+HALT is associated with termination followed by terminal emission/commit.
+
+## R8. Convergence stopping
+
+**[SPECIFIED]**
+
+The source defines:
+
+δ_p = ||h_{p+1} - h_p|| / ||h_p||
+
+and treats:
+
+δ_p < ε
+
+as the primary parameter-free convergence stopping criterion.
+
+Learned HALT is secondary.
+
+A serving/deployment budget may be used as an external boundary, but this
+is not an architectural P_max.
+
+## R9. PonderNet status
+
+**[SPECIFIED WITH HISTORICAL REVISION]**
+
+The source history distinguishes two concepts:
+
+1. A separate PonderNet-style controller is RETRACTED from the current
+   macro-architecture.
+
+2. PonderNet-style marginalization remains present in the training
+   mathematics through the halt probability distribution ρ_p.
+
+Therefore:
+
+Separate PonderNet controller = RETRACTED
+
+PonderNet-style halt marginalization in the training objective = RETAINED
+in the later source formulation.
+
+These must not be conflated.
+
+## R10. ST-Gumbel status
+
+**[PARTIALLY SPECIFIED]**
+
+The source explicitly retains a straight-through Gumbel router as a surviving
+routing mechanism.
+
+However:
+
+- exact estimator equations are not fully locked by the latest source set
+- exact temperature is not locked
+- exact initial temperature is not locked
+- exact annealing schedule is not locked
+- exact treatment of RESTART / REPEAT / HALT during relaxation is not fully
+  locked
+
+Therefore implementation must not invent these values during Gate B.
+
+## R11. Temperature
+
+**[UNSPECIFIED]**
+
+No final numerical Gumbel temperature is source-locked.
+
+Exact initialization:
+
+UNSPECIFIED — not defined by the original AGT-v3 source.
+
+Exact annealing schedule:
+
+UNSPECIFIED — not defined by the original AGT-v3 source.
+
+## R12. Routing objective
+
+**[PARTIALLY SPECIFIED]**
+
+The source defines the symbolic routing objective:
+
+L_route = κ·E[#switches] − η·H(π̄)
+
+but does not lock the final numerical values of κ and η.
+
+Therefore:
+
+symbolic form = source-defined
+
+numerical coefficients = unresolved.
+
+## R13. Adaptive-depth objective
+
+**[PARTIALLY SPECIFIED]**
+
+The source clearly makes adaptive computation/depth a central empirical
+objective and specifies convergence-based stopping, budget randomization,
+and deep supervision.
+
+However, no single final standalone numerical "adaptive-depth coefficient"
+is locked.
+
+Any coefficient or additional adaptive-depth term beyond the source formula
+requires explicit human authorization.
+
+## R14. Controller dimensions
+
+**[CONFLICTING / REQUIRES HUMAN DECISION]**
+
+Repository at Gate-A completion contains a provisional compact controller.
+
+The source history also contains older controller dimensionality descriptions.
+
+These dimensions must NOT be silently reconciled.
+
+The final controller feature width, hidden width and action-logit encoding
+must be explicitly frozen before implementation.
+
+## R15. Heterogeneous bank size/composition
+
+**[CONFLICTING / REQUIRES HUMAN DECISION]**
+
+The research source gives an N=8 heterogeneous example/implementation target.
+
+The latest macro-architecture treats heterogeneity as the locked concept while
+warning against treating one exact species ratio as permanently immutable.
+
+Therefore:
+
+heterogeneous computation = source-defined
+
+final Stage-3 bank composition = unresolved.
+
+The Gate-A `[SWA,SWA,GQA,GQA,GDN,GDN,FFN,FFN]` bank remains frozen as Gate-A
+evidence but must not automatically be promoted to final Stage-3 composition.
+
+## R16. Stage-3 diagnostics
+
+**[SPECIFIED at research-plan level]**
+
+The source calls for measuring:
+
+- performance(P)
+- marginal performance with additional depth
+- P_eff distribution
+- ρ(P_eff, difficulty)
+- Var_x[P_eff]
+- I(x; route)
+- route entropy
+- per-block utilization
+- convergence residual
+- overthinking behavior
+- seed variance
+- latency/memory/KV cost
+- matched-compute comparisons
+
+These are diagnostics, not optional presentation extras.
+
+## R17. Headline extensibility criteria
+
+**[SPECIFIED at research-plan level]**
+
+The source defines genuine test-time scaling using all four conditions:
+
+1. performance non-decreasing to ≥4× training depth, per seed
+2. positive marginal benefit with a CI excluding zero at the specified
+   evaluation point
+3. performance gain not reproducible merely by a static model trained at
+   the longer depth
+4. ρ(P_eff, difficulty) > 0.3
+
+The last numerical threshold is source-derived from the research memo and is
+not an independently invented threshold.
+
+## R18. Kill criteria
+
+**[SPECIFIED at research-plan level]**
+
+The source provides explicit falsification criteria, including:
+
+- negligible Var_x[P_eff]
+- negligible state-conditioned-routing effect
+- no advantage over homogeneous convergence-halted computation at matched
+  compute
+- routing indistinguishable from random control
+- failure of genuine scaling criteria
+
+These are falsification tests, not implementation requirements.
+
+## R19. Stage 4
+
+**[UNSPECIFIED AS A CANONICAL STAGE-4 SPECIFICATION]**
+
+The source set does not contain a canonical section that freezes a separate
+Stage-4 implementation/training specification.
+
+The research program contains later scale phases and broader experimental
+levels, but these must not be relabeled as an authoritative Stage-4
+implementation specification.
+
+Therefore:
+
+Stage-4 controller details = UNSPECIFIED
+
+Stage-4 loss details = UNSPECIFIED
+
+Stage-4 exact experiment = UNSPECIFIED
+
+Stage-4 exact success thresholds = UNSPECIFIED
+
+No Stage-4 code may be derived by extrapolation from generic literature.
+
+## R20. Gate-C boundary after reconciliation
+
+Gate C may begin only after explicit human decisions freeze every unresolved
+Stage-3 implementation parameter.
+
+Gate C is therefore:
+
+IN SCOPE
+
+- D64 only
+- frozen Gate-A backbone
+- one unified controller
+- source-approved execution semantics
+- source-approved differentiable routing framework
+- exact human-approved ST-Gumbel estimator
+- exact human-approved temperature and schedule
+- exact human-approved objective coefficients
+- exact human-approved D64 benchmark
+- instrumentation before training
+- fixed/null/random-route controls
+- deterministic equivalence tests
+- no GDN redesign
+
+OUT OF SCOPE
+
+- D768
+- real language-model training
+- real-world datasets
+- new GDN mathematics
+- MoE
+- second controller
+- unrestricted topology
+- arbitrary backward routing
+- architectural recurrence ceiling
+- unapproved losses
+- unapproved controller features
+- unapproved temperature schedules
+
+---
+
+# FINAL GATE-B RECONCILIATION STATUS
+
+Gate B is now considered SOURCE-RECONCILED, but NOT IMPLEMENTATION-APPROVED.
+
+The source-derived mechanism is sufficiently identified to define the shape of
+Gate C.
+
+The following remain explicit human decisions:
+
+1. final controller dimensions
+2. final exact controller feature construction
+3. whether budget-relative b_p is enabled
+4. exact ST-Gumbel estimator
+5. Gumbel temperature
+6. initial temperature
+7. annealing schedule
+8. exact handling of relaxed RESTART
+9. exact handling of relaxed REPEAT
+10. exact handling of relaxed HALT
+11. κ
+12. η
+13. β_d
+14. β_h
+15. any additional adaptive-depth coefficient
+16. any additional auxiliary losses
+17. canonical D64 Stage-3 task
+18. canonical difficulty axis
+19. final Stage-3 heterogeneous bank composition
+20. final success thresholds where not source-locked
+
+NO implementation decision is made by this document.
+
+Gate B ends here.
+
+STOP.
+
+Do not implement Stage 3 until the unresolved decisions above are explicitly
+approved.
