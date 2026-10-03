@@ -149,3 +149,84 @@ def test_executor_supplies_full_stage3_controller_state():
         second["budget"],
         budget,
     )
+
+
+def test_stage3_differentiable_executor_loop_backpropagates_to_controller():
+    import torch
+
+    from src.controller import Controller
+    from src.executor import AdaptiveExecutor
+
+    torch.manual_seed(7)
+
+    num_blocks = 4
+    dim = 64
+    batch_size = 1
+
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = float(amount)
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class FourBlockBank:
+        def __init__(self):
+            self.blocks = [
+                AddBlock(1.0),
+                AddBlock(2.0),
+                AddBlock(3.0),
+                AddBlock(4.0),
+            ]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    controller = Controller(
+        dim=dim,
+        num_blocks=num_blocks,
+        memory_dim=256,
+        hidden_dim=256,
+    )
+
+    executor = AdaptiveExecutor(
+        block_bank=FourBlockBank(),
+        controller=controller,
+        max_execution_depth=3,
+        convergence=None,
+    )
+
+    h0 = torch.randn(batch_size, dim)
+    memory_read = torch.zeros_like(h0)
+    memory_mean = torch.zeros(batch_size, 256)
+    budget = torch.tensor([[0.0, 1.0]])
+
+    result = executor.execute_differentiable(
+        h0=h0,
+        memory=memory_read,
+        C_prev=None,
+        context=None,
+        memory_mean=memory_mean,
+        budget=budget,
+        tau=1.0,
+        training=True,
+    )
+
+    loss = result.h_terminal.sum()
+    loss.backward()
+
+    assert result.h_terminal.shape == (batch_size, dim)
+    assert result.execution_count == 3
+
+    controller_grads = [
+        parameter.grad
+        for parameter in controller.parameters()
+        if parameter.requires_grad
+    ]
+
+    assert any(
+        grad is not None
+        and torch.isfinite(grad).all()
+        and grad.abs().sum() > 0
+        for grad in controller_grads
+    )

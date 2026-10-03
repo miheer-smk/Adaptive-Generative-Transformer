@@ -339,6 +339,156 @@ class AdaptiveExecutor:
             "next_pointer": next_pointer,
         }
 
+
+    def execute_differentiable(
+        self,
+        h0,
+        memory,
+        C_prev=None,
+        context=None,
+        memory_mean=None,
+        budget=None,
+        tau=1.0,
+        training=True,
+    ):
+        """
+        Fixed-depth differentiable Gate-C executor.
+
+        This path intentionally does not replace the legacy `execute()`
+        method. It provides the Stage-3 training/integration path:
+
+            controller
+                -> masked action logits
+                -> ST-Gumbel successor routing
+                -> hard pointer transition
+                -> next controller decision
+
+        HALT is excluded from successor mixing because it has no successor
+        state. Execution therefore continues for exactly
+        `max_execution_depth` routing decisions.
+
+        Current pilot contract:
+            - batch size = 1
+            - controller uses the canonical Stage-3 interface
+            - pointer transition is hard/discrete metadata
+            - persistent context is never mutated
+            - no convergence gate
+            - no learned HALT signal
+        """
+        if h0.ndim != 2:
+            raise ValueError("h0 must have shape [B, D].")
+
+        if memory.ndim != 2 or memory.shape != h0.shape:
+            raise ValueError(
+                "memory must have the same shape as h0: [B, D]."
+            )
+
+        batch_size = h0.shape[0]
+
+        # The current executor candidate construction has one shared
+        # pointer, so the differentiable pilot remains batch-size one.
+        if batch_size != 1:
+            raise ValueError(
+                "execute_differentiable currently requires batch size 1."
+            )
+
+        num_blocks = len(self.block_bank.blocks)
+
+        if memory_mean is None:
+            memory_mean = torch.zeros(
+                batch_size,
+                256,
+                device=h0.device,
+                dtype=h0.dtype,
+            )
+        else:
+            if memory_mean.ndim != 2 or memory_mean.shape != (batch_size, 256):
+                raise ValueError(
+                    "memory_mean must have shape [B, 256]."
+                )
+
+        if budget is None:
+            budget = torch.zeros(
+                batch_size,
+                2,
+                device=h0.device,
+                dtype=h0.dtype,
+            )
+        else:
+            if budget.ndim != 2 or budget.shape != (batch_size, 2):
+                raise ValueError(
+                    "budget must have shape [B, 2]."
+                )
+
+        h = h0.clone()
+        pointer = 0
+        just_restarted = False
+        action_history = []
+
+        for execution_count in range(self.max_execution_depth):
+            pointer_one_hot = torch.zeros(
+                batch_size,
+                num_blocks + 1,
+                device=h.device,
+                dtype=h.dtype,
+            )
+            pointer_one_hot[:, pointer] = 1.0
+
+            controller_out = self.controller(
+                h=h,
+                memory_read=memory,
+                memory_mean=memory_mean,
+                pointer_one_hot=pointer_one_hot,
+                budget=budget,
+            )
+
+            action_logits = controller_out["logits"]
+
+            result = self.differentiable_route_step(
+                h=h,
+                h0=h0,
+                memory=memory,
+                context=context,
+                pointer=pointer,
+                action_logits=action_logits,
+                tau=tau,
+                training=training,
+                execution_count=execution_count,
+                just_restarted=just_restarted,
+            )
+
+            h = result["h_next"]
+
+            selected_action = int(
+                result["selected_action"][0].item()
+            )
+
+            if selected_action < num_blocks:
+                pointer = selected_action
+                just_restarted = False
+                action_history.append(
+                    ("ADVANCE", pointer)
+                )
+            elif selected_action == num_blocks:
+                just_restarted = False
+                action_history.append(
+                    ("REPEAT", pointer)
+                )
+            else:
+                pointer = 0
+                just_restarted = True
+                action_history.append(
+                    ("RESTART", None)
+                )
+
+        return ExecutionResult(
+            h_terminal=h,
+            execution_count=self.max_execution_depth,
+            action_history=action_history,
+            halted=False,
+            safety_cap_hit=False,
+        )
+
     def execute(
         self,
         h0,
