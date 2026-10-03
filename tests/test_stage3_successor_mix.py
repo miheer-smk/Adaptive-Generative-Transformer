@@ -365,3 +365,76 @@ def test_executor_differentiable_route_step_hard_forward_and_gradients():
 
     assert h.grad.abs().sum() > 0
     assert action_logits.grad.abs().sum() > 0
+
+def test_stage3_differentiable_route_inference_selects_legal_argmax_successor():
+    import torch
+
+    from src.executor import AdaptiveExecutor
+
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = float(amount)
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class Bank:
+        def __init__(self):
+            self.blocks = [
+                AddBlock(1.0),
+                AddBlock(2.0),
+                AddBlock(3.0),
+                AddBlock(4.0),
+            ]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    executor = AdaptiveExecutor(
+        controller=None,
+        block_bank=Bank(),
+    )
+
+    h = torch.zeros(1, 4)
+    h0 = h.clone()
+    memory = h.clone()
+
+    # Initial state:
+    # ADVANCE(0..3) legal, REPEAT/RESTART unavailable.
+    logits = torch.tensor(
+        [[1.0, 2.0, 9.0, 3.0, 100.0, 50.0, 0.0]],
+    )
+
+    result = executor.differentiable_route_step(
+        h=h,
+        h0=h0,
+        memory=memory,
+        context=None,
+        pointer=0,
+        action_logits=logits,
+        tau=1.0,
+        training=False,
+        execution_count=0,
+        just_restarted=False,
+    )
+
+    # Illegal REPEAT/RESTART logits must have no effect.
+    assert result["selected_action"].item() == 2
+
+    # ADVANCE(2) adds 3.0.
+    assert torch.equal(
+        result["h_next"],
+        torch.full((1, 4), 3.0),
+    )
+
+    # Selected action must be exactly one-hot.
+    assert torch.equal(
+        result["action"],
+        torch.tensor([[0.0, 0.0, 1.0, 0.0, 0.0, 0.0]]),
+    )
+
+    # Illegal probabilities must be exactly zero.
+    assert torch.equal(
+        result["probs"][0, 4:],
+        torch.zeros(2),
+    )
