@@ -74,6 +74,8 @@ def main():
     parser.add_argument("--steps", type=int, default=100)
     parser.add_argument("--per-length", type=int, default=4)
     parser.add_argument("--warmstart-template", required=True)
+    parser.add_argument("--initializations", nargs="+", choices=["random", "imitation"],
+                        default=["random", "imitation"])
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.output.exists() or args.output.with_suffix(".inprogress").exists():
@@ -83,9 +85,11 @@ def main():
         checkpoint = torch.load(path, map_location="cpu")
         if checkpoint.get("seed") != seed or not checkpoint.get("route_recovery"):
             parser.error(f"Unverified imitation checkpoint for seed {seed}")
+        if checkpoint.get("offline_breakdown", {}).get("illegal_predictions") != 0:
+            parser.error("Imitation metadata must verify zero illegal predictions")
         if checkpoint.get("backbone_sha256") != file_sha256(CHECKPOINT):
             parser.error("Imitation backbone fingerprint differs")
-        for arm in ("random", "imitation"):
+        for arm in args.initializations:
             if args.output.with_name(f"{args.output.stem}_{seed}_{arm}.pt").exists():
                 parser.error("Output checkpoint already exists")
     torch.set_num_threads(4)
@@ -102,6 +106,7 @@ def main():
                   model_dim=64, routing_depth=8, budget="zeros", temperature=2.0,
                   controller_lr=1e-4, weight_decay=0.0, batch_size=1, steps=args.steps,
                   seeds=args.seeds, per_length=args.per_length, runs=[],
+                  initializations=args.initializations,
                   source_sha256={str(path): file_sha256(path) for path in
                                  (Path("src/routing.py"), Path("src/executor.py"), Path("src/agt.py"),
                                   Path("experiments/run_stage3_replication.py"))},
@@ -119,7 +124,7 @@ def main():
         seed_cases = {"train": batches[-16:], **cases}
         report["training_data"][str(seed)] = bits_for_batches(batches, train_task)
         imitation_before = None
-        for arm in ("random", "imitation"):
+        for arm in args.initializations:
             warmstart = warmstarts[seed] if arm == "imitation" else None
             model = load_model(seed, device, warmstart)
             frozen = {name: value.detach().clone() for name,value in model.state_dict().items()
@@ -132,6 +137,11 @@ def main():
                        warmstart_sha256=file_sha256(warmstart) if warmstart else None,
                        trainable_parameters=[dict(name=name, numel=p.numel())
                                              for name,p in model.named_parameters() if p.requires_grad])
+            if warmstart:
+                warm_metadata = torch.load(warmstart, map_location="cpu")
+                run["imitation_steps"] = warm_metadata["steps"]
+                run["imitation_offline_accuracy"] = warm_metadata["offline_route_accuracy"]
+                run["imitation_route_recovered"] = warm_metadata["route_recovery"]
             optimizer = torch.optim.AdamW(model.controller.parameters(), lr=1e-4, weight_decay=0)
             set_seed(seed+10000)
             model.train()
@@ -177,11 +187,12 @@ def main():
         # Independently reload the supervised initialization, run no optimizer,
         # and repeat evaluation after both optimized arms. This is a genuine
         # no-update control using the same token sequences and persistent resets.
-        control = load_model(seed, device, warmstarts[seed])
-        after = measured_evaluation(control, seed_cases)
-        report["runs"].append(dict(seed=seed, initialization="imitation_no_update", before=imitation_before,
-                                   after=after, numerically_stable=True, optimizer_updates=0,
-                                   repeated_metrics_identical=after == imitation_before))
+        if imitation_before is not None:
+            control = load_model(seed, device, warmstarts[seed])
+            after = measured_evaluation(control, seed_cases)
+            report["runs"].append(dict(seed=seed, initialization="imitation_no_update", before=imitation_before,
+                                       after=after, numerically_stable=True, optimizer_updates=0,
+                                       repeated_metrics_identical=after == imitation_before))
         report["summary"] = summarize(report["runs"])
         save_report(args.output, report)
     report["completed"] = True
