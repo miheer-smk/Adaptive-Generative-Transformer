@@ -20,6 +20,146 @@ from experiments.stage3_measurements import (
     CHECKPOINT, file_sha256, load_model, parameter_gradients, route_metrics, tensor_stats,
 )
 from src.masks import build_execution_mask
+from src.executor import AdaptiveExecutor
+
+
+def metadata_credit_probe():
+    """Toy counterexample isolating hard metadata credit; not an AGTv3 benchmark.
+
+    REPEAT at an identity block and RESTART have identical live successors,
+    yet select different future legal destinations. The ST hidden-state
+    mixture has no derivative through that discrete pointer/mask effect.
+    """
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = amount
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class Bank:
+        blocks = [AddBlock(value) for value in (100.,0.,0.,0.,0.,0.,0.,1.)]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    class BranchController:
+        def __init__(self, values):
+            self.branch = torch.tensor(values, requires_grad=True)
+            self.calls = 0
+
+        def __call__(self, **kwargs):
+            logits = kwargs["h"].new_full((1,11), -torch.inf)
+            if self.calls == 1:
+                # These two legal successor states are both the live h.
+                logits[0,8:10] = self.branch
+            elif self.calls == 2:
+                # ADVANCE(0) is legal only after the preceding RESTART.
+                logits[0,0] = 100.
+                logits[0,7] = 0.
+            else:
+                action = {0:6, 3:9, 4:6, 5:8, 6:9, 7:6}[self.calls]
+                logits[0,action] = 100.
+            self.calls += 1
+            return {"logits": logits}
+
+    # Fix equal Gumbel draws to isolate the forward branch comparison;
+    # never change noise sampling in the actual Task-A experiments.
+    original_rand_like = torch.rand_like
+    results = []
+    try:
+        torch.rand_like = lambda tensor: torch.full_like(tensor, 0.5)
+        for values in ([1.,0.], [0.,1.]):
+            controller = BranchController(values)
+            executor = AdaptiveExecutor(Bank(),controller,max_execution_depth=8)
+            h0 = torch.zeros(1,2,requires_grad=True)
+            result = executor.execute_differentiable(h0,torch.zeros_like(h0),training=True)
+            loss = result.h_terminal.square().mean()
+            loss.backward()
+            probabilities = controller.branch.detach().double().softmax(-1)
+            conditional_losses = torch.tensor([1.,10000.], dtype=torch.float64)
+            expected_loss = (probabilities * conditional_losses).sum()
+            expected_gradient = probabilities * (conditional_losses - expected_loss)
+            results.append(dict(branch_logits=values, terminal=result.h_terminal.detach().tolist(),
+                                loss=loss.item(), branch_gradient=controller.branch.grad.tolist(),
+                                branch_probabilities=probabilities.tolist(),
+                                expected_loss_resampling_branch_only=expected_loss.item(),
+                                expected_categorical_gradient_resampling_branch_only=expected_gradient.tolist(),
+                                history=result.action_history))
+    finally:
+        torch.rand_like = original_rand_like
+    return dict(scope="eight-block toy identity/additive bank, eight fixed decisions; no model redesign",
+                expected_gradient_scope="ideal categorical draw at the branch only; all other noise draws held fixed",
+                results=results,
+                conclusion="hidden-state ST mixing cannot credit a pure pointer/mask effect when candidate h states coincide")
+
+
+@torch.no_grad()
+def metadata_dependency_profile(model, x):
+    """Real-bank contrasts on teacher states; does not alter a routing policy.
+
+    Holding h fixed while changing pointer/mask isolates dependence of the
+    next controller choice on metadata. This is not a causal Task-A loss
+    intervention. First-layer projections measure input effects, not rewards.
+    """
+    state = model.initial_persistent_state(1,x.device,x.dtype)
+    compatibility = torch.zeros(1,model.dim,device=x.device,dtype=x.dtype)
+    rows = []
+    context_unchanged = True
+    for token in range(x.shape[1]):
+        work = state.clone()
+        versions = {(kind,key):cache.version for kind,mapping in
+                    (("kv",work.ctx.kv),("swa",work.ctx.swa),("gdn",work.ctx.gdn)) for key,cache in mapping.items()}
+        memory = model.memory.read(work.s,work.memory)[0]
+        mean = work.memory.mean(1)
+        h0 = model.prelude(x[:,token],work.s,memory,compatibility)
+        h = h0
+        for index in range(8):
+            h = model.executor._run_block(index,h,h0,memory,work.ctx)
+            # After a further routing decision, at least one decision must
+            # remain for its pointer/mask effect to influence this token.
+            if index >= 6:
+                continue
+            repeated = model.executor._run_block(index,h,h0,memory,work.ctx)
+            p_repeat = h.new_zeros(1,9)
+            p_repeat[:,index] = 1
+            p_restart = h.new_zeros(1,9)
+            p_restart[:,0] = 1
+            mask_repeat = build_execution_mask(index,index+2,False,8)[:10].to(x.device)
+            mask_restart = build_execution_mask(0,index+2,True,8)[:10].to(x.device)
+
+            def selection(hidden,pointer,mask):
+                logits = model.controller(h=hidden,memory_read=memory,memory_mean=mean,
+                                          pointer_one_hot=pointer,budget=h.new_zeros(1,2))["logits"][:, :10]
+                choice = int(logits.masked_fill(~mask,-torch.inf).argmax(-1))
+                assert mask[choice]
+                return choice
+
+            held_repeat = selection(h,p_repeat,mask_repeat)
+            restart = selection(h,p_restart,mask_restart)
+            actual_repeat = selection(repeated,p_repeat,mask_repeat)
+            weights = model.controller.mlp[0].weight
+            pointer_start = 2*model.dim + model.controller.memory_dim
+            live_effect = F.linear(model.controller.norm_h(repeated)-model.controller.norm_h(h),
+                                   weights[:, :model.dim]).norm().item()
+            pointer_effect = F.linear(p_repeat-p_restart,weights[:,pointer_start:pointer_start+9]).norm().item()
+            rows.append(dict(token=token,block=index,species=model.blocks.blocks[index].species,
+                             future_decisions=6-index,
+                             repeat_relative_live_change=(repeated-h).norm().item()/max(h.norm().item(),1e-12),
+                             normalized_live_first_layer_change_l2=live_effect,
+                             pointer_first_layer_change_l2=pointer_effect,
+                             mask_symmetric_difference=int((mask_repeat ^ mask_restart).sum()),
+                             held_h_repeat_choice=held_repeat,restart_choice=restart,actual_repeat_choice=actual_repeat,
+                             metadata_only_changes_choice=held_repeat != restart))
+        context_unchanged &= all(cache.version == versions[(kind,key)] for kind,mapping in
+                                 (("kv",work.ctx.kv),("swa",work.ctx.swa),("gdn",work.ctx.gdn)) for key,cache in mapping.items())
+        state = model.step(x[:,token],state,compatibility)["state"]
+    if not context_unchanged:
+        raise RuntimeError("In-flight profile changed context versions")
+    return dict(scope="real-bank teacher-state metadata dependence; no optimizer or causal task-loss claim",
+                context_versions_unchanged=context_unchanged,rows=rows,
+                metadata_choice_changes=sum(row["metadata_only_changes_choice"] for row in rows),
+                observations=len(rows))
 
 
 @torch.no_grad()
