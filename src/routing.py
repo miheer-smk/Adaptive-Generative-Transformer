@@ -108,11 +108,10 @@ def st_gumbel_action(
 
     # Use log(pi) as specified by the ST-Gumbel formulation.
     # Invalid actions remain structurally invalid.
-    log_probs = torch.where(
-        mask,
-        torch.log(probs.clamp_min(eps)),
-        torch.zeros_like(probs),
-    )
+    # Stable log(pi), with illegal actions excluded from the relaxed
+    # normalization as well as from the hard categorical distribution.
+    # Taking log of clamped probabilities would distort small legal pi.
+    log_probs = F.log_softmax(masked_logits, dim=-1)
 
     relaxed = F.softmax(
         (log_probs + gumbel) / tau,

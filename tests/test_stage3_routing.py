@@ -5,6 +5,31 @@ import pytest
 from src.routing import st_gumbel_action, st_gumbel_successor_mix
 
 
+def test_masked_st_gumbel_matches_legal_categorical_gradient(monkeypatch):
+    # Fixed noise exposes the exact backward distribution, including a
+    # low-probability legal action that must not be probability-clamped.
+    uniform = torch.tensor([[0.2, 0.9, 0.7, 0.4]], dtype=torch.float64)
+    monkeypatch.setattr(torch, "rand_like", lambda x: uniform.to(x))
+    logits = torch.tensor([[0.5, 100.0, -40.0, 1.0]],
+                          dtype=torch.float64, requires_grad=True)
+    mask = torch.tensor([[True, False, True, True]])
+    costs = torch.tensor([[1.0, 9.0, -2.0, 3.0]], dtype=torch.float64)
+    action, _ = st_gumbel_action(logits, mask, tau=2.0)
+    actual_grad, = torch.autograd.grad((action * costs).sum(), logits)
+
+    reference_logits = logits.detach().clone().requires_grad_(True)
+    gumbel = -torch.log(-torch.log(uniform))
+    relaxed = torch.softmax(
+        (reference_logits.masked_fill(~mask, float("-inf")) + gumbel) / 2.0,
+        dim=-1,
+    )
+    expected_grad, = torch.autograd.grad((relaxed * costs).sum(), reference_logits)
+    assert torch.equal(action.detach(), torch.nn.functional.one_hot(
+        relaxed.argmax(-1), 4).to(action))
+    torch.testing.assert_close(actual_grad, expected_grad, rtol=1e-10, atol=1e-12)
+    assert actual_grad[0, 1] == 0
+
+
 def test_st_gumbel_forward_is_hard_one_hot():
     torch.manual_seed(1234)
 
