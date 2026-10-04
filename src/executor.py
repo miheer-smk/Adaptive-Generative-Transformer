@@ -444,6 +444,16 @@ class AdaptiveExecutor:
 
             action_logits = controller_out["logits"]
 
+            # Source-aligned legality mask for the current routing state.
+            # The differentiable training primitive rebuilds its own mask;
+            # this copy is required by deterministic inference.
+            mask = build_execution_mask(
+                pointer=pointer,
+                execution_count=execution_count,
+                just_restarted=just_restarted,
+                num_blocks=num_blocks,
+            ).to(device=action_logits.device)
+
             if training:
                 # Training path: exhaustive successor construction is required
                 # so the ST-Gumbel relaxed backward path can differentiate
@@ -467,23 +477,15 @@ class AdaptiveExecutor:
                 )
 
             else:
-                # Deterministic inference path: only the selected legal
-                # successor is executed. Exhaustive candidate construction is
-                # unnecessary when no routing gradient is required.
-                full_mask = build_execution_mask(
-                    pointer=pointer,
-                    execution_count=execution_count,
-                    just_restarted=just_restarted,
-                    num_blocks=num_blocks,
-                ).to(device=action_logits.device)
-
-                # Fixed-depth Stage-3 inference has no learned HALT
-                # successor. Therefore deterministic routing selects only
-                # from the N+2 successor actions:
-                #   ADVANCE(0..N-1), REPEAT, RESTART
-                # HALT is intentionally excluded.
+                # Deterministic Stage-3 inference.
+                #
+                # HALT is a Stage-4 adaptive-depth action and therefore
+                # must not participate in fixed-depth successor selection.
+                # Only the N+2 successor actions are considered:
+                #   ADVANCE(0..N-1), REPEAT, RESTART.
                 successor_count = num_blocks + 2
-                successor_mask = full_mask[:successor_count]
+
+                successor_mask = mask[:successor_count]
 
                 masked_logits = apply_action_mask(
                     action_logits[:, :successor_count],
