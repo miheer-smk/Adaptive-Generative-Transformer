@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+import argparse
 import sys
 from pathlib import Path
 
@@ -17,7 +18,7 @@ from src.masks import apply_action_mask, build_execution_mask
 
 
 CKPT = Path("experiments/runs/stage1_parity_seed3305_best.pt")
-OUT = Path("experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt")
+OUT = Path("experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt")
 
 
 def set_seed(seed: int) -> None:
@@ -28,7 +29,13 @@ def set_seed(seed: int) -> None:
 
 
 def main() -> None:
-    set_seed(3401)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seed", type=int, default=3401)
+    parser.add_argument("--steps", type=int, default=5000)
+    parser.add_argument("--output", type=Path, default=OUT)
+    args = parser.parse_args()
+    set_seed(args.seed)
+    torch.set_num_threads(4)
 
     device = torch.device(
         "cuda" if torch.cuda.is_available() else "cpu"
@@ -290,7 +297,7 @@ def main() -> None:
 
     batch_size = 1024
 
-    for step in range(1, 5001):
+    for step in range(1, args.steps + 1):
         idx = torch.randint(
             low=0,
             high=n,
@@ -331,7 +338,7 @@ def main() -> None:
 
         optimizer.step()
 
-        if step == 1 or step % 200 == 0:
+        if step == 1 or step % 500 == 0:
             with torch.no_grad():
                 pred = masked_logits.argmax(dim=-1)
                 acc = (
@@ -413,16 +420,14 @@ def main() -> None:
             x_t=route_batch.x[:, t, :],
             state=state,
             C_prev=C_prev,
-            budget=torch.tensor(
-                [[float(t), 8.0]],
-                device=device,
-                dtype=torch.float32,
-            ),
+            budget=torch.zeros(1, 2, device=device),
             tau=1.0,
             training=False,
         )
 
         state = out["state"]
+        assert out["execution_count"] == 8
+        assert len(out["action_history"]) == 8
         actual_route.append(out["action_history"])
 
     print("\n=== EXECUTOR ROUTE CHECK ===")
@@ -481,44 +486,36 @@ def main() -> None:
         ("ADVANCE", 7),
     ]
 
-    def exact_route_for_token(x_token, token_index, sequence_length, split):
+    @torch.no_grad()
+    def routes_for_sequence(x_sequence):
         state = model.initial_persistent_state(
             batch_size=1,
             device=device,
-            dtype=x_token.dtype,
+            dtype=x_sequence.dtype,
         )
 
         C_prev = torch.zeros(
             1,
             model.dim,
             device=device,
-            dtype=x_token.dtype,
+            dtype=x_sequence.dtype,
         )
 
-        # Reconstruct the persistent history up to the selected token.
-        # This keeps the held-out route test faithful to autoregressive state.
-        task_batch = task.make_fixed_set(
-            split=split,
-            length=sequence_length,
-            size=1,
-        )
-
-        for j in range(token_index + 1):
+        histories = []
+        for j in range(x_sequence.shape[1]):
             out = model.adaptive_differentiable_step(
-                x_t=task_batch.x[:, j, :],
+                x_t=x_sequence[:, j, :],
                 state=state,
                 C_prev=C_prev,
-                budget=torch.tensor(
-                    [[float(j), float(sequence_length)]],
-                    device=device,
-                    dtype=x_token.dtype,
-                ),
+                budget=torch.zeros(1, 2, device=device, dtype=x_sequence.dtype),
                 tau=1.0,
                 training=False,
             )
             state = out["state"]
+            assert out["execution_count"] == len(out["action_history"]) == 8
+            histories.append(out["action_history"])
 
-        return out["action_history"]
+        return histories
 
     heldout = {}
 
@@ -536,17 +533,9 @@ def main() -> None:
                 size=1,
             )
 
-            # Probe the final token so the persistent state includes the
-            # preceding token history.
-            history = exact_route_for_token(
-                probe.x[:, -1, :],
-                token_index=length - 1,
-                sequence_length=length,
-                split=split,
-            )
-
-            total_tokens += 1
-            recovered_tokens += int(history == expected_route)
+            histories = routes_for_sequence(probe.x)
+            total_tokens += len(histories)
+            recovered_tokens += sum(history == expected_route for history in histories)
 
         heldout[split] = {
             "recovered_tokens": recovered_tokens,
@@ -561,20 +550,24 @@ def main() -> None:
 
     torch.save(
         {
-            "seed": 3401,
+            "seed": args.seed,
             "dim": dim,
             "backbone_checkpoint": str(CKPT),
             "offline_route_accuracy": offline_acc,
             "controller_state_dict": model.controller.state_dict(),
             "route": expected,
+            "heldout": heldout,
+            "routing_decisions": 8,
+            "budget": "zeros",
+            "steps": args.steps,
         },
-        OUT,
+        args.output,
     )
 
     print("\n=== RESULT ===")
     print(f"offline_route_accuracy={offline_acc:.6f}")
-    print(f"saved={OUT}")
-    print("route_recovery=True")
+    print(f"saved={args.output}")
+    print(f"route_recovery={route_ok and all(v['exact_route_accuracy'] == 1.0 for v in heldout.values())}")
 
 
 if __name__ == "__main__":
