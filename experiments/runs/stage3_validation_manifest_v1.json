@@ -1,0 +1,84 @@
+{
+  "scope": "replicated Gate-C validation; Stage 3 remains open",
+  "implementation_head": "bd875684107a9a65817e8792f39635470911de41",
+  "branch": "research/stage3-routing-gate-c-audit",
+  "backbone": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "backbone_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+  "trainable_parameters": [
+    {
+      "name": "controller.norm_h.weight",
+      "numel": 64
+    },
+    {
+      "name": "controller.norm_memory_read.weight",
+      "numel": 64
+    },
+    {
+      "name": "controller.mlp.0.weight",
+      "numel": 101120
+    },
+    {
+      "name": "controller.mlp.0.bias",
+      "numel": 256
+    },
+    {
+      "name": "controller.mlp.2.weight",
+      "numel": 2816
+    },
+    {
+      "name": "controller.mlp.2.bias",
+      "numel": 11
+    }
+  ],
+  "source_sha256": {
+    "src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "src/executor.py": "218c90950ec27eab4a45a567bee14b11be0cfc78534123ae5b9e47cace7696ed",
+    "src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "experiments/diagnose_stage3_gradients.py": "2d22eb028571d22055a5e64f76231a5251292c962d12193bc1bece88b4873304",
+    "experiments/run_stage3_route_imitation.py": "592bcd9b5d9e2f2df1030318ff826c3c510a07589ab5ce7cc65be182121371f6",
+    "experiments/run_stage3_replication.py": "e98bd29e317d022cd141ad7433a6b2e97bfd9e37432f7ec20a6129dc36a283ec",
+    "experiments/run_stage3_variance_ablation.py": "4432ab13dabd66e1a01731fc504b8240c1826ff9fcbca925bc8a312a4c7d3ba1",
+    "experiments/stage3_measurements.py": "88399cd27e529d45715aeb75881c0d1856bd7840e5869670264cf59f04dbe8a9",
+    "experiments/evaluate_stage3_stochastic_continuation.py": "7f383d512550c79f256eb4bfb9c1e1ad2dd691b4288de769e38a3b884ce743e8"
+  },
+  "artifacts_sha256": {
+    "experiments/runs/stage3_gradient_diagnostics_3305_v1.json": "2c6923ff0e558113b1185e3c24337abab8461015ccb0fecba038154b2aedde00",
+    "experiments/runs/stage3_gradient_diagnostics_3305_v1.json.gz": "fcacdc6fac819b105b325c249472ca46c207edb2d49e36b6cbb870f16ee40681",
+    "experiments/runs/stage3_gradient_diagnostics_3305_v1.summary.json": "d0f89347871157a4f182cefd5959ee03c83a98fd239edf1eb86e07e06258c7cd",
+    "experiments/runs/stage3_gradient_short_imitation_3305_v1.json": "570e832b1a3e181ba7564126542b86452e9fdbad3923f30b0cb112189d1b6cc4",
+    "experiments/runs/stage3_gradient_short_imitation_3305_v1.json.gz": "ed586a4295a8eab33eb906736590911a5ff5de4bed3721800a4cdde936192589",
+    "experiments/runs/stage3_gradient_short_imitation_3305_v1.summary.json": "b10663238b3d459b1bb2169423990c1752c3cd288f93c138904fd83d34bf7145",
+    "experiments/runs/stage3_imitation_partial_3305_100_v1.json": "0c2660227a71b1b4c66ba4615936876d3889c83dae76bc511539db61c71ea30b",
+    "experiments/runs/stage3_imitation_partial_3306_100_v1.json": "0ad8cfbc0bc6fb3761ecb3c7f22ce1c64d081d8894e8f9c6f12fe4621fd30b23",
+    "experiments/runs/stage3_imitation_partial_3307_100_v1.json": "4f3aba09eaf4ec919440db2d9bc071264bf454fd5ba03a2e5ccd5095e4ea1138",
+    "experiments/runs/stage3_imitation_replication_3305_v1.json": "398e45a43174fe0feeae9eaa2d63236af20999cd5f76911a719d713d093df739",
+    "experiments/runs/stage3_imitation_replication_3306_v1.json": "b5d5a442d79afa13251c0b16fbad9eab550fe1cc671fda031935bf25281c2f92",
+    "experiments/runs/stage3_imitation_replication_3307_v1.json": "00512ab17aba837f53bbdfadc1e75e21cb693bd1cb3b72805c30d657434ef9e2",
+    "experiments/runs/stage3_metadata_credit_probe_v2.json": "4826ed7391eb892776d2c58d0d91d1f9d0345f00ff98b84c394beac7ce9bbdb9",
+    "experiments/runs/stage3_nominal_trajectory_probability_v1.json": "3e68ad10edfe1bbafa39873e3934dc005a4132b9f319e5361c0fd3c88d2bd7f1",
+    "experiments/runs/stage3_real_metadata_dependency_3305_v1.json": "fbcebcd88f1cde74effb57211b3d6344eb37723ca48469d4789260d589312ae2",
+    "experiments/runs/stage3_replication_3305_3307_100_v1.json": "d32e988558f7cfa3bc8e0a34e11c29e8acfb6aea25dc5f4839839719dcac3beb",
+    "experiments/runs/stage3_replication_3305_3307_100_v1.json.gz": "f22180cebc3fe836232ff92aa4d231a4e2557cec49cfa1e41d5683e79692b2a1",
+    "experiments/runs/stage3_replication_3305_3307_100_v1.summary.json": "1c9b783006cc65181a12965dd88c10c94a4b5e4b9ea6e72a797e90c9bd1fa397",
+    "experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json": "638506643b303ecd77e27e01c1b24e89c2cccbb0f103b8da0ca367184e24be5d",
+    "experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json.gz": "991508955a12a6a05bf828b96c22b8e3d8d69c926156043b6986a9fe997cb20e",
+    "experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.summary.json": "f337e4ec7150dbb995df80fabe9b6cc151b4e9fb8f0d4ae261b499ea03a25d5d",
+    "experiments/runs/stage3_stochastic_continuation_3305_3307_v1.json": "89e91bbdaf0f47a16aa7eb93e186e3cdb553f91f7970b1deea4e65444ba0e22e",
+    "experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json": "74c9c3ff559a4d511e5e89225e12182dbc976f42c48b2c625ab824e6e84e625c",
+    "experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json.gz": "df937e72e45f20ec3e2ec98f34f792a1519681c8e9662dada505db8aa1f17a69",
+    "experiments/runs/stage3_variance_ablation_3305_3307_20_v1.summary.json": "c8e8bc71918afb9052684f435429c7768e2924953b7831d5c21fe6b2da72d026"
+  },
+  "tests": {
+    "worktree_gate_c": 42,
+    "committed_full_passed": 130,
+    "committed_full_skipped": 1,
+    "committed_full_checkpoint": "bd87568",
+    "worktree_full_passed": 134,
+    "worktree_full_skipped": 1,
+    "worktree_full_failed": 2
+  },
+  "note": "src/executor.py includes preserved uncommitted Stage-4 addition; no Stage-4 change is committed in this validation work"
+}

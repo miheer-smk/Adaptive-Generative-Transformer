@@ -23,7 +23,10 @@ old controller weights. The fresh current controller alone is optimized.
 Pilot: D64, bank size eight, 395 -> 256 -> 11 controller, zero budget.
 Dataset: 8,320 explicitly aligned TOKEN -> BLOCK rows, from the training
 length range 4–16. Optimizer: AdamW, lr=1e-3, weight_decay=0, minibatch
-1,024. Real evaluation uses exactly eight decisions and training=False.
+1,024. Supervised classification uses the full source-legal action mask,
+with HALT only as a distractor class and no HALT target. Fixed-depth task
+training and successor mixing exclude HALT. Real evaluation uses exactly
+eight decisions and training=False.
 
 | Seed | Supervised updates | Offline accuracy | Decisions 0–7 | Held-out validation exact routes | Held-out OOD exact routes |
 |---|---:|---:|---|---|---|
@@ -147,7 +150,11 @@ Focused Gate-C tests: 42 passed. Regression excluding two pre-existing
 uncommitted Stage-4 test files: 131 passed, 1 skipped. Full worktree
 regression: 134 passed, 1 skipped, 2 failed. Both failures remain HALT
 execution-count disagreements in unchanged uncommitted Stage-4 code.
-The full worktree is not green, and Stage 3 is not declared complete.
+The full worktree is not green. A separate clean git archive of committed
+checkpoint `bd87568` passes the full suite: 130 passed, 1 skipped. The
+worktree has one additional pre-existing Stage-3 test and five Stage-4
+tests; three of those Stage-4 tests pass and two fail. Stage 3 is not
+declared scientifically complete.
 git diff --check passes. CUDA experiments work despite the existing
 NumPy and GB10 capability warnings; no environment changes were made.
 
@@ -169,6 +176,14 @@ across seeds, not uncertainty over the population of Task-A sequences.
 | Fresh | 3306 | 0.31250 | 0.55769 | 0.55769 | 0.53125 |
 | Fresh | 3307 | 0.50000 | 0.38462 | 0.48077 | 0.51563 |
 | Strong imitation | all three | 1.00000 | 1.00000 | 1.00000 | 1.00000 |
+
+The shared evaluation draws are not class-balanced: validation contains
+33/52 positive targets, independent ID 29/52, and OOD 31/64. Their
+constant-majority baselines are 0.63462, 0.55769, and 0.51563 respectively.
+These controls are in the saved summary; the small evaluation sets support
+no statistical claim of performance above random or majority prediction.
+The seeds replicate controller optimization on one common frozen backbone,
+not independent backbone training or Gate-A replication.
 
 Fresh-controller validation accuracy is 0.43590 ± 0.10591 and CE
 1.43238 ± 0.40786. Independent ID accuracy is 0.49359 ± 0.05875;
@@ -283,3 +298,61 @@ or old checkpoints enter these commits. Current authoritative backbone
 remains the Stage-1 seed3305 checkpoint. Older route-imitation artifacts
 are superseded only by independently reproduced, fingerprinted new files;
 they remain preserved and are not used as current evidence.
+
+## Exact next scientific milestone
+
+The matched sampling-variance pilot is complete and supplies no evidence
+of a route-discovery improvement. Assess its limitation alongside the
+metadata-credit counterexample. Canonical recoverability is established;
+useful task-loss route discovery is not. Deterministic retention after
+supervised initialization is insufficient because no-update controls
+already achieve it, and the paired stochastic probe shows no improvement.
+
+The next source-aligned research decision concerns credit through hard
+pointer/mask dynamics. Any proposal that relaxes this metadata or replaces
+the estimator changes the locked formulation and requires an explicit
+specification decision before implementation. Until that decision, valid
+work consists of targeted diagnostics and explicitly identified controlled
+optimization studies using the existing primitive. Neither these failures
+nor imitation success authorizes Stage 4, D768, CLRS, or enwik8.
+
+## Matched sampling-variance pilot
+
+Implementation `3e2e589`; fresh frozen-backbone controllers, seeds
+3305–3307, 20 updates each, one versus eight independent ST samples per
+update. The eight-draw arm averages gradients of the same existing task
+CE and ST primitive before one AdamW update; a focused real-model test
+checks that averaging equals the independently measured gradients.
+Backbone, tau=2, lr=1e-4, zero budget, eight decisions, and input sequences
+are unchanged. Arms share the first draw of each update, and this pilot
+uses a newly documented per-update noise rule, distinct from the earlier
+100-update experiment. It is data/update matched and not compute matched.
+
+| Seed | Draws/update | Validation accuracy | Independent ID accuracy | OOD accuracy |
+|---|---:|---:|---:|---:|
+| 3305 | 1 | 0.50000 | 0.46154 | 0.56250 |
+| 3305 | 8 | 0.38462 | 0.42308 | 0.48438 |
+| 3306 | 1 | 0.63462 | 0.55769 | 0.48438 |
+| 3306 | 8 | 0.63462 | 0.57692 | 0.48438 |
+| 3307 | 1 | 0.38462 | 0.46154 | 0.51563 |
+| 3307 | 8 | 0.44231 | 0.50000 | 0.51563 |
+
+One-draw OOD accuracy is 0.52083 ± 0.03932, CE 1.84282 ± 1.26822;
+eight-draw OOD accuracy is 0.49479 ± 0.01804, CE 1.99761 ± 1.23026.
+All six runs are finite, preserve frozen weights, and have zero canonical
+sampled training routes and zero canonical endpoint routes. Candidate
+calls are 15,120/120,960, 15,912/127,296, 12,240/97,920 by seed and arm:
+exactly eight times as many for eight samples. At seed3305's first update,
+individual gradient norms range from 0.000144 to 103.395, with averaged
+norm 11.984 and RMS sample dispersion 34.807. This demonstrates variability
+but not an unbiased task-objective gradient.
+
+No useful routing improvement is established by this 20-update pilot.
+It does not eliminate variance as a contributor or rule out a longer
+averaging protocol. Averaging retains the hard-metadata credit limitation;
+no new estimator, route penalty, or architectural change is introduced.
+The lossless record is `stage3_variance_ablation_3305_3307_20_v1.json.gz`
+and its readable `.summary.json`. This pilot preserves seeded data/noise
+and traces; unlike the main 100-update trials, it does not save endpoint
+controller weights, so an independent endpoint reproduction requires
+rerunning the recorded 20 updates.
