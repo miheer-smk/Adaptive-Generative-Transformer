@@ -1,0 +1,607 @@
+{
+  "assumption": "Nominal product of masked canonical-action probabilities under ideal independent Gumbel draws; no optimizer updates",
+  "seed": 3305,
+  "length": 8,
+  "arms": {
+    "random": {
+      "rows": 64,
+      "max_absolute_difference": {
+        "h": 17.180723190307617,
+        "memory_read": 0.04569700360298157,
+        "memory_mean": 0.09263962507247925,
+        "pointer_one_hot": 1.0,
+        "budget": 0.0
+      },
+      "exact_alignment": false,
+      "minimum_teacher_action_probability": 0.08806896209716797,
+      "log_nominal_teacher_trajectory_probability": -116.11620616912842,
+      "nominal_teacher_trajectory_probability": 3.72711163676676e-51,
+      "nominal_canonical_token_probabilities": [
+        5.424929407571285e-07,
+        7.03572055060902e-07,
+        4.981802741242689e-07,
+        4.842409854640436e-07,
+        4.1952705436092456e-07,
+        4.821759233316361e-07,
+        4.769686929404438e-07,
+        4.195331558109887e-07
+      ],
+      "routes": {
+        "tokens": 8,
+        "decisions": 64,
+        "exact_tokens": 0,
+        "exact_route_fraction": 0.0,
+        "actions": {
+          "('ADVANCE', 3)": 9,
+          "('RESTART', None)": 18,
+          "('ADVANCE', 2)": 20,
+          "('ADVANCE', 5)": 7,
+          "('REPEAT', 5)": 6,
+          "('ADVANCE', 7)": 4
+        },
+        "per_decision_actions": [
+          {
+            "('ADVANCE', 3)": 1,
+            "('ADVANCE', 2)": 7
+          },
+          {
+            "('RESTART', None)": 2,
+            "('ADVANCE', 5)": 3,
+            "('ADVANCE', 7)": 3
+          },
+          {
+            "('ADVANCE', 3)": 1,
+            "('REPEAT', 5)": 1,
+            "('RESTART', None)": 5,
+            "('ADVANCE', 2)": 1
+          },
+          {
+            "('RESTART', None)": 2,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 2)": 5
+          },
+          {
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 5)": 2,
+            "('ADVANCE', 2)": 1
+          },
+          {
+            "('RESTART', None)": 6,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 7)": 1
+          },
+          {
+            "('ADVANCE', 3)": 1,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 2)": 5,
+            "('RESTART', None)": 1
+          },
+          {
+            "('RESTART', None)": 2,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 5)": 2,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 3)": 2
+          }
+        ],
+        "confusion": [
+          [
+            0,
+            0,
+            7,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            3,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            4,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            6,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            2,
+            0,
+            2,
+            0,
+            0,
+            1,
+            2,
+            0
+          ]
+        ],
+        "incorrect_decisions": 63,
+        "illegal_decisions": 0,
+        "restart_fraction_of_errors": 0.2857142857142857,
+        "restart_rate": 0.28125,
+        "repeat_rate": 0.09375,
+        "selected_block_calls": 46,
+        "selected_block_calls_per_token": 5.75,
+        "unique_blocks_per_token": 2.125,
+        "unique_blocks_histogram": {
+          "1": 2,
+          "2": 3,
+          "3": 3
+        },
+        "first_error_decision": {
+          "0": 8
+        },
+        "route_histogram": {
+          "('ADVANCE', 3) | ('RESTART', None) | ('ADVANCE', 3) | ('RESTART', None) | ('ADVANCE', 3) | ('RESTART', None) | ('ADVANCE', 3) | ('RESTART', None)": 1,
+          "('ADVANCE', 2) | ('ADVANCE', 5) | ('REPEAT', 5) | ('REPEAT', 5) | ('REPEAT', 5) | ('REPEAT', 5) | ('REPEAT', 5) | ('REPEAT', 5)": 1,
+          "('ADVANCE', 2) | ('ADVANCE', 5) | ('RESTART', None) | ('ADVANCE', 2) | ('ADVANCE', 5) | ('RESTART', None) | ('ADVANCE', 2) | ('ADVANCE', 5)": 2,
+          "('ADVANCE', 2) | ('ADVANCE', 7) | ('RESTART', None) | ('ADVANCE', 2) | ('ADVANCE', 3) | ('ADVANCE', 7) | ('RESTART', None) | ('ADVANCE', 2)": 1,
+          "('ADVANCE', 2) | ('ADVANCE', 7) | ('RESTART', None) | ('ADVANCE', 2) | ('ADVANCE', 3) | ('RESTART', None) | ('ADVANCE', 2) | ('ADVANCE', 3)": 2,
+          "('ADVANCE', 2) | ('RESTART', None) | ('ADVANCE', 2) | ('RESTART', None) | ('ADVANCE', 2) | ('RESTART', None) | ('ADVANCE', 2) | ('RESTART', None)": 1
+        }
+      },
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "controller_parameter_count": 104331,
+      "model_parameter_count": 1934324
+    },
+    "strong_imitation": {
+      "rows": 64,
+      "max_absolute_difference": {
+        "h": 0.0,
+        "memory_read": 0.0,
+        "memory_mean": 0.0,
+        "pointer_one_hot": 0.0,
+        "budget": 0.0
+      },
+      "exact_alignment": true,
+      "minimum_teacher_action_probability": 0.9999899864196777,
+      "log_nominal_teacher_trajectory_probability": -0.00023102700289001632,
+      "nominal_teacher_trajectory_probability": 0.999768999681793,
+      "nominal_canonical_token_probabilities": [
+        0.9999632843024413,
+        0.9999984502806001,
+        0.9999907017244991,
+        0.9999660260057774,
+        0.9999686485131177,
+        0.9999799730666136,
+        0.9999396821569692,
+        0.9999622114678971
+      ],
+      "routes": {
+        "tokens": 8,
+        "decisions": 64,
+        "exact_tokens": 8,
+        "exact_route_fraction": 1.0,
+        "actions": {
+          "('ADVANCE', 0)": 8,
+          "('ADVANCE', 1)": 8,
+          "('ADVANCE', 2)": 8,
+          "('ADVANCE', 3)": 8,
+          "('ADVANCE', 4)": 8,
+          "('ADVANCE', 5)": 8,
+          "('ADVANCE', 6)": 8,
+          "('ADVANCE', 7)": 8
+        },
+        "per_decision_actions": [
+          {
+            "('ADVANCE', 0)": 8
+          },
+          {
+            "('ADVANCE', 1)": 8
+          },
+          {
+            "('ADVANCE', 2)": 8
+          },
+          {
+            "('ADVANCE', 3)": 8
+          },
+          {
+            "('ADVANCE', 4)": 8
+          },
+          {
+            "('ADVANCE', 5)": 8
+          },
+          {
+            "('ADVANCE', 6)": 8
+          },
+          {
+            "('ADVANCE', 7)": 8
+          }
+        ],
+        "confusion": [
+          [
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0
+          ]
+        ],
+        "incorrect_decisions": 0,
+        "illegal_decisions": 0,
+        "restart_fraction_of_errors": 0.0,
+        "restart_rate": 0.0,
+        "repeat_rate": 0.0,
+        "selected_block_calls": 64,
+        "selected_block_calls_per_token": 8.0,
+        "unique_blocks_per_token": 8.0,
+        "unique_blocks_histogram": {
+          "8": 8
+        },
+        "first_error_decision": {},
+        "route_histogram": {
+          "('ADVANCE', 0) | ('ADVANCE', 1) | ('ADVANCE', 2) | ('ADVANCE', 3) | ('ADVANCE', 4) | ('ADVANCE', 5) | ('ADVANCE', 6) | ('ADVANCE', 7)": 8
+        }
+      },
+      "checkpoint": "experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt",
+      "checkpoint_sha256": "f6af69af1188e877c390ba00863b5887ea3de4b2f2f9c795dfe9c68366f12745",
+      "controller_parameter_count": 104331,
+      "model_parameter_count": 1934324
+    },
+    "short_imitation": {
+      "rows": 64,
+      "max_absolute_difference": {
+        "h": 0.0,
+        "memory_read": 0.0,
+        "memory_mean": 0.0,
+        "pointer_one_hot": 0.0,
+        "budget": 0.0
+      },
+      "exact_alignment": true,
+      "minimum_teacher_action_probability": 0.9706084728240967,
+      "log_nominal_teacher_trajectory_probability": -0.5383317144587636,
+      "nominal_teacher_trajectory_probability": 0.5837212542544207,
+      "nominal_canonical_token_probabilities": [
+        0.8223279255066925,
+        0.9818629322545844,
+        0.9666473814827831,
+        0.9477939067915575,
+        0.9438717118617342,
+        0.9485233913571853,
+        0.936767441201294,
+        0.9408812390059464
+      ],
+      "routes": {
+        "tokens": 8,
+        "decisions": 64,
+        "exact_tokens": 8,
+        "exact_route_fraction": 1.0,
+        "actions": {
+          "('ADVANCE', 0)": 8,
+          "('ADVANCE', 1)": 8,
+          "('ADVANCE', 2)": 8,
+          "('ADVANCE', 3)": 8,
+          "('ADVANCE', 4)": 8,
+          "('ADVANCE', 5)": 8,
+          "('ADVANCE', 6)": 8,
+          "('ADVANCE', 7)": 8
+        },
+        "per_decision_actions": [
+          {
+            "('ADVANCE', 0)": 8
+          },
+          {
+            "('ADVANCE', 1)": 8
+          },
+          {
+            "('ADVANCE', 2)": 8
+          },
+          {
+            "('ADVANCE', 3)": 8
+          },
+          {
+            "('ADVANCE', 4)": 8
+          },
+          {
+            "('ADVANCE', 5)": 8
+          },
+          {
+            "('ADVANCE', 6)": 8
+          },
+          {
+            "('ADVANCE', 7)": 8
+          }
+        ],
+        "confusion": [
+          [
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0
+          ]
+        ],
+        "incorrect_decisions": 0,
+        "illegal_decisions": 0,
+        "restart_fraction_of_errors": 0.0,
+        "restart_rate": 0.0,
+        "repeat_rate": 0.0,
+        "selected_block_calls": 64,
+        "selected_block_calls_per_token": 8.0,
+        "unique_blocks_per_token": 8.0,
+        "unique_blocks_histogram": {
+          "8": 8
+        },
+        "first_error_decision": {},
+        "route_histogram": {
+          "('ADVANCE', 0) | ('ADVANCE', 1) | ('ADVANCE', 2) | ('ADVANCE', 3) | ('ADVANCE', 4) | ('ADVANCE', 5) | ('ADVANCE', 6) | ('ADVANCE', 7)": 8
+        }
+      },
+      "checkpoint": "experiments/runs/stage3_imitation_partial_3305_100_v1.pt",
+      "checkpoint_sha256": "7e174a70e36c5b926c13ce84f09d5810d1cdb1220c5c04691d7c1771cb20745b",
+      "controller_parameter_count": 104331,
+      "model_parameter_count": 1934324
+    }
+  }
+}

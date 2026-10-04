@@ -1,0 +1,186 @@
+{
+  "seed": 3305,
+  "dim": 64,
+  "backbone_checkpoint": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "offline_route_accuracy": 1.0,
+  "route": [
+    [
+      "ADVANCE",
+      0
+    ],
+    [
+      "ADVANCE",
+      1
+    ],
+    [
+      "ADVANCE",
+      2
+    ],
+    [
+      "ADVANCE",
+      3
+    ],
+    [
+      "ADVANCE",
+      4
+    ],
+    [
+      "ADVANCE",
+      5
+    ],
+    [
+      "ADVANCE",
+      6
+    ],
+    [
+      "ADVANCE",
+      7
+    ]
+  ],
+  "heldout": {
+    "val": {
+      "recovered_tokens": 130,
+      "total_tokens": 130,
+      "exact_route_accuracy": 1.0
+    },
+    "test": {
+      "recovered_tokens": 392,
+      "total_tokens": 392,
+      "exact_route_accuracy": 1.0
+    }
+  },
+  "routing_decisions": 8,
+  "budget": "zeros",
+  "steps": 5000,
+  "backbone_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+  "offline_breakdown": {
+    "confusion": [
+      [
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1040,
+        0,
+        0,
+        0
+      ]
+    ],
+    "incorrect_decisions": 0,
+    "restart_errors": 0,
+    "illegal_predictions": 0,
+    "restart_fraction_of_errors": 0.0
+  },
+  "decision_accuracy": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "route_examples": 8320,
+  "batch_size": 1024,
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "initial_probe_exact": true,
+  "route_recovery": true,
+  "checkpoint": "experiments/runs/stage3_imitation_replication_3305_v1.pt",
+  "checkpoint_sha256": "259e2b86786c6cd037e3ba0db71d91fd05cdb76753bdb462be414bd1b9400df3"
+}

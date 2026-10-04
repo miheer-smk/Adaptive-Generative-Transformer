@@ -1,0 +1,127 @@
+{
+  "scope": "eight-block toy identity/additive bank, eight fixed decisions; no model redesign",
+  "expected_gradient_scope": "ideal categorical draw at the branch only; all other noise draws held fixed",
+  "results": [
+    {
+      "branch_logits": [
+        1.0,
+        0.0
+      ],
+      "terminal": [
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "loss": 1.0,
+      "branch_gradient": [
+        0.0,
+        0.0
+      ],
+      "branch_probabilities": [
+        0.7310585786300049,
+        0.26894142136999516
+      ],
+      "expected_loss_resampling_branch_only": 2690.1452722785816,
+      "expected_categorical_gradient_resampling_branch_only": [
+        -1965.9227204815775,
+        1965.9227204815772
+      ],
+      "history": [
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "ADVANCE",
+          7
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ]
+      ]
+    },
+    {
+      "branch_logits": [
+        0.0,
+        1.0
+      ],
+      "terminal": [
+        [
+          100.0,
+          100.0
+        ]
+      ],
+      "loss": 10000.0,
+      "branch_gradient": [
+        0.0,
+        0.0
+      ],
+      "branch_probabilities": [
+        0.26894142136999516,
+        0.7310585786300049
+      ],
+      "expected_loss_resampling_branch_only": 7310.854727721419,
+      "expected_categorical_gradient_resampling_branch_only": [
+        -1965.9227204815775,
+        1965.9227204815768
+      ],
+      "history": [
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          0
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ]
+      ]
+    }
+  ],
+  "conclusion": "hidden-state ST mixing cannot credit a pure pointer/mask effect when candidate h states coincide"
+}

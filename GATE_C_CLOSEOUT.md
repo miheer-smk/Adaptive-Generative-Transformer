@@ -1,5 +1,9 @@
 # AGT-v3 Gate C Closeout
 
+> Historical infrastructure checkpoint. Current replicated experiments and
+> unresolved scientific limitations are recorded in [STAGE3_VALIDATION_RECORD.md](STAGE3_VALIDATION_RECORD.md).
+> Stage 3 is not scientifically closed.
+
 ## Status
 
 Gate C implementation is complete.
