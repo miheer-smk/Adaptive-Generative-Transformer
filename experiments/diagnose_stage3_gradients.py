@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -54,6 +55,7 @@ def check_observation_alignment(model, x):
 
     observed = []
     probabilities = []
+    log_probabilities = []
 
     def controller_hook(module, args, kwargs):
         observed.append({key: kwargs[key].detach().clone() for key in expected[0]})
@@ -72,9 +74,14 @@ def check_observation_alignment(model, x):
         mask = build_execution_mask(max(decision-1, 0), decision, False, 8)[:10].to(x.device)
         probs = torch.softmax(logits.masked_fill(~mask, -torch.inf), -1)
         probabilities.append(probs[0, decision].item())
+        log_probabilities.append(F.log_softmax(logits.masked_fill(~mask, -torch.inf), -1)[0, decision].item())
     return dict(rows=len(expected), max_absolute_difference=differences,
                 exact_alignment=all(value == 0 for value in differences.values()),
                 minimum_teacher_action_probability=min(probabilities),
+                log_nominal_teacher_trajectory_probability=sum(log_probabilities),
+                nominal_teacher_trajectory_probability=math.exp(sum(log_probabilities)),
+                nominal_canonical_token_probabilities=[math.exp(sum(log_probabilities[i:i+8]))
+                                                       for i in range(0, len(log_probabilities), 8)],
                 routes=route_metrics(histories))
 
 
@@ -262,7 +269,7 @@ def main():
                                    gradient_dispersion_l2=(vectors-vectors.mean(0)).square().mean(0).sum().sqrt().item(),
                                    backbone_structural_probe=probe)
         print(arm, report["arms"][arm]["controller_gradient_l2_mean"], flush=True)
-    # Independent route interventions on a balanced fixed-size sample.
+    # Independent route interventions with equal sample counts per length.
     task = TaskAParity(64, device)
     cases = [task.make_fixed_set("val", length, 8) for length in (4,8,12,16)]
     model = load_model(3305, device)

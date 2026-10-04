@@ -234,7 +234,7 @@ def controller_gradient_coverage(model: AGTv3):
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--steps", type=int, default=5)
-    parser.add_argument("--batch-size", type=int, default=2)
+    parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--tau", type=float, default=1.0)
     parser.add_argument("--seed", type=int, default=3401)
@@ -242,12 +242,15 @@ def main() -> None:
         "--controller-checkpoint",
         type=Path,
         default=None,
+        help="optional Stage-3 controller-only checkpoint",
     )
     parser.add_argument(
         "--device",
         default="cuda" if torch.cuda.is_available() else "cpu",
     )
     args = parser.parse_args()
+    if args.batch_size != 1:
+        parser.error("The fixed-depth differentiable executor requires batch size 1")
 
     set_seed(args.seed)
     torch.set_num_threads(4)
@@ -349,6 +352,7 @@ def main() -> None:
 
     for parameter in model.controller.parameters():
         parameter.requires_grad_(True)
+
 
     trainable = list(model.controller.parameters())
 

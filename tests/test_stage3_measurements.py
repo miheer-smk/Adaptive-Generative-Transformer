@@ -55,3 +55,4 @@ def test_teacher_observation_tuple_matches_real_executor(monkeypatch):
     assert result["rows"] == 16
     assert result["exact_alignment"]
     assert result["routes"]["exact_tokens"] == 2
+    assert result["nominal_teacher_trajectory_probability"] == 1.0

@@ -6,6 +6,7 @@ import torch
 from experiments.diagnose_stage3_gradients import ScriptedSweep
 from experiments.run_stage3_replication import main, measured_evaluation, summarize
 from src.agt import AGTv3
+from experiments.run_stage3_taskA_controller import main as pilot_main
 
 
 def test_compute_measurement_counts_only_inference_selected_blocks():
@@ -41,3 +42,11 @@ def test_existing_run_is_rejected_before_training(tmp_path, monkeypatch):
         main()
     assert error.value.code == 2
     assert output.read_text() == "preserve me"
+
+
+def test_pilot_rejects_unsupported_batch_before_loading_checkpoint(monkeypatch):
+    monkeypatch.setattr("sys.argv", ["pilot", "--batch-size", "2"])
+    monkeypatch.setattr(torch, "load", lambda *args, **kwargs: pytest.fail("Checkpoint loaded before validation"))
+    with pytest.raises(SystemExit) as error:
+        pilot_main()
+    assert error.value.code == 2
