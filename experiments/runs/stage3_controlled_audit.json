@@ -1,0 +1,3551 @@
+{
+  "scope": "paired diagnostic; warmstart is supervised route imitation",
+  "backbone": "experiments/runs/stage1_parity_seed3305_best.pt",
+  "warmstart": "experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt",
+  "steps": 20,
+  "lr": 0.0001,
+  "tau": 2.0,
+  "budget": "zeros",
+  "routing_decisions": 8,
+  "per_length": 4,
+  "runs": [
+    {
+      "seed": 3401,
+      "initialization": "random",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.5,
+          "ce": 1.9733338948370567,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.427333831787109,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.8307692307692308,
+            0.0,
+            0.0,
+            0.0019230769230769232,
+            0.12692307692307692,
+            0.028846153846153848,
+            0.0038461538461538464,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 295,
+            "('RESTART', None)": 766,
+            "('ADVANCE', 0)": 805,
+            "('ADVANCE', 5)": 404,
+            "('ADVANCE', 3)": 585,
+            "('REPEAT', 5)": 455,
+            "('ADVANCE', 6)": 134,
+            "('REPEAT', 6)": 459,
+            "('REPEAT', 3)": 206,
+            "('REPEAT', 4)": 33,
+            "('ADVANCE', 2)": 18
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.375,
+          "ce": 2.554662291673594,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 7.468609809875488,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.8686224489795918,
+            0.0,
+            0.0,
+            0.021045918367346938,
+            0.05038265306122449,
+            0.03316326530612245,
+            0.008928571428571428,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 488,
+            "('RESTART', None)": 1358,
+            "('ADVANCE', 0)": 1889,
+            "('ADVANCE', 3)": 1937,
+            "('ADVANCE', 5)": 776,
+            "('ADVANCE', 6)": 581,
+            "('REPEAT', 6)": 2078,
+            "('REPEAT', 3)": 1526,
+            "('REPEAT', 5)": 1465,
+            "('REPEAT', 4)": 187,
+            "('ADVANCE', 2)": 259
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.5,
+          "ce": 2.463274933335085,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.649776935577393,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.8557692307692307,
+            0.0,
+            0.0,
+            0.0057692307692307696,
+            0.1,
+            0.0,
+            0.028846153846153848,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 229,
+            "('RESTART', None)": 738,
+            "('ADVANCE', 0)": 841,
+            "('ADVANCE', 3)": 430,
+            "('ADVANCE', 5)": 14,
+            "('REPEAT', 3)": 176,
+            "('ADVANCE', 7)": 213,
+            "('REPEAT', 7)": 1195,
+            "('REPEAT', 5)": 36,
+            "('ADVANCE', 6)": 75,
+            "('REPEAT', 6)": 155,
+            "('ADVANCE', 2)": 58
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.578125,
+          "ce": 2.448852527591953,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 7.651296615600586,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.8667091836734694,
+            0.0,
+            0.0,
+            0.006377551020408163,
+            0.04081632653061224,
+            0.0,
+            0.019770408163265307,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 283,
+            "('RESTART', None)": 1219,
+            "('ADVANCE', 0)": 1943,
+            "('ADVANCE', 3)": 1159,
+            "('ADVANCE', 6)": 313,
+            "('REPEAT', 6)": 776,
+            "('REPEAT', 3)": 1253,
+            "('ADVANCE', 5)": 27,
+            "('REPEAT', 5)": 51,
+            "('ADVANCE', 7)": 808,
+            "('REPEAT', 7)": 4391,
+            "('ADVANCE', 2)": 321
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 5,
+          "ce": 3.3830649852752686,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 2,
+            "('REPEAT', 0)": 2,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 6,
+            "('RESTART', None)": 8,
+            "('ADVANCE', 3)": 2,
+            "('ADVANCE', 4)": 2,
+            "('ADVANCE', 5)": 2,
+            "('REPEAT', 6)": 2,
+            "('REPEAT', 7)": 7,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 1)": 1,
+            "('REPEAT', 4)": 1
+          }
+        },
+        {
+          "step": 2,
+          "length": 12,
+          "ce": 6.226081848144531,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 7,
+            "('RESTART', None)": 18,
+            "('ADVANCE', 6)": 7,
+            "('REPEAT', 6)": 6,
+            "('ADVANCE', 7)": 15,
+            "('REPEAT', 7)": 8,
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 4)": 5,
+            "('REPEAT', 5)": 1,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 3,
+          "length": 7,
+          "ce": 6.68004846572876,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 5)": 5,
+            "('REPEAT', 5)": 1,
+            "('RESTART', None)": 9,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 2)": 3,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 7,
+            "('REPEAT', 7)": 11,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 6)": 1,
+            "('REPEAT', 4)": 1,
+            "('ADVANCE', 0)": 1,
+            "('ADVANCE', 3)": 1
+          }
+        },
+        {
+          "step": 4,
+          "length": 8,
+          "ce": 6.288919448852539,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 4,
+            "('REPEAT', 6)": 2,
+            "('RESTART', None)": 11,
+            "('ADVANCE', 7)": 8,
+            "('ADVANCE', 2)": 6,
+            "('REPEAT', 7)": 9,
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 0)": 1,
+            "('REPEAT', 4)": 2,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 2)": 1
+          }
+        },
+        {
+          "step": 5,
+          "length": 6,
+          "ce": 0.002038188511505723,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 3,
+            "('REPEAT', 6)": 6,
+            "('RESTART', None)": 11,
+            "('ADVANCE', 1)": 1,
+            "('ADVANCE', 2)": 5,
+            "('ADVANCE', 7)": 6,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 7)": 5,
+            "('ADVANCE', 4)": 1,
+            "('ADVANCE', 0)": 2
+          }
+        },
+        {
+          "step": 6,
+          "length": 14,
+          "ce": 0.004749326966702938,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 16,
+            "('RESTART', None)": 20,
+            "('ADVANCE', 5)": 10,
+            "('ADVANCE', 4)": 10,
+            "('REPEAT', 4)": 5,
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 3)": 6,
+            "('REPEAT', 7)": 20,
+            "('ADVANCE', 6)": 8,
+            "('REPEAT', 6)": 5,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 7,
+          "length": 12,
+          "ce": 0.0019501493079587817,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 2)": 6,
+            "('REPEAT', 2)": 1,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 17,
+            "('RESTART', None)": 14,
+            "('ADVANCE', 5)": 6,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 7)": 22,
+            "('ADVANCE', 4)": 3,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 6)": 4
+          }
+        },
+        {
+          "step": 8,
+          "length": 7,
+          "ce": 6.554457664489746,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 10,
+            "('REPEAT', 7)": 2,
+            "('RESTART', None)": 15,
+            "('ADVANCE', 3)": 2,
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 4)": 4,
+            "('REPEAT', 4)": 2,
+            "('ADVANCE', 6)": 8,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 2)": 1
+          }
+        },
+        {
+          "step": 9,
+          "length": 11,
+          "ce": 6.668727397918701,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 4)": 3,
+            "('RESTART', None)": 16,
+            "('ADVANCE', 6)": 15,
+            "('ADVANCE', 7)": 13,
+            "('REPEAT', 7)": 7,
+            "('REPEAT', 6)": 7,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 0)": 2,
+            "('REPEAT', 0)": 3,
+            "('REPEAT', 3)": 1,
+            "('REPEAT', 5)": 5
+          }
+        },
+        {
+          "step": 10,
+          "length": 6,
+          "ce": 0.003147293347865343,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 1,
+            "('ADVANCE', 7)": 7,
+            "('REPEAT', 7)": 8,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 2)": 1,
+            "('ADVANCE', 5)": 5,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 3)": 1,
+            "('RESTART', None)": 6,
+            "('ADVANCE', 0)": 2,
+            "('REPEAT', 6)": 2,
+            "('ADVANCE', 1)": 1,
+            "('REPEAT', 1)": 2
+          }
+        },
+        {
+          "step": 11,
+          "length": 13,
+          "ce": 6.253506660461426,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('RESTART', None)": 23,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 7)": 18,
+            "('REPEAT', 7)": 13,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 2)": 5,
+            "('REPEAT', 2)": 2,
+            "('ADVANCE', 5)": 2,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 6)": 5,
+            "('REPEAT', 1)": 1,
+            "('REPEAT', 3)": 1,
+            "('REPEAT', 6)": 1,
+            "('REPEAT', 4)": 1
+          }
+        },
+        {
+          "step": 12,
+          "length": 6,
+          "ce": 5.374055862426758,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 7,
+            "('RESTART', None)": 12,
+            "('REPEAT', 7)": 4,
+            "('ADVANCE', 3)": 2,
+            "('ADVANCE', 5)": 3,
+            "('ADVANCE', 4)": 3,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 1)": 1,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 6)": 6,
+            "('ADVANCE', 0)": 1
+          }
+        },
+        {
+          "step": 13,
+          "length": 7,
+          "ce": 6.472761154174805,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 5)": 8,
+            "('RESTART', None)": 15,
+            "('ADVANCE', 6)": 5,
+            "('REPEAT', 5)": 2,
+            "('REPEAT', 6)": 2,
+            "('ADVANCE', 4)": 2,
+            "('REPEAT', 4)": 2,
+            "('ADVANCE', 7)": 7,
+            "('REPEAT', 7)": 2,
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 3)": 3,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 2)": 1
+          }
+        },
+        {
+          "step": 14,
+          "length": 6,
+          "ce": 4.311963081359863,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 0)": 2,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 5)": 4,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 7)": 7,
+            "('RESTART', None)": 9,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 7)": 9,
+            "('ADVANCE', 6)": 2,
+            "('ADVANCE', 4)": 1
+          }
+        },
+        {
+          "step": 15,
+          "length": 13,
+          "ce": 2.994079828262329,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 9,
+            "('REPEAT', 5)": 4,
+            "('ADVANCE', 7)": 11,
+            "('REPEAT', 7)": 8,
+            "('RESTART', None)": 19,
+            "('ADVANCE', 4)": 10,
+            "('REPEAT', 4)": 8,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 0)": 5,
+            "('REPEAT', 0)": 2,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('REPEAT', 6)": 2,
+            "('REPEAT', 1)": 1,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 16,
+          "length": 15,
+          "ce": 5.738288879394531,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 3)": 9,
+            "('REPEAT', 3)": 5,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('RESTART', None)": 25,
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 4)": 7,
+            "('REPEAT', 4)": 4,
+            "('ADVANCE', 7)": 9,
+            "('REPEAT', 6)": 1,
+            "('REPEAT', 0)": 2,
+            "('REPEAT', 7)": 7,
+            "('REPEAT', 2)": 4,
+            "('REPEAT', 1)": 2,
+            "('REPEAT', 5)": 1
+          }
+        },
+        {
+          "step": 17,
+          "length": 8,
+          "ce": 0.002081967191770673,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 6,
+            "('RESTART', None)": 14,
+            "('ADVANCE', 4)": 4,
+            "('REPEAT', 4)": 3,
+            "('ADVANCE', 7)": 9,
+            "('REPEAT', 7)": 7,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 3,
+            "('ADVANCE', 3)": 3
+          }
+        },
+        {
+          "step": 18,
+          "length": 12,
+          "ce": 6.225346565246582,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 10,
+            "('ADVANCE', 7)": 20,
+            "('RESTART', None)": 18,
+            "('ADVANCE', 0)": 1,
+            "('REPEAT', 7)": 9,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 2)": 7,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 4)": 6,
+            "('ADVANCE', 3)": 5,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 19,
+          "length": 9,
+          "ce": 6.295669078826904,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 6)": 7,
+            "('RESTART', None)": 14,
+            "('ADVANCE', 7)": 10,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 1)": 5,
+            "('REPEAT', 4)": 2,
+            "('REPEAT', 7)": 10,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 0)": 1,
+            "('ADVANCE', 3)": 2,
+            "('REPEAT', 6)": 2
+          }
+        },
+        {
+          "step": 20,
+          "length": 13,
+          "ce": 6.095958709716797,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 18,
+            "('REPEAT', 7)": 13,
+            "('RESTART', None)": 20,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 8,
+            "('REPEAT', 6)": 6,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 4)": 2,
+            "('REPEAT', 5)": 1,
+            "('REPEAT', 3)": 3,
+            "('REPEAT', 0)": 2
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3401,
+      "initialization": "imitation",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 5,
+          "ce": 0.0020009512081742287,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 2)": 5,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 6)": 5,
+            "('ADVANCE', 7)": 5
+          }
+        },
+        {
+          "step": 2,
+          "length": 12,
+          "ce": 0.0015391181223094463,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 12,
+            "('ADVANCE', 1)": 12,
+            "('ADVANCE', 2)": 12,
+            "('ADVANCE', 3)": 12,
+            "('ADVANCE', 4)": 12,
+            "('ADVANCE', 5)": 12,
+            "('ADVANCE', 6)": 12,
+            "('ADVANCE', 7)": 12
+          }
+        },
+        {
+          "step": 3,
+          "length": 7,
+          "ce": 0.001955384388566017,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 4,
+          "length": 8,
+          "ce": 0.0014725804794579744,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('ADVANCE', 1)": 8,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 7)": 8
+          }
+        },
+        {
+          "step": 5,
+          "length": 6,
+          "ce": 0.0020105878356844187,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 6
+          }
+        },
+        {
+          "step": 6,
+          "length": 14,
+          "ce": 0.0020992164500057697,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 7,
+          "length": 12,
+          "ce": 0.002179153962060809,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 12,
+            "('ADVANCE', 1)": 12,
+            "('ADVANCE', 2)": 12,
+            "('ADVANCE', 3)": 12,
+            "('ADVANCE', 4)": 12,
+            "('ADVANCE', 5)": 12,
+            "('ADVANCE', 6)": 12,
+            "('ADVANCE', 7)": 12
+          }
+        },
+        {
+          "step": 8,
+          "length": 7,
+          "ce": 0.001981558743864298,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 9,
+          "length": 11,
+          "ce": 0.0020574608352035284,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        },
+        {
+          "step": 10,
+          "length": 6,
+          "ce": 0.0021475127432495356,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 6
+          }
+        },
+        {
+          "step": 11,
+          "length": 13,
+          "ce": 0.0015019814018160105,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 12,
+          "length": 6,
+          "ce": 0.0013625870924443007,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 6
+          }
+        },
+        {
+          "step": 13,
+          "length": 7,
+          "ce": 0.002120034070685506,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 14,
+          "length": 6,
+          "ce": 0.002086963504552841,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 6
+          }
+        },
+        {
+          "step": 15,
+          "length": 13,
+          "ce": 0.0013958006165921688,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 16,
+          "length": 15,
+          "ce": 0.0015435221139341593,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 15,
+            "('ADVANCE', 1)": 15,
+            "('ADVANCE', 2)": 15,
+            "('ADVANCE', 3)": 15,
+            "('ADVANCE', 4)": 15,
+            "('ADVANCE', 5)": 15,
+            "('ADVANCE', 6)": 15,
+            "('ADVANCE', 7)": 15
+          }
+        },
+        {
+          "step": 17,
+          "length": 8,
+          "ce": 0.002125506056472659,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('ADVANCE', 1)": 8,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 7)": 8
+          }
+        },
+        {
+          "step": 18,
+          "length": 12,
+          "ce": 0.0013187768636271358,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 12,
+            "('ADVANCE', 1)": 12,
+            "('ADVANCE', 2)": 12,
+            "('ADVANCE', 3)": 12,
+            "('ADVANCE', 4)": 12,
+            "('ADVANCE', 5)": 12,
+            "('ADVANCE', 6)": 12,
+            "('ADVANCE', 7)": 12
+          }
+        },
+        {
+          "step": 19,
+          "length": 9,
+          "ce": 0.0014365125680342317,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 1)": 9,
+            "('ADVANCE', 2)": 9,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 4)": 9,
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 9
+          }
+        },
+        {
+          "step": 20,
+          "length": 13,
+          "ce": 0.0015613758005201817,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3402,
+      "initialization": "random",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.4230769230769231,
+          "ce": 1.499353603457656,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.4592790603637695,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.0,
+            0.0,
+            0.2865384615384615,
+            0.0038461538461538464,
+            0.0019230769230769232,
+            0.04038461538461539,
+            0.05961538461538462,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 5)": 1104,
+            "('RESTART', None)": 1920,
+            "('ADVANCE', 6)": 345,
+            "('ADVANCE', 2)": 715,
+            "('ADVANCE', 3)": 73,
+            "('ADVANCE', 4)": 3
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.453125,
+          "ce": 1.5203234482105472,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 6.714412212371826,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.0,
+            0.0,
+            0.382015306122449,
+            0.005739795918367347,
+            0.001913265306122449,
+            0.02040816326530612,
+            0.03762755102040816,
+            0.0
+          ],
+          "actions": {
+            "('ADVANCE', 5)": 2794,
+            "('RESTART', None)": 5994,
+            "('ADVANCE', 2)": 2652,
+            "('ADVANCE', 6)": 808,
+            "('ADVANCE', 3)": 284,
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 4)": 7
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.5961538461538461,
+          "ce": 2.1203544627328834,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.547638893127441,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.0,
+            0.0,
+            0.057692307692307696,
+            0.0057692307692307696,
+            0.0019230769230769232,
+            0.05,
+            0.17884615384615385,
+            0.021153846153846155
+          ],
+          "actions": {
+            "('ADVANCE', 5)": 810,
+            "('RESTART', None)": 1823,
+            "('ADVANCE', 6)": 989,
+            "('ADVANCE', 7)": 101,
+            "('ADVANCE', 2)": 188,
+            "('ADVANCE', 0)": 11,
+            "('REPEAT', 7)": 197,
+            "('REPEAT', 6)": 8,
+            "('ADVANCE', 3)": 27,
+            "('ADVANCE', 4)": 6
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.515625,
+          "ce": 2.443759997639063,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 7.135725021362305,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.002551020408163265,
+            0.0,
+            0.05612244897959184,
+            0.006377551020408163,
+            0.00510204081632653,
+            0.036989795918367346,
+            0.20089285714285715,
+            0.008290816326530613
+          ],
+          "actions": {
+            "('ADVANCE', 5)": 2470,
+            "('RESTART', None)": 5831,
+            "('ADVANCE', 6)": 3167,
+            "('REPEAT', 6)": 8,
+            "('ADVANCE', 7)": 154,
+            "('REPEAT', 7)": 330,
+            "('ADVANCE', 2)": 441,
+            "('ADVANCE', 0)": 29,
+            "('ADVANCE', 3)": 67,
+            "('ADVANCE', 4)": 47
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 14,
+          "ce": 0.001671228208579123,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 6)": 10,
+            "('REPEAT', 6)": 7,
+            "('ADVANCE', 7)": 19,
+            "('RESTART', None)": 22,
+            "('REPEAT', 7)": 12,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 4)": 7,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 2)": 1,
+            "('REPEAT', 5)": 3,
+            "('REPEAT', 1)": 1
+          }
+        },
+        {
+          "step": 2,
+          "length": 4,
+          "ce": 0.0012743694242089987,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 3,
+            "('REPEAT', 7)": 1,
+            "('RESTART', None)": 5,
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 2)": 2,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 5)": 4,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 6)": 5,
+            "('REPEAT', 6)": 1,
+            "('ADVANCE', 4)": 2,
+            "('REPEAT', 4)": 1
+          }
+        },
+        {
+          "step": 3,
+          "length": 13,
+          "ce": 0.0019237360684201121,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 7)": 14,
+            "('REPEAT', 7)": 7,
+            "('RESTART', None)": 25,
+            "('ADVANCE', 6)": 12,
+            "('ADVANCE', 2)": 6,
+            "('REPEAT', 6)": 4,
+            "('ADVANCE', 3)": 5,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 4)": 5,
+            "('REPEAT', 5)": 6,
+            "('REPEAT', 4)": 1
+          }
+        },
+        {
+          "step": 4,
+          "length": 4,
+          "ce": 0.5036994218826294,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 6)": 2,
+            "('ADVANCE', 7)": 2,
+            "('REPEAT', 7)": 1,
+            "('RESTART', None)": 8,
+            "('ADVANCE', 2)": 3,
+            "('ADVANCE', 3)": 2,
+            "('REPEAT', 3)": 1,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 4)": 3,
+            "('ADVANCE', 0)": 1,
+            "('ADVANCE', 1)": 1
+          }
+        },
+        {
+          "step": 5,
+          "length": 10,
+          "ce": 4.032260417938232,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 14,
+            "('RESTART', None)": 16,
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 5)": 3,
+            "('REPEAT', 6)": 2,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 7)": 9,
+            "('REPEAT', 4)": 2
+          }
+        },
+        {
+          "step": 6,
+          "length": 9,
+          "ce": 6.290238380432129,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 13,
+            "('RESTART', None)": 18,
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 3)": 1,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 7)": 4,
+            "('REPEAT', 4)": 1,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 6)": 2
+          }
+        },
+        {
+          "step": 7,
+          "length": 15,
+          "ce": 0.00182819040492177,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 8,
+            "('RESTART', None)": 24,
+            "('ADVANCE', 2)": 8,
+            "('REPEAT', 2)": 2,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 6)": 16,
+            "('ADVANCE', 5)": 11,
+            "('REPEAT', 5)": 4,
+            "('ADVANCE', 7)": 17,
+            "('REPEAT', 7)": 7,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 3)": 2,
+            "('REPEAT', 0)": 1
+          }
+        },
+        {
+          "step": 8,
+          "length": 6,
+          "ce": 6.254921913146973,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 2,
+            "('ADVANCE', 5)": 6,
+            "('RESTART', None)": 13,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 6,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 7)": 3,
+            "('ADVANCE', 1)": 1,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 0)": 2,
+            "('REPEAT', 6)": 1,
+            "('REPEAT', 5)": 1
+          }
+        },
+        {
+          "step": 9,
+          "length": 9,
+          "ce": 5.528145790100098,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 2,
+            "('ADVANCE', 7)": 10,
+            "('RESTART', None)": 22,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 7)": 5,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 1)": 1,
+            "('REPEAT', 4)": 2,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 0)": 6
+          }
+        },
+        {
+          "step": 10,
+          "length": 10,
+          "ce": 6.158759117126465,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 8,
+            "('REPEAT', 6)": 5,
+            "('ADVANCE', 7)": 11,
+            "('REPEAT', 7)": 8,
+            "('RESTART', None)": 19,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 2)": 4,
+            "('REPEAT', 2)": 2,
+            "('ADVANCE', 1)": 3,
+            "('ADVANCE', 4)": 4,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 1)": 1
+          }
+        },
+        {
+          "step": 11,
+          "length": 13,
+          "ce": 6.427539825439453,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 10,
+            "('REPEAT', 6)": 6,
+            "('ADVANCE', 7)": 10,
+            "('RESTART', None)": 25,
+            "('ADVANCE', 5)": 11,
+            "('REPEAT', 7)": 8,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 4)": 9,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 4)": 2,
+            "('REPEAT', 1)": 1
+          }
+        },
+        {
+          "step": 12,
+          "length": 14,
+          "ce": 5.493846416473389,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 10,
+            "('RESTART', None)": 30,
+            "('ADVANCE', 5)": 13,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 7)": 13,
+            "('ADVANCE', 2)": 2,
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 12,
+            "('REPEAT', 7)": 8,
+            "('REPEAT', 4)": 2,
+            "('REPEAT', 6)": 5,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 0)": 2,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 13,
+          "length": 13,
+          "ce": 0.0014060382964089513,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 7)": 10,
+            "('RESTART', None)": 22,
+            "('ADVANCE', 6)": 16,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 0)": 5,
+            "('REPEAT', 6)": 7,
+            "('REPEAT', 3)": 2,
+            "('REPEAT', 7)": 5,
+            "('REPEAT', 4)": 2,
+            "('REPEAT', 1)": 2,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 5)": 1
+          }
+        },
+        {
+          "step": 14,
+          "length": 10,
+          "ce": 6.307013511657715,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 4)": 2,
+            "('ADVANCE', 6)": 11,
+            "('RESTART', None)": 17,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 7)": 9,
+            "('REPEAT', 7)": 8,
+            "('ADVANCE', 2)": 4,
+            "('REPEAT', 6)": 2,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 1)": 1,
+            "('ADVANCE', 3)": 4
+          }
+        },
+        {
+          "step": 15,
+          "length": 8,
+          "ce": 0.0018538922304287553,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 2,
+            "('ADVANCE', 4)": 2,
+            "('RESTART', None)": 13,
+            "('ADVANCE', 0)": 1,
+            "('ADVANCE', 7)": 10,
+            "('REPEAT', 7)": 14,
+            "('ADVANCE', 5)": 5,
+            "('REPEAT', 5)": 3,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 6)": 4
+          }
+        },
+        {
+          "step": 16,
+          "length": 13,
+          "ce": 0.0023758774623274803,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 6)": 11,
+            "('RESTART', None)": 22,
+            "('ADVANCE', 7)": 14,
+            "('REPEAT', 7)": 9,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 6)": 1,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 5)": 11,
+            "('REPEAT', 5)": 4,
+            "('REPEAT', 3)": 2,
+            "('REPEAT', 0)": 1
+          }
+        },
+        {
+          "step": 17,
+          "length": 4,
+          "ce": 0.0014890070306137204,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 7)": 5,
+            "('RESTART', None)": 7,
+            "('ADVANCE', 6)": 5,
+            "('ADVANCE', 2)": 2,
+            "('ADVANCE', 1)": 1,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 3)": 2,
+            "('REPEAT', 7)": 1,
+            "('REPEAT', 6)": 2,
+            "('ADVANCE', 4)": 2
+          }
+        },
+        {
+          "step": 18,
+          "length": 14,
+          "ce": 0.00200654286891222,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 7)": 15,
+            "('RESTART', None)": 26,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 6)": 14,
+            "('REPEAT', 6)": 5,
+            "('REPEAT', 7)": 6,
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 1)": 8,
+            "('REPEAT', 1)": 3,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 4)": 7,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 0)": 1
+          }
+        },
+        {
+          "step": 19,
+          "length": 5,
+          "ce": 0.0018970841774716973,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 7,
+            "('REPEAT', 7)": 9,
+            "('RESTART', None)": 8,
+            "('ADVANCE', 2)": 3,
+            "('REPEAT', 2)": 1,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 4)": 2,
+            "('ADVANCE', 5)": 3,
+            "('ADVANCE', 6)": 3,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 20,
+          "length": 4,
+          "ce": 0.0025869496166706085,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 2)": 2,
+            "('ADVANCE', 4)": 2,
+            "('ADVANCE', 7)": 4,
+            "('RESTART', None)": 5,
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 5)": 2,
+            "('REPEAT', 5)": 2,
+            "('REPEAT', 7)": 1,
+            "('ADVANCE', 1)": 2,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 6)": 2,
+            "('REPEAT', 3)": 1,
+            "('REPEAT', 0)": 3
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3402,
+      "initialization": "imitation",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 14,
+          "ce": 0.0013603252591565251,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 2,
+          "length": 4,
+          "ce": 0.0012426996836438775,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 4
+          }
+        },
+        {
+          "step": 3,
+          "length": 13,
+          "ce": 0.0021381154656410217,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 4,
+          "length": 4,
+          "ce": 0.001929447171278298,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 4
+          }
+        },
+        {
+          "step": 5,
+          "length": 10,
+          "ce": 0.0013098479248583317,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 10,
+            "('ADVANCE', 1)": 10,
+            "('ADVANCE', 2)": 10,
+            "('ADVANCE', 3)": 10,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 5)": 10,
+            "('ADVANCE', 6)": 10,
+            "('ADVANCE', 7)": 10
+          }
+        },
+        {
+          "step": 6,
+          "length": 9,
+          "ce": 0.0014991246862336993,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 1)": 9,
+            "('ADVANCE', 2)": 9,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 4)": 9,
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 9
+          }
+        },
+        {
+          "step": 7,
+          "length": 15,
+          "ce": 0.0020386644173413515,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 15,
+            "('ADVANCE', 1)": 15,
+            "('ADVANCE', 2)": 15,
+            "('ADVANCE', 3)": 15,
+            "('ADVANCE', 4)": 15,
+            "('ADVANCE', 5)": 15,
+            "('ADVANCE', 6)": 15,
+            "('ADVANCE', 7)": 15
+          }
+        },
+        {
+          "step": 8,
+          "length": 6,
+          "ce": 0.0014750801492482424,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 6,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 6
+          }
+        },
+        {
+          "step": 9,
+          "length": 9,
+          "ce": 0.0013443727511912584,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 1)": 9,
+            "('ADVANCE', 2)": 9,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 4)": 9,
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 9
+          }
+        },
+        {
+          "step": 10,
+          "length": 10,
+          "ce": 0.0015975582646206021,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 10,
+            "('ADVANCE', 1)": 10,
+            "('ADVANCE', 2)": 10,
+            "('ADVANCE', 3)": 10,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 5)": 10,
+            "('ADVANCE', 6)": 10,
+            "('ADVANCE', 7)": 10
+          }
+        },
+        {
+          "step": 11,
+          "length": 13,
+          "ce": 0.0020642417948693037,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 12,
+          "length": 14,
+          "ce": 0.0016940779751166701,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 13,
+          "length": 13,
+          "ce": 0.001566374790854752,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 14,
+          "length": 10,
+          "ce": 0.0015049570938572288,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 10,
+            "('ADVANCE', 1)": 10,
+            "('ADVANCE', 2)": 10,
+            "('ADVANCE', 3)": 10,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 5)": 10,
+            "('ADVANCE', 6)": 10,
+            "('ADVANCE', 7)": 10
+          }
+        },
+        {
+          "step": 15,
+          "length": 8,
+          "ce": 0.0019682336132973433,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('ADVANCE', 1)": 8,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 7)": 8
+          }
+        },
+        {
+          "step": 16,
+          "length": 13,
+          "ce": 0.002046754118055105,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 17,
+          "length": 4,
+          "ce": 0.0012426996836438775,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 4
+          }
+        },
+        {
+          "step": 18,
+          "length": 14,
+          "ce": 0.001842707279138267,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 19,
+          "length": 5,
+          "ce": 0.001994050806388259,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 2)": 5,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 6)": 5,
+            "('ADVANCE', 7)": 5
+          }
+        },
+        {
+          "step": 20,
+          "length": 4,
+          "ce": 0.002117060124874115,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 4
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3403,
+      "initialization": "random",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.5576923076923077,
+          "ce": 1.5322992967334217,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.643052101135254,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.025,
+            0.0,
+            0.0,
+            0.21923076923076923,
+            0.0,
+            0.0019230769230769232,
+            0.01730769230769231,
+            0.0038461538461538464
+          ],
+          "actions": {
+            "('ADVANCE', 6)": 369,
+            "('REPEAT', 6)": 300,
+            "('RESTART', None)": 1067,
+            "('ADVANCE', 5)": 245,
+            "('ADVANCE', 3)": 840,
+            "('ADVANCE', 7)": 187,
+            "('REPEAT', 5)": 256,
+            "('REPEAT', 7)": 428,
+            "('ADVANCE', 0)": 16,
+            "('REPEAT', 0)": 77,
+            "('ADVANCE', 4)": 53,
+            "('REPEAT', 4)": 203,
+            "('REPEAT', 3)": 119
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.5625,
+          "ce": 1.5523029858250084,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 7.49494743347168,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.00510204081632653,
+            0.0,
+            0.0,
+            0.32971938775510207,
+            0.0006377551020408163,
+            0.002551020408163265,
+            0.01594387755102041,
+            0.006377551020408163
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 135,
+            "('ADVANCE', 5)": 340,
+            "('ADVANCE', 6)": 1566,
+            "('REPEAT', 6)": 421,
+            "('REPEAT', 5)": 417,
+            "('ADVANCE', 7)": 347,
+            "('REPEAT', 7)": 1014,
+            "('ADVANCE', 3)": 3456,
+            "('REPEAT', 3)": 230,
+            "('RESTART', None)": 3921,
+            "('REPEAT', 4)": 633,
+            "('ADVANCE', 0)": 8,
+            "('REPEAT', 0)": 56
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 0.6346153846153846,
+          "ce": 1.9045139338436106,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 7.58046817779541,
+          "tokens": 520,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.0,
+            0.0,
+            0.0,
+            0.12307692307692308,
+            0.0,
+            0.05576923076923077,
+            0.4826923076923077,
+            0.0038461538461538464
+          ],
+          "actions": {
+            "('ADVANCE', 6)": 1133,
+            "('REPEAT', 6)": 202,
+            "('RESTART', None)": 1468,
+            "('ADVANCE', 5)": 93,
+            "('ADVANCE', 3)": 385,
+            "('ADVANCE', 7)": 156,
+            "('ADVANCE', 4)": 47,
+            "('REPEAT', 4)": 168,
+            "('REPEAT', 7)": 424,
+            "('REPEAT', 5)": 84
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 0.484375,
+          "ce": 2.831674221539288,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 7.3233842849731445,
+          "tokens": 1568,
+          "exact_route_tokens": 0,
+          "decision_accuracy": [
+            0.0,
+            0.0,
+            0.0,
+            0.06823979591836735,
+            0.0,
+            0.02040816326530612,
+            0.7200255102040817,
+            0.002551020408163265
+          ],
+          "actions": {
+            "('ADVANCE', 4)": 91,
+            "('ADVANCE', 5)": 113,
+            "('ADVANCE', 6)": 4708,
+            "('REPEAT', 6)": 256,
+            "('REPEAT', 5)": 119,
+            "('ADVANCE', 7)": 264,
+            "('REPEAT', 7)": 727,
+            "('RESTART', None)": 5233,
+            "('ADVANCE', 3)": 620,
+            "('REPEAT', 4)": 413
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 11,
+          "ce": 6.192122936248779,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 2,
+            "('ADVANCE', 6)": 10,
+            "('REPEAT', 6)": 7,
+            "('RESTART', None)": 19,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 7)": 11,
+            "('REPEAT', 7)": 8,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 5)": 8,
+            "('REPEAT', 1)": 1,
+            "('REPEAT', 5)": 1
+          }
+        },
+        {
+          "step": 2,
+          "length": 8,
+          "ce": 5.945019245147705,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 2,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 10,
+            "('RESTART', None)": 17,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 7)": 4,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 3)": 2,
+            "('REPEAT', 6)": 6,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 2)": 1,
+            "('ADVANCE', 4)": 1
+          }
+        },
+        {
+          "step": 3,
+          "length": 10,
+          "ce": 0.0021075436379760504,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 11,
+            "('REPEAT', 7)": 10,
+            "('RESTART', None)": 17,
+            "('ADVANCE', 3)": 6,
+            "('ADVANCE', 5)": 10,
+            "('REPEAT', 6)": 1,
+            "('ADVANCE', 0)": 2,
+            "('REPEAT', 5)": 5,
+            "('ADVANCE', 4)": 4,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 1)": 2
+          }
+        },
+        {
+          "step": 4,
+          "length": 13,
+          "ce": 6.250326633453369,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 3)": 8,
+            "('RESTART', None)": 21,
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 6)": 17,
+            "('REPEAT', 6)": 10,
+            "('ADVANCE', 7)": 16,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 7)": 7,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 2)": 4,
+            "('REPEAT', 0)": 1,
+            "('REPEAT', 3)": 3,
+            "('ADVANCE', 1)": 2
+          }
+        },
+        {
+          "step": 5,
+          "length": 4,
+          "ce": 6.486855983734131,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 3)": 2,
+            "('ADVANCE', 5)": 3,
+            "('RESTART', None)": 8,
+            "('ADVANCE', 7)": 4,
+            "('ADVANCE', 1)": 4,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 4)": 2,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 6)": 1,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 7)": 3,
+            "('ADVANCE', 0)": 1
+          }
+        },
+        {
+          "step": 6,
+          "length": 7,
+          "ce": 0.0018446111353114247,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 3)": 5,
+            "('RESTART', None)": 13,
+            "('ADVANCE', 7)": 6,
+            "('REPEAT', 7)": 5,
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 5,
+            "('REPEAT', 5)": 5,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 1)": 1,
+            "('REPEAT', 4)": 1,
+            "('ADVANCE', 6)": 3,
+            "('REPEAT', 6)": 1,
+            "('ADVANCE', 2)": 2
+          }
+        },
+        {
+          "step": 7,
+          "length": 14,
+          "ce": 1.1018062829971313,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 7)": 12,
+            "('REPEAT', 7)": 8,
+            "('RESTART', None)": 26,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 4)": 13,
+            "('REPEAT', 4)": 1,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 2)": 7,
+            "('REPEAT', 2)": 1,
+            "('ADVANCE', 3)": 5,
+            "('REPEAT', 5)": 1,
+            "('REPEAT', 6)": 8,
+            "('ADVANCE', 0)": 3
+          }
+        },
+        {
+          "step": 8,
+          "length": 7,
+          "ce": 0.001450797077268362,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 6,
+            "('ADVANCE', 7)": 8,
+            "('RESTART', None)": 13,
+            "('ADVANCE', 2)": 2,
+            "('REPEAT', 7)": 3,
+            "('ADVANCE', 1)": 2,
+            "('ADVANCE', 0)": 1,
+            "('REPEAT', 5)": 2,
+            "('REPEAT', 6)": 4,
+            "('ADVANCE', 3)": 1,
+            "('REPEAT', 3)": 1
+          }
+        },
+        {
+          "step": 9,
+          "length": 8,
+          "ce": 0.0026101351249963045,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 7)": 6,
+            "('REPEAT', 7)": 5,
+            "('RESTART', None)": 16,
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 2)": 1,
+            "('REPEAT', 5)": 1,
+            "('REPEAT', 6)": 3
+          }
+        },
+        {
+          "step": 10,
+          "length": 5,
+          "ce": 6.5874505043029785,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 4)": 3,
+            "('ADVANCE', 5)": 3,
+            "('RESTART', None)": 10,
+            "('REPEAT', 0)": 2,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 7)": 7,
+            "('ADVANCE', 1)": 1,
+            "('ADVANCE', 6)": 4,
+            "('REPEAT', 6)": 2,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 7)": 2
+          }
+        },
+        {
+          "step": 11,
+          "length": 12,
+          "ce": 0.0020609109196811914,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 7)": 8,
+            "('RESTART', None)": 23,
+            "('ADVANCE', 4)": 6,
+            "('REPEAT', 4)": 1,
+            "('ADVANCE', 5)": 6,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 6)": 12,
+            "('REPEAT', 6)": 14,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 5)": 1,
+            "('REPEAT', 3)": 2,
+            "('REPEAT', 7)": 1
+          }
+        },
+        {
+          "step": 12,
+          "length": 16,
+          "ce": 6.199744701385498,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 12,
+            "('RESTART', None)": 31,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 7)": 17,
+            "('REPEAT', 7)": 7,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 6)": 16,
+            "('ADVANCE', 0)": 4,
+            "('REPEAT', 5)": 2,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 3)": 1,
+            "('ADVANCE', 1)": 8,
+            "('REPEAT', 1)": 1,
+            "('REPEAT', 6)": 2
+          }
+        },
+        {
+          "step": 13,
+          "length": 7,
+          "ce": 0.001644212519749999,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 7)": 9,
+            "('RESTART', None)": 14,
+            "('ADVANCE', 1)": 6,
+            "('ADVANCE', 3)": 3,
+            "('ADVANCE', 4)": 6,
+            "('ADVANCE', 5)": 1,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 0)": 2,
+            "('ADVANCE', 2)": 2,
+            "('REPEAT', 7)": 4,
+            "('ADVANCE', 6)": 7
+          }
+        },
+        {
+          "step": 14,
+          "length": 11,
+          "ce": 0.0051516881212592125,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 6)": 8,
+            "('RESTART', None)": 25,
+            "('ADVANCE', 5)": 6,
+            "('REPEAT', 5)": 1,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 7)": 13,
+            "('REPEAT', 7)": 6,
+            "('ADVANCE', 4)": 7,
+            "('REPEAT', 2)": 1,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 6)": 2
+          }
+        },
+        {
+          "step": 15,
+          "length": 9,
+          "ce": 3.125429391860962,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 0)": 1,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 7)": 9,
+            "('REPEAT', 7)": 6,
+            "('REPEAT', 1)": 2,
+            "('ADVANCE', 6)": 6,
+            "('RESTART', None)": 15,
+            "('ADVANCE', 4)": 3,
+            "('ADVANCE', 5)": 6,
+            "('REPEAT', 2)": 1,
+            "('REPEAT', 6)": 1,
+            "('REPEAT', 4)": 2
+          }
+        },
+        {
+          "step": 16,
+          "length": 9,
+          "ce": 0.0018454440869390965,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 9,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 7)": 9,
+            "('RESTART', None)": 13,
+            "('ADVANCE', 0)": 1,
+            "('REPEAT', 0)": 1,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 6)": 7,
+            "('REPEAT', 7)": 10,
+            "('ADVANCE', 4)": 4,
+            "('REPEAT', 1)": 3,
+            "('ADVANCE', 2)": 2,
+            "('REPEAT', 4)": 1,
+            "('REPEAT', 6)": 1
+          }
+        },
+        {
+          "step": 17,
+          "length": 14,
+          "ce": 6.2891621589660645,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 6)": 16,
+            "('REPEAT', 6)": 9,
+            "('RESTART', None)": 24,
+            "('ADVANCE', 7)": 13,
+            "('REPEAT', 7)": 9,
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 5)": 9,
+            "('REPEAT', 2)": 1,
+            "('ADVANCE', 1)": 7,
+            "('REPEAT', 5)": 2,
+            "('ADVANCE', 3)": 2,
+            "('REPEAT', 0)": 1,
+            "('REPEAT', 4)": 1
+          }
+        },
+        {
+          "step": 18,
+          "length": 11,
+          "ce": 6.2414045333862305,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 3)": 7,
+            "('RESTART', None)": 17,
+            "('ADVANCE', 2)": 5,
+            "('ADVANCE', 6)": 10,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 7)": 12,
+            "('REPEAT', 7)": 16,
+            "('REPEAT', 3)": 2,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 1)": 4,
+            "('REPEAT', 1)": 1,
+            "('ADVANCE', 0)": 3,
+            "('ADVANCE', 5)": 4
+          }
+        },
+        {
+          "step": 19,
+          "length": 11,
+          "ce": 0.0018502036109566689,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 5)": 7,
+            "('RESTART', None)": 24,
+            "('ADVANCE', 2)": 6,
+            "('ADVANCE', 7)": 15,
+            "('REPEAT', 7)": 10,
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 4)": 3,
+            "('REPEAT', 6)": 3,
+            "('ADVANCE', 1)": 4,
+            "('REPEAT', 0)": 2,
+            "('ADVANCE', 3)": 2
+          }
+        },
+        {
+          "step": 20,
+          "length": 11,
+          "ce": 6.43064022064209,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 12,
+            "('RESTART', None)": 22,
+            "('REPEAT', 7)": 10,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 5)": 9,
+            "('REPEAT', 5)": 5,
+            "('ADVANCE', 3)": 2,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 0)": 3,
+            "('REPEAT', 6)": 2,
+            "('ADVANCE', 4)": 1,
+            "('REPEAT', 4)": 1
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3403,
+      "initialization": "imitation",
+      "before": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "after": {
+        "val": {
+          "examples": 52,
+          "accuracy": 1.0,
+          "ce": 0.0018481857103044884,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.0018481857103044884,
+          "max_logit_delta": 0.0,
+          "tokens": 520,
+          "exact_route_tokens": 520,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 520,
+            "('ADVANCE', 1)": 520,
+            "('ADVANCE', 2)": 520,
+            "('ADVANCE', 3)": 520,
+            "('ADVANCE', 4)": 520,
+            "('ADVANCE', 5)": 520,
+            "('ADVANCE', 6)": 520,
+            "('ADVANCE', 7)": 520
+          }
+        },
+        "test": {
+          "examples": 64,
+          "accuracy": 1.0,
+          "ce": 0.001750953351802309,
+          "fixed_accuracy": 1.0,
+          "fixed_ce": 0.001750953351802309,
+          "max_logit_delta": 0.0,
+          "tokens": 1568,
+          "exact_route_tokens": 1568,
+          "decision_accuracy": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "actions": {
+            "('ADVANCE', 0)": 1568,
+            "('ADVANCE', 1)": 1568,
+            "('ADVANCE', 2)": 1568,
+            "('ADVANCE', 3)": 1568,
+            "('ADVANCE', 4)": 1568,
+            "('ADVANCE', 5)": 1568,
+            "('ADVANCE', 6)": 1568,
+            "('ADVANCE', 7)": 1568
+          }
+        }
+      },
+      "training": [
+        {
+          "step": 1,
+          "length": 11,
+          "ce": 0.0017257335130125284,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        },
+        {
+          "step": 2,
+          "length": 8,
+          "ce": 0.0013721107970923185,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('ADVANCE', 1)": 8,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 7)": 8
+          }
+        },
+        {
+          "step": 3,
+          "length": 10,
+          "ce": 0.0021605975925922394,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 10,
+            "('ADVANCE', 1)": 10,
+            "('ADVANCE', 2)": 10,
+            "('ADVANCE', 3)": 10,
+            "('ADVANCE', 4)": 10,
+            "('ADVANCE', 5)": 10,
+            "('ADVANCE', 6)": 10,
+            "('ADVANCE', 7)": 10
+          }
+        },
+        {
+          "step": 4,
+          "length": 13,
+          "ce": 0.0012653210433200002,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 13,
+            "('ADVANCE', 1)": 13,
+            "('ADVANCE', 2)": 13,
+            "('ADVANCE', 3)": 13,
+            "('ADVANCE', 4)": 13,
+            "('ADVANCE', 5)": 13,
+            "('ADVANCE', 6)": 13,
+            "('ADVANCE', 7)": 13
+          }
+        },
+        {
+          "step": 5,
+          "length": 4,
+          "ce": 0.00215798057615757,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 4,
+            "('ADVANCE', 1)": 4,
+            "('ADVANCE', 2)": 4,
+            "('ADVANCE', 3)": 4,
+            "('ADVANCE', 4)": 4,
+            "('ADVANCE', 5)": 4,
+            "('ADVANCE', 6)": 4,
+            "('ADVANCE', 7)": 4
+          }
+        },
+        {
+          "step": 6,
+          "length": 7,
+          "ce": 0.001834853901527822,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 7,
+          "length": 14,
+          "ce": 0.0021452526561915874,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 8,
+          "length": 7,
+          "ce": 0.0014640099834650755,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 9,
+          "length": 8,
+          "ce": 0.002003925619646907,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 8,
+            "('ADVANCE', 1)": 8,
+            "('ADVANCE', 2)": 8,
+            "('ADVANCE', 3)": 8,
+            "('ADVANCE', 4)": 8,
+            "('ADVANCE', 5)": 8,
+            "('ADVANCE', 6)": 8,
+            "('ADVANCE', 7)": 8
+          }
+        },
+        {
+          "step": 10,
+          "length": 5,
+          "ce": 0.0020038066431879997,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 5,
+            "('ADVANCE', 1)": 5,
+            "('ADVANCE', 2)": 5,
+            "('ADVANCE', 3)": 5,
+            "('ADVANCE', 4)": 5,
+            "('ADVANCE', 5)": 5,
+            "('ADVANCE', 6)": 5,
+            "('ADVANCE', 7)": 5
+          }
+        },
+        {
+          "step": 11,
+          "length": 12,
+          "ce": 0.0021391860209405422,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 12,
+            "('ADVANCE', 1)": 12,
+            "('ADVANCE', 2)": 12,
+            "('ADVANCE', 3)": 12,
+            "('ADVANCE', 4)": 12,
+            "('ADVANCE', 5)": 12,
+            "('ADVANCE', 6)": 12,
+            "('ADVANCE', 7)": 12
+          }
+        },
+        {
+          "step": 12,
+          "length": 16,
+          "ce": 0.0015062665333971381,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 16,
+            "('ADVANCE', 1)": 16,
+            "('ADVANCE', 2)": 16,
+            "('ADVANCE', 3)": 16,
+            "('ADVANCE', 4)": 16,
+            "('ADVANCE', 5)": 16,
+            "('ADVANCE', 6)": 16,
+            "('ADVANCE', 7)": 16
+          }
+        },
+        {
+          "step": 13,
+          "length": 7,
+          "ce": 0.0014041336253285408,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 7,
+            "('ADVANCE', 1)": 7,
+            "('ADVANCE', 2)": 7,
+            "('ADVANCE', 3)": 7,
+            "('ADVANCE', 4)": 7,
+            "('ADVANCE', 5)": 7,
+            "('ADVANCE', 6)": 7,
+            "('ADVANCE', 7)": 7
+          }
+        },
+        {
+          "step": 14,
+          "length": 11,
+          "ce": 0.0020136809907853603,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        },
+        {
+          "step": 15,
+          "length": 9,
+          "ce": 0.001984414178878069,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 1)": 9,
+            "('ADVANCE', 2)": 9,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 4)": 9,
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 9
+          }
+        },
+        {
+          "step": 16,
+          "length": 9,
+          "ce": 0.0021708274725824594,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 9,
+            "('ADVANCE', 1)": 9,
+            "('ADVANCE', 2)": 9,
+            "('ADVANCE', 3)": 9,
+            "('ADVANCE', 4)": 9,
+            "('ADVANCE', 5)": 9,
+            "('ADVANCE', 6)": 9,
+            "('ADVANCE', 7)": 9
+          }
+        },
+        {
+          "step": 17,
+          "length": 14,
+          "ce": 0.001566374790854752,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 14,
+            "('ADVANCE', 1)": 14,
+            "('ADVANCE', 2)": 14,
+            "('ADVANCE', 3)": 14,
+            "('ADVANCE', 4)": 14,
+            "('ADVANCE', 5)": 14,
+            "('ADVANCE', 6)": 14,
+            "('ADVANCE', 7)": 14
+          }
+        },
+        {
+          "step": 18,
+          "length": 11,
+          "ce": 0.0013342535821720958,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        },
+        {
+          "step": 19,
+          "length": 11,
+          "ce": 0.002176299225538969,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        },
+        {
+          "step": 20,
+          "length": 11,
+          "ce": 0.002022008877247572,
+          "gradient_coverage": {
+            "parameters_with_grad": 6,
+            "nonzero_grad_parameters": 6,
+            "finite_grad_parameters": 6
+          },
+          "actions": {
+            "('ADVANCE', 0)": 11,
+            "('ADVANCE', 1)": 11,
+            "('ADVANCE', 2)": 11,
+            "('ADVANCE', 3)": 11,
+            "('ADVANCE', 4)": 11,
+            "('ADVANCE', 5)": 11,
+            "('ADVANCE', 6)": 11,
+            "('ADVANCE', 7)": 11
+          }
+        }
+      ]
+    }
+  ]
+}

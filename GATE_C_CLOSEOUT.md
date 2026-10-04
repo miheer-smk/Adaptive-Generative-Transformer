@@ -52,6 +52,9 @@ Gate C remains fixed-depth, D64, differentiable routing only.
 No adaptive halting, D768 scaling, CLRS, enwik8, MoE, hypernetwork
 modulation, or new GDN mechanics are included in this gate.
 
-## Next gate
+## Next milestone
 
-Gate D / Stage 4 begins with adaptive-depth and learned-HALT specification.
+Gate-C scientific validation remains open. Complete controlled route
+recovery, task-loss ablations, and seed robustness before advancing to
+Stage 4. The provisional Gate-D specification is not authorization to
+skip this milestone. See `GATE_C_AUDIT.md` for the subsequent audit.

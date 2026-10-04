@@ -1,0 +1,57 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning:
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+
+  queued_call()
+=== STAGE-3 ROUTE IMITATION DIAGNOSTIC ===
+device=cuda
+route_examples=8320
+backbone=FROZEN_STAGE1_SEED3305
+controller=TRAINABLE
+target_route=ADVANCE(0..7)
+alignment=TOKEN_BLOCK_EXPLICIT
+step=0001 ce=1.899720 route_acc=0.3379
+step=0500 ce=0.000363 route_acc=1.0000
+step=1000 ce=0.000091 route_acc=1.0000
+step=1500 ce=0.000037 route_acc=1.0000
+step=2000 ce=0.000019 route_acc=1.0000
+step=2500 ce=0.000012 route_acc=1.0000
+step=3000 ce=0.000009 route_acc=1.0000
+step=3500 ce=0.000005 route_acc=1.0000
+step=4000 ce=0.000004 route_acc=1.0000
+step=4500 ce=0.000002 route_acc=1.0000
+step=5000 ce=0.000002 route_acc=1.0000
+
+=== OFFLINE ROUTE RECOVERY ===
+accuracy=1.000000
+decision_accuracy:
+  decision=0 accuracy=1.000000
+  decision=1 accuracy=1.000000
+  decision=2 accuracy=1.000000
+  decision=3 accuracy=1.000000
+  decision=4 accuracy=1.000000
+  decision=5 accuracy=1.000000
+  decision=6 accuracy=1.000000
+  decision=7 accuracy=1.000000
+
+=== EXECUTOR ROUTE CHECK ===
+token=0 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=1 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=2 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=3 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=4 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=5 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=6 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+token=7 route=[('ADVANCE', 0), ('ADVANCE', 1), ('ADVANCE', 2), ('ADVANCE', 3), ('ADVANCE', 4), ('ADVANCE', 5), ('ADVANCE', 6), ('ADVANCE', 7)]
+executor_route_recovered=True
+
+=== HELD-OUT EXECUTOR ROUTE RECOVERY ===
+{'val': {'recovered_tokens': 130, 'total_tokens': 130, 'exact_route_accuracy': 1.0}, 'test': {'recovered_tokens': 392, 'total_tokens': 392, 'exact_route_accuracy': 1.0}}
+
+=== RESULT ===
+offline_route_accuracy=1.000000
+saved=experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt
+route_recovery=True

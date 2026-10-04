@@ -97,7 +97,8 @@ additional hyperparameter tuning.
 
 ## Transition
 
-Stage 4 should now address adaptive execution depth and learned HALT
-using the source-defined Stage-4 semantics.
+Gate-C scientific validation must be completed before Stage 4. The
+implementation milestone alone does not authorize adaptive execution
+depth or learned HALT. See `GATE_C_AUDIT.md` for the subsequent audit.
 
 No Gate-C result is claimed as evidence for adaptive halting.
