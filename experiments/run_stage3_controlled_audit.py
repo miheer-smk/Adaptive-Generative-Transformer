@@ -18,6 +18,7 @@ from experiments.run_stage3_taskA_controller import (
     CHECKPOINT, AGTv3, TaskAParity, controller_gradient_coverage,
     run_diff_sequence, run_fixed_sequence, set_seed,
 )
+from experiments.stage3_measurements import route_metrics
 
 
 @torch.no_grad()
@@ -30,11 +31,13 @@ def evaluate_cases(model, cases):
         decisions = [0] * 8
         actions = Counter()
         max_delta = 0.0
+        all_histories = []
         for batch in batches:
             for i in range(batch.target.numel()):
                 x, target = batch.x[i:i+1], batch.target[i:i+1]
                 fixed = run_fixed_sequence(model, x)
                 learned, histories = run_diff_sequence(model, x, 2.0, False)
+                all_histories.extend(histories)
                 losses.append(F.cross_entropy(learned, target).item())
                 fixed_losses.append(F.cross_entropy(fixed, target).item())
                 correct += int((learned.argmax(-1) == target).sum())
@@ -53,6 +56,7 @@ def evaluate_cases(model, cases):
             fixed_ce=sum(fixed_losses)/len(fixed_losses),
             max_logit_delta=max_delta, tokens=tokens, exact_route_tokens=exact,
             decision_accuracy=[n/tokens for n in decisions], actions=dict(actions),
+            routing=route_metrics(all_histories),
         )
     return result
 

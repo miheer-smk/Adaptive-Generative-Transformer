@@ -15,6 +15,7 @@ import torch.nn.functional as F
 from data.task_a import TaskAParity
 from src.agt import AGTv3
 from src.masks import apply_action_mask, build_execution_mask
+from experiments.stage3_measurements import file_sha256
 
 
 CKPT = Path("experiments/runs/stage1_parity_seed3305_best.pt")
@@ -34,6 +35,8 @@ def main() -> None:
     parser.add_argument("--steps", type=int, default=5000)
     parser.add_argument("--output", type=Path, default=OUT)
     args = parser.parse_args()
+    if args.output.exists() or args.output.with_suffix(".json").exists():
+        parser.error("Run artifacts already exist; choose a new output path")
     set_seed(args.seed)
     torch.set_num_threads(4)
 
@@ -379,6 +382,19 @@ def main() -> None:
     print("\n=== OFFLINE ROUTE RECOVERY ===")
     print(f"accuracy={offline_acc:.6f}")
 
+    confusion = torch.zeros(8, 11, dtype=torch.long, device=device)
+    confusion.index_put_((Y, pred), torch.ones_like(Y), accumulate=True)
+    errors = pred != Y
+    offline_errors = int(errors.sum())
+    offline_breakdown = {
+        "confusion": confusion.cpu().tolist(),
+        "incorrect_decisions": offline_errors,
+        "restart_errors": int((errors & (pred == 9)).sum()),
+        "illegal_predictions": int((~decision_masks[Y, pred]).sum()),
+        "restart_fraction_of_errors": int((errors & (pred == 9)).sum()) / offline_errors if offline_errors else 0.0,
+    }
+    print(f"offline_error_breakdown={offline_breakdown}")
+
     print("decision_accuracy:")
     for decision in range(8):
         decision_mask = Y == decision
@@ -457,11 +473,8 @@ def main() -> None:
 
     # Offline classification accuracy is diagnostic only. The decisive
     # metric is exact route recovery through the actual executor.
-    if not route_ok:
-        raise RuntimeError(
-            "Deterministic executor did not recover the canonical route "
-            "on the initial probe."
-        )
+    # Preserve failure evidence too; continue to held-out evaluation even
+    # when the initial probe is imperfect.
 
     # ---------------------------------------------------------
     # Held-out executor route recovery.
@@ -548,8 +561,7 @@ def main() -> None:
     print("\n=== HELD-OUT EXECUTOR ROUTE RECOVERY ===")
     print(heldout)
 
-    torch.save(
-        {
+    metadata = {
             "seed": args.seed,
             "dim": dim,
             "backbone_checkpoint": str(CKPT),
@@ -560,14 +572,30 @@ def main() -> None:
             "routing_decisions": 8,
             "budget": "zeros",
             "steps": args.steps,
-        },
-        args.output,
-    )
+            "backbone_sha256": file_sha256(CKPT),
+            "offline_breakdown": offline_breakdown,
+            "decision_accuracy": [float((pred[Y == i] == i).float().mean()) for i in range(8)],
+            "route_examples": n,
+            "batch_size": batch_size,
+            "lr": 1e-3,
+            "weight_decay": 0.0,
+            "initial_probe_exact": route_ok,
+            "route_recovery": route_ok and all(v["exact_route_accuracy"] == 1.0 for v in heldout.values()),
+        }
+    with args.output.open("xb") as handle:
+        torch.save(metadata, handle)
+    import json
+    summary = {key: value for key, value in metadata.items() if key != "controller_state_dict"}
+    summary["checkpoint"] = str(args.output)
+    summary["checkpoint_sha256"] = file_sha256(args.output)
+    with args.output.with_suffix(".json").open("x") as handle:
+        json.dump(summary, handle, indent=2)
+        handle.write("\n")
 
     print("\n=== RESULT ===")
     print(f"offline_route_accuracy={offline_acc:.6f}")
     print(f"saved={args.output}")
-    print(f"route_recovery={route_ok and all(v['exact_route_accuracy'] == 1.0 for v in heldout.values())}")
+    print(f"route_recovery={metadata['route_recovery']}")
 
 
 if __name__ == "__main__":
