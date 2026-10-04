@@ -280,3 +280,162 @@ def test_stage3_real_agt_differentiable_step_backpropagates():
         and grad.abs().sum() > 0
         for grad in controller_grads
     )
+
+def test_stage3_differentiable_inference_does_not_treat_halt_as_restart():
+    import torch
+
+    from src.executor import AdaptiveExecutor
+
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = float(amount)
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class Bank:
+        def __init__(self):
+            self.blocks = [
+                AddBlock(1.0),
+                AddBlock(2.0),
+            ]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    class FixedController:
+        def __call__(
+            self,
+            *,
+            h,
+            memory_read,
+            memory_mean,
+            pointer_one_hot,
+            budget,
+        ):
+            # N=2 => [ADVANCE0, ADVANCE1, REPEAT, RESTART, HALT]
+            #
+            # HALT is deliberately the largest logit. Stage-3 fixed-depth
+            # inference must ignore it and select legal successor actions.
+            logits = torch.tensor(
+                [[10.0, 0.0, -100.0, -100.0, 100.0]],
+                device=h.device,
+                dtype=h.dtype,
+            ).expand(h.shape[0], -1)
+
+            return {"logits": logits}
+
+    executor = AdaptiveExecutor(
+        block_bank=Bank(),
+        controller=FixedController(),
+        convergence=None,
+        max_execution_depth=1,
+    )
+
+    h0 = torch.zeros(1, 4)
+    memory = torch.zeros_like(h0)
+
+    result = executor.execute_differentiable(
+        h0=h0,
+        memory=memory,
+        C_prev=None,
+        context=None,
+        memory_mean=torch.zeros(1, 256),
+        budget=torch.zeros(1, 2),
+        tau=1.0,
+        training=False,
+    )
+
+    assert result.action_history == [
+        ("ADVANCE", 0),
+    ]
+
+    assert torch.equal(
+        result.h_terminal,
+        torch.ones(1, 4),
+    )
+
+def test_stage3_differentiable_executor_ignores_halt_in_fixed_depth():
+    import torch
+
+    from src.executor import AdaptiveExecutor
+
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = float(amount)
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class Bank:
+        def __init__(self):
+            self.blocks = [
+                AddBlock(1.0),
+                AddBlock(2.0),
+            ]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    class FixedController:
+        def __call__(
+            self,
+            *,
+            h,
+            memory_read,
+            memory_mean,
+            pointer_one_hot,
+            budget,
+        ):
+            # N=2:
+            #   0 = ADVANCE(0)
+            #   1 = ADVANCE(1)
+            #   2 = REPEAT
+            #   3 = RESTART
+            #   4 = HALT
+            #
+            # HALT deliberately has the largest logit. Stage-3 fixed-depth
+            # routing must ignore HALT because it has no successor state.
+            logits = torch.tensor(
+                [[10.0, 0.0, -100.0, -100.0, 100.0]],
+                device=h.device,
+                dtype=h.dtype,
+            )
+
+            return {
+                "logits": logits.expand(h.shape[0], -1),
+                "advance": logits[:, :2].expand(h.shape[0], -1),
+                "repeat": logits[:, 2].expand(h.shape[0]),
+                "restart": logits[:, 3].expand(h.shape[0]),
+                "halt": logits[:, 4].expand(h.shape[0]),
+            }
+
+    executor = AdaptiveExecutor(
+        block_bank=Bank(),
+        controller=FixedController(),
+        convergence=None,
+        max_execution_depth=1,
+    )
+
+    h0 = torch.zeros(1, 4)
+    memory = torch.zeros_like(h0)
+
+    result = executor.execute_differentiable(
+        h0=h0,
+        memory=memory,
+        C_prev=None,
+        context=None,
+        memory_mean=torch.zeros(1, 256),
+        budget=torch.tensor([[0.0, 1.0]]),
+        tau=1.0,
+        training=False,
+    )
+
+    assert result.execution_count == 1
+    assert result.action_history == [
+        ("ADVANCE", 0),
+    ]
+    assert torch.equal(
+        result.h_terminal,
+        torch.ones(1, 4),
+    )

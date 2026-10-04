@@ -444,24 +444,78 @@ class AdaptiveExecutor:
 
             action_logits = controller_out["logits"]
 
-            result = self.differentiable_route_step(
-                h=h,
-                h0=h0,
-                memory=memory,
-                context=context,
-                pointer=pointer,
-                action_logits=action_logits,
-                tau=tau,
-                training=training,
-                execution_count=execution_count,
-                just_restarted=just_restarted,
-            )
+            if training:
+                # Training path: exhaustive successor construction is required
+                # so the ST-Gumbel relaxed backward path can differentiate
+                # through every legal successor.
+                result = self.differentiable_route_step(
+                    h=h,
+                    h0=h0,
+                    memory=memory,
+                    context=context,
+                    pointer=pointer,
+                    action_logits=action_logits,
+                    tau=tau,
+                    training=True,
+                    execution_count=execution_count,
+                    just_restarted=just_restarted,
+                )
 
-            h = result["h_next"]
+                h = result["h_next"]
+                selected_action = int(
+                    result["selected_action"][0].item()
+                )
 
-            selected_action = int(
-                result["selected_action"][0].item()
-            )
+            else:
+                # Deterministic inference path: only the selected legal
+                # successor is executed. Exhaustive candidate construction is
+                # unnecessary when no routing gradient is required.
+                full_mask = build_execution_mask(
+                    pointer=pointer,
+                    execution_count=execution_count,
+                    just_restarted=just_restarted,
+                    num_blocks=num_blocks,
+                ).to(device=action_logits.device)
+
+                # Fixed-depth Stage-3 inference has no learned HALT
+                # successor. Therefore deterministic routing selects only
+                # from the N+2 successor actions:
+                #   ADVANCE(0..N-1), REPEAT, RESTART
+                # HALT is intentionally excluded.
+                successor_count = num_blocks + 2
+                successor_mask = full_mask[:successor_count]
+
+                masked_logits = apply_action_mask(
+                    action_logits[:, :successor_count],
+                    successor_mask.unsqueeze(0),
+                )
+
+                selected_action = int(
+                    torch.argmax(
+                        masked_logits,
+                        dim=-1,
+                    )[0].item()
+                )
+
+                if selected_action < num_blocks:
+                    h = self._run_block(
+                        block_index=selected_action,
+                        h=h,
+                        h0=h0,
+                        memory=memory,
+                        context=context,
+                    )
+                elif selected_action == num_blocks:
+                    h = self._run_block(
+                        block_index=pointer,
+                        h=h,
+                        h0=h0,
+                        memory=memory,
+                        context=context,
+                    )
+                else:
+                    # RESTART is zero-compute and preserves h.
+                    h = h
 
             if selected_action < num_blocks:
                 pointer = selected_action
