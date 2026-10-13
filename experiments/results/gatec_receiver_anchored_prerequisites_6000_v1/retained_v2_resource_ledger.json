@@ -1,0 +1,14 @@
+{
+  "attempted_tokens": 1,
+  "completed_tokens": 0,
+  "failed_tokens": 1,
+  "selected_bank_calls": 0,
+  "completed_bank_calls": 0,
+  "attempted_terminal_commits": 0,
+  "terminal_commits": 0,
+  "backward_evaluations": 0,
+  "optimizer_updates": 0,
+  "warmup_tokens": 0,
+  "token_ceiling": 512,
+  "block_ceiling": 4096
+}

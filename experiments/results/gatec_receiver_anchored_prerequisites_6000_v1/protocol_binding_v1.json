@@ -1,0 +1,127 @@
+{
+  "authority": "full prospective protocol and final clarifications supplied in conversation; no local original-file hash claimed",
+  "experiment": "receiver-anchored continuation training; this attempt is prerequisites only",
+  "programs": {
+    "research/P0": {
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "research/P1": {
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        5,
+        6,
+        7
+      ],
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  "historical_v4_P1_unchanged": true,
+  "configuration": {
+    "dim": 64,
+    "memory_slots": 16,
+    "batch": 1,
+    "dtype": "float32",
+    "P": 8,
+    "D": 8,
+    "budget": [
+      0,
+      0
+    ],
+    "compatibility_input": "zeros [1,64]",
+    "HALT": false,
+    "convergence": false,
+    "Gumbel": false,
+    "selector": false
+  },
+  "ownership": "all existing non-controller parameters shared and trainable in disposable models; controller frozen and unused",
+  "receiver": "current values detached and cloned per episode/branch; input committed state cloned with graph preserved",
+  "native_objective": "mean of both programs' per-token parity CE",
+  "arm_objective": "0.5 native + 0.25 each of two continuation means; T cross-program, C same-program",
+  "training_not_executed": {
+    "common_updates": 512,
+    "paired_updates_per_arm": 512,
+    "AdamW": {
+      "lr": 0.0001,
+      "weight_decay": 0,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08
+    },
+    "clip_global_norm": 1,
+    "effective_batch": 2,
+    "physical_batch": 1,
+    "selection": "paired snapshots256/512, native-only minimax CE; tie512"
+  },
+  "study_seeds_not_used": {
+    "training_inputs": 6000,
+    "common_order": 6001,
+    "development_inputs": 6002,
+    "development_suffixes": 6003,
+    "selection_inputs": 6004,
+    "selection_suffixes": 6005,
+    "confirmation_inputs": 6006,
+    "confirmation_suffixes": 6007,
+    "paired_order": 6008,
+    "bootstrap": 6010,
+    "profiling_order": 6012
+  },
+  "prerequisite_limits": {
+    "attempted_tokens": 512,
+    "actual_selected_bank_calls": 4096,
+    "optimizer_updates": 0
+  },
+  "profiling_not_executed": {
+    "suffix": "z0",
+    "paths": 5,
+    "cases": 32,
+    "warmups": 1,
+    "timed_repetitions": 5,
+    "tokens": 26880,
+    "starts": "independent original initial state for every full trajectory"
+  },
+  "uncertainty": {
+    "replicates": 20000,
+    "seed": 6010,
+    "ablation_lower_quantile": 0.0125,
+    "latency_upper_quantile": 0.9875,
+    "interpolation": "linear",
+    "families": "two separate families of four",
+    "latency_estimator": "ratio of arithmetic case means"
+  },
+  "data": "only retained archival length8 control and fixed disposable synthetic bit fixtures; no panels generated",
+  "historical_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting"
+}

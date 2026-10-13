@@ -1,0 +1,108 @@
+{
+  "scope": "eight-block toy identity/additive bank, eight fixed decisions; no model redesign",
+  "results": [
+    {
+      "branch_logits": [
+        1.0,
+        0.0
+      ],
+      "terminal": [
+        [
+          1.0,
+          1.0
+        ]
+      ],
+      "loss": 1.0,
+      "branch_gradient": [
+        0.0,
+        0.0
+      ],
+      "history": [
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "ADVANCE",
+          7
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ]
+      ]
+    },
+    {
+      "branch_logits": [
+        0.0,
+        1.0
+      ],
+      "terminal": [
+        [
+          100.0,
+          100.0
+        ]
+      ],
+      "loss": 10000.0,
+      "branch_gradient": [
+        0.0,
+        0.0
+      ],
+      "history": [
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          0
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "REPEAT",
+          6
+        ],
+        [
+          "RESTART",
+          null
+        ],
+        [
+          "ADVANCE",
+          6
+        ]
+      ]
+    }
+  ],
+  "conclusion": "hidden-state ST mixing cannot credit a pure pointer/mask effect when candidate h states coincide"
+}

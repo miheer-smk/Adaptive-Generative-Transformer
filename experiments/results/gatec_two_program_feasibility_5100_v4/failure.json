@@ -1,0 +1,10 @@
+{
+  "error": "CurrentRejection(\"Mandatory current screen failed: {'phase': 'current', 'sequence_id': 'acquisition/L16/row03', 'history_program': 1, 'program': 0}: {'checks': {'current_correct': False, 'executions': True, 'commits': True}, 'accepted': False}\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_two_program_feasibility_5100_v4/runner_v4.py\", line 310, in execute\n    accepted(sa, case, canonical=canonical)\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_two_program_feasibility_5100_v4/runner_v4.py\", line 199, in accepted\n    raise CurrentRejection(f'Mandatory current screen failed: {case}: {result}')\nCurrentRejection: Mandatory current screen failed: {'phase': 'current', 'sequence_id': 'acquisition/L16/row03', 'history_program': 1, 'program': 0}: {'checks': {'current_correct': False, 'executions': True, 'commits': True}, 'accepted': False}\n",
+  "boundary": "remaining current screen; P1 histories and boundary combinations",
+  "first_mechanical": null,
+  "completed_tokens": 1979,
+  "future_calls": 0,
+  "elapsed_seconds": 56.30407442105934,
+  "classification": "CURRENT_CANDIDATE_REJECTED"
+}

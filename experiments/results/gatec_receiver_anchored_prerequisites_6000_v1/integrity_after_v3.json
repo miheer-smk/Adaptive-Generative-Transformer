@@ -1,0 +1,9 @@
+{
+  "protected_count": 704,
+  "changed_or_missing": [],
+  "unexpected_files_outside_attempt": [],
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "tracked_diff_unchanged": true,
+  "historical_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting",
+  "success": true
+}

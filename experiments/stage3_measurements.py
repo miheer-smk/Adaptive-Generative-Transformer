@@ -77,18 +77,29 @@ def count_block_calls(model):
 
 
 def route_metrics(histories, num_blocks=8):
+    """Analyze supplied action histories, including decision prefixes.
+
+    Each history retains the boundary supplied by the caller. Legacy `tokens`
+    and `*_per_token` fields count/average those histories, not proven completed
+    tokens. `exact_tokens` counts histories equal to the full canonical sweep;
+    it does not infer completion of a caller's configured execution budget.
+    `incorrect_decisions` compares observed positions with that sweep; positions
+    beyond the sweep are extra decisions, not fabricated ADVANCE destinations.
+
+    Action rates use observed decisions. Block-use frequencies use observed
+    ADVANCE/REPEAT executions. No history length or completion budget is imposed.
+    """
     actions = Counter()
-    by_decision = [Counter() for _ in range(8)]
+    by_decision = []
     routes = Counter()
     unique_blocks = []
     first_errors = Counter()
     errors = restart_errors = illegal = 0
-    confusion = [[0] * (num_blocks + 3) for _ in range(8)]
+    confusion = []
+    block_executions = [0] * num_blocks
     exact = 0
     for history in histories:
-        if len(history) != 8:
-            raise ValueError("Every token must have exactly eight routing decisions")
-        pointer, restarted = 0, False
+        pointer, restarted, executions = 0, False, 0
         visited = set()
         route = []
         first = None
@@ -97,14 +108,17 @@ def route_metrics(histories, num_blocks=8):
                 "REPEAT": num_blocks, "RESTART": num_blocks + 1,
                 "HALT": num_blocks + 2,
             }[kind]
-            mask = build_execution_mask(pointer, decision, restarted, num_blocks)
+            if decision == len(by_decision):
+                by_decision.append(Counter())
+                confusion.append([0] * (num_blocks + 3))
+            mask = build_execution_mask(pointer, executions, restarted, num_blocks)
             illegal += int(not mask[action] or kind == "HALT")
             confusion[decision][action] += 1
             key = str((kind, index))
             actions[key] += 1
             by_decision[decision][key] += 1
             route.append(key)
-            if (kind, index) != ("ADVANCE", decision):
+            if decision >= num_blocks or (kind, index) != ("ADVANCE", decision):
                 errors += 1
                 restart_errors += int(kind == "RESTART")
                 if first is None:
@@ -112,12 +126,16 @@ def route_metrics(histories, num_blocks=8):
             if kind == "ADVANCE":
                 pointer, restarted = index, False
                 visited.add(index)
+                block_executions[index] += 1
+                executions += 1
             elif kind == "REPEAT":
                 visited.add(pointer)
+                block_executions[pointer] += 1
+                executions += 1
                 restarted = False
             elif kind == "RESTART":
                 pointer, restarted = 0, True
-        exact += int(first is None)
+        exact += int(len(history) == num_blocks and first is None)
         if first is not None:
             first_errors[str(first)] += 1
         unique_blocks.append(len(visited))
@@ -126,17 +144,21 @@ def route_metrics(histories, num_blocks=8):
     total = sum(actions.values())
     restart = sum(n for action, n in actions.items() if "RESTART" in action)
     repeat = sum(n for action, n in actions.items() if "REPEAT" in action)
-    return dict(tokens=tokens, decisions=total, exact_tokens=exact,
+    executed = sum(block_executions)
+    return dict(tokens=tokens, decisions=total, executions=executed,
+                restarts=restart, repeats=repeat, exact_tokens=exact,
                 exact_route_fraction=exact/tokens if tokens else None,
                 actions=dict(actions), per_decision_actions=[dict(c) for c in by_decision],
+                per_decision_observations=[sum(c.values()) for c in by_decision],
                 confusion=confusion, incorrect_decisions=errors, illegal_decisions=illegal,
                 restart_fraction_of_errors=restart_errors/errors if errors else 0.0,
                 restart_rate=restart/total if total else 0.0,
                 repeat_rate=repeat/total if total else 0.0,
-                selected_block_calls=sum(n for action,n in actions.items()
-                                         if "ADVANCE" in action or "REPEAT" in action),
-                selected_block_calls_per_token=sum(n for action,n in actions.items()
-                                                   if "ADVANCE" in action or "REPEAT" in action)/tokens if tokens else None,
+                selected_block_calls=executed,
+                selected_block_calls_per_token=executed/tokens if tokens else None,
+                block_execution_counts=block_executions,
+                block_execution_frequencies=[n/executed if executed else 0.0
+                                             for n in block_executions],
                 unique_blocks_per_token=sum(unique_blocks)/tokens if tokens else None,
                 unique_blocks_histogram=dict(Counter(map(str, unique_blocks))),
                 first_error_decision=dict(first_errors), route_histogram=dict(routes))

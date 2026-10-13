@@ -1,0 +1,7 @@
+{
+  "identity/cpu": {
+    "parameters_unchanged": true,
+    "buffers_unchanged": true,
+    "parameter_grad_buffers_untouched": true
+  }
+}

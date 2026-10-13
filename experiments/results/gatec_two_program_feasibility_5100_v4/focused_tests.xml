@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="32" time="1.547" timestamp="2026-10-11T11:17:45.617691+00:00" hostname="spark-551e"><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_immutable_descriptors_and_exact_execution_validation" time="0.001" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions0]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions1]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions2]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions3]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions4]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_fail_closed_invalid_programs[actions5]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_restart_descriptor_has_fifteen_decisions_eight_executions" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_exhausted_provider_never_falls_back" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_complete_program_reference_branch_isolation_and_supplied_continuation" time="0.202" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_wrong_requested_action_stops_before_commit_and_restores_observers" time="0.006" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_worst_prefix_statistic_keeps_suffix_pairing_and_primary_horizons" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4" name="test_all_protected_production_sources_and_archives_still_match_baseline" time="0.024" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_mask_device_observation_and_complete_P0[cpu]" time="0.017"><failure message="AssertionError: assert (device(type='cpu') == device(type='cpu') and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)&#10; +  where device(type='cpu') = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).device&#10; +  and   device(type='cpu') = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]]).device&#10; +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).dtype&#10; +  and   torch.bool = torch.bool&#10;  &#10;  At index 0 diff: 1 != 10&#10;  Left contains one more item: 10&#10;  Use -v to get more diff)">device = 'cpu'
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0xe5c5a59d6a80&gt;
+
+    @pytest.mark.parametrize('device', ['cpu', 'cuda'])
+    def test_mask_device_observation_and_complete_P0(device, monkeypatch):
+        if device == 'cuda' and not torch.cuda.is_available():
+            pytest.skip('CUDA unavailable: study must not execute')
+        torch.set_num_threads(4)
+        torch.manual_seed(99)
+        model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2).to(device).eval()
+        model.executor.max_execution_depth = 8
+        for p in model.parameters():
+            p.requires_grad_(False)
+        mask_calls, observation_calls = [], []
+        original_mask = programs.executor_module.build_execution_mask
+        original_fill = torch.Tensor.masked_fill
+        def capture_mask(*args, **kwargs):
+            result = original_mask(*args, **kwargs)
+            assert result.device.type == 'cpu' and result.dtype == torch.bool and result.shape == (11,)
+            mask_calls.append((result, result.clone()))
+            return result
+        def capture_fill(logits, mask, value):
+            if logits.shape == (1,10):
+                saved = logits.clone()
+                assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+                assert torch.equal(mask.cpu(), ~mask_calls[-1][1][:10])
+                result = original_fill(logits, mask, value)
+                assert torch.equal(logits, saved)
+                observation_calls.append(int(result.argmax(-1)))
+                return result
+            return original_fill(logits, mask, value)
+        monkeypatch.setattr(programs.executor_module, 'build_execution_mask', capture_mask)
+        monkeypatch.setattr(torch.Tensor, 'masked_fill', capture_fill)
+        parent = model.initial_persistent_state(1, device, torch.float32)
+        saved = programs.gpu_snapshot(parent)
+        runner = programs.CompleteToken(model)
+&gt;       out, summary, rows = runner.run(torch.zeros(1,64,device=device), parent, programs.P0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/utils/_contextlib.py:124: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+experiments/results/gatec_two_program_feasibility_5100_v4/research_programs_v4.py:356: in run
+    out = model.adaptive_differentiable_step(x, parent, compatibility,
+src/agt.py:399: in adaptive_differentiable_step
+    execution = self.executor.execute_differentiable(
+src/executor.py:687: in execute_differentiable
+    masked_logits = apply_action_mask(
+src/masks.py:120: in apply_action_mask
+    return logits.masked_fill(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+logits = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]])
+mask = tensor([[False, False, False, False, False, False, False, False,  True,  True]])
+value = -inf
+
+    def capture_fill(logits, mask, value):
+        if logits.shape == (1,10):
+            saved = logits.clone()
+&gt;           assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+E           AssertionError: assert (device(type='cpu') == device(type='cpu') and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)
+E            +  where device(type='cpu') = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).device
+E            +  and   device(type='cpu') = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]]).device
+E            +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).dtype
+E            +  and   torch.bool = torch.bool
+E             
+E             At index 0 diff: 1 != 10
+E             Left contains one more item: 10
+E             Use -v to get more diff)
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:34: AssertionError</failure></testcase><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_mask_device_observation_and_complete_P0[cuda]" time="0.714"><failure message="AssertionError: assert (device(type='cuda', index=0) == device(type='cuda', index=0) and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)&#10; +  where device(type='cuda', index=0) = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').device&#10; +  and   device(type='cuda', index=0) = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]],\n       device='cuda:0').device&#10; +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').dtype&#10; +  and   torch.bool = torch.bool&#10;  &#10;  At index 0 diff: 1 != 10&#10;  Left contains one more item: 10&#10;  Use -v to get more diff)">device = 'cuda'
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0xe5c5a5a21b80&gt;
+
+    @pytest.mark.parametrize('device', ['cpu', 'cuda'])
+    def test_mask_device_observation_and_complete_P0(device, monkeypatch):
+        if device == 'cuda' and not torch.cuda.is_available():
+            pytest.skip('CUDA unavailable: study must not execute')
+        torch.set_num_threads(4)
+        torch.manual_seed(99)
+        model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2).to(device).eval()
+        model.executor.max_execution_depth = 8
+        for p in model.parameters():
+            p.requires_grad_(False)
+        mask_calls, observation_calls = [], []
+        original_mask = programs.executor_module.build_execution_mask
+        original_fill = torch.Tensor.masked_fill
+        def capture_mask(*args, **kwargs):
+            result = original_mask(*args, **kwargs)
+            assert result.device.type == 'cpu' and result.dtype == torch.bool and result.shape == (11,)
+            mask_calls.append((result, result.clone()))
+            return result
+        def capture_fill(logits, mask, value):
+            if logits.shape == (1,10):
+                saved = logits.clone()
+                assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+                assert torch.equal(mask.cpu(), ~mask_calls[-1][1][:10])
+                result = original_fill(logits, mask, value)
+                assert torch.equal(logits, saved)
+                observation_calls.append(int(result.argmax(-1)))
+                return result
+            return original_fill(logits, mask, value)
+        monkeypatch.setattr(programs.executor_module, 'build_execution_mask', capture_mask)
+        monkeypatch.setattr(torch.Tensor, 'masked_fill', capture_fill)
+        parent = model.initial_persistent_state(1, device, torch.float32)
+        saved = programs.gpu_snapshot(parent)
+        runner = programs.CompleteToken(model)
+&gt;       out, summary, rows = runner.run(torch.zeros(1,64,device=device), parent, programs.P0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/utils/_contextlib.py:124: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+experiments/results/gatec_two_program_feasibility_5100_v4/research_programs_v4.py:356: in run
+    out = model.adaptive_differentiable_step(x, parent, compatibility,
+src/agt.py:399: in adaptive_differentiable_step
+    execution = self.executor.execute_differentiable(
+src/executor.py:687: in execute_differentiable
+    masked_logits = apply_action_mask(
+src/masks.py:120: in apply_action_mask
+    return logits.masked_fill(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+logits = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]],
+       device='cuda:0')
+mask = tensor([[False, False, False, False, False, False, False, False,  True,  True]],
+       device='cuda:0')
+value = -inf
+
+    def capture_fill(logits, mask, value):
+        if logits.shape == (1,10):
+            saved = logits.clone()
+&gt;           assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+E           AssertionError: assert (device(type='cuda', index=0) == device(type='cuda', index=0) and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)
+E            +  where device(type='cuda', index=0) = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').device
+E            +  and   device(type='cuda', index=0) = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]],\n       device='cuda:0').device
+E            +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').dtype
+E            +  and   torch.bool = torch.bool
+E             
+E             At index 0 diff: 1 != 10
+E             Left contains one more item: 10
+E             Use -v to get more diff)
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:34: AssertionError</failure></testcase><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-archival]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-p0_current]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-all_current]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-archival]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-p0_current]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-all_current]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_P1_history_permission_is_distinct_from_P1_acceptance" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[missing]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[extra]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[null]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[version]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[window]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[commit]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[shape]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_strict_archival_comparator_detects_all_required_classes[summary]" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_current_screen_has_original_thresholds_without_new_confidence_gate" time="0.000" /><testcase classname="experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4" name="test_monitor_current_and_script_targets_separate_and_summary_evidence_labeled" time="0.004" /></testsuite></testsuites>

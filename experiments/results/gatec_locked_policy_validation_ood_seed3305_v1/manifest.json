@@ -1,0 +1,422 @@
+{
+  "created_utc": "2026-10-06T09:11:56.488885+00:00",
+  "protocol": "locked-persisted-validation-then-ood-no-update-v1",
+  "checkpoint": {
+    "path": "experiments/runs/stage3_imitation_replication_3305_v1.pt",
+    "sha256": "259e2b86786c6cd037e3ba0db71d91fd05cdb76753bdb462be414bd1b9400df3",
+    "metadata": {
+      "seed": 3305,
+      "dim": 64,
+      "backbone_checkpoint": "experiments/runs/stage1_parity_seed3305_best.pt",
+      "offline_route_accuracy": 1.0,
+      "route": [
+        [
+          "ADVANCE",
+          0
+        ],
+        [
+          "ADVANCE",
+          1
+        ],
+        [
+          "ADVANCE",
+          2
+        ],
+        [
+          "ADVANCE",
+          3
+        ],
+        [
+          "ADVANCE",
+          4
+        ],
+        [
+          "ADVANCE",
+          5
+        ],
+        [
+          "ADVANCE",
+          6
+        ],
+        [
+          "ADVANCE",
+          7
+        ]
+      ],
+      "heldout": {
+        "val": {
+          "recovered_tokens": 130,
+          "total_tokens": 130,
+          "exact_route_accuracy": 1.0
+        },
+        "test": {
+          "recovered_tokens": 392,
+          "total_tokens": 392,
+          "exact_route_accuracy": 1.0
+        }
+      },
+      "routing_decisions": 8,
+      "budget": "zeros",
+      "steps": 5000,
+      "backbone_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+      "offline_breakdown": {
+        "confusion": [
+          [
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1040,
+            0,
+            0,
+            0
+          ]
+        ],
+        "incorrect_decisions": 0,
+        "restart_errors": 0,
+        "illegal_predictions": 0,
+        "restart_fraction_of_errors": 0.0
+      },
+      "decision_accuracy": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "route_examples": 8320,
+      "batch_size": 1024,
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "initial_probe_exact": true,
+      "route_recovery": true
+    },
+    "parameter_shapes": {
+      "norm_h.weight": [
+        64
+      ],
+      "norm_memory_read.weight": [
+        64
+      ],
+      "mlp.0.weight": [
+        256,
+        395
+      ],
+      "mlp.0.bias": [
+        256
+      ],
+      "mlp.2.weight": [
+        11,
+        256
+      ],
+      "mlp.2.bias": [
+        11
+      ]
+    },
+    "loaded_only": "controller_state_dict",
+    "companion_sha256": "398e45a43174fe0feeae9eaa2d63236af20999cd5f76911a719d713d093df739"
+  },
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "noncontroller_tensor_count": 126,
+    "identical_loaded_backbones": true,
+    "loaded_tensor_fingerprint": "b5f84ca59e029d1d3905c64a7905cecd888ccd6c6545c9a5080b41ce5adde98b"
+  },
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "status": " M experiments/diagnose_stage3_gradients.py\n M experiments/evaluate_stage3_stochastic_continuation.py\n M experiments/runs/stage1_taskA_tiny.json\n M experiments/stage3_measurements.py\n M src/__pycache__/agt.cpython-312.pyc\n M src/__pycache__/blocks.cpython-312.pyc\n M src/__pycache__/controller.cpython-312.pyc\n M src/__pycache__/executor.cpython-312.pyc\n M src/__pycache__/masks.cpython-312.pyc\n M src/executor.py\n M tests/test_stage3_measurements.py\n M tests/test_stage3_replication.py\n M tests/test_stage3_stochastic_evaluation.py\n M tests/test_stage3_successor_mix.py\n?? AUDIT_PRECHECK.md\n?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md\n?? GATE_B_STAGE3_SPEC.md.pre_inspection\n?? GATE_B_STAGE3_SPEC.md.pre_reconcile\n?? GATE_B_STAGE3_SPEC.md.pre_source_lock\n?? HALT\n?? RESTART\n?? data/__pycache__/\n?? experiments/__pycache__/\n?? experiments/audit_gatec_canonical_replay.py\n?? experiments/check_stage3_equivalence_batch1.py\n?? experiments/diagnose_stage1_taskA.py\n?? experiments/diagnose_stage3_closed_loop_parity.py\n?? experiments/diagnose_stage3_route_equivalence.py\n?? experiments/diagnose_stage3_taskA_gradient_flow.py\n?? experiments/evaluate_gatec_locked_policy.py\n?? experiments/evaluate_stage3_closed_loop_equivalence.py\n?? experiments/evaluate_stage3_route_controller.py\n?? experiments/evaluate_stage3_warmstart.py\n?? experiments/evaluate_stage3_warmstart_parity.py\n?? experiments/evaluate_stage3_warmstart_taskA.py\n?? experiments/gateA_a3_state_vs_output.py\n?? experiments/gateA_a4_state_ablation.py\n?? experiments/gateA_a5_state_shuffle.py\n?? experiments/gateA_a6_state_patching.py\n?? experiments/gateA_a7_controls.py\n?? experiments/replay_gatec_learned_policy.py\n?? experiments/results/\n?? experiments/run_stage1_taskA_overfit.py\n?? experiments/run_stage3_masked_route_imitation.py\n?? experiments/run_stage3_taskA_warmstart.py\n?? experiments/run_stage3_warmstart_taskA_train.py\n?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt\n?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt\n?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json\n?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json\n?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt\n?? experiments/runs/stage3_imitation_replication_3305_v1.pt\n?? experiments/runs/stage3_imitation_replication_3306_v1.pt\n?? experiments/runs/stage3_imitation_replication_3307_v1.pt\n?? experiments/runs/stage3_metadata_credit_probe_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json\n?? experiments/stage3_decision_prefix.py\n?? experiments/train_stage1_taskA_len8.py\n?? \"n' '===== BRANCH =====' && \"\n?? \"n' '===== CURRENT WORKTREE =====' && \"\n?? src/__pycache__/routing.cpython-312.pyc\n?? src/agt.py.pre_adaptive_step.bak\n?? src/executor.py.pre_adaptive_integration.bak\n?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc\n?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc\n?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc\n?? tests/test_gatec_canonical_replay_audit.py\n?? tests/test_stage3_decision_prefix.py\n?? tests/test_stage3_execution_accounting.py\n?? tests/test_stage3_route_metrics.py\n?? tests/test_stage3_taskA_gradient_diagnostic.py\n?? tests/test_stage4_halt.py\n?? tests/test_stage4_halting.py\n",
+    "tracked_diff_sha256": "8b269f06eb4ca7ffa02fb318e493b4b073875723926f97ee16cc4336dd1e311d"
+  },
+  "script_sha256": "1503fc2cc3dc75eccde7f3c70cbc56d4f3a3b574f04a2d43048536d0a2dbbcb4",
+  "observer_sha256": "ee6be11e1a209a0d78126399c181bf01dda3dcbd4e88d0eead2c80a6628a0748",
+  "source_sha256": {
+    "src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "src/terminal_commit.py": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/norms.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "src/convergence.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "src/gdn_v3.py": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+    "src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "src/output_head.py": "5ea4e70576c5869639f758a7b95c87f2cb0464ed091bbf98b7524538fd31511a",
+    "src/gdn.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "src/mhc.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "src/executor.py": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f",
+    "src/rope.py": "2a99012fb952ad53d72762eb85cd02c3dd0a12eb3949afcd45f35bede4c03d80",
+    "src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "src/swiglu.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "src/utils.py": "4c220baa4e6669c04fbb991e5e7bcd39df41d36d5d2283d060fc28a79a4f3a33",
+    "src/prelude.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "src/gqa.py": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb",
+    "src/memory.py": "1fa44e6367d53e299938c1f95c946df2570487daf24d26191a32b86d1235375c",
+    "src/caches.py": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1",
+    "src/commit.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "src/config.py": "c106a8f03333a0ccafc004be612ce9bdcfc30f2f9eadd6d5fe57534fbad04efc"
+  },
+  "configuration": {
+    "device": "cuda",
+    "device_name": "NVIDIA GB10",
+    "torch_version": "2.10.0+cu130",
+    "dim": 64,
+    "memory_slots": 16,
+    "controller": "395->256->11",
+    "action_slots": [
+      "ADVANCE(0)",
+      "ADVANCE(1)",
+      "ADVANCE(2)",
+      "ADVANCE(3)",
+      "ADVANCE(4)",
+      "ADVANCE(5)",
+      "ADVANCE(6)",
+      "ADVANCE(7)",
+      "REPEAT",
+      "RESTART",
+      "HALT"
+    ],
+    "batch": 1,
+    "dtype": "float32",
+    "actual_budget_fraction": 0.0,
+    "actual_budget_presence_flag": 0.0,
+    "budget_feature": [
+      0.0,
+      0.0
+    ],
+    "execution_budget": 8,
+    "routing": "deterministic legal argmax; production selected-only execution",
+    "training": false,
+    "halt_successor_excluded": true,
+    "convergence_not_used_by_fixed_depth_path": true,
+    "adaptive_depth": false,
+    "optimizer_exists": false,
+    "optimizer_steps": 0,
+    "decision_cap": null,
+    "teacher_forcing": false,
+    "fallback": false,
+    "sequence_reset": "fresh identical initial_persistent_state; each path retains its own state within sequence",
+    "task_metrics": "final-token CE and final-token parity only",
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "token_feature_seed": 3002,
+    "token_feature_sha256": "0b0417667a8c3b16ab84596fe6d98bc56d306add3229aa5d18854f30631e1f3e"
+  },
+  "dataset_source": {
+    "path": "experiments/runs/stage3_replication_3305_3307_100_v1.json",
+    "sha256": "d32e988558f7cfa3bc8e0a34e11c29e8acfb6aea25dc5f4839839719dcac3beb",
+    "historical_git_head": "f23a50a57937bf29ec54a3e5f709060dec2b4de1",
+    "arrays": [
+      "evaluation_data.val",
+      "evaluation_data.ood_test"
+    ],
+    "order": "stored batch then stored row; unchanged",
+    "data_generation": false,
+    "filtering": false,
+    "resampling": false
+  },
+  "datasets": {
+    "val": {
+      "sequences": 52,
+      "tokens": 520,
+      "ordered_sequence_label_sha256": "b839b10eceab3b82712a1bafdc5861a26edbd85060fa1c3f450afe6dffd1024c",
+      "bits_sha256": "e159dd6cf3d1c83cec8e0dbaa89a5541c3c20ebb097e07a1185c8cae42098745",
+      "labels_sha256": "06e20ab40f406939a3f0a2f0d7442ad8f7470147135d28df2b1056f84f86f742",
+      "counts_by_length": {
+        "4": 4,
+        "5": 4,
+        "6": 4,
+        "7": 4,
+        "8": 4,
+        "9": 4,
+        "10": 4,
+        "11": 4,
+        "12": 4,
+        "13": 4,
+        "14": 4,
+        "15": 4,
+        "16": 4
+      },
+      "label_balance": {
+        "1": 33,
+        "0": 19
+      },
+      "duplicate_sequences": 0,
+      "original_control_sequence_ids": [],
+      "historical_task_loss_training_overlap_counts": {
+        "3305": 5,
+        "3306": 4,
+        "3307": 2
+      },
+      "selected_imitation_training_overlap": "UNKNOWN: exact training bits not serialized",
+      "stage1_training_overlap": "UNKNOWN: exact Stage-1 training bits not serialized"
+    },
+    "ood_test": {
+      "sequences": 64,
+      "tokens": 1568,
+      "ordered_sequence_label_sha256": "b44cbcfc11910add11e31f6683a738e7878e213ed3391b490492312d88a9ed10",
+      "bits_sha256": "8a67559fe79226a1155f279b710fd7b5596faf7f176ab123b0cd3a6a7ba02b93",
+      "labels_sha256": "4a2503116ded1538751647a6c908fc67fdb6b1fb621b3dd74b8a5af54bc72500",
+      "counts_by_length": {
+        "17": 4,
+        "18": 4,
+        "19": 4,
+        "20": 4,
+        "21": 4,
+        "22": 4,
+        "23": 4,
+        "24": 4,
+        "25": 4,
+        "26": 4,
+        "27": 4,
+        "28": 4,
+        "29": 4,
+        "30": 4,
+        "31": 4,
+        "32": 4
+      },
+      "label_balance": {
+        "0": 33,
+        "1": 31
+      },
+      "duplicate_sequences": 0,
+      "original_control_sequence_ids": [],
+      "historical_task_loss_training_overlap_counts": {
+        "3305": 0,
+        "3306": 0,
+        "3307": 0
+      },
+      "selected_imitation_training_overlap": "UNKNOWN: exact training bits not serialized",
+      "stage1_training_overlap": "UNKNOWN: exact Stage-1 training bits not serialized"
+    }
+  },
+  "val_ood_full_sequence_overlap": 0,
+  "provenance": {
+    "objective": "controller-only supervised canonical route imitation",
+    "seed": 3305,
+    "steps": 5000,
+    "selection": "final requested 5000-update checkpoint; not selected by this evaluation",
+    "preparation_backbone_frozen": "recorded by preparation script; checkpoint itself contains no alternate backbone",
+    "preparation_training_lengths": [
+      4,
+      16
+    ],
+    "preparation_sequences": 104,
+    "preparation_route_rows": 8320,
+    "before_execution_accounting_correction": true,
+    "correction_caveat": "canonical teacher trajectories have D=P and zero budget; no restart budget discrepancy in those teacher inputs",
+    "earlier_heldout_probes": "13 validation and 16 OOD sequences, one per length; only counts stored, not recoverable bits; distinct from present persisted 52/64 sets",
+    "historical_task_loss_overlap_caveat": "overlaps refer to later task-loss diagnostics, not weight updates of the selected pure-imitation checkpoint",
+    "validation_blind": false,
+    "evaluation_sets_previously_used": true,
+    "ood_imitation_full_sequence_training_overlap": "excluded by declared disjoint length ranges; exact training content not retained",
+    "unknowns": [
+      "exact imitation and Stage-1 training sequences/overlaps",
+      "independent blind checkpoint-selection protocol",
+      "exact membership of earlier one-per-length probes",
+      "post-preparation backbone tensor hash in original run"
+    ]
+  },
+  "preregistered_order": [
+    "val",
+    "ood_test"
+  ],
+  "stop_rule": "mechanical violation stops before OOD; scientific discrepancies do not change protocol"
+}

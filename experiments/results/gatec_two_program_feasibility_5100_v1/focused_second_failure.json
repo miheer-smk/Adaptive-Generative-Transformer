@@ -1,0 +1,7 @@
+{
+  "initial_result": "12 passed, 1 failed",
+  "test": "test_complete_program_reference_branch_isolation_and_supplied_continuation",
+  "error": "New test asserted five complete calls, but explicitly makes four: reference, P0, P1, continuation",
+  "correction": "Exact counts now four tokens,32 bank calls,four commits,four plan purity checks,10 GDN executions",
+  "experiment_protocol_changed": false
+}

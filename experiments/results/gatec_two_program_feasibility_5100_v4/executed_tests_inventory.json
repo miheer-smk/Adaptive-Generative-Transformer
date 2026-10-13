@@ -1,0 +1,660 @@
+[
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_immutable_descriptors_and_exact_execution_validation",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions0]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions1]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions2]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions3]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions4]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions5]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_restart_descriptor_has_fifteen_decisions_eight_executions",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_exhausted_provider_never_falls_back",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_complete_program_reference_branch_isolation_and_supplied_continuation",
+    "seconds": 0.202,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_wrong_requested_action_stops_before_commit_and_restores_observers",
+    "seconds": 0.006,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_worst_prefix_statistic_keeps_suffix_pairing_and_primary_horizons",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_all_protected_production_sources_and_archives_still_match_baseline",
+    "seconds": 0.024,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_mask_device_observation_and_complete_P0[cpu]",
+    "seconds": 0.017,
+    "status": "FAILED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_mask_device_observation_and_complete_P0[cuda]",
+    "seconds": 0.714,
+    "status": "FAILED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-archival]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-p0_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-all_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-archival]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-p0_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-all_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_P1_history_permission_is_distinct_from_P1_acceptance",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[missing]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[extra]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[null]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[version]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[window]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[commit]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[shape]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[summary]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_current_screen_has_original_thresholds_without_new_confidence_gate",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "initial_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_monitor_current_and_script_targets_separate_and_summary_evidence_labeled",
+    "seconds": 0.004,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_immutable_descriptors_and_exact_execution_validation",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions0]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions1]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions2]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions3]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions4]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_fail_closed_invalid_programs[actions5]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_restart_descriptor_has_fifteen_decisions_eight_executions",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_exhausted_provider_never_falls_back",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_complete_program_reference_branch_isolation_and_supplied_continuation",
+    "seconds": 0.204,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_wrong_requested_action_stops_before_commit_and_restores_observers",
+    "seconds": 0.006,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_worst_prefix_statistic_keeps_suffix_pairing_and_primary_horizons",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_programs_v4",
+    "name": "test_all_protected_production_sources_and_archives_still_match_baseline",
+    "seconds": 0.025,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_mask_device_observation_and_complete_P0[cpu]",
+    "seconds": 0.059,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_mask_device_observation_and_complete_P0[cuda]",
+    "seconds": 0.72,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-archival]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-p0_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[None-all_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-archival]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-p0_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_missing_failed_or_unresolved_gate_executes_zero_future_calls[False-all_current]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_P1_history_permission_is_distinct_from_P1_acceptance",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[missing]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[extra]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[null]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[version]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[window]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[commit]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[shape]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_strict_archival_comparator_detects_all_required_classes[summary]",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_current_screen_has_original_thresholds_without_new_confidence_gate",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "final_focused",
+    "class": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_monitor_current_and_script_targets_separate_and_summary_evidence_labeled",
+    "seconds": 0.006,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_stage3_execution_accounting",
+    "name": "test_exact_execution_budget_and_restart_prefix_counts[actions0-False]",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_stage3_execution_accounting",
+    "name": "test_exact_execution_budget_and_restart_prefix_counts[actions1-False]",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_stage3_execution_accounting",
+    "name": "test_exact_execution_budget_and_restart_prefix_counts[actions2-False]",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_stage3_execution_accounting",
+    "name": "test_restart_repeat_budget_preserves_real_state_and_single_commit[False]",
+    "seconds": 0.093,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_gatec_canonical_replay_audit",
+    "name": "test_production_budget_matches_independent_restart_replay",
+    "seconds": 0.001,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_gatec_canonical_replay_audit",
+    "name": "test_first_divergence_uses_tolerances_and_exact_discrete_metadata",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_gatec_canonical_replay_audit",
+    "name": "test_learned_first_mismatch_distinguishes_equal_features_wrong_action",
+    "seconds": 0.093,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_gatec_canonical_replay_audit",
+    "name": "test_purity_check_rejects_mutation_below_replay_tolerance",
+    "seconds": 0.0,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_two_consecutive_tokens_and_state_carry",
+    "seconds": 0.058,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_gqa_and_swa_advance_once_per_token",
+    "seconds": 0.077,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_gdn_advances_once_per_token",
+    "seconds": 0.041,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_original_state_is_not_mutated_and_is_reusable",
+    "seconds": 0.035,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_memory_write_exactly_once_per_token",
+    "seconds": 0.026,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_shapes_and_finite_outputs",
+    "seconds": 0.056,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_sequential_loop",
+    "name": "test_state_token_count_and_prelude_context",
+    "seconds": 0.025,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_memory_write_param_count",
+    "seconds": 0.003,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_memory_write_matches_reference_and_invariants",
+    "seconds": 0.004,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_memory_write_gate_init",
+    "seconds": 0.002,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_memory_bounded_prop_14_1",
+    "seconds": 0.023,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_species_entries",
+    "seconds": 0.027,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_attention_entry_is_i4[0]",
+    "seconds": 0.083,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_attention_entry_is_i4[2]",
+    "seconds": 0.043,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_prelude_entry_from_prelude_input",
+    "seconds": 0.019,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_commit_all_species_cardinality_and_unvisited",
+    "seconds": 0.085,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_inflight_and_plan_build_are_pure",
+    "seconds": 0.099,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_exactly_one_commit_per_token",
+    "seconds": 0.047,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_atomicity_nothing_written_on_failure",
+    "seconds": 0.026,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_reset_isolation",
+    "seconds": 0.056,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_later_tokens_do_not_change_earlier_entries",
+    "seconds": 0.088,
+    "status": "PASSED"
+  },
+  {
+    "scope": "substrate",
+    "class": "tests.test_terminal_commit",
+    "name": "test_shape_guards",
+    "seconds": 0.005,
+    "status": "PASSED"
+  }
+]

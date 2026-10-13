@@ -3,8 +3,8 @@
   "device": "cuda",
   "dim": 64,
   "batch_size": 8,
-  "steps": 256,
-  "lr": 0.001,
+  "steps": 2000,
+  "lr": 0.0001,
   "weight_decay": 0.0001,
   "seed": 3001,
   "bank": [
@@ -19,10 +19,10 @@
   ],
   "controller": "disabled",
   "loss": "final-token cross-entropy",
-  "first_batch_ce": 0.6453816890716553,
-  "last_batch_ce": 0.680800199508667,
+  "first_batch_ce": 0.7422219514846802,
+  "last_batch_ce": 0.6935819983482361,
   "fixed_probe_ce_before": 0.7031984099974999,
-  "fixed_probe_ce_after": 0.6994639772635239,
+  "fixed_probe_ce_after": 0.6919640990403982,
   "gradient_coverage": {
     "memory": 2,
     "prelude": 7,
@@ -32,11 +32,29 @@
     "output_head": 1
   },
   "parameter_update_l1": {
-    "memory": 20.479928413551534,
-    "prelude": 12.543784736790258,
-    "blocks": 1650.6275214860216,
-    "commit": 0.06400007009506226,
-    "memory_write": 16.704842003931844,
-    "output_head": 0.1279996931552887
+    "memory": 2.0480008721351624,
+    "prelude": 1.2544116973876953,
+    "blocks": 165.2080443262821,
+    "commit": 0.00640106201171875,
+    "memory_write": 1.6705028894357383,
+    "output_head": 0.012800153344869614
+  },
+  "validation": {
+    "split": "val",
+    "accuracy": 0.47836538461538464,
+    "mean_ce": 0.6948395004639258,
+    "examples": 832
+  },
+  "test_easy_ood": {
+    "split": "test",
+    "accuracy": 0.47265625,
+    "mean_ce": 0.6955471932888031,
+    "examples": 512
+  },
+  "test_hard_ood": {
+    "split": "test",
+    "accuracy": 0.5390625,
+    "mean_ce": 0.6917831301689148,
+    "examples": 512
   }
 }

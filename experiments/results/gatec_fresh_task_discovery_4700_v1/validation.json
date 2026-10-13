@@ -1,0 +1,23 @@
+{
+  "focused": {
+    "passed": 24
+  },
+  "full": {
+    "passed": 180,
+    "skipped": 1,
+    "failed": 2,
+    "failures": [
+      {
+        "test_id": "tests/test_stage4_halting.py::test_stage4_halt_terminates_before_any_block_execution",
+        "actual": 1,
+        "expected": 0
+      },
+      {
+        "test_id": "tests/test_stage4_halting.py::test_stage4_halt_after_execution_preserves_current_live_state",
+        "actual": 2,
+        "expected": 1
+      }
+    ]
+  },
+  "git_diff_check": true
+}

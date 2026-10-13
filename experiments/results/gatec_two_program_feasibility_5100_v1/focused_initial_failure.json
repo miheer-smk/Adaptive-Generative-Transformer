@@ -1,0 +1,7 @@
+{
+  "test": "test_complete_program_reference_branch_isolation_and_supplied_continuation",
+  "initial_result": "12 passed, 1 failed",
+  "error": "TypeError: diagnostic block wrapper expected index, production passes block_index",
+  "correction": "Changed only the new observer keyword name to block_index before input sealing or study forwards",
+  "production_error": false
+}

@@ -1,0 +1,624 @@
+# V4 requirements:620 entries
+
+Original targets preserved; all amended roles and extraction paths are detailed in requirements_matrix_annotated.json.
+
+- archived_step_context: summary; P0 archival acceptance; concise(snapshot(context))
+- archived_step_controller_logits: monitor diagnostic; NON-GATING monitor diagnostic; monitor(**retained inputs).logits; no seed3305/script comparison
+- archived_step_decision_count: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_execution_count: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_features: full tensor; P0 archival acceptance; captured actual h,R,Mmean,pointer,budget
+- archived_step_h: full tensor; P0 archival acceptance; row.h_after
+- archived_step_h0: full tensor; P0 archival acceptance; row.h0
+- archived_step_h_before: full tensor; P0 archival acceptance; row.h_before
+- archived_step_just_restarted: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_legal_actions: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_memory_mean: full tensor; P0 archival acceptance; row.memory_mean
+- archived_step_memory_read: full tensor; P0 archival acceptance; row.memory_read
+- archived_step_persistent: summary; P0 archival acceptance; concise(snapshot(parent))
+- archived_step_pointer_after: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_pointer_before: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_selected_action: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_step_token: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_candidate_block_calls: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_ce: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_commit: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- archived_token_commit_count: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_commit_entries: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_commit_pre: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- archived_token_decision_count: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_execution_count: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_logits: full tensor; P0 archival acceptance; out.logits
+- archived_token_prediction: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_read_calls: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- archived_token_terminal: full tensor; P0 archival acceptance; kwargs.h_terminal squeezed only singleton token axis
+- archived_token_token: discrete metadata; P0 archival acceptance; same-name scalar/metadata at original matched boundary
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["context", "/swa_window"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_A_steps_["persistent", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_steps_["persistent", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_A_tokens_["commit", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_A_tokens_["commit_pre", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_A_tokens_["commit_pre", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["context", "/swa_window"]: summary; P0 archival acceptance; concise(snapshot(context))
+- retained_state_leaf_C_steps_["persistent", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_steps_["persistent", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(parent))
+- retained_state_leaf_C_tokens_["commit", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(returned_state))
+- retained_state_leaf_C_tokens_["commit_pre", "/_consumed"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/committed_state"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/4/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_conv_buffer"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_state", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/committed_state"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/gdn/5/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/2/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/kv/3/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/0/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/1/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_keys", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_keys"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_values", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/committed_values"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/num_committed_tokens"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/version"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa/pre/window_size"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/ctx/swa_window"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/memory", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/memory", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/memory", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/s", "l2"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/s", "max_abs"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/s", "shape"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- retained_state_leaf_C_tokens_["commit_pre", "/tokens_committed"]: summary; P0 archival acceptance; concise(snapshot(work)) before original_terminal_commit
+- full_live_state_reference_vs_adapter: full tensor; within-v4 equality, separately labeled; same-name scalar/metadata at original matched boundary
+- ownership_isolation: within-run invariant; engineering prerequisite / every executed call; same-name scalar/metadata at original matched boundary
+- observer_device: within-run invariant; engineering prerequisite / every executed call; same-name scalar/metadata at original matched boundary
+- current_acceptance_scope: within-run invariant; All 384 current cells conjunction before futures; no invented current CI; original joint statistic final-only; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- P0_current_before_P1_prerequisites: within-run invariant; Study-wide archival plus all96 P0→P0 current cases before P1 history construction; prefix execution does not assert P1 acceptance; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- future_pointwise_and_statistical_acceptance: within-run invariant; After full current conjunction only; original pointwise future contract then unchanged joint statistical acceptance; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- inputs_identity_and_order: within-run invariant; Before any study forward: exact retained tensors/input order/hashes and original exclusions; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- programs_and_runtime: within-run invariant; Every call: original runtime; P0/P1 script metadata exact; observer actions match actual bank calls; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- compute_accounting: within-run invariant; Every call plus final ledger: actual executions/commits, per-arm failures, original caps; historical and tests separate; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md
+- immutable_integrity: within-run invariant; Before work and termination; every original identity and tracked diff unchanged; Original locked protocol operands and unchanged scopes as amended in protocol_amendment.md

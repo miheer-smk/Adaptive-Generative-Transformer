@@ -1,0 +1,34 @@
+{
+  "trace_rows": 533776,
+  "normal_observed_tokens": 506896,
+  "clean_profile_tokens": 26880,
+  "per_phase": {
+    "calibration": 2064,
+    "common_training": 40960,
+    "development": 9216,
+    "T_training": 57344,
+    "C_training": 57344,
+    "selection": 73728,
+    "confirmation": 174080,
+    "reference": 18432,
+    "ablation": 73728,
+    "profiling": 26880
+  },
+  "block_calls": {
+    "0": 533776,
+    "1": 533776,
+    "2": 533776,
+    "3": 787728,
+    "4": 279824,
+    "5": 533776,
+    "6": 533776,
+    "7": 533776
+  },
+  "commits": 533776,
+  "all_D8_P8": true,
+  "all_selected_execution_correspondence": true,
+  "all_normal_masks_and_commit_versions_valid": true,
+  "profile_scope": "actual selected blocks and runtime-checked script; forensic decision arrays intentionally absent during clean latency",
+  "offline_seconds": 7.064572451170534,
+  "no_model_execution": true
+}

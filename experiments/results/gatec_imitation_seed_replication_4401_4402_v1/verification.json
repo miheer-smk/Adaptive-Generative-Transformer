@@ -1,0 +1,32 @@
+{
+  "all_json_floats_finite": true,
+  "manifest_and_artifact_hashes_verified": true,
+  "production_source_hashes_unchanged": true,
+  "new_checkpoint_hashes_verified": true,
+  "physical_completed_tokens": 8352,
+  "physical_routed_block_calls": 66816,
+  "counts": {
+    "('reference', 'val', 'decisions')": 4160,
+    "('historical_3305', 'val', 'decisions')": 4160,
+    "('fresh_4401', 'val', 'decisions')": 4160,
+    "('fresh_4402', 'val', 'decisions')": 4160,
+    "('reference', 'ood_test', 'decisions')": 12544,
+    "('historical_3305', 'ood_test', 'decisions')": 12544,
+    "('fresh_4401', 'ood_test', 'decisions')": 12544,
+    "('fresh_4402', 'ood_test', 'decisions')": 12544,
+    "('reference', 'val', 'tokens')": 520,
+    "('historical_3305', 'val', 'tokens')": 520,
+    "('fresh_4401', 'val', 'tokens')": 520,
+    "('fresh_4402', 'val', 'tokens')": 520,
+    "('reference', 'ood_test', 'tokens')": 1568,
+    "('historical_3305', 'ood_test', 'tokens')": 1568,
+    "('fresh_4401', 'ood_test', 'tokens')": 1568,
+    "('fresh_4402', 'ood_test', 'tokens')": 1568
+  },
+  "all_actions_canonical": true,
+  "all_context_versions_and_commit_counts_verified": true,
+  "all_incoming_outgoing_state_hashes_and_output_logits_equal_across_four_paths": true,
+  "first_divergences_absent": true,
+  "additional_model_forward_calls": 0,
+  "additional_optimizer_steps": 0
+}

@@ -1,0 +1,482 @@
+{
+  "created_utc": "2026-10-08T11:14:29.929030+00:00",
+  "scope": "artifact-only protocol resolution; no action-value experiment",
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+  },
+  "consulted_files": {
+    "experiments/run_gatec_fresh_task_discovery.py": {
+      "sha256": "2f665a4bc4a6e9e32d4aa1be09c5b772f3ccc3421bd67d928a673f449f92f4f6",
+      "locations": [
+        "124-137 training_visits: epoch-qualified sequence IDs",
+        "235-245 raw IDs, training visits and evaluation child-seed/tape construction"
+      ]
+    },
+    "experiments/run_gatec_paired_task_maintenance.py": {
+      "sha256": "e80b27dd3bcd3674b2c063cc0964df5c1f34cd6aecc4b2d3b2a31b088244582e",
+      "locations": [
+        "39-63 IndexedNoise: ordered CPU generation, exact-key lookup and injection",
+        "198-235 StochasticPath.run: range(L), token-index input access and commit tracking",
+        "344-356 maintenance training/evaluation namespaces",
+        "401-407 recorded RNG scheme"
+      ]
+    },
+    "experiments/replay_gatec_learned_policy.py": {
+      "sha256": "ee6be11e1a209a0d78126399c181bf01dda3dcbd4e88d0eead2c80a6628a0748",
+      "locations": [
+        "249-285 reference/learned token indexing and recorded token IDs"
+      ]
+    },
+    "data/task_a.py": {
+      "sha256": "345cb186461904cf224408cfa41617c90739bd6a103c1c9cf857f7b4544dd9d9",
+      "locations": [
+        "100-110 bit array to frozen features without token-position remapping"
+      ]
+    },
+    "src/agt.py": {
+      "sha256": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+      "locations": [
+        "399-425 executor and commit token_index=work_state.tokens_committed"
+      ]
+    },
+    "src/terminal_commit.py": {
+      "sha256": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+      "locations": [
+        "93 initial tokens_committed=0",
+        "181-196 token/cache version agreement",
+        "239 post-commit token index increment"
+      ]
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json": {
+      "sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_schedule.json": {
+      "sha256": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json": {
+      "sha256": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json": {
+      "sha256": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_training.pt": {
+      "sha256": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt": {
+      "sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/decisions.jsonl.gz": {
+      "sha256": "aa63393a5c4fd1f082b046e72d6c2f036da0b1b80aa89b5fd1c060115870124c"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/tokens.jsonl.gz": {
+      "sha256": "33d06ba8a8016ad4b99b1c38a2f36b2514971145b7cafc98b4c96e29300b62d4"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/report.md": {
+      "sha256": "36dbdbb7eb44fed2223015a589edc6a17da763c605aa9ff39f488809e36912c9"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json": {
+      "sha256": "506c485bc7cdda615a15ab991b86175298c6e83bae973f6abe8e756ebe1a0f9e"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/verification.json": {
+      "sha256": "895b950fbaab2048b110a343d758ee9d20942a3c417f8848fab556a05fb46c81"
+    },
+    "experiments/results/gatec_paired_task_maintenance_4401_v1/manifest_reporting_correction.json": {
+      "sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430"
+    },
+    "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.json": {
+      "sha256": "9303100f6dccca7701e0fddc601ebb79049f3d0a34d7e4331475d443760fd5ba"
+    },
+    "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.md": {
+      "sha256": "1c89c592ceabc90d6c3b49f5e4874236af503dff73772a0df67118381eb9b249"
+    },
+    "experiments/results/gatec_st_action_value_4700_identity_precheck_v1.json": {
+      "sha256": "c904cabc071b81796feb78ff6e338d4d29eac9258b5923c3a3387575da9c2dd8"
+    }
+  },
+  "locked_six_sequences": [
+    {
+      "source": "training",
+      "original_row_index": 96,
+      "sequence_id": "train/L16/row0",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "57e0cd524f7c634db3e38035a93b713783f2bce5633fb130acbd4e2c7a973cb6",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "training",
+      "original_row_index": 97,
+      "sequence_id": "train/L16/row1",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "6d188347b8022adc1e3c9b5524af34d7e6709bef5b991624f97909fa97d8ee95",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 0,
+      "sequence_id": "val/L16/row0",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "6d471b259a568bf4109f582f63a699a19bf5d7c16d535d62a73350cafcdea2d8",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 2,
+      "sequence_id": "val/L16/row2",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "sequence_label_hash": "01ebaa78ce38d3069a6c4947369d5d48349967bedc65d6c4b171abbdd1171e58",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 94,
+      "sequence_id": "ood_test/L32/row2",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "sequence_label_hash": "d3ce5146b9dce17652e41caa86e7748b4ad918b9ca543c3b88080eb373536394",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 92,
+      "sequence_id": "ood_test/L32/row0",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "90e1f6f864796f269631ac4829189c5936c1e53c691c6a0285a5bd95a6d3464f",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    }
+  ],
+  "selection_unchanged": true,
+  "canonical_cross_split_mapping_exists": false,
+  "existing_noise_rule": {
+    "schema": {
+      "seed": "integer",
+      "uniforms": "dict[exact sequence ID] -> FP32 [L,15,10]"
+    },
+    "generator": "private CPU torch.Generator(seed); successive torch.rand(L,15,10) in supplied list order",
+    "lookup": "uniforms[exact_sequence_id][zero_based_token_index,within_token_decision_index,successor_action_slot]",
+    "ID_derived_seed": false,
+    "split_alias_table": false,
+    "training_visit_identity": "epochNN/train/Llength/rowI; source identity and epoch stored in training_schedule.json",
+    "evaluation_tape_zero": {
+      "manifest_key": "final_tape_1",
+      "file": "noise_final_tape_1.pt",
+      "sampler_seed": 924088217,
+      "root_seed": 4704,
+      "sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7",
+      "keys": 96,
+      "missing_training_keys": [
+        "train/L16/row0",
+        "train/L16/row1"
+      ]
+    },
+    "training_tape": {
+      "seed": 4702,
+      "keys": 1040,
+      "sha256": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238",
+      "epoch_choice_for_an_evaluation_prefix": "not specified by any recovered mapping"
+    }
+  },
+  "recorded_trace_verifications": [
+    {
+      "file": "decisions.jsonl.gz",
+      "line": 57001,
+      "phase": "training",
+      "arm": "U",
+      "coordinate": [
+        4702,
+        "epoch01/train/L16/row0",
+        0,
+        0
+      ],
+      "exact_lookup_and_recorded_action_verified": true
+    },
+    {
+      "file": "decisions.jsonl.gz",
+      "line": 502350,
+      "phase": "final_final_tape_1",
+      "arm": "U",
+      "coordinate": [
+        924088217,
+        "val/L16/row0",
+        0,
+        0
+      ],
+      "exact_lookup_and_recorded_action_verified": true
+    },
+    {
+      "file": "decisions.jsonl.gz",
+      "line": 502359,
+      "phase": "final_final_tape_1",
+      "arm": "U",
+      "coordinate": [
+        924088217,
+        "val/L16/row0",
+        1,
+        0
+      ],
+      "exact_lookup_and_recorded_action_verified": true
+    },
+    {
+      "file": "tokens.jsonl.gz",
+      "line": 43745,
+      "token_index": 0,
+      "human_token_number": 1,
+      "incoming_tokens_committed": 0,
+      "outgoing_tokens_committed": 1
+    },
+    {
+      "file": "tokens.jsonl.gz",
+      "line": 43746,
+      "token_index": 1,
+      "human_token_number": 2,
+      "incoming_tokens_committed": 1,
+      "outgoing_tokens_committed": 2
+    }
+  ],
+  "proposed_diagnostic_mapping": {
+    "status": "proposal only; not implemented, generated, sealed or used",
+    "prefix_extension": {
+      "name": "append-only evaluation-tape-zero extension for missing training IDs",
+      "seed": 924088217,
+      "ordered_rows": "original 96 final_panel.json rows unchanged, then selected missing training rows in original training_sequences.json order",
+      "appended_IDs": [
+        "train/L16/row0",
+        "train/L16/row1"
+      ],
+      "construction": "recreate original private CPU generator; generate each original [L,15,10] table in original order; continue the same generator for the two appended tables",
+      "verification_required_before_measurement": "all 96 recreated tables must be torch.equal to historical saved tables; seal only a NEW extension artifact and its hash; never alter historical files",
+      "evaluation_prefix_lookup": "historical tape0 exact IDs/tensors unchanged",
+      "training_prefix_lookup": "new extension[training_sequence_id][token_index,decision_index,action_slot]",
+      "provenance_caveat": "new diagnostic prefix noise for training sequences, not a recovered historical evaluation tape or recorded seed4700 training visit"
+    },
+    "independent_banks": {
+      "continuation_seed": 4800,
+      "ST_probe_seed": 4801,
+      "tapes_per_bank": 8,
+      "construction": "one private CPU torch.Generator per bank; nested generation order tape_index=0..7, then the six locked sequence IDs in their unchanged order; precompute FP32 [L,15,10] torch.rand tables",
+      "sequence_order": [
+        "train/L16/row0",
+        "train/L16/row1",
+        "val/L16/row0",
+        "val/L16/row2",
+        "ood_test/L32/row2",
+        "ood_test/L32/row0"
+      ],
+      "logical_key": [
+        "bank",
+        "tape_index",
+        "exact_sequence_id",
+        "zero_based_token_index",
+        "within_token_decision_index",
+        "successor_action_slot"
+      ],
+      "no_key_dimensions": [
+        "checkpoint",
+        "ADVANCE branch",
+        "prefix condition",
+        "observed loss",
+        "observed route",
+        "correctness"
+      ],
+      "lookup": "sealed_bank[tape_index][sequence_id][token_index,decision_index,action_slot]",
+      "sampling": "unchanged original uniform clamp, Gumbel transform, tau=2 and source mask; successor slots 0..9, HALT excluded",
+      "coupling": "all eight ADVANCE branches and both checkpoints read the same logical coordinates within a continuation tape; ST bank uses independent generator/seed; no RNG advancement during branch execution",
+      "fifteen_positions": "coverage of legal P=8 bound, not a stopping cap"
+    },
+    "outcome_dependence": false
+  },
+  "token_convention": {
+    "artifacts": "zero-based token and decision fields",
+    "normalized_probe_A": {
+      "human_token_number": 2,
+      "internal_token_index": 1,
+      "decision_index": 0,
+      "completed_prefix_tokens": 1
+    },
+    "normalized_final_token": {
+      "length16": {
+        "human_token_number": 16,
+        "internal_token_index": 15
+      },
+      "length32": {
+        "human_token_number": 32,
+        "internal_token_index": 31
+      }
+    },
+    "caveat": "Original unqualified English cannot prove author intent; operational normalization follows the actual recorded token field. Human-facing number is internal index+1, not the trace label."
+  },
+  "unresolved": [
+    "No existing training-to-evaluation-tape0 translation exists. The proposed append-only extension is a new diagnostic protocol choice and has not been implemented or used."
+  ],
+  "preserved_bytecode_exception": true,
+  "bytecode_writing_disabled": true,
+  "no_historical_changes": true,
+  "models_constructed": 0,
+  "new_noise_draws": 0,
+  "training_updates": 0,
+  "counterfactual_continuations": 0,
+  "ST_gradient_probes": 0
+}

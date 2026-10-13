@@ -1,0 +1,8 @@
+{
+  "status": "REPRODUCED",
+  "role": "non-gating monitor diagnostic",
+  "evaluated_records": 128,
+  "first_mismatch": null,
+  "parameter_sha256": "589b08b5a0280c15558e4968473c651d48a658cab58e6f617b9d569e3895cb4b",
+  "provenance": "original stage3_measurements.load_model(3401, cuda); full constructor RNG ordering; isolated RNG; retained features"
+}

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "action_tables.csv": {
+      "sha256": "1b19977205c165c4b8b372860b1cc2bebe639a44a66759e6ccf1f6e78238e620",
+      "bytes": 131023
+    },
+    "manifest.json": {
+      "sha256": "c562cbdc54d3900d2b044bb91f3e7dfd8111a539a4ccd9a7f7fe440302dd0aba",
+      "bytes": 66750
+    },
+    "offline_verification.py": {
+      "sha256": "ba8c6e9bffd8e3cbf9b03ad0f0bf26fa60efb75c5e1a2c8f33a030645df8fc64",
+      "bytes": 21856
+    },
+    "paired_contrasts.csv": {
+      "sha256": "a20a4dafa0cac75d1db7e4d347fe81c350cb1fbd24ccfe433728c621854f3a00",
+      "bytes": 44335
+    },
+    "report.md": {
+      "sha256": "c440f3314d946053c86cb5328caf953477fa02bac40416a9655bb5e0a5f6838f",
+      "bytes": 17485
+    },
+    "results.json": {
+      "sha256": "29aec62fb97202a58fe3941f5501e98e8663152896beb3469b0caf0d8982adae",
+      "bytes": 992934
+    },
+    "verification.json": {
+      "sha256": "462656712a26de751ac3b7f69234192b2f155518b48afe4b5a9d89f0ebf7c086",
+      "bytes": 1120
+    }
+  },
+  "manifest_sha256": "c562cbdc54d3900d2b044bb91f3e7dfd8111a539a4ccd9a7f7fe440302dd0aba",
+  "self_excluded": true
+}

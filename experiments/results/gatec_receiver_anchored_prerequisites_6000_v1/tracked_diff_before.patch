@@ -1,0 +1,1392 @@
+diff --git a/experiments/diagnose_stage3_gradients.py b/experiments/diagnose_stage3_gradients.py
+index 26500d0..a3048a8 100644
+--- a/experiments/diagnose_stage3_gradients.py
++++ b/experiments/diagnose_stage3_gradients.py
+@@ -21,6 +21,7 @@ from experiments.stage3_measurements import (
+ )
+ from src.masks import build_execution_mask
+ from src.executor import AdaptiveExecutor
++from experiments.stage3_decision_prefix import observe_decision_prefix
+ 
+ 
+ def metadata_credit_probe():
+@@ -73,15 +74,20 @@ def metadata_credit_probe():
+             controller = BranchController(values)
+             executor = AdaptiveExecutor(Bank(),controller,max_execution_depth=8)
+             h0 = torch.zeros(1,2,requires_grad=True)
+-            result = executor.execute_differentiable(h0,torch.zeros_like(h0),training=True)
+-            loss = result.h_terminal.square().mean()
++            result = observe_decision_prefix(executor, h0, torch.zeros_like(h0),
++                                              decision_horizon=8, training=True)
++            loss = result.h_observed.square().mean()
+             loss.backward()
+             probabilities = controller.branch.detach().double().softmax(-1)
+             conditional_losses = torch.tensor([1.,10000.], dtype=torch.float64)
+             expected_loss = (probabilities * conditional_losses).sum()
+             expected_gradient = probabilities * (conditional_losses - expected_loss)
+-            results.append(dict(branch_logits=values, terminal=result.h_terminal.detach().tolist(),
++            results.append(dict(branch_logits=values, observed_h=result.h_observed.detach().tolist(),
+                                 loss=loss.item(), branch_gradient=controller.branch.grad.tolist(),
++                                decision_count=result.decision_count, execution_count=result.execution_count,
++                                committed=result.committed, termination_reason=result.termination_reason,
++                                live_state_has_grad_fn=result.h_observed.grad_fn is not None,
++                                input_gradient=h0.grad.tolist(), rows=result.rows,
+                                 branch_probabilities=probabilities.tolist(),
+                                 expected_loss_resampling_branch_only=expected_loss.item(),
+                                 expected_categorical_gradient_resampling_branch_only=expected_gradient.tolist(),
+@@ -244,7 +250,7 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
+         index = int(result["selected_action"].item())
+         retained.append(dict(logits=kwargs["action_logits"], candidates=result["candidates"],
+                              h_next=result["h_next"], h=kwargs["h"], h0=kwargs["h0"],
+-                             selected=index, mask=mask,
++                             selected=index, mask=mask, execution_before=kwargs["execution_count"],
+                              hard_forward_exact=torch.equal(result["h_next"].detach(),
+                                                             result["candidates"][:, index].detach()),
+                              illegal_forward_mass=result["probs"][:, ~mask].abs().sum().item(),
+@@ -259,13 +265,24 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
+         loss.backward()
+     finally:
+         model.executor.differentiable_route_step = original
++    coordinates = [(token, decision, action)
++                   for token, history in enumerate(histories)
++                   for decision, action in enumerate(history)]
++    if len(coordinates) != len(retained):
++        raise RuntimeError("Retained route steps differ from observed token histories")
+     steps = []
+-    for i, row in enumerate(retained):
++    for (token, decision, (kind, block)), row in zip(coordinates, retained):
+         grad = row["logits"].grad
+         candidate_grad = row["candidates"].grad
+         selected = row["selected"]
+         other = torch.arange(10, device=x.device) != selected
+-        steps.append(dict(token=i//8, decision=i%8, selected=selected,
++        recorded_action = block if kind == "ADVANCE" else {"REPEAT": 8, "RESTART": 9}[kind]
++        if selected != recorded_action:
++            raise RuntimeError("Retained action differs from observed token history")
++        steps.append(dict(token=token, decision=decision, selected=selected,
++                          execution_before=row["execution_before"],
++                          execution_after=row["execution_before"] + int(kind != "RESTART"),
++                          terminal_decision=decision == len(histories[token]) - 1,
+                           logits_gradient=tensor_stats(grad),
+                           selected_successor_gradient=tensor_stats(candidate_grad[:, selected]),
+                           unselected_successor_gradient=tensor_stats(candidate_grad[:, other]),
+@@ -292,7 +309,7 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
+                     entry["squared_l2"] += stats["l2"] ** 2
+     return dict(noise_seed=noise_seed, ce=loss.item(), controller_gradients=gradients,
+                 token_input_gradient=tensor_stats(token_input.grad), steps=steps,
+-                backbone_probe=backbone, routes=route_metrics(histories)), vector.cpu()
++                backbone_probe=backbone, histories=histories, routes=route_metrics(histories)), vector.cpu()
+ 
+ 
+ class ScriptedSweep:
+@@ -324,9 +341,9 @@ def compact_report(report):
+             unselected_successor_gradient_max=max(s["unselected_successor_gradient"]["l2"] for s in steps),
+         )
+         result["gradient_l2_by_decision"] = []
+-        for decision in range(8):
++        for decision in sorted({s["decision"] for s in steps}):
+             rows = [s for s in steps if s["decision"] == decision]
+-            metrics = {}
++            metrics = dict(decision=decision, observations=len(rows))
+             for name in ("logits_gradient", "selected_successor_gradient", "live_gradient", "anchor_gradient"):
+                 values = [s[name]["l2"] for s in rows]
+                 metrics[name] = dict(mean=sum(values)/len(values), minimum=min(values), maximum=max(values))
+diff --git a/experiments/evaluate_stage3_stochastic_continuation.py b/experiments/evaluate_stage3_stochastic_continuation.py
+index 9f2a2b4..8a8441f 100644
+--- a/experiments/evaluate_stage3_stochastic_continuation.py
++++ b/experiments/evaluate_stage3_stochastic_continuation.py
+@@ -35,11 +35,19 @@ def assess(model, cases, noise_seed, repeats=4):
+                 logits, history = run_diff_sequence(model, batch.x, 2.0, True)
+             if not torch.isfinite(logits).all():
+                 raise RuntimeError("Non-finite stochastic output")
++            execution_counts = [sum(kind in ("ADVANCE", "REPEAT") for kind, _ in token)
++                                for token in history]
++            if any(count != model.executor.max_execution_depth for count in execution_counts):
++                raise RuntimeError("Stochastic assessment received an incomplete execution-depth token")
+             candidate_calls += counter["block_calls"]
+             rows.append(dict(length=batch.length, case=index, noise_seed=draw_seed,
+                              ce=F.cross_entropy(logits, batch.target).item(),
+                              correct=int((logits.argmax(-1) == batch.target).sum()),
+-                             exact_tokens=route_metrics(history)["exact_tokens"]))
++                             exact_tokens=route_metrics(history)["exact_tokens"],
++                             histories=history,
++                             token_decision_counts=[len(token) for token in history],
++                             token_execution_counts=execution_counts,
++                             actual_candidate_block_calls=counter["block_calls"]))
+             histories.extend(history)
+     routes = route_metrics(histories)
+     if routes["illegal_decisions"]:
+diff --git a/experiments/runs/stage1_taskA_tiny.json b/experiments/runs/stage1_taskA_tiny.json
+index 073e91c..65f2d99 100644
+--- a/experiments/runs/stage1_taskA_tiny.json
++++ b/experiments/runs/stage1_taskA_tiny.json
+@@ -3,8 +3,8 @@
+   "device": "cuda",
+   "dim": 64,
+   "batch_size": 8,
+-  "steps": 256,
+-  "lr": 0.001,
++  "steps": 2000,
++  "lr": 0.0001,
+   "weight_decay": 0.0001,
+   "seed": 3001,
+   "bank": [
+@@ -19,10 +19,10 @@
+   ],
+   "controller": "disabled",
+   "loss": "final-token cross-entropy",
+-  "first_batch_ce": 0.6453816890716553,
+-  "last_batch_ce": 0.680800199508667,
++  "first_batch_ce": 0.7422219514846802,
++  "last_batch_ce": 0.6935819983482361,
+   "fixed_probe_ce_before": 0.7031984099974999,
+-  "fixed_probe_ce_after": 0.6994639772635239,
++  "fixed_probe_ce_after": 0.6919640990403982,
+   "gradient_coverage": {
+     "memory": 2,
+     "prelude": 7,
+@@ -32,11 +32,29 @@
+     "output_head": 1
+   },
+   "parameter_update_l1": {
+-    "memory": 20.479928413551534,
+-    "prelude": 12.543784736790258,
+-    "blocks": 1650.6275214860216,
+-    "commit": 0.06400007009506226,
+-    "memory_write": 16.704842003931844,
+-    "output_head": 0.1279996931552887
++    "memory": 2.0480008721351624,
++    "prelude": 1.2544116973876953,
++    "blocks": 165.2080443262821,
++    "commit": 0.00640106201171875,
++    "memory_write": 1.6705028894357383,
++    "output_head": 0.012800153344869614
++  },
++  "validation": {
++    "split": "val",
++    "accuracy": 0.47836538461538464,
++    "mean_ce": 0.6948395004639258,
++    "examples": 832
++  },
++  "test_easy_ood": {
++    "split": "test",
++    "accuracy": 0.47265625,
++    "mean_ce": 0.6955471932888031,
++    "examples": 512
++  },
++  "test_hard_ood": {
++    "split": "test",
++    "accuracy": 0.5390625,
++    "mean_ce": 0.6917831301689148,
++    "examples": 512
+   }
+ }
+\ No newline at end of file
+diff --git a/experiments/stage3_measurements.py b/experiments/stage3_measurements.py
+index b41aedf..032ecbd 100644
+--- a/experiments/stage3_measurements.py
++++ b/experiments/stage3_measurements.py
+@@ -77,18 +77,29 @@ def count_block_calls(model):
+ 
+ 
+ def route_metrics(histories, num_blocks=8):
++    """Analyze supplied action histories, including decision prefixes.
++
++    Each history retains the boundary supplied by the caller. Legacy `tokens`
++    and `*_per_token` fields count/average those histories, not proven completed
++    tokens. `exact_tokens` counts histories equal to the full canonical sweep;
++    it does not infer completion of a caller's configured execution budget.
++    `incorrect_decisions` compares observed positions with that sweep; positions
++    beyond the sweep are extra decisions, not fabricated ADVANCE destinations.
++
++    Action rates use observed decisions. Block-use frequencies use observed
++    ADVANCE/REPEAT executions. No history length or completion budget is imposed.
++    """
+     actions = Counter()
+-    by_decision = [Counter() for _ in range(8)]
++    by_decision = []
+     routes = Counter()
+     unique_blocks = []
+     first_errors = Counter()
+     errors = restart_errors = illegal = 0
+-    confusion = [[0] * (num_blocks + 3) for _ in range(8)]
++    confusion = []
++    block_executions = [0] * num_blocks
+     exact = 0
+     for history in histories:
+-        if len(history) != 8:
+-            raise ValueError("Every token must have exactly eight routing decisions")
+-        pointer, restarted = 0, False
++        pointer, restarted, executions = 0, False, 0
+         visited = set()
+         route = []
+         first = None
+@@ -97,14 +108,17 @@ def route_metrics(histories, num_blocks=8):
+                 "REPEAT": num_blocks, "RESTART": num_blocks + 1,
+                 "HALT": num_blocks + 2,
+             }[kind]
+-            mask = build_execution_mask(pointer, decision, restarted, num_blocks)
++            if decision == len(by_decision):
++                by_decision.append(Counter())
++                confusion.append([0] * (num_blocks + 3))
++            mask = build_execution_mask(pointer, executions, restarted, num_blocks)
+             illegal += int(not mask[action] or kind == "HALT")
+             confusion[decision][action] += 1
+             key = str((kind, index))
+             actions[key] += 1
+             by_decision[decision][key] += 1
+             route.append(key)
+-            if (kind, index) != ("ADVANCE", decision):
++            if decision >= num_blocks or (kind, index) != ("ADVANCE", decision):
+                 errors += 1
+                 restart_errors += int(kind == "RESTART")
+                 if first is None:
+@@ -112,12 +126,16 @@ def route_metrics(histories, num_blocks=8):
+             if kind == "ADVANCE":
+                 pointer, restarted = index, False
+                 visited.add(index)
++                block_executions[index] += 1
++                executions += 1
+             elif kind == "REPEAT":
+                 visited.add(pointer)
++                block_executions[pointer] += 1
++                executions += 1
+                 restarted = False
+             elif kind == "RESTART":
+                 pointer, restarted = 0, True
+-        exact += int(first is None)
++        exact += int(len(history) == num_blocks and first is None)
+         if first is not None:
+             first_errors[str(first)] += 1
+         unique_blocks.append(len(visited))
+@@ -126,17 +144,21 @@ def route_metrics(histories, num_blocks=8):
+     total = sum(actions.values())
+     restart = sum(n for action, n in actions.items() if "RESTART" in action)
+     repeat = sum(n for action, n in actions.items() if "REPEAT" in action)
+-    return dict(tokens=tokens, decisions=total, exact_tokens=exact,
++    executed = sum(block_executions)
++    return dict(tokens=tokens, decisions=total, executions=executed,
++                restarts=restart, repeats=repeat, exact_tokens=exact,
+                 exact_route_fraction=exact/tokens if tokens else None,
+                 actions=dict(actions), per_decision_actions=[dict(c) for c in by_decision],
++                per_decision_observations=[sum(c.values()) for c in by_decision],
+                 confusion=confusion, incorrect_decisions=errors, illegal_decisions=illegal,
+                 restart_fraction_of_errors=restart_errors/errors if errors else 0.0,
+                 restart_rate=restart/total if total else 0.0,
+                 repeat_rate=repeat/total if total else 0.0,
+-                selected_block_calls=sum(n for action,n in actions.items()
+-                                         if "ADVANCE" in action or "REPEAT" in action),
+-                selected_block_calls_per_token=sum(n for action,n in actions.items()
+-                                                   if "ADVANCE" in action or "REPEAT" in action)/tokens if tokens else None,
++                selected_block_calls=executed,
++                selected_block_calls_per_token=executed/tokens if tokens else None,
++                block_execution_counts=block_executions,
++                block_execution_frequencies=[n/executed if executed else 0.0
++                                             for n in block_executions],
+                 unique_blocks_per_token=sum(unique_blocks)/tokens if tokens else None,
+                 unique_blocks_histogram=dict(Counter(map(str, unique_blocks))),
+                 first_error_decision=dict(first_errors), route_histogram=dict(routes))
+diff --git a/src/__pycache__/agt.cpython-312.pyc b/src/__pycache__/agt.cpython-312.pyc
+index 987be2ce41c612a7356714ed0beb15ed3966c681..12537d33aa911ad84d856f8f63847073e2a2d742 100644
+GIT binary patch
+delta 5451
+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
+
+delta 1283
+zcmZ9M&2QX96u>?Ey>>QDKQ<qwZA`am>n7dZXbB{Nmb7V8LPcns0&Nhoylc1XWY<of
+z?M<?my|k!ENJtD4e*l+WVa1`BiUUYU@E6R10|%s@5K@Z-2io_>=>;EtetvJ}ea##5
+z&R2_rzZ43pf{(fJc>T{4-wyuHSe^gHjxdc6CSElL?Cd?ZmdPu5#U8M8C}-{bJ!LIt
+ztH}HVWrwY)tBO(Rdx<AWX7q1m_A~7$I)p6Y7!R}Cm8nY8Z#xy&bwjVR9&PT14z#R#
+z<-(PlW~XLedw;PKK%-*a4a=LmaJ)a6`#zz+M*C+FMp~pp9~w=O?mFNHaF8seFSX)O
+znWQ%e@oGMyl`>WOp64st*KE4~hxQ%QYNSaLUgzHwN<9Nbk*-@I`W)DH!=||jPAjq<
+zLxovdHb;oVkTg#yAVk*n+|adJaFSFP2;|Jj!2eSr)7yjvM36z~@`0+tFAx6Aruo+7
+zSpU?%_3TJ@XvYlob`*qq-O)e3IHh+JpOm}&;c$s{`LDyLb6tIrQta^O6Ggs%WTy8f
+z`V(5)Y5TBif@9fm4mGkykz86@Suv6#(X0w~LmEW#%B2-U6{))AZNLO=F6@<Ty543K
+z3iXcbSuNA^p$$`HSDPlDQk%5!9x0MH%*M-*{HKv4qojpZX?n*DMW*H7b;AIz@_$B_
+zScxx;mU<`1nvc9-D{`E!Bl3<HwH>g~vuxl#xw{eWz+rMWM4;?ol0bRD2ZXZ-k=^rR
+z9EzL$E?GVzQ0+q9_F=;eLUMkUv}?)%q|BW)MXFgfYjBf49X-QV`S@5da~l^0hxmV|
+zhLbu}`>SKWC2(Nw&pcwMm(gS-<z6U}FN$E~Vg;29w+OfS!;|NFDo~kl1|hP}j?;)R
+z1Gz|6LAgUf2ni9PgTPsnGb78O^Nh2W=O~lT$G%+Oi@n7mabZ9=HlC)JBSoR__^@q(
+z-7Vm?>eR}6pL2{KoPDfMQ^XX!g0Ckz0`=Ox{v&D=I4v4~K3gjuM_oMZmr2?p?DFe#
+z#qkP?0Yfa{{Gt{+8)KLZKEFTL>izv;>TFsCiX`pEVR@NEPF~)!=ZS>p#pj-)HL^Qt
+zl8zGSioh{~{Buw{fijH`AWxEPB^4icTq9|KK*jLS=f{gOIA!>6?ya_OM=j?(e9C{A
+WKVQ6-X6l2BUo3yN{7fNP=J^6T%`Xc8
+
+diff --git a/src/__pycache__/blocks.cpython-312.pyc b/src/__pycache__/blocks.cpython-312.pyc
+index bcfc5077b8313cb5ee13f5da6e3895916d60a2c1..6581d18f52c822475931134851ef8b64a82ab30b 100644
+GIT binary patch
+delta 3803
+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
+
+delta 3454
+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
+X_MGPoW4`t2SDt$5sZS)L#Ww#3)f~u?
+
+diff --git a/src/__pycache__/controller.cpython-312.pyc b/src/__pycache__/controller.cpython-312.pyc
+index bcd198da8a3d1ff51865fdc85094cb6e8e5c8f58..4ad0c93ce6c94bcfaa0b30ce335b3588de25921c 100644
+GIT binary patch
+literal 7930
+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
+
+literal 3282
+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
+abKjx-N$e)az5LnG-srv2?-3m{5B~$9EWVil
+
+diff --git a/src/__pycache__/executor.cpython-312.pyc b/src/__pycache__/executor.cpython-312.pyc
+index 56ae5081362acb52661251c0cc912865851bc134..9ae6dd7099552bbd4f70e846021ba78059caa507 100644
+GIT binary patch
+literal 22824
+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
+
+delta 2543
+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
+
+diff --git a/src/__pycache__/masks.cpython-312.pyc b/src/__pycache__/masks.cpython-312.pyc
+index 72b42be3f70da3e581060eff465700e1d2851273..b14d6fdd3e64bf693792b2e8af5e580e56c16d00 100644
+GIT binary patch
+delta 1330
+zcmcJOOH30{6o&6~+D==bw9txx;>DN%0s7Egv6zXiN&*dmMi)rP(7Dn(ozCFQG(0lc
+zF6j!IZg7Y0T)1-K!WC|HA-HLxG3<>=6WN-0XZqk#b?053oc}*(zH?6Iz4yD{{h_17
+z1<3n#??Cw0R&sx&5~VK(d7a{^%rF3|MYkw+-l5xgr%v|+$)f|E=IKpRl(7JyI1Eh(
+zBtx1Q4xQezo7FL*GP*^znGXAHQ?L29m_Im}y2C{}l|NHm`8IBm2EYZ$i?4Gj4XScZ
+zNuhC0#48fwAxU9bf+AWW8Epe*IW-e-nf@tBLyE+Sa9Na78Hgnwr;rLc1;NnxGN&Rw
+zV)~5UHA@IaqxBEeGkGBzzF<m>hg)nyG*SB|TgTxx<eYZeJ_G}S05mEikc~ZL6L;go
+z!q7;wbHZRSUj)v@XX9+LF6ALijE2u>^GSBDAsX7vruKlHPSzmiHBLinq_G98VX_3(
+zNS+d{%Gg*>G&Ba$I!fh?EiR?xoTNoVO)O5#i%s58AV3Bfft)DHYlv@}YP{y+&t*;0
+zi)jP0*}-hVJ|P$l25F^nEVzcXG?wy^gX$VWtF7d?g?#dqys>0F8vZwS>ohg)dOi<x
+zl896l;%pZ2n5<CTfSidu7e9ZC*3qW^R?|8RIfIZ>wIv0SJ1H9Cqe&%)T#&Dym*D)r
+zLzG|9sN8Aox7jw4B9{Z!^zfZvTF#;%##obrF{EZRc{MnL(}>(^R*?mi($pY(KUscl
+zz2#=eU#+%N02DwqNtJ(CGx>?)M8(nl)!n@#6onHT-EJ?$sy^W8*&94!`kz0mT!Gux
+z?S*aO(9v6QdUhlGRB7_aIanDQCHY6YPm2qCeV-gRsxIIgC`=zSm-f6zOy7&i%GE()
+zczo#SBa;8xzPFSp%$$)2t`m9j%}bllLgDgT=H0Aok)k}64o{Uff@A;Xs?7+hcHr-=
+pGG^!iUf)lr8OG=?%3f*r?o1b_t44h6>f9MCj-A*@tn`pce*<H%Zv6lN
+
+delta 757
+zcmYjPJ#W)c6t$DsaZFPsv?;9u<w*=ssyO9iia;ndi8_?1YSXTj6Tgy|xPFnJT>(m!
+zjI9_@<Ui2=z=#-tfuRhrphz&3nZ*cx0QWtog}3<n+;flbIetHL@3YgV>9j7v8TxNK
+zk5Z%QPqI4t_HJNleZ@-k<9VqcKUDc!Uwr_ye%y+`fahVdA9EE;2Ru2!F9}=|Tuorg
+zmb5fwevl<eM{pkd#I}&v#>mD`O}k*WJVG6`Z?Z1hqb{NjM)(<S`5qYn&OFn@hAu|8
+z9kNHTg<90{Tx#3cMbR`XMFg&2uI!ZStJPbbn@gyKR*+#Bs9v}u1bBb5x=}4Rc!i)}
+z{}114lsBUW;L9*Eh*)T?ygnHaBg=QAuQkAfSer1^q}0ZyQ@W6AxIRYcVPx_Gt(i8%
+zfD%|9%ttz_+zuFth6|`iiQ|DcGO)1Yam!5P)$&~z0MxW;s|zefcyfjiFPvvao!u7o
+zfyE`ej0fbK_P;JW=XZSO?YbE9bv?+m=i&npXFOac(m%ji2rCL@60;G!RIpqNLM5L_
+zz>f+tYWs>&Y}0*QB!qZQvE%oi!|t}(3{KR0X$39``^qnt6y6VhsNGuWxHQ&gzE97*
+z>Ku3eDDf$ESP3sn3)hB~qx{kB&xu^9OS6l^^|64ieo4#$kh^}89o2_VeyNf+H(tE)
+y`eSlFCT|31sW&U?nk;9==}Z{s#aV7XRCp1pQf?tkic*uZv%gcK+=&IJI{FK$?$@3G
+
+diff --git a/src/executor.py b/src/executor.py
+index 97a8b3e..bb139a6 100644
+--- a/src/executor.py
++++ b/src/executor.py
+@@ -340,6 +340,197 @@ class AdaptiveExecutor:
+         }
+ 
+ 
++
++    def execute_adaptive(
++        self,
++        h0,
++        memory,
++        C_prev=None,
++        context=None,
++        memory_mean=None,
++        budget=None,
++        tau=1.0,
++        training=False,
++    ):
++        """
++        Gate-D Stage-4 adaptive-depth executor.
++
++        Unlike execute_differentiable(), this path gives HALT a real
++        terminal meaning:
++
++            HALT -> stop immediately at the current live hidden state.
++
++        HALT still has no successor state and is therefore never passed
++        through successor-state mixing.
++
++        Stage-D1 scope:
++            - unified controller action space
++            - source-aligned legality mask
++            - deterministic HALT semantics
++            - optional ST-Gumbel routing for non-HALT actions
++            - finite pilot budget as an execution safeguard
++            - no separate halting controller
++            - no convergence gate
++            - no learned halting loss yet
++
++        The training signal for HALT is intentionally deferred to D2.
++        """
++        if h0.ndim != 2:
++            raise ValueError("h0 must have shape [B, D].")
++
++        if memory.ndim != 2 or memory.shape != h0.shape:
++            raise ValueError(
++                "memory must have the same shape as h0: [B, D]."
++            )
++
++        batch_size = h0.shape[0]
++
++        if batch_size != 1:
++            raise ValueError(
++                "execute_adaptive currently requires batch size 1."
++            )
++
++        num_blocks = len(self.block_bank.blocks)
++
++        if memory_mean is None:
++            memory_mean = torch.zeros(
++                batch_size,
++                256,
++                device=h0.device,
++                dtype=h0.dtype,
++            )
++        else:
++            if memory_mean.ndim != 2 or memory_mean.shape != (batch_size, 256):
++                raise ValueError(
++                    "memory_mean must have shape [B, 256]."
++                )
++
++        if budget is None:
++            budget = torch.zeros(
++                batch_size,
++                2,
++                device=h0.device,
++                dtype=h0.dtype,
++            )
++        else:
++            if budget.ndim != 2 or budget.shape != (batch_size, 2):
++                raise ValueError(
++                    "budget must have shape [B, 2]."
++                )
++
++        h = h0.clone()
++        pointer = 0
++        just_restarted = False
++        action_history = []
++        halted = False
++        safety_cap_hit = False
++
++        for execution_count in range(self.max_execution_depth):
++            pointer_one_hot = torch.zeros(
++                batch_size,
++                num_blocks + 1,
++                device=h.device,
++                dtype=h.dtype,
++            )
++            pointer_one_hot[:, pointer] = 1.0
++
++            controller_out = self.controller(
++                h=h,
++                memory_read=memory,
++                memory_mean=memory_mean,
++                pointer_one_hot=pointer_one_hot,
++                budget=budget,
++            )
++
++            action_logits = controller_out["logits"]
++
++            mask = build_execution_mask(
++                pointer=pointer,
++                execution_count=execution_count,
++                just_restarted=just_restarted,
++                num_blocks=num_blocks,
++            ).to(device=action_logits.device)
++
++            masked_logits = apply_action_mask(
++                action_logits,
++                mask.unsqueeze(0),
++            )
++
++            if training:
++                # For D1, non-HALT actions may still use the existing
++                # differentiable routing primitive. HALT is sampled from
++                # the full unified categorical policy but has no successor.
++                full_action, _ = st_gumbel_action(
++                    logits=action_logits,
++                    mask=mask.unsqueeze(0),
++                    tau=tau,
++                    training=True,
++                )
++                selected_action = int(
++                    full_action.detach().argmax(dim=-1)[0].item()
++                )
++            else:
++                selected_action = int(
++                    torch.argmax(
++                        masked_logits,
++                        dim=-1,
++                    )[0].item()
++                )
++
++            if selected_action == num_blocks + 2:
++                # HALT: no successor computation.
++                halted = True
++                action_history.append(
++                    ("HALT", None)
++                )
++                break
++
++            if selected_action < num_blocks:
++                h = self._run_block(
++                    block_index=selected_action,
++                    h=h,
++                    h0=h0,
++                    memory=memory,
++                    context=context,
++                )
++                pointer = selected_action
++                just_restarted = False
++                action_history.append(
++                    ("ADVANCE", pointer)
++                )
++
++            elif selected_action == num_blocks:
++                h = self._run_block(
++                    block_index=pointer,
++                    h=h,
++                    h0=h0,
++                    memory=memory,
++                    context=context,
++                )
++                just_restarted = False
++                action_history.append(
++                    ("REPEAT", pointer)
++                )
++
++            else:
++                # RESTART remains zero-compute and preserves h.
++                pointer = 0
++                just_restarted = True
++                action_history.append(
++                    ("RESTART", None)
++                )
++
++        if not halted and len(action_history) >= self.max_execution_depth:
++            safety_cap_hit = True
++
++        return ExecutionResult(
++            h_terminal=h,
++            execution_count=len(action_history),
++            action_history=action_history,
++            halted=halted,
++            safety_cap_hit=safety_cap_hit,
++        )
++
+     def execute_differentiable(
+         self,
+         h0,
+@@ -365,7 +556,8 @@ class AdaptiveExecutor:
+ 
+         HALT is excluded from successor mixing because it has no successor
+         state. Execution therefore continues for exactly
+-        `max_execution_depth` routing decisions.
++        `max_execution_depth` block executions (ADVANCE or REPEAT).
++        RESTART consumes a routing decision but no execution budget.
+ 
+         Current pilot contract:
+             - batch size = 1
+@@ -425,7 +617,12 @@ class AdaptiveExecutor:
+         just_restarted = False
+         action_history = []
+ 
+-        for execution_count in range(self.max_execution_depth):
++        execution_count = 0
++        decision_count = 0
++
++        # Source masks forbid consecutive RESTARTs, so a positive execution
++        # budget is reached in at most 2 * max_execution_depth - 1 decisions.
++        while execution_count < self.max_execution_depth:
+             pointer_one_hot = torch.zeros(
+                 batch_size,
+                 num_blocks + 1,
+@@ -519,13 +716,16 @@ class AdaptiveExecutor:
+                     # RESTART is zero-compute and preserves h.
+                     h = h
+ 
++            decision_count += 1
+             if selected_action < num_blocks:
++                execution_count += 1
+                 pointer = selected_action
+                 just_restarted = False
+                 action_history.append(
+                     ("ADVANCE", pointer)
+                 )
+             elif selected_action == num_blocks:
++                execution_count += 1
+                 just_restarted = False
+                 action_history.append(
+                     ("REPEAT", pointer)
+@@ -537,9 +737,10 @@ class AdaptiveExecutor:
+                     ("RESTART", None)
+                 )
+ 
++        assert decision_count == len(action_history)
+         return ExecutionResult(
+             h_terminal=h,
+-            execution_count=self.max_execution_depth,
++            execution_count=execution_count,
+             action_history=action_history,
+             halted=False,
+             safety_cap_hit=False,
+diff --git a/tests/test_stage3_measurements.py b/tests/test_stage3_measurements.py
+index 37577a3..5bbd9cc 100644
+--- a/tests/test_stage3_measurements.py
++++ b/tests/test_stage3_measurements.py
+@@ -1,3 +1,4 @@
++import pytest
+ import torch
+ 
+ from experiments.diagnose_stage3_gradients import gradient_trial, check_observation_alignment, metadata_credit_probe, metadata_dependency_profile
+@@ -25,7 +26,11 @@ def test_real_gradient_diagnostic_preserves_forward_and_mask_contract():
+     x = torch.randn(1, 1, 64)
+     trial, vector = gradient_trial(model, x, torch.tensor([0]), noise_seed=45)
+     assert torch.isfinite(vector).all() and vector.norm() > 0
+-    assert len(trial["steps"]) == 8
++    coordinates = [(t, d) for t, history in enumerate(trial["histories"])
++                   for d in range(len(history))]
++    assert len(trial["steps"]) == trial["routes"]["decisions"] == len(coordinates)
++    assert [(step["token"], step["decision"]) for step in trial["steps"]] == coordinates
++    assert all(sum(k != "RESTART" for k, _ in history) == 8 for history in trial["histories"])
+     for step in trial["steps"]:
+         assert step["hard_forward_exact"]
+         assert step["illegal_forward_mass"] == 0
+@@ -59,6 +64,7 @@ def test_teacher_observation_tuple_matches_real_executor(monkeypatch):
+ 
+ 
+ def test_metadata_credit_blindspot_has_causal_forward_effect_and_zero_gradient():
++    """Eight-decision observation, not a completed eight-execution token."""
+     original = torch.rand_like
+     result = metadata_credit_probe()["results"]
+     assert torch.rand_like is original
+@@ -67,7 +73,19 @@ def test_metadata_credit_blindspot_has_causal_forward_effect_and_zero_gradient()
+     assert result[0]["history"][1] == ("REPEAT", 6)
+     assert result[1]["history"][1] == ("RESTART", None)
+     assert result[0]["branch_gradient"] == result[1]["branch_gradient"] == [0.0,0.0]
++    assert [row["decision_count"] for row in result] == [8, 8]
++    assert [row["execution_count"] for row in result] == [6, 5]
++    assert result[0]["history"] == [('ADVANCE', 6), ('REPEAT', 6), ('ADVANCE', 7),
++                                    ('RESTART', None), ('ADVANCE', 6), ('REPEAT', 6),
++                                    ('RESTART', None), ('ADVANCE', 6)]
++    assert result[1]["history"] == [('ADVANCE', 6), ('RESTART', None), ('ADVANCE', 0),
++                                    ('RESTART', None), ('ADVANCE', 6), ('REPEAT', 6),
++                                    ('RESTART', None), ('ADVANCE', 6)]
+     for row in result:
++        assert not row["committed"] and row["termination_reason"] == 'observation_horizon'
++        assert row["live_state_has_grad_fn"]
++        assert row["input_gradient"] == ([[1., 1.]] if row["loss"] == 1. else [[100., 100.]])
++        assert all(step['selected_action'] in step['legal_actions'] for step in row['rows'])
+         reference = row["expected_categorical_gradient_resampling_branch_only"]
+         assert reference[0] < -1000 and reference[1] > 1000
+ 
+@@ -81,3 +99,42 @@ def test_real_metadata_profile_preserves_weights_and_commit_versions():
+     assert all(row["future_decisions"] > 0 for row in result["rows"])
+     assert all(row["mask_symmetric_difference"] >= 3 for row in result["rows"])
+     assert all(torch.equal(before[name],value) for name,value in model.state_dict().items())
++
++
++@pytest.mark.parametrize('restart_second_token', [False, True])
++def test_gradient_rows_and_summaries_follow_actual_token_histories(restart_second_token):
++    from experiments.diagnose_stage3_gradients import compact_report
++    torch.manual_seed(3401)
++    model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2)
++    model.executor.max_execution_depth = 8
++    canonical = [('ADVANCE', i) for i in range(8)]
++    alternating = [('ADVANCE', 0), ('RESTART', None)] * 7 + [('ADVANCE', 0)]
++    histories = [canonical, alternating if restart_second_token else canonical]
++    actions = [block if kind == 'ADVANCE' else 9 for history in histories for kind, block in history]
++    calls = []
++    def observed_policy(**kwargs):
++        output = model.controller(**kwargs)
++        bias = output['logits'].new_full((1, 11), -100.)
++        bias[:, actions[len(calls)]] = 100.
++        calls.append(1)
++        return dict(output, logits=output['logits'] + bias)
++    model.executor.controller = observed_policy
++    before = {name: value.clone() for name, value in model.state_dict().items()}
++    trial, vector = gradient_trial(model, torch.randn(1, 2, 64), torch.tensor([0]), noise_seed=45)
++    assert trial['histories'] == histories
++    assert [(s['token'], s['decision']) for s in trial['steps']] == [
++        (t, d) for t, history in enumerate(histories) for d in range(len(history))]
++    for t, history in enumerate(histories):
++        execution = 0
++        for step, (kind, block) in zip([s for s in trial['steps'] if s['token'] == t], history):
++            assert step['execution_before'] == execution
++            execution += kind != 'RESTART'
++            assert step['execution_after'] == execution
++            assert step['terminal_decision'] == (step['decision'] == len(history) - 1)
++        assert execution == 8
++    report = compact_report({'arms': {'control': {'trials': [trial], 'backbone_structural_probe': trial}}})
++    summaries = report['arms']['control']['trials'][0]['gradient_l2_by_decision']
++    assert [s['decision'] for s in summaries] == list(range(max(map(len, histories))))
++    assert [s['observations'] for s in summaries] == [sum(len(h) > d for h in histories) for d in range(len(summaries))]
++    assert torch.isfinite(vector).all()
++    assert all(torch.equal(value, model.state_dict()[name]) for name, value in before.items())
+diff --git a/tests/test_stage3_replication.py b/tests/test_stage3_replication.py
+index da7fea6..2dea412 100644
+--- a/tests/test_stage3_replication.py
++++ b/tests/test_stage3_replication.py
+@@ -9,15 +9,44 @@ from src.agt import AGTv3
+ from experiments.run_stage3_taskA_controller import main as pilot_main
+ 
+ 
+-def test_compute_measurement_counts_only_inference_selected_blocks():
++def test_compute_measurement_counts_only_inference_selected_blocks(monkeypatch):
++    """Eight supplied decisions: seven selected bank executions, no commit."""
++    from experiments.stage3_decision_prefix import observe_token_prefix
++    from experiments.stage3_measurements import count_block_calls, route_metrics
++    from experiments.audit_gatec_canonical_replay import snapshot, unchanged
++    import src.agt as agt_module
+     model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2)
+     model.executor.max_execution_depth = 8
+     model.executor.controller = ScriptedSweep([0,9,0,1,2,3,4,5])
+     batch = SimpleNamespace(x=torch.randn(1,1,64), target=torch.tensor([0]))
+-    result = measured_evaluation(model, {"val": [batch]})["val"]
++    state = model.initial_persistent_state(1, 'cpu')
++    before = snapshot(state)
++    selected = []
++    handles = [block.register_forward_hook(lambda module, args, output, i=i: selected.append(i))
++               for i, block in enumerate(model.blocks.blocks)]
++    monkeypatch.setattr(agt_module, 'terminal_commit', lambda *a, **k: pytest.fail('Prefix committed'))
++    monkeypatch.setattr(model.executor, 'candidate_successors',
++                        lambda *a, **k: pytest.fail('Inference evaluated candidates'))
++    try:
++        with count_block_calls(model) as counter:
++            prefix = observe_token_prefix(model, batch.x[:, 0], state, torch.zeros(1, 64),
++                                           decision_horizon=8, training=False)
++    finally:
++        for handle in handles:
++            handle.remove()
++    result = dict(actual_executor_block_calls=counter['block_calls'],
++                  routing=route_metrics([prefix.action_history]))
+     assert result["actual_executor_block_calls"] == 7
+     assert result["routing"]["decisions"] == 8
+     assert result["routing"]["selected_block_calls"] == 7
++    assert selected == [0, 0, 1, 2, 3, 4, 5]
++    assert prefix.action_history == [('ADVANCE', 0), ('RESTART', None)] + [('ADVANCE', i) for i in range(6)]
++    assert prefix.decision_count == 8 and prefix.execution_count == 7
++    assert model.executor.controller.calls == 8
++    assert not prefix.committed and prefix.termination_reason == 'observation_horizon'
++    assert prefix.rows[1]['execution_before'] == prefix.rows[1]['execution_after'] == 1
++    assert all(row['selected_action'] in row['legal_actions'] for row in prefix.rows)
++    assert unchanged(before, snapshot(state))
+ 
+ 
+ def test_replication_summary_uses_sample_standard_deviation():
+diff --git a/tests/test_stage3_stochastic_evaluation.py b/tests/test_stage3_stochastic_evaluation.py
+index 30ec053..7768702 100644
+--- a/tests/test_stage3_stochastic_evaluation.py
++++ b/tests/test_stage3_stochastic_evaluation.py
+@@ -1,3 +1,4 @@
++import pytest
+ import torch
+ 
+ from data.task_a import TaskAParity
+@@ -14,8 +15,51 @@ def test_paired_stochastic_assessment_replays_without_parameter_updates():
+     second = assess(model,[batch],noise_seed=40,repeats=2)
+     assert first == second
+     assert first["trajectories"] == 2
+-    assert first["routing"]["decisions"] == 64
+-    assert first["actual_candidate_block_calls"] == 9*64
++    decisions = sum(sum(row['token_decision_counts']) for row in first['rows'])
++    assert first['routing']['decisions'] == decisions
++    assert first['routing']['executions'] == 8 * batch.length * first['trajectories']
++    for row in first['rows']:
++        assert len(row['histories']) == batch.length
++        assert row['token_decision_counts'] == list(map(len, row['histories']))
++        assert row['token_execution_counts'] == [8] * batch.length
++        for history, execution in zip(row['histories'], row['token_execution_counts']):
++            restarts = sum(k == 'RESTART' for k, _ in history)
++            assert len(history) == execution + restarts
++            assert execution <= len(history) <= 2 * execution - 1
++        assert row['actual_candidate_block_calls'] == 9 * sum(row['token_decision_counts'])
++    assert first['actual_candidate_block_calls'] == 9 * decisions
+     assert first["routing"]["illegal_decisions"] == 0
+     assert all(torch.equal(before[name],value) for name,value in model.state_dict().items())
+     assert all(parameter.grad is None for parameter in model.parameters())
++
++
++@pytest.mark.parametrize('restart_second_token', [False, True])
++def test_stochastic_assessment_retains_canonical_and_restart_token_boundaries(restart_second_token):
++    torch.manual_seed(3401)
++    model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2)
++    model.executor.max_execution_depth = 8
++    canonical = [('ADVANCE', i) for i in range(8)]
++    alternating = [('ADVANCE', 0), ('RESTART', None)] * 7 + [('ADVANCE', 0)]
++    histories = [canonical, alternating if restart_second_token else canonical, canonical, canonical]
++    actions = [block if kind == 'ADVANCE' else 9 for history in histories for kind, block in history]
++    calls = []
++    def observed_policy(**kwargs):
++        output = model.controller(**kwargs)
++        bias = output['logits'].new_full((1, 11), -100.)
++        bias[:, actions[len(calls) % len(actions)]] = 100.
++        calls.append(1)
++        return dict(output, logits=output['logits'] + bias)
++    model.executor.controller = observed_policy
++    before = {name: value.clone() for name, value in model.state_dict().items()}
++    batch = TaskAParity(64).make_fixed_set('val', 4, 1)
++    first = assess(model, [batch], noise_seed=40, repeats=2)
++    second = assess(model, [batch], noise_seed=40, repeats=2)
++    assert first == second
++    assert [row['noise_seed'] for row in first['rows']] == [40, 41]
++    assert all(row['histories'] == histories for row in first['rows'])
++    assert all(row['token_execution_counts'] == [8] * len(histories) for row in first['rows'])
++    assert first['routing']['decisions'] == 2 * sum(map(len, histories))
++    assert first['actual_candidate_block_calls'] == 9 * first['routing']['decisions']
++    assert first['routing']['illegal_decisions'] == 0
++    assert all(torch.equal(value, model.state_dict()[name]) for name, value in before.items())
++    assert all(parameter.grad is None for parameter in model.parameters())
+diff --git a/tests/test_stage3_successor_mix.py b/tests/test_stage3_successor_mix.py
+index 6bafd81..c2c726d 100644
+--- a/tests/test_stage3_successor_mix.py
++++ b/tests/test_stage3_successor_mix.py
+@@ -438,3 +438,78 @@ def test_stage3_differentiable_route_inference_selects_legal_argmax_successor():
+         result["probs"][0, 4:],
+         torch.zeros(2),
+     )
++
++def test_stage3_fixed_depth_inference_excludes_halt_from_successors():
++    import torch
++
++    from src.executor import AdaptiveExecutor
++
++    class AddBlock:
++        def __init__(self, amount):
++            self.amount = float(amount)
++
++        def __call__(self, x, **kwargs):
++            return x + self.amount
++
++    class Bank:
++        def __init__(self):
++            self.blocks = [
++                AddBlock(1.0),
++                AddBlock(2.0),
++                AddBlock(3.0),
++                AddBlock(4.0),
++            ]
++
++        def __call__(self, index, x, **kwargs):
++            return self.blocks[index](x, **kwargs)
++
++    class AlwaysHighHaltController:
++        def __call__(self, **kwargs):
++            # N=4 => [ADVANCE x4, REPEAT, RESTART, HALT]
++            # HALT has the highest raw logit but must be ignored during
++            # fixed-depth Stage-3 inference.
++            logits = torch.tensor(
++                [[5.0, 1.0, 1.0, 1.0, 1.0, 1.0, 100.0]],
++                device=kwargs["h"].device,
++                dtype=kwargs["h"].dtype,
++            )
++
++            return {
++                "logits": logits,
++                "advance": logits[:, :4],
++                "repeat": logits[:, 4],
++                "restart": logits[:, 5],
++                "halt": logits[:, 6],
++            }
++
++    executor = AdaptiveExecutor(
++        block_bank=Bank(),
++        controller=AlwaysHighHaltController(),
++        convergence=None,
++        max_execution_depth=1,
++    )
++
++    h0 = torch.zeros(1, 4)
++    memory = torch.zeros(1, 4)
++
++    result = executor.execute_differentiable(
++        h0=h0,
++        memory=memory,
++        C_prev=None,
++        context=None,
++        memory_mean=torch.zeros(1, 256),
++        budget=torch.tensor([[0.0, 1.0]]),
++        tau=1.0,
++        training=False,
++    )
++
++    assert result.execution_count == 1
++    assert result.action_history == [
++        ("ADVANCE", 0),
++    ]
++
++    # ADVANCE(0) adds 1.0; HALT=100 must have had no effect.
++    assert torch.equal(
++        result.h_terminal,
++        torch.ones(1, 4),
++    )

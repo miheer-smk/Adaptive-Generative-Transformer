@@ -1,0 +1,240 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+common update 16/512 meanCE=0.00172053 grad=0.0198153 tokens=1296
+common update 32/512 meanCE=0.00193854 grad=0.0226501 tokens=2576
+common update 48/512 meanCE=0.00159073 grad=0.0183725 tokens=3856
+common update 64/512 meanCE=0.00161576 grad=0.0183988 tokens=5136
+common update 80/512 meanCE=0.00160264 grad=0.0203364 tokens=6416
+common update 96/512 meanCE=0.00136447 grad=0.0155416 tokens=7696
+common update 112/512 meanCE=0.00112076 grad=0.0127717 tokens=8976
+common update 128/512 meanCE=0.00116976 grad=0.013336 tokens=10256
+common update 144/512 meanCE=0.000994848 grad=0.0113757 tokens=11536
+common update 160/512 meanCE=0.000978039 grad=0.0111699 tokens=12816
+common update 176/512 meanCE=0.000850416 grad=0.00977527 tokens=14096
+common update 192/512 meanCE=0.000789498 grad=0.00900858 tokens=15376
+common update 208/512 meanCE=0.000742971 grad=0.00861379 tokens=16656
+common update 224/512 meanCE=0.000693922 grad=0.00795387 tokens=17936
+common update 240/512 meanCE=0.000672958 grad=0.00773405 tokens=19216
+common update 256/512 meanCE=0.000650705 grad=0.00745034 tokens=20496
+common update 272/512 meanCE=0.000576905 grad=0.00661822 tokens=21776
+common update 288/512 meanCE=0.000510329 grad=0.005862 tokens=23056
+common update 304/512 meanCE=0.0005348 grad=0.00612573 tokens=24336
+common update 320/512 meanCE=0.000503477 grad=0.00588483 tokens=25616
+common update 336/512 meanCE=0.000464878 grad=0.00531671 tokens=26896
+common update 352/512 meanCE=0.000411778 grad=0.00491462 tokens=28176
+common update 368/512 meanCE=0.000401234 grad=0.0045958 tokens=29456
+common update 384/512 meanCE=0.000392164 grad=0.00450296 tokens=30736
+common update 400/512 meanCE=0.000341553 grad=0.0039292 tokens=32016
+common update 416/512 meanCE=0.000353884 grad=0.00406354 tokens=33296
+common update 432/512 meanCE=0.000384781 grad=0.004426 tokens=34576
+common update 448/512 meanCE=0.000325468 grad=0.00373955 tokens=35856
+common update 464/512 meanCE=0.000316322 grad=0.00373164 tokens=37136
+common update 480/512 meanCE=0.000274123 grad=0.00314662 tokens=38416
+common update 496/512 meanCE=0.00027968 grad=0.00321032 tokens=39696
+common update 512/512 meanCE=0.000279283 grad=0.00320605 tokens=40976
+development_common 16/128 cases
+development_common 32/128 cases
+development_common 48/128 cases
+development_common 64/128 cases
+development_common 80/128 cases
+development_common 96/128 cases
+development_common 112/128 cases
+development_common 128/128 cases
+T update16/512 meanCE=0.000284288
+C update16/512 meanCE=0.000284322
+T update32/512 meanCE=0.00024095
+C update32/512 meanCE=0.000240932
+T update48/512 meanCE=0.000238838
+C update48/512 meanCE=0.000238805
+T update64/512 meanCE=0.000240151
+C update64/512 meanCE=0.000240158
+T update80/512 meanCE=0.000235283
+C update80/512 meanCE=0.000235293
+T update96/512 meanCE=0.000260052
+C update96/512 meanCE=0.000260087
+T update112/512 meanCE=0.000222521
+C update112/512 meanCE=0.000222531
+T update128/512 meanCE=0.000237182
+C update128/512 meanCE=0.00023719
+T update144/512 meanCE=0.000191943
+C update144/512 meanCE=0.000191927
+T update160/512 meanCE=0.000225125
+C update160/512 meanCE=0.000225136
+T update176/512 meanCE=0.00019287
+C update176/512 meanCE=0.000192864
+T update192/512 meanCE=0.00019582
+C update192/512 meanCE=0.000195824
+T update208/512 meanCE=0.000221849
+C update208/512 meanCE=0.000221856
+T update224/512 meanCE=0.000178991
+C update224/512 meanCE=0.000178999
+T update240/512 meanCE=0.000189284
+C update240/512 meanCE=0.000189292
+T update256/512 meanCE=0.000183716
+C update256/512 meanCE=0.000183726
+T update272/512 meanCE=0.00019981
+C update272/512 meanCE=0.00019982
+T update288/512 meanCE=0.000168958
+C update288/512 meanCE=0.000168959
+T update304/512 meanCE=0.000168311
+C update304/512 meanCE=0.000168325
+T update320/512 meanCE=0.000169533
+C update320/512 meanCE=0.000169526
+T update336/512 meanCE=0.000168139
+C update336/512 meanCE=0.000168102
+T update352/512 meanCE=0.000181746
+C update352/512 meanCE=0.000181755
+T update368/512 meanCE=0.000175041
+C update368/512 meanCE=0.000174998
+T update384/512 meanCE=0.000169174
+C update384/512 meanCE=0.000169188
+T update400/512 meanCE=0.000170242
+C update400/512 meanCE=0.000170271
+T update416/512 meanCE=0.000164114
+C update416/512 meanCE=0.000164155
+T update432/512 meanCE=0.000162076
+C update432/512 meanCE=0.000162094
+T update448/512 meanCE=0.000163019
+C update448/512 meanCE=0.000163049
+T update464/512 meanCE=0.00015989
+C update464/512 meanCE=0.000159899
+T update480/512 meanCE=0.000149369
+C update480/512 meanCE=0.000149389
+T update496/512 meanCE=0.000144909
+C update496/512 meanCE=0.000144884
+T update512/512 meanCE=0.000120392
+C update512/512 meanCE=0.000120382
+selection_T_256 16/256 cases
+selection_T_256 32/256 cases
+selection_T_256 48/256 cases
+selection_T_256 64/256 cases
+selection_T_256 80/256 cases
+selection_T_256 96/256 cases
+selection_T_256 112/256 cases
+selection_T_256 128/256 cases
+selection_T_256 144/256 cases
+selection_T_256 160/256 cases
+selection_T_256 176/256 cases
+selection_T_256 192/256 cases
+selection_T_256 208/256 cases
+selection_T_256 224/256 cases
+selection_T_256 240/256 cases
+selection_T_256 256/256 cases
+selection_C_256 16/256 cases
+selection_C_256 32/256 cases
+selection_C_256 48/256 cases
+selection_C_256 64/256 cases
+selection_C_256 80/256 cases
+selection_C_256 96/256 cases
+selection_C_256 112/256 cases
+selection_C_256 128/256 cases
+selection_C_256 144/256 cases
+selection_C_256 160/256 cases
+selection_C_256 176/256 cases
+selection_C_256 192/256 cases
+selection_C_256 208/256 cases
+selection_C_256 224/256 cases
+selection_C_256 240/256 cases
+selection_C_256 256/256 cases
+selection_T_512 16/256 cases
+selection_T_512 32/256 cases
+selection_T_512 48/256 cases
+selection_T_512 64/256 cases
+selection_T_512 80/256 cases
+selection_T_512 96/256 cases
+selection_T_512 112/256 cases
+selection_T_512 128/256 cases
+selection_T_512 144/256 cases
+selection_T_512 160/256 cases
+selection_T_512 176/256 cases
+selection_T_512 192/256 cases
+selection_T_512 208/256 cases
+selection_T_512 224/256 cases
+selection_T_512 240/256 cases
+selection_T_512 256/256 cases
+selection_C_512 16/256 cases
+selection_C_512 32/256 cases
+selection_C_512 48/256 cases
+selection_C_512 64/256 cases
+selection_C_512 80/256 cases
+selection_C_512 96/256 cases
+selection_C_512 112/256 cases
+selection_C_512 128/256 cases
+selection_C_512 144/256 cases
+selection_C_512 160/256 cases
+selection_C_512 176/256 cases
+selection_C_512 192/256 cases
+selection_C_512 208/256 cases
+selection_C_512 224/256 cases
+selection_C_512 240/256 cases
+selection_C_512 256/256 cases
+confirmation T 16/512 cases
+confirmation T 32/512 cases
+confirmation T 48/512 cases
+confirmation T 64/512 cases
+confirmation T 80/512 cases
+confirmation T 96/512 cases
+confirmation T 112/512 cases
+confirmation T 128/512 cases
+confirmation T 144/512 cases
+confirmation T 160/512 cases
+confirmation T 176/512 cases
+confirmation T 192/512 cases
+confirmation T 208/512 cases
+confirmation T 224/512 cases
+confirmation T 240/512 cases
+confirmation T 256/512 cases
+confirmation T 272/512 cases
+confirmation T 288/512 cases
+confirmation T 304/512 cases
+confirmation T 320/512 cases
+confirmation T 336/512 cases
+confirmation T 352/512 cases
+confirmation T 368/512 cases
+confirmation T 384/512 cases
+confirmation T 400/512 cases
+confirmation T 416/512 cases
+confirmation T 432/512 cases
+confirmation T 448/512 cases
+confirmation T 464/512 cases
+confirmation T 480/512 cases
+confirmation T 496/512 cases
+confirmation T 512/512 cases
+confirmation C 16/512 cases
+confirmation C 32/512 cases
+confirmation C 48/512 cases
+confirmation C 64/512 cases
+confirmation C 80/512 cases
+confirmation C 96/512 cases
+confirmation C 112/512 cases
+confirmation C 128/512 cases
+confirmation C 144/512 cases
+confirmation C 160/512 cases
+confirmation C 176/512 cases
+confirmation C 192/512 cases
+confirmation C 208/512 cases
+confirmation C 224/512 cases
+confirmation C 240/512 cases
+confirmation C 256/512 cases
+confirmation C 272/512 cases
+confirmation C 288/512 cases
+confirmation C 304/512 cases
+confirmation C 320/512 cases
+confirmation C 336/512 cases
+confirmation C 352/512 cases
+confirmation C 368/512 cases
+confirmation C 384/512 cases
+confirmation C 400/512 cases
+confirmation C 416/512 cases
+confirmation C 432/512 cases
+confirmation C 448/512 cases
+confirmation C 464/512 cases
+confirmation C 480/512 cases
+confirmation C 496/512 cases
+confirmation C 512/512 cases

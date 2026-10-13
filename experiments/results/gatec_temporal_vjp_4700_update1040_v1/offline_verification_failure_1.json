@@ -1,0 +1,9 @@
+{
+  "phase": "offline artifact recomputation; no model calls",
+  "forward_replays": 144,
+  "task_loss_VJPs": 384,
+  "error": "Bootstrap remaining-projection CI differed by 2.4505474689393014e-11 because offline code summed rounded FP32 component differences in float64, instead of using the retained original cumulative vectors.",
+  "correction": "Offline arithmetic only: use original cumulative full and exec vectors as in the primary calculation; preserve component arrays and tolerances unchanged.",
+  "original_log": "/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\nTraceback (most recent call last):\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_temporal_vjp_4700_update1040_v1/analyze_artifacts.py\", line 216, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_temporal_vjp_4700_update1040_v1/analyze_artifacts.py\", line 73, in main\n    torch.testing.assert_close(vec(CI(rest_projection)),vec(p['cancellation']['rest_projection_bootstrap_95']),atol=1e-12,rtol=1e-10)\n  File \"/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/testing/_comparison.py\", line 1600, in assert_close\n    raise error_metas[0].to_error(msg)\nAssertionError: Tensor-likes are not close!\n\nMismatched elements: 1 / 2 (50.0%)\nGreatest absolute difference: 2.4505474689393014e-11 at index (0,) (up to 1e-12 allowed)\nGreatest relative difference: 3.854965060704693e-08 at index (0,) (up to 1e-10 allowed)\n",
+  "diagnostic_rerun": false
+}

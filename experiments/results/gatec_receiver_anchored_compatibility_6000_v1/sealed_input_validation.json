@@ -1,0 +1,8 @@
+{
+  "complete_inputs_disjoint": true,
+  "incoming_histories_disjoint": true,
+  "suffix_opposition_at_every_positive_horizon": true,
+  "orders_complete_and_length_paired": true,
+  "sealed_sources_unchanged": true,
+  "source": "offline content-only validation; no model calls or outcomes used"
+}

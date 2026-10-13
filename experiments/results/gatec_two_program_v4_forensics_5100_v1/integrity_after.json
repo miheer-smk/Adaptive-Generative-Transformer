@@ -1,0 +1,204 @@
+{
+  "evidence_files": {
+    "final_report.md": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/final_report.md",
+      "sha256": "5cb5eeea517f1663d2bebd3896dd27f7f5794c76f86fa2d6641cb9d817dbdf7d",
+      "bytes": 7222,
+      "sha256_after": "5cb5eeea517f1663d2bebd3896dd27f7f5794c76f86fa2d6641cb9d817dbdf7d",
+      "equal": true
+    },
+    "token_traces.jsonl.gz": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/token_traces.jsonl.gz",
+      "sha256": "37056e10e2949aa6e3a1458a62a8fc3c4729ea9752c339f3e6abd2888e68e9a1",
+      "bytes": 21953493,
+      "sha256_after": "37056e10e2949aa6e3a1458a62a8fc3c4729ea9752c339f3e6abd2888e68e9a1",
+      "equal": true
+    },
+    "current_cases.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/current_cases.json",
+      "sha256": "69be29e2a1c291950288df31ca0ff50d15121e9d441d2ab5a21af60311e39e17",
+      "bytes": 3593065,
+      "sha256_after": "69be29e2a1c291950288df31ca0ff50d15121e9d441d2ab5a21af60311e39e17",
+      "equal": true
+    },
+    "current_comparison_table.csv": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/current_comparison_table.csv",
+      "sha256": "38005e249a27cc55aef054e870fa1f63bc53b83e439f84e4800699b199e63b4e",
+      "bytes": 10320,
+      "sha256_after": "38005e249a27cc55aef054e870fa1f63bc53b83e439f84e4800699b199e63b4e",
+      "equal": true
+    },
+    "paired_comparisons.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/paired_comparisons.json",
+      "sha256": "57b99809debd76e77ef67ede4f808d002d91cf2f0569c49d1ecf37b1d4ed61c7",
+      "bytes": 220239,
+      "sha256_after": "57b99809debd76e77ef67ede4f808d002d91cf2f0569c49d1ecf37b1d4ed61c7",
+      "equal": true
+    },
+    "execution_ledger.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/execution_ledger.json",
+      "sha256": "fbcd652cc1927458910048445a6df1535408c7fc75645c9e6453d49c4ad834b0",
+      "bytes": 700647,
+      "sha256_after": "fbcd652cc1927458910048445a6df1535408c7fc75645c9e6453d49c4ad834b0",
+      "equal": true
+    },
+    "current_screen_analysis.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/current_screen_analysis.json",
+      "sha256": "ba708ec22d996a5b9d13f0783c8ad6b88b6e1474eb835a952d0cf1f38aba9803",
+      "bytes": 3376,
+      "sha256_after": "ba708ec22d996a5b9d13f0783c8ad6b88b6e1474eb835a952d0cf1f38aba9803",
+      "equal": true
+    },
+    "archival_comparisons.jsonl": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/archival_comparisons.jsonl",
+      "sha256": "8e5da8e3fae67cec376f89629f0636a73e31107597de1a1ec76f09bc05a15fe5",
+      "bytes": 3142720,
+      "sha256_after": "8e5da8e3fae67cec376f89629f0636a73e31107597de1a1ec76f09bc05a15fe5",
+      "equal": true
+    },
+    "failure.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/failure.json",
+      "sha256": "d355a52aaa5c8bdd021565a737ac1596e0b4aa666de19024dcb970c37fd3f8ec",
+      "bytes": 1254,
+      "sha256_after": "d355a52aaa5c8bdd021565a737ac1596e0b4aa666de19024dcb970c37fd3f8ec",
+      "equal": true
+    },
+    "attempt_manifest.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/attempt_manifest.json",
+      "sha256": "0efdefb80fb5a5f3a739f1434f164331737426463f3eee1b8cf56f898cf36af6",
+      "bytes": 22475,
+      "sha256_after": "0efdefb80fb5a5f3a739f1434f164331737426463f3eee1b8cf56f898cf36af6",
+      "equal": true
+    },
+    "implementation_seal.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/implementation_seal.json",
+      "sha256": "739506b39bdb418901a9be260d12af094ce84cfc668a595ad563d323c966aef1",
+      "bytes": 1375,
+      "sha256_after": "739506b39bdb418901a9be260d12af094ce84cfc668a595ad563d323c966aef1",
+      "equal": true
+    },
+    "protocol_amendment.md": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/protocol_amendment.md",
+      "sha256": "4054b45372f59b86d3f0e12deba42054c03508546197e5d878f5a2fc34ed2d68",
+      "bytes": 2546,
+      "sha256_after": "4054b45372f59b86d3f0e12deba42054c03508546197e5d878f5a2fc34ed2d68",
+      "equal": true
+    },
+    "requirements_matrix_annotated.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/requirements_matrix_annotated.json",
+      "sha256": "95720af9b905e97ab4f632c7d32772057a5ffb703d30b5a2969ce04c1e7f9dda",
+      "bytes": 1825310,
+      "sha256_after": "95720af9b905e97ab4f632c7d32772057a5ffb703d30b5a2969ce04c1e7f9dda",
+      "equal": true
+    },
+    "study_started.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/study_started.json",
+      "sha256": "218a17f159a8ba65b21ee8149285668ec6f04f5864b0992fed0541667b6b2213",
+      "bytes": 19380,
+      "sha256_after": "218a17f159a8ba65b21ee8149285668ec6f04f5864b0992fed0541667b6b2213",
+      "equal": true
+    },
+    "results.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/results.json",
+      "sha256": "e09a22265b45922041bc257978b97898af6a3f9cca03a3067302e58c1c442c88",
+      "bytes": 2230,
+      "sha256_after": "e09a22265b45922041bc257978b97898af6a3f9cca03a3067302e58c1c442c88",
+      "equal": true
+    },
+    "archival_gate.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/archival_gate.json",
+      "sha256": "e2032904dd89d8855b7e5a22aeaa2c8d9e7cb3245138175aa460ed4f07b58422",
+      "bytes": 667,
+      "sha256_after": "e2032904dd89d8855b7e5a22aeaa2c8d9e7cb3245138175aa460ed4f07b58422",
+      "equal": true
+    },
+    "p0_current_gate.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/p0_current_gate.json",
+      "sha256": "3195f20d5c27c7bb806ab11cfae2a28194a0988ebb78bf86c4dfdccea5254b36",
+      "bytes": 65,
+      "sha256_after": "3195f20d5c27c7bb806ab11cfae2a28194a0988ebb78bf86c4dfdccea5254b36",
+      "equal": true
+    },
+    "integrity_before.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/integrity_before.json",
+      "sha256": "0e7bbbdf8269124686ce15f2a0dc3461791d9e5a648aa149bc15c45c43062bb2",
+      "bytes": 83500,
+      "sha256_after": "0e7bbbdf8269124686ce15f2a0dc3461791d9e5a648aa149bc15c45c43062bb2",
+      "equal": true
+    },
+    "integrity_after.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/integrity_after.json",
+      "sha256": "dce50eb6efb8007daa0131b6da99a0353858c829aa79d658b970628ce9a956fa",
+      "bytes": 365,
+      "sha256_after": "dce50eb6efb8007daa0131b6da99a0353858c829aa79d658b970628ce9a956fa",
+      "equal": true
+    },
+    "final_verification.json": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/final_verification.json",
+      "sha256": "29055d7c5b97fd0ecbe9f888aaeeb409dfb2602e4b23f2d4daf3f844aaf137e8",
+      "bytes": 1117,
+      "sha256_after": "29055d7c5b97fd0ecbe9f888aaeeb409dfb2602e4b23f2d4daf3f844aaf137e8",
+      "equal": true
+    },
+    "runner_v4.py": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/runner_v4.py",
+      "sha256": "6b05764f43e42f843abe4777ee3cbe1efe1f0bf065ca0d305a488cb6603c5415",
+      "bytes": 25842,
+      "sha256_after": "6b05764f43e42f843abe4777ee3cbe1efe1f0bf065ca0d305a488cb6603c5415",
+      "equal": true
+    },
+    "research_programs_v4.py": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/research_programs_v4.py",
+      "sha256": "d32772212f6c97f225e4aeb788d149cd890eea81ec6c2ae9484ce05524c34834",
+      "bytes": 24985,
+      "sha256_after": "d32772212f6c97f225e4aeb788d149cd890eea81ec6c2ae9484ce05524c34834",
+      "equal": true
+    },
+    "tracked_diff_preserved.patch": {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/tracked_diff_preserved.patch",
+      "sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+      "bytes": 74527,
+      "sha256_after": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+      "equal": true
+    }
+  },
+  "all_evidence_hashes_equal": true,
+  "tracked_diff_sha256_after": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "tracked_diff_unchanged": true,
+  "historical_v4_integrity": {
+    "protected_files": 617,
+    "changed": [],
+    "sealed_implementation_changed": [],
+    "tracked_diff_unchanged": true,
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+    "git_diff_check_exit_code": 0,
+    "git_diff_check_output": "",
+    "historical_bytecode_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting",
+    "new_integrity_exceptions": 0,
+    "parameters_unchanged": true,
+    "checkpoint_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "encoded_inputs_sha256": "1c52bd823aa65bd6c4a574cfd5043e79f0dad4660b4517839a9bf8a1dcf780ac",
+    "input_manifest_sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80",
+    "v1_status": "STOPPED BEFORE P1 unchanged",
+    "v2_status": "inspection-only stop unchanged",
+    "v3_status": "specification-barrier stop unchanged",
+    "new_files_scope": "v4 only",
+    "no_training": true,
+    "no_backward": true,
+    "no_optimizer": true,
+    "no_production_edits": true,
+    "no_commit": true
+  },
+  "broader_inventory_reverification": false,
+  "checkpoint_hash_reverification": false,
+  "historical_integrity_exception_status": "Carried unchanged from v4 findings; no new cache/model imports",
+  "no_model_import": true,
+  "no_checkpoint_deserialization": true,
+  "no_execution": true,
+  "no_tests": true,
+  "forbidden_modules_loaded": [],
+  "no_new_noise": true,
+  "no_bootstrap": true,
+  "no_commit": true,
+  "new_files_scope": "experiments/results/gatec_two_program_v4_forensics_5100_v1"
+}

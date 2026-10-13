@@ -1,0 +1,15 @@
+{
+  "protected_files_verified": 602,
+  "original_579_verified": true,
+  "changed": [],
+  "v1_all_artifacts_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "historical_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting",
+  "no_new_integrity_exception": true,
+  "diff_check": "clean",
+  "production_source_edits": 0,
+  "model_forwards": 0,
+  "backwards": 0,
+  "checkpoint_changes": 0,
+  "git_commits": 0
+}

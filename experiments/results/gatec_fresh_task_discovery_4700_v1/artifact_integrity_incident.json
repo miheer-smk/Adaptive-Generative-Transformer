@@ -1,0 +1,63 @@
+{
+  "regenerated_caches": [
+    {
+      "path": "src/__pycache__/executor.cpython-312.pyc",
+      "current_sha256": "86a312caae8e8a956a3cb0bc14deacbf94ce95679840193d0a58abb552617818",
+      "mtime_utc": "2026-10-07T08:58:06.392550",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/audit_gatec_canonical_replay.cpython-312.pyc",
+      "current_sha256": "aed5de315555095b249a9ce87ff94e68185e6b721c143120b0e2b27a034c7ae3",
+      "mtime_utc": "2026-10-07T08:58:06.400879",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/evaluate_gatec_locked_policy.cpython-312.pyc",
+      "current_sha256": "283b7f0e75f1593f0a2589b7e5d9949aa75b44557ec67e09d190b83362587947",
+      "mtime_utc": "2026-10-07T08:58:06.405074",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/replay_gatec_learned_policy.cpython-312.pyc",
+      "current_sha256": "438ea69cd72a248a836a33f37d2c85de1ed70ff334bfa3ec8c0aca26ae59797b",
+      "mtime_utc": "2026-10-07T08:58:06.397115",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/replicate_gatec_locked_imitation.cpython-312.pyc",
+      "current_sha256": "3d878177aff05e440f6e2ec6bf4252ff6292335022bcf9eefcf4040b6caf7c38",
+      "mtime_utc": "2026-10-07T08:58:06.409620",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/run_gatec_fresh_task_discovery.cpython-312.pyc",
+      "current_sha256": "a87bd173837342dcfa5062888f2f98f42203c565918a93c2ef2a61a4d08552e7",
+      "mtime_utc": "2026-10-07T08:58:05.878199",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/run_gatec_paired_task_maintenance.cpython-312.pyc",
+      "current_sha256": "940a09b2c404704031defd12663be02a1857b7313262aa3dd55eff20f80d6e38",
+      "mtime_utc": "2026-10-07T08:58:06.390000",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/run_stage3_route_imitation.cpython-312.pyc",
+      "current_sha256": "1e97eebc159ae501a7a8cdd39fe8b797f140bde31525550e32a36f888d4187c9",
+      "mtime_utc": "2026-10-07T08:58:06.411179",
+      "initial_bytes_not_retained": true
+    },
+    {
+      "path": "experiments/__pycache__/stage3_measurements.cpython-312.pyc",
+      "current_sha256": "f84182cfe3308c9cfa01866d6de7d664713ee8c3f9d195573edf9f431cf30770",
+      "mtime_utc": "2026-10-07T08:58:06.401773",
+      "initial_bytes_not_retained": true
+    }
+  ],
+  "production_sources_unchanged": true,
+  "live_training_evaluation_unaffected": true,
+  "original_end_of_run_failure_preserved": true,
+  "cache_restoration_not_attempted": true,
+  "additional_training_or_evaluation": 0
+}

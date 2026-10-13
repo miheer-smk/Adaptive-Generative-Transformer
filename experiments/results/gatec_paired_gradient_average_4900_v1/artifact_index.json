@@ -1,0 +1,426 @@
+{
+  "files": {
+    "bootstrap_indices.pt": {
+      "sha256": "3c7af9b952b2fe536133d81a0d05c2d18f5fae1d3df7ff0490ff2856181eeb75",
+      "bytes": 7681829
+    },
+    "confirmation_panel.json": {
+      "sha256": "e07f0eafd0238924e8ccf013298a09f7a6c1bb74534bf414fb753210da63dc0d",
+      "bytes": 84688
+    },
+    "decisions.jsonl.gz": {
+      "sha256": "ea933c9c884f2d0273729be7af4fca495f646020aba88dcaf1153ad50ecbf1f7",
+      "bytes": 194281392
+    },
+    "evaluation_deterministic.json": {
+      "sha256": "50ce301c1719d6949b69b2d451e5d76865a89dc11a734dd6f160d6c52fd7d615",
+      "bytes": 2793704
+    },
+    "evaluation_noise.pt": {
+      "sha256": "2d5aaa9905302ae3862b08ab522936d4d8602650806368aef2405f14509fcc49",
+      "bytes": 5092415
+    },
+    "evaluation_tape0.json": {
+      "sha256": "e444c0c95a0b251672876409d6cb930a495aefbb6ac8bc05894f40afadaabb60",
+      "bytes": 2579076
+    },
+    "evaluation_tape1.json": {
+      "sha256": "c08f4839c089a531ecdee573db4da718872659843c37ccd6842ff464936714f1",
+      "bytes": 2579296
+    },
+    "evaluation_tape2.json": {
+      "sha256": "610025b185d3c6d8e603931910e974dd8caf58c247dbc41438c07c5fea0627d0",
+      "bytes": 2579422
+    },
+    "evaluation_tape3.json": {
+      "sha256": "42cc28d6bf5413c0d6d237619ab030bb60a27bfe2a669a439021eeb864db9b68",
+      "bytes": 2578470
+    },
+    "manifest.json": {
+      "sha256": "3ebaad9fdedd65d938dedbfb7eb097f4d36b178b8ffa037db7a00f074a236b3c",
+      "bytes": 68662
+    },
+    "prior_input_inventory.json": {
+      "sha256": "6a60117c9cdafcaf5b58f1aa74cde783e559cb6601e6d817cf1bf6c933b8183a",
+      "bytes": 609029
+    },
+    "reference.json": {
+      "sha256": "28a015afda50fb76562ce71138f07772bd7624d23db097b053727b14d3c88e33",
+      "bytes": 678560
+    },
+    "report.md": {
+      "sha256": "b0a1094bc8bd14d3433c4f56fc55347b9e25b62b7f1657076d8cf7d82735d6a0",
+      "bytes": 3628
+    },
+    "results.json": {
+      "sha256": "ebcdbfc8b2b570e6f21ed4f9e0c2664fd9c329dec9d05423abe8830923f3e548",
+      "bytes": 5935171
+    },
+    "sequences.jsonl.gz": {
+      "sha256": "3bd35dad935ee5fb55f4812ab92418fd6aee0c249ea60208b1ca376aa4a2e555",
+      "bytes": 3593249
+    },
+    "tokens.jsonl.gz": {
+      "sha256": "8785655ca75ff37a18ee25a41a112fe09b42db79ed6827d0494d5a3169fb2b90",
+      "bytes": 40249578
+    },
+    "training_noise.pt": {
+      "sha256": "0a5a23a5d5ca81e47fb5ba0a2a37a1029ebf69286191ab7ff51b3689cf276d36",
+      "bytes": 6511751
+    },
+    "training_schedule.json": {
+      "sha256": "ebff1f48de34d4697f62bfed930135cfd61da5c29a5d4f4cb22a91eb1ae2c789",
+      "bytes": 204098
+    },
+    "updates.jsonl.gz": {
+      "sha256": "c2ea9508143f41881d464cba0cc434138d8e7a7dc153e1365ee56049684283b2",
+      "bytes": 942492
+    },
+    "verify_records.py": {
+      "sha256": "5a90d9ba012cc2b84cbeb39b3ab82a0d4db73840e19d6e0ec785f1d130f97409",
+      "bytes": 10797
+    },
+    "write_paired_report.py": {
+      "sha256": "8c97d337f5b6fb6d32da52a3d42bf2173321d8853fa33dded15a14aa963706cb",
+      "bytes": 8867
+    }
+  },
+  "snapshots": [
+    {
+      "arm": "C",
+      "update": 0,
+      "path": "experiments/runs/stage3_gradient_average_4900_C_update0000_locked_v1.pt",
+      "sha256": "c6cc4da2ff05f69e9d39de222b6c380ed509f885725878d255ffdf7a7720d812",
+      "controller_change": {
+        "l2": 0.0,
+        "changed_values": 0,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          }
+        }
+      }
+    },
+    {
+      "arm": "T",
+      "update": 0,
+      "path": "experiments/runs/stage3_gradient_average_4900_T_update0000_locked_v1.pt",
+      "sha256": "eaf8f98adec91fd87b007eaf9cb4d5f6b6cd12fae388352574f8984f72469335",
+      "controller_change": {
+        "l2": 0.0,
+        "changed_values": 0,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          }
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "update": 104,
+      "path": "experiments/runs/stage3_gradient_average_4900_C_update0104_locked_v1.pt",
+      "sha256": "6b706a7c49d9faa7a940d0a4075a6e74e714df589169eac67f4a7b0903e9dd71",
+      "controller_change": {
+        "l2": 0.4274768829345703,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.010527601465582848,
+            "max_abs": 0.002338886260986328,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.010292594321072102,
+            "max_abs": 0.0021387338638305664,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.4212538003921509,
+            "max_abs": 0.003241999074816704,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.020651813596487045,
+            "max_abs": 0.0025632381439208984,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.06798157095909119,
+            "max_abs": 0.002544707152992487,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.004129214212298393,
+            "max_abs": 0.0015306249260902405,
+            "changed_values": 10
+          }
+        }
+      }
+    },
+    {
+      "arm": "T",
+      "update": 104,
+      "path": "experiments/runs/stage3_gradient_average_4900_T_update0104_locked_v1.pt",
+      "sha256": "c722c997c29f5b96ed34f688bedbc46a0077ddcfa9978c8fb8a8f87e98e911da",
+      "controller_change": {
+        "l2": 0.46962231397628784,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.012187893502414227,
+            "max_abs": 0.0027981996536254883,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.012249041348695755,
+            "max_abs": 0.003080606460571289,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.46173232793807983,
+            "max_abs": 0.003604685654863715,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.025539349764585495,
+            "max_abs": 0.0029948092997074127,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.07981686294078827,
+            "max_abs": 0.002900540828704834,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.005173931829631329,
+            "max_abs": 0.0019733235239982605,
+            "changed_values": 10
+          }
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "update": 260,
+      "path": "experiments/runs/stage3_gradient_average_4900_C_update0260_locked_v1.pt",
+      "sha256": "59b115341180261d2752b5c7abee92a67934ebbfc431f140988bcd0fbd36f2e3",
+      "controller_change": {
+        "l2": 0.4461221396923065,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.011245264671742916,
+            "max_abs": 0.0026541948318481445,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.010363182052969933,
+            "max_abs": 0.002785325050354004,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.4394650459289551,
+            "max_abs": 0.006334239616990089,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.020786898210644722,
+            "max_abs": 0.0031875483691692352,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.07219886779785156,
+            "max_abs": 0.004905279725790024,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.0040968842804431915,
+            "max_abs": 0.0019836127758026123,
+            "changed_values": 10
+          }
+        }
+      }
+    },
+    {
+      "arm": "T",
+      "update": 260,
+      "path": "experiments/runs/stage3_gradient_average_4900_T_update0260_locked_v1.pt",
+      "sha256": "7720e0ab6d8d33ff9dafc7cdb4131c8dd66254b4066a20cdcbc70ccb38604d01",
+      "controller_change": {
+        "l2": 0.7987710237503052,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.022765586152672768,
+            "max_abs": 0.006702899932861328,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.026322253048419952,
+            "max_abs": 0.00853109359741211,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.7841143012046814,
+            "max_abs": 0.00804198533296585,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.04399654641747475,
+            "max_abs": 0.0045258887112140656,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.14133788645267487,
+            "max_abs": 0.006899703294038773,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.008750023320317268,
+            "max_abs": 0.0035959891974925995,
+            "changed_values": 10
+          }
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "update": 520,
+      "path": "experiments/runs/stage3_gradient_average_4900_C_update0520_locked_v1.pt",
+      "sha256": "0b414c7bfa9fb5e12dd7fb81dcab21325dadf56cf131e051a76ed79f32e9e95d",
+      "controller_change": {
+        "l2": 0.6724020838737488,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.01808379963040352,
+            "max_abs": 0.006677508354187012,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.02090553566813469,
+            "max_abs": 0.0068187713623046875,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.6605121493339539,
+            "max_abs": 0.009425176307559013,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.03476928919553757,
+            "max_abs": 0.005468130111694336,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.11760956794023514,
+            "max_abs": 0.00846579298377037,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.006569068878889084,
+            "max_abs": 0.004083134233951569,
+            "changed_values": 10
+          }
+        }
+      }
+    },
+    {
+      "arm": "T",
+      "update": 520,
+      "path": "experiments/runs/stage3_gradient_average_4900_T_update0520_locked_v1.pt",
+      "sha256": "f2da58059806802eaf8e16ff958c95558b088c404a2e9cd7c79f866a40ab21ac",
+      "controller_change": {
+        "l2": 1.485459327697754,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.03704141825437546,
+            "max_abs": 0.010533332824707031,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.04661290720105171,
+            "max_abs": 0.01188814640045166,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 1.4577491283416748,
+            "max_abs": 0.013316783122718334,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.08229735493659973,
+            "max_abs": 0.008595535531640053,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.2663663327693939,
+            "max_abs": 0.011874500662088394,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.017004799097776413,
+            "max_abs": 0.006790054962038994,
+            "changed_values": 10
+          }
+        }
+      }
+    }
+  ]
+}

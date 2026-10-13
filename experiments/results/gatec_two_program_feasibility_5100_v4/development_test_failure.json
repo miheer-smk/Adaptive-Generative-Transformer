@@ -1,0 +1,10 @@
+{
+  "scope": "pre-seal synthetic regression fixture; no study forward",
+  "failures": [
+    "test_mask_device_observation_and_complete_P0[cpu]",
+    "test_mask_device_observation_and_complete_P0[cuda]"
+  ],
+  "cause": "fixture assumed production masked_fill operand was 1D; unchanged apply_action_mask broadcasts it to [1,10]. Local observer operand remains [10].",
+  "original_test_sha256": "2b8b521b96d65271404a87b77f9af43433a6fd14efa23660a5dd38974d0532b1",
+  "study_started": false
+}

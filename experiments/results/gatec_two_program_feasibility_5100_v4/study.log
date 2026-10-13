@@ -1,0 +1,40 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+P0 ARCHIVAL ACCEPTED: 0.0014546061865985394
+P0 CURRENT 8/96: 152 tokens
+P0 CURRENT 16/96: 288 tokens
+P0 CURRENT 24/96: 424 tokens
+P0 CURRENT 32/96: 560 tokens
+P0 CURRENT 40/96: 696 tokens
+P0 CURRENT 48/96: 832 tokens
+P0 CURRENT 56/96: 968 tokens
+P0 CURRENT 64/96: 1104 tokens
+P0 CURRENT 72/96: 1304 tokens
+P0 CURRENT 80/96: 1504 tokens
+P0 CURRENT 88/96: 1704 tokens
+P0 CURRENT 96/96: 1904 tokens
+{
+  "status": "STOPPED",
+  "boundary": "remaining current screen; P1 histories and boundary combinations",
+  "P0_archival": true,
+  "P0_current": true,
+  "entire_current_screen": null,
+  "monitor": {
+    "status": "REPRODUCED",
+    "role": "non-gating monitor diagnostic",
+    "evaluated_records": 128,
+    "first_mismatch": null,
+    "parameter_sha256": "589b08b5a0280c15558e4968473c651d48a658cab58e6f617b9d569e3895cb4b",
+    "provenance": "original stage3_measurements.load_model(3401, cuda); full constructor RNG ordering; isolated RNG; retained features"
+  },
+  "future_calls": 0,
+  "completed_tokens": 1979,
+  "bank_calls": 15832,
+  "commits": 1979
+}

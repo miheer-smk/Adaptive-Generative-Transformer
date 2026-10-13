@@ -1,0 +1,3878 @@
+{
+  "manifest_path": "manifest.json",
+  "manifest_sha256": "7f6b0e277cd2b8207400c5be7d9e10153a123b7abfcbe0571526a022e31a9d0c",
+  "checkpoint_sha256": "259e2b86786c6cd037e3ba0db71d91fd05cdb76753bdb462be414bd1b9400df3",
+  "backbone_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+  "mechanical_validity": "VERIFIED",
+  "evaluations": {
+    "val": {
+      "split": "val",
+      "completed": true,
+      "mechanical_failure": null,
+      "metrics": {
+        "sequences": 52,
+        "tokens": 520,
+        "decisions": 4160,
+        "executions": 4160,
+        "reference_accuracy": 1.0,
+        "learned_accuracy": 1.0,
+        "reference_mean_ce": 0.0018481857103044884,
+        "learned_mean_ce": 0.0018481857103044884,
+        "paired_prediction_disagreements": 0,
+        "paired_mean_ce_delta": 0.0,
+        "paired_max_abs_ce_delta": 0.0,
+        "canonical_action_route_fraction": 1.0,
+        "canonical_executed_block_fraction": 1.0,
+        "exact_sequence_canonical_fraction": 1.0,
+        "teacher_accuracy": 1.0,
+        "teacher_correct_by_position": [
+          520,
+          520,
+          520,
+          520,
+          520,
+          520,
+          520,
+          520
+        ],
+        "teacher_errors_by_position": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "teacher_decisions": 4160,
+        "restart_count": 0,
+        "repeat_count": 0,
+        "mean_D": 8.0,
+        "maximum_D": 8,
+        "D_distribution": {
+          "8": 520
+        },
+        "P_distribution": {
+          "8": 520
+        },
+        "unique_blocks_per_token_distribution": {
+          "8": 520
+        },
+        "action_counts": {
+          "0": 520,
+          "1": 520,
+          "2": 520,
+          "3": 520,
+          "4": 520,
+          "5": 520,
+          "6": 520,
+          "7": 520
+        },
+        "action_frequencies": {
+          "0": 0.125,
+          "1": 0.125,
+          "2": 0.125,
+          "3": 0.125,
+          "4": 0.125,
+          "5": 0.125,
+          "6": 0.125,
+          "7": 0.125
+        },
+        "block_execution_counts": {
+          "0": 520,
+          "1": 520,
+          "2": 520,
+          "3": 520,
+          "4": 520,
+          "5": 520,
+          "6": 520,
+          "7": 520
+        },
+        "block_utilization": {
+          "0": 0.125,
+          "1": 0.125,
+          "2": 0.125,
+          "3": 0.125,
+          "4": 0.125,
+          "5": 0.125,
+          "6": 0.125,
+          "7": 0.125
+        },
+        "route_frequencies": {
+          "0,1,2,3,4,5,6,7": 520
+        },
+        "executed_block_route_frequencies": {
+          "0,1,2,3,4,5,6,7": 520
+        },
+        "first_divergence": {
+          "first_action_divergence": null,
+          "first_execution_divergence": null,
+          "first_state_feature_divergence": null,
+          "first_output_logit_divergence": null,
+          "first_task_disagreement": null,
+          "first_selection_execution_mismatch": null
+        },
+        "commit_counts": {
+          "reference": 520,
+          "learned": 520
+        },
+        "bank_purity_checks": {
+          "reference": 4160,
+          "learned": 4160
+        },
+        "gdn_purity_checks": {
+          "reference": {
+            "4": 520,
+            "5": 520
+          },
+          "learned": {
+            "4": 520,
+            "5": 520
+          }
+        },
+        "per_length": {
+          "4": {
+            "sequences": 4,
+            "tokens": 16,
+            "decisions": 128,
+            "executions": 128,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0019153367320541292,
+            "learned_mean_ce": 0.0019153367320541292,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16,
+              16
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 128,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 16
+            },
+            "P_distribution": {
+              "8": 16
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 16
+            },
+            "action_counts": {
+              "0": 16,
+              "1": 16,
+              "2": 16,
+              "3": 16,
+              "4": 16,
+              "5": 16,
+              "6": 16,
+              "7": 16
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 16,
+              "1": 16,
+              "2": 16,
+              "3": 16,
+              "4": 16,
+              "5": 16,
+              "6": 16,
+              "7": 16
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 16
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 16
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 16,
+              "learned": 16
+            },
+            "bank_purity_checks": {
+              "reference": 128,
+              "learned": 128
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 16,
+                "5": 16
+              },
+              "learned": {
+                "4": 16,
+                "5": 16
+              }
+            }
+          },
+          "5": {
+            "sequences": 4,
+            "tokens": 20,
+            "decisions": 160,
+            "executions": 160,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.001947726879734546,
+            "learned_mean_ce": 0.001947726879734546,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              20,
+              20,
+              20,
+              20,
+              20,
+              20,
+              20,
+              20
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 160,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 20
+            },
+            "P_distribution": {
+              "8": 20
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 20
+            },
+            "action_counts": {
+              "0": 20,
+              "1": 20,
+              "2": 20,
+              "3": 20,
+              "4": 20,
+              "5": 20,
+              "6": 20,
+              "7": 20
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 20,
+              "1": 20,
+              "2": 20,
+              "3": 20,
+              "4": 20,
+              "5": 20,
+              "6": 20,
+              "7": 20
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 20
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 20
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 20,
+              "learned": 20
+            },
+            "bank_purity_checks": {
+              "reference": 160,
+              "learned": 160
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 20,
+                "5": 20
+              },
+              "learned": {
+                "4": 20,
+                "5": 20
+              }
+            }
+          },
+          "6": {
+            "sequences": 4,
+            "tokens": 24,
+            "decisions": 192,
+            "executions": 192,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017568401235621423,
+            "learned_mean_ce": 0.0017568401235621423,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24,
+              24
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 192,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 24
+            },
+            "P_distribution": {
+              "8": 24
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 24
+            },
+            "action_counts": {
+              "0": 24,
+              "1": 24,
+              "2": 24,
+              "3": 24,
+              "4": 24,
+              "5": 24,
+              "6": 24,
+              "7": 24
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 24,
+              "1": 24,
+              "2": 24,
+              "3": 24,
+              "4": 24,
+              "5": 24,
+              "6": 24,
+              "7": 24
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 24
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 24
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 24,
+              "learned": 24
+            },
+            "bank_purity_checks": {
+              "reference": 192,
+              "learned": 192
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 24,
+                "5": 24
+              },
+              "learned": {
+                "4": 24,
+                "5": 24
+              }
+            }
+          },
+          "7": {
+            "sequences": 4,
+            "tokens": 28,
+            "decisions": 224,
+            "executions": 224,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0019061249331571162,
+            "learned_mean_ce": 0.0019061249331571162,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28,
+              28
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 224,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 28
+            },
+            "P_distribution": {
+              "8": 28
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 28
+            },
+            "action_counts": {
+              "0": 28,
+              "1": 28,
+              "2": 28,
+              "3": 28,
+              "4": 28,
+              "5": 28,
+              "6": 28,
+              "7": 28
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 28,
+              "1": 28,
+              "2": 28,
+              "3": 28,
+              "4": 28,
+              "5": 28,
+              "6": 28,
+              "7": 28
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 28
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 28
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 28,
+              "learned": 28
+            },
+            "bank_purity_checks": {
+              "reference": 224,
+              "learned": 224
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 28,
+                "5": 28
+              },
+              "learned": {
+                "4": 28,
+                "5": 28
+              }
+            }
+          },
+          "8": {
+            "sequences": 4,
+            "tokens": 32,
+            "decisions": 256,
+            "executions": 256,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.001682156667811796,
+            "learned_mean_ce": 0.001682156667811796,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              32,
+              32,
+              32,
+              32,
+              32,
+              32,
+              32,
+              32
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 256,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 32
+            },
+            "P_distribution": {
+              "8": 32
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 32
+            },
+            "action_counts": {
+              "0": 32,
+              "1": 32,
+              "2": 32,
+              "3": 32,
+              "4": 32,
+              "5": 32,
+              "6": 32,
+              "7": 32
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 32,
+              "1": 32,
+              "2": 32,
+              "3": 32,
+              "4": 32,
+              "5": 32,
+              "6": 32,
+              "7": 32
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 32
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 32
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 32,
+              "learned": 32
+            },
+            "bank_purity_checks": {
+              "reference": 256,
+              "learned": 256
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 32,
+                "5": 32
+              },
+              "learned": {
+                "4": 32,
+                "5": 32
+              }
+            }
+          },
+          "9": {
+            "sequences": 4,
+            "tokens": 36,
+            "decisions": 288,
+            "executions": 288,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017538547108415514,
+            "learned_mean_ce": 0.0017538547108415514,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              36,
+              36,
+              36,
+              36,
+              36,
+              36,
+              36,
+              36
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 288,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 36
+            },
+            "P_distribution": {
+              "8": 36
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 36
+            },
+            "action_counts": {
+              "0": 36,
+              "1": 36,
+              "2": 36,
+              "3": 36,
+              "4": 36,
+              "5": 36,
+              "6": 36,
+              "7": 36
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 36,
+              "1": 36,
+              "2": 36,
+              "3": 36,
+              "4": 36,
+              "5": 36,
+              "6": 36,
+              "7": 36
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 36
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 36
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 36,
+              "learned": 36
+            },
+            "bank_purity_checks": {
+              "reference": 288,
+              "learned": 288
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 36,
+                "5": 36
+              },
+              "learned": {
+                "4": 36,
+                "5": 36
+              }
+            }
+          },
+          "10": {
+            "sequences": 4,
+            "tokens": 40,
+            "decisions": 320,
+            "executions": 320,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.00186399114318192,
+            "learned_mean_ce": 0.00186399114318192,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              40,
+              40,
+              40,
+              40,
+              40,
+              40,
+              40,
+              40
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 320,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 40
+            },
+            "P_distribution": {
+              "8": 40
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 40
+            },
+            "action_counts": {
+              "0": 40,
+              "1": 40,
+              "2": 40,
+              "3": 40,
+              "4": 40,
+              "5": 40,
+              "6": 40,
+              "7": 40
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 40,
+              "1": 40,
+              "2": 40,
+              "3": 40,
+              "4": 40,
+              "5": 40,
+              "6": 40,
+              "7": 40
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 40
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 40
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 40,
+              "learned": 40
+            },
+            "bank_purity_checks": {
+              "reference": 320,
+              "learned": 320
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 40,
+                "5": 40
+              },
+              "learned": {
+                "4": 40,
+                "5": 40
+              }
+            }
+          },
+          "11": {
+            "sequences": 4,
+            "tokens": 44,
+            "decisions": 352,
+            "executions": 352,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0018361655238550156,
+            "learned_mean_ce": 0.0018361655238550156,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              44,
+              44,
+              44,
+              44,
+              44,
+              44,
+              44,
+              44
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 352,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 44
+            },
+            "P_distribution": {
+              "8": 44
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 44
+            },
+            "action_counts": {
+              "0": 44,
+              "1": 44,
+              "2": 44,
+              "3": 44,
+              "4": 44,
+              "5": 44,
+              "6": 44,
+              "7": 44
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 44,
+              "1": 44,
+              "2": 44,
+              "3": 44,
+              "4": 44,
+              "5": 44,
+              "6": 44,
+              "7": 44
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 44
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 44
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 44,
+              "learned": 44
+            },
+            "bank_purity_checks": {
+              "reference": 352,
+              "learned": 352
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 44,
+                "5": 44
+              },
+              "learned": {
+                "4": 44,
+                "5": 44
+              }
+            }
+          },
+          "12": {
+            "sequences": 4,
+            "tokens": 48,
+            "decisions": 384,
+            "executions": 384,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0018443325825501233,
+            "learned_mean_ce": 0.0018443325825501233,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              48,
+              48,
+              48,
+              48,
+              48,
+              48,
+              48,
+              48
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 384,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 48
+            },
+            "P_distribution": {
+              "8": 48
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 48
+            },
+            "action_counts": {
+              "0": 48,
+              "1": 48,
+              "2": 48,
+              "3": 48,
+              "4": 48,
+              "5": 48,
+              "6": 48,
+              "7": 48
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 48,
+              "1": 48,
+              "2": 48,
+              "3": 48,
+              "4": 48,
+              "5": 48,
+              "6": 48,
+              "7": 48
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 48
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 48
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 48,
+              "learned": 48
+            },
+            "bank_purity_checks": {
+              "reference": 384,
+              "learned": 384
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 48,
+                "5": 48
+              },
+              "learned": {
+                "4": 48,
+                "5": 48
+              }
+            }
+          },
+          "13": {
+            "sequences": 4,
+            "tokens": 52,
+            "decisions": 416,
+            "executions": 416,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0019243493443354964,
+            "learned_mean_ce": 0.0019243493443354964,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              52,
+              52,
+              52,
+              52,
+              52,
+              52,
+              52,
+              52
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 416,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 52
+            },
+            "P_distribution": {
+              "8": 52
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 52
+            },
+            "action_counts": {
+              "0": 52,
+              "1": 52,
+              "2": 52,
+              "3": 52,
+              "4": 52,
+              "5": 52,
+              "6": 52,
+              "7": 52
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 52,
+              "1": 52,
+              "2": 52,
+              "3": 52,
+              "4": 52,
+              "5": 52,
+              "6": 52,
+              "7": 52
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 52
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 52
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 52,
+              "learned": 52
+            },
+            "bank_purity_checks": {
+              "reference": 416,
+              "learned": 416
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 52,
+                "5": 52
+              },
+              "learned": {
+                "4": 52,
+                "5": 52
+              }
+            }
+          },
+          "14": {
+            "sequences": 4,
+            "tokens": 56,
+            "decisions": 448,
+            "executions": 448,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0019347150227986276,
+            "learned_mean_ce": 0.0019347150227986276,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              56,
+              56,
+              56,
+              56,
+              56,
+              56,
+              56,
+              56
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 448,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 56
+            },
+            "P_distribution": {
+              "8": 56
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 56
+            },
+            "action_counts": {
+              "0": 56,
+              "1": 56,
+              "2": 56,
+              "3": 56,
+              "4": 56,
+              "5": 56,
+              "6": 56,
+              "7": 56
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 56,
+              "1": 56,
+              "2": 56,
+              "3": 56,
+              "4": 56,
+              "5": 56,
+              "6": 56,
+              "7": 56
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 56
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 56
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 56,
+              "learned": 56
+            },
+            "bank_purity_checks": {
+              "reference": 448,
+              "learned": 448
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 56,
+                "5": 56
+              },
+              "learned": {
+                "4": 56,
+                "5": 56
+              }
+            }
+          },
+          "15": {
+            "sequences": 4,
+            "tokens": 60,
+            "decisions": 480,
+            "executions": 480,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.001817372947698459,
+            "learned_mean_ce": 0.001817372947698459,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 480,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 60
+            },
+            "P_distribution": {
+              "8": 60
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 60
+            },
+            "action_counts": {
+              "0": 60,
+              "1": 60,
+              "2": 60,
+              "3": 60,
+              "4": 60,
+              "5": 60,
+              "6": 60,
+              "7": 60
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 60,
+              "1": 60,
+              "2": 60,
+              "3": 60,
+              "4": 60,
+              "5": 60,
+              "6": 60,
+              "7": 60
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 60
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 60
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 60,
+              "learned": 60
+            },
+            "bank_purity_checks": {
+              "reference": 480,
+              "learned": 480
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 60,
+                "5": 60
+              },
+              "learned": {
+                "4": 60,
+                "5": 60
+              }
+            }
+          },
+          "16": {
+            "sequences": 4,
+            "tokens": 64,
+            "decisions": 512,
+            "executions": 512,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0018434476223774254,
+            "learned_mean_ce": 0.0018434476223774254,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              64,
+              64,
+              64,
+              64,
+              64,
+              64,
+              64,
+              64
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 512,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 64
+            },
+            "P_distribution": {
+              "8": 64
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 64
+            },
+            "action_counts": {
+              "0": 64,
+              "1": 64,
+              "2": 64,
+              "3": 64,
+              "4": 64,
+              "5": 64,
+              "6": 64,
+              "7": 64
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 64,
+              "1": 64,
+              "2": 64,
+              "3": 64,
+              "4": 64,
+              "5": 64,
+              "6": 64,
+              "7": 64
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 64
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 64
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 64,
+              "learned": 64
+            },
+            "bank_purity_checks": {
+              "reference": 512,
+              "learned": 512
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 64,
+                "5": 64
+              },
+              "learned": {
+                "4": 64,
+                "5": 64
+              }
+            }
+          }
+        }
+      },
+      "verdicts": {
+        "mechanical": "VERIFIED",
+        "canonical_imitation": "exact recovery on all evaluated sequences",
+        "generalization": "behavior on historically reused declared evaluation sequences; qualified by manifest provenance",
+        "parity": "reference and learned accuracy/CE reported separately; no trainability claim"
+      }
+    },
+    "ood_test": {
+      "split": "ood_test",
+      "completed": true,
+      "mechanical_failure": null,
+      "metrics": {
+        "sequences": 64,
+        "tokens": 1568,
+        "decisions": 12544,
+        "executions": 12544,
+        "reference_accuracy": 1.0,
+        "learned_accuracy": 1.0,
+        "reference_mean_ce": 0.001750953351802309,
+        "learned_mean_ce": 0.001750953351802309,
+        "paired_prediction_disagreements": 0,
+        "paired_mean_ce_delta": 0.0,
+        "paired_max_abs_ce_delta": 0.0,
+        "canonical_action_route_fraction": 1.0,
+        "canonical_executed_block_fraction": 1.0,
+        "exact_sequence_canonical_fraction": 1.0,
+        "teacher_accuracy": 1.0,
+        "teacher_correct_by_position": [
+          1568,
+          1568,
+          1568,
+          1568,
+          1568,
+          1568,
+          1568,
+          1568
+        ],
+        "teacher_errors_by_position": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "teacher_decisions": 12544,
+        "restart_count": 0,
+        "repeat_count": 0,
+        "mean_D": 8.0,
+        "maximum_D": 8,
+        "D_distribution": {
+          "8": 1568
+        },
+        "P_distribution": {
+          "8": 1568
+        },
+        "unique_blocks_per_token_distribution": {
+          "8": 1568
+        },
+        "action_counts": {
+          "0": 1568,
+          "1": 1568,
+          "2": 1568,
+          "3": 1568,
+          "4": 1568,
+          "5": 1568,
+          "6": 1568,
+          "7": 1568
+        },
+        "action_frequencies": {
+          "0": 0.125,
+          "1": 0.125,
+          "2": 0.125,
+          "3": 0.125,
+          "4": 0.125,
+          "5": 0.125,
+          "6": 0.125,
+          "7": 0.125
+        },
+        "block_execution_counts": {
+          "0": 1568,
+          "1": 1568,
+          "2": 1568,
+          "3": 1568,
+          "4": 1568,
+          "5": 1568,
+          "6": 1568,
+          "7": 1568
+        },
+        "block_utilization": {
+          "0": 0.125,
+          "1": 0.125,
+          "2": 0.125,
+          "3": 0.125,
+          "4": 0.125,
+          "5": 0.125,
+          "6": 0.125,
+          "7": 0.125
+        },
+        "route_frequencies": {
+          "0,1,2,3,4,5,6,7": 1568
+        },
+        "executed_block_route_frequencies": {
+          "0,1,2,3,4,5,6,7": 1568
+        },
+        "first_divergence": {
+          "first_action_divergence": null,
+          "first_execution_divergence": null,
+          "first_state_feature_divergence": null,
+          "first_output_logit_divergence": null,
+          "first_task_disagreement": null,
+          "first_selection_execution_mismatch": null
+        },
+        "commit_counts": {
+          "reference": 1568,
+          "learned": 1568
+        },
+        "bank_purity_checks": {
+          "reference": 12544,
+          "learned": 12544
+        },
+        "gdn_purity_checks": {
+          "reference": {
+            "4": 1568,
+            "5": 1568
+          },
+          "learned": {
+            "4": 1568,
+            "5": 1568
+          }
+        },
+        "per_length": {
+          "17": {
+            "sequences": 4,
+            "tokens": 68,
+            "decisions": 544,
+            "executions": 544,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0015681298391427845,
+            "learned_mean_ce": 0.0015681298391427845,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              68,
+              68,
+              68,
+              68,
+              68,
+              68,
+              68,
+              68
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 544,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 68
+            },
+            "P_distribution": {
+              "8": 68
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 68
+            },
+            "action_counts": {
+              "0": 68,
+              "1": 68,
+              "2": 68,
+              "3": 68,
+              "4": 68,
+              "5": 68,
+              "6": 68,
+              "7": 68
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 68,
+              "1": 68,
+              "2": 68,
+              "3": 68,
+              "4": 68,
+              "5": 68,
+              "6": 68,
+              "7": 68
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 68
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 68
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 68,
+              "learned": 68
+            },
+            "bank_purity_checks": {
+              "reference": 544,
+              "learned": 544
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 68,
+                "5": 68
+              },
+              "learned": {
+                "4": 68,
+                "5": 68
+              }
+            }
+          },
+          "18": {
+            "sequences": 4,
+            "tokens": 72,
+            "decisions": 576,
+            "executions": 576,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0018976513529196382,
+            "learned_mean_ce": 0.0018976513529196382,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              72,
+              72,
+              72,
+              72,
+              72,
+              72,
+              72,
+              72
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 576,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 72
+            },
+            "P_distribution": {
+              "8": 72
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 72
+            },
+            "action_counts": {
+              "0": 72,
+              "1": 72,
+              "2": 72,
+              "3": 72,
+              "4": 72,
+              "5": 72,
+              "6": 72,
+              "7": 72
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 72,
+              "1": 72,
+              "2": 72,
+              "3": 72,
+              "4": 72,
+              "5": 72,
+              "6": 72,
+              "7": 72
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 72
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 72
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 72,
+              "learned": 72
+            },
+            "bank_purity_checks": {
+              "reference": 576,
+              "learned": 576
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 72,
+                "5": 72
+              },
+              "learned": {
+                "4": 72,
+                "5": 72
+              }
+            }
+          },
+          "19": {
+            "sequences": 4,
+            "tokens": 76,
+            "decisions": 608,
+            "executions": 608,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0020736680598929524,
+            "learned_mean_ce": 0.0020736680598929524,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              76,
+              76,
+              76,
+              76,
+              76,
+              76,
+              76,
+              76
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 608,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 76
+            },
+            "P_distribution": {
+              "8": 76
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 76
+            },
+            "action_counts": {
+              "0": 76,
+              "1": 76,
+              "2": 76,
+              "3": 76,
+              "4": 76,
+              "5": 76,
+              "6": 76,
+              "7": 76
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 76,
+              "1": 76,
+              "2": 76,
+              "3": 76,
+              "4": 76,
+              "5": 76,
+              "6": 76,
+              "7": 76
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 76
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 76
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 76,
+              "learned": 76
+            },
+            "bank_purity_checks": {
+              "reference": 608,
+              "learned": 608
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 76,
+                "5": 76
+              },
+              "learned": {
+                "4": 76,
+                "5": 76
+              }
+            }
+          },
+          "20": {
+            "sequences": 4,
+            "tokens": 80,
+            "decisions": 640,
+            "executions": 640,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0016923383518587798,
+            "learned_mean_ce": 0.0016923383518587798,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80,
+              80
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 640,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 80
+            },
+            "P_distribution": {
+              "8": 80
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 80
+            },
+            "action_counts": {
+              "0": 80,
+              "1": 80,
+              "2": 80,
+              "3": 80,
+              "4": 80,
+              "5": 80,
+              "6": 80,
+              "7": 80
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 80,
+              "1": 80,
+              "2": 80,
+              "3": 80,
+              "4": 80,
+              "5": 80,
+              "6": 80,
+              "7": 80
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 80
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 80
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 80,
+              "learned": 80
+            },
+            "bank_purity_checks": {
+              "reference": 640,
+              "learned": 640
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 80,
+                "5": 80
+              },
+              "learned": {
+                "4": 80,
+                "5": 80
+              }
+            }
+          },
+          "21": {
+            "sequences": 4,
+            "tokens": 84,
+            "decisions": 672,
+            "executions": 672,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0013868007226847112,
+            "learned_mean_ce": 0.0013868007226847112,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              84,
+              84,
+              84,
+              84,
+              84,
+              84,
+              84,
+              84
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 672,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 84
+            },
+            "P_distribution": {
+              "8": 84
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 84
+            },
+            "action_counts": {
+              "0": 84,
+              "1": 84,
+              "2": 84,
+              "3": 84,
+              "4": 84,
+              "5": 84,
+              "6": 84,
+              "7": 84
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 84,
+              "1": 84,
+              "2": 84,
+              "3": 84,
+              "4": 84,
+              "5": 84,
+              "6": 84,
+              "7": 84
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 84
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 84
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 84,
+              "learned": 84
+            },
+            "bank_purity_checks": {
+              "reference": 672,
+              "learned": 672
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 84,
+                "5": 84
+              },
+              "learned": {
+                "4": 84,
+                "5": 84
+              }
+            }
+          },
+          "22": {
+            "sequences": 4,
+            "tokens": 88,
+            "decisions": 704,
+            "executions": 704,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017471261089667678,
+            "learned_mean_ce": 0.0017471261089667678,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              88,
+              88,
+              88,
+              88,
+              88,
+              88,
+              88,
+              88
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 704,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 88
+            },
+            "P_distribution": {
+              "8": 88
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 88
+            },
+            "action_counts": {
+              "0": 88,
+              "1": 88,
+              "2": 88,
+              "3": 88,
+              "4": 88,
+              "5": 88,
+              "6": 88,
+              "7": 88
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 88,
+              "1": 88,
+              "2": 88,
+              "3": 88,
+              "4": 88,
+              "5": 88,
+              "6": 88,
+              "7": 88
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 88
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 88
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 88,
+              "learned": 88
+            },
+            "bank_purity_checks": {
+              "reference": 704,
+              "learned": 704
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 88,
+                "5": 88
+              },
+              "learned": {
+                "4": 88,
+                "5": 88
+              }
+            }
+          },
+          "23": {
+            "sequences": 4,
+            "tokens": 92,
+            "decisions": 736,
+            "executions": 736,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017742121417541057,
+            "learned_mean_ce": 0.0017742121417541057,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              92,
+              92,
+              92,
+              92,
+              92,
+              92,
+              92,
+              92
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 736,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 92
+            },
+            "P_distribution": {
+              "8": 92
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 92
+            },
+            "action_counts": {
+              "0": 92,
+              "1": 92,
+              "2": 92,
+              "3": 92,
+              "4": 92,
+              "5": 92,
+              "6": 92,
+              "7": 92
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 92,
+              "1": 92,
+              "2": 92,
+              "3": 92,
+              "4": 92,
+              "5": 92,
+              "6": 92,
+              "7": 92
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 92
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 92
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 92,
+              "learned": 92
+            },
+            "bank_purity_checks": {
+              "reference": 736,
+              "learned": 736
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 92,
+                "5": 92
+              },
+              "learned": {
+                "4": 92,
+                "5": 92
+              }
+            }
+          },
+          "24": {
+            "sequences": 4,
+            "tokens": 96,
+            "decisions": 768,
+            "executions": 768,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017676101415418088,
+            "learned_mean_ce": 0.0017676101415418088,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              96,
+              96,
+              96,
+              96,
+              96,
+              96,
+              96,
+              96
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 768,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 96
+            },
+            "P_distribution": {
+              "8": 96
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 96
+            },
+            "action_counts": {
+              "0": 96,
+              "1": 96,
+              "2": 96,
+              "3": 96,
+              "4": 96,
+              "5": 96,
+              "6": 96,
+              "7": 96
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 96,
+              "1": 96,
+              "2": 96,
+              "3": 96,
+              "4": 96,
+              "5": 96,
+              "6": 96,
+              "7": 96
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 96
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 96
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 96,
+              "learned": 96
+            },
+            "bank_purity_checks": {
+              "reference": 768,
+              "learned": 768
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 96,
+                "5": 96
+              },
+              "learned": {
+                "4": 96,
+                "5": 96
+              }
+            }
+          },
+          "25": {
+            "sequences": 4,
+            "tokens": 100,
+            "decisions": 800,
+            "executions": 800,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0014538023388013244,
+            "learned_mean_ce": 0.0014538023388013244,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              100,
+              100,
+              100,
+              100,
+              100,
+              100,
+              100,
+              100
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 800,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 100
+            },
+            "P_distribution": {
+              "8": 100
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 100
+            },
+            "action_counts": {
+              "0": 100,
+              "1": 100,
+              "2": 100,
+              "3": 100,
+              "4": 100,
+              "5": 100,
+              "6": 100,
+              "7": 100
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 100,
+              "1": 100,
+              "2": 100,
+              "3": 100,
+              "4": 100,
+              "5": 100,
+              "6": 100,
+              "7": 100
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 100
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 100
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 100,
+              "learned": 100
+            },
+            "bank_purity_checks": {
+              "reference": 800,
+              "learned": 800
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 100,
+                "5": 100
+              },
+              "learned": {
+                "4": 100,
+                "5": 100
+              }
+            }
+          },
+          "26": {
+            "sequences": 4,
+            "tokens": 104,
+            "decisions": 832,
+            "executions": 832,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0016377336578443646,
+            "learned_mean_ce": 0.0016377336578443646,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              104,
+              104,
+              104,
+              104,
+              104,
+              104,
+              104,
+              104
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 832,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 104
+            },
+            "P_distribution": {
+              "8": 104
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 104
+            },
+            "action_counts": {
+              "0": 104,
+              "1": 104,
+              "2": 104,
+              "3": 104,
+              "4": 104,
+              "5": 104,
+              "6": 104,
+              "7": 104
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 104,
+              "1": 104,
+              "2": 104,
+              "3": 104,
+              "4": 104,
+              "5": 104,
+              "6": 104,
+              "7": 104
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 104
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 104
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 104,
+              "learned": 104
+            },
+            "bank_purity_checks": {
+              "reference": 832,
+              "learned": 832
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 104,
+                "5": 104
+              },
+              "learned": {
+                "4": 104,
+                "5": 104
+              }
+            }
+          },
+          "27": {
+            "sequences": 4,
+            "tokens": 108,
+            "decisions": 864,
+            "executions": 864,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0019481246417853981,
+            "learned_mean_ce": 0.0019481246417853981,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              108,
+              108,
+              108,
+              108,
+              108,
+              108,
+              108,
+              108
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 864,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 108
+            },
+            "P_distribution": {
+              "8": 108
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 108
+            },
+            "action_counts": {
+              "0": 108,
+              "1": 108,
+              "2": 108,
+              "3": 108,
+              "4": 108,
+              "5": 108,
+              "6": 108,
+              "7": 108
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 108,
+              "1": 108,
+              "2": 108,
+              "3": 108,
+              "4": 108,
+              "5": 108,
+              "6": 108,
+              "7": 108
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 108
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 108
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 108,
+              "learned": 108
+            },
+            "bank_purity_checks": {
+              "reference": 864,
+              "learned": 864
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 108,
+                "5": 108
+              },
+              "learned": {
+                "4": 108,
+                "5": 108
+              }
+            }
+          },
+          "28": {
+            "sequences": 4,
+            "tokens": 112,
+            "decisions": 896,
+            "executions": 896,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0020031736348755658,
+            "learned_mean_ce": 0.0020031736348755658,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              112,
+              112,
+              112,
+              112,
+              112,
+              112,
+              112,
+              112
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 896,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 112
+            },
+            "P_distribution": {
+              "8": 112
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 112
+            },
+            "action_counts": {
+              "0": 112,
+              "1": 112,
+              "2": 112,
+              "3": 112,
+              "4": 112,
+              "5": 112,
+              "6": 112,
+              "7": 112
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 112,
+              "1": 112,
+              "2": 112,
+              "3": 112,
+              "4": 112,
+              "5": 112,
+              "6": 112,
+              "7": 112
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 112
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 112
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 112,
+              "learned": 112
+            },
+            "bank_purity_checks": {
+              "reference": 896,
+              "learned": 896
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 112,
+                "5": 112
+              },
+              "learned": {
+                "4": 112,
+                "5": 112
+              }
+            }
+          },
+          "29": {
+            "sequences": 4,
+            "tokens": 116,
+            "decisions": 928,
+            "executions": 928,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0016216503572650254,
+            "learned_mean_ce": 0.0016216503572650254,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              116,
+              116,
+              116,
+              116,
+              116,
+              116,
+              116,
+              116
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 928,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 116
+            },
+            "P_distribution": {
+              "8": 116
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 116
+            },
+            "action_counts": {
+              "0": 116,
+              "1": 116,
+              "2": 116,
+              "3": 116,
+              "4": 116,
+              "5": 116,
+              "6": 116,
+              "7": 116
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 116,
+              "1": 116,
+              "2": 116,
+              "3": 116,
+              "4": 116,
+              "5": 116,
+              "6": 116,
+              "7": 116
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 116
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 116
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 116,
+              "learned": 116
+            },
+            "bank_purity_checks": {
+              "reference": 928,
+              "learned": 928
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 116,
+                "5": 116
+              },
+              "learned": {
+                "4": 116,
+                "5": 116
+              }
+            }
+          },
+          "30": {
+            "sequences": 4,
+            "tokens": 120,
+            "decisions": 960,
+            "executions": 960,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0017364766681566834,
+            "learned_mean_ce": 0.0017364766681566834,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120,
+              120
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 960,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 120
+            },
+            "P_distribution": {
+              "8": 120
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 120
+            },
+            "action_counts": {
+              "0": 120,
+              "1": 120,
+              "2": 120,
+              "3": 120,
+              "4": 120,
+              "5": 120,
+              "6": 120,
+              "7": 120
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 120,
+              "1": 120,
+              "2": 120,
+              "3": 120,
+              "4": 120,
+              "5": 120,
+              "6": 120,
+              "7": 120
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 120
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 120
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 120,
+              "learned": 120
+            },
+            "bank_purity_checks": {
+              "reference": 960,
+              "learned": 960
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 120,
+                "5": 120
+              },
+              "learned": {
+                "4": 120,
+                "5": 120
+              }
+            }
+          },
+          "31": {
+            "sequences": 4,
+            "tokens": 124,
+            "decisions": 992,
+            "executions": 992,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0020164958259556442,
+            "learned_mean_ce": 0.0020164958259556442,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              124,
+              124,
+              124,
+              124,
+              124,
+              124,
+              124,
+              124
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 992,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 124
+            },
+            "P_distribution": {
+              "8": 124
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 124
+            },
+            "action_counts": {
+              "0": 124,
+              "1": 124,
+              "2": 124,
+              "3": 124,
+              "4": 124,
+              "5": 124,
+              "6": 124,
+              "7": 124
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 124,
+              "1": 124,
+              "2": 124,
+              "3": 124,
+              "4": 124,
+              "5": 124,
+              "6": 124,
+              "7": 124
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 124
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 124
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 124,
+              "learned": 124
+            },
+            "bank_purity_checks": {
+              "reference": 992,
+              "learned": 992
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 124,
+                "5": 124
+              },
+              "learned": {
+                "4": 124,
+                "5": 124
+              }
+            }
+          },
+          "32": {
+            "sequences": 4,
+            "tokens": 128,
+            "decisions": 1024,
+            "executions": 1024,
+            "reference_accuracy": 1.0,
+            "learned_accuracy": 1.0,
+            "reference_mean_ce": 0.0016902597853913903,
+            "learned_mean_ce": 0.0016902597853913903,
+            "paired_prediction_disagreements": 0,
+            "paired_mean_ce_delta": 0.0,
+            "paired_max_abs_ce_delta": 0.0,
+            "canonical_action_route_fraction": 1.0,
+            "canonical_executed_block_fraction": 1.0,
+            "exact_sequence_canonical_fraction": 1.0,
+            "teacher_accuracy": 1.0,
+            "teacher_correct_by_position": [
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128,
+              128
+            ],
+            "teacher_errors_by_position": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "teacher_decisions": 1024,
+            "restart_count": 0,
+            "repeat_count": 0,
+            "mean_D": 8.0,
+            "maximum_D": 8,
+            "D_distribution": {
+              "8": 128
+            },
+            "P_distribution": {
+              "8": 128
+            },
+            "unique_blocks_per_token_distribution": {
+              "8": 128
+            },
+            "action_counts": {
+              "0": 128,
+              "1": 128,
+              "2": 128,
+              "3": 128,
+              "4": 128,
+              "5": 128,
+              "6": 128,
+              "7": 128
+            },
+            "action_frequencies": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "block_execution_counts": {
+              "0": 128,
+              "1": 128,
+              "2": 128,
+              "3": 128,
+              "4": 128,
+              "5": 128,
+              "6": 128,
+              "7": 128
+            },
+            "block_utilization": {
+              "0": 0.125,
+              "1": 0.125,
+              "2": 0.125,
+              "3": 0.125,
+              "4": 0.125,
+              "5": 0.125,
+              "6": 0.125,
+              "7": 0.125
+            },
+            "route_frequencies": {
+              "0,1,2,3,4,5,6,7": 128
+            },
+            "executed_block_route_frequencies": {
+              "0,1,2,3,4,5,6,7": 128
+            },
+            "first_divergence": {
+              "first_action_divergence": null,
+              "first_execution_divergence": null,
+              "first_state_feature_divergence": null,
+              "first_output_logit_divergence": null,
+              "first_task_disagreement": null,
+              "first_selection_execution_mismatch": null
+            },
+            "commit_counts": {
+              "reference": 128,
+              "learned": 128
+            },
+            "bank_purity_checks": {
+              "reference": 1024,
+              "learned": 1024
+            },
+            "gdn_purity_checks": {
+              "reference": {
+                "4": 128,
+                "5": 128
+              },
+              "learned": {
+                "4": 128,
+                "5": 128
+              }
+            }
+          }
+        }
+      },
+      "verdicts": {
+        "mechanical": "VERIFIED",
+        "canonical_imitation": "exact recovery on all evaluated sequences",
+        "generalization": "behavior on historically reused declared evaluation sequences; qualified by manifest provenance",
+        "parity": "reference and learned accuracy/CE reported separately; no trainability claim"
+      }
+    }
+  },
+  "invariants": {
+    "weights_unchanged": true,
+    "parameters_frozen_gradients_absent": true,
+    "protected_files_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "rng_states_unchanged": true,
+    "diff_check_clean": true,
+    "optimizer_steps": 0,
+    "candidate_constructions": 0,
+    "checkpoint_unchanged": true,
+    "dataset_unchanged": true,
+    "backbone_file_unchanged": true
+  },
+  "original_control": "NOT INCLUDED in either declared split; not re-evaluated",
+  "limitations": [
+    "one historical supervised checkpoint, historically reused evaluation sets",
+    "exact imitation/Stage-1 training overlap unknown",
+    "no task-loss routing, adaptive depth, HALT or superiority claim",
+    "candidate construction not exercised; selected-block GDN/cache purity checked"
+  ],
+  "artifacts": {
+    "tokens.jsonl": "dce4377ed1b13582d27d2b663e791255ff2f106368e7ad714bb6ec08535377ca",
+    "ood_test.json": "d9a98ab2fc725e6a8797512b98eb0a32d91bb53b86cbb065224e68f3898cd309",
+    "first_divergence.jsonl": "32f0c2cf1914a4a9e2c8f2ec8e8e69396589f1793d1a6c6e2ebbe9cb9a8962d7",
+    "val.json": "02cbfc8a45bdcdef77bfda4f93d8ea62f30a03d95169c644b9341baf9f4700df",
+    "ood_test.md": "6dbfabce0b74ae41bb5ad3e7e979952b59e45e4ec52789594b55eb6fcf95e0b9",
+    "decisions.jsonl": "48643126e49d903f9f74c8c55849899cc0d3aa12bb5bd183032261737b98c610",
+    "val.md": "ad1be398381f9b8aca321252b1e302be86bae05ec3f23b8a2bac1ee59d7a3abf",
+    "manifest.json": "7f6b0e277cd2b8207400c5be7d9e10153a123b7abfcbe0571526a022e31a9d0c"
+  }
+}

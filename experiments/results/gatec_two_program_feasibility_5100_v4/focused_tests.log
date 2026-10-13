@@ -1,0 +1,172 @@
+.............FF.................                                         [100%]
+=================================== FAILURES ===================================
+______________ test_mask_device_observation_and_complete_P0[cpu] _______________
+
+device = 'cpu'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe5c5a59d6a80>
+
+    @pytest.mark.parametrize('device', ['cpu', 'cuda'])
+    def test_mask_device_observation_and_complete_P0(device, monkeypatch):
+        if device == 'cuda' and not torch.cuda.is_available():
+            pytest.skip('CUDA unavailable: study must not execute')
+        torch.set_num_threads(4)
+        torch.manual_seed(99)
+        model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2).to(device).eval()
+        model.executor.max_execution_depth = 8
+        for p in model.parameters():
+            p.requires_grad_(False)
+        mask_calls, observation_calls = [], []
+        original_mask = programs.executor_module.build_execution_mask
+        original_fill = torch.Tensor.masked_fill
+        def capture_mask(*args, **kwargs):
+            result = original_mask(*args, **kwargs)
+            assert result.device.type == 'cpu' and result.dtype == torch.bool and result.shape == (11,)
+            mask_calls.append((result, result.clone()))
+            return result
+        def capture_fill(logits, mask, value):
+            if logits.shape == (1,10):
+                saved = logits.clone()
+                assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+                assert torch.equal(mask.cpu(), ~mask_calls[-1][1][:10])
+                result = original_fill(logits, mask, value)
+                assert torch.equal(logits, saved)
+                observation_calls.append(int(result.argmax(-1)))
+                return result
+            return original_fill(logits, mask, value)
+        monkeypatch.setattr(programs.executor_module, 'build_execution_mask', capture_mask)
+        monkeypatch.setattr(torch.Tensor, 'masked_fill', capture_fill)
+        parent = model.initial_persistent_state(1, device, torch.float32)
+        saved = programs.gpu_snapshot(parent)
+        runner = programs.CompleteToken(model)
+>       out, summary, rows = runner.run(torch.zeros(1,64,device=device), parent, programs.P0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/utils/_contextlib.py:124: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+experiments/results/gatec_two_program_feasibility_5100_v4/research_programs_v4.py:356: in run
+    out = model.adaptive_differentiable_step(x, parent, compatibility,
+src/agt.py:399: in adaptive_differentiable_step
+    execution = self.executor.execute_differentiable(
+src/executor.py:687: in execute_differentiable
+    masked_logits = apply_action_mask(
+src/masks.py:120: in apply_action_mask
+    return logits.masked_fill(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+logits = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]])
+mask = tensor([[False, False, False, False, False, False, False, False,  True,  True]])
+value = -inf
+
+    def capture_fill(logits, mask, value):
+        if logits.shape == (1,10):
+            saved = logits.clone()
+>           assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+E           AssertionError: assert (device(type='cpu') == device(type='cpu') and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)
+E            +  where device(type='cpu') = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).device
+E            +  and   device(type='cpu') = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]]).device
+E            +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]]).dtype
+E            +  and   torch.bool = torch.bool
+E             
+E             At index 0 diff: 1 != 10
+E             Left contains one more item: 10
+E             Use -v to get more diff)
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:34: AssertionError
+______________ test_mask_device_observation_and_complete_P0[cuda] ______________
+
+device = 'cuda'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0xe5c5a5a21b80>
+
+    @pytest.mark.parametrize('device', ['cpu', 'cuda'])
+    def test_mask_device_observation_and_complete_P0(device, monkeypatch):
+        if device == 'cuda' and not torch.cuda.is_available():
+            pytest.skip('CUDA unavailable: study must not execute')
+        torch.set_num_threads(4)
+        torch.manual_seed(99)
+        model = AGTv3(dim=64, num_memory_slots=16, vocab_size=2).to(device).eval()
+        model.executor.max_execution_depth = 8
+        for p in model.parameters():
+            p.requires_grad_(False)
+        mask_calls, observation_calls = [], []
+        original_mask = programs.executor_module.build_execution_mask
+        original_fill = torch.Tensor.masked_fill
+        def capture_mask(*args, **kwargs):
+            result = original_mask(*args, **kwargs)
+            assert result.device.type == 'cpu' and result.dtype == torch.bool and result.shape == (11,)
+            mask_calls.append((result, result.clone()))
+            return result
+        def capture_fill(logits, mask, value):
+            if logits.shape == (1,10):
+                saved = logits.clone()
+                assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+                assert torch.equal(mask.cpu(), ~mask_calls[-1][1][:10])
+                result = original_fill(logits, mask, value)
+                assert torch.equal(logits, saved)
+                observation_calls.append(int(result.argmax(-1)))
+                return result
+            return original_fill(logits, mask, value)
+        monkeypatch.setattr(programs.executor_module, 'build_execution_mask', capture_mask)
+        monkeypatch.setattr(torch.Tensor, 'masked_fill', capture_fill)
+        parent = model.initial_persistent_state(1, device, torch.float32)
+        saved = programs.gpu_snapshot(parent)
+        runner = programs.CompleteToken(model)
+>       out, summary, rows = runner.run(torch.zeros(1,64,device=device), parent, programs.P0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/utils/_contextlib.py:124: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+experiments/results/gatec_two_program_feasibility_5100_v4/research_programs_v4.py:356: in run
+    out = model.adaptive_differentiable_step(x, parent, compatibility,
+src/agt.py:399: in adaptive_differentiable_step
+    execution = self.executor.execute_differentiable(
+src/executor.py:687: in execute_differentiable
+    masked_logits = apply_action_mask(
+src/masks.py:120: in apply_action_mask
+    return logits.masked_fill(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+logits = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]],
+       device='cuda:0')
+mask = tensor([[False, False, False, False, False, False, False, False,  True,  True]],
+       device='cuda:0')
+value = -inf
+
+    def capture_fill(logits, mask, value):
+        if logits.shape == (1,10):
+            saved = logits.clone()
+>           assert mask.device == logits.device and mask.dtype == torch.bool and mask.shape == (10,)
+E           AssertionError: assert (device(type='cuda', index=0) == device(type='cuda', index=0) and torch.bool == torch.bool and torch.Size([1, 10]) == (10,)
+E            +  where device(type='cuda', index=0) = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').device
+E            +  and   device(type='cuda', index=0) = tensor([[ 100., -100., -100., -100., -100., -100., -100., -100., -100., -100.]],\n       device='cuda:0').device
+E            +  and   torch.bool = tensor([[False, False, False, False, False, False, False, False,  True,  True]],\n       device='cuda:0').dtype
+E            +  and   torch.bool = torch.bool
+E             
+E             At index 0 diff: 1 != 10
+E             Left contains one more item: 10
+E             Use -v to get more diff)
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py:34: AssertionError
+=============================== warnings summary ===============================
+../../../../agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283
+  /home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+
+experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py::test_mask_device_observation_and_complete_P0[cuda]
+  /home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+      Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+      Minimum and Maximum cuda capability supported by this version of PyTorch is
+      (8.0) - (12.0)
+      
+    queued_call()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py::test_mask_device_observation_and_complete_P0[cpu]
+FAILED experiments/results/gatec_two_program_feasibility_5100_v4/test_amendments_v4.py::test_mask_device_observation_and_complete_P0[cuda]
+2 failed, 30 passed, 2 warnings in 1.55s

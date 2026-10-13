@@ -1,0 +1,353 @@
+{
+  "created_utc": "2026-10-07T07:49:35.631995+00:00",
+  "protocol": "single-fresh-controller-task-discovery-4700-v1",
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "status": " M experiments/diagnose_stage3_gradients.py\n M experiments/evaluate_stage3_stochastic_continuation.py\n M experiments/runs/stage1_taskA_tiny.json\n M experiments/stage3_measurements.py\n M src/__pycache__/agt.cpython-312.pyc\n M src/__pycache__/blocks.cpython-312.pyc\n M src/__pycache__/controller.cpython-312.pyc\n M src/__pycache__/executor.cpython-312.pyc\n M src/__pycache__/masks.cpython-312.pyc\n M src/executor.py\n M tests/test_stage3_measurements.py\n M tests/test_stage3_replication.py\n M tests/test_stage3_stochastic_evaluation.py\n M tests/test_stage3_successor_mix.py\n?? AUDIT_PRECHECK.md\n?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md\n?? GATE_B_STAGE3_SPEC.md.pre_inspection\n?? GATE_B_STAGE3_SPEC.md.pre_reconcile\n?? GATE_B_STAGE3_SPEC.md.pre_source_lock\n?? HALT\n?? RESTART\n?? data/__pycache__/\n?? experiments/__pycache__/\n?? experiments/audit_gatec_canonical_replay.py\n?? experiments/check_stage3_equivalence_batch1.py\n?? experiments/diagnose_stage1_taskA.py\n?? experiments/diagnose_stage3_closed_loop_parity.py\n?? experiments/diagnose_stage3_route_equivalence.py\n?? experiments/diagnose_stage3_taskA_gradient_flow.py\n?? experiments/evaluate_gatec_locked_policy.py\n?? experiments/evaluate_stage3_closed_loop_equivalence.py\n?? experiments/evaluate_stage3_route_controller.py\n?? experiments/evaluate_stage3_warmstart.py\n?? experiments/evaluate_stage3_warmstart_parity.py\n?? experiments/evaluate_stage3_warmstart_taskA.py\n?? experiments/gateA_a3_state_vs_output.py\n?? experiments/gateA_a4_state_ablation.py\n?? experiments/gateA_a5_state_shuffle.py\n?? experiments/gateA_a6_state_patching.py\n?? experiments/gateA_a7_controls.py\n?? experiments/replay_gatec_learned_policy.py\n?? experiments/replicate_gatec_locked_imitation.py\n?? experiments/results/\n?? experiments/run_gatec_fresh_task_discovery.py\n?? experiments/run_gatec_paired_task_maintenance.py\n?? experiments/run_stage1_taskA_overfit.py\n?? experiments/run_stage3_masked_route_imitation.py\n?? experiments/run_stage3_taskA_warmstart.py\n?? experiments/run_stage3_warmstart_taskA_train.py\n?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt\n?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt\n?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json\n?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json\n?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt\n?? experiments/runs/stage3_imitation_replication_3305_v1.pt\n?? experiments/runs/stage3_imitation_replication_3306_v1.pt\n?? experiments/runs/stage3_imitation_replication_3307_v1.pt\n?? experiments/runs/stage3_imitation_replication_4401_locked_v1.pt\n?? experiments/runs/stage3_imitation_replication_4402_locked_v1.pt\n?? experiments/runs/stage3_metadata_credit_probe_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt\n?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json\n?? experiments/stage3_decision_prefix.py\n?? experiments/train_stage1_taskA_len8.py\n?? \"n' '===== BRANCH =====' && \"\n?? \"n' '===== CURRENT WORKTREE =====' && \"\n?? src/__pycache__/routing.cpython-312.pyc\n?? src/agt.py.pre_adaptive_step.bak\n?? src/executor.py.pre_adaptive_integration.bak\n?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc\n?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc\n?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc\n?? tests/test_gatec_canonical_replay_audit.py\n?? tests/test_gatec_fresh_task_discovery.py\n?? tests/test_gatec_paired_noise.py\n?? tests/test_stage3_decision_prefix.py\n?? tests/test_stage3_execution_accounting.py\n?? tests/test_stage3_route_metrics.py\n?? tests/test_stage3_taskA_gradient_diagnostic.py\n?? tests/test_stage4_halt.py\n?? tests/test_stage4_halting.py\n",
+    "tracked_diff_sha256": "8b269f06eb4ca7ffa02fb318e493b4b073875723926f97ee16cc4336dd1e311d"
+  },
+  "script_sha256": "2f665a4bc4a6e9e32d4aa1be09c5b772f3ccc3421bd67d928a673f449f92f4f6",
+  "source_sha256": {
+    "src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "src/terminal_commit.py": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/norms.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "src/convergence.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "src/gdn_v3.py": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+    "src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "src/output_head.py": "5ea4e70576c5869639f758a7b95c87f2cb0464ed091bbf98b7524538fd31511a",
+    "src/gdn.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "src/mhc.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "src/executor.py": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f",
+    "src/rope.py": "2a99012fb952ad53d72762eb85cd02c3dd0a12eb3949afcd45f35bede4c03d80",
+    "src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "src/swiglu.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "src/utils.py": "4c220baa4e6669c04fbb991e5e7bcd39df41d36d5d2283d060fc28a79a4f3a33",
+    "src/prelude.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "src/gqa.py": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb",
+    "src/memory.py": "1fa44e6367d53e299938c1f95c946df2570487daf24d26191a32b86d1235375c",
+    "src/caches.py": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1",
+    "src/commit.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "src/config.py": "c106a8f03333a0ccafc004be612ce9bdcfc30f2f9eadd6d5fe57534fbad04efc"
+  },
+  "observer_sha256": "e80b27dd3bcd3674b2c063cc0964df5c1f34cd6aecc4b2d3b2a31b088244582e",
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "noncontroller_tensors": 126
+  },
+  "initialization": {
+    "seed": 4700,
+    "procedure": "original set_seed immediately before full AGTv3 construction, then load only Stage-1 non-controller weights; clone fresh controller to U/T",
+    "controller": "395->256->11",
+    "normalization": "fresh unit RMSNorm gains",
+    "no_checkpoint_controller_loaded": true,
+    "no_bias_override": true,
+    "state_fingerprint": "b81094b0d7b7896ad33f4e37723b379ea5a8d8954ed62cf1c352c0633bed203b",
+    "file_sha256": "d394da291553b78172bbdacc25af3c0bd881234d1fb6a3b458a3de33d1d94995"
+  },
+  "training": {
+    "epochs": 10,
+    "updates": 1040,
+    "sequences_per_epoch": 104,
+    "lengths": [
+      4,
+      16
+    ],
+    "batch": 1,
+    "dtype": "float32",
+    "loss": "final-sequence parity CE only",
+    "optimizer": "fresh AdamW",
+    "optimizer_defaults": {
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    },
+    "tau": 2.0,
+    "budget": [
+      0.0,
+      0.0
+    ],
+    "budget_fraction": 0.0,
+    "budget_presence_flag": 0.0,
+    "trainable_parameters": [
+      "controller.norm_h.weight",
+      "controller.norm_memory_read.weight",
+      "controller.mlp.0.weight",
+      "controller.mlp.0.bias",
+      "controller.mlp.2.weight",
+      "controller.mlp.2.bias"
+    ],
+    "U_updates": 0,
+    "scheduler": null,
+    "clipping": null,
+    "auxiliary_loss": null,
+    "teacher_features_used_for_training": false,
+    "recomputed_trajectories": true,
+    "independent_sequence_reset": true
+  },
+  "gradient_policy": {
+    "maintenance_manifest_sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430",
+    "policy": "unchanged run_diff_sequence full-sequence BPTT; no token/state/cache detach; reset at independent-sequence boundary",
+    "horizon": "entire current sequence: 4..16 tokens in training; no inter-sequence graph",
+    "production_detach_locations": [
+      "src/routing.py:137 hard - relaxed.detach() + relaxed; ST relaxed stop-gradient",
+      "src/executor.py:323 action.detach().argmax; hard pointer/just_restarted/P/mask metadata"
+    ],
+    "unused_detach": "src/convergence.py detach helper is outside execute_differentiable",
+    "clone_semantics": "state.clone, cache.clone and memory write clones preserve autograd",
+    "attention": "GQA retains complete sequence; SWA window 256 retains 255 committed rows; no within-sequence eviction at these lengths",
+    "convolution": "GDN retains conv_kernel-1=3 inputs; existing finite convolution receptive field, no added gradient detach",
+    "frozen_computations": "T frozen backbone executes with autograd enabled",
+    "diagnostic_detaches": "copy/snapshot/probability/report tensors only; returned execution/final CE graph is not replaced",
+    "anchor": "original Prelude h_t,0 is passed unchanged to all successor blocks; observed for in-flight mutation"
+  },
+  "execution": {
+    "P": 8,
+    "D": "8+RESTART in [8,15]",
+    "halting_disabled": true,
+    "convergence_disabled": true,
+    "decision_cap": null,
+    "stochastic": "unchanged hard-forward ST-Gumbel with all ten candidates, nine speculative bank calls per decision",
+    "deterministic": "selected-only legal argmax",
+    "fallback": null,
+    "route_supervision": null
+  },
+  "inputs": {
+    "training_source": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/training_sequences.json",
+    "training_source_sha256": "5ff1173e5a024d431c5a211287f3fb5595b3822baea2416d3cb0b344e02a1e2a",
+    "training_materialized_sha256": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd",
+    "schedule_sha256": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82",
+    "development_source": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/panel.json",
+    "development_sha256": "f155ba6477e2f9283a82e3d93f3db00c51620dbab6a36811a3f3a02cb23e3f41",
+    "final_panel_sha256": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3",
+    "final_panel_identity": {
+      "val": {
+        "sequences": 32,
+        "tokens": 512,
+        "bits_sha256": "ec00682734cc73ca8fc3b8238faef682d1f7ecb8601d5854cb87189b01f5e3c1",
+        "labels_sha256": "08a5bc94c38e327a4da6fedb1093ec574c68c208840cf1dedaec0a84b44528f0",
+        "ordered_sequence_label_sha256": "c7b533bcf2a8343f55dae8457d421192bbc7c1a4806ac73b27e2187f72f30c21",
+        "counts_by_length": {
+          "16": 32
+        },
+        "label_balance_by_length": {
+          "16": {
+            "0": 16,
+            "1": 16
+          }
+        },
+        "duplicate_full_sequences": 0
+      },
+      "ood_test": {
+        "sequences": 64,
+        "tokens": 1568,
+        "bits_sha256": "c26392d8c7778ad10130538719cacea93ce19f3281e003a099e47e088191fc40",
+        "labels_sha256": "52f919f3d84ff8810d8e09c475463f087722c6a9bcedb452e6ebd59682e638ad",
+        "ordered_sequence_label_sha256": "b04d98ee8b13dca87a6b438b958f07560e4c9f6f5f5ea208dcff80f37be279df",
+        "counts_by_length": {
+          "17": 4,
+          "18": 4,
+          "19": 4,
+          "20": 4,
+          "21": 4,
+          "22": 4,
+          "23": 4,
+          "24": 4,
+          "25": 4,
+          "26": 4,
+          "27": 4,
+          "28": 4,
+          "29": 4,
+          "30": 4,
+          "31": 4,
+          "32": 4
+        },
+        "label_balance_by_length": {
+          "17": {
+            "0": 2,
+            "1": 2
+          },
+          "18": {
+            "1": 2,
+            "0": 2
+          },
+          "19": {
+            "1": 2,
+            "0": 2
+          },
+          "20": {
+            "1": 2,
+            "0": 2
+          },
+          "21": {
+            "1": 2,
+            "0": 2
+          },
+          "22": {
+            "1": 2,
+            "0": 2
+          },
+          "23": {
+            "1": 2,
+            "0": 2
+          },
+          "24": {
+            "1": 2,
+            "0": 2
+          },
+          "25": {
+            "1": 2,
+            "0": 2
+          },
+          "26": {
+            "1": 2,
+            "0": 2
+          },
+          "27": {
+            "0": 2,
+            "1": 2
+          },
+          "28": {
+            "0": 2,
+            "1": 2
+          },
+          "29": {
+            "0": 2,
+            "1": 2
+          },
+          "30": {
+            "1": 2,
+            "0": 2
+          },
+          "31": {
+            "1": 2,
+            "0": 2
+          },
+          "32": {
+            "1": 2,
+            "0": 2
+          }
+        },
+        "duplicate_full_sequences": 0
+      }
+    },
+    "inventory_sha256": "0eafdba7277a135f7ccdfc2f6064ad874b9ad92a294261191794b5d1f3e31d50",
+    "training_overlap": 0,
+    "available_prior_overlap": 0,
+    "distinct_final_sequences": 96,
+    "final_generation_seed": 4703,
+    "rejection_counts": {
+      "accepted": 96,
+      "parity_quota_full": 31
+    },
+    "rejection_rule": "reject exact training/prior recorded input match, panel duplicate, or filled parity quota; accept in generator order",
+    "final_panel_usage": "sealed before outcomes; only evaluated after update1040; no checkpoint selection"
+  },
+  "randomness": {
+    "order_seed": 4701,
+    "training_seed": 4702,
+    "final_panel_seed": 4703,
+    "evaluation_root_seed": 4704,
+    "evaluation_tape_seeds": [
+      924088217,
+      911787993,
+      126797460,
+      757739963
+    ],
+    "derivation": "four integer seeds from CPU torch.Generator(4704), in recorded order",
+    "training_coordinate": "epoch/sequence ID/token/decision/ten successor action slots; new sealed uniforms on every visit",
+    "pairing": "same visit/tape coordinates in U and T regardless of decision counts",
+    "fifteen_positions": "legal P=8 maximum D coverage; not a stopping cap",
+    "injection": "reuse diagnostic-only IndexedNoise hook around original torch.rand_like; original ST math unchanged",
+    "reconstruction": "original masked log-softmax + clamped uniforms + Gumbel/tau softmax reconstructs every sampled hard action",
+    "tapes": {
+      "training": {
+        "seed": 4702,
+        "file": "noise_training.pt",
+        "sha256": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238"
+      },
+      "final_tape_1": {
+        "seed": 924088217,
+        "file": "noise_final_tape_1.pt",
+        "sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7"
+      },
+      "final_tape_2": {
+        "seed": 911787993,
+        "file": "noise_final_tape_2.pt",
+        "sha256": "a0f630c48bbf168b872acff27147f1e3500a57774971bddadf1bc1c7e58446f4"
+      },
+      "final_tape_3": {
+        "seed": 126797460,
+        "file": "noise_final_tape_3.pt",
+        "sha256": "382a679123d8815785c6c5fea830c7a5564924dbfb45a6622b61f8ea924a5a15"
+      },
+      "final_tape_4": {
+        "seed": 757739963,
+        "file": "noise_final_tape_4.pt",
+        "sha256": "1a93b8f1e4e02e42c9f4e9b2acf841bc299168fa7d0648dfc11bb59319cbff83"
+      }
+    }
+  },
+  "snapshots": {
+    "updates": [
+      0,
+      104,
+      520,
+      1040
+    ],
+    "paths": {
+      "0": "experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt",
+      "104": "experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt",
+      "520": "experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt",
+      "1040": "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt"
+    },
+    "development": "deterministic U/T diagnostics on existing exposed validation/OOD panel at each snapshot; no updates/selection",
+    "selection": "update1040 irrespective of all metrics"
+  },
+  "final_evaluation": {
+    "paths": [
+      "F canonical reference",
+      "U unchanged fresh policy",
+      "T final policy"
+    ],
+    "modes": [
+      "deterministic",
+      "four paired fixed ST-Gumbel tapes for U/T"
+    ],
+    "batch": 1,
+    "dtype": "float32",
+    "aggregate": "equal-weight pooling over all four tapes, with each tape also reported"
+  },
+  "strong_criterion": "valid execution/finite optimization; T deterministic accuracy=1 on both fresh splits, higher accuracy and lower CE than U in both deterministic splits and both aggregate sampled splits",
+  "stopping": "mechanical violation or nonfinite only; ordinary performance failure continues through exactly1040 updates",
+  "limitations": [
+    "single controller-training initialization; four tapes replicate sampling, not controller seeds",
+    "fresh final inputs exclude exact available recorded training/prior input matches; unknown Stage-1 training inputs and unretained historical probes cannot be excluded",
+    "prior-input exclusion is conservative and also excludes recoverable historical training arrays",
+    "development panel was previously exposed and is used only at fixed snapshots; final panel is not used for selection",
+    "fixed frozen backbone specialized for canonical routing; no architecture or backbone adaptation"
+  ],
+  "numerical": {
+    "torch_version": "2.10.0+cu130",
+    "device": "cuda",
+    "device_name": "NVIDIA GB10",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false
+  }
+}

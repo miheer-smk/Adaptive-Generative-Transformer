@@ -1,0 +1,10 @@
+{
+  "protected_count": 579,
+  "changed": [],
+  "tracked_diff_unchanged": true,
+  "historical_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting",
+  "parameters_unchanged": true,
+  "no_optimizer": true,
+  "no_training": true,
+  "no_gradients": true
+}

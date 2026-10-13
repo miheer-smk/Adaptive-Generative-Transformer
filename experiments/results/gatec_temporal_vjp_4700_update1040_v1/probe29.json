@@ -1,0 +1,5559 @@
+{
+  "probe": {
+    "probe_id": "update1040/val/L16/row2/C",
+    "checkpoint_update": 1040,
+    "sequence_id": "val/L16/row2",
+    "source": "length16_eval",
+    "condition": "C",
+    "parity": 1,
+    "token_index": 15,
+    "human_token_number": 16
+  },
+  "original_index": 29,
+  "previous_classification": "informative_aligned_ST",
+  "incoming_state_sha256": "50fdad07bd438b6dd93f2b62d88757130fb7136912ef53d7b32c4a8326d2c720",
+  "CF_final_ce": [
+    [
+      0.0018349728779867291,
+      0.0018349728779867291,
+      0.0018271195003762841,
+      0.0018277144990861416,
+      0.001828071428462863,
+      0.0018256916664540768,
+      0.0018275955226272345,
+      0.0018297373317182064
+    ],
+    [
+      0.08378005772829056,
+      0.08356022834777832,
+      0.0034023988991975784,
+      0.0035343817435204983,
+      0.003632971551269293,
+      0.0031513336580246687,
+      0.0019258777610957623,
+      0.0031014219857752323
+    ],
+    [
+      0.0018845908343791962,
+      0.0018845908343791962,
+      0.0018847098108381033,
+      0.001884471857920289,
+      0.0018847098108381033,
+      0.0018841149285435677,
+      0.0018829250475391746,
+      0.001879355520941317
+    ],
+    [
+      0.0022695516236126423,
+      0.0022689569741487503,
+      0.0022245917934924364,
+      0.0023988301400095224,
+      0.002557937288656831,
+      0.0020367607939988375,
+      0.0019857229199260473,
+      0.0019665679428726435
+    ],
+    [
+      0.002164641860872507,
+      0.0021635713055729866,
+      0.0021038558334112167,
+      0.002454365836456418,
+      0.0033452522475272417,
+      0.0036885577719658613,
+      0.002254208317026496,
+      0.0034176057670265436
+    ],
+    [
+      0.0023475727066397667,
+      0.0023443615064024925,
+      0.002133714035153389,
+      0.015123466029763222,
+      3.2533369064331055,
+      0.0019413450499996543,
+      0.0018892312655225396,
+      0.004430359695106745
+    ],
+    [
+      0.006797996815294027,
+      0.002115632640197873,
+      0.002102666301652789,
+      0.0021482266020029783,
+      0.004965236876159906,
+      0.0020233176182955503,
+      0.0022460015024989843,
+      0.00312958681024611
+    ],
+    [
+      0.005119903478771448,
+      0.005116345826536417,
+      0.004868201911449432,
+      0.005827816668897867,
+      0.006852460093796253,
+      0.0032258399296551943,
+      0.0022421954199671745,
+      0.003097381442785263
+    ]
+  ],
+  "CF_correct": [
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  ],
+  "g_CF": [
+    -0.0036411462883977432,
+    -0.0035808099113970576,
+    -0.005709601766441379,
+    -0.005512177633914202,
+    0.035562285435252625,
+    -0.005515619410399847,
+    -0.005539488514147117,
+    -0.0060634419105552746
+  ],
+  "pi": [
+    0.11543989800246487,
+    0.11135980547971237,
+    0.13514492356847954,
+    0.1363843694515755,
+    0.0974351786285425,
+    0.13025654037122536,
+    0.12947364481328674,
+    0.1445056396847131
+  ],
+  "conditional_correctness": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.875,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "replays": [
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape0/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 0,
+      "final_ce": 0.0018531783716753125,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          2.0064430117372467e-08,
+          4.4437079793624434e-08,
+          4.148960641714439e-08,
+          2.9178130489526666e-07,
+          3.5602226944320137e-08,
+          -1.858469431681442e-07,
+          -2.0153900948116643e-07,
+          -4.598868486027641e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          1.9169901221971486e-08,
+          4.24560155920517e-08,
+          3.976310836151242e-08,
+          2.774394260995905e-07,
+          3.385764912877676e-08,
+          -1.75846793126766e-07,
+          -1.927898836129316e-07,
+          -4.4049428993275797e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          1.9169901221971486e-08,
+          4.24560155920517e-08,
+          3.976310836151242e-08,
+          2.774394260995905e-07,
+          3.385764912877676e-08,
+          -1.75846793126766e-07,
+          -1.927898836129316e-07,
+          -4.4049428993275797e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          1.9169901221971486e-08,
+          4.24560155920517e-08,
+          3.976310836151242e-08,
+          2.774394260995905e-07,
+          3.385764912877676e-08,
+          -1.75846793126766e-07,
+          -1.927898836129316e-07,
+          -4.4049428993275797e-08,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          2.0064430117372467e-08,
+          4.4437079793624434e-08,
+          4.148960641714439e-08,
+          2.9178130489526666e-07,
+          3.5602226944320137e-08,
+          -1.858469431681442e-07,
+          -2.0153900948116643e-07,
+          -4.598868486027641e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -8.945288954009811e-10,
+          -1.9810642015727353e-09,
+          -1.7264980556319642e-09,
+          -1.4341878795676166e-08,
+          -1.74457781554338e-09,
+          1.000015004137822e-08,
+          8.749125868234842e-09,
+          1.939255867000611e-09,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 9,
+      "candidate_constructions": 9,
+      "bank_purity_checks": 81,
+      "gdn_purity_checks": {
+        "4": 9,
+        "5": 10
+      },
+      "commits": 1,
+      "D": [
+        9
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape1/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 1,
+      "final_ce": 0.0018850667402148247,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          4.2921834619846777e-07,
+          2.835421923919057e-07,
+          6.191539227984322e-07,
+          3.8092238696663117e-07,
+          5.48582420378807e-07,
+          -1.6849703854404652e-07,
+          -1.2581012924783863e-06,
+          -8.348209235009563e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          2.934771430318506e-07,
+          1.9389163696814649e-07,
+          4.290493507141946e-07,
+          2.556998026648216e-07,
+          3.683009310861962e-07,
+          -1.1063360005891809e-07,
+          -8.595108624831482e-07,
+          -5.702743806068611e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          2.934771430318506e-07,
+          1.9389163696814649e-07,
+          4.290493507141946e-07,
+          2.556998026648216e-07,
+          3.683009310861962e-07,
+          -1.1063360005891809e-07,
+          -8.595108624831482e-07,
+          -5.702743806068611e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          2.934771430318506e-07,
+          1.9389163696814649e-07,
+          4.290493507141946e-07,
+          2.556998026648216e-07,
+          3.683009310861962e-07,
+          -1.1063360005891809e-07,
+          -8.595108624831482e-07,
+          -5.702743806068611e-07,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          4.2921834619846777e-07,
+          2.835421923919057e-07,
+          6.191539227984322e-07,
+          3.8092238696663117e-07,
+          5.48582420378807e-07,
+          -1.6849703854404652e-07,
+          -1.2581012924783863e-06,
+          -8.348209235009563e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -1.357412031666172e-07,
+          -8.965055542375922e-08,
+          -1.901045720842376e-07,
+          -1.2522258430180955e-07,
+          -1.8028148929261079e-07,
+          5.786343848512843e-08,
+          3.985904299952381e-07,
+          2.645465428940952e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 11,
+      "candidate_constructions": 11,
+      "bank_purity_checks": 99,
+      "gdn_purity_checks": {
+        "4": 12,
+        "5": 13
+      },
+      "commits": 1,
+      "D": [
+        11
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape2/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 2,
+      "final_ce": 0.0019645453430712223,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          4.764606487128731e-08,
+          1.5073015902089537e-07,
+          1.563548863714459e-07,
+          2.5877122666884134e-08,
+          2.9615002006266877e-08,
+          -1.0047020992942635e-07,
+          -2.2165527013839892e-07,
+          -8.809777085616588e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          3.212160137877618e-08,
+          1.017346278331388e-07,
+          1.1670885413650467e-07,
+          1.3163470313770631e-08,
+          1.5667799502239177e-08,
+          -5.627980570466207e-08,
+          -1.5840092260077654e-07,
+          -6.471563551713189e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          3.212160137877618e-08,
+          1.017346278331388e-07,
+          1.1670885413650467e-07,
+          1.3163470313770631e-08,
+          1.5667799502239177e-08,
+          -5.627980570466207e-08,
+          -1.5840092260077654e-07,
+          -6.471563551713189e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          3.212160137877618e-08,
+          1.017346278331388e-07,
+          1.1670885413650467e-07,
+          1.3163470313770631e-08,
+          1.5667799502239177e-08,
+          -5.627980570466207e-08,
+          -1.5840092260077654e-07,
+          -6.471563551713189e-08,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          4.764606487128731e-08,
+          1.5073015902089537e-07,
+          1.563548863714459e-07,
+          2.5877122666884134e-08,
+          2.9615002006266877e-08,
+          -1.0047020992942635e-07,
+          -2.2165527013839892e-07,
+          -8.809777085616588e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -1.552446349251113e-08,
+          -4.899553118775657e-08,
+          -3.964603223494123e-08,
+          -1.2713652353113503e-08,
+          -1.39472025040277e-08,
+          4.419040422476428e-08,
+          6.325434753762238e-08,
+          2.3382135339033994e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 11,
+      "candidate_constructions": 11,
+      "bank_purity_checks": 99,
+      "gdn_purity_checks": {
+        "4": 11,
+        "5": 12
+      },
+      "commits": 1,
+      "D": [
+        11
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape3/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 3,
+      "final_ce": 0.004764513578265905,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          1.136967239290243e-05,
+          2.44807106355438e-05,
+          1.94679760170402e-05,
+          1.4668636140413582e-05,
+          2.617056088638492e-05,
+          -4.77413777844049e-07,
+          -9.185638191411272e-05,
+          -3.823760835075518e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          2.6851132588490145e-06,
+          5.788300768472254e-06,
+          4.85056807519868e-06,
+          3.1753231723996578e-06,
+          5.6334783948841505e-06,
+          1.7236023097666475e-07,
+          -2.1420983102871105e-05,
+          -8.841616363497451e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          2.6851132588490145e-06,
+          5.788300768472254e-06,
+          4.85056807519868e-06,
+          3.1753231723996578e-06,
+          5.6334783948841505e-06,
+          1.7236023097666475e-07,
+          -2.1420983102871105e-05,
+          -8.841616363497451e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          2.6851132588490145e-06,
+          5.788300768472254e-06,
+          4.85056807519868e-06,
+          3.1753231723996578e-06,
+          5.6334783948841505e-06,
+          1.7236023097666475e-07,
+          -2.1420983102871105e-05,
+          -8.841616363497451e-07,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          1.136967239290243e-05,
+          2.44807106355438e-05,
+          1.94679760170402e-05,
+          1.4668636140413582e-05,
+          2.617056088638492e-05,
+          -4.77413777844049e-07,
+          -9.185638191411272e-05,
+          -3.823760835075518e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -8.684559361427091e-06,
+          -1.8692409867071547e-05,
+          -1.461740794184152e-05,
+          -1.1493312740640249e-05,
+          -2.0537081582006067e-05,
+          6.497739946098591e-07,
+          7.043540244922042e-05,
+          2.939599198725773e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            12,
+            11,
+            10,
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 13,
+      "candidate_constructions": 13,
+      "bank_purity_checks": 117,
+      "gdn_purity_checks": {
+        "4": 14,
+        "5": 15
+      },
+      "commits": 1,
+      "D": [
+        13
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape4/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 4,
+      "final_ce": 0.001981677720323205,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          8.491526386933401e-06,
+          6.715668860124424e-06,
+          1.526573942101095e-05,
+          1.7734717403072864e-05,
+          1.5733436157461256e-05,
+          -1.154194978880696e-05,
+          -4.136542702326551e-05,
+          -1.1033708688046318e-05,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          7.013475624262355e-06,
+          5.5467953643528745e-06,
+          1.2616395906661637e-05,
+          1.4637371350545436e-05,
+          1.2985689863853622e-05,
+          -9.523263543087523e-06,
+          -3.41641170962248e-05,
+          -9.112350198847707e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          7.013475624262355e-06,
+          5.5467953643528745e-06,
+          1.2616395906661637e-05,
+          1.4637371350545436e-05,
+          1.2985689863853622e-05,
+          -9.523263543087523e-06,
+          -3.41641170962248e-05,
+          -9.112350198847707e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          7.013475624262355e-06,
+          5.5467953643528745e-06,
+          1.2616395906661637e-05,
+          1.4637371350545436e-05,
+          1.2985689863853622e-05,
+          -9.523263543087523e-06,
+          -3.41641170962248e-05,
+          -9.112350198847707e-06,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          8.491526386933401e-06,
+          6.715668860124424e-06,
+          1.526573942101095e-05,
+          1.7734717403072864e-05,
+          1.5733436157461256e-05,
+          -1.154194978880696e-05,
+          -4.136542702326551e-05,
+          -1.1033708688046318e-05,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -1.478050762671046e-06,
+          -1.1688734957715496e-06,
+          -2.6493435143493116e-06,
+          -3.0973460525274277e-06,
+          -2.7477462936076336e-06,
+          2.0186862457194366e-06,
+          7.201309927040711e-06,
+          1.92135848919861e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 10,
+      "candidate_constructions": 10,
+      "bank_purity_checks": 90,
+      "gdn_purity_checks": {
+        "4": 11,
+        "5": 10
+      },
+      "commits": 1,
+      "D": [
+        10
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape5/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 5,
+      "final_ce": 0.0018496087286621332,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          1.410548122748878e-07,
+          7.112786448715269e-08,
+          1.1217618123282591e-07,
+          5.946812464685536e-08,
+          1.1732724942703499e-06,
+          -4.021856057079276e-07,
+          -8.191996698769799e-07,
+          -3.357141338256042e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          9.779329701586903e-08,
+          4.931825614562513e-08,
+          7.98391042167168e-08,
+          4.007162246466578e-08,
+          7.91025399848877e-07,
+          -2.6881005510404066e-07,
+          -5.603309318757965e-07,
+          -2.2890665718477976e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          9.779329701586903e-08,
+          4.931825614562513e-08,
+          7.98391042167168e-08,
+          4.007162246466578e-08,
+          7.91025399848877e-07,
+          -2.6881005510404066e-07,
+          -5.603309318757965e-07,
+          -2.2890665718477976e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          9.779329701586903e-08,
+          4.931825614562513e-08,
+          7.98391042167168e-08,
+          4.007162246466578e-08,
+          7.91025399848877e-07,
+          -2.6881005510404066e-07,
+          -5.603309318757965e-07,
+          -2.2890665718477976e-07,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          1.410548122748878e-07,
+          7.112786448715269e-08,
+          1.1217618123282591e-07,
+          5.946812464685536e-08,
+          1.1732724942703499e-06,
+          -4.021856057079276e-07,
+          -8.191996698769799e-07,
+          -3.357141338256042e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -4.326151525901878e-08,
+          -2.1809608341527564e-08,
+          -3.2337077016109106e-08,
+          -1.939650218218958e-08,
+          -3.8224709442147287e-07,
+          1.3337555060388695e-07,
+          2.588687380011834e-07,
+          1.0680747664082446e-07,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 10,
+      "candidate_constructions": 10,
+      "bank_purity_checks": 90,
+      "gdn_purity_checks": {
+        "4": 11,
+        "5": 10
+      },
+      "commits": 1,
+      "D": [
+        10
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape6/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 6,
+      "final_ce": 0.002249093959107995,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          1.4154674317978788e-05,
+          4.886783062829636e-05,
+          0.00011586440086830407,
+          3.0039054763619788e-05,
+          1.394110222463496e-05,
+          -2.6269226509612054e-05,
+          -0.00019172090105712414,
+          -4.876934326603077e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          1.0833581654878799e-05,
+          3.7402482121251523e-05,
+          8.870763122104108e-05,
+          2.2981115762377158e-05,
+          1.0665423360478599e-05,
+          -2.007579678320326e-05,
+          -0.0001467788388254121,
+          -3.735602831511642e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          1.0833581654878799e-05,
+          3.7402482121251523e-05,
+          8.870763122104108e-05,
+          2.2981115762377158e-05,
+          1.0665423360478599e-05,
+          -2.007579678320326e-05,
+          -0.0001467788388254121,
+          -3.735602831511642e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          1.0833581654878799e-05,
+          3.7402482121251523e-05,
+          8.870763122104108e-05,
+          2.2981115762377158e-05,
+          1.0665423360478599e-05,
+          -2.007579678320326e-05,
+          -0.0001467788388254121,
+          -3.735602831511642e-06,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          1.4154674317978788e-05,
+          4.886783062829636e-05,
+          0.00011586440086830407,
+          3.0039054763619788e-05,
+          1.394110222463496e-05,
+          -2.6269226509612054e-05,
+          -0.00019172090105712414,
+          -4.876934326603077e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -3.3210926630999893e-06,
+          -1.1465348507044837e-05,
+          -2.715676964726299e-05,
+          -7.05793900124263e-06,
+          -3.2756788641563617e-06,
+          6.1934297264087945e-06,
+          4.494206223171204e-05,
+          1.1413314950914355e-06,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 10,
+      "candidate_constructions": 10,
+      "bank_purity_checks": 90,
+      "gdn_purity_checks": {
+        "4": 10,
+        "5": 12
+      },
+      "commits": 1,
+      "D": [
+        10
+      ],
+      "P": [
+        8
+      ]
+    },
+    {
+      "run_id": "update1040/val/L16/row2/C/ST/tape7/actionNone",
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "tape": 7,
+      "final_ce": 0.001960024470463395,
+      "prediction": 1,
+      "correct": true,
+      "forward_matches_previous": true,
+      "cumulative_gradients": {
+        "exec": [
+          9.028929781607076e-08,
+          4.234242467759941e-08,
+          6.280589559537475e-08,
+          4.985149004710365e-08,
+          2.7721480222453465e-08,
+          -1.215236444807033e-08,
+          -1.813184837828885e-07,
+          -7.9539731245859e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "full": [
+          5.4934368165504566e-08,
+          2.5820256155384413e-08,
+          4.601468361897787e-08,
+          8.54029291730285e-09,
+          5.5154374400956385e-09,
+          5.167022809615673e-09,
+          -1.0231792657577898e-07,
+          -4.367413453110203e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "token": [
+          5.4934368165504566e-08,
+          2.5820256155384413e-08,
+          4.601468361897787e-08,
+          8.54029291730285e-09,
+          5.5154374400956385e-09,
+          5.167022809615673e-09,
+          -1.0231792657577898e-07,
+          -4.367413453110203e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          5.4934368165504566e-08,
+          2.5820256155384413e-08,
+          4.601468361897787e-08,
+          8.54029291730285e-09,
+          5.5154374400956385e-09,
+          5.167022809615673e-09,
+          -1.0231792657577898e-07,
+          -4.367413453110203e-08,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "cumulative_status": {
+        "exec": "connected_nonzero",
+        "full": "connected_nonzero",
+        "token": "connected_nonzero",
+        "next": "connected_nonzero"
+      },
+      "components": {
+        "exec": [
+          9.028929781607076e-08,
+          4.234242467759941e-08,
+          6.280589559537475e-08,
+          4.985149004710365e-08,
+          2.7721480222453465e-08,
+          -1.215236444807033e-08,
+          -1.813184837828885e-07,
+          -7.9539731245859e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "within": [
+          -3.535492965056619e-08,
+          -1.6522168522214997e-08,
+          -1.679121197639688e-08,
+          -4.131119624162238e-08,
+          -2.2206043226447036e-08,
+          1.7319386813596793e-08,
+          7.900055720710952e-08,
+          3.5865596714756975e-08,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "next": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "distant": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "component_status": {
+        "exec": "connected_nonzero",
+        "within": "connected_nonzero",
+        "next": "connected_exact_zero",
+        "distant": "connected_exact_zero"
+      },
+      "boundaries": {
+        "exec": {
+          "blocked_controller_outputs": [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "allowed_controller_outputs": [
+            0
+          ],
+          "first_probe_always_allowed": true
+        },
+        "full": {
+          "blocked_controller_outputs": [],
+          "allowed_controller_outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "first_probe_always_allowed": true
+        },
+        "token": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        },
+        "next": {
+          "alias_of": "full",
+          "reason": "suffix contains only probe token; no redundant VJP"
+        }
+      },
+      "VJP_evaluations": 2,
+      "controller_calls": 10,
+      "candidate_constructions": 10,
+      "bank_purity_checks": 90,
+      "gdn_purity_checks": {
+        "4": 10,
+        "5": 12
+      },
+      "commits": 1,
+      "D": [
+        10
+      ],
+      "P": [
+        8
+      ]
+    }
+  ],
+  "cumulative_alignment": {
+    "exec": {
+      "Q": [
+        0.01327491099073086,
+        0.012661082539125346,
+        0.0025684072606964037,
+        0.004399909172207117,
+        0.409800443216227,
+        0.0024721201771171764,
+        0.0020317197195254266,
+        0.0028565020620590076
+      ],
+      "Q_tape_sd": [
+        0.028545714202813068,
+        0.028667514254219123,
+        0.001051627118911487,
+        0.004529047047448873,
+        1.1489634606075447,
+        0.0007507566275586405,
+        0.00018405962017056847,
+        0.0009091199081998917
+      ],
+      "conditional_correctness": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pi": [
+        0.11543989800246487,
+        0.11135980547971237,
+        0.13514492356847954,
+        0.1363843694515755,
+        0.0974351786285425,
+        0.13025654037122536,
+        0.12947364481328674,
+        0.1445056396847131
+      ],
+      "entropy": 2.072461426822654,
+      "max_probability": 0.1445056396847131,
+      "saturated_probability": false,
+      "g_CF": [
+        -0.0036411462883977432,
+        -0.0035808099113970576,
+        -0.005709601766441379,
+        -0.005512177633914202,
+        0.035562285435252625,
+        -0.005515619410399847,
+        -0.005539488514147117,
+        -0.0060634419105552746
+      ],
+      "g_CF_norm": 0.038100042836905754,
+      "paired_action_loss_differences": [
+        {
+          "actions": [
+            0,
+            1
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            0.0,
+            0.00021982938051223755,
+            0.0,
+            5.94649463891983e-07,
+            1.0705552995204926e-06,
+            3.21120023727417e-06,
+            0.004682364175096154,
+            3.557652235031128e-06
+          ],
+          "mean": 0.0006138284516055137,
+          "half_bank_means": [
+            5.510600749403238e-05,
+            0.001172550895716995
+          ],
+          "bootstrap_95": [
+            1.0542571544647217e-06,
+            0.0017843025358160957
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08037765882909298,
+            -1.1897645890712738e-07,
+            4.495983012020588e-05,
+            6.078602746129036e-05,
+            0.00021385867148637772,
+            0.004695330513641238,
+            0.00025170156732201576
+          ],
+          "mean": 0.010706503730034456,
+          "half_bank_means": [
+            0.02010758826509118,
+            0.0013054191949777305
+          ],
+          "bootstrap_95": [
+            7.234838703880086e-05,
+            0.030800069896213245
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08024567598477006,
+            1.1897645890712738e-07,
+            -0.00012927851639688015,
+            -0.00028972397558391094,
+            -0.012775893323123455,
+            0.004649770213291049,
+            -0.0007079131901264191
+          ],
+          "mean": 0.008875001818523742,
+          "half_bank_means": [
+            0.02003094370593317,
+            -0.002280940068885684
+          ],
+          "bootstrap_95": [
+            -0.004314361223805463,
+            0.030512541525240522
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.08014708617702127,
+            -1.1897645890712738e-07,
+            -0.0002883856650441885,
+            -0.0011806103866547346,
+            -3.2509893337264657,
+            0.001832759939134121,
+            -0.001732556615024805
+          ],
+          "mean": -0.39652553222549614,
+          "half_bank_means": [
+            0.01996637074626051,
+            -0.8130174351972528
+          ],
+          "bootstrap_95": [
+            -1.219403771603902,
+            0.029725034015427802
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08062872407026589,
+            4.759058356285095e-07,
+            0.00023279082961380482,
+            -0.0015239159110933542,
+            0.0004062276566401124,
+            0.004774679196998477,
+            0.0018940635491162539
+          ],
+          "mean": 0.010802790813613683,
+          "half_bank_means": [
+            0.020217818004311994,
+            0.0013877636229153723
+          ],
+          "bootstrap_95": [
+            -3.478344551695044e-05,
+            0.03112912246469932
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.0818541799671948,
+            1.6657868400216103e-06,
+            0.00028382870368659496,
+            -8.956645615398884e-05,
+            0.0004583414411172271,
+            0.004551995312795043,
+            0.0028777080588042736
+          ],
+          "mean": 0.011243191271205433,
+          "half_bank_means": [
+            0.020536762953270227,
+            0.0019496195891406387
+          ],
+          "bootstrap_95": [
+            0.0003878504914609948,
+            0.03177499561898002
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08067863574251533,
+            5.2353134378790855e-06,
+            0.0003029836807399988,
+            -0.0012529639061540365,
+            -0.002082786988466978,
+            0.0036684100050479174,
+            0.002022522035986185
+          ],
+          "mean": 0.010418408928671852,
+          "half_bank_means": [
+            0.02024802257074043,
+            0.000588795286603272
+          ],
+          "bootstrap_95": [
+            -0.0005307581457600463,
+            0.03085965377067623
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08015782944858074,
+            -1.1897645890712738e-07,
+            4.4365180656313896e-05,
+            5.971547216176987e-05,
+            0.00021064747124910355,
+            1.2966338545084e-05,
+            0.00024814391508698463
+          ],
+          "mean": 0.010092675278428942,
+          "half_bank_means": [
+            0.02005248225759715,
+            0.0001328682992607355
+          ],
+          "bootstrap_95": [
+            3.411451980355196e-05,
+            0.030130649800412357
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08002584660425782,
+            1.1897645890712738e-07,
+            -0.00012987316586077213,
+            -0.00029079453088343143,
+            -0.01277910452336073,
+            -3.259396180510521e-05,
+            -0.0007114708423614502
+          ],
+          "mean": 0.008261173366918229,
+          "half_bank_means": [
+            0.019975837698439136,
+            -0.003453490964602679
+          ],
+          "bootstrap_95": [
+            -0.00488747728522867,
+            0.02989660260755045
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.07992725679650903,
+            -1.1897645890712738e-07,
+            -0.0002889803145080805,
+            -0.001181680941954255,
+            -3.250992544926703,
+            -0.0028496042359620333,
+            -0.0017361142672598362
+          ],
+          "mean": -0.39713936067710165,
+          "half_bank_means": [
+            0.019911264738766477,
+            -0.8141899860929698
+          ],
+          "bootstrap_95": [
+            -1.2199170266907458,
+            0.029216370862195612
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08040889468975365,
+            4.759058356285095e-07,
+            0.00023219618014991283,
+            -0.0015249864663928747,
+            0.00040301645640283823,
+            9.231502190232277e-05,
+            0.0018905058968812227
+          ],
+          "mean": 0.01018896236200817,
+          "half_bank_means": [
+            0.02016271199681796,
+            0.00021521272719837725
+          ],
+          "bootstrap_95": [
+            -0.00029781117773381994,
+            0.030452975132720893
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.08163435058668256,
+            1.6657868400216103e-06,
+            0.000283234054222703,
+            -9.063701145350933e-05,
+            0.0004551302408799529,
+            -0.00013036886230111122,
+            0.0028741504065692425
+          ],
+          "mean": 0.010629362819599919,
+          "half_bank_means": [
+            0.020481656945776194,
+            0.0007770686934236437
+          ],
+          "bootstrap_95": [
+            2.5908103270921857e-05,
+            0.031067103703026077
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08045880636200309,
+            5.2353134378790855e-06,
+            0.00030238903127610683,
+            -0.001254034461453557,
+            -0.0020859981887042522,
+            -0.0010139541700482368,
+            0.002018964383751154
+          ],
+          "mean": 0.009804580477066338,
+          "half_bank_means": [
+            0.0201929165632464,
+            -0.000583755609113723
+          ],
+          "bootstrap_95": [
+            -0.0009660930081736296,
+            0.030209464495783322
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -5.949987098574638e-07,
+            -0.00013198284432291985,
+            2.3795291781425476e-07,
+            -0.00017423834651708603,
+            -0.0003505100030452013,
+            -0.012989751994609833,
+            -4.556030035018921e-05,
+            -0.0009596147574484348
+          ],
+          "mean": -0.0018315019115107134,
+          "half_bank_means": [
+            -7.664455915801227e-05,
+            -0.0035863592638634145
+          ],
+          "bootstrap_95": [
+            -0.005128018858158612,
+            -8.236225512519015e-05
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -9.51928086578846e-07,
+            -0.0002305726520717144,
+            0.0,
+            -0.0003333454951643944,
+            -0.001241396414116025,
+            -3.251203192397952,
+            -0.0028625705745071173,
+            -0.001984258182346821
+          ],
+          "mean": -0.4072320359555306,
+          "half_bank_means": [
+            -0.0001412175188306719,
+            -0.8143228543922305
+          ],
+          "bootstrap_95": [
+            -1.220143069261394,
+            -0.00044132283655926626
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.4278339222073555e-06,
+            0.00025106524117290974,
+            5.948822945356369e-07,
+            0.00018783099949359894,
+            -0.0015847019385546446,
+            0.00019236898515373468,
+            7.934868335723877e-05,
+            0.001642361981794238
+          ],
+          "mean": 9.628708357922733e-05,
+          "half_bank_means": [
+            0.00011022973922081292,
+            8.234442793764174e-05
+          ],
+          "bootstrap_95": [
+            -0.0005060681734903483,
+            0.0006646431043918706
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.7602225095033646e-07,
+            0.0014765211381018162,
+            1.7847632989287376e-06,
+            0.00023886887356638908,
+            -0.0001503524836152792,
+            0.00024448276963084936,
+            -0.00014333520084619522,
+            0.002626006491482258
+          ],
+          "mean": 0.0005366875411709771,
+          "half_bank_means": [
+            0.0004291746881790459,
+            0.0006442003941629082
+          ],
+          "bootstrap_95": [
+            -1.2665655958699062e-05,
+            0.0012432826773874685
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.617831341922283e-06,
+            0.0003009769134223461,
+            5.354289896786213e-06,
+            0.00025802385061979294,
+            -0.0013137499336153269,
+            -0.002296645659953356,
+            -0.0010269205085933208,
+            0.0017708204686641693
+          ],
+          "mean": -0.0002880948013626039,
+          "half_bank_means": [
+            0.00014043430564925075,
+            -0.0007166239083744586
+          ],
+          "bootstrap_95": [
+            -0.0011222274042665958,
+            0.0004525932479737092
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -3.5692937672138214e-07,
+            -9.858980774879456e-05,
+            -2.3795291781425476e-07,
+            -0.00015910714864730835,
+            -0.0008908864110708237,
+            -3.2382134404033422,
+            -0.002817010274156928,
+            -0.001024643424898386
+          ],
+          "mean": -0.4054005340440199,
+          "half_bank_means": [
+            -6.457295967265964e-05,
+            -0.8107364951283671
+          ],
+          "bootstrap_95": [
+            -1.2150742150559382,
+            -0.00027486298859003043
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.0228326320648193e-06,
+            0.0003830480854958296,
+            3.5692937672138214e-07,
+            0.00036206934601068497,
+            -0.0012341919355094433,
+            0.013182120979763567,
+            0.00012490898370742798,
+            0.002601976739242673
+          ],
+          "mean": 0.0019277889950899407,
+          "half_bank_means": [
+            0.0001868742983788252,
+            0.0036687036918010563
+          ],
+          "bootstrap_95": [
+            -0.00018409182666800916,
+            0.005440021268441342
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.1897645890712738e-07,
+            0.001608503982424736,
+            1.5468103811144829e-06,
+            0.0004131072200834751,
+            0.0002001575194299221,
+            0.013234234764240682,
+            -9.777490049600601e-05,
+            0.0035856212489306927
+          ],
+          "mean": 0.0023681894526816905,
+          "half_bank_means": [
+            0.0005058192473370582,
+            0.004230559658026323
+          ],
+          "bootstrap_95": [
+            0.00020147951327089688,
+            0.00588434641394997
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.0228326320648193e-06,
+            0.00043295975774526596,
+            5.116336978971958e-06,
+            0.00043226219713687897,
+            -0.0009632399305701256,
+            0.010693106334656477,
+            -0.0009813602082431316,
+            0.002730435226112604
+          ],
+          "mean": 0.0015434071101481095,
+          "half_bank_means": [
+            0.00021707886480726302,
+            0.002869735355488956
+          ],
+          "bootstrap_95": [
+            -0.00032652590016368777,
+            0.004503481439314783
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            4,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.3797620087862015e-06,
+            0.00048163789324462414,
+            5.948822945356369e-07,
+            0.0005211764946579933,
+            -0.0003433055244386196,
+            3.251395561383106,
+            0.002941919257864356,
+            0.003626620164141059
+          ],
+          "mean": 0.4073283230391098,
+          "half_bank_means": [
+            0.0002514472580514848,
+            0.8144051988201682
+          ],
+          "bootstrap_95": [
+            0.00032524173002457246,
+            1.220200345516787
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            4.759058356285095e-07,
+            0.0017070937901735306,
+            1.7847632989287376e-06,
+            0.0005722143687307835,
+            0.0010910439305007458,
+            3.251447675167583,
+            0.002719235373660922,
+            0.004610264673829079
+          ],
+          "mean": 0.40776872349670157,
+          "half_bank_means": [
+            0.0005703922070097178,
+            0.8149670547863934
+          ],
+          "bootstrap_95": [
+            0.0007617595099873142,
+            1.2207722196326358
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.6659032553434372e-06,
+            0.0005315495654940605,
+            5.354289896786213e-06,
+            0.0005913693457841873,
+            -7.235351949930191e-05,
+            3.2489065467379987,
+            0.0018356500659137964,
+            0.00375507865101099
+          ],
+          "mean": 0.406943941154168,
+          "half_bank_means": [
+            0.00028165182447992265,
+            0.813606230483856
+          ],
+          "bootstrap_95": [
+            0.00033313520470983353,
+            1.2192809999454766
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.903856173157692e-06,
+            0.0012254558969289064,
+            1.1898810043931007e-06,
+            5.1037874072790146e-05,
+            0.0014343494549393654,
+            5.211378447711468e-05,
+            -0.000222683884203434,
+            0.0009836445096880198
+          ],
+          "mean": 0.00044040045759174973,
+          "half_bank_means": [
+            0.000318944948958233,
+            0.0005618559662252665
+          ],
+          "bootstrap_95": [
+            2.46540814259788e-05,
+            0.0008937606318795583
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.045665264129639e-06,
+            4.991167224943638e-05,
+            4.759407602250576e-06,
+            7.0192851126194e-05,
+            0.0002709520049393177,
+            -0.0024890146451070905,
+            -0.0011062691919505596,
+            0.00012845848686993122
+          ],
+          "mean": -0.00038438188494183123,
+          "half_bank_means": [
+            3.020456642843783e-05,
+            -0.0007989683363121003
+          ],
+          "bootstrap_95": [
+            -0.0011539338727743597,
+            0.00010822429139807348
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            6,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.1418090909719467e-06,
+            -0.00117554422467947,
+            3.5695265978574753e-06,
+            1.9154977053403854e-05,
+            -0.0011633974500000477,
+            -0.002541128429584205,
+            -0.0008835853077471256,
+            -0.0008551860228180885
+          ],
+          "mean": -0.000824782342533581,
+          "half_bank_means": [
+            -0.00028874038252979517,
+            -0.0013608243025373667
+          ],
+          "bootstrap_95": [
+            -0.0014374147314811126,
+            -0.00031736978962726425
+          ],
+          "resolved": true
+        }
+      ],
+      "informative_action_values": true,
+      "flat_action_values": false,
+      "bootstrap_uncertainty": "conditional Monte Carlo; eight paired CF tapes and eight independent ST tapes resampled separately; pair intervals unadjusted for multiplicity",
+      "checkpoint_probability_shift": {
+        "value": -0.002430988737077025,
+        "half_bank_values": [
+          -0.00016290384116356417,
+          -0.004699073632990485
+        ],
+        "bootstrap_95": [
+          -0.007139803703125001,
+          1.3467341090804064e-06
+        ],
+        "definition": "sum_a (pi1040(a)-pi0(a))*Q_owner(a); identical frozen state, downstream policy fixed to owner checkpoint"
+      },
+      "disconnected_ST_tapes": 0,
+      "mean_ST_gradient": [
+        4.343018256136588e-06,
+        1.008204873054197e-05,
+        1.8948762099846306e-05,
+        7.906288592041122e-06,
+        7.207486611537917e-06,
+        -4.894717779757585e-06,
+        -4.095306546503252e-05,
+        -2.639820636751722e-06
+      ],
+      "ST_norm": 4.798023392994039e-05,
+      "ST_tape_norms": [
+        4.096028430928181e-07,
+        1.8444936348457153e-06,
+        3.4346730811385e-07,
+        0.00010227457086813662,
+        5.3650425240942105e-05,
+        1.537266818962879e-06,
+        0.0002336245681820714,
+        2.3768447918310226e-07
+      ],
+      "ST_component_tape_sd": [
+        5.988688920430506e-06,
+        1.7806100725792784e-05,
+        3.993671001150795e-05,
+        1.1539965546634012e-05,
+        1.009165935447796e-05,
+        9.502523113444943e-06,
+        6.916930090916991e-05,
+        3.877130225675768e-06
+      ],
+      "exact_zero_ST_tapes": 0,
+      "small_connected_ST_tapes": 0,
+      "inner_product": 3.224913138658568e-07,
+      "half_bank_inner_products": [
+        2.376988785660722e-08,
+        6.543098981769983e-07
+      ],
+      "inner_product_bootstrap_95": [
+        1.0192292789834867e-09,
+        1.2522217571252208e-06
+      ],
+      "direction": "aligned",
+      "cosine": 0.17641284205252647,
+      "classification": "informative_aligned_ST"
+    },
+    "token": {
+      "Q": [
+        0.01327491099073086,
+        0.012661082539125346,
+        0.0025684072606964037,
+        0.004399909172207117,
+        0.409800443216227,
+        0.0024721201771171764,
+        0.0020317197195254266,
+        0.0028565020620590076
+      ],
+      "Q_tape_sd": [
+        0.028545714202813068,
+        0.028667514254219123,
+        0.001051627118911487,
+        0.004529047047448873,
+        1.1489634606075447,
+        0.0007507566275586405,
+        0.00018405962017056847,
+        0.0009091199081998917
+      ],
+      "conditional_correctness": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pi": [
+        0.11543989800246487,
+        0.11135980547971237,
+        0.13514492356847954,
+        0.1363843694515755,
+        0.0974351786285425,
+        0.13025654037122536,
+        0.12947364481328674,
+        0.1445056396847131
+      ],
+      "entropy": 2.072461426822654,
+      "max_probability": 0.1445056396847131,
+      "saturated_probability": false,
+      "g_CF": [
+        -0.0036411462883977432,
+        -0.0035808099113970576,
+        -0.005709601766441379,
+        -0.005512177633914202,
+        0.035562285435252625,
+        -0.005515619410399847,
+        -0.005539488514147117,
+        -0.0060634419105552746
+      ],
+      "g_CF_norm": 0.038100042836905754,
+      "paired_action_loss_differences": [
+        {
+          "actions": [
+            0,
+            1
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            0.0,
+            0.00021982938051223755,
+            0.0,
+            5.94649463891983e-07,
+            1.0705552995204926e-06,
+            3.21120023727417e-06,
+            0.004682364175096154,
+            3.557652235031128e-06
+          ],
+          "mean": 0.0006138284516055137,
+          "half_bank_means": [
+            5.510600749403238e-05,
+            0.001172550895716995
+          ],
+          "bootstrap_95": [
+            1.0542571544647217e-06,
+            0.0017843025358160957
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08037765882909298,
+            -1.1897645890712738e-07,
+            4.495983012020588e-05,
+            6.078602746129036e-05,
+            0.00021385867148637772,
+            0.004695330513641238,
+            0.00025170156732201576
+          ],
+          "mean": 0.010706503730034456,
+          "half_bank_means": [
+            0.02010758826509118,
+            0.0013054191949777305
+          ],
+          "bootstrap_95": [
+            7.234838703880086e-05,
+            0.030800069896213245
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08024567598477006,
+            1.1897645890712738e-07,
+            -0.00012927851639688015,
+            -0.00028972397558391094,
+            -0.012775893323123455,
+            0.004649770213291049,
+            -0.0007079131901264191
+          ],
+          "mean": 0.008875001818523742,
+          "half_bank_means": [
+            0.02003094370593317,
+            -0.002280940068885684
+          ],
+          "bootstrap_95": [
+            -0.004314361223805463,
+            0.030512541525240522
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.08014708617702127,
+            -1.1897645890712738e-07,
+            -0.0002883856650441885,
+            -0.0011806103866547346,
+            -3.2509893337264657,
+            0.001832759939134121,
+            -0.001732556615024805
+          ],
+          "mean": -0.39652553222549614,
+          "half_bank_means": [
+            0.01996637074626051,
+            -0.8130174351972528
+          ],
+          "bootstrap_95": [
+            -1.219403771603902,
+            0.029725034015427802
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08062872407026589,
+            4.759058356285095e-07,
+            0.00023279082961380482,
+            -0.0015239159110933542,
+            0.0004062276566401124,
+            0.004774679196998477,
+            0.0018940635491162539
+          ],
+          "mean": 0.010802790813613683,
+          "half_bank_means": [
+            0.020217818004311994,
+            0.0013877636229153723
+          ],
+          "bootstrap_95": [
+            -3.478344551695044e-05,
+            0.03112912246469932
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.0818541799671948,
+            1.6657868400216103e-06,
+            0.00028382870368659496,
+            -8.956645615398884e-05,
+            0.0004583414411172271,
+            0.004551995312795043,
+            0.0028777080588042736
+          ],
+          "mean": 0.011243191271205433,
+          "half_bank_means": [
+            0.020536762953270227,
+            0.0019496195891406387
+          ],
+          "bootstrap_95": [
+            0.0003878504914609948,
+            0.03177499561898002
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08067863574251533,
+            5.2353134378790855e-06,
+            0.0003029836807399988,
+            -0.0012529639061540365,
+            -0.002082786988466978,
+            0.0036684100050479174,
+            0.002022522035986185
+          ],
+          "mean": 0.010418408928671852,
+          "half_bank_means": [
+            0.02024802257074043,
+            0.000588795286603272
+          ],
+          "bootstrap_95": [
+            -0.0005307581457600463,
+            0.03085965377067623
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08015782944858074,
+            -1.1897645890712738e-07,
+            4.4365180656313896e-05,
+            5.971547216176987e-05,
+            0.00021064747124910355,
+            1.2966338545084e-05,
+            0.00024814391508698463
+          ],
+          "mean": 0.010092675278428942,
+          "half_bank_means": [
+            0.02005248225759715,
+            0.0001328682992607355
+          ],
+          "bootstrap_95": [
+            3.411451980355196e-05,
+            0.030130649800412357
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08002584660425782,
+            1.1897645890712738e-07,
+            -0.00012987316586077213,
+            -0.00029079453088343143,
+            -0.01277910452336073,
+            -3.259396180510521e-05,
+            -0.0007114708423614502
+          ],
+          "mean": 0.008261173366918229,
+          "half_bank_means": [
+            0.019975837698439136,
+            -0.003453490964602679
+          ],
+          "bootstrap_95": [
+            -0.00488747728522867,
+            0.02989660260755045
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.07992725679650903,
+            -1.1897645890712738e-07,
+            -0.0002889803145080805,
+            -0.001181680941954255,
+            -3.250992544926703,
+            -0.0028496042359620333,
+            -0.0017361142672598362
+          ],
+          "mean": -0.39713936067710165,
+          "half_bank_means": [
+            0.019911264738766477,
+            -0.8141899860929698
+          ],
+          "bootstrap_95": [
+            -1.2199170266907458,
+            0.029216370862195612
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08040889468975365,
+            4.759058356285095e-07,
+            0.00023219618014991283,
+            -0.0015249864663928747,
+            0.00040301645640283823,
+            9.231502190232277e-05,
+            0.0018905058968812227
+          ],
+          "mean": 0.01018896236200817,
+          "half_bank_means": [
+            0.02016271199681796,
+            0.00021521272719837725
+          ],
+          "bootstrap_95": [
+            -0.00029781117773381994,
+            0.030452975132720893
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.08163435058668256,
+            1.6657868400216103e-06,
+            0.000283234054222703,
+            -9.063701145350933e-05,
+            0.0004551302408799529,
+            -0.00013036886230111122,
+            0.0028741504065692425
+          ],
+          "mean": 0.010629362819599919,
+          "half_bank_means": [
+            0.020481656945776194,
+            0.0007770686934236437
+          ],
+          "bootstrap_95": [
+            2.5908103270921857e-05,
+            0.031067103703026077
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08045880636200309,
+            5.2353134378790855e-06,
+            0.00030238903127610683,
+            -0.001254034461453557,
+            -0.0020859981887042522,
+            -0.0010139541700482368,
+            0.002018964383751154
+          ],
+          "mean": 0.009804580477066338,
+          "half_bank_means": [
+            0.0201929165632464,
+            -0.000583755609113723
+          ],
+          "bootstrap_95": [
+            -0.0009660930081736296,
+            0.030209464495783322
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -5.949987098574638e-07,
+            -0.00013198284432291985,
+            2.3795291781425476e-07,
+            -0.00017423834651708603,
+            -0.0003505100030452013,
+            -0.012989751994609833,
+            -4.556030035018921e-05,
+            -0.0009596147574484348
+          ],
+          "mean": -0.0018315019115107134,
+          "half_bank_means": [
+            -7.664455915801227e-05,
+            -0.0035863592638634145
+          ],
+          "bootstrap_95": [
+            -0.005128018858158612,
+            -8.236225512519015e-05
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -9.51928086578846e-07,
+            -0.0002305726520717144,
+            0.0,
+            -0.0003333454951643944,
+            -0.001241396414116025,
+            -3.251203192397952,
+            -0.0028625705745071173,
+            -0.001984258182346821
+          ],
+          "mean": -0.4072320359555306,
+          "half_bank_means": [
+            -0.0001412175188306719,
+            -0.8143228543922305
+          ],
+          "bootstrap_95": [
+            -1.220143069261394,
+            -0.00044132283655926626
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.4278339222073555e-06,
+            0.00025106524117290974,
+            5.948822945356369e-07,
+            0.00018783099949359894,
+            -0.0015847019385546446,
+            0.00019236898515373468,
+            7.934868335723877e-05,
+            0.001642361981794238
+          ],
+          "mean": 9.628708357922733e-05,
+          "half_bank_means": [
+            0.00011022973922081292,
+            8.234442793764174e-05
+          ],
+          "bootstrap_95": [
+            -0.0005060681734903483,
+            0.0006646431043918706
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.7602225095033646e-07,
+            0.0014765211381018162,
+            1.7847632989287376e-06,
+            0.00023886887356638908,
+            -0.0001503524836152792,
+            0.00024448276963084936,
+            -0.00014333520084619522,
+            0.002626006491482258
+          ],
+          "mean": 0.0005366875411709771,
+          "half_bank_means": [
+            0.0004291746881790459,
+            0.0006442003941629082
+          ],
+          "bootstrap_95": [
+            -1.2665655958699062e-05,
+            0.0012432826773874685
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.617831341922283e-06,
+            0.0003009769134223461,
+            5.354289896786213e-06,
+            0.00025802385061979294,
+            -0.0013137499336153269,
+            -0.002296645659953356,
+            -0.0010269205085933208,
+            0.0017708204686641693
+          ],
+          "mean": -0.0002880948013626039,
+          "half_bank_means": [
+            0.00014043430564925075,
+            -0.0007166239083744586
+          ],
+          "bootstrap_95": [
+            -0.0011222274042665958,
+            0.0004525932479737092
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -3.5692937672138214e-07,
+            -9.858980774879456e-05,
+            -2.3795291781425476e-07,
+            -0.00015910714864730835,
+            -0.0008908864110708237,
+            -3.2382134404033422,
+            -0.002817010274156928,
+            -0.001024643424898386
+          ],
+          "mean": -0.4054005340440199,
+          "half_bank_means": [
+            -6.457295967265964e-05,
+            -0.8107364951283671
+          ],
+          "bootstrap_95": [
+            -1.2150742150559382,
+            -0.00027486298859003043
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.0228326320648193e-06,
+            0.0003830480854958296,
+            3.5692937672138214e-07,
+            0.00036206934601068497,
+            -0.0012341919355094433,
+            0.013182120979763567,
+            0.00012490898370742798,
+            0.002601976739242673
+          ],
+          "mean": 0.0019277889950899407,
+          "half_bank_means": [
+            0.0001868742983788252,
+            0.0036687036918010563
+          ],
+          "bootstrap_95": [
+            -0.00018409182666800916,
+            0.005440021268441342
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.1897645890712738e-07,
+            0.001608503982424736,
+            1.5468103811144829e-06,
+            0.0004131072200834751,
+            0.0002001575194299221,
+            0.013234234764240682,
+            -9.777490049600601e-05,
+            0.0035856212489306927
+          ],
+          "mean": 0.0023681894526816905,
+          "half_bank_means": [
+            0.0005058192473370582,
+            0.004230559658026323
+          ],
+          "bootstrap_95": [
+            0.00020147951327089688,
+            0.00588434641394997
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.0228326320648193e-06,
+            0.00043295975774526596,
+            5.116336978971958e-06,
+            0.00043226219713687897,
+            -0.0009632399305701256,
+            0.010693106334656477,
+            -0.0009813602082431316,
+            0.002730435226112604
+          ],
+          "mean": 0.0015434071101481095,
+          "half_bank_means": [
+            0.00021707886480726302,
+            0.002869735355488956
+          ],
+          "bootstrap_95": [
+            -0.00032652590016368777,
+            0.004503481439314783
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            4,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.3797620087862015e-06,
+            0.00048163789324462414,
+            5.948822945356369e-07,
+            0.0005211764946579933,
+            -0.0003433055244386196,
+            3.251395561383106,
+            0.002941919257864356,
+            0.003626620164141059
+          ],
+          "mean": 0.4073283230391098,
+          "half_bank_means": [
+            0.0002514472580514848,
+            0.8144051988201682
+          ],
+          "bootstrap_95": [
+            0.00032524173002457246,
+            1.220200345516787
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            4.759058356285095e-07,
+            0.0017070937901735306,
+            1.7847632989287376e-06,
+            0.0005722143687307835,
+            0.0010910439305007458,
+            3.251447675167583,
+            0.002719235373660922,
+            0.004610264673829079
+          ],
+          "mean": 0.40776872349670157,
+          "half_bank_means": [
+            0.0005703922070097178,
+            0.8149670547863934
+          ],
+          "bootstrap_95": [
+            0.0007617595099873142,
+            1.2207722196326358
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.6659032553434372e-06,
+            0.0005315495654940605,
+            5.354289896786213e-06,
+            0.0005913693457841873,
+            -7.235351949930191e-05,
+            3.2489065467379987,
+            0.0018356500659137964,
+            0.00375507865101099
+          ],
+          "mean": 0.406943941154168,
+          "half_bank_means": [
+            0.00028165182447992265,
+            0.813606230483856
+          ],
+          "bootstrap_95": [
+            0.00033313520470983353,
+            1.2192809999454766
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.903856173157692e-06,
+            0.0012254558969289064,
+            1.1898810043931007e-06,
+            5.1037874072790146e-05,
+            0.0014343494549393654,
+            5.211378447711468e-05,
+            -0.000222683884203434,
+            0.0009836445096880198
+          ],
+          "mean": 0.00044040045759174973,
+          "half_bank_means": [
+            0.000318944948958233,
+            0.0005618559662252665
+          ],
+          "bootstrap_95": [
+            2.46540814259788e-05,
+            0.0008937606318795583
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.045665264129639e-06,
+            4.991167224943638e-05,
+            4.759407602250576e-06,
+            7.0192851126194e-05,
+            0.0002709520049393177,
+            -0.0024890146451070905,
+            -0.0011062691919505596,
+            0.00012845848686993122
+          ],
+          "mean": -0.00038438188494183123,
+          "half_bank_means": [
+            3.020456642843783e-05,
+            -0.0007989683363121003
+          ],
+          "bootstrap_95": [
+            -0.0011539338727743597,
+            0.00010822429139807348
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            6,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.1418090909719467e-06,
+            -0.00117554422467947,
+            3.5695265978574753e-06,
+            1.9154977053403854e-05,
+            -0.0011633974500000477,
+            -0.002541128429584205,
+            -0.0008835853077471256,
+            -0.0008551860228180885
+          ],
+          "mean": -0.000824782342533581,
+          "half_bank_means": [
+            -0.00028874038252979517,
+            -0.0013608243025373667
+          ],
+          "bootstrap_95": [
+            -0.0014374147314811126,
+            -0.00031736978962726425
+          ],
+          "resolved": true
+        }
+      ],
+      "informative_action_values": true,
+      "flat_action_values": false,
+      "bootstrap_uncertainty": "conditional Monte Carlo; eight paired CF tapes and eight independent ST tapes resampled separately; pair intervals unadjusted for multiplicity",
+      "checkpoint_probability_shift": {
+        "value": -0.002430988737077025,
+        "half_bank_values": [
+          -0.00016290384116356417,
+          -0.004699073632990485
+        ],
+        "bootstrap_95": [
+          -0.007139803703125001,
+          1.3467341090804064e-06
+        ],
+        "definition": "sum_a (pi1040(a)-pi0(a))*Q_owner(a); identical frozen state, downstream policy fixed to owner checkpoint"
+      },
+      "disconnected_ST_tapes": 0,
+      "mean_ST_gradient": [
+        2.6287083561005176e-06,
+        6.143849880846375e-06,
+        1.3360746287993663e-05,
+        5.1735906124728e-06,
+        3.8123698545278195e-06,
+        -3.754137915812361e-06,
+        -2.5529661193957054e-05,
+        -1.8354668629427806e-06
+      ],
+      "ST_norm": 3.05563877914138e-05,
+      "ST_tape_norms": [
+        3.8974410167373736e-07,
+        1.2589859792719876e-06,
+        2.4055732703994287e-07,
+        2.3785100224047598e-05,
+        4.4304902411988405e-05,
+        1.041309212804237e-06,
+        0.00017885261755486075,
+        1.353080354081709e-07
+      ],
+      "ST_component_tape_sd": [
+        4.115899718965311e-06,
+        1.2880188263677883e-05,
+        3.0761471122255085e-05,
+        8.7707540590933e-06,
+        5.326550119942296e-06,
+        7.378831459575731e-06,
+        5.0648776029484244e-05,
+        3.189391671582626e-06
+      ],
+      "exact_zero_ST_tapes": 0,
+      "small_connected_ST_tapes": 0,
+      "inner_product": 1.7245973127586804e-07,
+      "half_bank_inner_products": [
+        5.8846790080304874e-09,
+        5.179176980831136e-07
+      ],
+      "inner_product_bootstrap_95": [
+        5.214576036382161e-10,
+        6.550681421396621e-07
+      ],
+      "direction": "aligned",
+      "cosine": 0.14813586850826574,
+      "classification": "informative_aligned_ST"
+    },
+    "next": {
+      "Q": [
+        0.01327491099073086,
+        0.012661082539125346,
+        0.0025684072606964037,
+        0.004399909172207117,
+        0.409800443216227,
+        0.0024721201771171764,
+        0.0020317197195254266,
+        0.0028565020620590076
+      ],
+      "Q_tape_sd": [
+        0.028545714202813068,
+        0.028667514254219123,
+        0.001051627118911487,
+        0.004529047047448873,
+        1.1489634606075447,
+        0.0007507566275586405,
+        0.00018405962017056847,
+        0.0009091199081998917
+      ],
+      "conditional_correctness": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pi": [
+        0.11543989800246487,
+        0.11135980547971237,
+        0.13514492356847954,
+        0.1363843694515755,
+        0.0974351786285425,
+        0.13025654037122536,
+        0.12947364481328674,
+        0.1445056396847131
+      ],
+      "entropy": 2.072461426822654,
+      "max_probability": 0.1445056396847131,
+      "saturated_probability": false,
+      "g_CF": [
+        -0.0036411462883977432,
+        -0.0035808099113970576,
+        -0.005709601766441379,
+        -0.005512177633914202,
+        0.035562285435252625,
+        -0.005515619410399847,
+        -0.005539488514147117,
+        -0.0060634419105552746
+      ],
+      "g_CF_norm": 0.038100042836905754,
+      "paired_action_loss_differences": [
+        {
+          "actions": [
+            0,
+            1
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            0.0,
+            0.00021982938051223755,
+            0.0,
+            5.94649463891983e-07,
+            1.0705552995204926e-06,
+            3.21120023727417e-06,
+            0.004682364175096154,
+            3.557652235031128e-06
+          ],
+          "mean": 0.0006138284516055137,
+          "half_bank_means": [
+            5.510600749403238e-05,
+            0.001172550895716995
+          ],
+          "bootstrap_95": [
+            1.0542571544647217e-06,
+            0.0017843025358160957
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08037765882909298,
+            -1.1897645890712738e-07,
+            4.495983012020588e-05,
+            6.078602746129036e-05,
+            0.00021385867148637772,
+            0.004695330513641238,
+            0.00025170156732201576
+          ],
+          "mean": 0.010706503730034456,
+          "half_bank_means": [
+            0.02010758826509118,
+            0.0013054191949777305
+          ],
+          "bootstrap_95": [
+            7.234838703880086e-05,
+            0.030800069896213245
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08024567598477006,
+            1.1897645890712738e-07,
+            -0.00012927851639688015,
+            -0.00028972397558391094,
+            -0.012775893323123455,
+            0.004649770213291049,
+            -0.0007079131901264191
+          ],
+          "mean": 0.008875001818523742,
+          "half_bank_means": [
+            0.02003094370593317,
+            -0.002280940068885684
+          ],
+          "bootstrap_95": [
+            -0.004314361223805463,
+            0.030512541525240522
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.08014708617702127,
+            -1.1897645890712738e-07,
+            -0.0002883856650441885,
+            -0.0011806103866547346,
+            -3.2509893337264657,
+            0.001832759939134121,
+            -0.001732556615024805
+          ],
+          "mean": -0.39652553222549614,
+          "half_bank_means": [
+            0.01996637074626051,
+            -0.8130174351972528
+          ],
+          "bootstrap_95": [
+            -1.219403771603902,
+            0.029725034015427802
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08062872407026589,
+            4.759058356285095e-07,
+            0.00023279082961380482,
+            -0.0015239159110933542,
+            0.0004062276566401124,
+            0.004774679196998477,
+            0.0018940635491162539
+          ],
+          "mean": 0.010802790813613683,
+          "half_bank_means": [
+            0.020217818004311994,
+            0.0013877636229153723
+          ],
+          "bootstrap_95": [
+            -3.478344551695044e-05,
+            0.03112912246469932
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.0818541799671948,
+            1.6657868400216103e-06,
+            0.00028382870368659496,
+            -8.956645615398884e-05,
+            0.0004583414411172271,
+            0.004551995312795043,
+            0.0028777080588042736
+          ],
+          "mean": 0.011243191271205433,
+          "half_bank_means": [
+            0.020536762953270227,
+            0.0019496195891406387
+          ],
+          "bootstrap_95": [
+            0.0003878504914609948,
+            0.03177499561898002
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08067863574251533,
+            5.2353134378790855e-06,
+            0.0003029836807399988,
+            -0.0012529639061540365,
+            -0.002082786988466978,
+            0.0036684100050479174,
+            0.002022522035986185
+          ],
+          "mean": 0.010418408928671852,
+          "half_bank_means": [
+            0.02024802257074043,
+            0.000588795286603272
+          ],
+          "bootstrap_95": [
+            -0.0005307581457600463,
+            0.03085965377067623
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08015782944858074,
+            -1.1897645890712738e-07,
+            4.4365180656313896e-05,
+            5.971547216176987e-05,
+            0.00021064747124910355,
+            1.2966338545084e-05,
+            0.00024814391508698463
+          ],
+          "mean": 0.010092675278428942,
+          "half_bank_means": [
+            0.02005248225759715,
+            0.0001328682992607355
+          ],
+          "bootstrap_95": [
+            3.411451980355196e-05,
+            0.030130649800412357
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08002584660425782,
+            1.1897645890712738e-07,
+            -0.00012987316586077213,
+            -0.00029079453088343143,
+            -0.01277910452336073,
+            -3.259396180510521e-05,
+            -0.0007114708423614502
+          ],
+          "mean": 0.008261173366918229,
+          "half_bank_means": [
+            0.019975837698439136,
+            -0.003453490964602679
+          ],
+          "bootstrap_95": [
+            -0.00488747728522867,
+            0.02989660260755045
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.07992725679650903,
+            -1.1897645890712738e-07,
+            -0.0002889803145080805,
+            -0.001181680941954255,
+            -3.250992544926703,
+            -0.0028496042359620333,
+            -0.0017361142672598362
+          ],
+          "mean": -0.39713936067710165,
+          "half_bank_means": [
+            0.019911264738766477,
+            -0.8141899860929698
+          ],
+          "bootstrap_95": [
+            -1.2199170266907458,
+            0.029216370862195612
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08040889468975365,
+            4.759058356285095e-07,
+            0.00023219618014991283,
+            -0.0015249864663928747,
+            0.00040301645640283823,
+            9.231502190232277e-05,
+            0.0018905058968812227
+          ],
+          "mean": 0.01018896236200817,
+          "half_bank_means": [
+            0.02016271199681796,
+            0.00021521272719837725
+          ],
+          "bootstrap_95": [
+            -0.00029781117773381994,
+            0.030452975132720893
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.08163435058668256,
+            1.6657868400216103e-06,
+            0.000283234054222703,
+            -9.063701145350933e-05,
+            0.0004551302408799529,
+            -0.00013036886230111122,
+            0.0028741504065692425
+          ],
+          "mean": 0.010629362819599919,
+          "half_bank_means": [
+            0.020481656945776194,
+            0.0007770686934236437
+          ],
+          "bootstrap_95": [
+            2.5908103270921857e-05,
+            0.031067103703026077
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08045880636200309,
+            5.2353134378790855e-06,
+            0.00030238903127610683,
+            -0.001254034461453557,
+            -0.0020859981887042522,
+            -0.0010139541700482368,
+            0.002018964383751154
+          ],
+          "mean": 0.009804580477066338,
+          "half_bank_means": [
+            0.0201929165632464,
+            -0.000583755609113723
+          ],
+          "bootstrap_95": [
+            -0.0009660930081736296,
+            0.030209464495783322
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -5.949987098574638e-07,
+            -0.00013198284432291985,
+            2.3795291781425476e-07,
+            -0.00017423834651708603,
+            -0.0003505100030452013,
+            -0.012989751994609833,
+            -4.556030035018921e-05,
+            -0.0009596147574484348
+          ],
+          "mean": -0.0018315019115107134,
+          "half_bank_means": [
+            -7.664455915801227e-05,
+            -0.0035863592638634145
+          ],
+          "bootstrap_95": [
+            -0.005128018858158612,
+            -8.236225512519015e-05
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -9.51928086578846e-07,
+            -0.0002305726520717144,
+            0.0,
+            -0.0003333454951643944,
+            -0.001241396414116025,
+            -3.251203192397952,
+            -0.0028625705745071173,
+            -0.001984258182346821
+          ],
+          "mean": -0.4072320359555306,
+          "half_bank_means": [
+            -0.0001412175188306719,
+            -0.8143228543922305
+          ],
+          "bootstrap_95": [
+            -1.220143069261394,
+            -0.00044132283655926626
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.4278339222073555e-06,
+            0.00025106524117290974,
+            5.948822945356369e-07,
+            0.00018783099949359894,
+            -0.0015847019385546446,
+            0.00019236898515373468,
+            7.934868335723877e-05,
+            0.001642361981794238
+          ],
+          "mean": 9.628708357922733e-05,
+          "half_bank_means": [
+            0.00011022973922081292,
+            8.234442793764174e-05
+          ],
+          "bootstrap_95": [
+            -0.0005060681734903483,
+            0.0006646431043918706
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.7602225095033646e-07,
+            0.0014765211381018162,
+            1.7847632989287376e-06,
+            0.00023886887356638908,
+            -0.0001503524836152792,
+            0.00024448276963084936,
+            -0.00014333520084619522,
+            0.002626006491482258
+          ],
+          "mean": 0.0005366875411709771,
+          "half_bank_means": [
+            0.0004291746881790459,
+            0.0006442003941629082
+          ],
+          "bootstrap_95": [
+            -1.2665655958699062e-05,
+            0.0012432826773874685
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.617831341922283e-06,
+            0.0003009769134223461,
+            5.354289896786213e-06,
+            0.00025802385061979294,
+            -0.0013137499336153269,
+            -0.002296645659953356,
+            -0.0010269205085933208,
+            0.0017708204686641693
+          ],
+          "mean": -0.0002880948013626039,
+          "half_bank_means": [
+            0.00014043430564925075,
+            -0.0007166239083744586
+          ],
+          "bootstrap_95": [
+            -0.0011222274042665958,
+            0.0004525932479737092
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -3.5692937672138214e-07,
+            -9.858980774879456e-05,
+            -2.3795291781425476e-07,
+            -0.00015910714864730835,
+            -0.0008908864110708237,
+            -3.2382134404033422,
+            -0.002817010274156928,
+            -0.001024643424898386
+          ],
+          "mean": -0.4054005340440199,
+          "half_bank_means": [
+            -6.457295967265964e-05,
+            -0.8107364951283671
+          ],
+          "bootstrap_95": [
+            -1.2150742150559382,
+            -0.00027486298859003043
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.0228326320648193e-06,
+            0.0003830480854958296,
+            3.5692937672138214e-07,
+            0.00036206934601068497,
+            -0.0012341919355094433,
+            0.013182120979763567,
+            0.00012490898370742798,
+            0.002601976739242673
+          ],
+          "mean": 0.0019277889950899407,
+          "half_bank_means": [
+            0.0001868742983788252,
+            0.0036687036918010563
+          ],
+          "bootstrap_95": [
+            -0.00018409182666800916,
+            0.005440021268441342
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.1897645890712738e-07,
+            0.001608503982424736,
+            1.5468103811144829e-06,
+            0.0004131072200834751,
+            0.0002001575194299221,
+            0.013234234764240682,
+            -9.777490049600601e-05,
+            0.0035856212489306927
+          ],
+          "mean": 0.0023681894526816905,
+          "half_bank_means": [
+            0.0005058192473370582,
+            0.004230559658026323
+          ],
+          "bootstrap_95": [
+            0.00020147951327089688,
+            0.00588434641394997
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.0228326320648193e-06,
+            0.00043295975774526596,
+            5.116336978971958e-06,
+            0.00043226219713687897,
+            -0.0009632399305701256,
+            0.010693106334656477,
+            -0.0009813602082431316,
+            0.002730435226112604
+          ],
+          "mean": 0.0015434071101481095,
+          "half_bank_means": [
+            0.00021707886480726302,
+            0.002869735355488956
+          ],
+          "bootstrap_95": [
+            -0.00032652590016368777,
+            0.004503481439314783
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            4,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.3797620087862015e-06,
+            0.00048163789324462414,
+            5.948822945356369e-07,
+            0.0005211764946579933,
+            -0.0003433055244386196,
+            3.251395561383106,
+            0.002941919257864356,
+            0.003626620164141059
+          ],
+          "mean": 0.4073283230391098,
+          "half_bank_means": [
+            0.0002514472580514848,
+            0.8144051988201682
+          ],
+          "bootstrap_95": [
+            0.00032524173002457246,
+            1.220200345516787
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            4.759058356285095e-07,
+            0.0017070937901735306,
+            1.7847632989287376e-06,
+            0.0005722143687307835,
+            0.0010910439305007458,
+            3.251447675167583,
+            0.002719235373660922,
+            0.004610264673829079
+          ],
+          "mean": 0.40776872349670157,
+          "half_bank_means": [
+            0.0005703922070097178,
+            0.8149670547863934
+          ],
+          "bootstrap_95": [
+            0.0007617595099873142,
+            1.2207722196326358
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.6659032553434372e-06,
+            0.0005315495654940605,
+            5.354289896786213e-06,
+            0.0005913693457841873,
+            -7.235351949930191e-05,
+            3.2489065467379987,
+            0.0018356500659137964,
+            0.00375507865101099
+          ],
+          "mean": 0.406943941154168,
+          "half_bank_means": [
+            0.00028165182447992265,
+            0.813606230483856
+          ],
+          "bootstrap_95": [
+            0.00033313520470983353,
+            1.2192809999454766
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.903856173157692e-06,
+            0.0012254558969289064,
+            1.1898810043931007e-06,
+            5.1037874072790146e-05,
+            0.0014343494549393654,
+            5.211378447711468e-05,
+            -0.000222683884203434,
+            0.0009836445096880198
+          ],
+          "mean": 0.00044040045759174973,
+          "half_bank_means": [
+            0.000318944948958233,
+            0.0005618559662252665
+          ],
+          "bootstrap_95": [
+            2.46540814259788e-05,
+            0.0008937606318795583
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.045665264129639e-06,
+            4.991167224943638e-05,
+            4.759407602250576e-06,
+            7.0192851126194e-05,
+            0.0002709520049393177,
+            -0.0024890146451070905,
+            -0.0011062691919505596,
+            0.00012845848686993122
+          ],
+          "mean": -0.00038438188494183123,
+          "half_bank_means": [
+            3.020456642843783e-05,
+            -0.0007989683363121003
+          ],
+          "bootstrap_95": [
+            -0.0011539338727743597,
+            0.00010822429139807348
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            6,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.1418090909719467e-06,
+            -0.00117554422467947,
+            3.5695265978574753e-06,
+            1.9154977053403854e-05,
+            -0.0011633974500000477,
+            -0.002541128429584205,
+            -0.0008835853077471256,
+            -0.0008551860228180885
+          ],
+          "mean": -0.000824782342533581,
+          "half_bank_means": [
+            -0.00028874038252979517,
+            -0.0013608243025373667
+          ],
+          "bootstrap_95": [
+            -0.0014374147314811126,
+            -0.00031736978962726425
+          ],
+          "resolved": true
+        }
+      ],
+      "informative_action_values": true,
+      "flat_action_values": false,
+      "bootstrap_uncertainty": "conditional Monte Carlo; eight paired CF tapes and eight independent ST tapes resampled separately; pair intervals unadjusted for multiplicity",
+      "checkpoint_probability_shift": {
+        "value": -0.002430988737077025,
+        "half_bank_values": [
+          -0.00016290384116356417,
+          -0.004699073632990485
+        ],
+        "bootstrap_95": [
+          -0.007139803703125001,
+          1.3467341090804064e-06
+        ],
+        "definition": "sum_a (pi1040(a)-pi0(a))*Q_owner(a); identical frozen state, downstream policy fixed to owner checkpoint"
+      },
+      "disconnected_ST_tapes": 0,
+      "mean_ST_gradient": [
+        2.6287083561005176e-06,
+        6.143849880846375e-06,
+        1.3360746287993663e-05,
+        5.1735906124728e-06,
+        3.8123698545278195e-06,
+        -3.754137915812361e-06,
+        -2.5529661193957054e-05,
+        -1.8354668629427806e-06
+      ],
+      "ST_norm": 3.05563877914138e-05,
+      "ST_tape_norms": [
+        3.8974410167373736e-07,
+        1.2589859792719876e-06,
+        2.4055732703994287e-07,
+        2.3785100224047598e-05,
+        4.4304902411988405e-05,
+        1.041309212804237e-06,
+        0.00017885261755486075,
+        1.353080354081709e-07
+      ],
+      "ST_component_tape_sd": [
+        4.115899718965311e-06,
+        1.2880188263677883e-05,
+        3.0761471122255085e-05,
+        8.7707540590933e-06,
+        5.326550119942296e-06,
+        7.378831459575731e-06,
+        5.0648776029484244e-05,
+        3.189391671582626e-06
+      ],
+      "exact_zero_ST_tapes": 0,
+      "small_connected_ST_tapes": 0,
+      "inner_product": 1.7245973127586804e-07,
+      "half_bank_inner_products": [
+        5.8846790080304874e-09,
+        5.179176980831136e-07
+      ],
+      "inner_product_bootstrap_95": [
+        5.214576036382161e-10,
+        6.550681421396621e-07
+      ],
+      "direction": "aligned",
+      "cosine": 0.14813586850826574,
+      "classification": "informative_aligned_ST"
+    },
+    "full": {
+      "Q": [
+        0.01327491099073086,
+        0.012661082539125346,
+        0.0025684072606964037,
+        0.004399909172207117,
+        0.409800443216227,
+        0.0024721201771171764,
+        0.0020317197195254266,
+        0.0028565020620590076
+      ],
+      "Q_tape_sd": [
+        0.028545714202813068,
+        0.028667514254219123,
+        0.001051627118911487,
+        0.004529047047448873,
+        1.1489634606075447,
+        0.0007507566275586405,
+        0.00018405962017056847,
+        0.0009091199081998917
+      ],
+      "conditional_correctness": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.875,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "pi": [
+        0.11543989800246487,
+        0.11135980547971237,
+        0.13514492356847954,
+        0.1363843694515755,
+        0.0974351786285425,
+        0.13025654037122536,
+        0.12947364481328674,
+        0.1445056396847131
+      ],
+      "entropy": 2.072461426822654,
+      "max_probability": 0.1445056396847131,
+      "saturated_probability": false,
+      "g_CF": [
+        -0.0036411462883977432,
+        -0.0035808099113970576,
+        -0.005709601766441379,
+        -0.005512177633914202,
+        0.035562285435252625,
+        -0.005515619410399847,
+        -0.005539488514147117,
+        -0.0060634419105552746
+      ],
+      "g_CF_norm": 0.038100042836905754,
+      "paired_action_loss_differences": [
+        {
+          "actions": [
+            0,
+            1
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            0.0,
+            0.00021982938051223755,
+            0.0,
+            5.94649463891983e-07,
+            1.0705552995204926e-06,
+            3.21120023727417e-06,
+            0.004682364175096154,
+            3.557652235031128e-06
+          ],
+          "mean": 0.0006138284516055137,
+          "half_bank_means": [
+            5.510600749403238e-05,
+            0.001172550895716995
+          ],
+          "bootstrap_95": [
+            1.0542571544647217e-06,
+            0.0017843025358160957
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08037765882909298,
+            -1.1897645890712738e-07,
+            4.495983012020588e-05,
+            6.078602746129036e-05,
+            0.00021385867148637772,
+            0.004695330513641238,
+            0.00025170156732201576
+          ],
+          "mean": 0.010706503730034456,
+          "half_bank_means": [
+            0.02010758826509118,
+            0.0013054191949777305
+          ],
+          "bootstrap_95": [
+            7.234838703880086e-05,
+            0.030800069896213245
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08024567598477006,
+            1.1897645890712738e-07,
+            -0.00012927851639688015,
+            -0.00028972397558391094,
+            -0.012775893323123455,
+            0.004649770213291049,
+            -0.0007079131901264191
+          ],
+          "mean": 0.008875001818523742,
+          "half_bank_means": [
+            0.02003094370593317,
+            -0.002280940068885684
+          ],
+          "bootstrap_95": [
+            -0.004314361223805463,
+            0.030512541525240522
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.08014708617702127,
+            -1.1897645890712738e-07,
+            -0.0002883856650441885,
+            -0.0011806103866547346,
+            -3.2509893337264657,
+            0.001832759939134121,
+            -0.001732556615024805
+          ],
+          "mean": -0.39652553222549614,
+          "half_bank_means": [
+            0.01996637074626051,
+            -0.8130174351972528
+          ],
+          "bootstrap_95": [
+            -1.219403771603902,
+            0.029725034015427802
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08062872407026589,
+            4.759058356285095e-07,
+            0.00023279082961380482,
+            -0.0015239159110933542,
+            0.0004062276566401124,
+            0.004774679196998477,
+            0.0018940635491162539
+          ],
+          "mean": 0.010802790813613683,
+          "half_bank_means": [
+            0.020217818004311994,
+            0.0013877636229153723
+          ],
+          "bootstrap_95": [
+            -3.478344551695044e-05,
+            0.03112912246469932
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            0,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.0818541799671948,
+            1.6657868400216103e-06,
+            0.00028382870368659496,
+            -8.956645615398884e-05,
+            0.0004583414411172271,
+            0.004551995312795043,
+            0.0028777080588042736
+          ],
+          "mean": 0.011243191271205433,
+          "half_bank_means": [
+            0.020536762953270227,
+            0.0019496195891406387
+          ],
+          "bootstrap_95": [
+            0.0003878504914609948,
+            0.03177499561898002
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            0,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08067863574251533,
+            5.2353134378790855e-06,
+            0.0003029836807399988,
+            -0.0012529639061540365,
+            -0.002082786988466978,
+            0.0036684100050479174,
+            0.002022522035986185
+          ],
+          "mean": 0.010418408928671852,
+          "half_bank_means": [
+            0.02024802257074043,
+            0.000588795286603272
+          ],
+          "bootstrap_95": [
+            -0.0005307581457600463,
+            0.03085965377067623
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            2
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.853377610445023e-06,
+            0.08015782944858074,
+            -1.1897645890712738e-07,
+            4.4365180656313896e-05,
+            5.971547216176987e-05,
+            0.00021064747124910355,
+            1.2966338545084e-05,
+            0.00024814391508698463
+          ],
+          "mean": 0.010092675278428942,
+          "half_bank_means": [
+            0.02005248225759715,
+            0.0001328682992607355
+          ],
+          "bootstrap_95": [
+            3.411451980355196e-05,
+            0.030130649800412357
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.258378900587559e-06,
+            0.08002584660425782,
+            1.1897645890712738e-07,
+            -0.00012987316586077213,
+            -0.00029079453088343143,
+            -0.01277910452336073,
+            -3.259396180510521e-05,
+            -0.0007114708423614502
+          ],
+          "mean": 0.008261173366918229,
+          "half_bank_means": [
+            0.019975837698439136,
+            -0.003453490964602679
+          ],
+          "bootstrap_95": [
+            -0.00488747728522867,
+            0.02989660260755045
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            6.901449523866177e-06,
+            0.07992725679650903,
+            -1.1897645890712738e-07,
+            -0.0002889803145080805,
+            -0.001181680941954255,
+            -3.250992544926703,
+            -0.0028496042359620333,
+            -0.0017361142672598362
+          ],
+          "mean": -0.39713936067710165,
+          "half_bank_means": [
+            0.019911264738766477,
+            -0.8141899860929698
+          ],
+          "bootstrap_95": [
+            -1.2199170266907458,
+            0.029216370862195612
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            9.281211532652378e-06,
+            0.08040889468975365,
+            4.759058356285095e-07,
+            0.00023219618014991283,
+            -0.0015249864663928747,
+            0.00040301645640283823,
+            9.231502190232277e-05,
+            0.0018905058968812227
+          ],
+          "mean": 0.01018896236200817,
+          "half_bank_means": [
+            0.02016271199681796,
+            0.00021521272719837725
+          ],
+          "bootstrap_95": [
+            -0.00029781117773381994,
+            0.030452975132720893
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            1,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            7.377355359494686e-06,
+            0.08163435058668256,
+            1.6657868400216103e-06,
+            0.000283234054222703,
+            -9.063701145350933e-05,
+            0.0004551302408799529,
+            -0.00013036886230111122,
+            0.0028741504065692425
+          ],
+          "mean": 0.010629362819599919,
+          "half_bank_means": [
+            0.020481656945776194,
+            0.0007770686934236437
+          ],
+          "bootstrap_95": [
+            2.5908103270921857e-05,
+            0.031067103703026077
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            1,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            5.235546268522739e-06,
+            0.08045880636200309,
+            5.2353134378790855e-06,
+            0.00030238903127610683,
+            -0.001254034461453557,
+            -0.0020859981887042522,
+            -0.0010139541700482368,
+            0.002018964383751154
+          ],
+          "mean": 0.009804580477066338,
+          "half_bank_means": [
+            0.0201929165632464,
+            -0.000583755609113723
+          ],
+          "bootstrap_95": [
+            -0.0009660930081736296,
+            0.030209464495783322
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            3
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -5.949987098574638e-07,
+            -0.00013198284432291985,
+            2.3795291781425476e-07,
+            -0.00017423834651708603,
+            -0.0003505100030452013,
+            -0.012989751994609833,
+            -4.556030035018921e-05,
+            -0.0009596147574484348
+          ],
+          "mean": -0.0018315019115107134,
+          "half_bank_means": [
+            -7.664455915801227e-05,
+            -0.0035863592638634145
+          ],
+          "bootstrap_95": [
+            -0.005128018858158612,
+            -8.236225512519015e-05
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -9.51928086578846e-07,
+            -0.0002305726520717144,
+            0.0,
+            -0.0003333454951643944,
+            -0.001241396414116025,
+            -3.251203192397952,
+            -0.0028625705745071173,
+            -0.001984258182346821
+          ],
+          "mean": -0.4072320359555306,
+          "half_bank_means": [
+            -0.0001412175188306719,
+            -0.8143228543922305
+          ],
+          "bootstrap_95": [
+            -1.220143069261394,
+            -0.00044132283655926626
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            2,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.4278339222073555e-06,
+            0.00025106524117290974,
+            5.948822945356369e-07,
+            0.00018783099949359894,
+            -0.0015847019385546446,
+            0.00019236898515373468,
+            7.934868335723877e-05,
+            0.001642361981794238
+          ],
+          "mean": 9.628708357922733e-05,
+          "half_bank_means": [
+            0.00011022973922081292,
+            8.234442793764174e-05
+          ],
+          "bootstrap_95": [
+            -0.0005060681734903483,
+            0.0006646431043918706
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.7602225095033646e-07,
+            0.0014765211381018162,
+            1.7847632989287376e-06,
+            0.00023886887356638908,
+            -0.0001503524836152792,
+            0.00024448276963084936,
+            -0.00014333520084619522,
+            0.002626006491482258
+          ],
+          "mean": 0.0005366875411709771,
+          "half_bank_means": [
+            0.0004291746881790459,
+            0.0006442003941629082
+          ],
+          "bootstrap_95": [
+            -1.2665655958699062e-05,
+            0.0012432826773874685
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            2,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.617831341922283e-06,
+            0.0003009769134223461,
+            5.354289896786213e-06,
+            0.00025802385061979294,
+            -0.0013137499336153269,
+            -0.002296645659953356,
+            -0.0010269205085933208,
+            0.0017708204686641693
+          ],
+          "mean": -0.0002880948013626039,
+          "half_bank_means": [
+            0.00014043430564925075,
+            -0.0007166239083744586
+          ],
+          "bootstrap_95": [
+            -0.0011222274042665958,
+            0.0004525932479737092
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            4
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -3.5692937672138214e-07,
+            -9.858980774879456e-05,
+            -2.3795291781425476e-07,
+            -0.00015910714864730835,
+            -0.0008908864110708237,
+            -3.2382134404033422,
+            -0.002817010274156928,
+            -0.001024643424898386
+          ],
+          "mean": -0.4054005340440199,
+          "half_bank_means": [
+            -6.457295967265964e-05,
+            -0.8107364951283671
+          ],
+          "bootstrap_95": [
+            -1.2150742150559382,
+            -0.00027486298859003043
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.0228326320648193e-06,
+            0.0003830480854958296,
+            3.5692937672138214e-07,
+            0.00036206934601068497,
+            -0.0012341919355094433,
+            0.013182120979763567,
+            0.00012490898370742798,
+            0.002601976739242673
+          ],
+          "mean": 0.0019277889950899407,
+          "half_bank_means": [
+            0.0001868742983788252,
+            0.0036687036918010563
+          ],
+          "bootstrap_95": [
+            -0.00018409182666800916,
+            0.005440021268441342
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            3,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            1.1897645890712738e-07,
+            0.001608503982424736,
+            1.5468103811144829e-06,
+            0.0004131072200834751,
+            0.0002001575194299221,
+            0.013234234764240682,
+            -9.777490049600601e-05,
+            0.0035856212489306927
+          ],
+          "mean": 0.0023681894526816905,
+          "half_bank_means": [
+            0.0005058192473370582,
+            0.004230559658026323
+          ],
+          "bootstrap_95": [
+            0.00020147951327089688,
+            0.00588434641394997
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            3,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.0228326320648193e-06,
+            0.00043295975774526596,
+            5.116336978971958e-06,
+            0.00043226219713687897,
+            -0.0009632399305701256,
+            0.010693106334656477,
+            -0.0009813602082431316,
+            0.002730435226112604
+          ],
+          "mean": 0.0015434071101481095,
+          "half_bank_means": [
+            0.00021707886480726302,
+            0.002869735355488956
+          ],
+          "bootstrap_95": [
+            -0.00032652590016368777,
+            0.004503481439314783
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            4,
+            5
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            2.3797620087862015e-06,
+            0.00048163789324462414,
+            5.948822945356369e-07,
+            0.0005211764946579933,
+            -0.0003433055244386196,
+            3.251395561383106,
+            0.002941919257864356,
+            0.003626620164141059
+          ],
+          "mean": 0.4073283230391098,
+          "half_bank_means": [
+            0.0002514472580514848,
+            0.8144051988201682
+          ],
+          "bootstrap_95": [
+            0.00032524173002457246,
+            1.220200345516787
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            4.759058356285095e-07,
+            0.0017070937901735306,
+            1.7847632989287376e-06,
+            0.0005722143687307835,
+            0.0010910439305007458,
+            3.251447675167583,
+            0.002719235373660922,
+            0.004610264673829079
+          ],
+          "mean": 0.40776872349670157,
+          "half_bank_means": [
+            0.0005703922070097178,
+            0.8149670547863934
+          ],
+          "bootstrap_95": [
+            0.0007617595099873142,
+            1.2207722196326358
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            4,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.6659032553434372e-06,
+            0.0005315495654940605,
+            5.354289896786213e-06,
+            0.0005913693457841873,
+            -7.235351949930191e-05,
+            3.2489065467379987,
+            0.0018356500659137964,
+            0.00375507865101099
+          ],
+          "mean": 0.406943941154168,
+          "half_bank_means": [
+            0.00028165182447992265,
+            0.813606230483856
+          ],
+          "bootstrap_95": [
+            0.00033313520470983353,
+            1.2192809999454766
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            6
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -1.903856173157692e-06,
+            0.0012254558969289064,
+            1.1898810043931007e-06,
+            5.1037874072790146e-05,
+            0.0014343494549393654,
+            5.211378447711468e-05,
+            -0.000222683884203434,
+            0.0009836445096880198
+          ],
+          "mean": 0.00044040045759174973,
+          "half_bank_means": [
+            0.000318944948958233,
+            0.0005618559662252665
+          ],
+          "bootstrap_95": [
+            2.46540814259788e-05,
+            0.0008937606318795583
+          ],
+          "resolved": true
+        },
+        {
+          "actions": [
+            5,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -4.045665264129639e-06,
+            4.991167224943638e-05,
+            4.759407602250576e-06,
+            7.0192851126194e-05,
+            0.0002709520049393177,
+            -0.0024890146451070905,
+            -0.0011062691919505596,
+            0.00012845848686993122
+          ],
+          "mean": -0.00038438188494183123,
+          "half_bank_means": [
+            3.020456642843783e-05,
+            -0.0007989683363121003
+          ],
+          "bootstrap_95": [
+            -0.0011539338727743597,
+            0.00010822429139807348
+          ],
+          "resolved": false
+        },
+        {
+          "actions": [
+            6,
+            7
+          ],
+          "definition": "Q(a)-Q(b)",
+          "paired_tape_deltas": [
+            -2.1418090909719467e-06,
+            -0.00117554422467947,
+            3.5695265978574753e-06,
+            1.9154977053403854e-05,
+            -0.0011633974500000477,
+            -0.002541128429584205,
+            -0.0008835853077471256,
+            -0.0008551860228180885
+          ],
+          "mean": -0.000824782342533581,
+          "half_bank_means": [
+            -0.00028874038252979517,
+            -0.0013608243025373667
+          ],
+          "bootstrap_95": [
+            -0.0014374147314811126,
+            -0.00031736978962726425
+          ],
+          "resolved": true
+        }
+      ],
+      "informative_action_values": true,
+      "flat_action_values": false,
+      "bootstrap_uncertainty": "conditional Monte Carlo; eight paired CF tapes and eight independent ST tapes resampled separately; pair intervals unadjusted for multiplicity",
+      "checkpoint_probability_shift": {
+        "value": -0.002430988737077025,
+        "half_bank_values": [
+          -0.00016290384116356417,
+          -0.004699073632990485
+        ],
+        "bootstrap_95": [
+          -0.007139803703125001,
+          1.3467341090804064e-06
+        ],
+        "definition": "sum_a (pi1040(a)-pi0(a))*Q_owner(a); identical frozen state, downstream policy fixed to owner checkpoint"
+      },
+      "disconnected_ST_tapes": 0,
+      "mean_ST_gradient": [
+        2.6287083561005176e-06,
+        6.143849880846375e-06,
+        1.3360746287993663e-05,
+        5.1735906124728e-06,
+        3.8123698545278195e-06,
+        -3.754137915812361e-06,
+        -2.5529661193957054e-05,
+        -1.8354668629427806e-06
+      ],
+      "ST_norm": 3.05563877914138e-05,
+      "ST_tape_norms": [
+        3.8974410167373736e-07,
+        1.2589859792719876e-06,
+        2.4055732703994287e-07,
+        2.3785100224047598e-05,
+        4.4304902411988405e-05,
+        1.041309212804237e-06,
+        0.00017885261755486075,
+        1.353080354081709e-07
+      ],
+      "ST_component_tape_sd": [
+        4.115899718965311e-06,
+        1.2880188263677883e-05,
+        3.0761471122255085e-05,
+        8.7707540590933e-06,
+        5.326550119942296e-06,
+        7.378831459575731e-06,
+        5.0648776029484244e-05,
+        3.189391671582626e-06
+      ],
+      "exact_zero_ST_tapes": 0,
+      "small_connected_ST_tapes": 0,
+      "inner_product": 1.7245973127586804e-07,
+      "half_bank_inner_products": [
+        5.8846790080304874e-09,
+        5.179176980831136e-07
+      ],
+      "inner_product_bootstrap_95": [
+        5.214576036382161e-10,
+        6.550681421396621e-07
+      ],
+      "direction": "aligned",
+      "cosine": 0.14813586850826574,
+      "classification": "informative_aligned_ST"
+    }
+  },
+  "components": {
+    "exec": {
+      "mean": [
+        4.343018256136588e-06,
+        1.008204873054197e-05,
+        1.8948762099846306e-05,
+        7.906288592041122e-06,
+        7.207486611537917e-06,
+        -4.894717779757585e-06,
+        -4.095306546503252e-05,
+        -2.639820636751722e-06
+      ],
+      "mean_L2": 4.798023392994039e-05,
+      "tape_L2": [
+        4.096028430928181e-07,
+        1.8444936348457153e-06,
+        3.4346730811385e-07,
+        0.00010227457086813662,
+        5.3650425240942105e-05,
+        1.537266818962879e-06,
+        0.0002336245681820714,
+        2.3768447918310226e-07
+      ],
+      "component_tape_sd": [
+        5.988688920430506e-06,
+        1.7806100725792784e-05,
+        3.993671001150795e-05,
+        1.1539965546634012e-05,
+        1.009165935447796e-05,
+        9.502523113444943e-06,
+        6.916930090916991e-05,
+        3.877130225675768e-06
+      ],
+      "projection": 3.224913138658568e-07,
+      "projection_by_tape": [
+        1.6090125372573617e-09,
+        2.4256344315350465e-08,
+        1.6207793617898175e-09,
+        1.1442707831851644e-06,
+        6.793388805842401e-07,
+        4.877950762164336e-08,
+        6.786294037499824e-07,
+        1.4257995714265744e-09
+      ],
+      "projection_halves": [
+        2.376988785660722e-08,
+        6.543098981769983e-07
+      ],
+      "projection_bootstrap_95": [
+        1.0192292789834867e-09,
+        1.2522217571252208e-06
+      ],
+      "resolved_projection_sign": "positive"
+    },
+    "within": {
+      "mean": [
+        -1.71430992845778e-06,
+        -3.9381988496955955e-06,
+        -5.588015811852642e-06,
+        -2.7326979510355898e-06,
+        -3.3951166433787705e-06,
+        1.1405798621133556e-06,
+        1.542340472582282e-05,
+        8.043537738089412e-07
+      ],
+      "mean_L2": 1.756411014795917e-05,
+      "tape_L2": [
+        1.9918572981564272e-08,
+        5.856553059670461e-07,
+        1.0521487009871847e-07,
+        7.850206174627491e-05,
+        9.345542247204474e-06,
+        4.960764737806265e-07,
+        5.477197050045277e-05,
+        1.0877504962047262e-07
+      ],
+      "component_tape_sd": [
+        3.050685698160977e-06,
+        7.1530470748746024e-06,
+        1.005988817127538e-05,
+        4.338882663890625e-06,
+        7.051004694133497e-06,
+        2.1538000562070435e-06,
+        2.7071277978957363e-05,
+        1.1047203307201184e-06
+      ],
+      "projection": -1.5003158111175286e-07,
+      "projection_by_tape": [
+        -7.8158918701188e-11,
+        -7.951478485114928e-09,
+        -7.034913066509212e-10,
+        -8.965611778827802e-07,
+        -1.186249313615289e-07,
+        -1.5883684020463456e-08,
+        -1.5942089148475445e-07,
+        -1.0288354340288209e-09
+      ],
+      "projection_halves": [
+        -1.788520965850364e-08,
+        -1.3639220010298412e-07
+      ],
+      "projection_bootstrap_95": [
+        -7.259600114451547e-07,
+        -4.434759010083047e-10
+      ],
+      "resolved_projection_sign": "negative"
+    },
+    "next": {
+      "mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_L2": 0.0,
+      "tape_L2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "component_tape_sd": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projection": 0.0,
+      "projection_by_tape": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projection_halves": [
+        0.0,
+        0.0
+      ],
+      "projection_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "resolved_projection_sign": "unresolved"
+    },
+    "distant": {
+      "mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_L2": 0.0,
+      "tape_L2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "component_tape_sd": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projection": 0.0,
+      "projection_by_tape": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "projection_halves": [
+        0.0,
+        0.0
+      ],
+      "projection_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "resolved_projection_sign": "unresolved"
+    }
+  },
+  "classification": "component_effect_with_resolved_full_alignment",
+  "variance": {
+    "definition": "sample trace covariance; eight paired ST vectors, ddof1",
+    "execution": 7.0725970905020645e-09,
+    "remaining": 9.689299861634586e-10,
+    "full": 3.8643241349834995e-09,
+    "execution_remaining_covariance": -2.088601470841012e-09,
+    "identity_residual": 8.271806125530277e-25,
+    "paired_full_minus_execution": -3.208272955518565e-09,
+    "paired_difference_halves": [
+      -2.443703328836359e-09,
+      -5.160576883281307e-09
+    ],
+    "paired_difference_bootstrap_95": [
+      -5.685699214781252e-09,
+      -1.0926643757069275e-10
+    ],
+    "resolved_added_vector_variance": false,
+    "projection_execution": 2.0033781239459135e-13,
+    "projection_remaining": 9.479287609292916e-14,
+    "projection_full": 5.839287283282276e-14,
+    "projection_covariance": -1.1836890782734887e-13,
+    "projection_identity_residual": 0.0,
+    "projection_difference_bootstrap_95": [
+      -1.4559811795567903e-12,
+      -1.7298336302395644e-18
+    ],
+    "projection_difference_halves": [
+      -1.9901241567829307e-15,
+      -1.721602459690178e-13
+    ],
+    "resolved_added_projection_variance": false
+  },
+  "cancellation": {
+    "rest_projection": -1.500315825899888e-07,
+    "rest_projection_halves": [
+      -1.7885208848576732e-08,
+      -1.363922000938846e-07
+    ],
+    "rest_projection_bootstrap_95": [
+      -7.259600209590748e-07,
+      -4.434759005548692e-10
+    ],
+    "resolved_opposing_remaining_projection": true,
+    "relative_full_to_execution_mean_L2": 0.6368536642824942,
+    "mean_component_norm_sum": 6.554434366989881e-05,
+    "full_mean_L2": 3.05563877914138e-05,
+    "explanation": "Norm shrinkage alone is descriptive, not directional cancellation evidence."
+  },
+  "eligibility": {
+    "informative_action_values": true,
+    "resolved_aligned_execution_CE_credit": true,
+    "resolved_aligned_full_credit": true,
+    "parity_correctness_varies": true,
+    "CE_alignment_is_not_parity_learning": true
+  }
+}

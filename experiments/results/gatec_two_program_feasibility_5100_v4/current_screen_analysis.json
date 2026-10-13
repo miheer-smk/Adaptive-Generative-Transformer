@@ -1,0 +1,155 @@
+{
+  "status": "MANDATORY_CURRENT_SCREEN_REJECTION",
+  "current_observed": 107,
+  "current_passed": 106,
+  "current_unverified": 277,
+  "arm_results": [
+    {
+      "history_program": 0,
+      "boundary_program": 0,
+      "observed": 96,
+      "passed": 96,
+      "correct": 96,
+      "mean_CE_observed": 0.0017800226984642602,
+      "unverified": 0
+    },
+    {
+      "history_program": 0,
+      "boundary_program": 1,
+      "observed": 4,
+      "passed": 4,
+      "correct": 4,
+      "mean_CE_observed": 0.0020843264646828175,
+      "unverified": 92
+    },
+    {
+      "history_program": 1,
+      "boundary_program": 0,
+      "observed": 4,
+      "passed": 3,
+      "correct": 3,
+      "mean_CE_observed": 1.605917497217888,
+      "unverified": 92
+    },
+    {
+      "history_program": 1,
+      "boundary_program": 1,
+      "observed": 3,
+      "passed": 3,
+      "correct": 3,
+      "mean_CE_observed": 0.0017719359990830223,
+      "unverified": 93
+    }
+  ],
+  "failure": {
+    "case": {
+      "phase": "current",
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "program": 0
+    },
+    "bits": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "bits_sha256": "8ee3bd216c58a9e17d3403ec3f5c182a5823371fc064608119cf8d770b230e68",
+    "label": 1,
+    "prediction": 0,
+    "CE": 6.418639659881592,
+    "logits": [
+      [
+        3.758411407470703,
+        -2.6585960388183594
+      ]
+    ],
+    "canonical_prediction": 1,
+    "canonical_CE": 0.0022292304784059525,
+    "canonical_logits": [
+      [
+        -3.588261127471924,
+        2.5167391300201416
+      ]
+    ],
+    "acceptance": {
+      "checks": {
+        "current_correct": false,
+        "executions": true,
+        "commits": true
+      },
+      "accepted": false
+    },
+    "canonical_CE_delta_observation": 6.416410429403186,
+    "comparison_note": "Canonical CE difference is descriptive, not a newly introduced acceptance test. Failure is exact truth correctness under P1 history -> P0 boundary."
+  },
+  "trace_accounting_verified": {
+    "tokens": 1979,
+    "executions": 15832,
+    "commits": 1979,
+    "decisions": 15832,
+    "restart": 0,
+    "repeat": 67,
+    "candidates": 0
+  },
+  "phases_by_arm": [
+    {
+      "phase": "archival",
+      "program": "P0",
+      "reference": true,
+      "completed": 8
+    },
+    {
+      "phase": "archival",
+      "program": "P0",
+      "reference": false,
+      "completed": 8
+    },
+    {
+      "phase": "prefix",
+      "program": "P0",
+      "reference": true,
+      "completed": 1696
+    },
+    {
+      "phase": "current",
+      "program": "P0",
+      "reference": false,
+      "completed": 100
+    },
+    {
+      "phase": "supplied_reference",
+      "program": "P0",
+      "reference": true,
+      "completed": 100
+    },
+    {
+      "phase": "prefix",
+      "program": "P1",
+      "reference": false,
+      "completed": 60
+    },
+    {
+      "phase": "current",
+      "program": "P1",
+      "reference": false,
+      "completed": 7
+    }
+  ],
+  "future_compatibility": "NOT EXECUTED",
+  "joint_statistic": "NOT EVALUABLE; futures not executed",
+  "research_hypothesis": "This fixed candidate failed the locked current/switch acceptance. No general portfolio or selector conclusion.",
+  "runtime_seconds": 57.048996491357684
+}

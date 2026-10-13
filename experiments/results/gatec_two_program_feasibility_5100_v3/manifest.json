@@ -1,0 +1,32 @@
+{
+  "status": "STOPPED_AT_SPECIFICATION_BARRIER",
+  "authoritative_protocol": {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/protocol_manifest.json",
+    "sha256": "9335ee7a6d236c985a1029afc6f9226aa6c03e0ad5c345352ef0fa93eb45f5cf"
+  },
+  "authoritative_input_manifest": {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/input_manifest.json",
+    "sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80"
+  },
+  "encoded_inputs": {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/encoded_inputs.pt",
+    "sha256": "1c52bd823aa65bd6c4a574cfd5043e79f0dad4660b4517839a9bf8a1dcf780ac"
+  },
+  "original_source_sha256": "5a0988cb7b94688bf058d111d1691a1b0b9b085ac35f3364cf18f5dfbea457be",
+  "amended_source_sha256": null,
+  "source_amendment_applied": false,
+  "requirements_matrix_sha256": "0a54c6bffacaaccce20ad76da0c017f66ff62f5bf3ba0063b68b5715084a0147",
+  "retained_schema_sha256": "2e38f54fb5e39a6fbb4173e7bbef246fe5a5a1eb980df76e83070d43c6824af3",
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3"
+  },
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+  },
+  "execution_allowed": false,
+  "reason": "Required gate scope and retained comparison target remain unresolved; no values or scope invented",
+  "historical_integrity_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting"
+}

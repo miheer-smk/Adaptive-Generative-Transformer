@@ -1,0 +1,38 @@
+{
+  "runtime": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "torch": "2.10.0+cu130",
+    "numpy": "not installed; statistical fixtures use torch CPU",
+    "pytest": "9.1.1",
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "CPU_threads": 1,
+    "device_name": "NVIDIA GB10",
+    "TF32_matmul": false,
+    "TF32_cudnn": true,
+    "default_dtype": "torch.float32",
+    "deterministic_algorithms": false,
+    "bytecode_writing_disabled": true
+  },
+  "pytest_exit_code": 0,
+  "elapsed_seconds": 17.02557110786438,
+  "source_hashes": {
+    "receiver_anchored_v1.py": "a31f46b85419f5087016369987a63c476b63323d62216d06065e34698d9ac116",
+    "receiver_anchored_v2.py": "fabec0602212560e3ec5fcb019deadefcc7d513f0c6f6b0faa0f8df5aa761d11",
+    "run_prerequisites_v1.py": "080453b689464978e56d478e0d451219e5e08b81886aac356dd46bcf9cc4be31",
+    "run_prerequisites_v2.py": "ffaff278627964f7f1fa7a265b216e64bce2ee860d08f61ca833d8b76cb886a3",
+    "run_prerequisites_v3.py": "31042d443d93c02e0d24af147c0f18decbb63b607e118c4994849f051fedfd5d",
+    "statistical_rules_v1.py": "8a4b6c47a69753ca7b96c9f4283e10c4373f384064a8f0d4196a553ce3c355d2",
+    "statistical_rules_v2.py": "14ec543f1d93dc0d5307d73deb9642c5fa24208c2ad628aa510f4e2680380a3a",
+    "test_receiver_anchored_v1.py": "71c2bf66c46152537c18329aeb7add69334ef11551520d1ef2190cb903c44c07",
+    "test_receiver_anchored_v2.py": "d885fadc5e82e6c583e2ee9ef57dd8da10c558b337b6e4434cd3eb66173521a3",
+    "test_receiver_anchored_v3.py": "60b9b4dccb6a829497b47b4b37cc969c637744964c58adbc8b7a6cf350ad02d4"
+  },
+  "protected_identity_result": true,
+  "training_executed": false,
+  "optimizer_updates": 0,
+  "production_edits": false,
+  "study_checkpoints_created": false,
+  "git_commit_created": false,
+  "original_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+}

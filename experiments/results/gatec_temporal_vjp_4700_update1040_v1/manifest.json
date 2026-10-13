@@ -1,0 +1,1463 @@
+{
+  "created_utc": "2026-10-08T12:48:31.959932+00:00",
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "status": " M experiments/diagnose_stage3_gradients.py\n M experiments/evaluate_stage3_stochastic_continuation.py\n M experiments/runs/stage1_taskA_tiny.json\n M experiments/stage3_measurements.py\n M src/__pycache__/agt.cpython-312.pyc\n M src/__pycache__/blocks.cpython-312.pyc\n M src/__pycache__/controller.cpython-312.pyc\n M src/__pycache__/executor.cpython-312.pyc\n M src/__pycache__/masks.cpython-312.pyc\n M src/executor.py\n M tests/test_stage3_measurements.py\n M tests/test_stage3_replication.py\n M tests/test_stage3_stochastic_evaluation.py\n M tests/test_stage3_successor_mix.py\n?? AUDIT_PRECHECK.md\n?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md\n?? GATE_B_STAGE3_SPEC.md.pre_inspection\n?? GATE_B_STAGE3_SPEC.md.pre_reconcile\n?? GATE_B_STAGE3_SPEC.md.pre_source_lock\n?? HALT\n?? RESTART\n?? data/__pycache__/\n?? experiments/__pycache__/\n?? experiments/audit_gatec_canonical_replay.py\n?? experiments/check_stage3_equivalence_batch1.py\n?? experiments/diagnose_gatec_st_action_values_4700.py\n?? experiments/diagnose_gatec_temporal_vjp_4700.py\n?? experiments/diagnose_stage1_taskA.py\n?? experiments/diagnose_stage3_closed_loop_parity.py\n?? experiments/diagnose_stage3_route_equivalence.py\n?? experiments/diagnose_stage3_taskA_gradient_flow.py\n?? experiments/evaluate_gatec_locked_policy.py\n?? experiments/evaluate_stage3_closed_loop_equivalence.py\n?? experiments/evaluate_stage3_route_controller.py\n?? experiments/evaluate_stage3_warmstart.py\n?? experiments/evaluate_stage3_warmstart_parity.py\n?? experiments/evaluate_stage3_warmstart_taskA.py\n?? experiments/gateA_a3_state_vs_output.py\n?? experiments/gateA_a4_state_ablation.py\n?? experiments/gateA_a5_state_shuffle.py\n?? experiments/gateA_a6_state_patching.py\n?? experiments/gateA_a7_controls.py\n?? experiments/replay_gatec_learned_policy.py\n?? experiments/replicate_gatec_locked_imitation.py\n?? experiments/results/\n?? experiments/run_gatec_fresh_task_discovery.py\n?? experiments/run_gatec_paired_task_maintenance.py\n?? experiments/run_stage1_taskA_overfit.py\n?? experiments/run_stage3_masked_route_imitation.py\n?? experiments/run_stage3_taskA_warmstart.py\n?? experiments/run_stage3_warmstart_taskA_train.py\n?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt\n?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt\n?? experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt\n?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json\n?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json\n?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt\n?? experiments/runs/stage3_imitation_replication_3305_v1.pt\n?? experiments/runs/stage3_imitation_replication_3306_v1.pt\n?? experiments/runs/stage3_imitation_replication_3307_v1.pt\n?? experiments/runs/stage3_imitation_replication_4401_locked_v1.pt\n?? experiments/runs/stage3_imitation_replication_4402_locked_v1.pt\n?? experiments/runs/stage3_metadata_credit_probe_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt\n?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json\n?? experiments/stage3_decision_prefix.py\n?? experiments/train_stage1_taskA_len8.py\n?? \"n' '===== BRANCH =====' && \"\n?? \"n' '===== CURRENT WORKTREE =====' && \"\n?? src/__pycache__/routing.cpython-312.pyc\n?? src/agt.py.pre_adaptive_step.bak\n?? src/executor.py.pre_adaptive_integration.bak\n?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc\n?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc\n?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc\n?? tests/test_gatec_canonical_replay_audit.py\n?? tests/test_gatec_fresh_task_discovery.py\n?? tests/test_gatec_paired_noise.py\n?? tests/test_gatec_st_action_values_4700.py\n?? tests/test_gatec_temporal_vjp_4700.py\n?? tests/test_stage3_decision_prefix.py\n?? tests/test_stage3_execution_accounting.py\n?? tests/test_stage3_route_metrics.py\n?? tests/test_stage3_taskA_gradient_diagnostic.py\n?? tests/test_stage4_halt.py\n?? tests/test_stage4_halting.py\n",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+  },
+  "script_sha256": "e018233da1295a0d26423d98849a8abb4ac3f486c8193fbb9c18d210f30a030f",
+  "previous_manifest_sha256": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+  "previous_index_sha256": "fa9769f628c26e664cb46d79363cc5ba8a87172236f7caf03d0e844fe93b4a48",
+  "controller": {
+    "update": 1040,
+    "path": "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt",
+    "sha256": "37537106f47e3a003e4b5d2ff98ded93a8f98e3a2b60ee7814e502d28ddaa6d4",
+    "change": {
+      "l2": 0.7465758323669434,
+      "changed_values": 103306,
+      "per_parameter": {
+        "norm_h.weight": {
+          "l2": 0.03690236806869507,
+          "max_abs": 0.01746833324432373,
+          "changed_values": 64
+        },
+        "norm_memory_read.weight": {
+          "l2": 0.016767920926213264,
+          "max_abs": 0.00576174259185791,
+          "changed_values": 64
+        },
+        "mlp.0.weight": {
+          "l2": 0.7354072332382202,
+          "max_abs": 0.01988142915070057,
+          "changed_values": 100352
+        },
+        "mlp.0.bias": {
+          "l2": 0.027739819139242172,
+          "max_abs": 0.009661570191383362,
+          "changed_values": 256
+        },
+        "mlp.2.weight": {
+          "l2": 0.11880642920732498,
+          "max_abs": 0.017817281186580658,
+          "changed_values": 2560
+        },
+        "mlp.2.bias": {
+          "l2": 0.004946517758071423,
+          "max_abs": 0.0037334077060222626,
+          "changed_values": 10
+        }
+      }
+    }
+  },
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "noncontroller_tensors": 126
+  },
+  "six_sequences": [
+    {
+      "source": "training",
+      "original_row_index": 96,
+      "sequence_id": "train/L16/row0",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "57e0cd524f7c634db3e38035a93b713783f2bce5633fb130acbd4e2c7a973cb6",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "training",
+      "original_row_index": 97,
+      "sequence_id": "train/L16/row1",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "6d188347b8022adc1e3c9b5524af34d7e6709bef5b991624f97909fa97d8ee95",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 0,
+      "sequence_id": "val/L16/row0",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "6d471b259a568bf4109f582f63a699a19bf5d7c16d535d62a73350cafcdea2d8",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 2,
+      "sequence_id": "val/L16/row2",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "sequence_label_hash": "01ebaa78ce38d3069a6c4947369d5d48349967bedc65d6c4b171abbdd1171e58",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 94,
+      "sequence_id": "ood_test/L32/row2",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "sequence_label_hash": "d3ce5146b9dce17652e41caa86e7748b4ad918b9ca543c3b88080eb373536394",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 92,
+      "sequence_id": "ood_test/L32/row0",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "90e1f6f864796f269631ac4829189c5936c1e53c691c6a0285a5bd95a6d3464f",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    }
+  ],
+  "states": [
+    {
+      "original_index": 18,
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe18.pt",
+      "sha256": "0b574057323a7963b9084e940059001ad63e2564829a1361beb0d3d1210cdb92"
+    },
+    {
+      "original_index": 19,
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe19.pt",
+      "sha256": "6450289404020e1060c4de35fa22856cdebed1b40e22443b36f8a4a3d0108541"
+    },
+    {
+      "original_index": 20,
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe20.pt",
+      "sha256": "b297a64065c15666f54736c2c7db6c76387fced87bfc1a8f7db4347726aba923"
+    },
+    {
+      "original_index": 21,
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe21.pt",
+      "sha256": "5203556a5870b1b03c72bea17059f3d18375299ed9c05bab582f2a82941baf10"
+    },
+    {
+      "original_index": 22,
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe22.pt",
+      "sha256": "0ba3482857101eddf3f833c3ef8f36a90ad9e25df853d2d64203704cac3ceedd"
+    },
+    {
+      "original_index": 23,
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe23.pt",
+      "sha256": "9384abd51e15a8b5de34c699d05d87908d8f44e5e56fea3489050a0f764c27d4"
+    },
+    {
+      "original_index": 24,
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe24.pt",
+      "sha256": "c6c9e0846ada2c67f7a4e9cb80284f6ffb170b641f34e54731649af00b70fd43"
+    },
+    {
+      "original_index": 25,
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe25.pt",
+      "sha256": "11fa0f5fd334c04161f8386d3952b7c46ab9638a13601cf295989b72025caae3"
+    },
+    {
+      "original_index": 26,
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe26.pt",
+      "sha256": "76e8eaeaaf34f6c04b6ea4e16caeb6df413fabfc7a5f6504127c34487916b1ae"
+    },
+    {
+      "original_index": 27,
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe27.pt",
+      "sha256": "710e14a6513b5a5b944c592f0782275404289fc4201e762650aca0caf70f68ed"
+    },
+    {
+      "original_index": 28,
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe28.pt",
+      "sha256": "e2d70f25098e8cb3bad3b122af252b199bd71090c4791973b1659e90391ef4ba"
+    },
+    {
+      "original_index": 29,
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe29.pt",
+      "sha256": "60861d0ac20b6856c45a2d95122d7a02b4e9b99292fc19a297ffef4041aad933"
+    },
+    {
+      "original_index": 30,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe30.pt",
+      "sha256": "ccf955ca1d6078ad0016b6ec268d0769d3c864a8ea503083be0da07aa3eaec78"
+    },
+    {
+      "original_index": 31,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe31.pt",
+      "sha256": "d2b1cc279193624e6769cc359bb462d018378356de20f9aaf7836e1e42ed51d1"
+    },
+    {
+      "original_index": 32,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe32.pt",
+      "sha256": "042cc82e7e0f9c5c9f113b2078694da83d9008f8efe8e84276acc0ae9dd023d5"
+    },
+    {
+      "original_index": 33,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe33.pt",
+      "sha256": "c8500057f78af8ed64a94bbfdd5f8ca45ca1029d8a5c8ae849dd0a579a647332"
+    },
+    {
+      "original_index": 34,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe34.pt",
+      "sha256": "989b02dc0839c34ea51ed56165dcbe56e33607d4ba0321389952fc98c2432e4e"
+    },
+    {
+      "original_index": 35,
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "path": "experiments/results/gatec_st_action_value_4700_v1/states/probe35.pt",
+      "sha256": "c20c1c56e27995e550c15ebc478588d5ebf65fd022c85f7c9ef9905c31782a32"
+    }
+  ],
+  "previous_classifications": {
+    "0/training/A": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "0/training/B": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "0/training/C": {
+      "informative_aligned_ST": 2
+    },
+    "0/length16_eval/A": {
+      "informative_unresolved_direction": 2
+    },
+    "0/length16_eval/B": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "0/length16_eval/C": {
+      "informative_aligned_ST": 2
+    },
+    "0/length32_ood/A": {
+      "informative_unresolved_direction": 1,
+      "unresolved_action_values": 1
+    },
+    "0/length32_ood/B": {
+      "informative_aligned_ST": 2
+    },
+    "0/length32_ood/C": {
+      "informative_unresolved_direction": 2
+    },
+    "1040/training/A": {
+      "informative_unresolved_direction": 2
+    },
+    "1040/training/B": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "1040/training/C": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "1040/length16_eval/A": {
+      "informative_unresolved_direction": 2
+    },
+    "1040/length16_eval/B": {
+      "informative_aligned_ST": 1,
+      "informative_unresolved_direction": 1
+    },
+    "1040/length16_eval/C": {
+      "informative_aligned_ST": 2
+    },
+    "1040/length32_ood/A": {
+      "informative_unresolved_direction": 2
+    },
+    "1040/length32_ood/B": {
+      "informative_aligned_ST": 2
+    },
+    "1040/length32_ood/C": {
+      "informative_unresolved_direction": 1,
+      "informative_aligned_ST": 1
+    }
+  },
+  "previous_all_probes": [
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row0/A",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row0/B",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row0/C",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row1/A",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row1/B",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/train/L16/row1/C",
+        "checkpoint_update": 0,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row0/A",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row0/B",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row0/C",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row2/A",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row2/B",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/val/L16/row2/C",
+        "checkpoint_update": 0,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row2/A",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row2/B",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row2/C",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row0/A",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "unresolved_action_values",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row0/B",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update0000/ood_test/L32/row0/C",
+        "checkpoint_update": 0,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row0",
+        "source": "training",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/train/L16/row1/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "train/L16/row1",
+        "source": "training",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row0",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/val/L16/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "val/L16/row2",
+        "source": "length16_eval",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 15,
+        "human_token_number": 16
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 0,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row2/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row2",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 0,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/A",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "A",
+        "parity": 1,
+        "token_index": 0,
+        "human_token_number": 1
+      },
+      "classification": "informative_unresolved_direction",
+      "direction": "unresolved"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/B",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "B",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    },
+    {
+      "probe": {
+        "probe_id": "update1040/ood_test/L32/row0/C",
+        "checkpoint_update": 1040,
+        "sequence_id": "ood_test/L32/row0",
+        "source": "length32_ood",
+        "condition": "C",
+        "parity": 1,
+        "token_index": 31,
+        "human_token_number": 32
+      },
+      "classification": "informative_aligned_ST",
+      "direction": "aligned"
+    }
+  ],
+  "prefix_noise": {
+    "historical_file": "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt",
+    "historical_sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7",
+    "seed": 924088217,
+    "original_sequence_count": 96,
+    "bitwise_reconstruction_verified": true,
+    "same_ID_coordinate_association_verified": true,
+    "extension_IDs": [
+      "train/L16/row0",
+      "train/L16/row1"
+    ],
+    "extension_order": "original training-manifest order after all 96 original final-panel rows",
+    "generator": "one private CPU torch.Generator(924088217), original ordered FP32 torch.rand[L,15,10] calls, then append missing training rows",
+    "extension_only_for_prefixes": true,
+    "new_training_prefix_provenance": true
+  },
+  "randomness": {
+    "no_new_noise": true,
+    "ST_bank_seed": 4801,
+    "CF_values_from_seed4800": true,
+    "source_noise_hashes": {
+      "prefix_noise_extension.pt": "9a7d59cb5c4473b6aee9ffdf345445dc0218d47626f53adad7c613952f220547",
+      "continuation_noise.pt": "7c1d61c4dde6c8a1cf743cd90e54e0e4aa4ee142511f59220506120c3792ee9a",
+      "ST_probe_noise.pt": "3a021deaeecfdedc2a3ae9c0531831e4ed973a9070adb8f2a9aaf84309aa3d2d",
+      "bootstrap_indices.pt": "58b928f38a97f1b1d39f8aac3049c8c71d9495cf4b0c6c1636136108d9ec7222"
+    },
+    "bootstrap_seed": 4802,
+    "replicates": 2000,
+    "original_36_state_indices_used": true,
+    "CF_pairing_preserved": true,
+    "ST_components_resampled_jointly": true,
+    "banks_resampled_independently": true
+  },
+  "probe_definitions": {
+    "A": "human ordinal1/internal index0; normal initialization, no previous tokens",
+    "B": "internal L-1 after independent checkpoint-owned sampled prefix 0..L-2; original tape0 for evaluation IDs, appended extension for training IDs",
+    "C": "internal L-1 after fixed canonical prefix; checkpoint continuation begins at this boundary",
+    "state": "normal token initialization captured before first action; D=P=0, eight ADVANCE successors legal"
+  },
+  "computation": {
+    "batch": 1,
+    "dtype": "FP32",
+    "tau": 2.0,
+    "budget": [
+      0.0,
+      0.0
+    ],
+    "presence": 0.0,
+    "P": 8,
+    "HALT": false,
+    "convergence": false,
+    "CF": "force only first ADVANCE successor after constructing real candidates; all later actions original hard stochastic closed loop",
+    "ST": "unforced original hard-forward exhaustive-candidate path and relaxed backward; autograd.grad final CE with respect to original first routing logits",
+    "loss": "original final-sequence parity CE, batch1 mean reduction",
+    "gradient_policy": {
+      "maintenance_manifest_sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430",
+      "policy": "unchanged run_diff_sequence full-sequence BPTT; no token/state/cache detach; reset at independent-sequence boundary",
+      "horizon": "entire current sequence: 4..16 tokens in training; no inter-sequence graph",
+      "production_detach_locations": [
+        "src/routing.py:137 hard - relaxed.detach() + relaxed; ST relaxed stop-gradient",
+        "src/executor.py:323 action.detach().argmax; hard pointer/just_restarted/P/mask metadata"
+      ],
+      "unused_detach": "src/convergence.py detach helper is outside execute_differentiable",
+      "clone_semantics": "state.clone, cache.clone and memory write clones preserve autograd",
+      "attention": "GQA retains complete sequence; SWA window 256 retains 255 committed rows; no within-sequence eviction at these lengths",
+      "convolution": "GDN retains conv_kernel-1=3 inputs; existing finite convolution receptive field, no added gradient detach",
+      "frozen_computations": "T frozen backbone executes with autograd enabled",
+      "diagnostic_detaches": "copy/snapshot/probability/report tensors only; returned execution/final CE graph is not replaced",
+      "anchor": "original Prelude h_t,0 is passed unchanged to all successor blocks; observed for in-flight mutation"
+    },
+    "fixed_state_conditioning": "prefix reconstructed without grad; independent full-state clone per continuation; incoming state treated fixed as requested; no suffix-state/cache detach",
+    "optimization": "no optimizer created; no parameter or buffer updates"
+  },
+  "numerical": {
+    "torch_version": "2.10.0+cu130",
+    "device": "cuda",
+    "device_name": "NVIDIA GB10",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false
+  },
+  "graph_boundaries": {
+    "output": "original Controller.forward logits [1,11], before executor successor slicing/masking/ST",
+    "exec": "only probe logits VJP allowed; every later Controller output VJP zeroed by tensor hook",
+    "token": "allow outputs of all controller calls in probe token, exclude controller outputs in later tokens",
+    "next": "allow probe token and immediately following token outputs, exclude outputs beyond that token",
+    "full": "no hook suppression; original ST derivative",
+    "preserved": "all direct execution/state/commit derivatives and existing hard metadata/relaxed-stop-gradient boundaries; no edge reconnected",
+    "B_C": "suffix contains only final probe token; token/next alias full after graph-boundary verification, no redundant VJP",
+    "adjoints": "one full VJP also requests original logits at all calls and available h/h_next/h0/memory-read/memory-mean adjoints; no new action values at those calls"
+  },
+  "comparison": {
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "incoming_and_commit_states": "exact tensor-derived hashes",
+    "metadata": "exact equality",
+    "logits_CE_gradients": "original atol1e-6/rtol1e-5",
+    "components": "exec; token-exec; next-token; full-next; sum checked against full"
+  },
+  "uncertainty": {
+    "rule": "same-sign four-tape halves plus 95% 2000-bootstrap interval excluding zero; meaningful alignment norms >1e-8",
+    "variance": "sample trace covariance ddof1; paired full-minus-exec variance resampled jointly; require both half differences positive and95% lower bound>0 for resolved added variance",
+    "projections": "CF gradient recomputed only from retained values during independent CF resampling; paired ST component vectors share indices",
+    "cancellation": "remaining contribution projection negative in both halves and95% upper bound<0",
+    "support": "informative action values plus resolved aligned execution-only CE credit plus resolved cancellation/added vector variance; strong unreliability support additionally requires full credit not resolved aligned",
+    "parity": "report conditional correctness; CE alignment alone never labeled parity learning",
+    "intervals": "conditional Monte Carlo only, unadjusted across components/states; eight tapes per bank"
+  },
+  "budgets": {
+    "forward_replays": 144,
+    "maximum_VJP_evaluations": 384,
+    "new_CF_continuations": 0,
+    "optimizer_steps": 0
+  },
+  "focused_validation": {
+    "final_passed": 32,
+    "failed": 0,
+    "bytecode_writes": "disabled; explicit compilation targets /tmp",
+    "preserved_pre_execution_test_failure": {
+      "passed": 31,
+      "failed": 1,
+      "test": "test_hooks_preserve_forward_and_keep_probe_differentiable_in_all_modes",
+      "cause": "synthetic fixture dot([.2,-.1],[1,2]) was zero, so its squared loss and every gradient were zero",
+      "correction": "synthetic fixture only: second coordinate .1; no AGT forward or diagnostic measurement had run"
+    }
+  },
+  "historical_bytecode_exception": "preserved bytecode-only identity failure; post-exception recorded diff/cache identities match; all experiment-relevant identities verified",
+  "protected_files_sha256": {
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/terminal_commit.py": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/norms.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/convergence.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/gdn_v3.py": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/terminal_commit.py.clonefix.bak": "c38a09c9c0023190e6c49b278ed582ab6b42ada789a89fe1d46a46c742a03cb4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/blocks.py.gdn.bak": "741676a21d888c05fc572bb7264f3434e990f7b210b5acf716fff63dc2cc9503",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/caches.py.seq.bak": "1e166b3d9f5fb35336d5ac8b6772e1853c0b3e86aa80f92725986ed6b222079f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/blocks.py.m22.bak": "8ce96c699bd026e754a40ccf04387f23df36340c8b7d4b18a182687b9d5db05f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/executor.py.pre_adaptive_integration.bak": "5119161d57ae26fb73d91f30a914ba70d8d4694439c21793f76a357d1214bedf",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/output_head.py": "5ea4e70576c5869639f758a7b95c87f2cb0464ed091bbf98b7524538fd31511a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/agt.py.seq.bak": "ed2383b89f07b3204ab30001a911f14b5bf17b503b54040359a338f34e0bd0f1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/gdn.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/gqa.py.m22.bak": "693c9069667178e2da68fb62b0614e4d5b921dc258d26a6a56a98b706e1fc245",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/mhc.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/executor.py": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/rope.py": "2a99012fb952ad53d72762eb85cd02c3dd0a12eb3949afcd45f35bede4c03d80",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/swiglu.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/caches.py.m22.bak": "ca0a0cb158e3c9130ac846cf4ea6a132f9c55b2dd2a8bdd422de2cd73d09d640",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/utils.py": "4c220baa4e6669c04fbb991e5e7bcd39df41d36d5d2283d060fc28a79a4f3a33",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/prelude.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/gqa.py": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/memory.py": "1fa44e6367d53e299938c1f95c946df2570487daf24d26191a32b86d1235375c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/caches.py": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/commit.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/agt.py.pre_adaptive_step.bak": "f6e651685bfa48d8c97dc00bd46ad4c82adeb4f850c6e79fbd2360695c22c269",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/output_head.py.finalnorm.bak": "6b99d2a89444149273a38b65642143b0c0a0e46dea61eb99edc001ed98dd033c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/config.py": "c106a8f03333a0ccafc004be612ce9bdcfc30f2f9eadd6d5fe57534fbad04efc",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/memory.py.reconcile.bak": "e54e10a092af1e8ac330bc71ebd78acffad46ba389c1126ac425ef568b6c4b72",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/blocks.py.m24.bak": "81ca5e4a09fb568e5ae4afe68451987b600d68bc60535fc3962f58b5889dac45",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/terminal_commit.py.seq.bak": "918388241d12156a0b1c5352ccd115c4df02138c01c2372f5cb238a9f5984936",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/blocks.py.bi.bak": "ab9707b31c098af0aa445219648fe95d36c815f7787c85336be861a8868ed3cb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/output_head.cpython-312.pyc": "8ab2dec0f8a80a0b80a8204ef07f9ceb4e52812ba2d6f7d6d56c556ffd6e41c7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/executor.cpython-312.pyc": "86a312caae8e8a956a3cb0bc14deacbf94ce95679840193d0a58abb552617818",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/controller.cpython-313.pyc": "3ac5d8214be90434fc6bff6f9029148acd07236959d44a99e2d2928cc77940c5",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/rope.cpython-313.pyc": "00adfc17eca72cadd556cae9ffca7a09e3bcdddb5bea4ff8f3467008c3738b58",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/config.cpython-313.pyc": "e6d3185e44c72bc6a62c6900a4cc8f549733828f47df3f57a7053dd169e6ec8f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/convergence.cpython-313.pyc": "73f3ae3c6e439700b9d5315a34bc32aa40729ad50f630e83c37383aae308072d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/commit.cpython-312.pyc": "1426d2b9474161333ba8fc37379d96f4134079f5c939f32072c61dc5c3d4489d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/gdn.cpython-313.pyc": "945453964cd2df3e1df3632a669a375f7ec9095911f239911b94555bc9994be7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/memory.cpython-313.pyc": "55e7b645719fa539d1e118bf2f1e9d9acf45159763cbab836bfaa9de8b579a47",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/swiglu.cpython-313.pyc": "5ea8b9a39f4332f942e8275b382427dae5f1850dba1485734dcb1d79dce3a6e2",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/gdn_v3.cpython-312.pyc": "7be40034c5fc262b9cff47bdfdbf3c5ca8b698080704eb254e4b30cbd76a071b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/rope.cpython-312.pyc": "93c05d8c1345b018887e55d75502aa8102ec4536bc7feda63350548b50de47f3",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/gdn.cpython-312.pyc": "8f1b2b75b7317f82521d3f9ee43491f6201fdf4e145d3d078e15a8e2b741003e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/__init__.cpython-312.pyc": "91541fc46f0a37c90b5987e8fd40bcac8f6cc991d9326198a8eec95b5289285c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/gqa.cpython-313.pyc": "c6f484ff2339bb6ff89c3a6753dc355fa3787a7c095d6cf0e7ebb53bc4c64343",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/gqa.cpython-312.pyc": "42284eca8f72d5511711163617d7f96df7059ad98859798c4525a69579397303",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/mhc.cpython-312.pyc": "ec46253a082bb395468b1f2be09a80230fe790b1883d887c22603e31e6fa2731",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/routing.cpython-312.pyc": "1b3d2de107ea73accde65c2bde3315ea138089f48a7939a3edd5f36b9889a718",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/agt.cpython-312.pyc": "b64bfc89fcd92481c868d172e8434772f060412f2c10b3ba37bd75e830ab7490",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/convergence.cpython-312.pyc": "5fcb2eef38455d452a86ae09ceb755aa461ebc11caa6ee1cd2cdface44fa552a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/caches.cpython-312.pyc": "1054e1f02435ba9e500240243f893880cc5694fd9497bc2095844610329cf9b3",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/caches.cpython-313.pyc": "b08e817ab923ac4f08118b78e5d32b05ea5a02e5f3bc5116ca135317f37ad1e1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/norms.cpython-312.pyc": "be6c9bb26c38b05460597a425ad3cfbd79b83616f9e2e1a63abc4a5da46e228b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/mhc.cpython-313.pyc": "4db6cbf9efe52139edc3bad19993e7accde1f8629ccefdfc6a36ea65ca43db82",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/output_head.cpython-313.pyc": "14082711c4407dca2b28c311dc82a8d503ae272a52578fee2982c8e44fbfc980",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/blocks.cpython-313.pyc": "4396eff4418f99baf52eedddcc7af05e064ba1100dd792b7a4267c431b12e528",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/utils.cpython-313.pyc": "8cbe0b3991e903c1d8391e15353b68f6112a2757bd0ddfa865760501d1e1b08a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/swiglu.cpython-312.pyc": "1c5cc54eae8e95e705ad4b52bb66d7f4a0b43a44c1b3deaf5f5f835047562835",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/controller.cpython-312.pyc": "ff23f80002cc928d68dc0772867e8967657fd80779d8f73a2f0b801ac18a27dc",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/masks.cpython-312.pyc": "5e8df8076eca39f46c871649b3dcecd210790e5db2aeebb9c2d017a71071f8c1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/config.cpython-312.pyc": "aeba89ef3f34d2d2650f0dd990bd6bb42b9b6c56d9a5ce924dc4db15442f483f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/agt.cpython-313.pyc": "9b8fa73241566237b6358846f4001dbb88da46f0b1e823c43f3e267c0d43fd50",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/masks.cpython-313.pyc": "f6c533b8b8a07db45530b9360c95f407aa798edb69b68b28feb7b26e16944b53",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/blocks.cpython-312.pyc": "c45bc51912a3e7ebe157d6d9eaee3a6c7963b6a4c654c6417bd2229a0c970f3e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/executor.cpython-313.pyc": "b185d586714144ed2553c8b01328bbb442fc0d7c96ed48189dfdc73ed71d347c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/prelude.cpython-313.pyc": "fb62ca00cb7f304f9783ab7956ac18c871ef0114d4c7d1481390237b697987bd",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/prelude.cpython-312.pyc": "3b85b010ba6252271e203354176b6d73d26136d347b7d686546f45e59c865ad0",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/memory.cpython-312.pyc": "5727f9a91330804821019550fef301621c4d54d6851902029bb746e8497d843e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/__init__.cpython-313.pyc": "4b539c0141cd3e672eabfbcc2f27fec86d438c6450aa5abb29184ad98be1846f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/norms.cpython-313.pyc": "e4f657513899d74e0ebf8307ea934c2e6590d0db2231714a479291415412c98e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/terminal_commit.cpython-312.pyc": "67cf683c3f16714e0572578551f899e57c30444d1d9046a23b3fbafa5c486310",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/__pycache__/commit.cpython-313.pyc": "1943762d5d12356ae7aa3ba648a1594bc78386e97460f85060a695b71662aa2b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/memory-checkpoint.py": "e54e10a092af1e8ac330bc71ebd78acffad46ba389c1126ac425ef568b6c4b72",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/masks-checkpoint.py": "cb4ba21abcecd724cf6ccab72f393c096172119ff215f1937df747b1cbb3f2e9",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/gdn-checkpoint.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/prelude-checkpoint.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/controller-checkpoint.py": "372d5d5e8a8dfd3d4c65c95643681d1503831d1b3a5d620754f55b83a9c32bd5",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/mhc-checkpoint.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/swiglu-checkpoint.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/caches-checkpoint.py": "5536e4edcf785ff67132f0f9acf0b08e346878e8dcbf1c1a178ddb19b7fb0a8a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/executor-checkpoint.py": "24e84e9f72d9c4c0605150f574089a928d3e2a5969b0fca9719eb2d4d3c05af7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/commit-checkpoint.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/gqa-checkpoint.py": "2dfaf0b87ea03952554d8fa93997135457997327482daaa589e01c6bc562a3e9",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/blocks-checkpoint.py": "7824a196ba7a61d3d0ba0e9c67bfb7488fe5e29add10ce791b9538776a13515d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/config-checkpoint.py": "93be72532ca2e21bebb0ae834ccf381553e1fa35c4fbe718d699a91eb77758b0",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/norms-checkpoint.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/src/.ipynb_checkpoints/convergence-checkpoint.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/ST_probe_noise.pt": "3a021deaeecfdedc2a3ae9c0531831e4ed973a9070adb8f2a9aaf84309aa3d2d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/analyze_artifacts.py": "b6d7388fd86ed4a6ea0ac201a71772d3bd2a752b75443d03c0f304fa905d2a6e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/bootstrap_indices.pt": "58b928f38a97f1b1d39f8aac3049c8c71d9495cf4b0c6c1636136108d9ec7222",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/continuation_noise.pt": "7c1d61c4dde6c8a1cf743cd90e54e0e4aa4ee142511f59220506120c3792ee9a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/decisions.jsonl.gz": "f794114ee7b04e0ff631532c449e2fd14008e45e3f903eaa4d0f63dbb9c74581",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/interpretation.json": "61d8be863209f7a022a69dc3fc90aae81d5e76696489f57da7ff1b678704ab4d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/manifest.json": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/prefix_noise_extension.pt": "9a7d59cb5c4473b6aee9ffdf345445dc0218d47626f53adad7c613952f220547",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/prefixes.jsonl.gz": "cf93b104e3676ae3cbe3a3698f663f1c2c14e4957b88ea13adfb0ef744c8af57",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe00.json": "ce210478b61a998366c9f613886f5c208fb5ce41ab107e682a6f60b8aa2e852a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe01.json": "44e9e317e26f642565655b55fe3f83d0b7c46f828f2cbd15e7fa4da76d524b53",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe02.json": "ada8493b84a3c79873568d1e9497c26c736a857a013e80a2429b814b2bc7cbaa",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe03.json": "56adc01afbec7a208b0c17727919e1a383a03b29f7422396fb1fe9e84b3adadb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe04.json": "ed251fa093edce1d1764c7d5d941797e7cedc68b08d52bf5bf23f470031a0b52",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe05.json": "e18e352bb168a9c84d3597ae337c9cfd69f1dd69ea759b9d4ac30c17b242089a",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe06.json": "16408a1a9484c5594b9e56024e7683f8ba0abd2c7081935e87b08f4778226f18",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe07.json": "6715a569696cb17578121f527e9113d2cf8cbb88f17bbaaa791c90af11cd59da",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe08.json": "b372178801fb757079a786778d3b389cc83d076558a453e53a25099746b77fc4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe09.json": "296ee801894c789e3a844cbef03184a70ba34af278669c13fca0ca650f26fc1f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe10.json": "ef05254b56ebc4c822a81bb348aaf3234784d3adffd7a1e8540df97136d0e384",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe11.json": "35324a8ff83d90fada4f8619cbb60d8fcaf5640bfff19bee42cedeb9537fbf44",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe12.json": "db11b85371204716af5d765f122ffd113f0993679f41890c59a9042d1a6c174e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe13.json": "2fba4f9a5dc0cdf1ebf01805daf8f749adec455178a16520d5011f2a37209a33",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe14.json": "2923c76b2e0a085f429f67e966b8ee3bd224f6c8774fd934a1fce76ede7ef0f1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe15.json": "2aa992a1d8646ad9593c773031a968ab15a8ec09c9e3722e628ee3427f702802",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe16.json": "f21f7349022a4d1d907130a81ec0a4869c84554000f8204f56d055c07a87b7bc",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe17.json": "b9d815b5ffc51a3ae0dc414ae2a50455ee18083dec95aa1edf742f32fe7fc9c1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe18.json": "8ba33544f60cf5632e027ce100ac0aa59638223e6871dbfb828d9a66d15fe6cf",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe19.json": "15fc803e932a46242c346336636a39653bcc68019647ffd680ad3168ed7254ce",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe20.json": "91177382a608db4e58387cb53c7e5f69d74fc4b3954a9c07cd545b9fe89140f7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe21.json": "6ec440603254122dbe481a36e715f0afbe0f8b419a074b4b8dbb575f3bcc384e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe22.json": "61d549b9b924dc77b1e8d6a80261e2b6217310b690a4d4fb1643f4dabfa186d2",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe23.json": "a515026fdd209295c9538fcd8b96156dfe674fdbe0f062a9234a8b041716c395",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe24.json": "d757dadfb32be689aa042ac110397517e76e530ae72c8013ab6f58ffd02d67a7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe25.json": "b51a9d4929076480493ba6bc0a1b80d3af1d193418fb3071e0309424eea53104",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe26.json": "0e2d22a0e83e624666c378086e0389dc47de056e7758dc9193c4cc85c6849ee8",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe27.json": "f71811bdd8de4bbbfe4b726e3c4ab7cd7135b40faaa42af35bb18ffffaec27b4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe28.json": "71207e20c864abacaf8e3de05840c2ba2db1b1f5c4f7ab9e9603793e142dc225",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe29.json": "820890750f27a5e4c58d246a63191d9578106a07c0e0b0807e77655aae79e0cf",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe30.json": "562db098337109434784e85801614286965894da738d830b1cfa48c8ebad6217",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe31.json": "31ed67adf0f3bb7ada3760f621652e81fb028123eb7b63bacc44a9dc1ba60449",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe32.json": "50e9c4b08d8563acaaf315d257570b9eceab57449c7f7d2a13b052872b7e3f42",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe33.json": "64addb89a32f0328050f5d06f455c76f79332a91f6988fc3006be6742d555f18",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe34.json": "514b9a3f519e936f276f6848bb86da138eba637d3d0b055fb6b563df1ce5ee5d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/probe35.json": "e3b4d89431e3fc7e4e32370e8be206d0251b39f29738b7c65d596eae17f3d595",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/report.md": "e15eed7affa63e3c04dba4b1e284a15c90838b1eb6382e37b0b673b2c5a44542",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/results.json": "3bb99cfec1ccf1301898ad58ed27723f95ca5cd8902c3d247e37d12c0a97b194",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/runs.jsonl.gz": "460288cbd136fe962cb4a20acb49c8234f113d6915733d1117047ca8b4d5443b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe00.pt": "b11719ca156e9ab3ed80e121b72d07fd9220335ca3d6a403ea4dc46199f6d497",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe01.pt": "9c136c8378884097d433c5d54308d6331b091c6e81dda9ea8c96cbf1ca1a0886",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe02.pt": "e829ce715dcf567ba43b8155acad0c437286ac65fe056ca4efdc9e6816c3901f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe03.pt": "d6b52e1da27992b7326ab50e28256c79c62bd00ece3df3806948d8bfadf644bd",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe04.pt": "9c6a7861be61a7837729e3f25388cba39958ed5aae9e68feeaf77cfbf46d165b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe05.pt": "07c8556d6d74570e24cd8944764494a87ea1e2fe596bb565939a71bf80d8c517",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe06.pt": "8adc2a0f84406909ed3a4a7a38b964f6192db4be774988ea1c60d3a56f8af9dd",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe07.pt": "8a3c9715c3e0f6a76a78b94af17e0e2eecc3df89954967679bd82a926b2e7f30",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe08.pt": "677577a29915a7857e55efad68c8e590446efc3feffbea75f136e1f550e1b1f5",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe09.pt": "3df2d2e10730e51fff1f869b522e9c2102771a74dd8df50ba484c34705dd88af",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe10.pt": "a40d65b862ac872a7d5a95d7a07302c0792ac0bb29a71e804b7e31a7adca7e00",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe11.pt": "4e6e0bb1dfc9be6c4fcc1bb4039f365288ce79d21187cef9e9c718bd49c98c78",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe12.pt": "69ff0456e07831c9278f141d5e0cce3e7f585f71be2b212252d4035fe8a3d763",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe13.pt": "f5a8d12c09da830d5b2f52b890d5e81a8f028bb179a4494c7783acdb61b2b00b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe14.pt": "f0aab0bbe4bbb29b238b813536018da9d6b76203095dbdb6cc78681b0daf4543",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe15.pt": "91a08d4102486623d399cf294a949307ef6980dea81b75434083915e1f9d9022",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe16.pt": "0833cb0218ed713ef71ded2fb552b93786a87a835ed60a18ae374d6301a33c25",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe17.pt": "df6726f7d111e934c54df5abe9e17c331f4f3a22c275038094fd768da8bd5aac",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe18.pt": "0b574057323a7963b9084e940059001ad63e2564829a1361beb0d3d1210cdb92",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe19.pt": "6450289404020e1060c4de35fa22856cdebed1b40e22443b36f8a4a3d0108541",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe20.pt": "b297a64065c15666f54736c2c7db6c76387fced87bfc1a8f7db4347726aba923",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe21.pt": "5203556a5870b1b03c72bea17059f3d18375299ed9c05bab582f2a82941baf10",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe22.pt": "0ba3482857101eddf3f833c3ef8f36a90ad9e25df853d2d64203704cac3ceedd",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe23.pt": "9384abd51e15a8b5de34c699d05d87908d8f44e5e56fea3489050a0f764c27d4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe24.pt": "c6c9e0846ada2c67f7a4e9cb80284f6ffb170b641f34e54731649af00b70fd43",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe25.pt": "11fa0f5fd334c04161f8386d3952b7c46ab9638a13601cf295989b72025caae3",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe26.pt": "76e8eaeaaf34f6c04b6ea4e16caeb6df413fabfc7a5f6504127c34487916b1ae",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe27.pt": "710e14a6513b5a5b944c592f0782275404289fc4201e762650aca0caf70f68ed",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe28.pt": "e2d70f25098e8cb3bad3b122af252b199bd71090c4791973b1659e90391ef4ba",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe29.pt": "60861d0ac20b6856c45a2d95122d7a02b4e9b99292fc19a297ffef4041aad933",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe30.pt": "ccf955ca1d6078ad0016b6ec268d0769d3c864a8ea503083be0da07aa3eaec78",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe31.pt": "d2b1cc279193624e6769cc359bb462d018378356de20f9aaf7836e1e42ed51d1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe32.pt": "042cc82e7e0f9c5c9f113b2078694da83d9008f8efe8e84276acc0ae9dd023d5",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe33.pt": "c8500057f78af8ed64a94bbfdd5f8ca45ca1029d8a5c8ae849dd0a579a647332",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe34.pt": "989b02dc0839c34ea51ed56165dcbe56e33607d4ba0321389952fc98c2432e4e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/states/probe35.pt": "c20c1c56e27995e550c15ebc478588d5ebf65fd022c85f7c9ef9905c31782a32",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/tokens.jsonl.gz": "178facb1f91fef1bdc5336ca5492b999278dbe1bc8496e18da0f03fd6429c813",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/verification.json": "b1f1daf5138450cd2f734635c1538564ac61c85238f6756747927c493cbff5da",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/write_report.py": "71d133baade8f1dd9088b11b9d569565196e3d8bf3cb7f699b7332970e9e36fc",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_index.json": "19e340cdbb0fa47ac5ccf40eea255ba921dd6d2e0938a711640a1fec06441f7f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_st_action_value_4700_v1/artifact_index.json": "fa9769f628c26e664cb46d79363cc5ba8a87172236f7caf03d0e844fe93b4a48",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json": "506c485bc7cdda615a15ab991b86175298c6e83bae973f6abe8e756ebe1a0f9e",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/decisions.jsonl.gz": "aa63393a5c4fd1f082b046e72d6c2f036da0b1b80aa89b5fd1c060115870124c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/encoding_attestation.json": "255a9051ba5488902cf8c58d219e4459777df4cdfe966c76ccdaa6325d1d30c6",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/failure.json": "2e469ad24bc80defdaea83759f367936d55015c67243ad28d6e9b193d043a00d",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_deterministic.json": "8a04350e2f0da0a868693c3f8c2383bf66387de6a974c6b6cd761b58d08ec8c5",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_1.json": "d708b7597638dbac60d082b7774d9805a3a9a86ddb0b48cc3ea31355994da21b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_2.json": "895dd2501aac6376530f5edeb7cffa2366e8ccd5165c732b963b6e5ec07c2ad1",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_3.json": "745ffcae2a00c9a1bdf01aa6b9868332a80b144cacaf6f701567f224ee7e5fa6",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_4.json": "aeca98d8fdabd8efa18d1537ea7e129f415788d4ba53ecc359c5a14f013d4053",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/final_reference.json": "4457cc773c665dce26944de9ec57955a363ad44147ce69136470eaf045945b6f",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/historical_checkpoint_attestation.json": "ceb24860afe4fd031f3b8c71bba4a6fa2a8b57cba857b60010eaeeeab07bbbaa",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/initialization.pt": "d394da291553b78172bbdacc25af3c0bd881234d1fb6a3b458a3de33d1d94995",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_2.pt": "a0f630c48bbf168b872acff27147f1e3500a57774971bddadf1bc1c7e58446f4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_3.pt": "382a679123d8815785c6c5fea830c7a5564924dbfb45a6622b61f8ea924a5a15",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_4.pt": "1a93b8f1e4e02e42c9f4e9b2acf841bc299168fa7d0648dfc11bb59319cbff83",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/noise_training.pt": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/paired_divergence.jsonl.gz": "f2d9cfe4c77b3210f0ac37db06a65bc38be372dd8aea87b68d20e6bd5e9f69eb",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/prior_input_inventory.json": "0eafdba7277a135f7ccdfc2f6064ad874b9ad92a294261191794b5d1f3e31d50",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/report.md": "36dbdbb7eb44fed2223015a589edc6a17da763c605aa9ff39f488809e36912c9",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/results.json": "1f885f26a35730e7f000141fd0710c6159a8b3d6599d88b998ea9ccfa243cd21",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/sequences.jsonl.gz": "28fe03152beb88c0fd885b9a845c998414bffddbe3d804a92de757a5726b9248",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/snapshots.jsonl.gz": "ea86765bee6de8ffa59a061c1d63685fc00f54d9c73412cc39b55a1848e8ce1c",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/summarize_recorded.py": "377ea0b51f6e17819a6d5ec0401ac956ef76916d930ce4a4b68cbc90a06592aa",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/tokens.jsonl.gz": "33d06ba8a8016ad4b99b1c38a2f36b2514971145b7cafc98b4c96e29300b62d4",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/training_schedule.json": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/updates.jsonl.gz": "159fb84588dd1203ab68440899c485177a3c7662913ec2e8e7bd65b22d81e390",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/validation.json": "424e8f603d02c6eebf4ec3aa1eca7fc8804b1a629f67faaf09f4843e9f3b1c18",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/verification.json": "895b950fbaab2048b110a343d758ee9d20942a3c417f8848fab556a05fb46c81",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_fresh_task_discovery_4700_v1/verify_recorded.py": "7f460113c8089dd6c23a2e71c4be19bf83ebe720bc88fc348940123868048eef",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt": "ae8ff9256afd573331719cf15a3f82d21f70181891400640739a0415c82d6279",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt": "65821b572854946379dcc44ab96e5b96d1a7f88f597022c9de23d96778d5172b",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt": "8e3c3ad0ec39c7a79657e3254224530215382da0ce9c62f1b9ab1c94bcc17491",
+    "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt": "37537106f47e3a003e4b5d2ff98ded93a8f98e3a2b60ee7814e502d28ddaa6d4"
+  }
+}

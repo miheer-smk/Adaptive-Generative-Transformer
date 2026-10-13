@@ -340,6 +340,197 @@ class AdaptiveExecutor:
         }
 
 
+
+    def execute_adaptive(
+        self,
+        h0,
+        memory,
+        C_prev=None,
+        context=None,
+        memory_mean=None,
+        budget=None,
+        tau=1.0,
+        training=False,
+    ):
+        """
+        Gate-D Stage-4 adaptive-depth executor.
+
+        Unlike execute_differentiable(), this path gives HALT a real
+        terminal meaning:
+
+            HALT -> stop immediately at the current live hidden state.
+
+        HALT still has no successor state and is therefore never passed
+        through successor-state mixing.
+
+        Stage-D1 scope:
+            - unified controller action space
+            - source-aligned legality mask
+            - deterministic HALT semantics
+            - optional ST-Gumbel routing for non-HALT actions
+            - finite pilot budget as an execution safeguard
+            - no separate halting controller
+            - no convergence gate
+            - no learned halting loss yet
+
+        The training signal for HALT is intentionally deferred to D2.
+        """
+        if h0.ndim != 2:
+            raise ValueError("h0 must have shape [B, D].")
+
+        if memory.ndim != 2 or memory.shape != h0.shape:
+            raise ValueError(
+                "memory must have the same shape as h0: [B, D]."
+            )
+
+        batch_size = h0.shape[0]
+
+        if batch_size != 1:
+            raise ValueError(
+                "execute_adaptive currently requires batch size 1."
+            )
+
+        num_blocks = len(self.block_bank.blocks)
+
+        if memory_mean is None:
+            memory_mean = torch.zeros(
+                batch_size,
+                256,
+                device=h0.device,
+                dtype=h0.dtype,
+            )
+        else:
+            if memory_mean.ndim != 2 or memory_mean.shape != (batch_size, 256):
+                raise ValueError(
+                    "memory_mean must have shape [B, 256]."
+                )
+
+        if budget is None:
+            budget = torch.zeros(
+                batch_size,
+                2,
+                device=h0.device,
+                dtype=h0.dtype,
+            )
+        else:
+            if budget.ndim != 2 or budget.shape != (batch_size, 2):
+                raise ValueError(
+                    "budget must have shape [B, 2]."
+                )
+
+        h = h0.clone()
+        pointer = 0
+        just_restarted = False
+        action_history = []
+        halted = False
+        safety_cap_hit = False
+
+        for execution_count in range(self.max_execution_depth):
+            pointer_one_hot = torch.zeros(
+                batch_size,
+                num_blocks + 1,
+                device=h.device,
+                dtype=h.dtype,
+            )
+            pointer_one_hot[:, pointer] = 1.0
+
+            controller_out = self.controller(
+                h=h,
+                memory_read=memory,
+                memory_mean=memory_mean,
+                pointer_one_hot=pointer_one_hot,
+                budget=budget,
+            )
+
+            action_logits = controller_out["logits"]
+
+            mask = build_execution_mask(
+                pointer=pointer,
+                execution_count=execution_count,
+                just_restarted=just_restarted,
+                num_blocks=num_blocks,
+            ).to(device=action_logits.device)
+
+            masked_logits = apply_action_mask(
+                action_logits,
+                mask.unsqueeze(0),
+            )
+
+            if training:
+                # For D1, non-HALT actions may still use the existing
+                # differentiable routing primitive. HALT is sampled from
+                # the full unified categorical policy but has no successor.
+                full_action, _ = st_gumbel_action(
+                    logits=action_logits,
+                    mask=mask.unsqueeze(0),
+                    tau=tau,
+                    training=True,
+                )
+                selected_action = int(
+                    full_action.detach().argmax(dim=-1)[0].item()
+                )
+            else:
+                selected_action = int(
+                    torch.argmax(
+                        masked_logits,
+                        dim=-1,
+                    )[0].item()
+                )
+
+            if selected_action == num_blocks + 2:
+                # HALT: no successor computation.
+                halted = True
+                action_history.append(
+                    ("HALT", None)
+                )
+                break
+
+            if selected_action < num_blocks:
+                h = self._run_block(
+                    block_index=selected_action,
+                    h=h,
+                    h0=h0,
+                    memory=memory,
+                    context=context,
+                )
+                pointer = selected_action
+                just_restarted = False
+                action_history.append(
+                    ("ADVANCE", pointer)
+                )
+
+            elif selected_action == num_blocks:
+                h = self._run_block(
+                    block_index=pointer,
+                    h=h,
+                    h0=h0,
+                    memory=memory,
+                    context=context,
+                )
+                just_restarted = False
+                action_history.append(
+                    ("REPEAT", pointer)
+                )
+
+            else:
+                # RESTART remains zero-compute and preserves h.
+                pointer = 0
+                just_restarted = True
+                action_history.append(
+                    ("RESTART", None)
+                )
+
+        if not halted and len(action_history) >= self.max_execution_depth:
+            safety_cap_hit = True
+
+        return ExecutionResult(
+            h_terminal=h,
+            execution_count=len(action_history),
+            action_history=action_history,
+            halted=halted,
+            safety_cap_hit=safety_cap_hit,
+        )
+
     def execute_differentiable(
         self,
         h0,
@@ -365,7 +556,8 @@ class AdaptiveExecutor:
 
         HALT is excluded from successor mixing because it has no successor
         state. Execution therefore continues for exactly
-        `max_execution_depth` routing decisions.
+        `max_execution_depth` block executions (ADVANCE or REPEAT).
+        RESTART consumes a routing decision but no execution budget.
 
         Current pilot contract:
             - batch size = 1
@@ -425,7 +617,12 @@ class AdaptiveExecutor:
         just_restarted = False
         action_history = []
 
-        for execution_count in range(self.max_execution_depth):
+        execution_count = 0
+        decision_count = 0
+
+        # Source masks forbid consecutive RESTARTs, so a positive execution
+        # budget is reached in at most 2 * max_execution_depth - 1 decisions.
+        while execution_count < self.max_execution_depth:
             pointer_one_hot = torch.zeros(
                 batch_size,
                 num_blocks + 1,
@@ -519,13 +716,16 @@ class AdaptiveExecutor:
                     # RESTART is zero-compute and preserves h.
                     h = h
 
+            decision_count += 1
             if selected_action < num_blocks:
+                execution_count += 1
                 pointer = selected_action
                 just_restarted = False
                 action_history.append(
                     ("ADVANCE", pointer)
                 )
             elif selected_action == num_blocks:
+                execution_count += 1
                 just_restarted = False
                 action_history.append(
                     ("REPEAT", pointer)
@@ -537,9 +737,10 @@ class AdaptiveExecutor:
                     ("RESTART", None)
                 )
 
+        assert decision_count == len(action_history)
         return ExecutionResult(
             h_terminal=h,
-            execution_count=self.max_execution_depth,
+            execution_count=execution_count,
             action_history=action_history,
             halted=False,
             safety_cap_hit=False,

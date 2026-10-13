@@ -1,0 +1,175 @@
+{
+  "exact_training_rollouts": {
+    "C": 1040,
+    "T": 1040
+  },
+  "exact_updates": {
+    "C": 520,
+    "T": 520
+  },
+  "new_model_calls": 0,
+  "new_optimizer_steps": 0,
+  "duplicated_control_gradients_verified": true,
+  "maximum_C_gradient_difference": 0.0,
+  "averaged_gradient_arithmetic_verified_in_scheduled_updates": true,
+  "finite_controller_gradients": true,
+  "retained_training_logit_gradients": 214201,
+  "legality_accounting_verified": true,
+  "one_commit_per_completed_token": true,
+  "cache_version_checks": 757120,
+  "persistent_state_continuity_verified": true,
+  "observed_tokens": 54080,
+  "observed_decisions": 571731,
+  "selected_block_executions": 432640,
+  "candidate_block_calls": 4251888,
+  "historical_checkpoint_and_production_identity_verified": true,
+  "frozen_noncontroller_verified_by_runtime": true,
+  "HALT_output_parameters_unchanged": true,
+  "snapshots": [
+    0,
+    104,
+    260,
+    520
+  ],
+  "bootstrap_intervals_reproduced": true,
+  "git_diff_check": "clean",
+  "historical_exception": "preserved bytecode-only identity failure; post-exception recorded diff/cache identities match; all experiment-relevant identities verified",
+  "task_generator_and_historical_helper_identities_verified": true,
+  "dataset_source_sha256": "345cb186461904cf224408cfa41617c90739bd6a103c1c9cf857f7b4544dd9d9",
+  "counts": {
+    "training_rollout0/C": {
+      "candidate_constructions": 53367,
+      "candidate_block_calls": 480303,
+      "decisions": 53367,
+      "executions": 41600
+    },
+    "training_rollout1/C": {
+      "candidate_constructions": 53367,
+      "candidate_block_calls": 480303,
+      "decisions": 53367,
+      "executions": 41600
+    },
+    "training_rollout0/T": {
+      "candidate_constructions": 53769,
+      "candidate_block_calls": 483921,
+      "decisions": 53769,
+      "executions": 41600
+    },
+    "training_rollout1/T": {
+      "candidate_constructions": 53698,
+      "candidate_block_calls": 483282,
+      "decisions": 53698,
+      "executions": 41600
+    },
+    "confirmation_reference/F": {
+      "decisions": 16640,
+      "executions": 16640
+    },
+    "confirmation_deterministic/U": {
+      "decisions": 24328,
+      "executions": 16640
+    },
+    "confirmation_deterministic/C": {
+      "decisions": 28867,
+      "executions": 16640
+    },
+    "confirmation_deterministic/T": {
+      "decisions": 29464,
+      "executions": 16640
+    },
+    "confirmation_tape0/U": {
+      "candidate_constructions": 21369,
+      "candidate_block_calls": 192321,
+      "decisions": 21369,
+      "executions": 16640
+    },
+    "confirmation_tape0/C": {
+      "candidate_constructions": 21455,
+      "candidate_block_calls": 193095,
+      "decisions": 21455,
+      "executions": 16640
+    },
+    "confirmation_tape0/T": {
+      "candidate_constructions": 21737,
+      "candidate_block_calls": 195633,
+      "decisions": 21737,
+      "executions": 16640
+    },
+    "confirmation_tape1/U": {
+      "candidate_constructions": 21363,
+      "candidate_block_calls": 192267,
+      "decisions": 21363,
+      "executions": 16640
+    },
+    "confirmation_tape1/C": {
+      "candidate_constructions": 21464,
+      "candidate_block_calls": 193176,
+      "decisions": 21464,
+      "executions": 16640
+    },
+    "confirmation_tape1/T": {
+      "candidate_constructions": 21744,
+      "candidate_block_calls": 195696,
+      "decisions": 21744,
+      "executions": 16640
+    },
+    "confirmation_tape2/U": {
+      "candidate_constructions": 21380,
+      "candidate_block_calls": 192420,
+      "decisions": 21380,
+      "executions": 16640
+    },
+    "confirmation_tape2/C": {
+      "candidate_constructions": 21394,
+      "candidate_block_calls": 192546,
+      "decisions": 21394,
+      "executions": 16640
+    },
+    "confirmation_tape2/T": {
+      "candidate_constructions": 21811,
+      "candidate_block_calls": 196299,
+      "decisions": 21811,
+      "executions": 16640
+    },
+    "confirmation_tape3/U": {
+      "candidate_constructions": 21340,
+      "candidate_block_calls": 192060,
+      "decisions": 21340,
+      "executions": 16640
+    },
+    "confirmation_tape3/C": {
+      "candidate_constructions": 21419,
+      "candidate_block_calls": 192771,
+      "decisions": 21419,
+      "executions": 16640
+    },
+    "confirmation_tape3/T": {
+      "candidate_constructions": 21755,
+      "candidate_block_calls": 195795,
+      "decisions": 21755,
+      "executions": 16640
+    }
+  },
+  "sequence_counts": {
+    "training_rollout0/C": 520,
+    "training_rollout1/C": 520,
+    "training_rollout0/T": 520,
+    "training_rollout1/T": 520,
+    "confirmation_reference/F": 96,
+    "confirmation_deterministic/U": 96,
+    "confirmation_deterministic/C": 96,
+    "confirmation_deterministic/T": 96,
+    "confirmation_tape0/U": 96,
+    "confirmation_tape0/C": 96,
+    "confirmation_tape0/T": 96,
+    "confirmation_tape1/U": 96,
+    "confirmation_tape1/C": 96,
+    "confirmation_tape1/T": 96,
+    "confirmation_tape2/U": 96,
+    "confirmation_tape2/C": 96,
+    "confirmation_tape2/T": 96,
+    "confirmation_tape3/U": 96,
+    "confirmation_tape3/C": 96,
+    "confirmation_tape3/T": 96
+  }
+}

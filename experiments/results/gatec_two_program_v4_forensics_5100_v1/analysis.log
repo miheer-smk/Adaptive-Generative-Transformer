@@ -1,0 +1,242 @@
+{
+  "selected_ids": [
+    "acquisition/L16/row00",
+    "acquisition/L16/row01",
+    "acquisition/L16/row02",
+    "acquisition/L16/row03"
+  ],
+  "cells": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0020981458947062492
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.00219247629866004
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.002100168028846383
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.002193308901041746
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014234182890504599
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014541300479322672
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014247277285903692
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.001440797932446003
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0016269554616883397
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.002132286550477147
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.001505433232523501
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0016817011637613177
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0022292304784059525
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0025584129616618156
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_REJECTED",
+      "label": 1,
+      "prediction": 0,
+      "CE": 6.418639659881592
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "UNOBSERVED"
+    }
+  ],
+  "ledger": {
+    "observed": {
+      "tokens": 1979,
+      "commits": 1979,
+      "decisions": 15832,
+      "executions": 15832,
+      "restart": 0,
+      "repeat": 67
+    },
+    "published_expected": {
+      "tokens": 1979,
+      "executions": 15832,
+      "commits": 1979
+    },
+    "counts_match": true,
+    "ledger_calls_match": true,
+    "phase_program_reference": [
+      {
+        "phase": "archival",
+        "program": "P0",
+        "reference": false,
+        "tokens": 8
+      },
+      {
+        "phase": "archival",
+        "program": "P0",
+        "reference": true,
+        "tokens": 8
+      },
+      {
+        "phase": "current",
+        "program": "P0",
+        "reference": false,
+        "tokens": 100
+      },
+      {
+        "phase": "current",
+        "program": "P1",
+        "reference": false,
+        "tokens": 7
+      },
+      {
+        "phase": "prefix",
+        "program": "P0",
+        "reference": true,
+        "tokens": 1696
+      },
+      {
+        "phase": "prefix",
+        "program": "P1",
+        "reference": false,
+        "tokens": 60
+      },
+      {
+        "phase": "supplied_reference",
+        "program": "P0",
+        "reference": true,
+        "tokens": 100
+      }
+    ],
+    "P1": {
+      "tokens": 67,
+      "prefix": 60,
+      "block5": 134,
+      "repeat_actions": 67,
+      "current": 7
+    },
+    "block_execution_counts": {
+      "0": 1979,
+      "1": 1979,
+      "2": 1979,
+      "3": 1979,
+      "4": 1979,
+      "5": 2046,
+      "6": 1912,
+      "7": 1979
+    },
+    "block5_extra_over_one_per_token": 67,
+    "P1_extra_block5_corresponds_to_67_tokens": true,
+    "block6_omissions": 67,
+    "future_calls_recorded": 0,
+    "future_records_observed": 0,
+    "joint_bootstrap_record": "Not executed, recorded in final_report/results; no joint_uncertainty.json exists",
+    "joint_uncertainty_artifact_present": false,
+    "historical_work": "Separate published historical ledgers, not pooled",
+    "caution": "Arithmetic corroboration of retained traces and counters; not new implementation validation."
+  },
+  "ambiguities": [],
+  "missing": [],
+  "arithmetic_consistent": true,
+  "evidence_hashes_equal": true
+}

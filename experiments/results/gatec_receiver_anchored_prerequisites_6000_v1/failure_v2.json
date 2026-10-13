@@ -1,0 +1,6 @@
+{
+  "boundary": "prerequisite tests",
+  "pytest_exit_code": 1,
+  "no_retry": true,
+  "evidence": "pytest_results_v2.xml and retained ledger/traces"
+}

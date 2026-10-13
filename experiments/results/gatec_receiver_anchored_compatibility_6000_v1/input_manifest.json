@@ -1,0 +1,311 @@
+{
+  "panels": {
+    "training": {
+      "path": "training_inputs.json",
+      "count": 1024,
+      "sha256": "4d76cc4ff8554d7b68b3bd572f1407fcbfddd7c9145fda36328de6093c10e410",
+      "by_length": {
+        "16": 512,
+        "24": 512
+      }
+    },
+    "development": {
+      "path": "development_inputs.json",
+      "count": 128,
+      "sha256": "6229eb4ca51a0aa96853f71bcc90d021b92361a5c14c7642130b1d99fad641d0",
+      "by_length": {
+        "16": 64,
+        "24": 64
+      }
+    },
+    "selection": {
+      "path": "selection_inputs.json",
+      "count": 256,
+      "sha256": "46a78f8cf6cc5a28dca3b7242c442bf6bdfa4776608af0c8068ec25e3d589113",
+      "by_length": {
+        "16": 128,
+        "24": 128
+      }
+    },
+    "confirmation": {
+      "path": "confirmation_inputs.json",
+      "count": 512,
+      "sha256": "d329f7abf6fb1efba880e6e8c3ecc487de7b0dc21be6f0afacf364f986ba09eb",
+      "by_length": {
+        "16": 256,
+        "24": 256
+      }
+    }
+  },
+  "encoded_sha256": "949901007bd6cfef0d2d12091e8376a32b80dee201bc2feb7e1d692399554759",
+  "feature_seed": 3002,
+  "feature_shape": [
+    2,
+    64
+  ],
+  "schedules_sha256": "014e38e89163d322b3c629b93aaecf459069a34d971fcee75251a22f4746ae64",
+  "profile_order_sha256": "4e93a3def90aa28c3db66b597392f5caa94af0f364c44742bd957b6cb193525f",
+  "generation": "Python random.Random(seed).getrandbits(L), zero-padded binary strings; shared input stream per split, lengths16 then24",
+  "suffix_generation": "independent declared suffix stream; draw u only after base/prefix/quota checks; reject whole pair on exact extended-input exposure",
+  "training_order": "one seeded stream shuffles length16 IDs then length24 IDs; zip; one of each per update",
+  "profiling_selection": "first8 cases in each sealed length/parity stratum, original manifest order",
+  "profiling_suffix": "z0",
+  "excluded_historical_unique_contents": 1429,
+  "historical_training_contents": 100,
+  "rejections": {
+    "train/L16": 30,
+    "train/L24": 36,
+    "development/L16": 4,
+    "development/L24": 3,
+    "selection/L16": 17,
+    "selection/L24": 1,
+    "confirmation/L16": 18,
+    "confirmation/L24": 0
+  },
+  "exposure_inventory": [
+    {
+      "path": "experiments/results/gatec_canonical_replay.json",
+      "sha256": "9c0127a6a3fb52ac6c31f0cef583bd95957d65fd8bfd3ff98144273ab3532a1b",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.json",
+      "sha256": "9303100f6dccca7701e0fddc601ebb79049f3d0a34d7e4331475d443760fd5ba",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/failure.json",
+      "sha256": "2e469ad24bc80defdaea83759f367936d55015c67243ad28d6e9b193d043a00d",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_deterministic.json",
+      "sha256": "8a04350e2f0da0a868693c3f8c2383bf66387de6a974c6b6cd761b58d08ec8c5",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_1.json",
+      "sha256": "d708b7597638dbac60d082b7774d9805a3a9a86ddb0b48cc3ea31355994da21b",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_2.json",
+      "sha256": "895dd2501aac6376530f5edeb7cffa2366e8ccd5165c732b963b6e5ec07c2ad1",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_3.json",
+      "sha256": "745ffcae2a00c9a1bdf01aa6b9868332a80b144cacaf6f701567f224ee7e5fa6",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_4.json",
+      "sha256": "aeca98d8fdabd8efa18d1537ea7e129f415788d4ba53ecc359c5a14f013d4053",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json",
+      "sha256": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3",
+      "explicit_bit_contents": 127
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_reference.json",
+      "sha256": "4457cc773c665dce26944de9ec57955a363ad44147ce69136470eaf045945b6f",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/training_schedule.json",
+      "sha256": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82",
+      "explicit_bit_contents": 100
+    },
+    {
+      "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json",
+      "sha256": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd",
+      "explicit_bit_contents": 100
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/fresh_4401_ood_test.json",
+      "sha256": "4dfa229e8ab88e3c50c925f4758bf2d4e485ceb22efb7d6be768d84c4d67706b",
+      "explicit_bit_contents": 64
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/fresh_4401_val.json",
+      "sha256": "230c12d7c6b8c7c790f451b02e6085c75c9d4829250f41b1f8eb1aee479181cb",
+      "explicit_bit_contents": 50
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/fresh_4402_ood_test.json",
+      "sha256": "4dfa229e8ab88e3c50c925f4758bf2d4e485ceb22efb7d6be768d84c4d67706b",
+      "explicit_bit_contents": 64
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/fresh_4402_val.json",
+      "sha256": "230c12d7c6b8c7c790f451b02e6085c75c9d4829250f41b1f8eb1aee479181cb",
+      "explicit_bit_contents": 50
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/historical_3305_ood_test.json",
+      "sha256": "4dfa229e8ab88e3c50c925f4758bf2d4e485ceb22efb7d6be768d84c4d67706b",
+      "explicit_bit_contents": 64
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/historical_3305_val.json",
+      "sha256": "230c12d7c6b8c7c790f451b02e6085c75c9d4829250f41b1f8eb1aee479181cb",
+      "explicit_bit_contents": 50
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/panel.json",
+      "sha256": "f155ba6477e2f9283a82e3d93f3db00c51620dbab6a36811a3f3a02cb23e3f41",
+      "explicit_bit_contents": 154
+    },
+    {
+      "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/training_sequences.json",
+      "sha256": "5ff1173e5a024d431c5a211287f3fb5595b3822baea2416d3cb0b344e02a1e2a",
+      "explicit_bit_contents": 100
+    },
+    {
+      "path": "experiments/results/gatec_learned_policy_replay_seed3305_v1/replay.json",
+      "sha256": "0bcb5d53408d6393fb7501eebc5f58e6524aca285cbe8eebfa0f6310b17a40f7",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/ood_test.json",
+      "sha256": "d9a98ab2fc725e6a8797512b98eb0a32d91bb53b86cbb065224e68f3898cd309",
+      "explicit_bit_contents": 64
+    },
+    {
+      "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/val.json",
+      "sha256": "02cbfc8a45bdcdef77bfda4f93d8ea62f30a03d95169c644b9341baf9f4700df",
+      "explicit_bit_contents": 52
+    },
+    {
+      "path": "experiments/results/gatec_matched_prefix_analysis_4700_v1/manifest.json",
+      "sha256": "c562cbdc54d3900d2b044bb91f3e7dfd8111a539a4ccd9a7f7fe440302dd0aba",
+      "explicit_bit_contents": 6
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/confirmation_panel.json",
+      "sha256": "e07f0eafd0238924e8ccf013298a09f7a6c1bb74534bf414fb753210da63dc0d",
+      "explicit_bit_contents": 126
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/evaluation_deterministic.json",
+      "sha256": "50ce301c1719d6949b69b2d451e5d76865a89dc11a734dd6f160d6c52fd7d615",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/evaluation_tape0.json",
+      "sha256": "e444c0c95a0b251672876409d6cb930a495aefbb6ac8bc05894f40afadaabb60",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/evaluation_tape1.json",
+      "sha256": "c08f4839c089a531ecdee573db4da718872659843c37ccd6842ff464936714f1",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/evaluation_tape2.json",
+      "sha256": "610025b185d3c6d8e603931910e974dd8caf58c247dbc41438c07c5fea0627d0",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/evaluation_tape3.json",
+      "sha256": "42cc28d6bf5413c0d6d237619ab030bb60a27bfe2a669a439021eeb864db9b68",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/reference.json",
+      "sha256": "28a015afda50fb76562ce71138f07772bd7624d23db097b053727b14d3c88e33",
+      "explicit_bit_contents": 96
+    },
+    {
+      "path": "experiments/results/gatec_paired_gradient_average_4900_v1/training_schedule.json",
+      "sha256": "ebff1f48de34d4697f62bfed930135cfd61da5c29a5d4f4cb22a91eb1ae2c789",
+      "explicit_bit_contents": 100
+    },
+    {
+      "path": "experiments/results/gatec_paired_task_maintenance_4401_v1/training_order.json",
+      "sha256": "8265cebd25a6675d1a841279810ef1bad9f87c0c7e9b3d938bcbfdfea7498637",
+      "explicit_bit_contents": 100
+    },
+    {
+      "path": "experiments/results/gatec_st_action_value_4700_identity_precheck_v1.json",
+      "sha256": "c904cabc071b81796feb78ff6e338d4d29eac9258b5923c3a3387575da9c2dd8",
+      "explicit_bit_contents": 6
+    },
+    {
+      "path": "experiments/results/gatec_st_action_value_4700_protocol_resolution_v1.json",
+      "sha256": "24bc13eddf57733b39e02e6a8b13995b6d4acc523a46980119db615b472c5ec4",
+      "explicit_bit_contents": 6
+    },
+    {
+      "path": "experiments/results/gatec_st_action_value_4700_v1/manifest.json",
+      "sha256": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+      "explicit_bit_contents": 6
+    },
+    {
+      "path": "experiments/results/gatec_temporal_vjp_4700_update1040_v1/manifest.json",
+      "sha256": "6c549c09420060e8ee5c64e0c14abecbc7a126d7ed7c9532d1fe311da364bf03",
+      "explicit_bit_contents": 6
+    },
+    {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v1/generation_attempts.json",
+      "sha256": "428949193469278648a9aa4adb3359edb674a673d27b1cc72fd02365199a0ef9",
+      "explicit_bit_contents": 125
+    },
+    {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v1/input_manifest.json",
+      "sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80",
+      "explicit_bit_contents": 489
+    },
+    {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v3/requirements_to_implementation_matrix.json",
+      "sha256": "0a54c6bffacaaccce20ad76da0c017f66ff62f5bf3ba0063b68b5715084a0147",
+      "explicit_bit_contents": 8
+    },
+    {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/current_screen_analysis.json",
+      "sha256": "ba708ec22d996a5b9d13f0783c8ad6b88b6e1474eb835a952d0cf1f38aba9803",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/results/gatec_two_program_feasibility_5100_v4/requirements_matrix_annotated.json",
+      "sha256": "95720af9b905e97ab4f632c7d32772057a5ffb703d30b5a2969ce04c1e7f9dda",
+      "explicit_bit_contents": 8
+    },
+    {
+      "path": "experiments/results/gatec_two_program_v4_forensics_5100_v1/prefix_readout_note.json",
+      "sha256": "e35bddb47caf29fc36f86fc83083f4dccff4f95760cf7cb76a25a76a963130da",
+      "explicit_bit_contents": 1
+    },
+    {
+      "path": "experiments/runs/stage3_real_metadata_dependency_3305_v1.json",
+      "sha256": "fbcebcd88f1cde74effb57211b3d6344eb37723ca48469d4789260d589312ae2",
+      "explicit_bit_contents": 2
+    },
+    {
+      "path": "experiments/runs/stage3_replication_3305_3307_100_v1.json",
+      "sha256": "d32e988558f7cfa3bc8e0a34e11c29e8acfb6aea25dc5f4839839719dcac3beb",
+      "explicit_bit_contents": 431
+    },
+    {
+      "path": "experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json",
+      "sha256": "638506643b303ecd77e27e01c1b24e89c2cccbb0f103b8da0ca367184e24be5d",
+      "explicit_bit_contents": 431
+    },
+    {
+      "path": "experiments/runs/stage3_stochastic_continuation_3305_3307_v1.json",
+      "sha256": "89e91bbdaf0f47a16aa7eb93e186e3cdb553f91f7970b1deea4e65444ba0e22e",
+      "explicit_bit_contents": 6
+    }
+  ],
+  "unreadable_historical_JSON": [],
+  "limitations": [
+    "Unknown Stage1 training exposure",
+    "Historical artifacts without explicit retained input bits cannot establish content overlap",
+    "Explicit bits only; encoded-only historical checkpoint/noise files not deserialized"
+  ],
+  "no_outcome_dependent_filtering": true,
+  "disjoint_complete_inputs": true,
+  "disjoint_incoming_histories": true
+}

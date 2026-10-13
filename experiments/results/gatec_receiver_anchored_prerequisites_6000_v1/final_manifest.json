@@ -1,0 +1,18 @@
+{
+  "runtime": {},
+  "pytest_exit_code": 1,
+  "elapsed_seconds": 1.4081017971038818,
+  "source_hashes": {
+    "receiver_anchored_v1.py": "a31f46b85419f5087016369987a63c476b63323d62216d06065e34698d9ac116",
+    "run_prerequisites_v1.py": "080453b689464978e56d478e0d451219e5e08b81886aac356dd46bcf9cc4be31",
+    "statistical_rules_v1.py": "8a4b6c47a69753ca7b96c9f4283e10c4373f384064a8f0d4196a553ce3c355d2",
+    "test_receiver_anchored_v1.py": "71c2bf66c46152537c18329aeb7add69334ef11551520d1ef2190cb903c44c07"
+  },
+  "protected_identity_result": true,
+  "training_executed": false,
+  "optimizer_updates": 0,
+  "production_edits": false,
+  "study_checkpoints_created": false,
+  "git_commit_created": false,
+  "original_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+}

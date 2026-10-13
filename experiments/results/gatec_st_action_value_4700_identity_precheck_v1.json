@@ -1,0 +1,470 @@
+{
+  "created_utc": "2026-10-08T11:02:26.942651+00:00",
+  "status": "awaiting_required_protocol_clarification_before_probe_construction",
+  "parent_manifest_path": "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json",
+  "parent_manifest_sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+  "checkpoints": {
+    "0": {
+      "update": 0,
+      "path": "experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt",
+      "sha256": "ae8ff9256afd573331719cf15a3f82d21f70181891400640739a0415c82d6279",
+      "change": {
+        "l2": 0.0,
+        "changed_values": 0,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.0.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.weight": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          },
+          "mlp.2.bias": {
+            "l2": 0.0,
+            "max_abs": 0.0,
+            "changed_values": 0
+          }
+        }
+      }
+    },
+    "1040": {
+      "update": 1040,
+      "path": "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt",
+      "sha256": "37537106f47e3a003e4b5d2ff98ded93a8f98e3a2b60ee7814e502d28ddaa6d4",
+      "change": {
+        "l2": 0.7465758323669434,
+        "changed_values": 103306,
+        "per_parameter": {
+          "norm_h.weight": {
+            "l2": 0.03690236806869507,
+            "max_abs": 0.01746833324432373,
+            "changed_values": 64
+          },
+          "norm_memory_read.weight": {
+            "l2": 0.016767920926213264,
+            "max_abs": 0.00576174259185791,
+            "changed_values": 64
+          },
+          "mlp.0.weight": {
+            "l2": 0.7354072332382202,
+            "max_abs": 0.01988142915070057,
+            "changed_values": 100352
+          },
+          "mlp.0.bias": {
+            "l2": 0.027739819139242172,
+            "max_abs": 0.009661570191383362,
+            "changed_values": 256
+          },
+          "mlp.2.weight": {
+            "l2": 0.11880642920732498,
+            "max_abs": 0.017817281186580658,
+            "changed_values": 2560
+          },
+          "mlp.2.bias": {
+            "l2": 0.004946517758071423,
+            "max_abs": 0.0037334077060222626,
+            "changed_values": 10
+          }
+        }
+      }
+    }
+  },
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "noncontroller_tensors": 126
+  },
+  "verified_hashes": {
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json": "506c485bc7cdda615a15ab991b86175298c6e83bae973f6abe8e756ebe1a0f9e",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/decisions.jsonl.gz": "aa63393a5c4fd1f082b046e72d6c2f036da0b1b80aa89b5fd1c060115870124c",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/encoding_attestation.json": "255a9051ba5488902cf8c58d219e4459777df4cdfe966c76ccdaa6325d1d30c6",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/failure.json": "2e469ad24bc80defdaea83759f367936d55015c67243ad28d6e9b193d043a00d",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_deterministic.json": "8a04350e2f0da0a868693c3f8c2383bf66387de6a974c6b6cd761b58d08ec8c5",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_1.json": "d708b7597638dbac60d082b7774d9805a3a9a86ddb0b48cc3ea31355994da21b",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_2.json": "895dd2501aac6376530f5edeb7cffa2366e8ccd5165c732b963b6e5ec07c2ad1",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_3.json": "745ffcae2a00c9a1bdf01aa6b9868332a80b144cacaf6f701567f224ee7e5fa6",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_4.json": "aeca98d8fdabd8efa18d1537ea7e129f415788d4ba53ecc359c5a14f013d4053",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_reference.json": "4457cc773c665dce26944de9ec57955a363ad44147ce69136470eaf045945b6f",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/historical_checkpoint_attestation.json": "ceb24860afe4fd031f3b8c71bba4a6fa2a8b57cba857b60010eaeeeab07bbbaa",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/initialization.pt": "d394da291553b78172bbdacc25af3c0bd881234d1fb6a3b458a3de33d1d94995",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_2.pt": "a0f630c48bbf168b872acff27147f1e3500a57774971bddadf1bc1c7e58446f4",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_3.pt": "382a679123d8815785c6c5fea830c7a5564924dbfb45a6622b61f8ea924a5a15",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_4.pt": "1a93b8f1e4e02e42c9f4e9b2acf841bc299168fa7d0648dfc11bb59319cbff83",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_training.pt": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/paired_divergence.jsonl.gz": "f2d9cfe4c77b3210f0ac37db06a65bc38be372dd8aea87b68d20e6bd5e9f69eb",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/prior_input_inventory.json": "0eafdba7277a135f7ccdfc2f6064ad874b9ad92a294261191794b5d1f3e31d50",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/report.md": "36dbdbb7eb44fed2223015a589edc6a17da763c605aa9ff39f488809e36912c9",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/results.json": "1f885f26a35730e7f000141fd0710c6159a8b3d6599d88b998ea9ccfa243cd21",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/sequences.jsonl.gz": "28fe03152beb88c0fd885b9a845c998414bffddbe3d804a92de757a5726b9248",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/snapshots.jsonl.gz": "ea86765bee6de8ffa59a061c1d63685fc00f54d9c73412cc39b55a1848e8ce1c",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/summarize_recorded.py": "377ea0b51f6e17819a6d5ec0401ac956ef76916d930ce4a4b68cbc90a06592aa",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/tokens.jsonl.gz": "33d06ba8a8016ad4b99b1c38a2f36b2514971145b7cafc98b4c96e29300b62d4",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_schedule.json": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/updates.jsonl.gz": "159fb84588dd1203ab68440899c485177a3c7662913ec2e8e7bd65b22d81e390",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/validation.json": "424e8f603d02c6eebf4ec3aa1eca7fc8804b1a629f67faaf09f4843e9f3b1c18",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/verification.json": "895b950fbaab2048b110a343d758ee9d20942a3c417f8848fab556a05fb46c81",
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/verify_recorded.py": "7f460113c8089dd6c23a2e71c4be19bf83ebe720bc88fc348940123868048eef",
+    "experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt": "ae8ff9256afd573331719cf15a3f82d21f70181891400640739a0415c82d6279",
+    "experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt": "65821b572854946379dcc44ab96e5b96d1a7f88f597022c9de23d96778d5172b",
+    "experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt": "8e3c3ad0ec39c7a79657e3254224530215382da0ce9c62f1b9ab1c94bcc17491",
+    "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt": "37537106f47e3a003e4b5d2ff98ded93a8f98e3a2b60ee7814e502d28ddaa6d4",
+    "src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "src/terminal_commit.py": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/norms.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "src/convergence.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "src/gdn_v3.py": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+    "src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "src/output_head.py": "5ea4e70576c5869639f758a7b95c87f2cb0464ed091bbf98b7524538fd31511a",
+    "src/gdn.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "src/mhc.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "src/executor.py": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f",
+    "src/rope.py": "2a99012fb952ad53d72762eb85cd02c3dd0a12eb3949afcd45f35bede4c03d80",
+    "src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "src/swiglu.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "src/utils.py": "4c220baa4e6669c04fbb991e5e7bcd39df41d36d5d2283d060fc28a79a4f3a33",
+    "src/prelude.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "src/gqa.py": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb",
+    "src/memory.py": "1fa44e6367d53e299938c1f95c946df2570487daf24d26191a32b86d1235375c",
+    "src/caches.py": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1",
+    "src/commit.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "src/config.py": "c106a8f03333a0ccafc004be612ce9bdcfc30f2f9eadd6d5fe57534fbad04efc",
+    "experiments/run_gatec_paired_task_maintenance.py": "e80b27dd3bcd3674b2c063cc0964df5c1f34cd6aecc4b2d3b2a31b088244582e",
+    "experiments/replicate_gatec_locked_imitation.py": "9c86782334a0825c7e9f8976067cb2b45c073c132b440c878f687ad62e93c14f",
+    "experiments/replay_gatec_learned_policy.py": "ee6be11e1a209a0d78126399c181bf01dda3dcbd4e88d0eead2c80a6628a0748",
+    "experiments/audit_gatec_canonical_replay.py": "79d0fc55d650531a1c181e10421661e5522eba18153dfab0254f7e29de47a740",
+    "experiments/evaluate_gatec_locked_policy.py": "1503fc2cc3dc75eccde7f3c70cbc56d4f3a3b574f04a2d43048536d0a2dbbcb4",
+    "experiments/stage3_measurements.py": "b4ea700c104444c39d0c681721cbf034fe9c2684b0c4fec08ac4f6108737c9ac",
+    "experiments/run_stage3_route_imitation.py": "592bcd9b5d9e2f2df1030318ff826c3c510a07589ab5ce7cc65be182121371f6"
+  },
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+  },
+  "bytecode_exception": {
+    "retained": true,
+    "only_recorded_bytecode_cache_changes": true,
+    "experiment_relevant_hash_discrepancies": [],
+    "initial_cache_bytes_unknown": true,
+    "original_failure_record_retained": true,
+    "bytecode_writing_disabled": true
+  },
+  "feature_configuration": {
+    "attestation": {
+      "manifest_sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+      "pre_training": true,
+      "protocol_change": false,
+      "encoding": "existing TaskAParity fixed two-row FP32 token_features[bits], target sum(bits) mod2",
+      "feature_seed": 3002,
+      "token_feature_fingerprint": "0b0417667a8c3b16ab84596fe6d98bc56d306add3229aa5d18854f30631e1f3e",
+      "token_feature_shape": [
+        2,
+        64
+      ],
+      "token_feature_trainable": false,
+      "dataset_source_sha256": "345cb186461904cf224408cfa41617c90739bd6a103c1c9cf857f7b4544dd9d9",
+      "helper_source_sha256": {
+        "experiments/run_gatec_paired_task_maintenance.py": "e80b27dd3bcd3674b2c063cc0964df5c1f34cd6aecc4b2d3b2a31b088244582e",
+        "experiments/replicate_gatec_locked_imitation.py": "9c86782334a0825c7e9f8976067cb2b45c073c132b440c878f687ad62e93c14f",
+        "experiments/replay_gatec_learned_policy.py": "ee6be11e1a209a0d78126399c181bf01dda3dcbd4e88d0eead2c80a6628a0748",
+        "experiments/audit_gatec_canonical_replay.py": "79d0fc55d650531a1c181e10421661e5522eba18153dfab0254f7e29de47a740",
+        "experiments/evaluate_gatec_locked_policy.py": "1503fc2cc3dc75eccde7f3c70cbc56d4f3a3b574f04a2d43048536d0a2dbbcb4",
+        "experiments/stage3_measurements.py": "b4ea700c104444c39d0c681721cbf034fe9c2684b0c4fec08ac4f6108737c9ac",
+        "experiments/run_stage3_route_imitation.py": "592bcd9b5d9e2f2df1030318ff826c3c510a07589ab5ce7cc65be182121371f6"
+      }
+    },
+    "budget": [
+      0.0,
+      0.0
+    ],
+    "presence_flag": 0.0,
+    "tau": 2.0,
+    "loss": "final-sequence parity CE only"
+  },
+  "numerical": {
+    "torch_version": "2.10.0+cu130",
+    "device": "cuda",
+    "device_name": "NVIDIA GB10",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false
+  },
+  "gradient_policy": {
+    "maintenance_manifest_sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430",
+    "policy": "unchanged run_diff_sequence full-sequence BPTT; no token/state/cache detach; reset at independent-sequence boundary",
+    "horizon": "entire current sequence: 4..16 tokens in training; no inter-sequence graph",
+    "production_detach_locations": [
+      "src/routing.py:137 hard - relaxed.detach() + relaxed; ST relaxed stop-gradient",
+      "src/executor.py:323 action.detach().argmax; hard pointer/just_restarted/P/mask metadata"
+    ],
+    "unused_detach": "src/convergence.py detach helper is outside execute_differentiable",
+    "clone_semantics": "state.clone, cache.clone and memory write clones preserve autograd",
+    "attention": "GQA retains complete sequence; SWA window 256 retains 255 committed rows; no within-sequence eviction at these lengths",
+    "convolution": "GDN retains conv_kernel-1=3 inputs; existing finite convolution receptive field, no added gradient detach",
+    "frozen_computations": "T frozen backbone executes with autograd enabled",
+    "diagnostic_detaches": "copy/snapshot/probability/report tensors only; returned execution/final CE graph is not replaced",
+    "anchor": "original Prelude h_t,0 is passed unchanged to all successor blocks; observed for in-flight mutation"
+  },
+  "six_sequence_selection_rule": "first sequence in original materialized manifest row order in each source/length/parity stratum; no outcome filtering",
+  "six_sequences": [
+    {
+      "source": "training",
+      "original_row_index": 96,
+      "sequence_id": "train/L16/row0",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "57e0cd524f7c634db3e38035a93b713783f2bce5633fb130acbd4e2c7a973cb6",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "training",
+      "original_row_index": 97,
+      "sequence_id": "train/L16/row1",
+      "split": "train",
+      "length": 16,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "6d188347b8022adc1e3c9b5524af34d7e6709bef5b991624f97909fa97d8ee95",
+      "exact_training_membership": true,
+      "prior_exposure": "training: ten recorded seed4700 task-loss passes",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 0,
+      "sequence_id": "val/L16/row0",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "sequence_label_hash": "6d471b259a568bf4109f582f63a699a19bf5d7c16d535d62a73350cafcdea2d8",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length16_eval",
+      "original_row_index": 2,
+      "sequence_id": "val/L16/row2",
+      "split": "val",
+      "length": 16,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "sequence_label_hash": "01ebaa78ce38d3069a6c4947369d5d48349967bedc65d6c4b171abbdd1171e58",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 94,
+      "sequence_id": "ood_test/L32/row2",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "sequence_label_hash": "d3ce5146b9dce17652e41caa86e7748b4ad918b9ca543c3b88080eb373536394",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    },
+    {
+      "source": "length32_ood",
+      "original_row_index": 92,
+      "sequence_id": "ood_test/L32/row0",
+      "split": "ood_test",
+      "length": 32,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "sequence_label_hash": "90e1f6f864796f269631ac4829189c5936c1e53c691c6a0285a5bd95a6d3464f",
+      "exact_training_membership": false,
+      "prior_exposure": "locked final panel already evaluated in the recorded seed4700 experiment; not untouched data",
+      "Stage1_training_membership": "unknown"
+    }
+  ],
+  "historical_tape_zero": {
+    "zero_based_ordinal": 0,
+    "manifest_key": "final_tape_1",
+    "file": "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt",
+    "sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7",
+    "seed": 924088217,
+    "missing_sequence_coordinates": [
+      "train/L16/row0",
+      "train/L16/row1"
+    ]
+  },
+  "unresolved": [
+    "Historical evaluation tape0 has no training sequence IDs; explicit coordinate reuse mapping is required to preserve its draws.",
+    "Probe A token1 numbering: zero-based second token versus one-based first token."
+  ],
+  "diagnostic_outcomes_measured": false,
+  "probe_states_constructed": 0,
+  "counterfactual_continuations": 0,
+  "gradient_probes": 0,
+  "hypothesis_status": "unresolved: requested measurements have not begun",
+  "no_training": true,
+  "no_optimizer_steps": true,
+  "no_weight_or_production_changes": true
+}

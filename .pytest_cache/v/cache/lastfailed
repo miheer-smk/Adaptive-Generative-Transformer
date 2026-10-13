@@ -1,0 +1,12 @@
+{
+  "tests/test_stage0_t4.py::test_t4_repeated_step_does_not_double_commit_same_input_state": true,
+  "tests/test_stage4_halting.py::test_stage4_halt_terminates_before_any_block_execution": true,
+  "tests/test_stage4_halting.py::test_stage4_halt_after_execution_preserves_current_live_state": true,
+  "tests/test_stage3_measurements.py::test_real_gradient_diagnostic_preserves_forward_and_mask_contract": true,
+  "tests/test_stage3_measurements.py::test_metadata_credit_blindspot_has_causal_forward_effect_and_zero_gradient": true,
+  "tests/test_stage3_replication.py::test_compute_measurement_counts_only_inference_selected_blocks": true,
+  "tests/test_stage3_stochastic_evaluation.py::test_paired_stochastic_assessment_replays_without_parameter_updates": true,
+  "tests/test_stage3_taskA_gradient_diagnostic.py::test_proxy_preserves_real_forward_noise_and_exposes_boundary": true,
+  "tests/test_stage3_taskA_gradient_diagnostic.py::test_scripted_replacements_have_one_difference_and_legal_continuation": true,
+  "tests/test_stage3_variance_ablation.py::test_gradient_averaging_matches_independent_draws_without_updating_weights": true
+}

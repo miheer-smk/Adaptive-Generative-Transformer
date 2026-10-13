@@ -1,0 +1,8 @@
+{
+  "error": "'selected_probability'",
+  "type": "KeyError",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/run_gatec_paired_task_maintenance.py\", line 417, in main\n    stages['initial_deterministic_val']={'U':[measure('initial_deterministic_val','U',s,False) for s in panels['val']]}\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/run_gatec_paired_task_maintenance.py\", line 413, in measure\n    result=add_measurements(spec,ref,path,model.controller)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/run_gatec_paired_task_maintenance.py\", line 267, in add_measurements\n    result['mean_selected_probability']=sum(r['selected_probability'] for r in path.rows)/len(path.rows)\n                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/run_gatec_paired_task_maintenance.py\", line 267, in <genexpr>\n    result['mean_selected_probability']=sum(r['selected_probability'] for r in path.rows)/len(path.rows)\n                                            ~^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'selected_probability'\n",
+  "completed_updates": 0,
+  "last_sequence": null,
+  "instruction": "STOP: no tuning, extension, repair or replacement"
+}

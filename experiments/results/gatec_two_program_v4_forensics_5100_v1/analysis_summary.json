@@ -1,0 +1,1467 @@
+{
+  "selected_ids": [
+    "acquisition/L16/row00",
+    "acquisition/L16/row01",
+    "acquisition/L16/row02",
+    "acquisition/L16/row03"
+  ],
+  "four_cells": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0020981458947062492,
+      "logits": [
+        [
+          -3.6402270793914795,
+          2.5254430770874023
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "8d3fe75edf49240a0682c0b1073b269ec994af5f9e2ffc162474762caeadf929",
+      "outgoing_sha256": "de9648647d4f371d4cb1fd18c5c010fb529783ea7486b471b8e2985d16426f8b",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0020981458947062492,
+        "arithmetic_CE": 0.0020981077879724808,
+        "CE_residual": 3.810673376847262e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 2.9430530124052723e-08,
+          "L2_of_actual_difference": 2.9436740175955094e-08,
+          "RMS_of_actual_difference": 2.081491859444433e-08,
+          "signed_mean_difference": 1.5017576492472665e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.00219247629866004,
+      "logits": [
+        [
+          -3.6184542179107666,
+          2.503171920776367
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "8d3fe75edf49240a0682c0b1073b269ec994af5f9e2ffc162474762caeadf929",
+      "outgoing_sha256": "9431a1f05cf9373049dc895b8213e93ba115f9e6f03a1a310a9b904c453b1f00",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.00219247629866004,
+        "arithmetic_CE": 0.002192478635119066,
+        "CE_residual": -2.3364590262531237e-09,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 2.3446419139538932e-08,
+          "L2_of_actual_difference": 2.3452525283871286e-08,
+          "RMS_of_actual_difference": 1.6583439664174348e-08,
+          "signed_mean_difference": -1.1990778123454476e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.002100168028846383,
+      "logits": [
+        [
+          -3.6377997398376465,
+          2.5268959999084473
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "ab81b8a47abc4d9008d2eb7f2e1589d0de7d1ddf47a309a0714c84245c3f41a7",
+      "outgoing_sha256": "f471008f2836742f0bde0666ac66cbb220bc8f1c3d79a5a6e330cca6abb8ab32",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.002100168028846383,
+        "arithmetic_CE": 0.002100151069344136,
+        "CE_residual": 1.695950224700482e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 1.6991694051782247e-08,
+          "L2_of_actual_difference": 1.6991694770721393e-08,
+          "RMS_of_actual_difference": 1.2014942596229096e-08,
+          "signed_mean_difference": 8.498318462141219e-09
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.002193308901041746,
+      "logits": [
+        [
+          -3.615844488143921,
+          2.5054192543029785
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "ab81b8a47abc4d9008d2eb7f2e1589d0de7d1ddf47a309a0714c84245c3f41a7",
+      "outgoing_sha256": "a1439cd2fde20177d7f619a91b846c13c482d92199bcda433c28c80252172710",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.002193308901041746,
+        "arithmetic_CE": 0.002193272454272144,
+        "CE_residual": 3.6446769602349605e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 1.893829437715766e-08,
+          "L2_of_actual_difference": 1.894612528245841e-08,
+          "RMS_of_actual_difference": 1.3396933664436234e-08,
+          "signed_mean_difference": 9.196810401342764e-09
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014234182890504599,
+      "logits": [
+        [
+          3.915832757949829,
+          -2.638190746307373
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "1fbd47f5764343c1f2636381e996d93f0ae6c8f5f60d5c6e162cc07f53e6b344",
+      "outgoing_sha256": "38e57929fe3333f86fab70d4db03434b1c2799dcb02edaeb2e60ec0584fd77d8",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0014234182890504599,
+        "arithmetic_CE": 0.0014233596252828384,
+        "CE_residual": 5.866376762142522e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 5.8113509560087095e-08,
+          "L2_of_actual_difference": 5.8116205861017115e-08,
+          "RMS_of_actual_difference": 4.109436326115858e-08,
+          "signed_mean_difference": 2.933666114375566e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014541300479322672,
+      "logits": [
+        [
+          3.9152963161468506,
+          -2.6172866821289062
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "1fbd47f5764343c1f2636381e996d93f0ae6c8f5f60d5c6e162cc07f53e6b344",
+      "outgoing_sha256": "bcc7ae3c8c53b9b00eb62a2aa6b2cca75782a473c69ca3dfbcf2968cf0f00484",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0014541300479322672,
+        "arithmetic_CE": 0.0014541842645212633,
+        "CE_residual": -5.421658899606996e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 2.5815933502038035e-08,
+          "L2_of_actual_difference": 2.581674395653652e-08,
+          "RMS_of_actual_difference": 1.825519471982379e-08,
+          "signed_mean_difference": -1.2805685355209498e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0014247277285903692,
+      "logits": [
+        [
+          3.9014980792999268,
+          -2.6515746116638184
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "052db0c142e3b0d52f6efae30c9129f91bac5ffd7df057a4deaba05772e482ae",
+      "outgoing_sha256": "29446bf1356e602c8ff3fc94ea49968270ab6cdee02b46479f0a0e1389864be6",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0014247277285903692,
+        "arithmetic_CE": 0.0014247126540634092,
+        "CE_residual": 1.5074526960034973e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 1.8312304561618475e-08,
+          "L2_of_actual_difference": 1.8314998952632083e-08,
+          "RMS_of_actual_difference": 1.295065995683066e-08,
+          "signed_mean_difference": 9.313225732927519e-09
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.001440797932446003,
+      "logits": [
+        [
+          3.9013419151306152,
+          -2.6405208110809326
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "052db0c142e3b0d52f6efae30c9129f91bac5ffd7df057a4deaba05772e482ae",
+      "outgoing_sha256": "e66e658d4fdadd71863da62a52db0766b0967674933bdd64f111f9b64de3991a",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.001440797932446003,
+        "arithmetic_CE": 0.0014407619207918998,
+        "CE_residual": 3.601165410316298e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 2.5672938885890062e-08,
+          "L2_of_actual_difference": 2.5674626807298056e-08,
+          "RMS_of_actual_difference": 1.8154702719874373e-08,
+          "signed_mean_difference": 1.2689270041297239e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0016269554616883397,
+      "logits": [
+        [
+          3.7475461959838867,
+          -2.6727051734924316
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "6ca38a54a8320c3b39bd3bb6fae4393706eee4e23f019732d2d5edd9eb7998e3",
+      "outgoing_sha256": "23ce6cfc8814f0fa29e6129974f98c60da32ffa7876897badecb884dfb689cb7",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0016269554616883397,
+        "arithmetic_CE": 0.001626922734978109,
+        "CE_residual": 3.2726710230690514e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 5.70679997702328e-08,
+          "L2_of_actual_difference": 5.7068073803828376e-08,
+          "RMS_of_actual_difference": 4.0353221975941414e-08,
+          "signed_mean_difference": 2.857996156456575e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.002132286550477147,
+      "logits": [
+        [
+          3.5795557498931885,
+          -2.569920539855957
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "6ca38a54a8320c3b39bd3bb6fae4393706eee4e23f019732d2d5edd9eb7998e3",
+      "outgoing_sha256": "9b2b23279e89d603ff2380c26f35ee0ace91fcfe9bb1c1dc70a082e52ee8372d",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.002132286550477147,
+        "arithmetic_CE": 0.0021323243685933413,
+        "CE_residual": -3.781811619418818e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 2.0994310401256655e-08,
+          "L2_of_actual_difference": 2.100464878349068e-08,
+          "RMS_of_actual_difference": 1.4852529591248025e-08,
+          "signed_mean_difference": -1.0826624961563641e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.001505433232523501,
+      "logits": [
+        [
+          3.806490421295166,
+          -2.69140625
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "61d90d49a0bfbeaa3f4f69ff50bc10c71727fc0553f541097fc6a01405c84ba3",
+      "outgoing_sha256": "eeb65e104e0af3a0d6765585d1b517570feb6ed4b74ca234153ebb63208e0912",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.001505433232523501,
+        "arithmetic_CE": 0.0015054709574289227,
+        "CE_residual": -3.772490542175433e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 3.627964906272041e-08,
+          "L2_of_actual_difference": 3.627967329435059e-08,
+          "RMS_of_actual_difference": 2.5653603005667794e-08,
+          "signed_mean_difference": -1.8160790161959005e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 0,
+      "prediction": 0,
+      "CE": 0.0016817011637613177,
+      "logits": [
+        [
+          3.7378785610198975,
+          -2.6492629051208496
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "61d90d49a0bfbeaa3f4f69ff50bc10c71727fc0553f541097fc6a01405c84ba3",
+      "outgoing_sha256": "87dcd0004c15175232e495c2571a9f3abd582f43184056b0a68b82afcce24238",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0016817011637613177,
+        "arithmetic_CE": 0.0016816456578112593,
+        "CE_residual": 5.550595005843206e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 8.205684753903597e-08,
+          "L2_of_actual_difference": 8.205713414086758e-08,
+          "RMS_of_actual_difference": 5.802315599574163e-08,
+          "signed_mean_difference": 4.0919985575438474e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 0,
+      "boundary_program": 0,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0022292304784059525,
+      "logits": [
+        [
+          -3.588261127471924,
+          2.5167391300201416
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "94e71f94e82ddf8af456f2f92990da83351f906925084a3b430da8c0a238fac5",
+      "outgoing_sha256": "00a28f7e9029943218a5fcb65957353e2e75b474361947bd99e702705faeb581",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0022292304784059525,
+        "arithmetic_CE": 0.0022291942945371623,
+        "CE_residual": 3.618386879011837e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 5.8437997885185666e-08,
+          "L2_of_actual_difference": 5.8442202026798296e-08,
+          "RMS_of_actual_difference": 4.132487736062326e-08,
+          "signed_mean_difference": 2.9569491778519072e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 0,
+      "boundary_program": 1,
+      "status": "EXECUTED_ACCEPTED",
+      "label": 1,
+      "prediction": 1,
+      "CE": 0.0025584129616618156,
+      "logits": [
+        [
+          -3.5069446563720703,
+          2.460151195526123
+        ]
+      ],
+      "correct": true,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        7
+      ],
+      "incoming_sha256": "94e71f94e82ddf8af456f2f92990da83351f906925084a3b430da8c0a238fac5",
+      "outgoing_sha256": "732f147eac2eed607d78fb24cab3f496d4cc4542fc5046da002638332286ffa2",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": true,
+          "executions": true,
+          "commits": true,
+          "no_additional_error": true,
+          "positive_CE": true,
+          "total_variation": true
+        },
+        "accepted": true
+      },
+      "arithmetic": {
+        "recorded_CE": 0.0025584129616618156,
+        "arithmetic_CE": 0.002558394611903214,
+        "CE_residual": 1.834975860148802e-08,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 1,
+        "argmax_from_recorded_logits": 1,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 7.202662133387605e-09,
+          "L2_of_actual_difference": 7.202677935934749e-09,
+          "RMS_of_actual_difference": 5.093062411202187e-09,
+          "signed_mean_difference": 3.608874956035138e-09
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "boundary_program": 0,
+      "status": "EXECUTED_REJECTED",
+      "label": 1,
+      "prediction": 0,
+      "CE": 6.418639659881592,
+      "logits": [
+        [
+          3.758411407470703,
+          -2.6585960388183594
+        ]
+      ],
+      "correct": false,
+      "P": 8,
+      "D": 8,
+      "commit_count": 1,
+      "blocks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "incoming_sha256": "167125bb16c6b7d9afe781acecfc1af80a40ae8068bd4ae5957ccbb70824b861",
+      "outgoing_sha256": "6fdf2d3b9d75f3d24e80660629dde4861bab059bedfb9285bfff0b75466cc1ac",
+      "trace_summary_matches": true,
+      "published_acceptance": {
+        "checks": {
+          "current_correct": false,
+          "executions": true,
+          "commits": true
+        },
+        "accepted": false
+      },
+      "arithmetic": {
+        "recorded_CE": 6.418639659881592,
+        "arithmetic_CE": 6.41863965089405,
+        "CE_residual": 8.987541377791786e-09,
+        "CE_locked_scalar_match": true,
+        "recorded_prediction": 0,
+        "argmax_from_recorded_logits": 0,
+        "prediction_consistent": true,
+        "correctness_consistent": true,
+        "probability_arrays": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            2
+          ],
+          "element_count": 2,
+          "exact_values_equal": false,
+          "allclose": true,
+          "max_abs_difference": 3.059777986536005e-08,
+          "L2_of_actual_difference": 3.059778604704504e-08,
+          "RMS_of_actual_difference": 2.1635902003160675e-08,
+          "signed_mean_difference": -1.5308614794004236e-08
+        },
+        "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+      }
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "boundary_program": 1,
+      "status": "UNOBSERVED",
+      "reason": "No executed boundary record; no reconstruction"
+    }
+  ],
+  "first_retained_differences": {
+    "acquisition/L16/row00": {
+      "first_prefix_program_difference": {
+        "token": 0,
+        "decision": 6,
+        "P0_action": 6,
+        "P1_action": 8,
+        "P0_blocks": [
+          6
+        ],
+        "P1_blocks": [
+          5
+        ],
+        "interpretation": "Prescribed compound program substitution, not a defect"
+      },
+      "first_prefix_full_array_difference": {
+        "token": 0,
+        "decision": 6,
+        "field": "h_after",
+        "comparison": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            64
+          ],
+          "element_count": 64,
+          "exact_values_equal": false,
+          "allclose": false,
+          "max_abs_difference": 0.14370501041412354,
+          "L2_of_actual_difference": 1.1109685458996967,
+          "RMS_of_actual_difference": 0.1388710682374621,
+          "signed_mean_difference": -0.13884139152651187
+        },
+        "same_action_and_block": false
+      },
+      "first_prefix_prediction_disagreement": null,
+      "final_P0_boundary_first_incoming_summary_difference": {
+        "field": "/s",
+        "left": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.087959289550781,
+          "max_abs": 1.172702431678772
+        },
+        "right": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.086141586303711,
+          "max_abs": 1.208348035812378
+        },
+        "locked_match": false,
+        "comparable": true,
+        "representation": "Retained summary",
+        "shape_equal": true,
+        "summary_l2_delta": -0.0018177032470703125,
+        "summary_max_abs_delta": 0.03564560413360596,
+        "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+      },
+      "final_P0_boundary_first_full_live_array_difference": {
+        "sequence_id": "acquisition/L16/row00",
+        "phase": "final_P0_boundary",
+        "token": 15,
+        "decision": 0,
+        "stage": "same_program_live_execution",
+        "field": "h_before",
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.11622005701065063,
+        "L2_of_actual_difference": 0.3661047334083292,
+        "RMS_of_actual_difference": 0.04576309167604115,
+        "signed_mean_difference": -0.003399622713914141
+      },
+      "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+    },
+    "acquisition/L16/row01": {
+      "first_prefix_program_difference": {
+        "token": 0,
+        "decision": 6,
+        "P0_action": 6,
+        "P1_action": 8,
+        "P0_blocks": [
+          6
+        ],
+        "P1_blocks": [
+          5
+        ],
+        "interpretation": "Prescribed compound program substitution, not a defect"
+      },
+      "first_prefix_full_array_difference": {
+        "token": 0,
+        "decision": 6,
+        "field": "h_after",
+        "comparison": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            64
+          ],
+          "element_count": 64,
+          "exact_values_equal": false,
+          "allclose": false,
+          "max_abs_difference": 0.14370501041412354,
+          "L2_of_actual_difference": 1.1109685458996967,
+          "RMS_of_actual_difference": 0.1388710682374621,
+          "signed_mean_difference": -0.13884139152651187
+        },
+        "same_action_and_block": false
+      },
+      "first_prefix_prediction_disagreement": null,
+      "final_P0_boundary_first_incoming_summary_difference": {
+        "field": "/s",
+        "left": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.122279167175293,
+          "max_abs": 1.628637433052063
+        },
+        "right": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.12346076965332,
+          "max_abs": 1.6783725023269653
+        },
+        "locked_match": false,
+        "comparable": true,
+        "representation": "Retained summary",
+        "shape_equal": true,
+        "summary_l2_delta": 0.0011816024780273438,
+        "summary_max_abs_delta": 0.049735069274902344,
+        "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+      },
+      "final_P0_boundary_first_full_live_array_difference": {
+        "sequence_id": "acquisition/L16/row01",
+        "phase": "final_P0_boundary",
+        "token": 15,
+        "decision": 0,
+        "stage": "same_program_live_execution",
+        "field": "h_before",
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.2913108468055725,
+        "L2_of_actual_difference": 1.0456992413217976,
+        "RMS_of_actual_difference": 0.1307124051652247,
+        "signed_mean_difference": 0.034869870280090254
+      },
+      "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+    },
+    "acquisition/L16/row02": {
+      "first_prefix_program_difference": {
+        "token": 0,
+        "decision": 6,
+        "P0_action": 6,
+        "P1_action": 8,
+        "P0_blocks": [
+          6
+        ],
+        "P1_blocks": [
+          5
+        ],
+        "interpretation": "Prescribed compound program substitution, not a defect"
+      },
+      "first_prefix_full_array_difference": {
+        "token": 0,
+        "decision": 6,
+        "field": "h_after",
+        "comparison": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            64
+          ],
+          "element_count": 64,
+          "exact_values_equal": false,
+          "allclose": false,
+          "max_abs_difference": 0.14370501041412354,
+          "L2_of_actual_difference": 1.1109685458996967,
+          "RMS_of_actual_difference": 0.1388710682374621,
+          "signed_mean_difference": -0.13884139152651187
+        },
+        "same_action_and_block": false
+      },
+      "first_prefix_prediction_disagreement": null,
+      "final_P0_boundary_first_incoming_summary_difference": {
+        "field": "/s",
+        "left": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.08820915222168,
+          "max_abs": 1.1738463640213013
+        },
+        "right": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.086374282836914,
+          "max_abs": 1.2147812843322754
+        },
+        "locked_match": false,
+        "comparable": true,
+        "representation": "Retained summary",
+        "shape_equal": true,
+        "summary_l2_delta": -0.001834869384765625,
+        "summary_max_abs_delta": 0.04093492031097412,
+        "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+      },
+      "final_P0_boundary_first_full_live_array_difference": {
+        "sequence_id": "acquisition/L16/row02",
+        "phase": "final_P0_boundary",
+        "token": 15,
+        "decision": 0,
+        "stage": "same_program_live_execution",
+        "field": "h_before",
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.10120350122451782,
+        "L2_of_actual_difference": 0.3286791252461736,
+        "RMS_of_actual_difference": 0.0410848906557717,
+        "signed_mean_difference": -0.005108410870889202
+      },
+      "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+    },
+    "acquisition/L16/row03": {
+      "first_prefix_program_difference": {
+        "token": 0,
+        "decision": 6,
+        "P0_action": 6,
+        "P1_action": 8,
+        "P0_blocks": [
+          6
+        ],
+        "P1_blocks": [
+          5
+        ],
+        "interpretation": "Prescribed compound program substitution, not a defect"
+      },
+      "first_prefix_full_array_difference": {
+        "token": 0,
+        "decision": 6,
+        "field": "h_after",
+        "comparison": {
+          "available": true,
+          "representation": "Retained full array",
+          "shape": [
+            1,
+            64
+          ],
+          "element_count": 64,
+          "exact_values_equal": false,
+          "allclose": false,
+          "max_abs_difference": 0.5965418815612793,
+          "L2_of_actual_difference": 4.602453876230403,
+          "RMS_of_actual_difference": 0.5753067345288003,
+          "signed_mean_difference": 0.5751722924760543
+        },
+        "same_action_and_block": false
+      },
+      "first_prefix_prediction_disagreement": {
+        "token": 2,
+        "label": 0,
+        "P0_prediction": 0,
+        "P1_prediction": 1
+      },
+      "final_P0_boundary_first_incoming_summary_difference": {
+        "field": "/s",
+        "left": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.08937931060791,
+          "max_abs": 1.2035367488861084
+        },
+        "right": {
+          "shape": [
+            1,
+            64
+          ],
+          "l2": 8.11923885345459,
+          "max_abs": 1.869328498840332
+        },
+        "locked_match": false,
+        "comparable": true,
+        "representation": "Retained summary",
+        "shape_equal": true,
+        "summary_l2_delta": 0.029859542846679688,
+        "summary_max_abs_delta": 0.6657917499542236,
+        "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+      },
+      "final_P0_boundary_first_full_live_array_difference": {
+        "sequence_id": "acquisition/L16/row03",
+        "phase": "final_P0_boundary",
+        "token": 15,
+        "decision": 0,
+        "stage": "same_program_live_execution",
+        "field": "h_before",
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 2.804329514503479,
+        "L2_of_actual_difference": 9.447902328398799,
+        "RMS_of_actual_difference": 1.1809877910498499,
+        "signed_mean_difference": 0.03254814655520022
+      },
+      "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+    }
+  },
+  "ledger": {
+    "observed": {
+      "tokens": 1979,
+      "commits": 1979,
+      "decisions": 15832,
+      "executions": 15832,
+      "restart": 0,
+      "repeat": 67
+    },
+    "published_expected": {
+      "tokens": 1979,
+      "executions": 15832,
+      "commits": 1979
+    },
+    "counts_match": true,
+    "ledger_calls_match": true,
+    "phase_program_reference": [
+      {
+        "phase": "archival",
+        "program": "P0",
+        "reference": false,
+        "tokens": 8
+      },
+      {
+        "phase": "archival",
+        "program": "P0",
+        "reference": true,
+        "tokens": 8
+      },
+      {
+        "phase": "current",
+        "program": "P0",
+        "reference": false,
+        "tokens": 100
+      },
+      {
+        "phase": "current",
+        "program": "P1",
+        "reference": false,
+        "tokens": 7
+      },
+      {
+        "phase": "prefix",
+        "program": "P0",
+        "reference": true,
+        "tokens": 1696
+      },
+      {
+        "phase": "prefix",
+        "program": "P1",
+        "reference": false,
+        "tokens": 60
+      },
+      {
+        "phase": "supplied_reference",
+        "program": "P0",
+        "reference": true,
+        "tokens": 100
+      }
+    ],
+    "P1": {
+      "tokens": 67,
+      "prefix": 60,
+      "block5": 134,
+      "repeat_actions": 67,
+      "current": 7
+    },
+    "block_execution_counts": {
+      "0": 1979,
+      "1": 1979,
+      "2": 1979,
+      "3": 1979,
+      "4": 1979,
+      "5": 2046,
+      "6": 1912,
+      "7": 1979
+    },
+    "block5_extra_over_one_per_token": 67,
+    "P1_extra_block5_corresponds_to_67_tokens": true,
+    "block6_omissions": 67,
+    "future_calls_recorded": 0,
+    "future_records_observed": 0,
+    "joint_bootstrap_record": "Not executed, recorded in final_report/results; no joint_uncertainty.json exists",
+    "joint_uncertainty_artifact_present": false,
+    "historical_work": "Separate published historical ledgers, not pooled",
+    "caution": "Arithmetic corroboration of retained traces and counters; not new implementation validation."
+  },
+  "coverage_ambiguities": [],
+  "missing": [],
+  "arithmetic_checks": true,
+  "all_evidence_hashes_equal": true,
+  "interpretation": "Recorded current/switch failure preserved; readability question motivated but unanswered; no causal attribution"
+}

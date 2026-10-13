@@ -1,0 +1,61 @@
+{
+  "operation": "One offline descriptive forensic pass; no model imports/deserialization/execution, tests, bootstrap or new inference",
+  "selection": {
+    "primary": "acquisition/L16/row03",
+    "controls": [
+      "acquisition/L16/row00",
+      "acquisition/L16/row01",
+      "acquisition/L16/row02"
+    ],
+    "rule": "The three preceding completed and accepted P1-history/P0-boundary calls in the retained ledger; no magnitude-based selection"
+  },
+  "scope": {
+    "prefix_tokens_zero_based": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "boundary_token_zero_based": 15,
+    "histories": [
+      0,
+      1
+    ],
+    "boundary_programs": [
+      0,
+      1
+    ]
+  },
+  "joins": "Explicit phase, sequence_id, history_program, boundary program where applicable, top-level token_index, reference flag, and explicit decision index. No action-index-derived token ID. Duplicate or missing records recorded, not guessed.",
+  "returned_prefix_summary": "Only from a unique next-token or current-boundary incoming snapshot with exact recorded outgoing/incoming state-digest match; label as next observation, not a retained commit snapshot.",
+  "array_comparison": {
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "definition": "Existing elementwise allclose: abs(left-right)<=atol+rtol*abs(right); shape exact; actual elementwise differences only",
+    "descriptive_outputs": [
+      "max_abs_difference",
+      "L2_of_actual_difference",
+      "RMS_of_actual_difference",
+      "allclose",
+      "exact_values_equal"
+    ]
+  },
+  "summary_comparison": "Original math.isclose(atol=1e-6,rtol=1e-5), exact keys/shape/null topology; report signed l2 and max_abs summary differences only, never tensor distances",
+  "metadata_comparison": "Exact; hashes are fingerprints, not retained arrays",
+  "first_difference_reporting": "First retained differing observation, in defined semantic order: incoming summary/metadata -> preparation -> decisions (action before h_before/h_after) -> terminal -> returned observation/output. Not first causal error. Same-program final P0 boundaries analyzed separately from intentional prefix-program substitutions.",
+  "arithmetic_checks": "Recorded labels/predictions/CE remain authoritative. Stable arithmetic recomputation from logged logits/probabilities is consistency corroboration only.",
+  "uncertainty": "No bootstrap, intervals, new hypotheses tested or new population estimates. Partial ordered cases are not panel performance.",
+  "missing": "Mark absent/non-readable data and association ambiguity; do not abandon available comparisons or infer equality from equal summaries",
+  "protected_inventory_policy": "Hash each v4 evidence file read before/after; carry broader v4 findings as historical, without rehashing checkpoints or all617 protected identities"
+}

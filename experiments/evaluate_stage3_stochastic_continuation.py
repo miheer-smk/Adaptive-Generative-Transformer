@@ -35,11 +35,19 @@ def assess(model, cases, noise_seed, repeats=4):
                 logits, history = run_diff_sequence(model, batch.x, 2.0, True)
             if not torch.isfinite(logits).all():
                 raise RuntimeError("Non-finite stochastic output")
+            execution_counts = [sum(kind in ("ADVANCE", "REPEAT") for kind, _ in token)
+                                for token in history]
+            if any(count != model.executor.max_execution_depth for count in execution_counts):
+                raise RuntimeError("Stochastic assessment received an incomplete execution-depth token")
             candidate_calls += counter["block_calls"]
             rows.append(dict(length=batch.length, case=index, noise_seed=draw_seed,
                              ce=F.cross_entropy(logits, batch.target).item(),
                              correct=int((logits.argmax(-1) == batch.target).sum()),
-                             exact_tokens=route_metrics(history)["exact_tokens"]))
+                             exact_tokens=route_metrics(history)["exact_tokens"],
+                             histories=history,
+                             token_decision_counts=[len(token) for token in history],
+                             token_execution_counts=execution_counts,
+                             actual_candidate_block_calls=counter["block_calls"]))
             histories.extend(history)
     routes = route_metrics(histories)
     if routes["illegal_decisions"]:

@@ -1,0 +1,132 @@
+ M experiments/diagnose_stage3_gradients.py
+ M experiments/evaluate_stage3_stochastic_continuation.py
+ M experiments/runs/stage1_taskA_tiny.json
+ M experiments/stage3_measurements.py
+ M src/__pycache__/agt.cpython-312.pyc
+ M src/__pycache__/blocks.cpython-312.pyc
+ M src/__pycache__/controller.cpython-312.pyc
+ M src/__pycache__/executor.cpython-312.pyc
+ M src/__pycache__/masks.cpython-312.pyc
+ M src/executor.py
+ M tests/test_stage3_measurements.py
+ M tests/test_stage3_replication.py
+ M tests/test_stage3_stochastic_evaluation.py
+ M tests/test_stage3_successor_mix.py
+?? AUDIT_PRECHECK.md
+?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md
+?? GATE_B_STAGE3_SPEC.md.pre_inspection
+?? GATE_B_STAGE3_SPEC.md.pre_reconcile
+?? GATE_B_STAGE3_SPEC.md.pre_source_lock
+?? HALT
+?? RESTART
+?? data/__pycache__/
+?? experiments/__pycache__/
+?? experiments/analyze_gatec_matched_prefix_4700.py
+?? experiments/audit_gatec_canonical_replay.py
+?? experiments/check_stage3_equivalence_batch1.py
+?? experiments/complete_program_feasibility.py
+?? experiments/diagnose_gatec_st_action_values_4700.py
+?? experiments/diagnose_gatec_temporal_vjp_4700.py
+?? experiments/diagnose_stage1_taskA.py
+?? experiments/diagnose_stage3_closed_loop_parity.py
+?? experiments/diagnose_stage3_route_equivalence.py
+?? experiments/diagnose_stage3_taskA_gradient_flow.py
+?? experiments/evaluate_gatec_locked_policy.py
+?? experiments/evaluate_stage3_closed_loop_equivalence.py
+?? experiments/evaluate_stage3_route_controller.py
+?? experiments/evaluate_stage3_warmstart.py
+?? experiments/evaluate_stage3_warmstart_parity.py
+?? experiments/evaluate_stage3_warmstart_taskA.py
+?? experiments/gateA_a3_state_vs_output.py
+?? experiments/gateA_a4_state_ablation.py
+?? experiments/gateA_a5_state_shuffle.py
+?? experiments/gateA_a6_state_patching.py
+?? experiments/gateA_a7_controls.py
+?? experiments/replay_gatec_learned_policy.py
+?? experiments/replicate_gatec_locked_imitation.py
+?? experiments/results/
+?? experiments/run_gatec_fresh_task_discovery.py
+?? experiments/run_gatec_paired_gradient_average_4900.py
+?? experiments/run_gatec_paired_task_maintenance.py
+?? experiments/run_stage1_taskA_overfit.py
+?? experiments/run_stage3_masked_route_imitation.py
+?? experiments/run_stage3_taskA_warmstart.py
+?? experiments/run_stage3_warmstart_taskA_train.py
+?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt
+?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt
+?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt
+?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt
+?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt
+?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt
+?? experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt
+?? experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt
+?? experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt
+?? experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_C_update0000_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_C_update0104_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_C_update0260_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_C_update0520_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_T_update0000_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_T_update0104_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_T_update0260_locked_v1.pt
+?? experiments/runs/stage3_gradient_average_4900_T_update0520_locked_v1.pt
+?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json
+?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json
+?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt
+?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt
+?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt
+?? experiments/runs/stage3_imitation_replication_3305_v1.pt
+?? experiments/runs/stage3_imitation_replication_3306_v1.pt
+?? experiments/runs/stage3_imitation_replication_3307_v1.pt
+?? experiments/runs/stage3_imitation_replication_4401_locked_v1.pt
+?? experiments/runs/stage3_imitation_replication_4402_locked_v1.pt
+?? experiments/runs/stage3_metadata_credit_probe_v1.json
+?? experiments/runs/stage3_replication_3305_3307_100_v1.json
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt
+?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt
+?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json
+?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt
+?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt
+?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt
+?? experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt
+?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json
+?? experiments/stage3_decision_prefix.py
+?? experiments/train_stage1_taskA_len8.py
+?? "n' '===== BRANCH =====' && "
+?? "n' '===== CURRENT WORKTREE =====' && "
+?? src/__pycache__/routing.cpython-312.pyc
+?? src/agt.py.pre_adaptive_step.bak
+?? src/executor.py.pre_adaptive_integration.bak
+?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc
+?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc
+?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc
+?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc
+?? tests/test_complete_program_feasibility.py
+?? tests/test_gatec_canonical_replay_audit.py
+?? tests/test_gatec_fresh_task_discovery.py
+?? tests/test_gatec_matched_prefix_analysis.py
+?? tests/test_gatec_paired_gradient_average.py
+?? tests/test_gatec_paired_noise.py
+?? tests/test_gatec_st_action_values_4700.py
+?? tests/test_gatec_temporal_vjp_4700.py
+?? tests/test_stage3_decision_prefix.py
+?? tests/test_stage3_execution_accounting.py
+?? tests/test_stage3_route_metrics.py
+?? tests/test_stage3_taskA_gradient_diagnostic.py
+?? tests/test_stage4_halt.py
+?? tests/test_stage4_halting.py

@@ -1,0 +1,63 @@
+{
+  "status": "STOPPED_AT_SPECIFICATION_BARRIER",
+  "requirements_matrix_sha256": "0a54c6bffacaaccce20ad76da0c017f66ff62f5bf3ba0063b68b5715084a0147",
+  "unresolved_requirements": [
+    "archived_step_controller_logits",
+    "current_acceptance_scope",
+    "P0_current_before_P1_prerequisites"
+  ],
+  "unresolved_details": [
+    {
+      "id": "archived_step_controller_logits",
+      "gap": "v1 omits comparison or complete historical coverage for this field",
+      "required_resolution": "No approved mapping between archived seed3401 diagnostic controller logits, locked seed3305 registered controller and scripted action-provider logits; must clarify target identity",
+      "observation_boundary": "Each of64 canonical bank transitions"
+    },
+    {
+      "id": "current_acceptance_scope",
+      "gap": "Combined bootstrap_prefix_worst requires both current and future cells; cannot evaluate it before futures",
+      "required_resolution": "STOP: independent current acceptance rule and scope require explicit resolution,not a new inferred procedure",
+      "observation_boundary": "After applicable current cases, before any dependent future work"
+    },
+    {
+      "id": "P0_current_before_P1_prerequisites",
+      "gap": "All-current P0 prerequisite could depend on P1 prefixes; per-history prerequisite unstated",
+      "required_resolution": "STOP for exact dependency/scope rather than invent gate decomposition",
+      "observation_boundary": "P0 current gates before applicable P1 evaluation"
+    }
+  ],
+  "implementations_edited": 0,
+  "tests_run": 0,
+  "CPU_tests": 0,
+  "CUDA_tests": 0,
+  "skipped_tests": 0,
+  "model_forwards": 0,
+  "model_backwards": 0,
+  "v3_study": {
+    "reference_attempted": 0,
+    "reference_completed": 0,
+    "adapter_attempted": 0,
+    "adapter_completed": 0,
+    "P1_tokens": 0,
+    "selected_block_calls": 0,
+    "commits": 0,
+    "continuation_calls": 0,
+    "bootstrap_resamples": 0
+  },
+  "historical_work": {
+    "v1_completed_reference_tokens": 1,
+    "v1_selected_bank_calls": 8,
+    "v1_commits": 1,
+    "v1_adapter_completed": 0,
+    "v1_P1_study_forwards": 0,
+    "v2_all_model_counts": 0,
+    "pooled_with_v3": false
+  },
+  "conclusions": {
+    "engineering": "CPU-mask/CUDA-logits root cause confirmed by source and preserved failure. Repair/tests blocked by specification barrier.",
+    "P0_archival_equivalence": "UNEXECUTED in v3; neither passed nor failed",
+    "P1_current_correctness": "UNEXECUTED in v3",
+    "future_compatibility": "UNEXECUTED in v3",
+    "research_hypothesis": "UNTESTED in v3"
+  }
+}

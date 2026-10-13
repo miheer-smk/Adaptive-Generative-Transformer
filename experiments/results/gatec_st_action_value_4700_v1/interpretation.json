@@ -1,0 +1,315 @@
+{
+  "hypothesis_verdict": "The proposed directional-failure mechanism is not supported at the tested states. Resolved comparisons favor alignment; the remaining comparisons are unresolved. This contradicts a blanket claim of consistently opposed local ST credit at these probes, while leaving a broader or rarer failure mechanism unresolved.",
+  "classifications": {
+    "informative_aligned_ST": 17,
+    "informative_unresolved_direction": 18,
+    "unresolved_action_values": 1
+  },
+  "directions": {
+    "aligned": 17,
+    "unresolved": 19
+  },
+  "informative_probes": 35,
+  "resolved_paired_action_differences": 468,
+  "all_action_conditional_accuracy_means_equal_probes": 19,
+  "all_action_correctness_equal_on_every_paired_tape_probes": 19,
+  "gradient_norm_by_checkpoint_and_condition": {
+    "0/A": {
+      "ST_norm_min": 1.0630193317069902e-06,
+      "ST_norm_median": 0.00010782931725814932,
+      "ST_norm_max": 0.0006209866051017332,
+      "CF_norm_min": 3.030150557919136e-05,
+      "CF_norm_max": 0.10099106631446594
+    },
+    "0/B": {
+      "ST_norm_min": 2.0696916723633413e-06,
+      "ST_norm_median": 0.16909589340362302,
+      "ST_norm_max": 1.5113402063197936,
+      "CF_norm_min": 2.3166758099021816e-05,
+      "CF_norm_max": 0.7518730050179048
+    },
+    "0/C": {
+      "ST_norm_min": 2.369507004268621e-07,
+      "ST_norm_median": 0.00030332326090321443,
+      "ST_norm_max": 0.41625840157035265,
+      "CF_norm_min": 0.00019306514020255827,
+      "CF_norm_max": 0.6111809171780956
+    },
+    "1040/A": {
+      "ST_norm_min": 1.9445898131702733e-06,
+      "ST_norm_median": 1.0031669846351725e-05,
+      "ST_norm_max": 0.00020402033815466702,
+      "CF_norm_min": 1.4510027510514266e-05,
+      "CF_norm_max": 0.13685243997447408
+    },
+    "1040/B": {
+      "ST_norm_min": 4.247344579267978e-06,
+      "ST_norm_median": 0.0042242208007824975,
+      "ST_norm_max": 0.05058227833641131,
+      "CF_norm_min": 1.1503052306843943e-05,
+      "CF_norm_max": 0.6690019799470798
+    },
+    "1040/C": {
+      "ST_norm_min": 3.040538289318933e-07,
+      "ST_norm_median": 0.0023502916188035483,
+      "ST_norm_max": 5.94577727013041,
+      "CF_norm_min": 4.1810079963455234e-06,
+      "CF_norm_max": 0.6326582623712471
+    }
+  },
+  "identical_state_probability_shift_intervals": {
+    "higher_Q": 12,
+    "unresolved": 17,
+    "lower_Q": 7
+  },
+  "prefix_condition_comparisons": [
+    {
+      "checkpoint": 0,
+      "sequence_id": "train/L16/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.31317055857915643,
+      "C_ST_norm": 0.08451778631825371,
+      "B_Q_range": [
+        0.0014404853282030672,
+        6.11160272359848
+      ],
+      "C_Q_range": [
+        0.0014082777051953599,
+        6.109762251377106
+      ]
+    },
+    {
+      "checkpoint": 0,
+      "sequence_id": "train/L16/row1",
+      "same_incoming_state": false,
+      "B_class": "informative_unresolved_direction",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.0001764334167997057,
+      "C_ST_norm": 0.0005452699127485117,
+      "B_Q_range": [
+        0.001895386929390952,
+        0.0021289606956997886
+      ],
+      "C_Q_range": [
+        0.001914438311359845,
+        0.009759887558175251
+      ]
+    },
+    {
+      "checkpoint": 0,
+      "sequence_id": "val/L16/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 1.5113402063197936,
+      "C_ST_norm": 0.41625840157035265,
+      "B_Q_range": [
+        1.5573810109635815,
+        6.138915061950684
+      ],
+      "C_Q_range": [
+        1.5612413315102458,
+        6.1365925669670105
+      ]
+    },
+    {
+      "checkpoint": 0,
+      "sequence_id": "val/L16/row2",
+      "same_incoming_state": false,
+      "B_class": "informative_unresolved_direction",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.025021228228089606,
+      "C_ST_norm": 2.530572405228216e-05,
+      "B_Q_range": [
+        0.0019257559906691313,
+        6.595961093902588
+      ],
+      "C_Q_range": [
+        0.0019318036938784644,
+        0.40973295354342554
+      ]
+    },
+    {
+      "checkpoint": 0,
+      "sequence_id": "ood_test/L32/row2",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_unresolved_direction",
+      "B_ST_norm": 2.0696916723633413e-06,
+      "C_ST_norm": 2.369507004268621e-07,
+      "B_Q_range": [
+        0.0017666546045802534,
+        0.001979867593036033
+      ],
+      "C_Q_range": [
+        0.0014017378853168339,
+        0.0030420440598390996
+      ]
+    },
+    {
+      "checkpoint": 0,
+      "sequence_id": "ood_test/L32/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_unresolved_direction",
+      "B_ST_norm": 0.6954163050465599,
+      "C_ST_norm": 6.137660905791721e-05,
+      "B_Q_range": [
+        0.006253970772377215,
+        6.219093322753906
+      ],
+      "C_Q_range": [
+        0.002025335474172607,
+        0.028968283149879426
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "train/L16/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.05058227833641131,
+      "C_ST_norm": 0.6326650845917804,
+      "B_Q_range": [
+        0.0015833272045711055,
+        6.080403566360474
+      ],
+      "C_Q_range": [
+        0.011902089361683466,
+        5.940162181854248
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "train/L16/row1",
+      "same_incoming_state": false,
+      "B_class": "informative_unresolved_direction",
+      "C_class": "informative_unresolved_direction",
+      "B_ST_norm": 0.001371830758166703,
+      "C_ST_norm": 0.004421070193428445,
+      "B_Q_range": [
+        0.002060641098069027,
+        0.0038609352777712047
+      ],
+      "C_Q_range": [
+        0.0020820182835450396,
+        0.02305861895729322
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "val/L16/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.007144865233342721,
+      "C_ST_norm": 5.94577727013041,
+      "B_Q_range": [
+        2.2330892712197965,
+        6.00601863861084
+      ],
+      "C_Q_range": [
+        2.2808125673036557,
+        6.008329331874847
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "val/L16/row2",
+      "same_incoming_state": false,
+      "B_class": "informative_unresolved_direction",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.005416506946406102,
+      "C_ST_norm": 3.05563877914138e-05,
+      "B_Q_range": [
+        0.001989795477129519,
+        6.622584044933319
+      ],
+      "C_Q_range": [
+        0.0020317197195254266,
+        0.409800443216227
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "ood_test/L32/row2",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_unresolved_direction",
+      "B_ST_norm": 4.247344579267978e-06,
+      "C_ST_norm": 3.040538289318933e-07,
+      "B_Q_range": [
+        0.002004355745157227,
+        0.0021025293099228293
+      ],
+      "C_Q_range": [
+        0.0013999820221215487,
+        0.0014370018034242094
+      ]
+    },
+    {
+      "checkpoint": 1040,
+      "sequence_id": "ood_test/L32/row0",
+      "same_incoming_state": false,
+      "B_class": "informative_aligned_ST",
+      "C_class": "informative_aligned_ST",
+      "B_ST_norm": 0.003031934655158893,
+      "C_ST_norm": 0.0002795130441786511,
+      "B_Q_range": [
+        0.0023013309109956026,
+        0.026932822685921565
+      ],
+      "C_Q_range": [
+        0.0023891167802503332,
+        0.02424897559103556
+      ]
+    }
+  ],
+  "mechanical_verification": {
+    "offline_only": true,
+    "model_calls": 0,
+    "additional_continuations": 0,
+    "additional_ST_probes": 0,
+    "manifest_sha256": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+    "counts": {
+      "states": 36,
+      "CF": 2304,
+      "ST": 288,
+      "completed_continuation_tokens": 20160,
+      "forced_decisions": 2304,
+      "continuation_decisions": 213118,
+      "unforced_noise_reconstructions": 210814
+    },
+    "benchmark_bootstrap_recomputed_all_36": true,
+    "source_backbone_checkpoint_noise_state_hashes_verified": true,
+    "original_tracked_diff_unchanged": true,
+    "git_diff_check_clean": true,
+    "connected_gradient_probes": 288,
+    "disconnected_gradient_probes": 0,
+    "exact_zero_gradient_probes": 0,
+    "small_connected_gradient_probes": 16,
+    "action_counts": {
+      "0": 10800,
+      "1": 9888,
+      "5": 17655,
+      "8": 34793,
+      "6": 19081,
+      "7": 29267,
+      "2": 10491,
+      "4": 15242,
+      "9": 51838,
+      "3": 14063
+    },
+    "physical_candidate_bank_calls": 1918062,
+    "GDN_purity_checks": {
+      "4": 228724,
+      "5": 232654
+    },
+    "interpretation": "Continuation selected-block accounting is distinct from nine physical speculative bank calls per routing decision. Purity was asserted at runtime; offline accounting and noise reconstructions are additional checks."
+  },
+  "interpretation_limit": "Local final-CE gradient benchmark with fixed incoming state and downstream policy; not a population estimate, full optimizer-gradient decomposition, or proof of the cause of task-loss collapse.",
+  "hypothesis_status": "unresolved across all tested states; 17 resolved comparisons contradict local directional opposition, 0 support, 19 unresolved"
+}

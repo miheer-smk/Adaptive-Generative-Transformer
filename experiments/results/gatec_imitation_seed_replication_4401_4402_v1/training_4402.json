@@ -1,0 +1,43 @@
+{
+  "seed": 4402,
+  "updates": 5000,
+  "selection_rule": "final predetermined update, no evaluation-based selection",
+  "initial_controller_fingerprint": "4eda3a2aa48201e22c6f45c1eebb87ee801452009e18a4bd4dba965f3e9edfda",
+  "final_controller_fingerprint": "0787f07ca29786aac66a34e4c403bf3066e7fcabb36003178beb6534c347ccd4",
+  "optimizer": "AdamW",
+  "optimizer_defaults": {
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "amsgrad": false,
+    "maximize": false,
+    "foreach": null,
+    "capturable": false,
+    "differentiable": false,
+    "fused": null,
+    "decoupled_weight_decay": true
+  },
+  "batch_size": 1024,
+  "minibatch_index_stream_sha256": "64ed936d296973252c3f2f356291b6e56472a7ddc8d1484e487c92ab2b9601ef",
+  "minibatch_indices_file": "minibatch_indices_4402.pt",
+  "minibatch_indices_file_sha256": "4e0d039b0b4e00ae6a4891aa52c8cf22ec72711a55182e51944682c494bdb526",
+  "minibatch_sampling": "global CUDA torch.randint, uniform with replacement",
+  "cpu_rng_final_fingerprint": "b601382973040cc34a1de6e2364f670ea1ad056e5bdf563975bd624d538f8928",
+  "cuda_rng_final_fingerprint": "7462116bf511c704308878b4e6967e504b0a0bfd2d56a162d7fa88b39ee1ce27",
+  "backbone_unchanged": true,
+  "backbone_sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+  "dim": 64,
+  "budget": [
+    0.0,
+    0.0
+  ],
+  "manifest_sha256": "b661d0042c56880fc324a7efd758ab744753d7fc63fa6770838cb50408c6fb0c",
+  "feature_dataset_sha256": "cf0983ac95348a09db6b55077ed333b40b2b1d9ef97b48efb222c866d37159e8",
+  "training_sequences_sha256": "5ff1173e5a024d431c5a211287f3fb5595b3822baea2416d3cb0b344e02a1e2a",
+  "checkpoint_path": "experiments/runs/stage3_imitation_replication_4402_locked_v1.pt",
+  "checkpoint_sha256": "771dd6cb845e73eac7fcb5b6641ed200af76fb22e7f35921cd7792139a190766"
+}

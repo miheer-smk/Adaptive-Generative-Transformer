@@ -1,0 +1,32 @@
+{
+  "source_hashes": {
+    "receiver_anchored_v1.py": "a31f46b85419f5087016369987a63c476b63323d62216d06065e34698d9ac116",
+    "run_prerequisites_v1.py": "080453b689464978e56d478e0d451219e5e08b81886aac356dd46bcf9cc4be31",
+    "run_prerequisites_v2.py": "ffaff278627964f7f1fa7a265b216e64bce2ee860d08f61ca833d8b76cb886a3",
+    "statistical_rules_v1.py": "8a4b6c47a69753ca7b96c9f4283e10c4373f384064a8f0d4196a553ce3c355d2",
+    "statistical_rules_v2.py": "14ec543f1d93dc0d5307d73deb9642c5fa24208c2ad628aa510f4e2680380a3a",
+    "test_receiver_anchored_v1.py": "71c2bf66c46152537c18329aeb7add69334ef11551520d1ef2190cb903c44c07",
+    "test_receiver_anchored_v2.py": "d885fadc5e82e6c583e2ee9ef57dd8da10c558b337b6e4434cd3eb66173521a3"
+  },
+  "document_hashes": {
+    "protocol_clarifications_v1.md": "53a9c1b9e6f383e464335e93c625a2428ab21510a347ec9f8a3bfc5ba8373ced",
+    "protocol_binding_v2.json": "b04535a36b15477ca88fa30ad8df2ae038320d3bf6fab7cc361e6dad8e22ce40"
+  },
+  "runtime": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "torch": "2.10.0+cu130",
+    "numpy": "not installed; statistical fixtures use torch CPU",
+    "pytest": "9.1.1",
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "CPU_threads": 1,
+    "device_name": "NVIDIA GB10",
+    "TF32_matmul": false,
+    "TF32_cudnn": true,
+    "default_dtype": "torch.float32",
+    "deterministic_algorithms": false,
+    "bytecode_writing_disabled": true
+  },
+  "fixture_budget": 512,
+  "sealed_before_any_model_forward": true
+}

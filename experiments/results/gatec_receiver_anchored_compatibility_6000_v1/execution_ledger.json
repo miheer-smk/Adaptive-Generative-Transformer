@@ -1,0 +1,73 @@
+{
+  "study_attempted_tokens": 533776,
+  "study_completed_tokens": 533776,
+  "study_failed_tokens": 0,
+  "study_selected_calls": 4270208,
+  "overall_completed_tokens": 534162,
+  "overall_attempted_tokens": 534163,
+  "overall_selected_calls": 4273296,
+  "study_commit_attempts": 533776,
+  "study_commits": 533776,
+  "backward_evaluations": 3072,
+  "optimizer_updates": 1536,
+  "phase_completed_tokens": {
+    "calibration": 2064,
+    "common_training": 40960,
+    "development": 9216,
+    "T_training": 57344,
+    "C_training": 57344,
+    "selection": 73728,
+    "confirmation": 174080,
+    "reference": 18432,
+    "ablation": 73728,
+    "profiling": 26880
+  },
+  "phase_attempted_tokens": {
+    "calibration": 2064,
+    "common_training": 40960,
+    "development": 9216,
+    "T_training": 57344,
+    "C_training": 57344,
+    "selection": 73728,
+    "confirmation": 174080,
+    "reference": 18432,
+    "ablation": 73728,
+    "profiling": 26880
+  },
+  "contextual_commit_calls": {
+    "SWA/bank": 1067552,
+    "GQA/bank": 1067552,
+    "GDN/bank": 1067552,
+    "SWA/prelude": 533776
+  },
+  "selected_block_calls": {
+    "0": 533776,
+    "1": 533776,
+    "2": 533776,
+    "3": 787728,
+    "4": 279824,
+    "5": 533776,
+    "6": 533776,
+    "7": 533776
+  },
+  "profiling_warmup_tokens": 4480,
+  "elapsed_accelerator_window_seconds": 7573.8967925217,
+  "carried_prerequisite_seconds": 22.66048240661621,
+  "carried_prerequisite_ledger": {
+    "attempted_tokens": 387,
+    "completed_tokens": 386,
+    "failed_tokens": 1,
+    "selected_bank_calls": 3088,
+    "completed_bank_calls": 3088,
+    "attempted_terminal_commits": 386,
+    "terminal_commits": 386,
+    "backward_evaluations": 13,
+    "optimizer_updates": 0,
+    "warmup_tokens": 0,
+    "token_ceiling": 512,
+    "block_ceiling": 4096
+  },
+  "peak_memory_allocated": 311910912,
+  "peak_memory_reserved": 316669952,
+  "full_confirmation_state_files": 1024
+}

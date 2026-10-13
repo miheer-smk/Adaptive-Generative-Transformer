@@ -1,0 +1,42 @@
+{
+  "artifact_index.json": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "consulted_artifacts.json": {
+    "sha256": "2b73b734811e5b7f339b6606daab66636a0859fd455fd6037a03715e735858ee",
+    "bytes": 2732
+  },
+  "failure.json": {
+    "sha256": "d125dbaa0f69b1d3a39478c8d645f71af31d4a3204e4881f99c36a585a17925d",
+    "bytes": 2567
+  },
+  "integrity_after.json": {
+    "sha256": "45702a4b3b3b1d3a7d609463a324eb6fbe19461268b8a27eef568e80d67ba319",
+    "bytes": 655
+  },
+  "integrity_before.json": {
+    "sha256": "397082f81718c8c7e0c724737eb243986556d5ddb4e38a7386baf53633ce802c",
+    "bytes": 81965
+  },
+  "manifest.json": {
+    "sha256": "2ad43a20a4d25cd3b0461bf52e10e3ec49b907ee6fd9b176d5042458f58977c9",
+    "bytes": 1758
+  },
+  "report.md": {
+    "sha256": "1a1022215747c5c36d27782132aaa6bf1fbf84f7f825ddc3e04cfbed96c8ff16",
+    "bytes": 5240
+  },
+  "requirements_to_implementation_matrix.json": {
+    "sha256": "0a54c6bffacaaccce20ad76da0c017f66ff62f5bf3ba0063b68b5715084a0147",
+    "bytes": 1363251
+  },
+  "requirements_to_implementation_matrix.md": {
+    "sha256": "78558983dde45b26efd362ec92c4ffe39a685f49c58d3704740f574a51129569",
+    "bytes": 131094
+  },
+  "retained_record_schemas.json": {
+    "sha256": "2e38f54fb5e39a6fbb4173e7bbef246fe5a5a1eb980df76e83070d43c6824af3",
+    "bytes": 426190
+  }
+}

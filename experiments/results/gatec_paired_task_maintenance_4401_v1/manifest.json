@@ -1,0 +1,517 @@
+{
+  "created_utc": "2026-10-06T11:38:37.223262+00:00",
+  "experiment": "one bounded warm task-loss maintenance pass with matched no-update ST-Gumbel control",
+  "checkpoint": {
+    "path": "experiments/runs/stage3_imitation_replication_4401_locked_v1.pt",
+    "sha256": "4e14f56d3762aac1442a8dcc6fd86eb950e0013986409ff31b48d514fd972fcd"
+  },
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3"
+  },
+  "parent_manifest": {
+    "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/manifest.json",
+    "sha256": "b661d0042c56880fc324a7efd758ab744753d7fc63fa6770838cb50408c6fb0c"
+  },
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "status": " M experiments/diagnose_stage3_gradients.py\n M experiments/evaluate_stage3_stochastic_continuation.py\n M experiments/runs/stage1_taskA_tiny.json\n M experiments/stage3_measurements.py\n M src/__pycache__/agt.cpython-312.pyc\n M src/__pycache__/blocks.cpython-312.pyc\n M src/__pycache__/controller.cpython-312.pyc\n M src/__pycache__/executor.cpython-312.pyc\n M src/__pycache__/masks.cpython-312.pyc\n M src/executor.py\n M tests/test_stage3_measurements.py\n M tests/test_stage3_replication.py\n M tests/test_stage3_stochastic_evaluation.py\n M tests/test_stage3_successor_mix.py\n?? AUDIT_PRECHECK.md\n?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md\n?? GATE_B_STAGE3_SPEC.md.pre_inspection\n?? GATE_B_STAGE3_SPEC.md.pre_reconcile\n?? GATE_B_STAGE3_SPEC.md.pre_source_lock\n?? HALT\n?? RESTART\n?? data/__pycache__/\n?? experiments/__pycache__/\n?? experiments/audit_gatec_canonical_replay.py\n?? experiments/check_stage3_equivalence_batch1.py\n?? experiments/diagnose_stage1_taskA.py\n?? experiments/diagnose_stage3_closed_loop_parity.py\n?? experiments/diagnose_stage3_route_equivalence.py\n?? experiments/diagnose_stage3_taskA_gradient_flow.py\n?? experiments/evaluate_gatec_locked_policy.py\n?? experiments/evaluate_stage3_closed_loop_equivalence.py\n?? experiments/evaluate_stage3_route_controller.py\n?? experiments/evaluate_stage3_warmstart.py\n?? experiments/evaluate_stage3_warmstart_parity.py\n?? experiments/evaluate_stage3_warmstart_taskA.py\n?? experiments/gateA_a3_state_vs_output.py\n?? experiments/gateA_a4_state_ablation.py\n?? experiments/gateA_a5_state_shuffle.py\n?? experiments/gateA_a6_state_patching.py\n?? experiments/gateA_a7_controls.py\n?? experiments/replay_gatec_learned_policy.py\n?? experiments/replicate_gatec_locked_imitation.py\n?? experiments/results/\n?? experiments/run_gatec_paired_task_maintenance.py\n?? experiments/run_stage1_taskA_overfit.py\n?? experiments/run_stage3_masked_route_imitation.py\n?? experiments/run_stage3_taskA_warmstart.py\n?? experiments/run_stage3_warmstart_taskA_train.py\n?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt\n?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt\n?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json\n?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json\n?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt\n?? experiments/runs/stage3_imitation_replication_3305_v1.pt\n?? experiments/runs/stage3_imitation_replication_3306_v1.pt\n?? experiments/runs/stage3_imitation_replication_3307_v1.pt\n?? experiments/runs/stage3_imitation_replication_4401_locked_v1.pt\n?? experiments/runs/stage3_imitation_replication_4402_locked_v1.pt\n?? experiments/runs/stage3_metadata_credit_probe_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json\n?? experiments/stage3_decision_prefix.py\n?? experiments/train_stage1_taskA_len8.py\n?? \"n' '===== BRANCH =====' && \"\n?? \"n' '===== CURRENT WORKTREE =====' && \"\n?? src/__pycache__/routing.cpython-312.pyc\n?? src/agt.py.pre_adaptive_step.bak\n?? src/executor.py.pre_adaptive_integration.bak\n?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc\n?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc\n?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc\n?? tests/test_gatec_canonical_replay_audit.py\n?? tests/test_gatec_paired_noise.py\n?? tests/test_stage3_decision_prefix.py\n?? tests/test_stage3_execution_accounting.py\n?? tests/test_stage3_route_metrics.py\n?? tests/test_stage3_taskA_gradient_diagnostic.py\n?? tests/test_stage4_halt.py\n?? tests/test_stage4_halting.py\n",
+    "tracked_diff_sha256": "8b269f06eb4ca7ffa02fb318e493b4b073875723926f97ee16cc4336dd1e311d"
+  },
+  "script_sha256": "2594660a81c605498c06afa55cda81e2fc7cbcd8b8af3b83fedaa3fcdfe9818c",
+  "source_sha256": {
+    "src/blocks.py": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf",
+    "src/terminal_commit.py": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/norms.py": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68",
+    "src/convergence.py": "f7ad619752603bf2007e968314a9eac944756c4300d3ec535f5a354b2d177e7b",
+    "src/gdn_v3.py": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+    "src/controller.py": "14f1aecac3b1c38e6e02bbafe4fb2e857ab8677d888091b35ff4ebfdcd931141",
+    "src/agt.py": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e",
+    "src/output_head.py": "5ea4e70576c5869639f758a7b95c87f2cb0464ed091bbf98b7524538fd31511a",
+    "src/gdn.py": "60cf151a2706b08d208f4c64a2e2a3a8ab5b848f10f48d471962031702866eef",
+    "src/mhc.py": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408",
+    "src/executor.py": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f",
+    "src/rope.py": "2a99012fb952ad53d72762eb85cd02c3dd0a12eb3949afcd45f35bede4c03d80",
+    "src/routing.py": "c08bbeda8143272e4f0e967f43dac13fc9ac7ac71051ca57d02af1cb9227825c",
+    "src/swiglu.py": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1",
+    "src/masks.py": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb",
+    "src/utils.py": "4c220baa4e6669c04fbb991e5e7bcd39df41d36d5d2283d060fc28a79a4f3a33",
+    "src/prelude.py": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+    "src/gqa.py": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb",
+    "src/memory.py": "1fa44e6367d53e299938c1f95c946df2570487daf24d26191a32b86d1235375c",
+    "src/caches.py": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1",
+    "src/commit.py": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+    "src/config.py": "c106a8f03333a0ccafc004be612ce9bdcfc30f2f9eadd6d5fe57534fbad04efc"
+  },
+  "inputs": {
+    "training_file": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/training_sequences.json",
+    "training_sha256": "5ff1173e5a024d431c5a211287f3fb5595b3822baea2416d3cb0b344e02a1e2a",
+    "training_order_file": "training_order.json",
+    "training_order_sha256": "8265cebd25a6675d1a841279810ef1bad9f87c0c7e9b3d938bcbfdfea7498637",
+    "panel_file": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/panel.json",
+    "panel_sha256": "f155ba6477e2f9283a82e3d93f3db00c51620dbab6a36811a3f3a02cb23e3f41",
+    "panel_identity": {
+      "val": {
+        "sequences": 52,
+        "tokens": 520,
+        "bits_sha256": "52cb6c0b145e5c9b6714524513ee25bb9788a4dc6b471bfdb0aa41661b24d5b0",
+        "labels_sha256": "25d12a47576ce8f1027bcfccf2fddd2b53a647065cd30c4db6423b3ef7e35ec2",
+        "ordered_sequence_label_sha256": "bcd38e42505f98e1bc060341d566bfb07da50dd149815873b4ff765476f0ccd6",
+        "counts_by_length": {
+          "4": 4,
+          "5": 4,
+          "6": 4,
+          "7": 4,
+          "8": 4,
+          "9": 4,
+          "10": 4,
+          "11": 4,
+          "12": 4,
+          "13": 4,
+          "14": 4,
+          "15": 4,
+          "16": 4
+        },
+        "label_balance_by_length": {
+          "4": {
+            "0": 2,
+            "1": 2
+          },
+          "5": {
+            "0": 2,
+            "1": 2
+          },
+          "6": {
+            "0": 2,
+            "1": 2
+          },
+          "7": {
+            "1": 2,
+            "0": 2
+          },
+          "8": {
+            "0": 2,
+            "1": 2
+          },
+          "9": {
+            "0": 2,
+            "1": 2
+          },
+          "10": {
+            "0": 2,
+            "1": 2
+          },
+          "11": {
+            "0": 2,
+            "1": 2
+          },
+          "12": {
+            "1": 2,
+            "0": 2
+          },
+          "13": {
+            "1": 2,
+            "0": 2
+          },
+          "14": {
+            "0": 2,
+            "1": 2
+          },
+          "15": {
+            "0": 2,
+            "1": 2
+          },
+          "16": {
+            "0": 2,
+            "1": 2
+          }
+        },
+        "duplicate_full_sequences": 2
+      },
+      "ood_test": {
+        "sequences": 64,
+        "tokens": 1568,
+        "bits_sha256": "1fee080d04292536aaf017c84116d5c50d1e2b8d07fb807c2b8898a0663777b8",
+        "labels_sha256": "dec1d9b4fdb1e32746d10165b75eba04e92f8892fe8d8c7e0c3026e54aabb293",
+        "ordered_sequence_label_sha256": "a6a95c445cb80ad611db8e9ee57ded44a673726f7ee3941e051fc30d9efa4cb8",
+        "counts_by_length": {
+          "17": 4,
+          "18": 4,
+          "19": 4,
+          "20": 4,
+          "21": 4,
+          "22": 4,
+          "23": 4,
+          "24": 4,
+          "25": 4,
+          "26": 4,
+          "27": 4,
+          "28": 4,
+          "29": 4,
+          "30": 4,
+          "31": 4,
+          "32": 4
+        },
+        "label_balance_by_length": {
+          "17": {
+            "0": 2,
+            "1": 2
+          },
+          "18": {
+            "1": 2,
+            "0": 2
+          },
+          "19": {
+            "1": 2,
+            "0": 2
+          },
+          "20": {
+            "0": 2,
+            "1": 2
+          },
+          "21": {
+            "0": 2,
+            "1": 2
+          },
+          "22": {
+            "0": 2,
+            "1": 2
+          },
+          "23": {
+            "0": 2,
+            "1": 2
+          },
+          "24": {
+            "1": 2,
+            "0": 2
+          },
+          "25": {
+            "0": 2,
+            "1": 2
+          },
+          "26": {
+            "0": 2,
+            "1": 2
+          },
+          "27": {
+            "0": 2,
+            "1": 2
+          },
+          "28": {
+            "0": 2,
+            "1": 2
+          },
+          "29": {
+            "0": 2,
+            "1": 2
+          },
+          "30": {
+            "1": 2,
+            "0": 2
+          },
+          "31": {
+            "0": 2,
+            "1": 2
+          },
+          "32": {
+            "1": 2,
+            "0": 2
+          }
+        },
+        "duplicate_full_sequences": 0
+      }
+    },
+    "overlap": {
+      "training": {
+        "val": {
+          "count": 6,
+          "sequence_ids": [
+            "val/L4/row0",
+            "val/L4/row1",
+            "val/L4/row2",
+            "val/L4/row3",
+            "val/L5/row0",
+            "val/L8/row2"
+          ]
+        },
+        "ood_test": {
+          "count": 0,
+          "sequence_ids": []
+        }
+      },
+      "prior_evaluations": [
+        {
+          "path": "experiments/results/gatec_canonical_replay.json",
+          "sha256": "9c0127a6a3fb52ac6c31f0cef583bd95957d65fd8bfd3ff98144273ab3532a1b",
+          "sets": {
+            "bits": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.json",
+          "sha256": "9303100f6dccca7701e0fddc601ebb79049f3d0a34d7e4331475d443760fd5ba",
+          "sets": {
+            "bits": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/results/gatec_learned_policy_replay_seed3305_v1/replay.json",
+          "sha256": "0bcb5d53408d6393fb7501eebc5f58e6524aca285cbe8eebfa0f6310b17a40f7",
+          "sets": {
+            "dataset.bits": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/manifest.json",
+          "sha256": "7f6b0e277cd2b8207400c5be7d9e10153a123b7abfcbe0571526a022e31a9d0c",
+          "sets": {
+            "resolved_manifest.val": {
+              "count": 2,
+              "panel_sequence_ids": [
+                "val/L5/row1",
+                "val/L6/row1"
+              ]
+            },
+            "resolved_manifest.ood_test": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/ood_test.json",
+          "sha256": "d9a98ab2fc725e6a8797512b98eb0a32d91bb53b86cbb065224e68f3898cd309",
+          "sets": {
+            "sequences": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/val.json",
+          "sha256": "02cbfc8a45bdcdef77bfda4f93d8ea62f30a03d95169c644b9341baf9f4700df",
+          "sets": {
+            "sequences": {
+              "count": 2,
+              "panel_sequence_ids": [
+                "val/L5/row1",
+                "val/L6/row1"
+              ]
+            }
+          }
+        },
+        {
+          "path": "experiments/runs/stage3_replication_3305_3307_100_v1.json",
+          "sha256": "d32e988558f7cfa3bc8e0a34e11c29e8acfb6aea25dc5f4839839719dcac3beb",
+          "sets": {
+            "evaluation_data.val": {
+              "count": 2,
+              "panel_sequence_ids": [
+                "val/L5/row1",
+                "val/L6/row1"
+              ]
+            },
+            "evaluation_data.in_distribution_test": {
+              "count": 1,
+              "panel_sequence_ids": [
+                "val/L5/row1"
+              ]
+            },
+            "evaluation_data.ood_test": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        },
+        {
+          "path": "experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json",
+          "sha256": "638506643b303ecd77e27e01c1b24e89c2cccbb0f103b8da0ca367184e24be5d",
+          "sets": {
+            "evaluation_data.val": {
+              "count": 2,
+              "panel_sequence_ids": [
+                "val/L5/row1",
+                "val/L6/row1"
+              ]
+            },
+            "evaluation_data.in_distribution_test": {
+              "count": 1,
+              "panel_sequence_ids": [
+                "val/L5/row1"
+              ]
+            },
+            "evaluation_data.ood_test": {
+              "count": 0,
+              "panel_sequence_ids": []
+            }
+          }
+        }
+      ]
+    },
+    "prior_unknowns": [
+      {
+        "path": "experiments/runs/stage3_imitation_partial_3305_100_v1.json",
+        "sha256": "0c2660227a71b1b4c66ba4615936876d3889c83dae76bc511539db61c71ea30b",
+        "reason": "evaluation bits not serialized"
+      },
+      {
+        "path": "experiments/runs/stage3_imitation_partial_3306_100_v1.json",
+        "sha256": "0ad8cfbc0bc6fb3761ecb3c7f22ce1c64d081d8894e8f9c6f12fe4621fd30b23",
+        "reason": "evaluation bits not serialized"
+      },
+      {
+        "path": "experiments/runs/stage3_imitation_partial_3307_100_v1.json",
+        "sha256": "4f3aba09eaf4ec919440db2d9bc071264bf454fd5ba03a2e5ccd5095e4ea1138",
+        "reason": "evaluation bits not serialized"
+      },
+      {
+        "path": "experiments/runs/stage3_imitation_replication_3305_v1.json",
+        "sha256": "398e45a43174fe0feeae9eaa2d63236af20999cd5f76911a719d713d093df739",
+        "reason": "evaluation bits not serialized"
+      },
+      {
+        "path": "experiments/runs/stage3_imitation_replication_3306_v1.json",
+        "sha256": "b5d5a442d79afa13251c0b16fbad9eab550fe1cc671fda031935bf25281c2f92",
+        "reason": "evaluation bits not serialized"
+      },
+      {
+        "path": "experiments/runs/stage3_imitation_replication_3307_v1.json",
+        "sha256": "00512ab17aba837f53bbdfadc1e75e21cb693bd1cb3b72805c30d657434ef9e2",
+        "reason": "evaluation bits not serialized"
+      }
+    ],
+    "raw_training_sequences": 104,
+    "cached_imitation_features_used": false
+  },
+  "training": {
+    "updates": 104,
+    "passes": 1,
+    "batch": 1,
+    "lengths": [
+      4,
+      16
+    ],
+    "loss": "final-sequence parity CE only",
+    "optimizer": "fresh AdamW on T controller only",
+    "optimizer_defaults": {
+      "lr": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.0,
+      "amsgrad": false,
+      "maximize": false,
+      "foreach": null,
+      "capturable": false,
+      "differentiable": false,
+      "fused": null,
+      "decoupled_weight_decay": true
+    },
+    "tau": 2.0,
+    "clipping": null,
+    "scheduler": null,
+    "U_optimizer": null,
+    "U_updates": 0,
+    "T_updates": 104,
+    "selection": "final update only; no evaluation-based stopping or tuning",
+    "trainable_parameters": [
+      "controller.norm_h.weight",
+      "controller.norm_memory_read.weight",
+      "controller.mlp.0.weight",
+      "controller.mlp.0.bias",
+      "controller.mlp.2.weight",
+      "controller.mlp.2.bias"
+    ],
+    "gradient_policy": "unchanged run_diff_sequence full-sequence BPTT; no token/state/cache detach; reset at independent-sequence boundary",
+    "graph_exceptions": "existing ST relaxed stop-gradient and hard pointer/mask metadata; existing SWA window slicing; no added truncation",
+    "frozen": "every non-controller parameter and fixed token feature",
+    "budget": [
+      0.0,
+      0.0
+    ],
+    "budget_fraction": 0.0,
+    "budget_presence_flag": 0.0
+  },
+  "randomness": {
+    "sequence_order_seed": 4600,
+    "training_seed": 4601,
+    "validation_seed": 4602,
+    "ood_seed": 4603,
+    "scheme": "independent CPU torch.Generator per phase; ordered ragged FP32 uniform tables indexed by phase/sequence ID (training update mapping in order file)/token/decision/action slot",
+    "action_slots": "0..9 successor slots; HALT slot 10 has no sampled successor",
+    "fifteen_positions": "coverage of mathematical legal D<=15 bound, not a decision stopping cap",
+    "injection": "temporary torch.rand_like hook only inside original differentiable_route_step; original clamp, Gumbel transform, log-softmax, tau and ST hard/backward computation unchanged",
+    "validation_reuse": "exact same validation tensors before and after all updates",
+    "files": {
+      "train": {
+        "path": "noise_train.pt",
+        "sha256": "ca5b01676f00250f5cb9681f0d1d77eeddb242e236b4b5813c474fdd410e6433",
+        "tensor_fingerprint": "a9fdfdfd21d0903f99d99f5da7f8925b9da10a028c5b2c2f3578b9ecd8f691e9"
+      },
+      "val": {
+        "path": "noise_val.pt",
+        "sha256": "a61f4fcfa53c703b31b9028fd8867193a95805d5f627508a5c802eeb91a190ec",
+        "tensor_fingerprint": "a7b64b7dca61cef601ab24f4c8c98d665acd432d46263dad70f559249428da6d"
+      },
+      "ood_test": {
+        "path": "noise_ood_test.pt",
+        "sha256": "67e4d6d50927954c4d4d3608a60ab8b1aeda1b0ade7e8d97482ab5d3acc44e6b",
+        "tensor_fingerprint": "5abb45185b9ced815dcff72b3bf3443243c130785c72411a29b1a873b501f006"
+      }
+    }
+  },
+  "execution": {
+    "device": "cuda",
+    "dtype": "float32",
+    "dim": 64,
+    "batch": 1,
+    "P": 8,
+    "D": "8+RESTART, 8..15",
+    "halt_excluded": true,
+    "convergence_unused": true,
+    "adaptive_depth": false,
+    "stochastic": "actual production training=True: all 10 successors, nine speculative bank calls per decision, hard selected forward state",
+    "deterministic": "actual production training=False: selected-only legal argmax",
+    "no_repair": true,
+    "no_teacher_forcing": true
+  },
+  "schedule": [
+    "starting deterministic validation",
+    "unchanged stochastic validation",
+    "paired shuffled 104-sequence pass",
+    "final deterministic validation and OOD U/T",
+    "final paired no-update stochastic validation and OOD U/T"
+  ],
+  "stopping": "mechanical invariant violation or nonfinite result only; ordinary poor performance is recorded",
+  "strong_criterion": "finite real controller updates, valid execution, preserved deterministic parity, sampled T accuracy>=U and mean CE<=U separately on each fixed panel",
+  "provenance_limitations": [
+    "historical training features were not hashed at creation; deterministic reconstruction is source-verified",
+    "historical implicit numerical runtime flags and optimizer backend flags were not logged; same framework/device family and explicit current flags recorded",
+    "exact Stage-1 training contents and unretained prior probe overlaps unknown",
+    "short-input panel overlaps are disclosed; no blanket unseen-sequence claim",
+    "this tests imitation replication only, not task-loss routing, route diversity, topology or adaptive depth",
+    "panels were exposed in previous imitation replication; not untouched generalization",
+    "single indexed-noise draw per sequence; no population stochastic robustness or causal trainability claim"
+  ],
+  "numerical": {
+    "torch_version": "2.10.0+cu130",
+    "device_name": "NVIDIA GB10",
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false
+  }
+}

@@ -1,0 +1,1030 @@
+# AGT-v3 — Gate B
+# Stage-3 / Stage-4 Source Extraction and Repository Gap Analysis
+
+Status: SPECIFICATION EXTRACTION ONLY
+
+This document is not an implementation proposal.
+No Stage-3 code, routing code, loss code, temperature schedule, controller training,
+D768 modification, or GDN modification is authorized by this document.
+
+---
+
+# 0. PROVENANCE
+
+## Gate-A completion point
+
+- Gate-A branch: `research/gdn-state-mechanism`
+- Gate-A completion commit:
+  `09bed25c79b223f49893fb4f9c2038534498a5e6`
+- Gate-A tag:
+  `AGT-v3-GateA-complete`
+- Immutable AGT-v3 integration base:
+  `c5657630781ba463ce9238a1285d35e96a71ce75`
+
+Gate A is frozen.
+
+The following Gate-A results are treated as completed evidence:
+
+- A3: PASS
+- A4: PASS
+- A5: PASS
+- A6: NOT ESTABLISHED
+- A7: PASS
+- A8: replication NOT CLAIMED
+- A9: report complete
+
+---
+
+# 1. SOURCE SET LOCATED
+
+The search did not locate a standalone document explicitly titled
+"AGT-v3 Stage 3 Specification" or "AGT-v3 Stage 4 Specification".
+
+The following AGT-v3 source materials were located and must be distinguished
+by authority and date.
+
+## Source S1 — current locked architecture correction
+
+`Pasted text(20260929-195559).txt`
+
+This is the latest located AGT-v3 architecture-correction material.
+
+It supersedes the older unrestricted-topology / separate-PonderNet formulation
+for the current architecture.
+
+Important locked architectural statements in S1 include:
+
+- decoder-only recurrent Transformer framing
+- persistent cross-token state
+- unified state-conditioned execution policy
+- action set:
+  `ADVANCE(j')`, `REPEAT`, `RESTART`, `HALT`
+- restart preserves live hidden state
+- direct backward routing is removed
+- restartable monotone sweeps are retained
+- no architectural upper bound on within-token execution depth
+- convergence is a stopping signal, not a separate controller
+- terminal state update produces persistent state
+- categorical routing may use a Gumbel-Softmax relaxation during training,
+  with hard categorical execution at inference
+- no top-k simultaneous execution
+- old local PonderNet equations are explicitly removed from the primary
+  current architecture
+- arbitrary backward/cyclic topology is explicitly removed
+
+S1 is the primary source for CURRENT AGT-v3 architecture semantics.
+
+## Source S2 — architectural research / adversarial review
+
+`Pasted markdown(20260913-113624).md`
+
+This is an architectural research and adversarial review memo.
+
+It is NOT treated as an exact canonical Stage-3 training specification.
+
+It contains research recommendations and experimental criteria, including:
+
+- state-conditioned routing as the central hypothesis
+- compute-matched controls
+- route-shuffle controls
+- difficulty-conditioned experiments
+- deep-start initialization recommendation
+- staged controller-training curriculum
+- deliberation cost recommendation
+- entropy regularization recommendation
+- broad-tail depth curriculum
+- multi-depth consistency / auxiliary-supervision ideas
+- routing non-triviality criteria
+- kill criteria
+
+Where S2 supplies a recommendation but S1 does not lock it,
+that item remains UNSPECIFIED for canonical implementation purposes.
+
+## Source S3 — older AGT-v3 architecture blueprint
+
+`Pasted text(20260911-094508).txt`
+
+This is an older architecture formulation.
+
+It contains:
+
+- local PonderNet recurrence
+- local halt probabilities
+- soft segment readout
+- dynamic topology routing
+- straight-through Gumbel-softmax
+- older topology assumptions
+
+S1 explicitly supersedes the obsolete local-PonderNet equations and
+unrestricted arbitrary-cycle topology.
+
+Therefore S3 is historical source material, not the current canonical
+Stage-3 architecture.
+
+## Source S4 — literature / architecture revision
+
+`AGT_v3_Literature_DeepDive_and_Architecture_Revision.md`
+
+This review states that the current AGT-v3 macro architecture is fixed in
+spirit while microarchitecture and several optimization choices remain
+provisional/open.
+
+It is useful for identifying experimentally motivated candidates, but is
+not treated as a complete numerical training specification.
+
+---
+
+# 2. IMPORTANT SOURCE-RESOLUTION RESULT
+
+No located source defines an explicit canonical Stage-3 or Stage-4
+training specification with all of the following simultaneously fixed:
+
+- controller dimensionality
+- exact controller feature vector
+- exact logits parameterization
+- exact Gumbel-Softmax equation
+- exact straight-through estimator
+- initial temperature
+- final temperature
+- annealing schedule
+- routing-loss equation
+- entropy coefficient
+- deliberation coefficient
+- adaptive-depth coefficient
+- auxiliary-loss coefficients
+- exact Stage-3 dataset
+- exact Stage-3 train/validation/test protocol
+- exact number of training steps
+- exact optimizer settings
+- exact success thresholds
+- exact falsification thresholds
+- exact Stage-4 transition gate
+
+Therefore those quantities MUST NOT be invented.
+
+---
+
+# 3. CLASSIFICATION RULE
+
+Each requested specification item below is classified exactly as:
+
+[SPECIFIED]
+[PARTIALLY SPECIFIED]
+[UNSPECIFIED]
+
+`[UNSPECIFIED]` means:
+
+> UNSPECIFIED — not defined by the located canonical AGT-v3 source.
+
+A recommendation contained in S2 or S4 does not become a canonical
+specification merely because it is technically reasonable.
+
+---
+
+# 4. STAGE 3 — SOURCE-DERIVED SPECIFICATION
+
+## 1. Stage-3 objective
+
+[PARTIALLY SPECIFIED]
+
+The current architecture targets adaptive within-token computation through
+a state-conditioned execution policy over heterogeneous computational
+blocks.
+
+The exact formal Stage-3 optimization objective and success threshold
+are not defined by the located canonical source.
+
+UNSPECIFIED — exact Stage-3 objective function and numerical target.
+
+## 2. Controller input
+
+[PARTIALLY SPECIFIED]
+
+The canonical current architecture conditions the policy on the live
+within-token state and execution context.
+
+The current source describes policy dependence on quantities corresponding
+to:
+
+- current hidden state `h`
+- persistent state / memory
+- current block index `j`
+- optional normalized position/budget feature `b_p`
+
+The exact concatenation, projection, normalization, and feature dimensions
+are not specified.
+
+## 3. Controller architecture
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical hidden-layer count, hidden width, activation,
+normalization stack, or parameterization is defined.
+
+## 4. Controller output
+
+[PARTIALLY SPECIFIED]
+
+The policy outputs an action distribution over the unified execution
+actions.
+
+The exact canonical output encoding is not fully specified.
+
+## 5. Action space
+
+[SPECIFIED]
+
+Current action set:
+
+`ADVANCE(j')`
+`REPEAT`
+`RESTART`
+`HALT`
+
+## 6. ADVANCE semantics
+
+[SPECIFIED]
+
+Advance chooses a later block index under the current monotone-sweep
+constraint.
+
+Direct backward movement is not an allowed ADVANCE operation.
+
+## 7. REPEAT semantics
+
+[SPECIFIED]
+
+REPEAT executes the current block again at the current block index.
+
+## 8. RESTART semantics
+
+[SPECIFIED]
+
+RESTART returns the block pointer to the beginning of the sweep while
+preserving the live hidden state.
+
+It is a scheduling transition, not a reset of the reasoning state.
+
+## 9. HALT semantics
+
+[SPECIFIED]
+
+HALT terminates the current within-token computation and proceeds to the
+terminal state-update / output stage.
+
+## 10. Execution-mask constraints
+
+[PARTIALLY SPECIFIED]
+
+The canonical design requires legal-action masking consistent with:
+
+- monotone forward ADVANCE
+- valid block indices
+- REPEAT remaining at the current block
+- RESTART returning to the beginning
+- HALT being a terminating action
+
+The exact mask tensor construction and numerical invalid-logit convention
+are not specified.
+
+## 11. ST-Gumbel formulation
+
+[PARTIALLY SPECIFIED]
+
+The current source permits categorical relaxation during training,
+optionally using Gumbel-Softmax, while inference uses hard categorical
+execution.
+
+The exact mathematical estimator is not fixed.
+
+## 12. Logits
+
+[UNSPECIFIED]
+
+UNSPECIFIED — the canonical source does not define the exact mapping from
+controller representation to per-action logits.
+
+## 13. Soft / straight-through behavior
+
+[PARTIALLY SPECIFIED]
+
+Soft categorical relaxation may be used during optimization.
+
+Hard categorical execution is required conceptually at inference.
+
+The exact straight-through forward/backward equations are unspecified.
+
+## 14. Temperature
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical numerical temperature is given.
+
+## 15. Temperature initialization
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical initial temperature is given.
+
+## 16. Temperature annealing schedule
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical annealing schedule is given.
+
+## 17. Routing loss
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical routing-loss equation or coefficient is fixed
+by the located current source.
+
+## 18. Entropy regularization
+
+[UNSPECIFIED]
+
+The September-13 research memo recommends entropy regularization as an
+optimization mechanism, but it is not established as a canonical locked
+coefficient in S1.
+
+UNSPECIFIED — exact entropy term and coefficient.
+
+## 19. Deliberation / computation cost
+
+[UNSPECIFIED]
+
+The September-13 research memo discusses a deliberation cost and the
+need to prevent degenerate policies.
+
+It does not provide a canonical locked numerical coefficient for current
+Stage 3.
+
+UNSPECIFIED — exact computation-cost formulation and coefficient.
+
+## 20. Adaptive-depth loss
+
+[UNSPECIFIED]
+
+The located current source supports adaptive execution and convergence
+stopping but does not define a canonical Stage-3 adaptive-depth loss.
+
+UNSPECIFIED — exact adaptive-depth objective and coefficient.
+
+## 21. Auxiliary losses
+
+[PARTIALLY SPECIFIED]
+
+The research materials mention possible:
+
+- multi-depth / intermediate supervision
+- trajectory consistency
+- overthinking-related diagnostics
+
+These are presented as experiments / recommendations rather than a fully
+locked mandatory Stage-3 auxiliary-loss stack.
+
+## 22. Loss coefficients
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no authoritative complete coefficient table was located.
+
+## 23. Gradient flow
+
+[PARTIALLY SPECIFIED]
+
+Training uses differentiable categorical relaxation where selected.
+
+Inference uses hard categorical execution.
+
+The exact estimator and treatment of gradients through each action class
+are not specified.
+
+## 24. What is trainable
+
+[UNSPECIFIED]
+
+The current canonical source does not define a complete Stage-3
+trainable/frozen parameter table.
+
+## 25. What remains frozen
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no complete Stage-3 freeze table is specified.
+
+Stage-1's frozen-controller rule must not automatically be transferred to
+Stage 3.
+
+## 26. Training-time behavior
+
+[PARTIALLY SPECIFIED]
+
+The source permits differentiable categorical routing during training.
+
+The research memo recommends staged training rather than joint-from-scratch
+controller training.
+
+The exact canonical Stage-3 training phases are not specified.
+
+## 27. Inference-time behavior
+
+[PARTIALLY SPECIFIED]
+
+Inference uses hard categorical execution.
+
+Execution proceeds through legal actions until HALT.
+
+Convergence may also provide a stopping signal.
+
+The exact precedence between learned HALT and convergence stopping is not
+fully numerically or algorithmically specified in the located source.
+
+## 28. D64 experimental setup
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical D64 Stage-3 model/training configuration was
+located.
+
+The existing D64 parity experiment is a Stage-1 fixed-route baseline and
+must not be silently promoted to a Stage-3 specification.
+
+## 29. Dataset / task
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical Stage-3 dataset/task split was found.
+
+Prepared external data such as CLRS30 and enwik8 are therefore NOT
+automatically authorized as the Stage-3 dataset.
+
+## 30. Route constraints
+
+[PARTIALLY SPECIFIED]
+
+Current source establishes:
+
+- one next action per transition
+- monotone ADVANCE
+- REPEAT at the current index
+- RESTART to the beginning
+- HALT termination
+- no unrestricted backward/cyclic routing
+
+Exact training/inference masking equations are unspecified.
+
+## 31. Number of blocks
+
+[UNSPECIFIED]
+
+The source discusses `B_1 ... B_N` generically.
+
+No canonical current Stage-3 value of `N` is defined.
+
+## 32. Evaluation metrics
+
+[PARTIALLY SPECIFIED]
+
+Research materials require instrumentation such as:
+
+- route entropy
+- per-block utilization
+- input-route dependence
+- executed-depth statistics
+- depth/difficulty relationship
+- state/read diagnostics
+- gate saturation
+- seed variance
+
+Exact primary metric set for a canonical Stage-3 benchmark is not fixed.
+
+## 33. Baseline comparisons
+
+[PARTIALLY SPECIFIED]
+
+The research memo explicitly calls for compute-matched controls including
+fixed/static and random-path controls.
+
+It also advocates matched active parameters and inference FLOPs.
+
+The exact canonical baseline matrix is not locked by S1.
+
+## 34. Success criteria
+
+[PARTIALLY SPECIFIED]
+
+The strongest stated research criterion is non-trivial,
+input-dependent, difficulty-correlated routing that survives matched-compute
+null controls.
+
+The exact numerical thresholds are not canonical except where explicitly
+given as research hypotheses in S2.
+
+## 35. Failure / falsification criteria
+
+[PARTIALLY SPECIFIED]
+
+The research memo defines operational kill criteria around:
+
+- routing indistinguishable from random control
+- router collapse
+- state-conditioned routing producing no measurable value
+- heterogeneous model matching simpler looped alternatives
+
+These belong to the research-gate framework, not a complete canonical
+Stage-3 loss/config specification.
+
+## 36. Transition criteria to Stage 4
+
+[UNSPECIFIED]
+
+UNSPECIFIED — no canonical formal Stage-3→Stage-4 acceptance contract
+was located.
+
+---
+
+# 5. STAGE 4 — SEPARATE EXTRACTION
+
+IMPORTANT:
+
+No located document explicitly defines a canonical "Stage 4" section.
+
+The current source material instead describes later evolution of adaptive
+depth, convergence, state-conditioned routing, test-time scaling, and
+future architecture versions.
+
+Therefore Stage 4 is NOT to be reverse-engineered from those discussions.
+
+## Objective
+
+[UNSPECIFIED]
+
+## Controller behavior
+
+[UNSPECIFIED]
+
+## Adaptive-depth mechanism
+
+[PARTIALLY SPECIFIED]
+
+Current architecture supports adaptive within-token execution and HALT,
+and discusses convergence-based stopping.
+
+This is an architectural property, not a complete Stage-4 training
+specification.
+
+## Losses
+
+[UNSPECIFIED]
+
+## Costs
+
+[UNSPECIFIED]
+
+## Difficulty definition
+
+[UNSPECIFIED]
+
+## Training procedure
+
+[UNSPECIFIED]
+
+## Inference procedure
+
+[UNSPECIFIED]
+
+## Experiment design
+
+[UNSPECIFIED]
+
+## Baselines
+
+[UNSPECIFIED]
+
+## Success criteria
+
+[UNSPECIFIED]
+
+## Falsification criteria
+
+[UNSPECIFIED]
+
+## Stage-4 transition requirements
+
+[UNSPECIFIED]
+
+Conclusion:
+
+> A canonical Stage-4 specification is not available in the located
+> source set and must not be invented.
+
+---
+
+# 6. KNOWN CONTROLLER DIMENSION DISCREPANCY
+
+The current repository controller is a provisional architecture.
+
+At the current implementation point it uses a D-dependent controller whose
+output corresponds to 11 logits.
+
+The current implementation therefore does NOT establish a canonical
+controller dimensionality.
+
+An older research/roadmap discussion has referenced a different
+controller dimensionality (`1803 -> 256 -> 11`), but that exact dimensionality
+was NOT found in the latest canonical locked architecture source.
+
+Therefore:
+
+- `1803 -> 256 -> 11` is NOT accepted here as canonical source truth.
+- current `D -> D -> 11` is also NOT accepted as canonical source truth.
+- controller dimensions remain `[UNSPECIFIED]` until the authoritative
+  source is supplied.
+
+No silent reconciliation is permitted.
+
+---
+
+# 7. REPOSITORY GAP ANALYSIS AT GATE-A-COMPLETE
+
+Repository snapshot:
+`09bed25c79b223f49893fb4f9c2038534498a5e6`
+
+## A. ALREADY IMPLEMENTED
+
+### A1. Unified action vocabulary / executor infrastructure
+
+Repository:
+`src/controller.py`
+`src/executor.py`
+
+The repository already contains the unified action vocabulary and an
+AdaptiveExecutor capable of representing:
+
+- ADVANCE
+- REPEAT
+- RESTART
+- HALT
+
+This is compatible with the current S1 action vocabulary.
+
+### A2. Legal execution / action validation
+
+Repository:
+`src/executor.py`
+
+Existing executor logic enforces execution safety / legal transitions
+rather than arbitrary uncontrolled block traversal.
+
+### A3. Restartable execution state handling
+
+Repository:
+`src/executor.py`
+
+RESTART handling exists and preserves the live hidden state rather than
+resetting it.
+
+### A4. Convergence mechanism
+
+Repository:
+`src/convergence.py`
+
+The repository already contains a deterministic convergence monitor.
+
+Its presence is compatible with the current architecture's role for
+convergence as a stopping signal / diagnostic.
+
+### A5. Adaptive integration path
+
+Repository:
+`src/agt.py`
+
+`AGTv3.adaptive_step()` and the executor integration exist.
+
+A forced fixed route was previously verified against the validated
+fixed-route path with bitwise-equivalent output/state/cache behavior.
+
+This establishes infrastructure correctness, not learned routing competence.
+
+### A6. Persistent cross-token state
+
+Repository:
+`src/agt.py`
+`src/terminal_commit.py`
+`src/caches.py`
+`src/gdn_v3.py`
+
+Persistent state and terminal commit semantics already exist.
+
+Gate A established mechanistic evidence for GDN persistent state.
+
+### A7. Fixed-route D64 benchmark baseline
+
+Repository:
+`data/task_a.py`
+`docs/TASK_A_SPEC.md`
+`experiments/train_stage1_taskA.py`
+`experiments/runs/stage1_parity_seed3305_best.pt`
+
+This is a Stage-1 fixed-route scientific baseline.
+
+It is NOT Stage 3.
+
+---
+
+# 8. B. MISSING
+
+The following Stage-3 components are not presently established
+as a canonical implementation:
+
+1. canonical controller architecture
+2. canonical controller feature construction
+3. canonical persistent-memory input path into policy, if required at
+   the exact Stage-3 boundary
+4. exact action-logit parameterization
+5. exact differentiable categorical estimator
+6. ST-Gumbel implementation
+7. temperature initialization
+8. temperature annealing
+9. routing objective
+10. entropy objective
+11. deliberation/computation objective
+12. adaptive-depth loss
+13. complete auxiliary loss stack
+14. loss coefficient table
+15. Stage-3 training curriculum
+16. trainable/frozen parameter table
+17. canonical D64 Stage-3 task
+18. canonical dataset split
+19. canonical number of blocks
+20. canonical P_max, if a Stage-3 value is intended
+21. canonical evaluation matrix
+22. canonical compute-matching protocol
+23. canonical seed count
+24. canonical success thresholds
+25. canonical Stage-3→Stage-4 gate
+
+None of these should be filled by intuition.
+
+---
+
+# 9. C. CONFLICTING / REQUIRES CHANGE
+
+## C1. Older unrestricted topology vs current monotone routing
+
+Historical S3 materials contain unrestricted backward/cyclic topology.
+
+Current S1 explicitly removes that architecture.
+
+Required disposition:
+
+- preserve current monotone/restartable semantics
+- do not resurrect unrestricted cycles
+
+Status:
+`REQUIRES CHANGE` only for any code/documentation that still presents
+the obsolete topology as current.
+
+## C2. Old local PonderNet equations vs current unified policy
+
+Historical S3 materials contain local PonderNet halt/readout equations.
+
+Current S1 explicitly removes them as the primary architecture.
+
+Required disposition:
+
+- no separate local PonderNet controller in current v3
+- no silent return to old local-halt formulation
+
+Status:
+`REQUIRES CHANGE` if obsolete implementation is used for current routing.
+
+## C3. Controller dimensionality
+
+Current repository:
+`D -> D -> 11` provisional controller.
+
+Older research material:
+`1803 -> 256 -> 11` appears in earlier planning context.
+
+Latest canonical source:
+does not define either exact dimensionality.
+
+Status:
+`UNRESOLVED / REQUIRES EXPLICIT SOURCE DECISION`
+
+No dimensional change is authorized by Gate B.
+
+## C4. Fixed-route execution in current AGT.step()
+
+Repository:
+`src/agt.py`
+
+Current `step()` executes the full deterministic bank once.
+
+This is intentional as the validated Stage-1 / baseline path.
+
+Status:
+`ALREADY IMPLEMENTED BASELINE`
+
+It should not be removed merely because Stage 3 will eventually add learned routing.
+
+## C5. GDN mechanism
+
+Repository:
+`src/gdn_v3.py`
+
+Gate B requires NO modification to the validated GDN mechanism.
+
+Status:
+`FROZEN`
+
+## C6. Stage-3 task definition
+
+Current task:
+`data/task_a.py`
+
+This is a Stage-1 parity task.
+
+The source materials discuss parity and algorithmic tasks as possible research testbeds,
+but no canonical Stage-3 task has been located.
+
+Status:
+`MISSING / HUMAN DECISION REQUIRED`
+
+## C7. CLRS30 and enwik8
+
+Prepared data exist outside the repository in the consolidated AGT workspace.
+
+Their presence does NOT make either dataset a canonical Stage-3 task.
+
+Status:
+`AVAILABLE DATA, NOT AUTHORIZED STAGE-3 SPEC`
+
+---
+
+# 10. ITEMS THAT ARE EXPLICITLY NOT DECIDED
+
+The following must remain unresolved until the authoritative source
+or an explicit human design decision fixes them:
+
+- controller dimensions
+- controller hidden width
+- controller feature list
+- exact memory feature representation supplied to controller
+- exact logits parameterization
+- exact Gumbel equation
+- exact straight-through estimator
+- initial temperature
+- terminal temperature
+- annealing function
+- routing-loss definition
+- routing-loss coefficient
+- entropy coefficient
+- deliberation coefficient
+- adaptive-depth coefficient
+- auxiliary-loss coefficients
+- optimizer
+- learning rate
+- weight decay
+- Stage-3 step count
+- seed count
+- exact Stage-3 dataset
+- exact D64 block count
+- exact Stage-3 difficulty parameter
+- exact benchmark thresholds
+- exact Stage-3→Stage-4 transition rule
+
+No default is selected here.
+
+---
+
+# 11. HUMAN DECISIONS REQUIRED BEFORE GATE C
+
+These are the minimum decisions that cannot be made from the located source:
+
+## Decision 1 — authoritative Stage-3 training document
+
+Either:
+
+A. provide the missing canonical Stage-3/Stage-4 roadmap/blueprint,
+or
+
+B. explicitly authorize creation of a new Stage-3 training specification.
+
+Without this, exact optimization details remain unspecified.
+
+## Decision 2 — controller dimensions
+
+The current implementation's `D -> D -> 11` is provisional.
+
+An older `1803 -> 256 -> 11` value is not verified in the latest source.
+
+A human must select the authoritative value or provide the source.
+
+## Decision 3 — exact routing objective
+
+The source establishes the existence of adaptive routing and categorical
+relaxation but does not lock the complete loss.
+
+A human decision is required before code is written.
+
+## Decision 4 — exact temperature policy
+
+No canonical temperature initialization or annealing schedule was located.
+
+## Decision 5 — exact Stage-3 task / dataset
+
+CLRS30 and enwik8 are available in the consolidated workspace, but neither
+is canonically specified as Stage 3 by the located AGT-v3 source.
+
+---
+
+# 12. PROPOSED GATE-C IMPLEMENTATION BOUNDARY
+
+This is a boundary, NOT authorization to implement.
+
+Gate C should begin only after explicit approval of the missing
+specification items.
+
+Gate C would contain ONLY the minimal machinery necessary to realize the
+approved Stage-3 routing specification:
+
+1. canonical controller interface
+2. canonical action logits
+3. legal action masking
+4. approved differentiable categorical routing mechanism
+5. approved training-only relaxation
+6. hard action execution path
+7. route instrumentation
+8. null/random-route controls
+9. compute accounting
+
+Gate C must NOT modify:
+
+- GDN recurrence
+- persistent-state semantics
+- terminal commit semantics
+- validated Stage-1 checkpoint
+- frozen Gate-A artifacts
+- D768 architecture
+- real-data training unless explicitly specified
+
+---
+
+# 13. CURRENT GATE-B VERDICT
+
+Gate B has successfully established the following:
+
+### Architecture that is actually specified
+
+- one unified state-conditioned execution policy
+- action set:
+  `ADVANCE`, `REPEAT`, `RESTART`, `HALT`
+- restartable monotone sweeps
+- persistent cross-token state
+- no unrestricted backward/cyclic core
+- one action/transition at a time
+- categorical relaxation may be used during training
+- hard categorical execution at inference
+- convergence as a stopping signal
+- terminal persistent-state update
+
+### Architecture/training that is NOT actually specified
+
+- exact controller dimensions
+- exact controller feature construction
+- exact ST-Gumbel equation
+- temperature
+- annealing
+- routing loss
+- entropy coefficient
+- deliberation coefficient
+- adaptive-depth coefficient
+- auxiliary losses
+- exact Stage-3 dataset/task
+- exact Stage-3 evaluation protocol
+- exact Stage-3 success thresholds
+- exact Stage-4 specification
+
+Therefore:
+
+> Gate B cannot honestly be converted into Stage-3 implementation code
+> without additional source material or explicit human decisions.
+
+This is a specification gap, not an implementation failure.
+
+---
+
+# 14. REQUIRED STOP CONDITION
+
+STOP HERE.
+
+No Stage-3 code should be written from this document alone.
+
+No controller dimensions, temperature, losses, coefficients,
+dataset, or training schedule should be inferred.
+
+Next implementation is authorized only after the missing Stage-3
+specification has been supplied or explicitly approved as a new design.

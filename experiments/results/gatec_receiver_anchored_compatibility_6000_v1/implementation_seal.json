@@ -1,0 +1,23 @@
+{
+  "source_hashes": {
+    "study_runner_v1.py": "927288671db65812b68cf2d0740378b218e77547576fc6603968e88a5a1066e2",
+    "study_adapter_v1.py": "722393c3b25b10a0c7929280807b5f748e335e493c47560b9340ea3c95802c57",
+    "study_analysis_v1.py": "e94f9e67828bdd9be83e710b647bfd30dfa4bc4a1c5cfa63ea6ac5ce3dad808e",
+    "study_data_v1.py": "eb305081419334b782dda0c461a67b0459d29271a4d08296766d2d66c42e9b0a"
+  },
+  "validated_adapter_sha256": "fabec0602212560e3ec5fcb019deadefcc7d513f0c6f6b0faa0f8df5aa761d11",
+  "adapter_difference": "two fixture-only block assertions now use authorized ledger block_ceiling; exact diff retained",
+  "protocol_sha256": "d87c63ec804e0551ad52a6acf974f3b484767cc50abd640e8440e9d6a10410ec",
+  "clarification_sha256": "53a9c1b9e6f383e464335e93c625a2428ab21510a347ec9f8a3bfc5ba8373ced",
+  "input_manifest_sha256": "0ba4174730ad142561d099441c1228f4e56e84d3451d8e545b0738ae4a90ffcb",
+  "statistical_rules_sha256": "1b62f5ebe75b78c4c0ea33b87ada1ea2ca55960d2f2ef600a5d9d6b984aaa90a",
+  "runtime": {
+    "torch": "2.10.0+cu130",
+    "device": "NVIDIA GB10",
+    "dtype": "float32",
+    "batch": 1,
+    "TF32_matmul": false,
+    "TF32_cudnn": true,
+    "CPU_threads": 1
+  }
+}

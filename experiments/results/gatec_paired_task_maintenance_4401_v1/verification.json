@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "manifest_sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430",
+  "final_checkpoint_sha256": "c2dcee934edbc60e5e3faf0167ad202f9e25bf76ef47029a723d3fdcc4e39504",
+  "completed_optimizer_updates": 104,
+  "no_update_arm_updates": 0,
+  "finite_json_records": true,
+  "finite_controller_gradients": true,
+  "observed_decisions": 91776,
+  "observed_tokens": 11472,
+  "sampled_decisions": 54208,
+  "speculative_block_calls": 487872,
+  "realized_executions": 91776,
+  "hard_sampled_action_reconstruction_exact": true,
+  "training_HALT_gradient_exact_zero_rows": 8320,
+  "HALT_output_row_unchanged": true,
+  "all_actual_token_boundaries_and_P_D_accounting_verified": true,
+  "terminal_commits_observed": 11472,
+  "seven_context_versions_per_commit_verified": true,
+  "within_sequence_state_continuity_verified": true,
+  "training_graph_state_flags_verified": true,
+  "unchanged_U_pre_post_validation_exact": true,
+  "original_input_noise_manifest_hashes_unchanged": true,
+  "production_source_hashes_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "git_diff_check_clean": true,
+  "new_model_runs": 0,
+  "new_optimizer_updates": 0,
+  "diagnostic_tests": "20 passed: new noise/reporting tests plus existing routing and successor-mixing tests",
+  "preparation_correction": "One reporting KeyError before training; zero optimizer updates and empty original traces; sealed order/noise and original failed records preserved.",
+  "sampled_selected_probability_means": {
+    "initial_deterministic_val/U": 0.9999980232463433,
+    "initial_stochastic_val/U": 0.9999980232463433,
+    "training/U": 0.9999975909765523,
+    "training/T": 0.999990776546586,
+    "final_deterministic_val/U": 0.9999980232463433,
+    "final_deterministic_val/T": 0.9999651381459373,
+    "final_deterministic_ood_test/U": 0.9999937288871757,
+    "final_deterministic_ood_test/T": 0.9999378458454217,
+    "final_stochastic_val/U": 0.9999980232463433,
+    "final_stochastic_val/T": 0.9999651381459373,
+    "final_stochastic_ood_test/U": 0.9999937288871757,
+    "final_stochastic_ood_test/T": 0.9998417250213254
+  },
+  "phase_counts": {
+    "initial_deterministic_val/U": {
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "initial_stochastic_val/U": {
+      "candidate_constructions": 4160,
+      "candidate_block_calls": 37440,
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "training/U": {
+      "candidate_constructions": 8320,
+      "candidate_block_calls": 74880,
+      "decisions": 8320,
+      "executions": 8320
+    },
+    "training/T": {
+      "candidate_constructions": 8320,
+      "candidate_block_calls": 74880,
+      "decisions": 8320,
+      "executions": 8320
+    },
+    "final_deterministic_val/U": {
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "final_deterministic_val/T": {
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "final_deterministic_ood_test/U": {
+      "decisions": 12544,
+      "executions": 12544
+    },
+    "final_deterministic_ood_test/T": {
+      "decisions": 12544,
+      "executions": 12544
+    },
+    "final_stochastic_val/U": {
+      "candidate_constructions": 4160,
+      "candidate_block_calls": 37440,
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "final_stochastic_val/T": {
+      "candidate_constructions": 4160,
+      "candidate_block_calls": 37440,
+      "decisions": 4160,
+      "executions": 4160
+    },
+    "final_stochastic_ood_test/U": {
+      "candidate_constructions": 12544,
+      "candidate_block_calls": 112896,
+      "decisions": 12544,
+      "executions": 12544
+    },
+    "final_stochastic_ood_test/T": {
+      "candidate_constructions": 12544,
+      "candidate_block_calls": 112896,
+      "decisions": 12544,
+      "executions": 12544
+    }
+  }
+}

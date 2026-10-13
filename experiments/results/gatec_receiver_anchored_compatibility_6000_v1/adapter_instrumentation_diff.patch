@@ -1,0 +1,20 @@
+--- experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/receiver_anchored_v2.py
++++ study_adapter_v1.py
+@@ -240,7 +240,7 @@
+             before = snapshot(context)
+             anchor = h0.detach().clone()
+             self.ledger.blocks += 1
+-            assert self.ledger.blocks <= 4096
++            assert self.ledger.blocks <= self.ledger.block_ceiling
+             output = saved[1](block_index, h, h0, memory, context, **kwargs)
+             assert_equal(before, snapshot(context), exact=True)
+             assert torch.equal(anchor, h0)
+@@ -274,7 +274,7 @@
+                 def hook(index):
+                     def pre(module, args, kwargs):
+                         self.ledger.blocks += 1
+-                        assert self.ledger.blocks <= 4096
++                        assert self.ledger.blocks <= self.ledger.block_ceiling
+                         before = snapshot(kwargs["C_prev"]) if kwargs["C_prev"] is not None else {}
+                         module._fixture_purity_before = before
+                     def post(module, args, kwargs, result):

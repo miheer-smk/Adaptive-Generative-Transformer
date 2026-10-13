@@ -1,0 +1,1 @@
+{"attempt": 1, "case": "archival-control/reference", "program": "receiver_anchored_v1/P0", "device": "cpu", "token": 0, "status": "failed", "decisions": [], "commits": 0, "error": "ValueError: x_t must be [B, 64].", "executed_blocks": []}

@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "states": 18,
+    "forward_replays": 144,
+    "VJP_evaluations": 384,
+    "new_CF_continuations": 0
+  },
+  "original_gradient_and_forward_verified_all_144": true,
+  "other_controller_adjoints": 12205,
+  "full_controller_gradient_statuses": {
+    "connected_nonzero": 10770,
+    "connected_small": 1435
+  },
+  "execution_state_adjoint_statuses": {
+    "h/fixed_tensor_no_autograd_input": 144,
+    "memory_read/fixed_tensor_no_autograd_input": 1546,
+    "memory_mean/fixed_tensor_no_autograd_input": 1546,
+    "h_next/connected_nonzero": 12205,
+    "h0/fixed_tensor_no_autograd_input": 1546,
+    "h/connected_nonzero": 12061,
+    "memory_read/connected_nonzero": 10659,
+    "memory_mean/connected_nonzero": 9519,
+    "h0/connected_nonzero": 10659,
+    "memory_mean/connected_small": 1140
+  },
+  "no_new_model_calls_or_VJPs_in_offline_analysis": true,
+  "parameter_source_and_historical_hashes_verified": true,
+  "component_sum_and_variance_covariance_verified": true,
+  "joint_ST_and_independent_CF_bootstrap_recomputed": true,
+  "no_new_noise": true,
+  "optimizer_steps": 0,
+  "production_changes": 0,
+  "budget_scope": "384 VJPs of the original AGT final task loss; existing comparison helper also performs small algebraic categorical expected-loss identity checks, never additional AGT forward/backward probes",
+  "algebraic_categorical_identity_autograd_checks": 216
+}

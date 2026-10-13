@@ -1,0 +1,8 @@
+{
+  "plan_sha256": "b53fe8bdb699b3aad2693d964ed78f10aaf2dd575a08a09e575145b3cccba84f",
+  "script_sha256": "6f9083db9c315753d1c11e97c3ccac38a6afa42b893e3407b128c079a1244415",
+  "mode": "standard-library-only offline arithmetic",
+  "source": "v4 only",
+  "no_model_import": true,
+  "no_checkpoint_deserialization": true
+}

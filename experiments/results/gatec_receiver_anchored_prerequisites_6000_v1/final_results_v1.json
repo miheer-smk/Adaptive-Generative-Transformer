@@ -1,0 +1,4539 @@
+{
+  "status": "BOUNDED PREREQUISITES VERIFIED; NO TRAINING AUTHORIZED",
+  "authoritative_original_protocol": "conversation text; no local original-file hash claimed",
+  "active_adapter": "receiver_anchored_v2.py",
+  "active_statistical_rules": "statistical_rules_v3.py",
+  "tests": {
+    "pytest_results_v2.xml": {
+      "passed": 1,
+      "failures": [
+        {
+          "id": "experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v2::test_p0_archived_control_complete_forward_equivalence[cpu]",
+          "message": "ValueError: x_t must be [B, 64]."
+        }
+      ],
+      "skipped": []
+    },
+    "pytest_results_v3.xml": {
+      "passed": 15,
+      "failures": [],
+      "skipped": [
+        {
+          "id": "experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v3::test_disposable_full_effective_batch_resource_probe[cpu-T]",
+          "reason": "CUDA-only representative resource probe; CPU tests do not substitute for accelerator timing"
+        },
+        {
+          "id": "experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v3::test_disposable_full_effective_batch_resource_probe[cpu-C]",
+          "reason": "CUDA-only representative resource probe; CPU tests do not substitute for accelerator timing"
+        },
+        {
+          "id": "experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v3::test_independent_model_buffer_and_optimizer_moment_ownership[cuda]",
+          "reason": "Ownership fixture uses CPU synthetic optimizer moments; GPU gradient coverage is separate"
+        }
+      ]
+    },
+    "supplemental_results.xml": {
+      "passed": 5,
+      "failures": [],
+      "skipped": []
+    }
+  },
+  "final_test_passes": 20,
+  "final_test_skips": 3,
+  "retained_earlier_test_failures": 1,
+  "pretest_failure": "NumPy dependency absent; stopped before sealing or model construction; v1 failure retained",
+  "failed_model_call": "Archived bits were B1 nested; disposable decoder rejected before bank execution; corrected fixture preserves exact bits",
+  "ledger": {
+    "attempted_tokens": 387,
+    "completed_tokens": 386,
+    "failed_tokens": 1,
+    "selected_bank_calls": 3088,
+    "completed_bank_calls": 3088,
+    "attempted_terminal_commits": 386,
+    "terminal_commits": 386,
+    "backward_evaluations": 13,
+    "optimizer_updates": 0,
+    "warmup_tokens": 0,
+    "token_ceiling": 512,
+    "block_ceiling": 4096
+  },
+  "actual_selected_blocks": {
+    "0": 386,
+    "1": 386,
+    "2": 386,
+    "3": 572,
+    "4": 200,
+    "5": 386,
+    "6": 386,
+    "7": 386
+  },
+  "observed_terminal_payload_entries": 2702,
+  "source_implied_contextual_commit_work": {
+    "GDN_entries": 772,
+    "bank_attention_entries": 1544,
+    "prelude_attention_entries": 386,
+    "note": "entries observed through seven-entry plans; per-core kernel/latency counts not separately measured"
+  },
+  "CPU_CUDA_forward_and_gradient_evidence": {
+    "p0_equivalence/cpu": {
+      "final_ce": 0.0014546061865985394,
+      "expected_ce": 0.0014546061865985394,
+      "per_token_max_logit_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "complete_state_schema": {
+        "/s": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/memory": {
+          "shape": [
+            1,
+            16,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa_window": 256,
+        "/ctx/kv/2/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/2/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/2/version": 8,
+        "/ctx/kv/3/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/3/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/3/version": 8,
+        "/ctx/swa/0/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/0/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/0/version": 8,
+        "/ctx/swa/0/window_size": 256,
+        "/ctx/swa/0/num_committed_tokens": 8,
+        "/ctx/swa/1/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/1/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/1/version": 8,
+        "/ctx/swa/1/window_size": 256,
+        "/ctx/swa/1/num_committed_tokens": 8,
+        "/ctx/swa/pre/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/pre/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/pre/version": 8,
+        "/ctx/swa/pre/window_size": 256,
+        "/ctx/swa/pre/num_committed_tokens": 8,
+        "/ctx/gdn/4/committed_state": {
+          "shape": [
+            1,
+            6,
+            128,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/4/committed_conv_buffer": {
+          "shape": [
+            1,
+            3,
+            1536
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/4/version": 8,
+        "/ctx/gdn/5/committed_state": {
+          "shape": [
+            1,
+            6,
+            128,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/5/committed_conv_buffer": {
+          "shape": [
+            1,
+            3,
+            1536
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/5/version": 8,
+        "/tokens_committed": 8,
+        "/_consumed": false
+      },
+      "comparison": "fresh same-checkpoint full-state reference vs adapter, all 8 tokens; archived CE control",
+      "historical_full_tensor_equality_claimed": false
+    },
+    "directed_gradient/cpu": {
+      "native_loss": 1.4061576128005981,
+      "cross_continuation_loss": 3.6609416007995605,
+      "native_parameter_l2": 60.5303955078125,
+      "writer_parameter_l2": 21.856245040893555,
+      "incoming_state_gradients": {
+        "arm0/s": {
+          "connected": true,
+          "l2": 0.009640687145292759,
+          "max_abs": 0.0033256185706704855,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/memory": {
+          "connected": true,
+          "l2": 3.7726101875305176,
+          "max_abs": 0.15938644111156464,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/2/committed_keys": {
+          "connected": true,
+          "l2": 0.10039760917425156,
+          "max_abs": 0.036687154322862625,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/2/committed_values": {
+          "connected": true,
+          "l2": 0.14312076568603516,
+          "max_abs": 0.036537401378154755,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/3/committed_keys": {
+          "connected": true,
+          "l2": 0.10808116942644119,
+          "max_abs": 0.06908506155014038,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/3/committed_values": {
+          "connected": true,
+          "l2": 0.29384416341781616,
+          "max_abs": 0.08855197578668594,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/0/committed_keys": {
+          "connected": true,
+          "l2": 0.043044693768024445,
+          "max_abs": 0.014951318502426147,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/0/committed_values": {
+          "connected": true,
+          "l2": 0.13205277919769287,
+          "max_abs": 0.05149167403578758,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/1/committed_keys": {
+          "connected": true,
+          "l2": 0.05138564482331276,
+          "max_abs": 0.016723886132240295,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/1/committed_values": {
+          "connected": true,
+          "l2": 0.12497953325510025,
+          "max_abs": 0.04087267816066742,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/pre/committed_keys": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/swa/pre/committed_values": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/4/committed_state": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/4/committed_conv_buffer": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/5/committed_state": {
+          "connected": true,
+          "l2": 0.9770966172218323,
+          "max_abs": 0.1677175760269165,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/gdn/5/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.23666119575500488,
+          "max_abs": 0.07124260812997818,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/s": {
+          "connected": true,
+          "l2": 0.011626596562564373,
+          "max_abs": 0.004045259207487106,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/memory": {
+          "connected": true,
+          "l2": 0.19258996844291687,
+          "max_abs": 0.008938221260905266,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/2/committed_keys": {
+          "connected": true,
+          "l2": 0.00011524291039677337,
+          "max_abs": 2.9766659281449392e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/2/committed_values": {
+          "connected": true,
+          "l2": 0.00032178888795897365,
+          "max_abs": 8.114356023725122e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/3/committed_keys": {
+          "connected": true,
+          "l2": 6.635980389546603e-05,
+          "max_abs": 2.3275066268979572e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/3/committed_values": {
+          "connected": true,
+          "l2": 0.0002529543999116868,
+          "max_abs": 7.355584239121526e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/0/committed_keys": {
+          "connected": true,
+          "l2": 8.22544825496152e-05,
+          "max_abs": 2.737017348408699e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/0/committed_values": {
+          "connected": true,
+          "l2": 0.00021644194202963263,
+          "max_abs": 5.2826111641479656e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/1/committed_keys": {
+          "connected": true,
+          "l2": 8.739595796214417e-05,
+          "max_abs": 1.7074540664907545e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/1/committed_values": {
+          "connected": true,
+          "l2": 0.000297915015835315,
+          "max_abs": 7.260172424139455e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/pre/committed_keys": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm1/ctx/swa/pre/committed_values": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm1/ctx/gdn/4/committed_state": {
+          "connected": true,
+          "l2": 0.02279059961438179,
+          "max_abs": 0.0034897434525191784,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/4/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.0031876740977168083,
+          "max_abs": 0.000647256150841713,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/5/committed_state": {
+          "connected": true,
+          "l2": 0.031305618584156036,
+          "max_abs": 0.0031507471576333046,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/5/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.004741559270769358,
+          "max_abs": 0.00091588991926983,
+          "finite": true,
+          "exact_zero": false
+        }
+      },
+      "native_parameter_gradients": {
+        "memory.initial_memory": {
+          "connected": true,
+          "l2": 21.9421443939209,
+          "max_abs": 0.9234286546707153,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory.query_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.query_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.key_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.value_proj.weight": {
+          "connected": true,
+          "l2": 15.294750213623047,
+          "max_abs": 0.9016546010971069,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.input_norm.weight": {
+          "connected": true,
+          "l2": 0.9080696702003479,
+          "max_abs": 0.3545636236667633,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_norm.weight": {
+          "connected": true,
+          "l2": 0.9056439995765686,
+          "max_abs": 0.37920090556144714,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_norm.weight": {
+          "connected": true,
+          "l2": 0.9316114783287048,
+          "max_abs": 0.39654746651649475,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.input_proj.weight": {
+          "connected": true,
+          "l2": 13.6358060836792,
+          "max_abs": 1.4155884981155396,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_proj.weight": {
+          "connected": true,
+          "l2": 11.487849235534668,
+          "max_abs": 0.7558897733688354,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_proj.weight": {
+          "connected": true,
+          "l2": 12.73184585571289,
+          "max_abs": 1.8926734924316406,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.output_norm.weight": {
+          "connected": true,
+          "l2": 1.3810954093933105,
+          "max_abs": 0.6821379065513611,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude_block.anchor_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.memory_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.v_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.o_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.logits": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.scale": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.0.anchor_gate": {
+          "connected": true,
+          "l2": 0.10826707631349564,
+          "max_abs": 0.041191332042217255,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.memory_gate": {
+          "connected": true,
+          "l2": 0.0013192660408094525,
+          "max_abs": 0.0007073460728861392,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.norm.weight": {
+          "connected": true,
+          "l2": 0.20275695621967316,
+          "max_abs": 0.08147168159484863,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.8269063234329224,
+          "max_abs": 0.09027910232543945,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.6057740449905396,
+          "max_abs": 0.23132558166980743,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.9008451700210571,
+          "max_abs": 0.2204335629940033,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.2832164764404297,
+          "max_abs": 0.10311397910118103,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.07590188086032867,
+          "max_abs": 0.05768384039402008,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.06579171121120453,
+          "max_abs": 0.04406484588980675,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.logits": {
+          "connected": true,
+          "l2": 0.02784062922000885,
+          "max_abs": 0.002801483031362295,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.scale": {
+          "connected": true,
+          "l2": 0.013620839454233646,
+          "max_abs": 0.004315752536058426,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.anchor_gate": {
+          "connected": true,
+          "l2": 0.14428582787513733,
+          "max_abs": 0.06857933104038239,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.memory_gate": {
+          "connected": true,
+          "l2": 0.0022438254673033953,
+          "max_abs": 0.0009568483801558614,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.norm.weight": {
+          "connected": true,
+          "l2": 0.21825627982616425,
+          "max_abs": 0.07475204765796661,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_proj.weight": {
+          "connected": true,
+          "l2": 1.1025134325027466,
+          "max_abs": 0.10514594614505768,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.2085278034210205,
+          "max_abs": 0.11168414354324341,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.41780948638916,
+          "max_abs": 0.2575919032096863,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.20090913772583,
+          "max_abs": 0.08368677645921707,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.07013436406850815,
+          "max_abs": 0.05829603597521782,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.06516522169113159,
+          "max_abs": 0.050818536430597305,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.logits": {
+          "connected": true,
+          "l2": 0.030077703297138214,
+          "max_abs": 0.003581143682822585,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.scale": {
+          "connected": true,
+          "l2": 0.042989641427993774,
+          "max_abs": 0.01724429242312908,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.anchor_gate": {
+          "connected": true,
+          "l2": 0.23090748488903046,
+          "max_abs": 0.08755649626255035,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.memory_gate": {
+          "connected": true,
+          "l2": 0.004896740894764662,
+          "max_abs": 0.0019324786262586713,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.norm.weight": {
+          "connected": true,
+          "l2": 0.23101802170276642,
+          "max_abs": 0.06857984513044357,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.507380723953247,
+          "max_abs": 0.33717676997184753,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_proj.weight": {
+          "connected": true,
+          "l2": 3.0847811698913574,
+          "max_abs": 0.3245062232017517,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.6529929637908936,
+          "max_abs": 0.32474052906036377,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.3108949661254883,
+          "max_abs": 0.09800171107053757,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.13580356538295746,
+          "max_abs": 0.09820817410945892,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.17110273241996765,
+          "max_abs": 0.10396473109722137,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.logits": {
+          "connected": true,
+          "l2": 0.028516730293631554,
+          "max_abs": 0.0038596109952777624,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.scale": {
+          "connected": true,
+          "l2": 0.02837134711444378,
+          "max_abs": 0.010897185653448105,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.anchor_gate": {
+          "connected": true,
+          "l2": 0.24492314457893372,
+          "max_abs": 0.0953986793756485,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.memory_gate": {
+          "connected": true,
+          "l2": 0.0038408415857702494,
+          "max_abs": 0.001615233370102942,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.norm.weight": {
+          "connected": true,
+          "l2": 0.36318153142929077,
+          "max_abs": 0.1113772913813591,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_proj.weight": {
+          "connected": true,
+          "l2": 1.708654761314392,
+          "max_abs": 0.19230446219444275,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.879250407218933,
+          "max_abs": 0.18760168552398682,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.v_proj.weight": {
+          "connected": true,
+          "l2": 4.208829402923584,
+          "max_abs": 0.48256316781044006,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.o_proj.weight": {
+          "connected": true,
+          "l2": 3.628364086151123,
+          "max_abs": 0.1563604474067688,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.10847416520118713,
+          "max_abs": 0.06333281844854355,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.08795005083084106,
+          "max_abs": 0.040678899735212326,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.logits": {
+          "connected": true,
+          "l2": 0.036712225526571274,
+          "max_abs": 0.00492428382858634,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.scale": {
+          "connected": true,
+          "l2": 0.032667919993400574,
+          "max_abs": 0.012145721353590488,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.anchor_gate": {
+          "connected": true,
+          "l2": 0.008128696121275425,
+          "max_abs": 0.002994877053424716,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.memory_gate": {
+          "connected": true,
+          "l2": 4.4354052079143e-05,
+          "max_abs": 2.0197825506329536e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.norm.weight": {
+          "connected": true,
+          "l2": 0.010968619026243687,
+          "max_abs": 0.0051029822789132595,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.A_log": {
+          "connected": true,
+          "l2": 0.0033338884823024273,
+          "max_abs": 0.0030884589068591595,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.b_h": {
+          "connected": true,
+          "l2": 0.002333490876480937,
+          "max_abs": 0.002091672271490097,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.23092326521873474,
+          "max_abs": 0.025474580004811287,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.k_proj.weight": {
+          "connected": true,
+          "l2": 0.24012106657028198,
+          "max_abs": 0.025765253230929375,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.v_proj.weight": {
+          "connected": true,
+          "l2": 0.19954122602939606,
+          "max_abs": 0.039857372641563416,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.g_proj.weight": {
+          "connected": true,
+          "l2": 0.12673163414001465,
+          "max_abs": 0.017176875844597816,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.0863538458943367,
+          "max_abs": 0.004879108164459467,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.0181918665766716,
+          "max_abs": 0.0043636164627969265,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.016849355772137642,
+          "max_abs": 0.0036644702777266502,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.conv.weight": {
+          "connected": true,
+          "l2": 0.04938507452607155,
+          "max_abs": 0.02361590974032879,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.009392480365931988,
+          "max_abs": 0.006241338327527046,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.logits": {
+          "connected": true,
+          "l2": 5.37797313882038e-05,
+          "max_abs": 5.373228304961231e-06,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.scale": {
+          "connected": true,
+          "l2": 0.0021954921539872885,
+          "max_abs": 0.0007431368576362729,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.anchor_gate": {
+          "connected": true,
+          "l2": 0.43545159697532654,
+          "max_abs": 0.1921374797821045,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.memory_gate": {
+          "connected": true,
+          "l2": 0.01312454417347908,
+          "max_abs": 0.004626175854355097,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.norm.weight": {
+          "connected": true,
+          "l2": 0.7174901366233826,
+          "max_abs": 0.18855296075344086,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.A_log": {
+          "connected": true,
+          "l2": 0.17288218438625336,
+          "max_abs": 0.11914218217134476,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.b_h": {
+          "connected": true,
+          "l2": 0.12682019174098969,
+          "max_abs": 0.0861504003405571,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.q_proj.weight": {
+          "connected": true,
+          "l2": 21.567846298217773,
+          "max_abs": 2.755459785461426,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.k_proj.weight": {
+          "connected": true,
+          "l2": 31.37342643737793,
+          "max_abs": 2.8099279403686523,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.v_proj.weight": {
+          "connected": true,
+          "l2": 7.316309928894043,
+          "max_abs": 0.675254225730896,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.g_proj.weight": {
+          "connected": true,
+          "l2": 5.578601837158203,
+          "max_abs": 0.31946560740470886,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.o_proj.weight": {
+          "connected": true,
+          "l2": 3.281510353088379,
+          "max_abs": 0.08851470053195953,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.5434612035751343,
+          "max_abs": 0.1036619246006012,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.7530307173728943,
+          "max_abs": 0.12439240515232086,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.conv.weight": {
+          "connected": true,
+          "l2": 2.913346290588379,
+          "max_abs": 0.7197778820991516,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.24122639000415802,
+          "max_abs": 0.07415279000997543,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.logits": {
+          "connected": true,
+          "l2": 0.0015372040215879679,
+          "max_abs": 0.00015590419934596866,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.scale": {
+          "connected": true,
+          "l2": 0.1394023448228836,
+          "max_abs": 0.045358672738075256,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.anchor_gate": {
+          "connected": true,
+          "l2": 0.7291548848152161,
+          "max_abs": 0.3540209233760834,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.memory_gate": {
+          "connected": true,
+          "l2": 0.021126653999090195,
+          "max_abs": 0.012444213032722473,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.6.core.norm.weight": {
+          "connected": true,
+          "l2": 0.7946669459342957,
+          "max_abs": 0.3979461193084717,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 1.6591323614120483,
+          "max_abs": 0.06214210018515587,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 1.666900396347046,
+          "max_abs": 0.08066821098327637,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 3.042508125305176,
+          "max_abs": 0.055682215839624405,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.006758416537195444,
+          "max_abs": 0.0006988795357756317,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.2736823260784149,
+          "max_abs": 0.08796394616365433,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.anchor_gate": {
+          "connected": true,
+          "l2": 0.2760747969150543,
+          "max_abs": 0.07968780398368835,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.memory_gate": {
+          "connected": true,
+          "l2": 0.008479303680360317,
+          "max_abs": 0.0039502098225057125,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.7.core.norm.weight": {
+          "connected": true,
+          "l2": 0.41474512219429016,
+          "max_abs": 0.12081308662891388,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.6962072849273682,
+          "max_abs": 0.1464676409959793,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.5989766120910645,
+          "max_abs": 0.14674624800682068,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.8298981785774231,
+          "max_abs": 0.07324609905481339,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.03397414833307266,
+          "max_abs": 0.00277995434589684,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.scale": {
+          "connected": true,
+          "l2": 1.1621277332305908,
+          "max_abs": 0.34912076592445374,
+          "finite": true,
+          "exact_zero": false
+        },
+        "commit.state_norm.weight": {
+          "connected": true,
+          "l2": 1.077588677406311,
+          "max_abs": 0.3414935767650604,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_b": {
+          "connected": true,
+          "l2": 0.10399626940488815,
+          "max_abs": 0.10399626940488815,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.addr_q.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory_write.val_proj.weight": {
+          "connected": true,
+          "l2": 28.08273696899414,
+          "max_abs": 1.224575400352478,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_w.weight": {
+          "connected": true,
+          "l2": 1.222460389137268,
+          "max_abs": 0.45315033197402954,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.val_norm.weight": {
+          "connected": true,
+          "l2": 0.5114732980728149,
+          "max_abs": 0.11970347166061401,
+          "finite": true,
+          "exact_zero": false
+        },
+        "output_head.proj.weight": {
+          "connected": true,
+          "l2": 2.5819389820098877,
+          "max_abs": 0.29332828521728516,
+          "finite": true,
+          "exact_zero": false
+        }
+      },
+      "writer_parameter_gradients": {
+        "memory.initial_memory": {
+          "connected": true,
+          "l2": 8.42751407623291,
+          "max_abs": 0.36644551157951355,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory.query_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.query_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.key_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.value_proj.weight": {
+          "connected": true,
+          "l2": 3.6549594402313232,
+          "max_abs": 0.20043110847473145,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.input_norm.weight": {
+          "connected": true,
+          "l2": 0.19600512087345123,
+          "max_abs": 0.0929214209318161,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_norm.weight": {
+          "connected": true,
+          "l2": 0.1843051314353943,
+          "max_abs": 0.05614662542939186,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_norm.weight": {
+          "connected": true,
+          "l2": 0.2521308958530426,
+          "max_abs": 0.12545090913772583,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.input_proj.weight": {
+          "connected": true,
+          "l2": 2.959956407546997,
+          "max_abs": 0.2249988615512848,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_proj.weight": {
+          "connected": true,
+          "l2": 2.4102814197540283,
+          "max_abs": 0.11751563847064972,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_proj.weight": {
+          "connected": true,
+          "l2": 2.8468384742736816,
+          "max_abs": 0.30360808968544006,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.output_norm.weight": {
+          "connected": true,
+          "l2": 0.37851211428642273,
+          "max_abs": 0.1318376511335373,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude_block.anchor_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.memory_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.v_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.o_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.logits": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.scale": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.0.anchor_gate": {
+          "connected": true,
+          "l2": 0.03676632046699524,
+          "max_abs": 0.012522626668214798,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.memory_gate": {
+          "connected": true,
+          "l2": 0.00044855664600618184,
+          "max_abs": 0.00016707619943190366,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.norm.weight": {
+          "connected": true,
+          "l2": 0.12765167653560638,
+          "max_abs": 0.037573013454675674,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.16924627125263214,
+          "max_abs": 0.02079152874648571,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.3192681074142456,
+          "max_abs": 0.15870749950408936,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.0130020380020142,
+          "max_abs": 0.0863029807806015,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.461674302816391,
+          "max_abs": 0.017664052546024323,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.018667615950107574,
+          "max_abs": 0.015367136336863041,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.04424876347184181,
+          "max_abs": 0.03980827331542969,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.logits": {
+          "connected": true,
+          "l2": 0.008379774168133736,
+          "max_abs": 0.0009619713528081775,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.scale": {
+          "connected": true,
+          "l2": 0.003596907015889883,
+          "max_abs": 0.0009362356504425406,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.anchor_gate": {
+          "connected": true,
+          "l2": 0.04065728187561035,
+          "max_abs": 0.022376729175448418,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.memory_gate": {
+          "connected": true,
+          "l2": 0.00042592501267790794,
+          "max_abs": 0.00013691405183635652,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.norm.weight": {
+          "connected": true,
+          "l2": 0.11746914684772491,
+          "max_abs": 0.03708653524518013,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.17233619093894958,
+          "max_abs": 0.021997597068548203,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.1613659858703613,
+          "max_abs": 0.1417374163866043,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.325274109840393,
+          "max_abs": 0.1509804129600525,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.448975533246994,
+          "max_abs": 0.016917865723371506,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.017322948202490807,
+          "max_abs": 0.01590685360133648,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.047069527208805084,
+          "max_abs": 0.03514604642987251,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.logits": {
+          "connected": true,
+          "l2": 0.00894824881106615,
+          "max_abs": 0.0009363176068291068,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.scale": {
+          "connected": true,
+          "l2": 0.010533764958381653,
+          "max_abs": 0.0038766157813370228,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.anchor_gate": {
+          "connected": true,
+          "l2": 0.06912295520305634,
+          "max_abs": 0.02960866503417492,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.memory_gate": {
+          "connected": true,
+          "l2": 0.0007283197483047843,
+          "max_abs": 0.00034789578057825565,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.norm.weight": {
+          "connected": true,
+          "l2": 0.1482311636209488,
+          "max_abs": 0.05306730046868324,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.4401150345802307,
+          "max_abs": 0.05319923534989357,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_proj.weight": {
+          "connected": true,
+          "l2": 2.1545417308807373,
+          "max_abs": 0.23535944521427155,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.0577197074890137,
+          "max_abs": 0.125266432762146,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.44231125712394714,
+          "max_abs": 0.018248826265335083,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.017325347289443016,
+          "max_abs": 0.012357097119092941,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.12768889963626862,
+          "max_abs": 0.10221834480762482,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.logits": {
+          "connected": true,
+          "l2": 0.008074382320046425,
+          "max_abs": 0.0009475564584136009,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.scale": {
+          "connected": true,
+          "l2": 0.01194654032588005,
+          "max_abs": 0.003758423961699009,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.anchor_gate": {
+          "connected": true,
+          "l2": 0.08060441166162491,
+          "max_abs": 0.03153065964579582,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.memory_gate": {
+          "connected": true,
+          "l2": 0.001052612904459238,
+          "max_abs": 0.0004941620281897485,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.norm.weight": {
+          "connected": true,
+          "l2": 0.19033807516098022,
+          "max_abs": 0.05524519458413124,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.12018083035945892,
+          "max_abs": 0.017086390405893326,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.5089701414108276,
+          "max_abs": 0.14527438580989838,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.088578462600708,
+          "max_abs": 0.21832884848117828,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.4063972532749176,
+          "max_abs": 0.015004308894276619,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.010844558477401733,
+          "max_abs": 0.0074165319092571735,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.08453931659460068,
+          "max_abs": 0.049781449139118195,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.logits": {
+          "connected": true,
+          "l2": 0.005977560766041279,
+          "max_abs": 0.0006781243137083948,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.scale": {
+          "connected": true,
+          "l2": 0.0038539322558790445,
+          "max_abs": 0.0010959357023239136,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.anchor_gate": {
+          "connected": true,
+          "l2": 0.07032661885023117,
+          "max_abs": 0.026618612930178642,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.memory_gate": {
+          "connected": true,
+          "l2": 0.0003820916172116995,
+          "max_abs": 0.00017860463412944227,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.norm.weight": {
+          "connected": true,
+          "l2": 0.09387276321649551,
+          "max_abs": 0.040792640298604965,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.A_log": {
+          "connected": true,
+          "l2": 0.028959421440958977,
+          "max_abs": 0.026825156062841415,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.b_h": {
+          "connected": true,
+          "l2": 0.020279962569475174,
+          "max_abs": 0.018175696954131126,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.0002059936523438,
+          "max_abs": 0.2206621766090393,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.k_proj.weight": {
+          "connected": true,
+          "l2": 2.084648609161377,
+          "max_abs": 0.22599618136882782,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.7168712615966797,
+          "max_abs": 0.35056358575820923,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.g_proj.weight": {
+          "connected": true,
+          "l2": 1.1011019945144653,
+          "max_abs": 0.14685048162937164,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.7559278607368469,
+          "max_abs": 0.04467964172363281,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.15757715702056885,
+          "max_abs": 0.03787088766694069,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.14543431997299194,
+          "max_abs": 0.03173065930604935,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.conv.weight": {
+          "connected": true,
+          "l2": 0.42779600620269775,
+          "max_abs": 0.20477929711341858,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.08307977020740509,
+          "max_abs": 0.05423176288604736,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.logits": {
+          "connected": true,
+          "l2": 0.0007354726549237967,
+          "max_abs": 7.13862173142843e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.scale": {
+          "connected": true,
+          "l2": 0.02850806526839733,
+          "max_abs": 0.0087789511308074,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.anchor_gate": {
+          "connected": true,
+          "l2": 0.06737720966339111,
+          "max_abs": 0.027564045041799545,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.memory_gate": {
+          "connected": true,
+          "l2": 0.0005071474006399512,
+          "max_abs": 0.00022246547450777143,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.norm.weight": {
+          "connected": true,
+          "l2": 0.09974020719528198,
+          "max_abs": 0.038367465138435364,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.A_log": {
+          "connected": true,
+          "l2": 0.03292946144938469,
+          "max_abs": 0.02788129635155201,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.b_h": {
+          "connected": true,
+          "l2": 0.023197056725621223,
+          "max_abs": 0.019289972260594368,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.4747447967529297,
+          "max_abs": 0.23826734721660614,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.k_proj.weight": {
+          "connected": true,
+          "l2": 3.14916729927063,
+          "max_abs": 0.28140318393707275,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.5653187036514282,
+          "max_abs": 0.1718684583902359,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.g_proj.weight": {
+          "connected": true,
+          "l2": 1.1610267162322998,
+          "max_abs": 0.06854776293039322,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.713854968547821,
+          "max_abs": 0.01972317323088646,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.17537420988082886,
+          "max_abs": 0.04038861393928528,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.1744648665189743,
+          "max_abs": 0.03884755074977875,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.conv.weight": {
+          "connected": true,
+          "l2": 0.3429510295391083,
+          "max_abs": 0.08806751668453217,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.050988949835300446,
+          "max_abs": 0.018135901540517807,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.logits": {
+          "connected": true,
+          "l2": 0.0005301676574163139,
+          "max_abs": 5.2726692956639454e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.scale": {
+          "connected": true,
+          "l2": 0.037918105721473694,
+          "max_abs": 0.011130099184811115,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.anchor_gate": {
+          "connected": true,
+          "l2": 0.1283426284790039,
+          "max_abs": 0.05625930801033974,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.memory_gate": {
+          "connected": true,
+          "l2": 0.0013354293769225478,
+          "max_abs": 0.000654745614156127,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.6.core.norm.weight": {
+          "connected": true,
+          "l2": 0.1437421292066574,
+          "max_abs": 0.07221991568803787,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.3040902614593506,
+          "max_abs": 0.010772996582090855,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.31040969491004944,
+          "max_abs": 0.015287909656763077,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.5577093958854675,
+          "max_abs": 0.009327998384833336,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.0033531012013554573,
+          "max_abs": 0.00028856462449766695,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.09571470320224762,
+          "max_abs": 0.03013884276151657,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.anchor_gate": {
+          "connected": true,
+          "l2": 0.044697508215904236,
+          "max_abs": 0.014461468905210495,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.memory_gate": {
+          "connected": true,
+          "l2": 0.0004189159662928432,
+          "max_abs": 0.00018230071873404086,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.7.core.norm.weight": {
+          "connected": true,
+          "l2": 0.06216055527329445,
+          "max_abs": 0.02335234172642231,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.0990777462720871,
+          "max_abs": 0.01606510579586029,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.08779427409172058,
+          "max_abs": 0.013621680438518524,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.11510880291461945,
+          "max_abs": 0.004731891676783562,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.012535562738776207,
+          "max_abs": 0.0009097865549847484,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.407798707485199,
+          "max_abs": 0.12255526334047318,
+          "finite": true,
+          "exact_zero": false
+        },
+        "commit.state_norm.weight": {
+          "connected": true,
+          "l2": 0.3394540250301361,
+          "max_abs": 0.15545357763767242,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_b": {
+          "connected": true,
+          "l2": 0.10230400413274765,
+          "max_abs": 0.10230400413274765,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.addr_q.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory_write.val_proj.weight": {
+          "connected": true,
+          "l2": 17.449602127075195,
+          "max_abs": 0.7108106017112732,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_w.weight": {
+          "connected": true,
+          "l2": 3.399505138397217,
+          "max_abs": 0.8838697671890259,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.val_norm.weight": {
+          "connected": true,
+          "l2": 0.3392106294631958,
+          "max_abs": 0.09097477793693542,
+          "finite": true,
+          "exact_zero": false
+        },
+        "output_head.proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        }
+      },
+      "full_gradient_equals_complete_state_chain_rule": true,
+      "receiver_parameter_requires_grad": false,
+      "receiver_direct_parameter_credit": false,
+      "detached_state_negative_loss_requires_grad": false,
+      "scope": "disposable fixed fixture; no learning/performance claim"
+    },
+    "identity/cpu": {
+      "parameters_unchanged": true,
+      "buffers_unchanged": true,
+      "parameter_grad_buffers_untouched": true
+    },
+    "p0_equivalence/cuda:0": {
+      "final_ce": 0.0014546061865985394,
+      "expected_ce": 0.0014546061865985394,
+      "per_token_max_logit_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "complete_state_schema": {
+        "/s": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/memory": {
+          "shape": [
+            1,
+            16,
+            256
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa_window": 256,
+        "/ctx/kv/2/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/2/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/2/version": 8,
+        "/ctx/kv/3/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/3/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/kv/3/version": 8,
+        "/ctx/swa/0/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/0/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/0/version": 8,
+        "/ctx/swa/0/window_size": 256,
+        "/ctx/swa/0/num_committed_tokens": 8,
+        "/ctx/swa/1/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/1/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/1/version": 8,
+        "/ctx/swa/1/window_size": 256,
+        "/ctx/swa/1/num_committed_tokens": 8,
+        "/ctx/swa/pre/committed_keys": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/pre/committed_values": {
+          "shape": [
+            1,
+            2,
+            8,
+            8
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/swa/pre/version": 8,
+        "/ctx/swa/pre/window_size": 256,
+        "/ctx/swa/pre/num_committed_tokens": 8,
+        "/ctx/gdn/4/committed_state": {
+          "shape": [
+            1,
+            6,
+            128,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/4/committed_conv_buffer": {
+          "shape": [
+            1,
+            3,
+            1536
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/4/version": 8,
+        "/ctx/gdn/5/committed_state": {
+          "shape": [
+            1,
+            6,
+            128,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/5/committed_conv_buffer": {
+          "shape": [
+            1,
+            3,
+            1536
+          ],
+          "dtype": "torch.float32"
+        },
+        "/ctx/gdn/5/version": 8,
+        "/tokens_committed": 8,
+        "/_consumed": false
+      },
+      "comparison": "fresh same-checkpoint full-state reference vs adapter, all 8 tokens; archived CE control",
+      "historical_full_tensor_equality_claimed": false
+    },
+    "directed_gradient/cuda:0": {
+      "native_loss": 1.4061578512191772,
+      "cross_continuation_loss": 3.660940408706665,
+      "native_parameter_l2": 60.53028106689453,
+      "writer_parameter_l2": 21.856246948242188,
+      "incoming_state_gradients": {
+        "arm0/s": {
+          "connected": true,
+          "l2": 0.00964068342000246,
+          "max_abs": 0.0033256197348237038,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/memory": {
+          "connected": true,
+          "l2": 3.772610664367676,
+          "max_abs": 0.15938633680343628,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/2/committed_keys": {
+          "connected": true,
+          "l2": 0.10039752721786499,
+          "max_abs": 0.036687131971120834,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/2/committed_values": {
+          "connected": true,
+          "l2": 0.1431206911802292,
+          "max_abs": 0.03653740882873535,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/3/committed_keys": {
+          "connected": true,
+          "l2": 0.10808102041482925,
+          "max_abs": 0.06908494234085083,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/kv/3/committed_values": {
+          "connected": true,
+          "l2": 0.2938440442085266,
+          "max_abs": 0.08855202049016953,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/0/committed_keys": {
+          "connected": true,
+          "l2": 0.04304468631744385,
+          "max_abs": 0.014951329678297043,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/0/committed_values": {
+          "connected": true,
+          "l2": 0.13205277919769287,
+          "max_abs": 0.05149174854159355,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/1/committed_keys": {
+          "connected": true,
+          "l2": 0.05138559266924858,
+          "max_abs": 0.01672385074198246,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/1/committed_values": {
+          "connected": true,
+          "l2": 0.12497945129871368,
+          "max_abs": 0.04087262973189354,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/swa/pre/committed_keys": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/swa/pre/committed_values": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/4/committed_state": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/4/committed_conv_buffer": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm0/ctx/gdn/5/committed_state": {
+          "connected": true,
+          "l2": 0.9770987629890442,
+          "max_abs": 0.16771748661994934,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm0/ctx/gdn/5/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.2366611659526825,
+          "max_abs": 0.07124263793230057,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/s": {
+          "connected": true,
+          "l2": 0.011626596562564373,
+          "max_abs": 0.00404525687918067,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/memory": {
+          "connected": true,
+          "l2": 0.1925899088382721,
+          "max_abs": 0.008938217535614967,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/2/committed_keys": {
+          "connected": true,
+          "l2": 0.00011524314322741702,
+          "max_abs": 2.9766551961074583e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/2/committed_values": {
+          "connected": true,
+          "l2": 0.0003217865596525371,
+          "max_abs": 8.11434438219294e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/3/committed_keys": {
+          "connected": true,
+          "l2": 6.636013131355867e-05,
+          "max_abs": 2.32751826843014e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/kv/3/committed_values": {
+          "connected": true,
+          "l2": 0.00025295178056694567,
+          "max_abs": 7.355551497312263e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/0/committed_keys": {
+          "connected": true,
+          "l2": 8.225456986110657e-05,
+          "max_abs": 2.7370288080419414e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/0/committed_values": {
+          "connected": true,
+          "l2": 0.00021644053049385548,
+          "max_abs": 5.282582060317509e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/1/committed_keys": {
+          "connected": true,
+          "l2": 8.739573240745813e-05,
+          "max_abs": 1.7074418792617507e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/1/committed_values": {
+          "connected": true,
+          "l2": 0.000297912978567183,
+          "max_abs": 7.260146958287805e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/swa/pre/committed_keys": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm1/ctx/swa/pre/committed_values": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "arm1/ctx/gdn/4/committed_state": {
+          "connected": true,
+          "l2": 0.02279149927198887,
+          "max_abs": 0.0034898710437119007,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/4/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.003187776543200016,
+          "max_abs": 0.0006472759414464235,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/5/committed_state": {
+          "connected": true,
+          "l2": 0.031306732445955276,
+          "max_abs": 0.0031508514657616615,
+          "finite": true,
+          "exact_zero": false
+        },
+        "arm1/ctx/gdn/5/committed_conv_buffer": {
+          "connected": true,
+          "l2": 0.00474169198423624,
+          "max_abs": 0.0009159199544228613,
+          "finite": true,
+          "exact_zero": false
+        }
+      },
+      "native_parameter_gradients": {
+        "memory.initial_memory": {
+          "connected": true,
+          "l2": 21.94212532043457,
+          "max_abs": 0.9234281182289124,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory.query_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.query_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.key_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.value_proj.weight": {
+          "connected": true,
+          "l2": 15.294729232788086,
+          "max_abs": 0.9016535878181458,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.input_norm.weight": {
+          "connected": true,
+          "l2": 0.9080682396888733,
+          "max_abs": 0.3545629382133484,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_norm.weight": {
+          "connected": true,
+          "l2": 0.9056425094604492,
+          "max_abs": 0.3792002499103546,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_norm.weight": {
+          "connected": true,
+          "l2": 0.9316099286079407,
+          "max_abs": 0.3965469002723694,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.input_proj.weight": {
+          "connected": true,
+          "l2": 13.635782241821289,
+          "max_abs": 1.415585994720459,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_proj.weight": {
+          "connected": true,
+          "l2": 11.487829208374023,
+          "max_abs": 0.7558884024620056,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_proj.weight": {
+          "connected": true,
+          "l2": 12.73182487487793,
+          "max_abs": 1.892669916152954,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.output_norm.weight": {
+          "connected": true,
+          "l2": 1.3810930252075195,
+          "max_abs": 0.6821363568305969,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude_block.anchor_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.memory_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.v_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.o_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.logits": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.scale": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.0.anchor_gate": {
+          "connected": true,
+          "l2": 0.1082669347524643,
+          "max_abs": 0.04119129106402397,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.memory_gate": {
+          "connected": true,
+          "l2": 0.0013192628975957632,
+          "max_abs": 0.0007073445594869554,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.norm.weight": {
+          "connected": true,
+          "l2": 0.2027565985918045,
+          "max_abs": 0.08147157728672028,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.8269045352935791,
+          "max_abs": 0.0902789905667305,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.6057708263397217,
+          "max_abs": 0.2313251793384552,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.900842547416687,
+          "max_abs": 0.22043322026729584,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.2832133769989014,
+          "max_abs": 0.10311383008956909,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.07590179890394211,
+          "max_abs": 0.057683803141117096,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.06579167395830154,
+          "max_abs": 0.04406481608748436,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.logits": {
+          "connected": true,
+          "l2": 0.027840586379170418,
+          "max_abs": 0.0028014786075800657,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.scale": {
+          "connected": true,
+          "l2": 0.013620815239846706,
+          "max_abs": 0.004315744154155254,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.anchor_gate": {
+          "connected": true,
+          "l2": 0.1442856341600418,
+          "max_abs": 0.06857922673225403,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.memory_gate": {
+          "connected": true,
+          "l2": 0.0022438205778598785,
+          "max_abs": 0.0009568461682647467,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.norm.weight": {
+          "connected": true,
+          "l2": 0.21825595200061798,
+          "max_abs": 0.07475197315216064,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_proj.weight": {
+          "connected": true,
+          "l2": 1.102510929107666,
+          "max_abs": 0.1051456555724144,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.208525538444519,
+          "max_abs": 0.1116839349269867,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.4178054332733154,
+          "max_abs": 0.25759151577949524,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.2009060382843018,
+          "max_abs": 0.08368663489818573,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.07013430446386337,
+          "max_abs": 0.058295994997024536,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.06516513228416443,
+          "max_abs": 0.05081848427653313,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.logits": {
+          "connected": true,
+          "l2": 0.030077658593654633,
+          "max_abs": 0.003581137163564563,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.scale": {
+          "connected": true,
+          "l2": 0.04298959672451019,
+          "max_abs": 0.01724426820874214,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.anchor_gate": {
+          "connected": true,
+          "l2": 0.2309071570634842,
+          "max_abs": 0.08755634725093842,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.memory_gate": {
+          "connected": true,
+          "l2": 0.004896729253232479,
+          "max_abs": 0.0019324751337990165,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.norm.weight": {
+          "connected": true,
+          "l2": 0.23101764917373657,
+          "max_abs": 0.06857973337173462,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.5073773860931396,
+          "max_abs": 0.33717620372772217,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_proj.weight": {
+          "connected": true,
+          "l2": 3.08477520942688,
+          "max_abs": 0.32450568675994873,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.652989149093628,
+          "max_abs": 0.32474011182785034,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.o_proj.weight": {
+          "connected": true,
+          "l2": 2.310892105102539,
+          "max_abs": 0.09800156950950623,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.13580326735973358,
+          "max_abs": 0.0982079803943634,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.171102374792099,
+          "max_abs": 0.10396455973386765,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.logits": {
+          "connected": true,
+          "l2": 0.028516681864857674,
+          "max_abs": 0.003859604010358453,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.scale": {
+          "connected": true,
+          "l2": 0.028371335938572884,
+          "max_abs": 0.010897179134190083,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.anchor_gate": {
+          "connected": true,
+          "l2": 0.2449226826429367,
+          "max_abs": 0.09539846330881119,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.memory_gate": {
+          "connected": true,
+          "l2": 0.0038408306427299976,
+          "max_abs": 0.0016152289463207126,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.norm.weight": {
+          "connected": true,
+          "l2": 0.3631807863712311,
+          "max_abs": 0.1113770455121994,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_proj.weight": {
+          "connected": true,
+          "l2": 1.7086502313613892,
+          "max_abs": 0.19230397045612335,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.8792455196380615,
+          "max_abs": 0.18760113418102264,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.v_proj.weight": {
+          "connected": true,
+          "l2": 4.208822727203369,
+          "max_abs": 0.482562392950058,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.o_proj.weight": {
+          "connected": true,
+          "l2": 3.628359317779541,
+          "max_abs": 0.1563601791858673,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.10847394168376923,
+          "max_abs": 0.0633326917886734,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.08794987946748734,
+          "max_abs": 0.040678828954696655,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.logits": {
+          "connected": true,
+          "l2": 0.0367121659219265,
+          "max_abs": 0.004924274515360594,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.scale": {
+          "connected": true,
+          "l2": 0.032667841762304306,
+          "max_abs": 0.012145692482590675,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.anchor_gate": {
+          "connected": true,
+          "l2": 0.008128855377435684,
+          "max_abs": 0.002994936890900135,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.memory_gate": {
+          "connected": true,
+          "l2": 4.435491791809909e-05,
+          "max_abs": 2.0198212951072492e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.norm.weight": {
+          "connected": true,
+          "l2": 0.010968836024403572,
+          "max_abs": 0.00510308425873518,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.A_log": {
+          "connected": true,
+          "l2": 0.0033339534420520067,
+          "max_abs": 0.0030885194428265095,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.b_h": {
+          "connected": true,
+          "l2": 0.0023335362784564495,
+          "max_abs": 0.0020917130168527365,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.23092889785766602,
+          "max_abs": 0.025475112721323967,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.k_proj.weight": {
+          "connected": true,
+          "l2": 0.24012672901153564,
+          "max_abs": 0.025765761733055115,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.v_proj.weight": {
+          "connected": true,
+          "l2": 0.1995459645986557,
+          "max_abs": 0.0398581363260746,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.g_proj.weight": {
+          "connected": true,
+          "l2": 0.12673459947109222,
+          "max_abs": 0.01717720925807953,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.08635572344064713,
+          "max_abs": 0.004879198037087917,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.018192220479249954,
+          "max_abs": 0.004363703075796366,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.01684967428445816,
+          "max_abs": 0.003664538264274597,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.conv.weight": {
+          "connected": true,
+          "l2": 0.04938606917858124,
+          "max_abs": 0.023616371676325798,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.00939265824854374,
+          "max_abs": 0.006241456605494022,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.logits": {
+          "connected": true,
+          "l2": 5.378073547035456e-05,
+          "max_abs": 5.373324256652268e-06,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.scale": {
+          "connected": true,
+          "l2": 0.00219553429633379,
+          "max_abs": 0.0007431504782289267,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.anchor_gate": {
+          "connected": true,
+          "l2": 0.4354505240917206,
+          "max_abs": 0.19213713705539703,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.memory_gate": {
+          "connected": true,
+          "l2": 0.013124511577188969,
+          "max_abs": 0.004626164678484201,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.norm.weight": {
+          "connected": true,
+          "l2": 0.7174884676933289,
+          "max_abs": 0.18855249881744385,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.A_log": {
+          "connected": true,
+          "l2": 0.1728818416595459,
+          "max_abs": 0.11914192885160446,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.b_h": {
+          "connected": true,
+          "l2": 0.12681995332241058,
+          "max_abs": 0.08615024387836456,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.q_proj.weight": {
+          "connected": true,
+          "l2": 21.567808151245117,
+          "max_abs": 2.7554523944854736,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.k_proj.weight": {
+          "connected": true,
+          "l2": 31.373374938964844,
+          "max_abs": 2.8099193572998047,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.v_proj.weight": {
+          "connected": true,
+          "l2": 7.316309928894043,
+          "max_abs": 0.6752533912658691,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.g_proj.weight": {
+          "connected": true,
+          "l2": 5.578611850738525,
+          "max_abs": 0.319465309381485,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.o_proj.weight": {
+          "connected": true,
+          "l2": 3.281517744064331,
+          "max_abs": 0.0885145366191864,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.5434605479240417,
+          "max_abs": 0.1036616787314415,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.7530295848846436,
+          "max_abs": 0.12439213693141937,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.conv.weight": {
+          "connected": true,
+          "l2": 2.9133412837982178,
+          "max_abs": 0.7197760939598083,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.24122604727745056,
+          "max_abs": 0.07415266335010529,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.logits": {
+          "connected": true,
+          "l2": 0.0015372018096968532,
+          "max_abs": 0.00015590355906169862,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.scale": {
+          "connected": true,
+          "l2": 0.13940215110778809,
+          "max_abs": 0.04535858705639839,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.anchor_gate": {
+          "connected": true,
+          "l2": 0.7291538119316101,
+          "max_abs": 0.3540203273296356,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.memory_gate": {
+          "connected": true,
+          "l2": 0.021126603707671165,
+          "max_abs": 0.012444178573787212,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.6.core.norm.weight": {
+          "connected": true,
+          "l2": 0.7946656942367554,
+          "max_abs": 0.39794546365737915,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 1.6591579914093018,
+          "max_abs": 0.062142033129930496,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 1.6669232845306396,
+          "max_abs": 0.08066806942224503,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 3.042534351348877,
+          "max_abs": 0.05568213015794754,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.006758406292647123,
+          "max_abs": 0.0006988776149228215,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.27368178963661194,
+          "max_abs": 0.08796374499797821,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.anchor_gate": {
+          "connected": true,
+          "l2": 0.2760744094848633,
+          "max_abs": 0.07968769967556,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.memory_gate": {
+          "connected": true,
+          "l2": 0.008479285053908825,
+          "max_abs": 0.003950199112296104,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.7.core.norm.weight": {
+          "connected": true,
+          "l2": 0.4147445261478424,
+          "max_abs": 0.12081295996904373,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.6962233781814575,
+          "max_abs": 0.146467387676239,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.5989863872528076,
+          "max_abs": 0.14674600958824158,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.8299053907394409,
+          "max_abs": 0.07324595004320145,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.03397410362958908,
+          "max_abs": 0.0027799501549452543,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.scale": {
+          "connected": true,
+          "l2": 1.1621259450912476,
+          "max_abs": 0.34912028908729553,
+          "finite": true,
+          "exact_zero": false
+        },
+        "commit.state_norm.weight": {
+          "connected": true,
+          "l2": 1.0775872468948364,
+          "max_abs": 0.34149304032325745,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_b": {
+          "connected": true,
+          "l2": 0.10399632900953293,
+          "max_abs": 0.10399632900953293,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.addr_q.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory_write.val_proj.weight": {
+          "connected": true,
+          "l2": 28.08270835876465,
+          "max_abs": 1.2245734930038452,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_w.weight": {
+          "connected": true,
+          "l2": 1.2224615812301636,
+          "max_abs": 0.45315128564834595,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.val_norm.weight": {
+          "connected": true,
+          "l2": 0.5114724636077881,
+          "max_abs": 0.11970329284667969,
+          "finite": true,
+          "exact_zero": false
+        },
+        "output_head.proj.weight": {
+          "connected": true,
+          "l2": 2.581939697265625,
+          "max_abs": 0.2933283746242523,
+          "finite": true,
+          "exact_zero": false
+        }
+      },
+      "writer_parameter_gradients": {
+        "memory.initial_memory": {
+          "connected": true,
+          "l2": 8.42751693725586,
+          "max_abs": 0.36644554138183594,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory.query_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.query_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.key_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory.value_proj.weight": {
+          "connected": true,
+          "l2": 3.654952049255371,
+          "max_abs": 0.2004302740097046,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.input_norm.weight": {
+          "connected": true,
+          "l2": 0.19600476324558258,
+          "max_abs": 0.09292120486497879,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_norm.weight": {
+          "connected": true,
+          "l2": 0.18430458009243011,
+          "max_abs": 0.056146688759326935,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_norm.weight": {
+          "connected": true,
+          "l2": 0.2521304488182068,
+          "max_abs": 0.12545064091682434,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_norm.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.input_proj.weight": {
+          "connected": true,
+          "l2": 2.9599502086639404,
+          "max_abs": 0.224998340010643,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.state_proj.weight": {
+          "connected": true,
+          "l2": 2.4102745056152344,
+          "max_abs": 0.11751523613929749,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.memory_proj.weight": {
+          "connected": true,
+          "l2": 2.846832275390625,
+          "max_abs": 0.3036072552204132,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude.controller_proj.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "prelude.output_norm.weight": {
+          "connected": true,
+          "l2": 0.37851136922836304,
+          "max_abs": 0.13183747231960297,
+          "finite": true,
+          "exact_zero": false
+        },
+        "prelude_block.anchor_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.memory_gate": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.v_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.o_proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.q_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.core.k_norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.logits": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "prelude_block.mhc.scale": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.0.anchor_gate": {
+          "connected": true,
+          "l2": 0.03676627203822136,
+          "max_abs": 0.01252258475869894,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.memory_gate": {
+          "connected": true,
+          "l2": 0.0004485563258640468,
+          "max_abs": 0.00016707619943190366,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.norm.weight": {
+          "connected": true,
+          "l2": 0.12765169143676758,
+          "max_abs": 0.037573013454675674,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.16924549639225006,
+          "max_abs": 0.02079145237803459,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.319267988204956,
+          "max_abs": 0.15870754420757294,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.0130023956298828,
+          "max_abs": 0.08630304783582687,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.4616720974445343,
+          "max_abs": 0.01766396313905716,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.01866753213107586,
+          "max_abs": 0.015367071144282818,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.044248685240745544,
+          "max_abs": 0.03980821743607521,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.logits": {
+          "connected": true,
+          "l2": 0.008379763923585415,
+          "max_abs": 0.0009619721095077693,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.0.mhc.scale": {
+          "connected": true,
+          "l2": 0.003596896305680275,
+          "max_abs": 0.0009362336131744087,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.anchor_gate": {
+          "connected": true,
+          "l2": 0.04065723717212677,
+          "max_abs": 0.022376693785190582,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.memory_gate": {
+          "connected": true,
+          "l2": 0.00042592460522428155,
+          "max_abs": 0.00013691314961761236,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.norm.weight": {
+          "connected": true,
+          "l2": 0.11746910959482193,
+          "max_abs": 0.03708650544285774,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.1723354160785675,
+          "max_abs": 0.021997475996613503,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.1613647937774658,
+          "max_abs": 0.14173728227615356,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.3252739906311035,
+          "max_abs": 0.15098026394844055,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.4489734172821045,
+          "max_abs": 0.01691778376698494,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.01732286624610424,
+          "max_abs": 0.01590677909553051,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.04706941917538643,
+          "max_abs": 0.035145897418260574,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.logits": {
+          "connected": true,
+          "l2": 0.008948242291808128,
+          "max_abs": 0.0009363191202282906,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.1.mhc.scale": {
+          "connected": true,
+          "l2": 0.010533744469285011,
+          "max_abs": 0.0038766050711274147,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.anchor_gate": {
+          "connected": true,
+          "l2": 0.06912295520305634,
+          "max_abs": 0.029608657583594322,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.memory_gate": {
+          "connected": true,
+          "l2": 0.0007283195736818016,
+          "max_abs": 0.00034789612982422113,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.norm.weight": {
+          "connected": true,
+          "l2": 0.14823102951049805,
+          "max_abs": 0.05306725949048996,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.4401129484176636,
+          "max_abs": 0.053198959678411484,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_proj.weight": {
+          "connected": true,
+          "l2": 2.1545403003692627,
+          "max_abs": 0.23535937070846558,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.0577198266983032,
+          "max_abs": 0.1252664029598236,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.4423092305660248,
+          "max_abs": 0.01824873685836792,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.0173252671957016,
+          "max_abs": 0.012357034720480442,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.1276887208223343,
+          "max_abs": 0.10221824795007706,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.logits": {
+          "connected": true,
+          "l2": 0.008074375800788403,
+          "max_abs": 0.0009475579136051238,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.2.mhc.scale": {
+          "connected": true,
+          "l2": 0.011946532875299454,
+          "max_abs": 0.003758419770747423,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.anchor_gate": {
+          "connected": true,
+          "l2": 0.08060434460639954,
+          "max_abs": 0.031530607491731644,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.memory_gate": {
+          "connected": true,
+          "l2": 0.0010526118567213416,
+          "max_abs": 0.0004941620863974094,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.norm.weight": {
+          "connected": true,
+          "l2": 0.19033783674240112,
+          "max_abs": 0.05524501949548721,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_proj.weight": {
+          "connected": true,
+          "l2": 0.12018030881881714,
+          "max_abs": 0.017086315900087357,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_proj.weight": {
+          "connected": true,
+          "l2": 1.508967638015747,
+          "max_abs": 0.14527402818202972,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.v_proj.weight": {
+          "connected": true,
+          "l2": 2.0885775089263916,
+          "max_abs": 0.2183285802602768,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.4063955247402191,
+          "max_abs": 0.015004241839051247,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.q_norm.weight": {
+          "connected": true,
+          "l2": 0.01084450725466013,
+          "max_abs": 0.007416498847305775,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.core.k_norm.weight": {
+          "connected": true,
+          "l2": 0.08453916758298874,
+          "max_abs": 0.04978139325976372,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.logits": {
+          "connected": true,
+          "l2": 0.005977554712444544,
+          "max_abs": 0.0006781253032386303,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.3.mhc.scale": {
+          "connected": true,
+          "l2": 0.003853924572467804,
+          "max_abs": 0.0010959324426949024,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.anchor_gate": {
+          "connected": true,
+          "l2": 0.07032628357410431,
+          "max_abs": 0.02661850117146969,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.memory_gate": {
+          "connected": true,
+          "l2": 0.0003820897836703807,
+          "max_abs": 0.00017860380467027426,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.norm.weight": {
+          "connected": true,
+          "l2": 0.09387233108282089,
+          "max_abs": 0.04079243540763855,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.A_log": {
+          "connected": true,
+          "l2": 0.02895926870405674,
+          "max_abs": 0.026825016364455223,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.b_h": {
+          "connected": true,
+          "l2": 0.020279856398701668,
+          "max_abs": 0.018175601959228516,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.0002052783966064,
+          "max_abs": 0.22066134214401245,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.k_proj.weight": {
+          "connected": true,
+          "l2": 2.0846474170684814,
+          "max_abs": 0.22599518299102783,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.716869831085205,
+          "max_abs": 0.35056182742118835,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.g_proj.weight": {
+          "connected": true,
+          "l2": 1.1011008024215698,
+          "max_abs": 0.14684976637363434,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.7559273838996887,
+          "max_abs": 0.04467938467860222,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.15757636725902557,
+          "max_abs": 0.037870701402425766,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.14543354511260986,
+          "max_abs": 0.031730495393276215,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.conv.weight": {
+          "connected": true,
+          "l2": 0.4277939200401306,
+          "max_abs": 0.2047782838344574,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.08307933807373047,
+          "max_abs": 0.054231494665145874,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.logits": {
+          "connected": true,
+          "l2": 0.0007354714907705784,
+          "max_abs": 7.138594082789496e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.4.mhc.scale": {
+          "connected": true,
+          "l2": 0.028508052229881287,
+          "max_abs": 0.008778950199484825,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.anchor_gate": {
+          "connected": true,
+          "l2": 0.06737692654132843,
+          "max_abs": 0.027563927695155144,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.memory_gate": {
+          "connected": true,
+          "l2": 0.0005071458872407675,
+          "max_abs": 0.00022246410662773997,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.norm.weight": {
+          "connected": true,
+          "l2": 0.09973973780870438,
+          "max_abs": 0.03836723789572716,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.A_log": {
+          "connected": true,
+          "l2": 0.032929323613643646,
+          "max_abs": 0.02788117155432701,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.b_h": {
+          "connected": true,
+          "l2": 0.023196961730718613,
+          "max_abs": 0.019289886578917503,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.q_proj.weight": {
+          "connected": true,
+          "l2": 2.4747350215911865,
+          "max_abs": 0.23826658725738525,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.k_proj.weight": {
+          "connected": true,
+          "l2": 3.1491611003875732,
+          "max_abs": 0.2814023792743683,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.v_proj.weight": {
+          "connected": true,
+          "l2": 1.5653157234191895,
+          "max_abs": 0.17186757922172546,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.g_proj.weight": {
+          "connected": true,
+          "l2": 1.1610249280929565,
+          "max_abs": 0.06854745000600815,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.o_proj.weight": {
+          "connected": true,
+          "l2": 0.7138521671295166,
+          "max_abs": 0.019723085686564445,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_alpha.weight": {
+          "connected": true,
+          "l2": 0.17537346482276917,
+          "max_abs": 0.04038843885064125,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.w_beta.weight": {
+          "connected": true,
+          "l2": 0.17446407675743103,
+          "max_abs": 0.038847360759973526,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.conv.weight": {
+          "connected": true,
+          "l2": 0.3429497480392456,
+          "max_abs": 0.08806721121072769,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.core.head_norm.weight": {
+          "connected": true,
+          "l2": 0.05098871514201164,
+          "max_abs": 0.018135815858840942,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.logits": {
+          "connected": true,
+          "l2": 0.0005301674245856702,
+          "max_abs": 5.2726467401953414e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.5.mhc.scale": {
+          "connected": true,
+          "l2": 0.03791804239153862,
+          "max_abs": 0.011130056343972683,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.anchor_gate": {
+          "connected": true,
+          "l2": 0.12834206223487854,
+          "max_abs": 0.05625903606414795,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.memory_gate": {
+          "connected": true,
+          "l2": 0.0013354237889871001,
+          "max_abs": 0.000654742936603725,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.6.core.norm.weight": {
+          "connected": true,
+          "l2": 0.14374147355556488,
+          "max_abs": 0.07221954315900803,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.30409395694732666,
+          "max_abs": 0.010772943496704102,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.3104136288166046,
+          "max_abs": 0.015287836082279682,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.5577119588851929,
+          "max_abs": 0.009327954612672329,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.003353100037202239,
+          "max_abs": 0.0002885650028474629,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.6.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.09571468830108643,
+          "max_abs": 0.03013884276151657,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.anchor_gate": {
+          "connected": true,
+          "l2": 0.0446973592042923,
+          "max_abs": 0.014461436308920383,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.memory_gate": {
+          "connected": true,
+          "l2": 0.00041891427827067673,
+          "max_abs": 0.00018230006389785558,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.norm.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        },
+        "blocks.blocks.7.core.norm.weight": {
+          "connected": true,
+          "l2": 0.06216026097536087,
+          "max_abs": 0.023352233693003654,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.gate_proj.weight": {
+          "connected": true,
+          "l2": 0.09907897561788559,
+          "max_abs": 0.01606503129005432,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.up_proj.weight": {
+          "connected": true,
+          "l2": 0.08779510855674744,
+          "max_abs": 0.013621608726680279,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.ffn.down_proj.weight": {
+          "connected": true,
+          "l2": 0.11510899662971497,
+          "max_abs": 0.004731875378638506,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.logits": {
+          "connected": true,
+          "l2": 0.01253556739538908,
+          "max_abs": 0.0009097856818698347,
+          "finite": true,
+          "exact_zero": false
+        },
+        "blocks.blocks.7.core.mhc.scale": {
+          "connected": true,
+          "l2": 0.4077984392642975,
+          "max_abs": 0.12255525588989258,
+          "finite": true,
+          "exact_zero": false
+        },
+        "commit.state_norm.weight": {
+          "connected": true,
+          "l2": 0.3394538462162018,
+          "max_abs": 0.15545356273651123,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_b": {
+          "connected": true,
+          "l2": 0.10230390727519989,
+          "max_abs": 0.10230390727519989,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.addr_q.weight": {
+          "connected": true,
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "finite": true,
+          "exact_zero": true
+        },
+        "memory_write.val_proj.weight": {
+          "connected": true,
+          "l2": 17.449621200561523,
+          "max_abs": 0.7108111381530762,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.gate_w.weight": {
+          "connected": true,
+          "l2": 3.39949631690979,
+          "max_abs": 0.8838682770729065,
+          "finite": true,
+          "exact_zero": false
+        },
+        "memory_write.val_norm.weight": {
+          "connected": true,
+          "l2": 0.3392108976840973,
+          "max_abs": 0.0909748524427414,
+          "finite": true,
+          "exact_zero": false
+        },
+        "output_head.proj.weight": {
+          "connected": false,
+          "l2": null,
+          "max_abs": null,
+          "finite": null,
+          "exact_zero": null
+        }
+      },
+      "full_gradient_equals_complete_state_chain_rule": true,
+      "receiver_parameter_requires_grad": false,
+      "receiver_direct_parameter_credit": false,
+      "detached_state_negative_loss_requires_grad": false,
+      "scope": "disposable fixed fixture; no learning/performance claim"
+    },
+    "identity/cuda": {
+      "parameters_unchanged": true,
+      "buffers_unchanged": true,
+      "parameter_grad_buffers_untouched": true
+    },
+    "complete_cache_metadata/cpu": {
+      "tokens": 4,
+      "every_cache_checked": true,
+      "memory_read_pure": true,
+      "unselected_GDN4_commit_checked": true
+    },
+    "complete_cache_metadata/cuda:0": {
+      "tokens": 4,
+      "every_cache_checked": true,
+      "memory_read_pure": true,
+      "unselected_GDN4_commit_checked": true
+    }
+  },
+  "disposable_runtime_probes": {
+    "resource_probe/T": {
+      "device": "cuda:0",
+      "tokens": 112,
+      "forward_and_backward_seconds": 2.593870157841593,
+      "tokens_per_second": 43.17872259774069,
+      "peak_allocated_bytes": 364393472,
+      "peak_reserved_bytes": 369098752,
+      "raw_gradient_l2": 1.7731664180755615,
+      "clipped_disposable_gradient_l2": 0.9999993443489075,
+      "objective": 0.004983792081475258,
+      "includes_fixture_observation_and_disk_ledger": true,
+      "optimizer_steps": 0,
+      "warning": "representative disposable batch, not measured full-study or deployment latency"
+    },
+    "resource_probe/C": {
+      "device": "cuda:0",
+      "tokens": 112,
+      "forward_and_backward_seconds": 2.548871569801122,
+      "tokens_per_second": 43.941013477088966,
+      "peak_allocated_bytes": 364128768,
+      "peak_reserved_bytes": 369098752,
+      "raw_gradient_l2": 1.4227896928787231,
+      "clipped_disposable_gradient_l2": 0.999999463558197,
+      "objective": 0.004486905876547098,
+      "includes_fixture_observation_and_disk_ledger": true,
+      "optimizer_steps": 0,
+      "warning": "representative disposable batch, not measured full-study or deployment latency"
+    }
+  },
+  "no_training": true,
+  "no_optimizer_step": true,
+  "no_parameter_or_buffer_update": true,
+  "no_production_edit": true,
+  "no_study_checkpoint": true,
+  "no_study_profile_or_ablation_or_confirmation": true,
+  "no_commit": true,
+  "protected_files_verified": 704,
+  "protected_unchanged": true,
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "tracked_diff_unchanged": true,
+  "diff_check_exit_code": 0,
+  "diff_check_output": "",
+  "preserved_sealed_source_hashes": {
+    "sealed_implementation_v2.json": {
+      "receiver_anchored_v1.py": true,
+      "run_prerequisites_v1.py": true,
+      "run_prerequisites_v2.py": true,
+      "statistical_rules_v1.py": true,
+      "statistical_rules_v2.py": true,
+      "test_receiver_anchored_v1.py": true,
+      "test_receiver_anchored_v2.py": true
+    },
+    "sealed_implementation_v3.json": {
+      "receiver_anchored_v1.py": true,
+      "receiver_anchored_v2.py": true,
+      "run_prerequisites_v1.py": true,
+      "run_prerequisites_v2.py": true,
+      "run_prerequisites_v3.py": true,
+      "statistical_rules_v1.py": true,
+      "statistical_rules_v2.py": true,
+      "test_receiver_anchored_v1.py": true,
+      "test_receiver_anchored_v2.py": true,
+      "test_receiver_anchored_v3.py": true
+    },
+    "supplemental_started.json": {
+      "receiver_anchored_v2.py": true,
+      "test_receiver_anchored_v1.py": true,
+      "run_prerequisites_v2.py": true,
+      "statistical_rules_v3.py": true,
+      "receiver_anchored_v1.py": true,
+      "statistical_rules_v1.py": true,
+      "test_receiver_anchored_v3.py": true,
+      "run_prerequisites_v3.py": true,
+      "statistical_rules_v2.py": true,
+      "run_supplemental_v1.py": true,
+      "run_prerequisites_v1.py": true,
+      "test_receiver_anchored_v2.py": true,
+      "test_supplemental_boundaries_v1.py": true
+    }
+  },
+  "historical_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting"
+}

@@ -1,0 +1,5592 @@
+{
+  "rows": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "305ef05d49130fd872c5a8b9ad9bc85d22d9054231a3c94f3f1e7af7b12b7f0b",
+      "encoded_sha256": "3f3483a177fcc81a9f5d6a1650c2f33a7624dcfea218822b7753053f2f4c75e6",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "61f7f8e4d44f3d0531d9b1a0c9c2b4708bc79a65d7b2d665a6c8aa5db9681cce",
+      "encoded_sha256": "4004ebb264411ced5c752532f933dd50bfbe35f05d4e7d105853457d27212ebd",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "7ad235d57644e3c43f8cd7c9fef32cedb14fed667256c81eabbd9a2c4e3c6fb7",
+      "encoded_sha256": "68bce1db8bb17778bfd6d76017004c00d9521055f5e03fde4fe94b4b8bad904d",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "8ee3bd216c58a9e17d3403ec3f5c182a5823371fc064608119cf8d770b230e68",
+      "encoded_sha256": "d856c79905cd6ea203a68920b69878b1120b8e59e603cab466ada16213d97c23",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row04",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "c1d02e09ffe55a283c14b0db5190c8371ba55e7592e954e68ac17fcdf2c325bc",
+      "encoded_sha256": "7bbe9297638e48bbdbd21d0b48ce7d4e933b9bf758ab080db92fbd228746919e",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row05",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "a5f6d9ac15a729b84b455ed227a43228924059a14b78096e16842616bf4f651d",
+      "encoded_sha256": "5f289f0806d902f2ffae603cc391e2f04fde90bbca739fcba46412a443362b6c",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row06",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "115b6d31aa5d9a37fe72766354cf1dcec60196f4d4699384b32e04127727b390",
+      "encoded_sha256": "b329da4d163eac7601347fceec5cff53b165f3bc250fc3709038939d71649092",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row07",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "9de6814dc03a149fa486749fece3ffa1b728f32a1da21bfc41da7303eac97f85",
+      "encoded_sha256": "8f0249a7cbf3d8d01c8145919f67944839111dd2de000950237c1c4ac399df72",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row08",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "7b0bf4e8d92b24c7ac7e84727a3d2734d488fec360b548518ab71765186e451c",
+      "encoded_sha256": "7bf4a4ee20696c6edf7c5e9529c9b90cfe6db3910f7edc7479ea9ad11073e733",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row09",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "d3ae59563eac50ba7345458eb12ab1782c96783c1a8c6dc7c32b5d7533201ebf",
+      "encoded_sha256": "f8a0a33b8eba1d27f4b5ed2af74fd71293b9da0427fbbbf42b7fc9ccc3b66774",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row10",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "e92c8d15e050913e8351f8ab8405ffdd4d833bceed90c30ac9b7f4b7a374b279",
+      "encoded_sha256": "77641417b3bacfea03a056dc5697fac07ddfbcbdb2888e3ce4f446afd2f414ab",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row11",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "98e0506d81fa6f581cb14bd21d8e3df459c36f8bec8d6d8b595831e13ba7e40f",
+      "encoded_sha256": "c406116fb66a65a5c0b43f81023fc93bad0a8c61e6d98fc8224610751f6d83ae",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row12",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "351192c72e05409be16af4e968c53b3b85f7841f7e80cbaa6bacd798348b5c28",
+      "encoded_sha256": "5d0269839d75b3e98e66df7cf8e5cb8bca56b8da5b59bffc79ff110174206c7f",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row13",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "2d6a2886520ed4d8d6cf713e5d2e35b8a6015c7cbec11a630aafcf5c374da230",
+      "encoded_sha256": "48e299fb93c6022cc7a86ea7e498bccf9fbd6390013414747067c7054f3456f7",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row14",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "d75c7de1ba8e9a4446d9d8df347e6d9c9e80bf8a9fabed89d2b0973e7736d632",
+      "encoded_sha256": "34a0e133b501565e524c50f2b1e039e73c5b6111de4b0405d3939af660c19912",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row15",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "11071bedda6038f1adb7c6652d51a41210cf3c17def9778381a39c8b7dcc7d40",
+      "encoded_sha256": "a7b7fa08667e1cb17c6b9c9676805c4f5754ea36de6179db198e7b11103a6d70",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row16",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "f0351c5913961b7a6703a6638d11dd81be812ad86bcae07c93f7e090cde5cb54",
+      "encoded_sha256": "03b855c4361ef6d29d831922721d0af9ef75b5ddfcf879c2b2694d263f0d5141",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row17",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "8a1a67a0903193b5c6839f93ff84200ea346ad13fdf0ae7beb102543f335a066",
+      "encoded_sha256": "b8eb4cd24c02f47217feae87c1d5012f8b36f908a811ae2eb92e034fd65216d9",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 1
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 1
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 1
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 1
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row18",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "7b1e2a0cd30b0a5dc195a3245880547e0b6681906fe31b02fd4d30309e2a72f3",
+      "encoded_sha256": "ec0638ac57cb09042b9ec8ff9cf7791e038ac50e5282b7b6b094b94fd016c0ea",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row19",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "ba9cfc34baf6a7eab46feea0f9bd6f3e91efc60d286651bb56329d59f2a4c66a",
+      "encoded_sha256": "3ca364c8a91480fcbc7fa4973f650ff050d4864f5bb427f2f83cfcdda280e158",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row20",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "2852a80e95638e18c3c988ff67f47fa055399c3798d316ee15d48eef0a84cef4",
+      "encoded_sha256": "f9c8656499c46b64c508308a265a0fbc0c972da25e2736c7435aac97c1be0d37",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row21",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "b68c96c229a7068fb98c035495bc96cc6770afd5e4c478f57ac6b83bfe158b57",
+      "encoded_sha256": "663313650d2c6173510e47bc75b8a79c8a0d0da1f495a48c46a25cf175da289f",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row22",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "baf9c1a047f0def7c1bb2e31c38869ab7c150facb8c4d38990831fb985573841",
+      "encoded_sha256": "425319789c541faa44b725597ae9c973e5b55f445d629e3b9f5516298c848d84",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row23",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "d1db2093e78e9c8a1ffe40d8d128439d413f37e0a8ac1ce2338b99730598e934",
+      "encoded_sha256": "298784f83fc1246b6e35643cef8b36adcf28dea28bd1d223a683ffaed600a012",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row24",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "8ffd6ac2ba7a28b7dc86366e538f5529cbd518a1f20cf4113bcd747363dcb1d2",
+      "encoded_sha256": "df3c0652befb31d4021c52b6d82cbfbfe7f4d429782683be8de57fc64075a43e",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row25",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "3d481dc9fbeafd2167896ede455e59a2adeecacd1d8e2195e39055463f32093a",
+      "encoded_sha256": "dcafaea8e9de61ad5cda9873d2a7fa7c2590addefa8f0d55027175a5f9d1dc7b",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row26",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "7ece8d85d7fbbf9813e1e621951125f192cf9faedcb220e227b38cbbac29182e",
+      "encoded_sha256": "1fb85d126e8bd0bbcc8e754552e0961a36bcfc23807728a0806cc4fcff4e0a17",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row27",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "9917b4263d65643b9529bd40ac9b9262a0c4cdbb119abbecbcb41e97ee548c83",
+      "encoded_sha256": "18d41b42ea50ef65181d1764177e35ea7775f918d1f6a9aa2c9d02559c5c9d13",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row28",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "43e7c0016d71f0421d7692b5c19858cc2199bf3c3efcc48edb43a239961d59db",
+      "encoded_sha256": "da1a39ea218dcff455fbf3b094a549c469350c1c47cb5b84b41865af48710a18",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row29",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "8ac037d561e5e552c3187ddf2a5c7b49289e9bab0526db0e4ce8b49e6c87802b",
+      "encoded_sha256": "bb6c084adb467037fabb7bdf4ad0779ae0f52838bc351eb4b77a0f25985097b5",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row30",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "6a9bb0289a871c7b688f054a081b20ea4c8891778626a9d66eb827cf5e57a616",
+      "encoded_sha256": "c24062135b51a27c2edf1cf26935856d0a055ad97eb77f786f700f2737e21db6",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "acquisition/L16/row31",
+      "partition": "acquisition",
+      "length": 16,
+      "seed": 5100,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "dd46f3d4a0f5ab81dc3fee7ae2bd5f4571c23dbfbe1f4e2628103940e6282307",
+      "encoded_sha256": "fe61f49b270e41ea15f711cb385645086396e13e0bd764f2247af48997bcc9a4",
+      "suffixes": [
+        "00000000",
+        "10000000",
+        "01010101",
+        "11010101"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10000000",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11010101",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row00",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "667284af0e1a0dc4abc9f8c16206371e0a07a49d7fcfa4cbe9670caaeb10c1cd",
+      "encoded_sha256": "6d685fbf6f8661a5130204c3da8c9bd061c2b6d65b6b089e968bded4e1127bdd",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row01",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "47e665833200810b389a07de848b05aa05d7497059077979555680c7ccb6fa22",
+      "encoded_sha256": "07c661f3f8b2136ae566274bd1bfde22fbb3cdfe08a514febc2b0ab67d0586a0",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row02",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "bfbb1f46eb8eac373f70eef3744b5f06754a580dafa4cfaf0369dedf52575f39",
+      "encoded_sha256": "6db5dde6201338a6021085cc53cbedecc57619e17afef9f18b42708b915d2055",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row03",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "9ee1b3e3a5e46803041a9b580d39f126775e1b2d63239ccb0bb9703edc202fc2",
+      "encoded_sha256": "d9f557cfc0bfcbe7c3d01b6c3384f125fea5ad0ba959bd4cb55173657961f12c",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row04",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "ec848c3ebc7746d864452819d76105cdc527a28a1de205c8aa2008d792d4c2d1",
+      "encoded_sha256": "6a5cf8acf4b14987fab23cfa33ec5c455fb47602371d9d76ddf2110dd3759603",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row05",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "beb6e1b0d7d71baa16e76ed0ee35d2b64e0584997685eca3c4a9e4db2e39a4e9",
+      "encoded_sha256": "172fb1980836eab1de03771baf66ce61e4b04da1620c72c754a6aec1e6e0445f",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row06",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "cb900c9282cfd2cd5534e627ed67926929fc68521a55c101e6c7083c498b1d08",
+      "encoded_sha256": "7128d3fade6b3152fb1a800086496a0d8ba23122966d0b25dd4e1230979b7538",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row07",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "b2e70fad0f360e6b067b0701fa218604cb976b71dd22db7c757b69779b54cbd8",
+      "encoded_sha256": "e2550e3bfc215dd9c1ddfc3528e80a6386391ef1717cb5cb7a98d011bcad4450",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row08",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "0ca01d250b517a87b754700158fd08b640d869edf83c32e6e1a33fe23985537d",
+      "encoded_sha256": "0b2bdff74a2b6672072be70272387dfa3315ec62112acb17d7990e33a4ed616b",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row09",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "9616dc331b21a8103540d4a5642b1edf44652056c72883c282da9342d93c4a8d",
+      "encoded_sha256": "3e38250e610ccb87a7113eac1a78f330c2aae326708088a2ce42be3adc269a7c",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row10",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "b75cdbb87fc7df1af16f0c54de5ed1ec9a99433aa56e8de1466a4d71276b5ef1",
+      "encoded_sha256": "1a0dbb0747ffb2e73b7691f9f42e6c0ee853a8938d07d6a2372a39333fad69d9",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row11",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "7ccd40cb90f8588325757ec52983d5430d7104a41bba9db3fdb41d258b1bfb1a",
+      "encoded_sha256": "41833bb83971d91a7b2ee6310f7f40c8ba5e5742182fd61f3b76303aff2dfebd",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row12",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "22a992b6e337f3332af69ffa4ef14654704e0add48aafd0688f579c02b4e5351",
+      "encoded_sha256": "aece8be085dbcdab4b6be2070bfd5d28c640dde2666dfcd79b3ac82fc1f324b4",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row13",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "5820f24cdfb7fe75aabb67e4f7622b80d8dc53cacd7d84306b4799ebc0cc4cea",
+      "encoded_sha256": "e0ee1f929975250dc63731b8c0bca931af3fc2898f48672a91faeae52c3322ea",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row14",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "e1413740bcd914b20b73400265b41a025b60976e1a96437eb057a258c53dd311",
+      "encoded_sha256": "220d0c3abc7d11c98275e94d736d148c00fcbe0eefd122a762f5b831479659a1",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row15",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "99dd0f8423d46114095d6761acaee3d98d86ad954d4eb45aa1f012e6dcb52a5b",
+      "encoded_sha256": "621e92d8cf9a1da436657bd82167650fce4998fc8a4743e4286ec8a10b425139",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row16",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "343c41cce6ed9764d4caf1eb081b3168f4db53396ef44f1cdfa1cafd6e367951",
+      "encoded_sha256": "e6e30aa183b29b1cb94ce132cd7d764a1a8203c132d2c6ea0ea9c5cafb63f309",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row17",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "b5665078150c9451bc7d6cc9f429473d88bd61d1adb64331f1bc9f50710e5fbe",
+      "encoded_sha256": "c644944615a0fab01f2b6cc02b6397a577b2b9f221718325829094193499cef7",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row18",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "5feb7e26983fbfd86f9b79941d29b4130ee757cbb30b67f6d1814969bf9c262d",
+      "encoded_sha256": "31178668849193673bf64c817ce8becb55ed3c1473f82ae37e39b5da00f36a8f",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row19",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "ff272e5eb1ed9a70ae3266ed70f89752483a2f9b9a3b0214f2b311ab77b2f27c",
+      "encoded_sha256": "96462483afbfd80151254eedc3250a26c8ae37b47f7c2d7e6c92b63c5bb6c957",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row20",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "e425c1e998295674ad98b89e9bbdd2170be1e4102e82ddb09b40b808680e9040",
+      "encoded_sha256": "50ddb3dd8f418e4d8eacd3116f5c1d11ab2af7ac900f3695d1bbd6732c7cfbc8",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row21",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "5e31f28fb9b014c1c1355ca8e91ee83bd394e402a7f28ae7177522080ba0742b",
+      "encoded_sha256": "ed22c5acae7cd39edbad3d626920ae87040c8c3217a83e38d2ad0ef58916e2a7",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row22",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "5664a26d818a25cd018817beb31ded4a05bb82f6e26b26c207b7aaade48548f2",
+      "encoded_sha256": "3a14484ffe39e1b9cc674888f53df90567934ddffa8e1cc4e884182086aea45d",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row23",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "d000a37bd654ef0f2d127618bd97567de092dd21ddfdeacf75f8f90a1784dea1",
+      "encoded_sha256": "1a3fa7bfe7901c56368b14bb8ac0e750cfb35f33f1b41743962d7818cf2d2ed1",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row24",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "b50d48dc3201898065f8850375a3fb550acb10a2fe14171320bc692660e9e772",
+      "encoded_sha256": "ea46d2dea5f1c5b8dd31d2b1e191282f81ba15e91fba38bde5c5ffb76ba0f97b",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row25",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "730bafeb84d8b2b5a7772400bc6466c83bd74cf16984a7ecce43ab14cfadc716",
+      "encoded_sha256": "f74f0bfd37ab41f750ef7ab99c1a1df7bf7fa2142082e07b6c768f532db4af04",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row26",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "4634b9d255d02293a778699b83eb67b3cbf42881a6201ebe90ecd0edee35d769",
+      "encoded_sha256": "61adc9b3053f32f136628b7697ff7b33d43cc9cbf738d81f833c2af5470ef1da",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row27",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "9de43d44e5a943838f7d54e86da05ed50013e8e2291ae849b1904730cc7bf20c",
+      "encoded_sha256": "8baf44fba74a9daa1c0c6f874c687f05a2e4dda8ee8a892fa32df735a53f950e",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row28",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "61bf277b30a4ac4187195c745f2dd272fee329018a6daaeee0cea949e81d2f8c",
+      "encoded_sha256": "ee5a3681371e48a95f3cb0b6919ab60446a9f1704cba739138891c8d4b8f5b31",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row29",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "6af6d1d7ff635bff9504472a09455a267f2fa3bdac6385bff69f993cf611199a",
+      "encoded_sha256": "fd59b1385f2374ff939821666813188e88eb52e0443ebeac1f9dea2a86d57300",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row30",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "bfda1752c9044e0aea6da65a4c3768282ef66831e32c9793453fe3f04e02072b",
+      "encoded_sha256": "db5a7fc7441f05b7d2ad4e99ec870411cfeac41fd1ea3c2315133884c9403e52",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "confirmation/L16/row31",
+      "partition": "confirmation",
+      "length": 16,
+      "seed": 5101,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "8a9e2c5b10b2fa10b6ecfb5d809cf186276362302ef2c5507e630b205a51c35b",
+      "encoded_sha256": "ace2ac96fffec2ba9da178571ce1e1b7448b509396cdb65edff99bd40f3987d8",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row00",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "9818983274c14d9173ef1a18315d762345aac46106264c746c407faa67b8840a",
+      "encoded_sha256": "aaf4f90edc8109ac608fd177e5b37a01ef645a4fbf8c392dab0cf05d2c1d4fa5",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row01",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "202dbc76c8329ba6ca9e4aed04ecb1eb2cdf7eb7db9304e2f6b444fcdd3ea61e",
+      "encoded_sha256": "f7b7bd33284e3d906ef2ba7184f062506e69fce4804651ca8ca2af9165f41e76",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row02",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "a48253115896910fc9ac50d9262a78b0c7ef467fe6e3781e55862e0d17ffa565",
+      "encoded_sha256": "0f7729b6d111e71636bab99e0cdb2b87be3b78207a71264d4e860f61aeb174e1",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row03",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "fae6db5521180d17864a9830edb4a1f007da5de72c3c1a37f4120f032cc15164",
+      "encoded_sha256": "0557030275655c89dc45a47cdb095f059714f6ba470ae42ce1e6d222df553441",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row04",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "cbaa61fd49307608999431607379dc5b56b350444e114a56e6a3678290645a52",
+      "encoded_sha256": "9dc8dfc2af7b2a2c2ad4717a44ac27e818d8d72cff216676bdeef6a10864fca0",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row05",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "94426f21305255f947dbeda6929c4fe30fbf7ea6504a48f3a71df9f1b191be47",
+      "encoded_sha256": "8c35bc58ced764a97b008924ff682ea1d7766ea1a8a6d6c1da4886c0e068c7c2",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row06",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "aef02298b3e8d53e26631ff7ddd31ed47ca7c557c821c674cea389dc0e35b161",
+      "encoded_sha256": "f7b2cbcc56382de9351a8a13f92ab2e9990ebb1172e3b26569ee8bd3ecc28933",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row07",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "55986ab811f0273dd58bc48f5db9af017f33c85f23e757f0f820cdd804523dec",
+      "encoded_sha256": "fc848162e0e127fc6538051ac604ee5d01291e12196b41fa368fe4528ace5a1e",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row08",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "ff456bf9dce7674335255a0459b8ddc7bf0a3860ab2fd79a456df3f672f03e8d",
+      "encoded_sha256": "4ecad5a5b64b3034a1e0c09f18cd0b0e15fe9006b6b3a23cb7200ee60f5b596f",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row09",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "8ece2a4dcc63b725a0da110a93d7a439f49d0d937e50f0e1743234c337678eb6",
+      "encoded_sha256": "229e0a3277a9454cc699d1fad3d1dd6aa2c531ebb5abbc571e0b5c5b31dc4a2d",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row10",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "a531d3afbdcf8f4eb36fcfe1187072cc3aa0a8251a9b5a88491d3746d814313e",
+      "encoded_sha256": "22ab2270bdb95baf4edae92741a4a4d9b932f4c103774ac787775fe3156dc228",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row11",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "378c862bad9babbce376c655b84539841d3966db81256d342409cb6d7ec8c2d7",
+      "encoded_sha256": "1222eaeba576b832128c2727e52b74198b9ec6e2f079aa5675d7f2099ab5fa77",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row12",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "70f3c915d8158c7381bf5b1e6d670538d43132f26fd81aa1d6bac4cf0e5635ce",
+      "encoded_sha256": "5d7ba5176bff474995c14c86972b0144773dc0f2fc80f3eb8407608d3927f369",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row13",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "3f03113564d785e9dfb60fffdd2bf40d094989fef4a2803ccded217bac920809",
+      "encoded_sha256": "d696c2d469d4be3324b0e6447aa23969439044d588596ad0c7032774cb8f19b2",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row14",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "eb454737c872d9a1d16388ab1dbdb0c4399b7565d5cd549368b2d0b46b3c337c",
+      "encoded_sha256": "04082a61a847c6c5633c110fda57e9e356511b91a7cf09a9661c56fd129099bb",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row15",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "1932cb4f90bf77b067e16e9b85f5344ed02a1a22df4e1cb5b535f511bfdae8ff",
+      "encoded_sha256": "fbe031080da161a56f8c0a8017046feec05fb2e635b176fe01d5b87b4b87cb43",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row16",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "e65f5aee1c4b59413402b036ff906f2d598f338d300570c7385673e5d3dd0311",
+      "encoded_sha256": "effd5ea75ea44e757272cc1b6d46045e77585e945299a3dcc21f0c02d0a1cef2",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row17",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "8f83177a78b45bb4a3a15284b914646a50e916e95bc14ebcf1dedb7608435513",
+      "encoded_sha256": "db3b98a97d7681182f177abd4f14ef040b1afd61b90e2f6115edd22012c18a4a",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row18",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "3b133608576ec5717c64c1584e9adad4e2d163e8266e245060c28ab74105c9c0",
+      "encoded_sha256": "c824b955ea29c5687fb221e664ea85802cac713eec83aa1f037657aadebf3f53",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row19",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "12954efc167f5b0b3b7494b05d056a0dd1582cc1919e0fd1a7819005369697ee",
+      "encoded_sha256": "7096b3c659437cde600bd0c011a502c64a0440b49fdea14d81df7337b3986a3e",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row20",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "9540621b918d410e4b5f2f3a697b91555828a815ce5edd2dff61508990e2589d",
+      "encoded_sha256": "39bc0b591bf2f27cda737a08d8640a9779158f050752d213da7ab74071e8a242",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row21",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "a967bd19d207476f36f6448b6c7c315982ac33e8ece84d3c94e77aee133696e0",
+      "encoded_sha256": "43020ddabc5138838f7a24be6634e50cf3a963cd3365934e2b14f4cf3255bfbd",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row22",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "021c38232b2cbe7154df230346a18a610f78bd86276d24acb9bbd9a76d16bde7",
+      "encoded_sha256": "4b502dbc963afd2cbd86a4fd8fa139b9402c2bdc0a094d0c7e8252e935d9a146",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row23",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "label": 0,
+      "bits_sha256": "109526c7c0d7bdfdccc4332d86efe19d5f7156a83783f01bdaca8371c7022f2f",
+      "encoded_sha256": "7b03c6f7fa100c37aa2c446582f2fa83b20435befedbca9fa9b1444163a1e21c",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row24",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 0,
+      "bits_sha256": "fc599dc0b01e72c59cfa823b6af7ead01a0e45c14162597e810b1811e97f4e64",
+      "encoded_sha256": "f19dbadb9af9d27f99924b8ccf9940e2637625c5001b30eeac9df517ebe50d17",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row25",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "92c19b498f3e07e3e38023626cff117925e3a17f68833918a857a11828dc5a95",
+      "encoded_sha256": "bfb283feba1bca6f979e0dae3ef64394fc1464abdfb92df8573656dae64d9403",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row26",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "a319a112c18cf63c595fd70f80935cfb7d33cfd244e8a1dd735c8364c73567ef",
+      "encoded_sha256": "f58d3c19255b0fbe54889b152dfd679ffcaf2e19038a7ae1450f4848f166f475",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row27",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "label": 1,
+      "bits_sha256": "2044a9ca2b46d29ee8c0581b80d66a31940640eb0cddb8ac6690fa0c99d7e138",
+      "encoded_sha256": "308d36633b8136a68b0bfa5506d67539d3420c32d0d8e793d0bb78586f51441d",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row28",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "13df68f64340431b15fbdd767f54c02e17e8d9cb0f69b752bc9e917e8d26a996",
+      "encoded_sha256": "70dd4b42d18890d4f39c98ce9419fb436fa09dcfbb61f5dfd5aef0c89689e605",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row29",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "cc44e9bece4bc24ffa4f805a0f8f39302ebfb3e46c10ed93aa646dac9d18312c",
+      "encoded_sha256": "66129984aa2cefccaec861d6222ffe3cd702084d29b63cd239b56534147dd41f",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row30",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "7db310a61301b4df7c10638c581e8388228be4a15b2a705dd4b9cf6d440ad853",
+      "encoded_sha256": "b807dd11ad87824a0e97f8bc4e5b06baa4da8a5c3e29e49311429244f6c39e6e",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    },
+    {
+      "sequence_id": "longer_confirmation/L24/row31",
+      "partition": "longer_confirmation",
+      "length": 24,
+      "seed": 5102,
+      "bits": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "label": 1,
+      "bits_sha256": "b103ff42c4634d4595ca0576a7a7ba4f98d81483d43c0260ac791e554aa7d12d",
+      "encoded_sha256": "5c20208030bbe363982775b525b9b463c6ff4d2c14e099b30c831e051c2e4866",
+      "suffixes": [
+        "00110011",
+        "10110011",
+        "01101001",
+        "11101001"
+      ],
+      "overlaps": [
+        {
+          "suffix": "00110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "10110011",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "01101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        },
+        {
+          "suffix": "11101001",
+          "exact_complete_overlap": false,
+          "shared_prefix_occurrences": 0
+        }
+      ]
+    }
+  ],
+  "token_feature_seed": 3002,
+  "generator": "TaskAParity.make_batch; original CPU torch.randint sampler; val/test generator explicitly seeded",
+  "sequence_seeds": [
+    5100,
+    5101,
+    5102
+  ],
+  "balanced_parity_each_partition": {
+    "0": 16,
+    "1": 16
+  },
+  "original_control": {
+    "bits": [
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "expected_CE": 0.0014546061865985394
+  },
+  "encoded_inputs_sha256": "1c52bd823aa65bd6c4a574cfd5043e79f0dad4660b4517839a9bf8a1dcf780ac",
+  "inventory_sha256": "7c56d657cd4743ff33b770359938ec1c560e3d980ff892c26b4d193c1740c410",
+  "attempts_sha256": "428949193469278648a9aa4adb3359edb674a673d27b1cc72fd02365199a0ef9",
+  "acquisition_suffixes": [
+    "00000000",
+    "10000000",
+    "01010101",
+    "11010101"
+  ],
+  "confirmation_suffixes": [
+    "00110011",
+    "10110011",
+    "01101001",
+    "11101001"
+  ],
+  "horizons": [
+    1,
+    4,
+    8
+  ],
+  "future_observations": "all indices1..8; primary1,4,8",
+  "schedules": [
+    "P0",
+    "P1",
+    "alternating_P0_first"
+  ],
+  "original_control_in_new_prefix_panel": false,
+  "overlap_rule": "Reject exact retained input matches and panel duplicates; report other overlaps"
+}

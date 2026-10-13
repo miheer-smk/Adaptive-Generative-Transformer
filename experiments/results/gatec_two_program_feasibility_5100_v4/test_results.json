@@ -1,0 +1,49 @@
+{
+  "focused_exit_code": 0,
+  "focused_passed": 32,
+  "focused_failed": 0,
+  "focused_skipped": 0,
+  "cuda_executed": true,
+  "cuda_test": {
+    "classname": "experiments.results.gatec_two_program_feasibility_5100_v4.test_amendments_v4",
+    "name": "test_mask_device_observation_and_complete_P0[cuda]",
+    "time": "0.720"
+  },
+  "substrate_exit_code": 0,
+  "substrate_passed": 30,
+  "substrate_deselected": 5,
+  "substrate_selection": "tests/test_stage3_execution_accounting.py tests/test_gatec_canonical_replay_audit.py tests/test_sequential_loop.py tests/test_terminal_commit.py -k \"not True and not gradients\"",
+  "excluded_reason": "Four training=True parametrizations and memory_write_gradients excluded to honor no-backward/no-ST study restrictions",
+  "initial_development_tests": {
+    "passed": 30,
+    "failed": 2,
+    "record": "development_test_failure.json",
+    "study_forwards": 0
+  },
+  "new_focused_complete_token_fixture_work": {
+    "initial_CPU": {
+      "completed": 4,
+      "bank_calls": 32,
+      "commits": 4
+    },
+    "initial_device_failure": {
+      "CPU": {
+        "completed": 0,
+        "bank_calls": 0,
+        "commits": 0
+      },
+      "CUDA": {
+        "completed": 0,
+        "bank_calls": 0,
+        "commits": 0
+      }
+    },
+    "final": {
+      "completed": 6,
+      "bank_calls": 48,
+      "commits": 6
+    },
+    "scope": "Synthetic unit fixtures, not study sample/outcome statistics"
+  },
+  "original_sources_unchanged": true
+}

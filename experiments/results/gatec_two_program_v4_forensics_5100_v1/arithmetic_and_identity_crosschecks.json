@@ -1,0 +1,3842 @@
+{
+  "current_trace_crosschecks": true,
+  "canonical_comparator_crosschecks": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "hist": 0,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "hist": 0,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "hist": 1,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "hist": 1,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "hist": 0,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "hist": 0,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "hist": 1,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "hist": 1,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "hist": 0,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "hist": 0,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "hist": 1,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "hist": 1,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "hist": 0,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "hist": 0,
+      "prog": 1,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "hist": 1,
+      "prog": 0,
+      "canonical_identity_matches": true,
+      "canonical_record_values_match": true
+    }
+  ],
+  "paired_values": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 0,
+      "association_confirmed": true,
+      "recorded_CE_delta": 9.433040395379066e-05,
+      "arithmetic_CE_delta": 9.433040395379066e-05,
+      "recorded_TV": 9.414274245500565e-05,
+      "arithmetic_TV": 9.414274245500565e-05,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "history_program": 1,
+      "association_confirmed": true,
+      "recorded_CE_delta": 9.314087219536304e-05,
+      "arithmetic_CE_delta": 9.314087219536304e-05,
+      "recorded_TV": 9.292294271290302e-05,
+      "arithmetic_TV": 9.292294271290302e-05,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 0,
+      "association_confirmed": true,
+      "recorded_CE_delta": 3.071175888180733e-05,
+      "arithmetic_CE_delta": 3.071175888180733e-05,
+      "recorded_TV": 3.073853440582752e-05,
+      "arithmetic_TV": 3.073853440582752e-05,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "history_program": 1,
+      "association_confirmed": true,
+      "recorded_CE_delta": 1.6070203855633736e-05,
+      "arithmetic_CE_delta": 1.6070203855633736e-05,
+      "recorded_TV": 1.6030273400247097e-05,
+      "arithmetic_TV": 1.6030273400247097e-05,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 0,
+      "association_confirmed": true,
+      "recorded_CE_delta": 0.0005053310887888074,
+      "arithmetic_CE_delta": 0.0005053310887888074,
+      "recorded_TV": 0.0005044139106757939,
+      "arithmetic_TV": 0.0005044139106757939,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "history_program": 1,
+      "association_confirmed": true,
+      "recorded_CE_delta": 0.0001762679312378168,
+      "arithmetic_CE_delta": 0.0001762679312378168,
+      "recorded_TV": 0.00017595343524590135,
+      "arithmetic_TV": 0.00017595343524590135,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 0,
+      "association_confirmed": true,
+      "recorded_CE_delta": 0.0003291824832558632,
+      "arithmetic_CE_delta": 0.0003291824832558632,
+      "recorded_TV": 0.00032838794868439436,
+      "arithmetic_TV": 0.00032838794868439436,
+      "CE_delta_match": true,
+      "TV_match": true,
+      "same_incoming_fingerprint": true
+    }
+  ],
+  "published_csv": [
+    {
+      "identity": [
+        "acquisition/L16/row00",
+        "0",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row01",
+        "0",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row02",
+        "0",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row03",
+        "0",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row00",
+        "0",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row00",
+        "1",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row00",
+        "1",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row01",
+        "0",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row01",
+        "1",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row01",
+        "1",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row02",
+        "0",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row02",
+        "1",
+        "0"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row02",
+        "1",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row03",
+        "0",
+        "1"
+      ],
+      "matches": true
+    },
+    {
+      "identity": [
+        "acquisition/L16/row03",
+        "1",
+        "0"
+      ],
+      "matches": true
+    }
+  ],
+  "logits_CE_prediction_arithmetic": [
+    {
+      "recorded_CE": 0.0020981458947062492,
+      "arithmetic_CE": 0.0020981077879724808,
+      "CE_residual": 3.810673376847262e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.9430530124052723e-08,
+        "L2_of_actual_difference": 2.9436740175955094e-08,
+        "RMS_of_actual_difference": 2.081491859444433e-08,
+        "signed_mean_difference": 1.5017576492472665e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00219247629866004,
+      "arithmetic_CE": 0.002192478635119066,
+      "CE_residual": -2.3364590262531237e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.3446419139538932e-08,
+        "L2_of_actual_difference": 2.3452525283871286e-08,
+        "RMS_of_actual_difference": 1.6583439664174348e-08,
+        "signed_mean_difference": -1.1990778123454476e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002100168028846383,
+      "arithmetic_CE": 0.002100151069344136,
+      "CE_residual": 1.695950224700482e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.6991694051782247e-08,
+        "L2_of_actual_difference": 1.6991694770721393e-08,
+        "RMS_of_actual_difference": 1.2014942596229096e-08,
+        "signed_mean_difference": 8.498318462141219e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002193308901041746,
+      "arithmetic_CE": 0.002193272454272144,
+      "CE_residual": 3.6446769602349605e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.893829437715766e-08,
+        "L2_of_actual_difference": 1.894612528245841e-08,
+        "RMS_of_actual_difference": 1.3396933664436234e-08,
+        "signed_mean_difference": 9.196810401342764e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014234182890504599,
+      "arithmetic_CE": 0.0014233596252828384,
+      "CE_residual": 5.866376762142522e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.8113509560087095e-08,
+        "L2_of_actual_difference": 5.8116205861017115e-08,
+        "RMS_of_actual_difference": 4.109436326115858e-08,
+        "signed_mean_difference": 2.933666114375566e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014541300479322672,
+      "arithmetic_CE": 0.0014541842645212633,
+      "CE_residual": -5.421658899606996e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.5815933502038035e-08,
+        "L2_of_actual_difference": 2.581674395653652e-08,
+        "RMS_of_actual_difference": 1.825519471982379e-08,
+        "signed_mean_difference": -1.2805685355209498e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014247277285903692,
+      "arithmetic_CE": 0.0014247126540634092,
+      "CE_residual": 1.5074526960034973e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.8312304561618475e-08,
+        "L2_of_actual_difference": 1.8314998952632083e-08,
+        "RMS_of_actual_difference": 1.295065995683066e-08,
+        "signed_mean_difference": 9.313225732927519e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001440797932446003,
+      "arithmetic_CE": 0.0014407619207918998,
+      "CE_residual": 3.601165410316298e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.5672938885890062e-08,
+        "L2_of_actual_difference": 2.5674626807298056e-08,
+        "RMS_of_actual_difference": 1.8154702719874373e-08,
+        "signed_mean_difference": 1.2689270041297239e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0016269554616883397,
+      "arithmetic_CE": 0.001626922734978109,
+      "CE_residual": 3.2726710230690514e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.70679997702328e-08,
+        "L2_of_actual_difference": 5.7068073803828376e-08,
+        "RMS_of_actual_difference": 4.0353221975941414e-08,
+        "signed_mean_difference": 2.857996156456575e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002132286550477147,
+      "arithmetic_CE": 0.0021323243685933413,
+      "CE_residual": -3.781811619418818e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.0994310401256655e-08,
+        "L2_of_actual_difference": 2.100464878349068e-08,
+        "RMS_of_actual_difference": 1.4852529591248025e-08,
+        "signed_mean_difference": -1.0826624961563641e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001505433232523501,
+      "arithmetic_CE": 0.0015054709574289227,
+      "CE_residual": -3.772490542175433e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.627964906272041e-08,
+        "L2_of_actual_difference": 3.627967329435059e-08,
+        "RMS_of_actual_difference": 2.5653603005667794e-08,
+        "signed_mean_difference": -1.8160790161959005e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0016817011637613177,
+      "arithmetic_CE": 0.0016816456578112593,
+      "CE_residual": 5.550595005843206e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 8.205684753903597e-08,
+        "L2_of_actual_difference": 8.205713414086758e-08,
+        "RMS_of_actual_difference": 5.802315599574163e-08,
+        "signed_mean_difference": 4.0919985575438474e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022292304784059525,
+      "arithmetic_CE": 0.0022291942945371623,
+      "CE_residual": 3.618386879011837e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.8437997885185666e-08,
+        "L2_of_actual_difference": 5.8442202026798296e-08,
+        "RMS_of_actual_difference": 4.132487736062326e-08,
+        "signed_mean_difference": 2.9569491778519072e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0025584129616618156,
+      "arithmetic_CE": 0.002558394611903214,
+      "CE_residual": 1.834975860148802e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.202662133387605e-09,
+        "L2_of_actual_difference": 7.202677935934749e-09,
+        "RMS_of_actual_difference": 5.093062411202187e-09,
+        "signed_mean_difference": 3.608874956035138e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.418639659881592,
+      "arithmetic_CE": 6.41863965089405,
+      "CE_residual": 8.987541377791786e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.059777986536005e-08,
+        "L2_of_actual_difference": 3.059778604704504e-08,
+        "RMS_of_actual_difference": 2.1635902003160675e-08,
+        "signed_mean_difference": -1.5308614794004236e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.07768556475639343,
+      "arithmetic_CE": 0.07768553521862853,
+      "CE_residual": 2.953776490066673e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.2403987876582505e-08,
+        "L2_of_actual_difference": 4.246629096963179e-08,
+        "RMS_of_actual_difference": 3.002820231646769e-08,
+        "signed_mean_difference": 2.2351741832404848e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.09473924338817596,
+      "arithmetic_CE": 0.09473928873464721,
+      "CE_residual": -4.534647124465607e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.349537829906325e-08,
+        "L2_of_actual_difference": 4.351215291790315e-08,
+        "RMS_of_actual_difference": 3.0767738392275335e-08,
+        "signed_mean_difference": -2.235174174913812e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021942604798823595,
+      "arithmetic_CE": 0.0021942656545372863,
+      "CE_residual": -5.1746549267761566e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.841119090517651e-08,
+        "L2_of_actual_difference": 1.841119928888945e-08,
+        "RMS_of_actual_difference": 1.3018683866950671e-08,
+        "signed_mean_difference": -9.196810403511169e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0023466211277991533,
+      "arithmetic_CE": 0.002346565676991208,
+      "CE_residual": 5.545080794533419e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.840714721929487e-08,
+        "L2_of_actual_difference": 7.840716777827002e-08,
+        "RMS_of_actual_difference": 5.54422400296461e-08,
+        "signed_mean_difference": 3.9231963491672545e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021512003149837255,
+      "arithmetic_CE": 0.002151193959351261,
+      "CE_residual": 6.355632464760674e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.5146448650860123e-08,
+        "L2_of_actual_difference": 1.5148051733915248e-08,
+        "RMS_of_actual_difference": 1.071129010281611e-08,
+        "signed_mean_difference": -7.683411212388441e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022545652464032173,
+      "arithmetic_CE": 0.0022545754907192794,
+      "CE_residual": -1.0244316062113512e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.449184186685386e-09,
+        "L2_of_actual_difference": 6.449564870933247e-09,
+        "RMS_of_actual_difference": 4.560531055939439e-09,
+        "signed_mean_difference": 3.259629040210793e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021303833927959204,
+      "arithmetic_CE": 0.002130430442912168,
+      "CE_residual": -4.705011624750455e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.844963381016697e-08,
+        "L2_of_actual_difference": 3.845015528488645e-08,
+        "RMS_of_actual_difference": 2.718836553961898e-08,
+        "signed_mean_difference": -1.9324943444955223e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002226375974714756,
+      "arithmetic_CE": 0.002226431664854367,
+      "CE_residual": -5.5690139610931055e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.610304016328115e-08,
+        "L2_of_actual_difference": 4.610304023506527e-08,
+        "RMS_of_actual_difference": 3.2599772383530895e-08,
+        "signed_mean_difference": -2.3050233717396285e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021162275224924088,
+      "arithmetic_CE": 0.00211621267763773,
+      "CE_residual": 1.4844854678841557e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.2857969184109095e-08,
+        "L2_of_actual_difference": 2.2867435834657295e-08,
+        "RMS_of_actual_difference": 1.6169718947034433e-08,
+        "signed_mean_difference": 1.1757947519482406e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022061550989747047,
+      "arithmetic_CE": 0.0022061934129737892,
+      "CE_residual": -3.8313999084493844e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.863036045550274e-08,
+        "L2_of_actual_difference": 5.8635048569330036e-08,
+        "RMS_of_actual_difference": 4.146124045857584e-08,
+        "signed_mean_difference": -2.968590707649356e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014885308919474483,
+      "arithmetic_CE": 0.0014885028033493342,
+      "CE_residual": 2.8088598114095475e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.837785822469186e-08,
+        "L2_of_actual_difference": 3.8378173711340274e-08,
+        "RMS_of_actual_difference": 2.7137466880843998e-08,
+        "signed_mean_difference": 1.9266735768971345e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0015303102554753423,
+      "arithmetic_CE": 0.0015302640612162577,
+      "CE_residual": 4.619425908458652e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.335753488517781e-08,
+        "L2_of_actual_difference": 6.335759713664223e-08,
+        "RMS_of_actual_difference": 4.480058657500511e-08,
+        "signed_mean_difference": 3.172317521930694e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001693958998657763,
+      "arithmetic_CE": 0.0016939325844407271,
+      "CE_residual": 2.6414217035863885e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.480264720856496e-08,
+        "L2_of_actual_difference": 3.480338943955022e-08,
+        "RMS_of_actual_difference": 2.4609712680982234e-08,
+        "signed_mean_difference": 1.7287675290215618e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002656385535374284,
+      "arithmetic_CE": 0.002656371326707596,
+      "CE_residual": 1.4208666687665072e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.723531227795007e-08,
+        "L2_of_actual_difference": 3.723615435702849e-08,
+        "RMS_of_actual_difference": 2.6329937251163852e-08,
+        "signed_mean_difference": 1.8742866825412208e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0017924923449754715,
+      "arithmetic_CE": 0.0017925301915195924,
+      "CE_residual": -3.784654412086752e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.3411873318355276e-08,
+        "L2_of_actual_difference": 4.341206042464502e-08,
+        "RMS_of_actual_difference": 3.069696231154664e-08,
+        "signed_mean_difference": -2.1769665193020933e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0032031440641731024,
+      "arithmetic_CE": 0.003203119105495311,
+      "CE_residual": 2.4958677791175887e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.301834994307029e-08,
+        "L2_of_actual_difference": 3.301950707671216e-08,
+        "RMS_of_actual_difference": 2.334831736538036e-08,
+        "signed_mean_difference": 1.6647390949260654e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0019583588000386953,
+      "arithmetic_CE": 0.0019583797038382755,
+      "CE_residual": -2.090379958019639e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.693989641424423e-10,
+        "L2_of_actual_difference": 6.585656420430207e-10,
+        "RMS_of_actual_difference": 4.656762313450924e-10,
+        "signed_mean_difference": -4.6566123071238585e-10
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022074636071920395,
+      "arithmetic_CE": 0.0022074337468898086,
+      "CE_residual": 2.986030223084413e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.5072076253730415e-08,
+        "L2_of_actual_difference": 1.507748298421224e-08,
+        "RMS_of_actual_difference": 1.066139046136126e-08,
+        "signed_mean_difference": 7.334165307406118e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0015100754098966718,
+      "arithmetic_CE": 0.0015100170311979078,
+      "CE_residual": 5.837869876401669e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.365802523473519e-08,
+        "L2_of_actual_difference": 7.365803257044106e-08,
+        "RMS_of_actual_difference": 5.2084094319418456e-08,
+        "signed_mean_difference": 3.684544936939215e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.021280178800225258,
+      "arithmetic_CE": 0.021280175287060832,
+      "CE_residual": 3.513164426038884e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 9.188257599213046e-09,
+        "L2_of_actual_difference": 9.189107397550755e-09,
+        "RMS_of_actual_difference": 6.497680153859607e-09,
+        "signed_mean_difference": -4.656612906037139e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001999404514208436,
+      "arithmetic_CE": 0.001999391590622679,
+      "CE_residual": 1.2923585757107503e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.7112360639615076e-08,
+        "L2_of_actual_difference": 1.7112761340196062e-08,
+        "RMS_of_actual_difference": 1.2100549588479628e-08,
+        "signed_mean_difference": 8.614733770307206e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022129351273179054,
+      "arithmetic_CE": 0.002212969063235093,
+      "CE_residual": -3.393591718747757e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.439629587236425e-08,
+        "L2_of_actual_difference": 2.440176449372784e-08,
+        "RMS_of_actual_difference": 1.7254653146432075e-08,
+        "signed_mean_difference": -1.2456439494028942e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021126586943864822,
+      "arithmetic_CE": 0.0021127106833529474,
+      "CE_residual": -5.198896646518847e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.8823442339317467e-08,
+        "L2_of_actual_difference": 5.8828629475442135e-08,
+        "RMS_of_actual_difference": 4.1598122829995944e-08,
+        "signed_mean_difference": -2.9802322408728835e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002220666501671076,
+      "arithmetic_CE": 0.0022206717844075463,
+      "CE_residual": -5.282736470491045e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.106165530868509e-08,
+        "L2_of_actual_difference": 2.106943634389959e-08,
+        "RMS_of_actual_difference": 1.48983413145497e-08,
+        "signed_mean_difference": -1.0244548285642113e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002112420741468668,
+      "arithmetic_CE": 0.0021124465315276453,
+      "CE_residual": -2.579005897729303e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.3647648556289766e-08,
+        "L2_of_actual_difference": 3.3647837613050216e-08,
+        "RMS_of_actual_difference": 2.3792614148451583e-08,
+        "signed_mean_difference": -1.6880221677482293e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022505212109535933,
+      "arithmetic_CE": 0.002250534975984486,
+      "CE_residual": -1.3765030892898267e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.5243165063516528e-08,
+        "L2_of_actual_difference": 1.5243666629636118e-08,
+        "RMS_of_actual_difference": 1.0778900043962781e-08,
+        "signed_mean_difference": -7.683411250552358e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002105759223923087,
+      "arithmetic_CE": 0.002105816333506816,
+      "CE_residual": -5.710958372873165e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.3534420018632716e-08,
+        "L2_of_actual_difference": 3.353755913863946e-08,
+        "RMS_of_actual_difference": 2.371463549137683e-08,
+        "signed_mean_difference": -1.6996637008416526e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021948551293462515,
+      "arithmetic_CE": 0.002194895976614486,
+      "CE_residual": -4.084726823450069e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.130504421302362e-08,
+        "L2_of_actual_difference": 5.1305265035490505e-08,
+        "RMS_of_actual_difference": 3.627830081716841e-08,
+        "signed_mean_difference": -2.5727786077999262e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002101000864058733,
+      "arithmetic_CE": 0.00210094702165442,
+      "CE_residual": 5.3842404312831604e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.717459294896088e-08,
+        "L2_of_actual_difference": 5.717575109831065e-08,
+        "RMS_of_actual_difference": 4.042936132104966e-08,
+        "signed_mean_difference": 2.840533852837418e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021950930822640657,
+      "arithmetic_CE": 0.002195111874752076,
+      "CE_residual": -1.879248801017752e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.8311225253041528e-08,
+        "L2_of_actual_difference": 2.83167586915631e-08,
+        "RMS_of_actual_difference": 2.0022972092027378e-08,
+        "signed_mean_difference": -1.4435499866207596e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.07768556475639343,
+      "arithmetic_CE": 0.07768553521862853,
+      "CE_residual": 2.953776490066673e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.2403987876582505e-08,
+        "L2_of_actual_difference": 4.246629096963179e-08,
+        "RMS_of_actual_difference": 3.002820231646769e-08,
+        "signed_mean_difference": 2.2351741832404848e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.09473924338817596,
+      "arithmetic_CE": 0.09473928873464721,
+      "CE_residual": -4.534647124465607e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.349537829906325e-08,
+        "L2_of_actual_difference": 4.351215291790315e-08,
+        "RMS_of_actual_difference": 3.0767738392275335e-08,
+        "signed_mean_difference": -2.235174174913812e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021942604798823595,
+      "arithmetic_CE": 0.0021942656545372863,
+      "CE_residual": -5.1746549267761566e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.841119090517651e-08,
+        "L2_of_actual_difference": 1.841119928888945e-08,
+        "RMS_of_actual_difference": 1.3018683866950671e-08,
+        "signed_mean_difference": -9.196810403511169e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0023466211277991533,
+      "arithmetic_CE": 0.002346565676991208,
+      "CE_residual": 5.545080794533419e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.840714721929487e-08,
+        "L2_of_actual_difference": 7.840716777827002e-08,
+        "RMS_of_actual_difference": 5.54422400296461e-08,
+        "signed_mean_difference": 3.9231963491672545e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013184197014197707,
+      "arithmetic_CE": 0.0013184432222472786,
+      "CE_residual": -2.3520827507894637e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.3785069641336634e-08,
+        "L2_of_actual_difference": 1.3785153424770739e-08,
+        "RMS_of_actual_difference": 9.747575466352348e-09,
+        "signed_mean_difference": -6.86850396567143e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013260389678180218,
+      "arithmetic_CE": 0.0013259964438665506,
+      "CE_residual": 4.252395147119614e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.2763617274202943e-08,
+        "L2_of_actual_difference": 1.2763686601340096e-08,
+        "RMS_of_actual_difference": 9.025289348747458e-09,
+        "signed_mean_difference": 6.402842745692645e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0020166554022580385,
+      "arithmetic_CE": 0.0020166267694863294,
+      "CE_residual": 2.8632771709169447e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.2249510223690834e-08,
+        "L2_of_actual_difference": 4.22508782204411e-08,
+        "RMS_of_actual_difference": 2.9875882500760906e-08,
+        "signed_mean_difference": 2.0954757864229817e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021891456563025713,
+      "arithmetic_CE": 0.0021891002839753426,
+      "CE_residual": 4.537232722867657e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.925610729346943e-08,
+        "L2_of_actual_difference": 6.925622451762632e-08,
+        "RMS_of_actual_difference": 4.897154599579161e-08,
+        "signed_mean_difference": 3.469176587341839e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001353063271380961,
+      "arithmetic_CE": 0.0013530176023737184,
+      "CE_residual": 4.566900724256584e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.8679993491209643e-08,
+        "L2_of_actual_difference": 2.8681308582206666e-08,
+        "RMS_of_actual_difference": 2.028074779178226e-08,
+        "signed_mean_difference": 1.420266927936592e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014118712861090899,
+      "arithmetic_CE": 0.0014119025277636865,
+      "CE_residual": -3.124165459666983e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.715843382463447e-09,
+        "L2_of_actual_difference": 4.724752668565055e-09,
+        "RMS_of_actual_difference": 3.340904651371587e-09,
+        "signed_mean_difference": -2.5029294248085296e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014647241914644837,
+      "arithmetic_CE": 0.001464713449904842,
+      "CE_residual": 1.0741559641758158e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.037640751100355e-08,
+        "L2_of_actual_difference": 1.037937729616901e-08,
+        "RMS_of_actual_difference": 7.3393280706148e-09,
+        "signed_mean_difference": 5.064066511072628e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.2983487546443939,
+      "arithmetic_CE": 0.29834873406558327,
+      "CE_residual": 2.0578810655536017e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.721682340085408e-08,
+        "L2_of_actual_difference": 4.3431630063221384e-08,
+        "RMS_of_actual_difference": 3.071080013568936e-08,
+        "signed_mean_difference": 2.9802322387695312e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014787701657041907,
+      "arithmetic_CE": 0.0014787317996707294,
+      "CE_residual": 3.8366033461301186e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.973411201117159e-08,
+        "L2_of_actual_difference": 1.9734202988601843e-08,
+        "RMS_of_actual_difference": 1.3954188754552195e-08,
+        "signed_mean_difference": 9.837094672691948e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0017877324717119336,
+      "arithmetic_CE": 0.0017877112642930015,
+      "CE_residual": 2.120741893207878e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.4749736987340611e-09,
+        "L2_of_actual_difference": 1.5250693503208497e-09,
+        "RMS_of_actual_difference": 1.0783868793916353e-09,
+        "signed_mean_difference": -9.31322547402004e-10
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014578201808035374,
+      "arithmetic_CE": 0.001457775164755759,
+      "CE_residual": 4.501604777829016e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.4391636932463712e-08,
+        "L2_of_actual_difference": 2.4394996146015003e-08,
+        "RMS_of_actual_difference": 1.72498672018669e-08,
+        "signed_mean_difference": 1.2398231854474258e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014250847743824124,
+      "arithmetic_CE": 0.001425114942598782,
+      "CE_residual": -3.0168216369474976e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.577554347737987e-08,
+        "L2_of_actual_difference": 2.5775634919020694e-08,
+        "RMS_of_actual_difference": 1.82261262406283e-08,
+        "signed_mean_difference": -1.2922100750979021e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001500552985817194,
+      "arithmetic_CE": 0.0015005316852669814,
+      "CE_residual": 2.1300550212544067e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.993484985036048e-09,
+        "L2_of_actual_difference": 7.993580966760663e-09,
+        "RMS_of_actual_difference": 5.652315307560182e-09,
+        "signed_mean_difference": 4.016328623845933e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014817459741607308,
+      "arithmetic_CE": 0.0014817053480653541,
+      "CE_residual": 4.062609537669459e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.081620170153343e-08,
+        "L2_of_actual_difference": 3.081622030206322e-08,
+        "RMS_of_actual_difference": 2.179035834612746e-08,
+        "signed_mean_difference": 1.5425030083630366e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001965021248906851,
+      "arithmetic_CE": 0.0019650361290057816,
+      "CE_residual": -1.4880098930802887e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.7733834007115377e-08,
+        "L2_of_actual_difference": 2.7735051003789377e-08,
+        "RMS_of_actual_difference": 1.961164264133423e-08,
+        "signed_mean_difference": -1.3737007950207977e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.004118532873690128,
+      "arithmetic_CE": 0.004118526709224302,
+      "CE_residual": 6.164465826685728e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.892888645826929e-08,
+        "L2_of_actual_difference": 1.8944463953785336e-08,
+        "RMS_of_actual_difference": 1.3395758927665726e-08,
+        "signed_mean_difference": -9.080395072576936e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022003266494721174,
+      "arithmetic_CE": 0.0022002788382886607,
+      "CE_residual": 4.78111834567585e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.127692131485674e-08,
+        "L2_of_actual_difference": 6.127753970146938e-08,
+        "RMS_of_actual_difference": 4.332976385733689e-08,
+        "signed_mean_difference": 3.050081433708836e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00244556600227952,
+      "arithmetic_CE": 0.0024456061564226417,
+      "CE_residual": -4.015414312164012e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.9755158842116316e-08,
+        "L2_of_actual_difference": 1.9766282674607394e-08,
+        "RMS_of_actual_difference": 1.3976872518065055e-08,
+        "signed_mean_difference": -9.546056459848115e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021893836092203856,
+      "arithmetic_CE": 0.002189348461258067,
+      "CE_residual": 3.514796231840478e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.004012531590774e-08,
+        "L2_of_actual_difference": 6.004013290143489e-08,
+        "RMS_of_actual_difference": 4.245478511794615e-08,
+        "signed_mean_difference": 3.003515298646321e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0023284247145056725,
+      "arithmetic_CE": 0.0023284300431427596,
+      "CE_residual": -5.328637087131938e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.718158889780113e-09,
+        "L2_of_actual_difference": 7.720700328689423e-09,
+        "RMS_of_actual_difference": 5.459359557925498e-09,
+        "signed_mean_difference": -3.958120998711137e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00128020322881639,
+      "arithmetic_CE": 0.0012802411843861883,
+      "CE_residual": -3.795556979824255e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 8.325148237453561e-09,
+        "L2_of_actual_difference": 8.325362006212821e-09,
+        "RMS_of_actual_difference": 5.886919930425926e-09,
+        "signed_mean_difference": -4.132743937216091e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0012874656822532415,
+      "arithmetic_CE": 0.0012875020652853841,
+      "CE_residual": -3.6383032142595084e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.7727972352085146e-08,
+        "L2_of_actual_difference": 4.7727972407968416e-08,
+        "RMS_of_actual_difference": 3.37487729419589e-08,
+        "signed_mean_difference": -2.386514099100151e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013808010844513774,
+      "arithmetic_CE": 0.0013808512009485518,
+      "CE_residual": -5.011649717445721e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.073805009470078e-08,
+        "L2_of_actual_difference": 5.0738500549848845e-08,
+        "RMS_of_actual_difference": 3.587753780603549e-08,
+        "signed_mean_difference": -2.526212481974814e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001980012049898505,
+      "arithmetic_CE": 0.0019800385412809263,
+      "CE_residual": -2.6491382421056642e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.981661966800942e-08,
+        "L2_of_actual_difference": 3.9817315576686775e-08,
+        "RMS_of_actual_difference": 2.8155093852919965e-08,
+        "signed_mean_difference": -1.97906047506944e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014224658953025937,
+      "arithmetic_CE": 0.0014225168373580566,
+      "CE_residual": -5.0942055462854796e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.397126434658617e-08,
+        "L2_of_actual_difference": 5.397198173604481e-08,
+        "RMS_of_actual_difference": 3.8163954279633775e-08,
+        "signed_mean_difference": -2.7124770006817754e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014835315523669124,
+      "arithmetic_CE": 0.0014835180742580611,
+      "CE_residual": 1.347810885121703e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 8.914930127446041e-09,
+        "L2_of_actual_difference": 8.91506506114274e-09,
+        "RMS_of_actual_difference": 6.303902959453295e-09,
+        "signed_mean_difference": 4.481989883614937e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.07768556475639343,
+      "arithmetic_CE": 0.07768553521862853,
+      "CE_residual": 2.953776490066673e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.2403987876582505e-08,
+        "L2_of_actual_difference": 4.246629096963179e-08,
+        "RMS_of_actual_difference": 3.002820231646769e-08,
+        "signed_mean_difference": 2.2351741832404848e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.09473924338817596,
+      "arithmetic_CE": 0.09473928873464721,
+      "CE_residual": -4.534647124465607e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.349537829906325e-08,
+        "L2_of_actual_difference": 4.351215291790315e-08,
+        "RMS_of_actual_difference": 3.0767738392275335e-08,
+        "signed_mean_difference": -2.235174174913812e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021942604798823595,
+      "arithmetic_CE": 0.0021942656545372863,
+      "CE_residual": -5.1746549267761566e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.841119090517651e-08,
+        "L2_of_actual_difference": 1.841119928888945e-08,
+        "RMS_of_actual_difference": 1.3018683866950671e-08,
+        "signed_mean_difference": -9.196810403511169e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0023466211277991533,
+      "arithmetic_CE": 0.002346565676991208,
+      "CE_residual": 5.545080794533419e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.840714721929487e-08,
+        "L2_of_actual_difference": 7.840716777827002e-08,
+        "RMS_of_actual_difference": 5.54422400296461e-08,
+        "signed_mean_difference": 3.9231963491672545e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021512003149837255,
+      "arithmetic_CE": 0.002151193959351261,
+      "CE_residual": 6.355632464760674e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.5146448650860123e-08,
+        "L2_of_actual_difference": 1.5148051733915248e-08,
+        "RMS_of_actual_difference": 1.071129010281611e-08,
+        "signed_mean_difference": -7.683411212388441e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022545652464032173,
+      "arithmetic_CE": 0.0022545754907192794,
+      "CE_residual": -1.0244316062113512e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.449184186685386e-09,
+        "L2_of_actual_difference": 6.449564870933247e-09,
+        "RMS_of_actual_difference": 4.560531055939439e-09,
+        "signed_mean_difference": 3.259629040210793e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013887770473957062,
+      "arithmetic_CE": 0.0013887236527598823,
+      "CE_residual": 5.3394635823877934e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.472666574415143e-08,
+        "L2_of_actual_difference": 7.472677603259576e-08,
+        "RMS_of_actual_difference": 5.283981006885683e-08,
+        "signed_mean_difference": 3.742752591607678e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014097285456955433,
+      "arithmetic_CE": 0.001409764058294627,
+      "CE_residual": -3.551259908363136e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.50284829025793e-08,
+        "L2_of_actual_difference": 1.5032797748361568e-08,
+        "RMS_of_actual_difference": 1.0629793228072326e-08,
+        "signed_mean_difference": -7.334165224356232e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002018677769228816,
+      "arithmetic_CE": 0.0020186686676431087,
+      "CE_residual": 9.101585707327331e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.102495349516232e-08,
+        "L2_of_actual_difference": 3.102500860650506e-08,
+        "RMS_of_actual_difference": 2.1937993972030726e-08,
+        "signed_mean_difference": 1.548323783203895e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002333063166588545,
+      "arithmetic_CE": 0.0023330541226127544,
+      "CE_residual": 9.043975790490322e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.8129650053720923e-08,
+        "L2_of_actual_difference": 2.813728963711442e-08,
+        "RMS_of_actual_difference": 1.989606830661358e-08,
+        "signed_mean_difference": 1.3737008013091703e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021258629858493805,
+      "arithmetic_CE": 0.0021258849885841258,
+      "CE_residual": -2.200273474528558e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.261146630517686e-08,
+        "L2_of_actual_difference": 3.26121926278778e-08,
+        "RMS_of_actual_difference": 2.3060302556534326e-08,
+        "signed_mean_difference": -1.6414560336831807e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00226205843500793,
+      "arithmetic_CE": 0.0022621071571369278,
+      "CE_residual": -4.872212899798001e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.76467545920778e-08,
+        "L2_of_actual_difference": 5.7647688146332804e-08,
+        "RMS_of_actual_difference": 4.076307120799928e-08,
+        "signed_mean_difference": -2.898741510997012e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002120034070685506,
+      "arithmetic_CE": 0.002120012291376483,
+      "CE_residual": 2.1779309022917914e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.598098812813589e-08,
+        "L2_of_actual_difference": 4.5984711141814255e-08,
+        "RMS_of_actual_difference": 3.2516101079281444e-08,
+        "signed_mean_difference": 2.328306437883107e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002236486179754138,
+      "arithmetic_CE": 0.0022365448574102054,
+      "CE_residual": -5.867765606737407e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.356831916409789e-08,
+        "L2_of_actual_difference": 6.356872545768488e-08,
+        "RMS_of_actual_difference": 4.4949876842514896e-08,
+        "signed_mean_difference": -3.189779822633347e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021084952168166637,
+      "arithmetic_CE": 0.00210852286111729,
+      "CE_residual": -2.7644300626405993e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.215590737073228e-08,
+        "L2_of_actual_difference": 5.215641886518147e-08,
+        "RMS_of_actual_difference": 3.6880157461975797e-08,
+        "signed_mean_difference": -2.6193447382003715e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022129351273179054,
+      "arithmetic_CE": 0.0022129358606206573,
+      "CE_residual": -7.333027518541257e-10,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 8.73292405056958e-09,
+        "L2_of_actual_difference": 8.733676482063153e-09,
+        "RMS_of_actual_difference": 6.1756418651563255e-09,
+        "signed_mean_difference": 4.42378222313515e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0015112657565623522,
+      "arithmetic_CE": 0.0015112075344920761,
+      "CE_residual": 5.822207027605941e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.704465787572445e-08,
+        "L2_of_actual_difference": 7.70447827243271e-08,
+        "RMS_of_actual_difference": 5.447888831941586e-08,
+        "signed_mean_difference": 3.859167922867172e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00154518848285079,
+      "arithmetic_CE": 0.0015451338197167708,
+      "CE_residual": 5.466313401925049e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.800322400162372e-08,
+        "L2_of_actual_difference": 5.8005866593642783e-08,
+        "RMS_of_actual_difference": 4.1016341616967034e-08,
+        "signed_mean_difference": 2.9278453425162637e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0019809638615697622,
+      "arithmetic_CE": 0.001981004635817296,
+      "CE_residual": -4.077424753390346e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.032536198879001e-08,
+        "L2_of_actual_difference": 5.0327841834507796e-08,
+        "RMS_of_actual_difference": 3.5587158243664476e-08,
+        "signed_mean_difference": -2.4912878864458837e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002278353087604046,
+      "arithmetic_CE": 0.002278293972257206,
+      "CE_residual": 5.9115346839888616e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.431178500854173e-08,
+        "L2_of_actual_difference": 6.431204339401512e-08,
+        "RMS_of_actual_difference": 4.5475481995871604e-08,
+        "signed_mean_difference": 3.224704420308998e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0015445933677256107,
+      "arithmetic_CE": 0.0015445935372309094,
+      "CE_residual": -1.695052986860901e-10,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.405243699181824e-09,
+        "L2_of_actual_difference": 1.477811195145349e-09,
+        "RMS_of_actual_difference": 1.0449703174006725e-09,
+        "signed_mean_difference": 9.313225680018453e-10
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0016813441179692745,
+      "arithmetic_CE": 0.0016813240078414893,
+      "CE_residual": 2.0110127785244458e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.553855359468173e-08,
+        "L2_of_actual_difference": 4.553865531639753e-08,
+        "RMS_of_actual_difference": 3.2200691980341516e-08,
+        "signed_mean_difference": 2.281740301150921e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0019665679428726435,
+      "arithmetic_CE": 0.001966624833746433,
+      "CE_residual": -5.689087378968338e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.359775406306056e-08,
+        "L2_of_actual_difference": 6.359776368751155e-08,
+        "RMS_of_actual_difference": 4.497040997173899e-08,
+        "signed_mean_difference": -3.1781382839454406e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0021099227014929056,
+      "arithmetic_CE": 0.002109938482822482,
+      "CE_residual": -1.5781329576469716e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.4283411998181634e-08,
+        "L2_of_actual_difference": 3.428386131474272e-08,
+        "RMS_of_actual_difference": 2.4242350820913722e-08,
+        "signed_mean_difference": -1.722946762431482e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001557686016894877,
+      "arithmetic_CE": 0.0015577138767914889,
+      "CE_residual": -2.7859896611914792e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.518122376229172e-08,
+        "L2_of_actual_difference": 4.518134423335033e-08,
+        "RMS_of_actual_difference": 3.1948034890525733e-08,
+        "signed_mean_difference": -2.2642780056849644e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0017312075942754745,
+      "arithmetic_CE": 0.001731174569088001,
+      "CE_residual": 3.302518747361205e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.9840650384602725e-08,
+        "L2_of_actual_difference": 4.984065260958967e-08,
+        "RMS_of_actual_difference": 3.524266343900385e-08,
+        "signed_mean_difference": 2.491287889123863e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0019649022724479437,
+      "arithmetic_CE": 0.0019649565636261634,
+      "CE_residual": -5.4291178219756375e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.753393599900903e-08,
+        "L2_of_actual_difference": 6.753545268314997e-08,
+        "RMS_of_actual_difference": 4.775477656275856e-08,
+        "signed_mean_difference": -3.399327398690907e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002102428348734975,
+      "arithmetic_CE": 0.0021023720832040738,
+      "CE_residual": 5.6265530901100647e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.561636700652684e-08,
+        "L2_of_actual_difference": 6.561638036812331e-08,
+        "RMS_of_actual_difference": 4.639778751521584e-08,
+        "signed_mean_difference": 3.282912078468592e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0020967184100300074,
+      "arithmetic_CE": 0.0020966876113437394,
+      "CE_residual": 3.079868626798543e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.6120130563734847e-08,
+        "L2_of_actual_difference": 1.6120223764042856e-08,
+        "RMS_of_actual_difference": 1.1398719537799234e-08,
+        "signed_mean_difference": 8.032657203890098e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.00219818577170372,
+      "arithmetic_CE": 0.0021982042096881926,
+      "CE_residual": -1.8437984472541302e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.4419285654376779e-08,
+        "L2_of_actual_difference": 1.4419294770555586e-08,
+        "RMS_of_actual_difference": 1.0195981112187578e-08,
+        "signed_mean_difference": -7.217749886699945e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.03296778351068497,
+      "arithmetic_CE": 0.032967831988535146,
+      "CE_residual": -4.847785017858541e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.4943047627346004e-08,
+        "L2_of_actual_difference": 2.49688114604413e-08,
+        "RMS_of_actual_difference": 1.7655615901846427e-08,
+        "signed_mean_difference": -1.303851605502504e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.06102598085999489,
+      "arithmetic_CE": 0.06102597073054872,
+      "CE_residual": 1.0129446170736855e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.2838658469682684e-08,
+        "L2_of_actual_difference": 1.2945887906201581e-08,
+        "RMS_of_actual_difference": 9.154125126956053e-09,
+        "signed_mean_difference": -5.587935468509553e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 1.1186294555664062,
+      "arithmetic_CE": 1.1186295259013597,
+      "CE_residual": -7.033495341701723e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.1900280205701108e-08,
+        "L2_of_actual_difference": 1.6829537662942592e-08,
+        "RMS_of_actual_difference": 1.1900280205701108e-08,
+        "signed_mean_difference": 0.0
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 5.562911033630371,
+      "arithmetic_CE": 5.562911265937619,
+      "CE_residual": -2.3230724810474612e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.4310410351446876e-09,
+        "L2_of_actual_difference": 2.4332108208627685e-09,
+        "RMS_of_actual_difference": 1.7205398714885493e-09,
+        "signed_mean_difference": -1.1641532512290942e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.03796543926000595,
+      "arithmetic_CE": 0.03796539175749336,
+      "CE_residual": 4.7502512590114065e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.6324954922359893e-08,
+        "L2_of_actual_difference": 5.642035902887875e-08,
+        "RMS_of_actual_difference": 3.989521846629982e-08,
+        "signed_mean_difference": 2.9802322418920335e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.0088019371032715,
+      "arithmetic_CE": 6.00880174979317,
+      "CE_residual": 1.873101016514056e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.887650643745303e-09,
+        "L2_of_actual_difference": 7.89975081558512e-09,
+        "RMS_of_actual_difference": 5.585967371384198e-09,
+        "signed_mean_difference": -3.7252902728747428e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001369610894471407,
+      "arithmetic_CE": 0.0013696361751303066,
+      "CE_residual": -2.5280658899617947e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.8064023327445398e-09,
+        "L2_of_actual_difference": 2.8265413319265843e-09,
+        "RMS_of_actual_difference": 1.9986665431093438e-09,
+        "signed_mean_difference": 1.5716068134385974e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.0111212730407715,
+      "arithmetic_CE": 6.011121577326132,
+      "CE_residual": -3.042853604640072e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.295195744572709e-08,
+        "L2_of_actual_difference": 2.2959804210021712e-08,
+        "RMS_of_actual_difference": 1.6235033251621798e-08,
+        "signed_mean_difference": 1.1175870920539233e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0020001183729618788,
+      "arithmetic_CE": 0.002000075077079888,
+      "CE_residual": 4.3295881990701446e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 5.024706539735746e-08,
+        "L2_of_actual_difference": 5.025255615987143e-08,
+        "RMS_of_actual_difference": 3.55339232326029e-08,
+        "signed_mean_difference": 2.549495548833866e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.590728759765625,
+      "arithmetic_CE": 6.590728259809617,
+      "CE_residual": 4.99956008148672e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.2927225956360644e-08,
+        "L2_of_actual_difference": 1.2931805366672437e-08,
+        "RMS_of_actual_difference": 9.144167267758668e-09,
+        "signed_mean_difference": 6.635673370698238e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0022244728170335293,
+      "arithmetic_CE": 0.0022244415319696564,
+      "CE_residual": 3.1285063872843466e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.2257221671549985e-08,
+        "L2_of_actual_difference": 3.2262658211284195e-08,
+        "RMS_of_actual_difference": 2.2813144400302904e-08,
+        "signed_mean_difference": 1.5832483797736593e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.402440547943115,
+      "arithmetic_CE": 6.402440513818394,
+      "CE_residual": 3.4124720826866906e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.1201958744221372e-08,
+        "L2_of_actual_difference": 2.1202204314790953e-08,
+        "RMS_of_actual_difference": 1.499222244709136e-08,
+        "signed_mean_difference": -1.0652001951609764e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0012222208315506577,
+      "arithmetic_CE": 0.001222224624854551,
+      "CE_residual": -3.793303893218081e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.7162744276054696e-11,
+        "L2_of_actual_difference": 3.8413901720317986e-11,
+        "RMS_of_actual_difference": 2.7162730398270432e-11,
+        "signed_mean_difference": 1.3877787807814457e-17
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.1065473556518555,
+      "arithmetic_CE": 6.106547666186682,
+      "CE_residual": -3.105348262977259e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.9707994619876388e-08,
+        "L2_of_actual_difference": 2.9713271985923977e-08,
+        "RMS_of_actual_difference": 2.1010456112487118e-08,
+        "signed_mean_difference": -1.5133991852246675e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0012837749673053622,
+      "arithmetic_CE": 0.0012837196709769572,
+      "CE_residual": 5.529632840506338e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.431879713744479e-08,
+        "L2_of_actual_difference": 3.4318805336648386e-08,
+        "RMS_of_actual_difference": 2.426705997576515e-08,
+        "signed_mean_difference": 1.7171259994409535e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.080486297607422,
+      "arithmetic_CE": 6.080486447163862,
+      "CE_residual": -1.4955644012104585e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.362652989391535e-08,
+        "L2_of_actual_difference": 3.3631874799845555e-08,
+        "RMS_of_actual_difference": 2.3781326734987754e-08,
+        "signed_mean_difference": -1.7113052307475216e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013725870521739125,
+      "arithmetic_CE": 0.0013726386955634773,
+      "CE_residual": -5.1643389564759445e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.497239007392409e-08,
+        "L2_of_actual_difference": 7.497239007960395e-08,
+        "RMS_of_actual_difference": 5.301348542705099e-08,
+        "signed_mean_difference": -3.748573360864895e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.076696395874023,
+      "arithmetic_CE": 6.076696666221346,
+      "CE_residual": -2.703473223064634e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.486869302297805e-08,
+        "L2_of_actual_difference": 7.487085089634588e-08,
+        "RMS_of_actual_difference": 5.294168638201307e-08,
+        "signed_mean_difference": -3.771856428623835e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001420442247763276,
+      "arithmetic_CE": 0.0014204523202074881,
+      "CE_residual": -1.0072444212028131e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.89446305309815e-08,
+        "L2_of_actual_difference": 1.8946468482543156e-08,
+        "RMS_of_actual_difference": 1.3397176343543462e-08,
+        "signed_mean_difference": -9.604264123580508e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.101361274719238,
+      "arithmetic_CE": 6.101361276756869,
+      "CE_residual": -2.037630508766597e-09,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.7084213739576626e-09,
+        "L2_of_actual_difference": 6.7277286630513064e-09,
+        "RMS_of_actual_difference": 4.757222559626684e-09,
+        "signed_mean_difference": 3.60887499203065e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.002012729411944747,
+      "arithmetic_CE": 0.00201275289364089,
+      "CE_residual": -2.348169614307949e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.5578001050519106e-08,
+        "L2_of_actual_difference": 2.557938623920233e-08,
+        "RMS_of_actual_difference": 1.8087357468329827e-08,
+        "signed_mean_difference": -1.2922100707394094e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.520717144012451,
+      "arithmetic_CE": 6.520717414802168,
+      "CE_residual": -2.707897168718887e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.9895651903745204e-08,
+        "L2_of_actual_difference": 1.9895655151523624e-08,
+        "RMS_of_actual_difference": 1.4068352673791423e-08,
+        "signed_mean_difference": -9.953509994193623e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0013775869738310575,
+      "arithmetic_CE": 0.0013775671497731068,
+      "CE_residual": 1.9824057950756924e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.0136035677454913e-08,
+        "L2_of_actual_difference": 1.0142325890316707e-08,
+        "RMS_of_actual_difference": 7.171707414046831e-09,
+        "signed_mean_difference": 4.8894434769410425e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.077617645263672,
+      "arithmetic_CE": 6.077617466728571,
+      "CE_residual": 1.7853510048126964e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 7.113078004383766e-08,
+        "L2_of_actual_difference": 7.113087364914218e-08,
+        "RMS_of_actual_difference": 5.029712310903194e-08,
+        "signed_mean_difference": 3.562308847383788e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.001335086883045733,
+      "arithmetic_CE": 0.0013350623174401832,
+      "CE_residual": 2.45656055497534e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 1.8850439764683813e-08,
+        "L2_of_actual_difference": 1.885085591746573e-08,
+        "RMS_of_actual_difference": 1.3329568050410576e-08,
+        "signed_mean_difference": 9.487848747651885e-09
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.096475601196289,
+      "arithmetic_CE": 6.096475630392327,
+      "CE_residual": -2.9196037587553292e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 6.384043083063062e-08,
+        "L2_of_actual_difference": 6.384247187112117e-08,
+        "RMS_of_actual_difference": 4.51434447877812e-08,
+        "signed_mean_difference": 3.1664967509170694e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0014973392244428396,
+      "arithmetic_CE": 0.0014973502142914263,
+      "CE_residual": -1.0989848586717699e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.395162240238392e-08,
+        "L2_of_actual_difference": 3.3953872600330703e-08,
+        "RMS_of_actual_difference": 2.4009013563237954e-08,
+        "signed_mean_difference": -1.7171259919165904e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.104088306427002,
+      "arithmetic_CE": 6.104088155866356,
+      "CE_residual": 1.505606457286035e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 2.6423911614337214e-08,
+        "L2_of_actual_difference": 2.6424178589054508e-08,
+        "RMS_of_actual_difference": 1.868471586760482e-08,
+        "signed_mean_difference": 1.3271346681765356e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 0.0019733496010303497,
+      "arithmetic_CE": 0.0019733214763064666,
+      "CE_residual": 2.812472388313836e-08,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 1,
+      "argmax_from_recorded_logits": 1,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 4.786841079074122e-08,
+        "L2_of_actual_difference": 4.7868504468710814e-08,
+        "RMS_of_actual_difference": 3.384814411508397e-08,
+        "signed_mean_difference": 2.3981556318899977e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    },
+    {
+      "recorded_CE": 6.470042705535889,
+      "arithmetic_CE": 6.4700431064932715,
+      "CE_residual": -4.0095738285117477e-07,
+      "CE_locked_scalar_match": true,
+      "recorded_prediction": 0,
+      "argmax_from_recorded_logits": 0,
+      "prediction_consistent": true,
+      "correctness_consistent": true,
+      "probability_arrays": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          2
+        ],
+        "element_count": 2,
+        "exact_values_equal": false,
+        "allclose": true,
+        "max_abs_difference": 3.423496541810067e-08,
+        "L2_of_actual_difference": 3.423801284861677e-08,
+        "RMS_of_actual_difference": 2.420993105960906e-08,
+        "signed_mean_difference": -1.7345882929878723e-08
+      },
+      "caution": "Arithmetic corroboration only. Published losses and predictions remain authoritative."
+    }
+  ],
+  "all_CE_checks_within_locked_scalar_tolerance": true,
+  "all_prediction_checks": true,
+  "primary_identity_matches_failure": true,
+  "failure_boundary": "remaining current screen; P1 histories and boundary combinations",
+  "stored_analysis_primary_case": {
+    "phase": "current",
+    "sequence_id": "acquisition/L16/row03",
+    "history_program": 1,
+    "program": 0
+  },
+  "archived_comparison_records": 16,
+  "archival_control_status": "ACCEPTED"
+}

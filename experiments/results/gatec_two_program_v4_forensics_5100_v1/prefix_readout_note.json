@@ -1,0 +1,205 @@
+{
+  "source": "Previously derived paired_timelines.json; no additional record outcomes or execution",
+  "cases": [
+    {
+      "sequence_id": "acquisition/L16/row00",
+      "human_tokens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "P0_logged_prefix_readout_error_indices": [],
+      "P1_logged_prefix_readout_error_indices": [],
+      "last_prefix_readout": {
+        "token": 14,
+        "human_token": 15,
+        "label": 1,
+        "P0_prediction": 1,
+        "P1_prediction": 1,
+        "P0_CE": 0.002101000864058733,
+        "P1_CE": 0.0021950930822640657
+      },
+      "role": "Descriptive recorded intermediate readouts only; no retrospective gates or causal error localization"
+    },
+    {
+      "sequence_id": "acquisition/L16/row01",
+      "human_tokens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "P0_logged_prefix_readout_error_indices": [],
+      "P1_logged_prefix_readout_error_indices": [],
+      "last_prefix_readout": {
+        "token": 14,
+        "human_token": 15,
+        "label": 0,
+        "P0_prediction": 0,
+        "P1_prediction": 0,
+        "P0_CE": 0.0014224658953025937,
+        "P1_CE": 0.0014835315523669124
+      },
+      "role": "Descriptive recorded intermediate readouts only; no retrospective gates or causal error localization"
+    },
+    {
+      "sequence_id": "acquisition/L16/row02",
+      "human_tokens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "P0_logged_prefix_readout_error_indices": [],
+      "P1_logged_prefix_readout_error_indices": [],
+      "last_prefix_readout": {
+        "token": 14,
+        "human_token": 15,
+        "label": 1,
+        "P0_prediction": 1,
+        "P1_prediction": 1,
+        "P0_CE": 0.0020967184100300074,
+        "P1_CE": 0.00219818577170372
+      },
+      "role": "Descriptive recorded intermediate readouts only; no retrospective gates or causal error localization"
+    },
+    {
+      "sequence_id": "acquisition/L16/row03",
+      "human_tokens": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "P0_logged_prefix_readout_error_indices": [
+        1
+      ],
+      "P1_logged_prefix_readout_error_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "last_prefix_readout": {
+        "token": 14,
+        "human_token": 15,
+        "label": 1,
+        "P0_prediction": 1,
+        "P1_prediction": 0,
+        "P0_CE": 0.0019733496010303497,
+        "P1_CE": 6.470042705535889
+      },
+      "role": "Descriptive recorded intermediate readouts only; no retrospective gates or causal error localization"
+    }
+  ],
+  "primary_input_identity": {
+    "case": {
+      "phase": "current",
+      "sequence_id": "acquisition/L16/row03",
+      "history_program": 1,
+      "program": 0
+    },
+    "bits": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "bits_sha256": "8ee3bd216c58a9e17d3403ec3f5c182a5823371fc064608119cf8d770b230e68",
+    "label": 1,
+    "prediction": 0,
+    "CE": 6.418639659881592,
+    "logits": [
+      [
+        3.758411407470703,
+        -2.6585960388183594
+      ]
+    ],
+    "canonical_prediction": 1,
+    "canonical_CE": 0.0022292304784059525,
+    "canonical_logits": [
+      [
+        -3.588261127471924,
+        2.5167391300201416
+      ]
+    ],
+    "acceptance": {
+      "checks": {
+        "current_correct": false,
+        "executions": true,
+        "commits": true
+      },
+      "accepted": false
+    },
+    "canonical_CE_delta_observation": 6.416410429403186,
+    "comparison_note": "Canonical CE difference is descriptive, not a newly introduced acceptance test. Failure is exact truth correctness under P1 history -> P0 boundary."
+  },
+  "assessment": "A switching/readability question is motivated but not isolated: row03 already exhibits erroneous P1-prefix readouts, and its missing P1\u2192P1 boundary prevents attribution to a program-specific reader rather than state/history error."
+}

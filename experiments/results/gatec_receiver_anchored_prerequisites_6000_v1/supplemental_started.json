@@ -1,0 +1,19 @@
+{
+  "source_hashes": {
+    "receiver_anchored_v2.py": "fabec0602212560e3ec5fcb019deadefcc7d513f0c6f6b0faa0f8df5aa761d11",
+    "test_receiver_anchored_v1.py": "71c2bf66c46152537c18329aeb7add69334ef11551520d1ef2190cb903c44c07",
+    "run_prerequisites_v2.py": "ffaff278627964f7f1fa7a265b216e64bce2ee860d08f61ca833d8b76cb886a3",
+    "statistical_rules_v3.py": "1b62f5ebe75b78c4c0ea33b87ada1ea2ca55960d2f2ef600a5d9d6b984aaa90a",
+    "receiver_anchored_v1.py": "a31f46b85419f5087016369987a63c476b63323d62216d06065e34698d9ac116",
+    "statistical_rules_v1.py": "8a4b6c47a69753ca7b96c9f4283e10c4373f384064a8f0d4196a553ce3c355d2",
+    "test_receiver_anchored_v3.py": "60b9b4dccb6a829497b47b4b37cc969c637744964c58adbc8b7a6cf350ad02d4",
+    "run_prerequisites_v3.py": "31042d443d93c02e0d24af147c0f18decbb63b607e118c4994849f051fedfd5d",
+    "statistical_rules_v2.py": "14ec543f1d93dc0d5307d73deb9642c5fa24208c2ad628aa510f4e2680380a3a",
+    "run_supplemental_v1.py": "2a667b0cf3c1fac538324015238307a218af7870eb69a7c5f95b7a1dbc5c5214",
+    "run_prerequisites_v1.py": "080453b689464978e56d478e0d451219e5e08b81886aac356dd46bcf9cc4be31",
+    "test_receiver_anchored_v2.py": "d885fadc5e82e6c583e2ee9ef57dd8da10c558b337b6e4434cd3eb66173521a3",
+    "test_supplemental_boundaries_v1.py": "f3f6ca7eed344d8fb162363c2cafe83cfbc3046206008c03e346b4a54fb92f30"
+  },
+  "additional_model_tokens": 8,
+  "bootstrap_only_other_tests": true
+}

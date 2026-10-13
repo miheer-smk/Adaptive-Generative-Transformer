@@ -1,0 +1,283 @@
+GO for implementation planning of one bounded experiment: receiver-anchored continuation training. The method supervises another program’s actual use of a genuinely committed state. It introduces no auxiliary decoder, latent-state matching loss or learned selector.
+Everything below is a prospective specification for a separate research model. Its thresholds and budgets are new design choices; they do not amend v4 or rehabilitate its rejected candidate. No implementation or execution is authorized here.
+1. Central hypothesis
+Receiver-anchored continuation training can reduce held-out switching failures beyond matched native task training while preserving native competence, meaningful heterogeneous computation and comparable resource cost.
+2. Chosen acquisition method
+Programs
+Use the existing bank:
+[SWA, SWA, GQA, GQA, GDN, GDN, FFN, FFN]
+Define two immutable, namespaced research programs:
+Program	Action IDs	Executed blocks	Selected computation
+Research P0	[0,1,2,3,4,5,6,7]	[0,1,2,3,4,5,6,7]	Two SWA, two GQA, two GDN, two FFN
+Research P1	[0,1,2,3,8,5,6,7]	[0,1,2,3,3,5,6,7]	Two SWA, three GQA, one GDN, two FFN
+
+
+Research P1 is different from v4 P1. It replaces the first selected GDN execution with a second execution of GQA block 3, retaining GDN block 5 and both FFNs.
+This prospectively fixed intervention changes the balance between attention-based computation and recurrent GDN computation. It is a compound substitution, not an isolated REPEAT experiment.
+Both programs execute exactly eight selected blocks, with eight decisions. P1 has one REPEAT and no RESTART. Repeated attention reads the committed cache with a changed live hidden state; it does not perform an intermediate cache commit.
+The normal terminal commit remains unchanged, including updates for contextual bank entries whose blocks were not selected. P1 therefore does not lack a GDN-4 cache entry.
+The descriptors are fixed scaffolds. This experiment acquires their task competence and compatibility; it does not discover their action sequences or perform program synthesis.
+Parameter ownership
+Within each research model, both programs share:
+- Prelude and its existing trainable projections and normalization.
+- All eight bank blocks.
+- Memory read/write parameters.
+- Existing stream and terminal-commit trainable parameters.
+- The existing output head.
+All existing non-controller parameters are trainable. There are:
+- No program-specific parameters.
+- No extra adapters, decoders, output heads or trainable initial states.
+- No program-ID or handoff feature supplied to the model.
+- No additional capacity in the treatment.
+The registered 395→256→11 controller remains frozen and unused. Routing is scripted; there is no Gumbel estimator or controller training.
+Initialize through the preserved Stage-1 seed3305 loader and configuration. Preserve that checkpoint unchanged. After common native acquisition, fork complete parameter, buffer and optimizer states into treatment and control.
+Runtime committed states are separately owned objects, not optimizer parameters. Their shape, initialization, legality, ownership and commit semantics remain unchanged.
+Native acquisition
+Train both programs on the existing parity task using their own uninterrupted histories.
+For this new formulation, provide the task-defined parity label after every observed input token, derived directly from the input bits. Both arms receive this supervision identically.
+This is additional supervision relative to historical final-only CE. Success would not validate that unsuccessful formulation. No hidden-state labels, canonical action labels or teacher logits are used.
+For an episode of length \(L\), define:
+\[
+L_N=\frac{1}{2L}
+\sum_{a\in\{0,1\}}\sum_{j=1}^{L}
+\operatorname{CE}(\ell_j^{a},y_j).
+\]
+Compatibility acquisition through a real handoff
+An episode has a prefix of length \(t\) and an eight-token continuation.
+1. Run each writer program through the prefix from the original initial state.
+2. Perform every normal terminal commit.
+3. Clone the complete returned state: stream, memory, attention caches, GDN states and buffers, positions, versions and commit metadata.
+4. Give that clone to a receiver program, which processes only the continuation.
+5. Supervise its actual task outputs.
+The receiver cannot replay the prefix, inspect its ground-truth parity, reset the state or substitute canonical state.
+During this additional continuation, use the current receiver parameters with their gradients detached. Do not detach the incoming committed state.
+Consequently, the continuation loss differentiates through the receiver’s computations and commits back into the writer-produced state, but cannot improve itself through direct receiver-weight gradients during that branch. Native training updates the shared model normally.
+The receiver is fixed within that branch, not permanently frozen across optimization.
+Let \(L_{a\rightarrow b}\) be mean continuation CE when writer \(a\) supplies its committed state to receiver \(b\), using detached receiver parameters.
+The treatment objective is:
+\[
+L_T=\tfrac12 L_N+
+\tfrac14 L_{0\rightarrow1}+
+\tfrac14 L_{1\rightarrow0}.
+\]
+The weights give equal total weight to native competence and continuation usability, with equal weight to both handoff directions. They are fixed, with no sweep.
+This learning signal targets compatibility because the receiver must successfully consume the writer’s actual post-commit state. There is no requirement that different writers produce equal tensors.
+Use full backpropagation through the complete episode and committed-state handoff. No token-boundary truncation or state detachment is permitted.
+Avoiding trivial collapse
+Do not add a diversity penalty. Instead, require evidence that the structurally differing computation remains task-relevant.
+Predeclare an evaluation-only ablation:
+- Execute the normal distinguishing fifth block operation.
+- Replace its returned live-hidden output with its input before subsequent computation.
+- Apply this intervention at every token of an otherwise native trajectory.
+- Keep parameters fixed and retain normal execution counts and terminal commits.
+For P0 this suppresses the selected GDN-4 output; for P1 it suppresses the second GQA-3 output. These are explicitly tagged counterfactual executions, outside the normal compatibility results.
+For each program in each arm, require a decrease of at least five percentage points in native robust-case accuracy, with a multiplicity-adjusted confidence interval resolving a positive decrease.
+This rejects solutions whose distinguishing operations have become task-irrelevant. It does not prove global algorithmic nonequivalence.
+Equal task outputs—or even equal returned states—are not themselves collapse. Different, task-relevant computations may correctly implement the same interface.
+3. Matched control and baselines
+The task-only control receives the same native objective and the same additional continuation budget, but every additional continuation uses its own program’s state:
+\[
+L_C=\tfrac12 L_N+
+\tfrac14 L_{0\rightarrow0}+
+\tfrac14 L_{1\rightarrow1}.
+\]
+Those additional readers use the same detached-parameter policy as treatment.
+Property	Treatment	Control
+Architecture and parameter capacity	Identical	Identical
+Initialization and initial optimizer state	Identical fork	Identical fork
+Inputs, labels and episode order	Identical	Identical
+Native rollouts	Both programs	Both programs
+Additional rollouts	Cross-program continuation	Same-program continuation
+Additional-reader gradient policy	Detached parameters; state connected	Same
+Optimizer/update ceiling	Same	Same
+
+
+Because both directions are included, each update has equal total P0/P1 execution counts in the two arms. Heterogeneous block counts also match.
+The control has a fair opportunity to acquire both programs without learning from cross-program states. It is stronger than using the archival P0 alone.
+Baselines are:
+- The unchanged frozen Stage-1 canonical reference.
+- Both native fixed programs in each research model.
+- The common acquired model before treatment/control divergence.
+Report each fixed program’s accuracy and measured cost. Do not claim improvement over the best fixed route or an adaptive-compute advantage.
+4. Training and evaluation protocol
+Data separation
+All generation, exclusion rules, schedules and encoded inputs must be sealed before training.
+Split	Size	Length allocation	Seeds	Purpose
+Training	1,024 episodes	512 length-16; 512 length-24	Inputs 6000	Acquisition
+Development	128 base cases	64 per length	Inputs 6002, suffixes 6003	Common native-acquisition gate
+Model selection	256 base cases	128 per length	Inputs 6004, suffixes 6005	Native-only checkpoint selection
+Confirmation	512 base cases	256 per length	Inputs 6006, suffixes 6007	Decisive evaluation
+
+
+Training length-16 episodes have \(t=8\); length-24 episodes have \(t=16\). Both have eight continuation tokens. Within each training length, allocate 128 episodes to each combination of prefix parity and final parity.
+Evaluation base cases are balanced by final parity within each length.
+Generate binary strings using a fixed Python random.Random stream and getrandbits, preserving leading zeros. Reject only predetermined content duplicates, exposure exclusions and filled parity quotas.
+Require:
+- Disjoint complete inputs across splits.
+- Same-length incoming-history prefixes disjoint across evaluation splits and available training histories.
+- Exclusion of v4 inputs and other exact inputs in available retained historical manifests.
+- No filtering using predictions, CE or state summaries.
+Unknown Stage-1 exposure remains disclosed. “Held out” means held out from documented acquisition and selection exposure; it does not guarantee novelty relative to all historical training.
+Each evaluation case receives two eight-bit suffixes:
+- \(z_0=0u\)
+- \(z_1=1u\)
+where \(u\) is a prospectively generated seven-bit string. This supplies opposite future parity labels at every positive horizon for the same base input. Both suffixes belong to one analysis cluster.
+Fixed training schedule
+Use:
+- FP32, physical batch size one.
+- Effective batch two: one episode of each length per optimizer update.
+- AdamW, LR \(10^{-4}\), weight decay zero.
+- Betas \((0.9,0.999)\), epsilon \(10^{-8}\).
+- Global gradient clipping at norm 1.
+- No scheduler, stochastic routing, dropout noise or mixed precision.
+- Only selected-block construction; no exhaustive routing candidates.
+Phase 1: common native acquisition
+- Exactly 512 updates: one pass over all training episodes.
+- Objective \(L_N\).
+- Order seed 6001.
+- Evaluate development native behavior once.
+Proceed only if both programs meet the native criteria below. Otherwise stop as native acquisition failure, without claiming compatibility was tested.
+Phase 2: paired acquisition
+- Fork the common model and full optimizer state.
+- Exactly 512 updates per arm: one further pass over the same episodes.
+- Identical order, seed 6008.
+- Treatment uses \(L_T\); control uses \(L_C\).
+- Retain snapshots at intervention updates 256 and 512.
+Model selection
+Choose one common update index for both arms, preserving identical selected-model data exposure and optimization duration.
+Using native model-selection results only:
+1. A paired snapshot is eligible if both arms meet native competence criteria.
+2. Among eligible pairs, minimize the worst native mean CE across arms, programs and lengths.
+3. Break an exact tie in favor of update 512.
+4. If neither pair is eligible, select the final pair and mark acquisition unsuccessful.
+Do not inspect switching results for selection.
+Four-cell confirmation
+For every case and selected model:
+1. Build P0 and P1 histories through the first \(L-1\) tokens from isolated original initial states.
+2. Execute all four final-boundary cells using separate incoming-state clones.
+3. From every returned boundary state, evaluate both suffixes under:
+   - Boundary-reader continuation: keep using the boundary program.
+   - Alternating continuation: begin with the other program, then alternate each token.
+4. Run each continuation for eight tokens. Report horizons 1, 4 and 8 separately.
+No task error stops confirmation. Complete all cells and continuations unless an engineering or resource failure occurs.
+Compare P0 boundaries with a supplied-state canonical reference using the same research parameters and incoming state. The archival checkpoint is not a reference for numerical equality after training.
+State and task requirements
+Every normal call must have:
+- Exactly eight actual selected executions.
+- Correct requested/selected/executed correspondence.
+- One terminal commit.
+- No in-flight, parent or sibling mutation.
+- Valid ownership, cache versions, positions and token counts.
+- No reset, repair, partial-state transplant or canonical substitution.
+Ground truth is input-defined parity. An archival-reference error is reported, not used to remove a case.
+Retain complete confirmation incoming/boundary states, output logits, actions, commits, exact metadata and comparison outcomes. Prefix readouts are reported; they are not additional independent observations.
+Actual compute measurement
+Measure:
+- End-to-end latency, including script dispatch and commit/cache work.
+- Selected-bank time.
+- Prelude/memory-read time.
+- Terminal-plan construction, cache updates and commit application.
+- Peak memory and total training allocation time.
+- Operator counts, including work for unselected contextual blocks during commit.
+Use 32 prospectively fixed confirmation cases: eight per parity per length. Profile treatment P0/P1, control P0/P1 and frozen P0 on complete native base-plus-suffix trajectories, with one warm-up and five timed repetitions. Interleave order using seed 6012.
+Exclude forensic logging and experimental branch cloning from deployment latency, but count their cost in the study resource ledger.
+Report unsupported FLOP accounting explicitly. Measured total latency is the primary cost measure; block counts are not a substitute.
+5. Primary estimand and success criteria
+Define \(S^m_{hb,i}=1\) when model \(m\), history \(h\), boundary \(b\):
+- Answers the current boundary correctly.
+- Answers every token of both eight-token suffixes correctly under boundary-reader continuation.
+Otherwise \(S=0\).
+For each case, define the switching penalty:
+\[
+D_i^m=\tfrac12
+\left[(S^m_{00,i}-S^m_{10,i})+
+(S^m_{11,i}-S^m_{01,i})\right].
+\]
+The primary estimand is:
+\[
+\Delta=E[D_i^C-D_i^T].
+\]
+Thus the result measures reduction of switching penalty after accounting for native performance, rather than raw treatment accuracy alone.
+Weight lengths and parity strata equally.
+Analysis
+- Unit: complete base case.
+- Keep both models, four cells, suffixes and schedules together.
+- Use 20,000 stratified paired bootstrap replicates, seed 6010.
+- Report the primary 95% interval and length-specific estimates.
+- Report current accuracy, all sixteen four-cell patterns, CE, margins and alternating-continuation results separately.
+Intervals describe input-sampling uncertainty conditional on these acquired models. They do not measure training-seed reproducibility.
+Do not interpret a zero-width bootstrap interval as universal equivalence. For zero native discordances, also report conservative zero-event bounds.
+Full success requires every following condition
+Native competence, both arms, each program and length:
+- Current accuracy at least 99%.
+- Native robust-case accuracy at least 98%.
+- Mean CE at most 0.05 nats, including separately reported horizons 0, 1, 4 and 8.
+Comparable native competence:
+- Simultaneous paired native-accuracy intervals lie within ±2 percentage points.
+- Native mean CE differs by no more than 0.01 nats in each program/length stratum.
+Use Bonferroni-adjusted 98.75% intervals across the four native strata. For zero discordance in a 256-case stratum, the corresponding conservative bound is approximately ±1.70 percentage points.
+Practical compatibility benefit:
+- The primary 95% lower confidence bound for \(\Delta\) is at least five percentage points.
+This demands evidence of at least one additional fully correct continuation case per twenty inputs after native adjustment—a material improvement worth the extra acquisition procedure on this simple benchmark.
+Treatment behavioral compatibility:
+- Switched current accuracy at least 99%.
+- Switched robust-case accuracy at least 98%, separately by direction and length.
+- Cross-program CE deterioration no greater than 0.02 nats against the corresponding native reader at the reported horizons.
+- Alternating-continuation robust-case accuracy at least 98% in every cell/length stratum.
+Noncollapse and cost:
+- Both arms pass the distinguishing-operation ablation criterion.
+- Treatment deployment latency is no more than 10% above control for the same program and length, assessed with paired uncertainty.
+- Parameter counts and prescribed execution counts are identical.
+Five percentage points is a preregistered practical-benefit requirement, not an estimate derived from historical P1 failures. Lower CE alone cannot satisfy it.
+6. Closest prior art and proposed distinction
+Prior work	Established idea	Proposed distinction
+Predictive-State Decoders	Supervise recurrent representations using future predictions.	Use the actual receiving program and its real committed-state transition; no auxiliary predictive decoder. arxiv.org
+Bisimulation representation learning	Represent states according to behavioral similarity.	No latent-distance target or claim of matching complete transition distributions; supervise finite task behavior through real handoffs. arxiv.org
+NPI and RIMs	Learned program execution and modular recurrent computation.	Fixed program scaffolds; evaluate complete persistent-state interoperability rather than claiming program discovery. arxiv.org
+Stochastic KV Routing	Train robustness to consuming other layers’ caches.	Transplant the full heterogeneous committed state across complete programs, with writer-directed continuation credit and a matched native-continuation control. arxiv.org
+Latent-space KV alignment	Learn shared cache spaces using adapters between models.	No translation adapters: the existing state interface must work directly across programs sharing one bank. arxiv.org
+
+
+The loss is still task CE on deliberately constructed trajectories. That is not a globally novel loss family. The proposed contribution is the full-state, real-commit acquisition mechanism, its directed credit path and evidence that it adds value beyond competent native acquisition.
+A positive parity pilot would support that bounded mechanism. It would not establish broad architectural novelty without subsequent non-parity evidence and replication.
+7. Failure modes and interpretation
+Result	Interpretation and decision
+Common acquisition fails	This acquisition procedure did not obtain two competent programs within budget. Compatibility remains untested; stop.
+Both become competent, neither switches adequately	The compatibility-targeted method failed its stated purpose; close this formulation.
+Both achieve compatibility equally well	Native acquisition was sufficient here; explicit compatibility training demonstrated no added value.
+Primary gain appears only with inactive differing operations	Nontrivial heterogeneous compatibility was not established.
+Primary gain passes all gates	Evidence for a bounded compatibility-acquisition benefit beyond matched native training.
+Gain accompanies unacceptable native degradation or cost	Reject under the declared research objective.
+One handoff works but alternation fails	Partial handoff robustness, not a reusable compatible portfolio. Full success fails.
+Engineering or resource stop	Scientifically incomplete; preserve the boundary and do not automatically retry.
+
+
+No result licenses attribution to a particular memory, GDN or cache component.
+8. Resource ceiling and stopping rule
+One accelerator allocation, maximum 12 elapsed accelerator-hours, plus two CPU-hours for offline analysis. No replacement seed or automatic extension.
+Maximum model-token executions:
+Work	Tokens
+Common native training	40,960
+Treatment training	57,344
+Control training	57,344
+Development	9,216
+Model selection	73,728
+Confirmation	174,080
+Frozen reference	18,432
+Noncollapse ablations	73,728
+Cost profiling	26,880
+Calibration and supplied-state checks	2,064
+Study total	533,776
+
+
+Allow at most 512 additional model-token executions for local engineering fixtures, within the same time ceiling.
+Overall ceiling:
+- 534,288 completed model tokens.
+- 4,274,304 selected bank executions.
+- 1,536 executed optimizer updates: 512 common, 512 treatment, 512 control.
+Stop immediately on broken state isolation, forward mismatch, invalid execution, nonfinite optimization or integrity failure. Do not silently truncate gradients, reduce precision, change programs or loosen criteria to finish.
+Every substantive non-success closes this proposed compatibility-acquisition formulation on parity. It does not prove AGT impossible, but it ends automatic experimentation on this method. Full success permits consideration of a separately approved replication or non-parity study, not immediate selector training.
+9. Final GO / NO-GO
+GO to implementation planning. The method has a direct learning signal, a capacity- and rollout-matched control, a native-competence prerequisite and a decisive held-out endpoint.
+No scientific choice remains delegated to Codex. Implementation planning must establish that the research training path preserves the existing forward commit semantics while retaining autograd through committed-state cloning and detached-parameter receivers. If that cannot be implemented faithfully, stop before training rather than substitute another mechanism.
+This remains a protocol approval recommendation—not authorization for code changes, model execution, checkpoint creation or Codex execution.

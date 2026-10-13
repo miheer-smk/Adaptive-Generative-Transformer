@@ -438,3 +438,78 @@ def test_stage3_differentiable_route_inference_selects_legal_argmax_successor():
         result["probs"][0, 4:],
         torch.zeros(2),
     )
+
+def test_stage3_fixed_depth_inference_excludes_halt_from_successors():
+    import torch
+
+    from src.executor import AdaptiveExecutor
+
+    class AddBlock:
+        def __init__(self, amount):
+            self.amount = float(amount)
+
+        def __call__(self, x, **kwargs):
+            return x + self.amount
+
+    class Bank:
+        def __init__(self):
+            self.blocks = [
+                AddBlock(1.0),
+                AddBlock(2.0),
+                AddBlock(3.0),
+                AddBlock(4.0),
+            ]
+
+        def __call__(self, index, x, **kwargs):
+            return self.blocks[index](x, **kwargs)
+
+    class AlwaysHighHaltController:
+        def __call__(self, **kwargs):
+            # N=4 => [ADVANCE x4, REPEAT, RESTART, HALT]
+            # HALT has the highest raw logit but must be ignored during
+            # fixed-depth Stage-3 inference.
+            logits = torch.tensor(
+                [[5.0, 1.0, 1.0, 1.0, 1.0, 1.0, 100.0]],
+                device=kwargs["h"].device,
+                dtype=kwargs["h"].dtype,
+            )
+
+            return {
+                "logits": logits,
+                "advance": logits[:, :4],
+                "repeat": logits[:, 4],
+                "restart": logits[:, 5],
+                "halt": logits[:, 6],
+            }
+
+    executor = AdaptiveExecutor(
+        block_bank=Bank(),
+        controller=AlwaysHighHaltController(),
+        convergence=None,
+        max_execution_depth=1,
+    )
+
+    h0 = torch.zeros(1, 4)
+    memory = torch.zeros(1, 4)
+
+    result = executor.execute_differentiable(
+        h0=h0,
+        memory=memory,
+        C_prev=None,
+        context=None,
+        memory_mean=torch.zeros(1, 256),
+        budget=torch.tensor([[0.0, 1.0]]),
+        tau=1.0,
+        training=False,
+    )
+
+    assert result.execution_count == 1
+    assert result.action_history == [
+        ("ADVANCE", 0),
+    ]
+
+    # ADVANCE(0) adds 1.0; HALT=100 must have had no effect.
+    assert torch.equal(
+        result.h_terminal,
+        torch.ones(1, 4),
+    )

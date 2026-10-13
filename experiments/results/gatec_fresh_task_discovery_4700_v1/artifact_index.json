@@ -1,0 +1,156 @@
+{
+  "files": {
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json": {
+      "bytes": 2754,
+      "sha256": "506c485bc7cdda615a15ab991b86175298c6e83bae973f6abe8e756ebe1a0f9e"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/decisions.jsonl.gz": {
+      "bytes": 209828725,
+      "sha256": "aa63393a5c4fd1f082b046e72d6c2f036da0b1b80aa89b5fd1c060115870124c"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/encoding_attestation.json": {
+      "bytes": 1407,
+      "sha256": "255a9051ba5488902cf8c58d219e4459777df4cdfe966c76ccdaa6325d1d30c6"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/failure.json": {
+      "bytes": 906,
+      "sha256": "2e469ad24bc80defdaea83759f367936d55015c67243ad28d6e9b193d043a00d"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_deterministic.json": {
+      "bytes": 13270796,
+      "sha256": "8a04350e2f0da0a868693c3f8c2383bf66387de6a974c6b6cd761b58d08ec8c5"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_1.json": {
+      "bytes": 13277314,
+      "sha256": "d708b7597638dbac60d082b7774d9805a3a9a86ddb0b48cc3ea31355994da21b"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_2.json": {
+      "bytes": 13277863,
+      "sha256": "895dd2501aac6376530f5edeb7cffa2366e8ccd5165c732b963b6e5ec07c2ad1"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_3.json": {
+      "bytes": 13278370,
+      "sha256": "745ffcae2a00c9a1bdf01aa6b9868332a80b144cacaf6f701567f224ee7e5fa6"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_final_tape_4.json": {
+      "bytes": 13277993,
+      "sha256": "aeca98d8fdabd8efa18d1537ea7e129f415788d4ba53ecc359c5a14f013d4053"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json": {
+      "bytes": 83750,
+      "sha256": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/final_reference.json": {
+      "bytes": 106728,
+      "sha256": "4457cc773c665dce26944de9ec57955a363ad44147ce69136470eaf045945b6f"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/historical_checkpoint_attestation.json": {
+      "bytes": 1298,
+      "sha256": "ceb24860afe4fd031f3b8c71bba4a6fa2a8b57cba857b60010eaeeeab07bbbaa"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/initialization.pt": {
+      "bytes": 430981,
+      "sha256": "d394da291553b78172bbdacc25af3c0bd881234d1fb6a3b458a3de33d1d94995"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json": {
+      "bytes": 20074,
+      "sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_1.pt": {
+      "bytes": 1274499,
+      "sha256": "8161e35e5bb36183b294fa54bb3e2d260c4420b4f7ee22c4907948882f9d17f7"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_2.pt": {
+      "bytes": 1274499,
+      "sha256": "a0f630c48bbf168b872acff27147f1e3500a57774971bddadf1bc1c7e58446f4"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_3.pt": {
+      "bytes": 1274499,
+      "sha256": "382a679123d8815785c6c5fea830c7a5564924dbfb45a6622b61f8ea924a5a15"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_final_tape_4.pt": {
+      "bytes": 1274499,
+      "sha256": "1a93b8f1e4e02e42c9f4e9b2acf841bc299168fa7d0648dfc11bb59319cbff83"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/noise_training.pt": {
+      "bytes": 6525639,
+      "sha256": "0455a5fe5f550b7477208134afec98cb27b15102b36030b010afb9f6614db238"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/paired_divergence.jsonl.gz": {
+      "bytes": 81254,
+      "sha256": "f2d9cfe4c77b3210f0ac37db06a65bc38be372dd8aea87b68d20e6bd5e9f69eb"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/prior_input_inventory.json": {
+      "bytes": 503382,
+      "sha256": "0eafdba7277a135f7ccdfc2f6064ad874b9ad92a294261191794b5d1f3e31d50"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/report.md": {
+      "bytes": 13839,
+      "sha256": "36dbdbb7eb44fed2223015a589edc6a17da763c605aa9ff39f488809e36912c9"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/results.json": {
+      "bytes": 68761374,
+      "sha256": "1f885f26a35730e7f000141fd0710c6159a8b3d6599d88b998ea9ccfa243cd21"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/sequences.jsonl.gz": {
+      "bytes": 24221882,
+      "sha256": "28fe03152beb88c0fd885b9a845c998414bffddbe3d804a92de757a5726b9248"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/snapshots.jsonl.gz": {
+      "bytes": 1038,
+      "sha256": "ea86765bee6de8ffa59a061c1d63685fc00f54d9c73412cc39b55a1848e8ce1c"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/summarize_recorded.py": {
+      "bytes": 4691,
+      "sha256": "377ea0b51f6e17819a6d5ec0401ac956ef76916d930ce4a4b68cbc90a06592aa"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/tokens.jsonl.gz": {
+      "bytes": 44232331,
+      "sha256": "33d06ba8a8016ad4b99b1c38a2f36b2514971145b7cafc98b4c96e29300b62d4"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_schedule.json": {
+      "bytes": 418774,
+      "sha256": "a3d155005904ceeb0420d810ea5892c91318473be764497529d9c4d248bd0c82"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json": {
+      "bytes": 25611,
+      "sha256": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/updates.jsonl.gz": {
+      "bytes": 15601844,
+      "sha256": "159fb84588dd1203ab68440899c485177a3c7662913ec2e8e7bd65b22d81e390"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/validation.json": {
+      "bytes": 501,
+      "sha256": "424e8f603d02c6eebf4ec3aa1eca7fc8804b1a629f67faaf09f4843e9f3b1c18"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/verification.json": {
+      "bytes": 43344,
+      "sha256": "895b950fbaab2048b110a343d758ee9d20942a3c417f8848fab556a05fb46c81"
+    },
+    "experiments/results/gatec_fresh_task_discovery_4700_v1/verify_recorded.py": {
+      "bytes": 12363,
+      "sha256": "7f460113c8089dd6c23a2e71c4be19bf83ebe720bc88fc348940123868048eef"
+    },
+    "experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt": {
+      "bytes": 421845,
+      "sha256": "ae8ff9256afd573331719cf15a3f82d21f70181891400640739a0415c82d6279"
+    },
+    "experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt": {
+      "bytes": 421845,
+      "sha256": "65821b572854946379dcc44ab96e5b96d1a7f88f597022c9de23d96778d5172b"
+    },
+    "experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt": {
+      "bytes": 421845,
+      "sha256": "8e3c3ad0ec39c7a79657e3254224530215382da0ce9c62f1b9ab1c94bcc17491"
+    },
+    "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt": {
+      "bytes": 421845,
+      "sha256": "37537106f47e3a003e4b5d2ff98ded93a8f98e3a2b60ee7814e502d28ddaa6d4"
+    }
+  },
+  "final_update": 1040,
+  "additional_optimizer_updates": 0,
+  "additional_model_evaluations": 0,
+  "git_diff_check_clean": true
+}

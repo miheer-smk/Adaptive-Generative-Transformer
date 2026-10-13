@@ -1,0 +1,46 @@
+{
+  "completed_utc": "2026-10-10T16:52:07.783564+00:00",
+  "protected_files": 575,
+  "all_protected_files_byte_identical": true,
+  "no_added_files_outside_new_audit_directory": true,
+  "worktree_status_unchanged": true,
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "tracked_diff_unchanged": true,
+  "git_diff_check": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "positive_control_hashes": {
+    "experiments/runs/stage1_parity_seed3305_best.pt": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+    "experiments/runs/stage3_imitation_replication_3305_v1.pt": "259e2b86786c6cd037e3ba0db71d91fd05cdb76753bdb462be414bd1b9400df3",
+    "experiments/runs/stage3_imitation_replication_4401_locked_v1.pt": "4e14f56d3762aac1442a8dcc6fd86eb950e0013986409ff31b48d514fd972fcd",
+    "experiments/runs/stage3_imitation_replication_4402_locked_v1.pt": "771dd6cb845e73eac7fcb5b6641ed200af76fb22e7f35921cd7792139a190766"
+  },
+  "historical_bytecode_exception_preserved": true,
+  "model_module_imports": 0,
+  "checkpoint_deserializations": 0,
+  "model_forwards": 0,
+  "model_backwards": 0,
+  "test_runs": 0,
+  "benchmark_runs": 0,
+  "noise_generation": 0,
+  "training_updates": 0,
+  "production_source_edits": 0,
+  "checkpoint_modifications": 0,
+  "commits_created": 0,
+  "new_artifacts": {
+    "report.md": {
+      "sha256": "6a0e6c6ac97654c5d7a63243dd97a332bd3cbc6a04246e101e8dc79ef7374730",
+      "bytes": 55625
+    },
+    "worktree_status_before.txt": {
+      "sha256": "389a269d95931fca910170d359de6cfe78bd17d71ca48b6a2b464d343c126c07",
+      "bytes": 7165
+    },
+    "manifest.json": {
+      "sha256": "91614a8756cf38cf413e75499062944c52615c8c022c1a44ac077d3730bf9310",
+      "bytes": 111245
+    }
+  }
+}

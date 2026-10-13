@@ -1,0 +1,27 @@
+{
+  "protocol_path": "receiver_anchored_compatibility_protocol_v1.txt",
+  "protocol_sha256": "d87c63ec804e0551ad52a6acf974f3b484767cc50abd640e8440e9d6a10410ec",
+  "prerequisites_verified": true,
+  "repeated_suite": false,
+  "carried_ledger": {
+    "attempted_tokens": 387,
+    "completed_tokens": 386,
+    "failed_tokens": 1,
+    "selected_bank_calls": 3088,
+    "completed_bank_calls": 3088,
+    "attempted_terminal_commits": 386,
+    "terminal_commits": 386,
+    "backward_evaluations": 13,
+    "optimizer_updates": 0,
+    "warmup_tokens": 0,
+    "token_ceiling": 512,
+    "block_ceiling": 4096
+  },
+  "required_sources": {
+    "receiver_anchored_v2.py": "fabec0602212560e3ec5fcb019deadefcc7d513f0c6f6b0faa0f8df5aa761d11",
+    "statistical_rules_v3.py": "1b62f5ebe75b78c4c0ea33b87ada1ea2ca55960d2f2ef600a5d9d6b984aaa90a"
+  },
+  "artifact_index_sha256": "2068a61d4c7cb03cabc06a7512c8672194875f8f1cdc1f3f4ea41d1ddfaf597c",
+  "clarification_sha256": "53a9c1b9e6f383e464335e93c625a2428ab21510a347ec9f8a3bfc5ba8373ced",
+  "authorization": "latest user message authorizes full study; supersedes protocol/addendum historical planning/prerequisite-only authorization clauses without changing scientific definitions"
+}

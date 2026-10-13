@@ -1,0 +1,3932 @@
+[1mdiff --git a/GATE_B_STAGE3_SPEC.md b/GATE_B_STAGE3_SPEC.md[m
+[1mindex fd1d01c..faf601b 100644[m
+[1m--- a/GATE_B_STAGE3_SPEC.md[m
+[1m+++ b/GATE_B_STAGE3_SPEC.md[m
+[36m@@ -1,3032 +1,1530 @@[m
+ # AGT-v3 — Gate B[m
+[31m-# Stage-3 / Stage-4 Source Extraction + Repository Gap Analysis[m
+[32m+[m[32m# Stage-3 / Stage-4 Source Extraction and Repository Gap Analysis[m
+ [m
+[31m-**Status:** SPECIFICATION EXTRACTION ONLY[m
+[32m+[m[32m**Status: SPECIFICATION EXTRACTION ONLY**[m
+ [m
+[31m-No Stage-3 implementation, routing implementation, ST-Gumbel implementation,[m
+[31m-loss implementation, controller training, D768 modification, or GDN modification[m
+[31m-is authorized by this document.[m
+[32m+[m[32mNo Stage-3 implementation, controller training, ST-Gumbel code, routing-loss code,[m
+[32m+[m[32mtemperature schedule, D768 modification, GDN modification, or adaptive-routing[m
+[32m+[m[32mexperiment is authorized by this document.[m
+ [m
+ ---[m
+ [m
+[31m-# 0. GATE-B PROVENANCE[m
+[32m+[m[32m# 0. SOURCE AUTHORITY AND CHRONOLOGY[m
+ [m
+[31m-## Gate-A frozen point[m
+[32m+[m[32mThe located AGT-v3 materials do not contain one document explicitly titled[m
+[32m+[m[32m"AGT-v3 Stage 3 Specification" or "AGT-v3 Stage 4 Specification".[m
+ [m
+[31m-- Gate-A branch: `research/gdn-state-mechanism`[m
+[31m-- Gate-A commit:[m
+[31m-  `09bed25c79b223f49893fb4f9c2038534498a5e6`[m
+[31m-- Gate-A tag:[m
+[31m-  `AGT-v3-GateA-complete`[m
+[31m-- Immutable AGT-v3 integration base:[m
+[31m-  `c5657630781ba463ce9238a1285d35e96a71ce75`[m
+[32m+[m[32mTherefore this document does **not** fabricate numbered stages.[m
+ [m
+[31m-Gate A is closed.[m
+[32m+[m[32mThe source set is reconciled chronologically and semantically.[m
+ [m
+[31m-The Gate-A artifacts and successful checkpoint are preserved.[m
+[32m+[m[32m## S1 — Current macro-architecture correction[m
+ [m
+[31m-## Repository state used for this analysis[m
+[31m-[m
+[31m-This specification compares the source material against repository state at:[m
+[31m-[m
+[31m-`09bed25c79b223f49893fb4f9c2038534498a5e6`[m
+[31m-[m
+[31m-No claim in this document authorizes modification of that commit.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# 1. ORIGINAL AGT-v3 SOURCE MATERIAL LOCATED[m
+[31m-[m
+[31m-The search located multiple AGT-v3 design documents in the project Library.[m
+[32m+[m[32m**Source:**[m
+[32m+[m[32m`Pasted text(20260929-195559).txt`[m
+ [m
+[31m-## S1 — CURRENT MACRO-ARCHITECTURE CORRECTION[m
+[32m+[m[32mThis is the latest located AGT-v3 architecture correction and is treated as the[m
+[32m+[m[32mcurrent macro-architecture authority where it conflicts with older design material.[m
+ [m
+[31m-**Document:** `Pasted text(20260929-195559).txt`[m
+[32m+[m[32mSource-defined current architecture:[m
+ [m
+[31m-**Role:** latest explicit architecture correction; current macro-architecture authority.[m
+[32m+[m[32m- heterogeneous computational blocks[m
+[32m+[m[32m- state-conditioned routing[m
+[32m+[m[32m- adaptive within-token recurrence[m
+[32m+[m[32m- persistent cross-token latent state[m
+[32m+[m[32m- restartable monotone sweeps[m
+[32m+[m[32m- unbounded-in-principle within-token computation depth[m
+[32m+[m[32m- one unified state-conditioned execution policy[m
+[32m+[m[32m- actions:[m
+[32m+[m[32m  `ADVANCE(j')`, `REPEAT`, `RESTART`, `HALT`[m
+[32m+[m[32m- `ADVANCE` requires `j' > j`[m
+[32m+[m[32m- `REPEAT` keeps the same block[m
+[32m+[m[32m- `RESTART` sets `j <- 0` while preserving live hidden state[m
+[32m+[m[32m- `HALT` terminates internal computation[m
+[32m+[m[32m- convergence is a stopping signal[m
+[32m+[m[32m- categorical relaxation may be used during training[m
+[32m+[m[32m- hard categorical execution at inference[m
+[32m+[m[32m- no top-k simultaneous core execution[m
+[32m+[m[32m- terminal persistent-state update[m
+[32m+[m[32m- persistent state:[m
+[32m+[m[32m  `H_t = (s_t, M_{t+1}, C_t)`[m
+[32m+[m[32m- current source explicitly rejects the old separate PonderNet/global-halt topology.[m
+ [m
+[31m-The document explicitly states that the obsolete AGT-v3 figure must be replaced by the[m
+[31m-current locked architecture:[m
+[32m+[m[32m## S2 — AGT-v3 architectural research/adversarial memo[m
+ [m
+[31m-> heterogeneous computational blocks[m
+[31m-> + state-conditioned routing[m
+[31m-> + adaptive within-token recurrence[m
+[31m-> + persistent cross-token latent state[m
+[31m-> + restartable monotone sweeps[m
+[31m-> + unbounded-in-principle computation depth[m
+[32m+[m[32m**Source:**[m
+[32m+[m[32m`Pasted markdown(20260913-113624).md`[m
+ [m
+[31m-It explicitly distinguishes:[m
+[32m+[m[32mThis is an adversarial research memo containing architectural analysis,[m
+[32m+[m[32mhypotheses, experimental gates, and a "minimum implementable AGT-v3".[m
+ [m
+[31m-- within-token recurrence:[m
+[31m-  `h_{t,0} -> ... -> h_{t,P_t}`[m
+[31m-- cross-token persistence:[m
+[31m-  `H_{t-1} -> H_t -> H_{t+1}`[m
+[32m+[m[32mImportant distinction:[m
+ [m
+[31m-It explicitly removes:[m
+[32m+[m[32m> This memo contains recommendations/proposals in addition to architectural[m
+[32m+[m[32m> semantics. They are source-derived research proposals, not automatically[m
+[32m+[m[32m> locked architecture.[m
+ [m
+[31m-- local PonderNet halt[m
+[31m-- separate global halt controller[m
+[31m-- soft-segment readout as a separate controller/mechanism[m
+[31m-- unrestricted dynamic topology[m
+[31m-- direct backward/cyclic routing[m
+[32m+[m[32mRelevant sections:[m
+ [m
+[31m-It explicitly requires one unified state-conditioned execution policy and the action set:[m
+[32m+[m[32m- P — Experimental Plan[m
+[32m+[m[32m- Q — Success / Failure Criteria[m
+[32m+[m[32m- R — Minimum Implementable AGT-v3[m
+[32m+[m[32m- S — Long-Term Architectural Path[m
+[32m+[m[32m- T — Final Decision[m
+ [m
+[31m-`ADVANCE(j')`, `REPEAT`, `RESTART`, `HALT`.[m
+[32m+[m[32m## S3 — Older internal-block blueprint[m
+ [m
+[31m-It explicitly states that no architectural upper bound exists on `P_t`, while a serving[m
+[31m-budget may still be an external condition.[m
+[32m+[m[32m**Source:**[m
+[32m+[m[32m`Pasted text(20260911-094508).txt`[m
+ [m
+[31m-It explicitly says training may use categorical relaxation / optionally Gumbel-Softmax and[m
+[31m-inference uses hard categorical execution.[m
+[32m+[m[32mThis older blueprint explicitly described:[m
+ [m
+[31m-It explicitly forbids top-k simultaneous core execution.[m
+[32m+[m[32m- local PonderNet recurrence[m
+[32m+[m[32m- soft segment readout[m
+[32m+[m[32m- separate topology controller[m
+[32m+[m[32m- separate global HALT[m
+[32m+[m[32m- straight-through Gumbel-Softmax[m
+[32m+[m[32m- sequence-level routing[m
+[32m+[m[32m- strict forward topology[m
+[32m+[m[32m- `j_{k+1} > j_k`[m
+ [m
+[31m-## S2 — DETAILED SEPTEMBER ARCHITECTURE / RESEARCH MEMO[m
+[32m+[m[32mHowever, the later S1 architecture correction explicitly says those older mechanisms[m
+[32m+[m[32mare obsolete and replaces them with one unified policy and restartable monotone[m
+[32m+[m[32msweeps.[m
+ [m
+[31m-**Document:** `Pasted markdown(20260913-113624).md`[m
+[32m+[m[32mTherefore S3 is retained as historical source material but is **not current[m
+[32m+[m[32mmacro-architecture authority** where it conflicts with S1.[m
+ [m
+[31m-**Role:** earlier detailed AGT-v3 architecture / controller / training memo.[m
+[32m+[m[32m## S4 — AGT-v3 literature / architecture revision memo[m
+ [m
+[31m-This source contains the most detailed mathematical treatment of:[m
+[32m+[m[32m**Source:**[m
+[32m+[m[32m`AGT_v3_Literature_DeepDive_and_Architecture_Revision.md`[m
+ [m
+[31m-- unified routing[m
+[31m-- Gumbel routing[m
+[31m-- halting marginalization[m
+[31m-- routing loss[m
+[31m-- deliberation cost[m
+[31m-- route entropy[m
+[31m-- staged training[m
+[31m-- compute-matched baselines[m
+[31m-- success/failure criteria[m
+[32m+[m[32mThis source describes the current conceptual direction and explicitly labels[m
+[32m+[m[32mseveral items as provisional/open rather than locked.[m
+ [m
+[31m-However, it is chronologically older than S1 and contains details that S1 later retracts or[m
+[31m-changes. Those conflicts are explicitly recorded below rather than silently reconciled.[m
+[32m+[m[32m---[m
+ [m
+[31m-## S3 — DYNAMICAL / EXTENSIBILITY DECISION MEMO[m
+[32m+[m[32m# 1. NUMBERED STAGE STATUS[m
+ [m
+[31m-**Document:** `Pasted markdown(20260913-120909).md`[m
+[32m+[m[32m## Stage 3[m
+ [m
+[31m-**Role:** later decision memo addressing extensibility, convergence, state consistency,[m
+[31m-restartable sweeps, depth extrapolation, and the distinction between architectural[m
+[31m-extensibility and empirical improvement.[m
+[32m+[m[32m**Classification: [PARTIALLY SPECIFIED]**[m
+ [m
+[31m-It explicitly establishes:[m
+[32m+[m[32mThe located sources define the Stage-3-relevant macro architecture and the proposed[m
+[32m+[m[32mminimum experiment, but they do not provide a complete stage-specific training[m
+[32m+[m[32mcontract containing every controller dimension, feature, temperature, annealing[m
+[32m+[m[32mschedule, loss coefficient, gradient estimator detail, and D64 benchmark protocol.[m
+ [m
+[31m-- no step-indexed parameters[m
+[31m-- no step-indexed positional/depth embedding[m
+[31m-- no P-dependent normalization[m
+[31m-- no hard P_max mask in the halt distribution[m
+[31m-- bounded persistent state[m
+[31m-- bounded KV growth with terminal-only writes[m
+[31m-- recall / h0 reinjection[m
+[31m-- primary convergence-based stopping[m
+[31m-- budget-randomized training[m
+[31m-- restartable monotone sweeps[m
+[31m-- difficulty-dependent effective depth as the key empirical question[m
+[32m+[m[32mThe exact source-derived content is therefore extracted below without filling gaps.[m
+ [m
+[31m-## S4 — LITERATURE / ARCHITECTURE REVISION[m
+[32m+[m[32m## Stage 4[m
+ [m
+[31m-**Document:** `AGT_v3_Literature_DeepDive_and_Architecture_Revision.md`[m
+[32m+[m[32m**Classification: [UNSPECIFIED AS A NUMBERED STAGE]**[m
+ [m
+[31m-**Role:** later literature synthesis.[m
+[32m+[m[32mNo located AGT-v3 source defines a numbered "Stage 4" whose scope is explicitly[m
+[32m+[m[32m"adaptive-depth" with a complete training/inference specification.[m
+ [m
+[31m-This document explicitly treats the AGT macro-architecture as fixed in spirit while[m
+[31m-keeping microarchitecture provisional/open. It recommends, as later research/training[m
+[31m-directions:[m
+[32m+[m[32mThe source instead defines later architectural stages:[m
+ [m
+[31m-- recurrence stabilization[m
+[31m-- tail-aware rollout curriculum[m
+[31m-- model-induced-state/self-forcing training[m
+[31m-- intermediate-depth supervision[m
+[31m-- overthinking diagnostics[m
+[31m-- compute-matched evaluation[m
+[32m+[m[32m- **v3.5** — state-conditioned router retrofitted onto a frozen 7–8B model[m
+[32m+[m[32m- **v4a** — richer state/memory, conditional on H6[m
+[32m+[m[32m- **v4b** — state-conditioned block behaviour, conditional on H4[m
+[32m+[m[32m- **v5** — relaxation of monotonicity if the v3 routing regime saturates[m
+[32m+[m[32m- **v6** — scaling[m
+ [m
+[31m-These are not silently promoted to locked Stage-3 parameters.[m
+[32m+[m[32mThese are extracted separately in Section 10.[m
+ [m
+ ---[m
+ [m
+[31m-# 2. SOURCE VERSION RECONCILIATION RULE[m
+[32m+[m[32m# 2. STAGE-3 SOURCE-DERIVED SPECIFICATION[m
+ [m
+[31m-The source set is not a single perfectly versioned Stage-3 document.[m
+[32m+[m[32m## 2.1 Stage-3 objective[m
+ [m
+[31m-Therefore this Gate-B specification uses the following authority rule:[m
+[31m-[m
+[31m-1. S1 (`20260929-195559`) controls the latest macro-architecture.[m
+[31m-2. S3 (`20260913-120909`) controls later corrections to the earlier detailed memo where it[m
+[31m-   explicitly retracts or changes a design choice.[m
+[31m-3. S2 (`20260913-113624`) supplies earlier detailed formulas and experimental prescriptions[m
+[31m-   only where they have not been superseded.[m
+[31m-4. S4 is treated as literature-driven revision / research guidance, not as permission to[m
+[31m-   invent missing locked implementation values.[m
+[31m-[m
+[31m-Older details that conflict with newer source text are marked as historical/revised, not[m
+[31m-merged into the current specification.[m
+[31m-[m
+[31m----[m
+[32m+[m[32m**[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-# 3. STAGE-3 SOURCE STATUS[m
+[32m+[m[32mThe current architecture defines the objective direction as learning adaptive[m
+[32m+[m[32mcomputation through:[m
+ [m
+[31m-The located AGT-v3 sources do **not** contain a standalone section literally titled[m
+[31m-"Stage 3 Specification".[m
+[32m+[m[32m`heterogeneous block bank + one state-conditioned execution policy +[m
+[32m+[m[32mpersistent cross-token state + adaptive within-token computation`[m
+ [m
+[31m-Accordingly, "Stage 3" is reconstructed from the current-v3 architecture definition[m
+[31m-plus the detailed v3 controller/training material.[m
+[32m+[m[32mThe research memo states the central empirical question as whether adaptive[m
+[32m+[m[32mheterogeneous computation produces a useful, depth-scalable, difficulty-dependent[m
+[32m+[m[32mtrajectory under matched compute.[m
+ [m
+[31m-Each item below is classified exactly as:[m
+[32m+[m[32mThe minimum v3 hypothesis is:[m
+ [m
+[31m-- `[SPECIFIED]`[m
+[31m-- `[PARTIALLY SPECIFIED]`[m
+[31m-- `[UNSPECIFIED]`[m
+[32m+[m[32m> a model learns to select a variable-length path through heterogeneous[m
+[32m+[m[32m> computational modules conditioned on state that persists across tokens.[m
+ [m
+[31m-For an item not actually defined by the source, the exact phrase is used:[m
+[32m+[m[32mHowever, no unique mathematical Stage-3 objective function is specified.[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32m**UNSPECIFIED:** exact scalar training objective for Stage 3.[m
+ [m
+ ---[m
+ [m
+[31m-# 4. STAGE 3 — ITEMIZED SPECIFICATION[m
+[31m-[m
+[31m-## 4.1 Stage-3 objective[m
+[32m+[m[32m## 2.2 Controller input[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-Establish AGT-v3 with:[m
+[31m-[m
+[31m-- heterogeneous computational blocks[m
+[31m-- one state-conditioned execution policy[m
+[31m-- adaptive within-token computation[m
+[31m-- persistent cross-token latent state[m
+[31m-- restartable monotone sweeps[m
+[31m-- computation depth with no architectural upper bound[m
+[31m-[m
+[31m-The research question is whether useful adaptive heterogeneous computation can be learned[m
+[31m-and whether effective computation depth becomes input/difficulty dependent.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 4.2 Controller input[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-Latest source gives the policy in the form:[m
+[31m-[m
+[31m-`π_ψ(a_{t,p} | h_{t,p}, M_t, j_{t,p}, b_p)`[m
+[31m-[m
+[31m-with:[m
+[31m-[m
+[31m-`b_p = p / B`[m
+[32m+[m[32mCurrent macro-architecture source gives:[m
+ [m
+[31m-described as optional bounded budget-relative conditioning.[m
+[32m+[m[32m\[[m
+[32m+[m[32m\pi_\psi[m
+[32m+[m[32m\left([m
+[32m+[m[32ma_{t,p}\mid h_{t,p},M_t,j_{t,p},b_p[m
+[32m+[m[32m\right)[m
+[32m+[m[32m\][m
+ [m
+[31m-Older S2 material additionally describes pooled multi-stream state and block-position[m
+[31m-embedding as controller inputs.[m
+[32m+[m[32mwhere:[m
+ [m
+[31m-The later S3 memo explicitly retracts the old step-in-sweep feature `φ(p)` and replaces it[m
+[31m-with budget-relative conditioning.[m
+[32m+[m[32m- `h_{t,p}` = live within-token hidden state[m
+[32m+[m[32m- `M_t` = persistent latent memory[m
+[32m+[m[32m- `j_{t,p}` = current block index[m
+[32m+[m[32m- `b_p = p/B` = optional bounded budget-relative conditioning[m
+ [m
+[31m-Therefore:[m
+[32m+[m[32mImportant: the source calls `b_p` optional.[m
+ [m
+[31m-- live hidden state: specified[m
+[31m-- persistent memory: specified[m
+[31m-- current block position: specified[m
+[31m-- optional budget-relative conditioning: specified[m
+[31m-- exact feature construction / pooling / concatenation implementation: not fully locked[m
+[32m+[m[32mTherefore the source requires the policy to be state-conditioned and exposes[m
+[32m+[m[32mpersistent memory to routing, but does not force every optional feature into the[m
+[32m+[m[32mimplementation.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.3 Controller architecture[m
+[32m+[m[32m## 2.3 Controller architecture[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The source requires one unified state-conditioned execution policy.[m
+[32m+[m[32mThe source requires **one shared / unified policy**.[m
+[32m+[m
+[32m+[m[32mThe research memo's minimum implementable architecture uses one unified action policy.[m
+ [m
+[31m-Older detailed S2 material describes an MLP-like controller producing action logits.[m
+[32m+[m[32mNo canonical hidden width, number of layers, activation function, normalization,[m
+[32m+[m[32mor feature-concatenation layout is defined by the current source.[m
+ [m
+[31m-Exact current hidden width, number of intermediate layers, activation, normalization,[m
+[31m-parameterization, and final dimensionality are not locked by the latest architecture[m
+[31m-correction.[m
+[32m+[m[32m**UNSPECIFIED:**[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.` for any missing exact value.[m
+[32m+[m[32m- controller hidden dimension[m
+[32m+[m[32m- number of controller layers[m
+[32m+[m[32m- controller activation[m
+[32m+[m[32m- exact controller feature vector[m
+[32m+[m[32m- exact embedding for block index[m
+[32m+[m[32m- exact memory-read projection used by the controller[m
+[32m+[m[32m- whether budget-relative conditioning is enabled in the first implementation[m
+ [m
+ ---[m
+ [m
+[31m-## 4.4 Controller output[m
+[32m+[m[32m## 2.4 Controller output[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-The unified policy outputs one next action:[m
+[32m+[m[32mThe current source defines:[m
+ [m
+[31m-`ADVANCE(j')`[m
+[31m-`REPEAT`[m
+[31m-`RESTART`[m
+[31m-`HALT`[m
+[32m+[m[32m\[[m
+[32m+[m[32ma_{t,p}\in[m
+[32m+[m[32m\{[m
+[32m+[m[32m\operatorname{ADVANCE}(j'),[m
+[32m+[m[32m\operatorname{REPEAT},[m
+[32m+[m[32m\operatorname{RESTART},[m
+[32m+[m[32m\operatorname{HALT}[m
+[32m+[m[32m\}.[m
+[32m+[m[32m\][m
+ [m
+[31m-No second controller is part of the current architecture.[m
+[32m+[m[32mThe current architecture explicitly requires one unified execution policy.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.5 Action space[m
+[32m+[m[32m## 2.5 Action space[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-`a_{t,p} ∈ { ADVANCE(j'), REPEAT, RESTART, HALT }`[m
+[32m+[m[32mExactly:[m
+[32m+[m
+[32m+[m[32m- `ADVANCE(j')`[m
+[32m+[m[32m- `REPEAT`[m
+[32m+[m[32m- `RESTART`[m
+[32m+[m[32m- `HALT`[m
+[32m+[m
+[32m+[m[32mNo second PonderNet controller and no separate global halt controller are part of[m
+[32m+[m[32mthe current macro-architecture.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.6 ADVANCE semantics[m
+[32m+[m[32m## 2.6 ADVANCE semantics[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-`j' > j`[m
+[32m+[m[32m\[[m
+[32m+[m[32mj' > j[m
+[32m+[m[32m\][m
+ [m
+[31m-The next executed block is strictly forward in block index within the current sweep.[m
+[32m+[m[32m`ADVANCE` selects a later block in the current monotone sweep.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.7 REPEAT semantics[m
+[32m+[m[32m## 2.7 REPEAT semantics[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-`j' = j`[m
+[32m+[m[32m\[[m
+[32m+[m[32mj'=j[m
+[32m+[m[32m\][m
+ [m
+ The current block is executed again.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.8 RESTART semantics[m
+[32m+[m[32m## 2.8 RESTART semantics[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-`j <- 0`[m
+[31m-[m
+[31m-while:[m
+[32m+[m[32m\[[m
+[32m+[m[32mj\leftarrow0,\qquad h\text{ preserved}.[m
+[32m+[m[32m\][m
+ [m
+[31m-`h is preserved`[m
+[32m+[m[32mRestart changes the reachable block index while preserving the live latent[m
+[32m+[m[32mcomputational state.[m
+ [m
+[31m-The restart is a state-preserving sweep boundary, not a direct backward edge.[m
+[32m+[m[32mThe source explicitly forbids a direct unrestricted backward edge.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.9 HALT semantics[m
+[32m+[m[32m## 2.9 HALT semantics[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-HALT terminates internal within-token computation and proceeds to terminal commit /[m
+[31m-emission.[m
+[32m+[m[32mHALT terminates internal computation and transfers control to terminal state[m
+[32m+[m[32mcommit / output processing.[m
+[32m+[m
+[32m+[m[32mThe current source explicitly does not introduce a second halt controller.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.10 Execution-mask constraints[m
+[32m+[m[32m## 2.10 Execution-mask constraints[m
+ [m
+[31m-**[SPECIFIED]**[m
+[32m+[m[32m**[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The current architecture requires:[m
+[32m+[m[32mSource-defined constraints:[m
+ [m
+[31m-- monotone forward advancement inside a sweep[m
+[31m-- no unrestricted backward jumps[m
+[31m-- no direct backward/cyclic topology[m
+[31m-- restart as the legal sweep boundary[m
+[31m-- one selected transition per conceptual execution step[m
+[32m+[m[32m- forward advancement must be monotone: `j' > j`[m
+[32m+[m[32m- repeat stays at the same index[m
+[32m+[m[32m- restart resets index to zero[m
+[32m+[m[32m- one next action/block is selected per transition[m
+ - no top-k simultaneous core execution[m
+[32m+[m[32m- no unrestricted backward/cyclic topology[m
+[32m+[m[32m- no architectural upper bound on `P_t`[m
+ [m
+[31m----[m
+[32m+[m[32m**UNSPECIFIED:**[m
+ [m
+[31m-## 4.11 ST-Gumbel formulation[m
+[32m+[m[32m- exact tensor mask implementation[m
+[32m+[m[32m- exact legality-mask representation[m
+[32m+[m[32m- whether HALT is masked at p=0 or other edge cases[m
+[32m+[m[32m- exact maximum serving/training budget policy[m
+[32m+[m[32m- exact anti-consecutive-RESTART rule[m
+ [m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32m---[m
+ [m
+[31m-The source says categorical relaxation may be used during training and specifically names[m
+[31m-Gumbel-Softmax as optional training relaxation.[m
+[32m+[m[32m# 3. ST-GUMBEL / CATEGORICAL ROUTING[m
+ [m
+[31m-Older S2 material says the ADVANCE branch is trained with straight-through Gumbel-Softmax.[m
+[32m+[m[32m## 3.1 ST-Gumbel formulation[m
+ [m
+[31m-Exact current straight-through estimator equations are not defined in S1.[m
+[32m+[m[32m**[PARTIALLY SPECIFIED]**[m
+ [m
+[31m----[m
+[32m+[m[32mThe older internal-block blueprint explicitly specified:[m
+ [m
+[31m-## 4.12 Logits[m
+[32m+[m[32m> STRAIGHT-THROUGH GUMBEL-SOFTMAX[m
+ [m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32mThe current later architecture correction relaxes this to:[m
+ [m
+[31m-A policy logit vector exists.[m
+[32m+[m[32m> categorical relaxation during training[m
+ [m
+[31m-Older S2 formulation gives:[m
+[32m+[m[32mand optionally:[m
+ [m
+[31m-`ℓ_p = π_ψ([Pool(h_p); emb(j_p); m_p; φ(p)])`[m
+[32m+[m[32m> Gumbel-Softmax[m
+ [m
+[31m-but this uses the later-retracted `φ(p)` feature and therefore is not current.[m
+[32m+[m[32mwith hard categorical execution at inference.[m
+ [m
+[31m-The current source does not lock an exact final logit dimensionality in the latest correction.[m
+[32m+[m[32mThus the conceptual estimator family is source-supported, but the exact current[m
+[32m+[m[32mST formulation is not fully re-specified in the latest correction.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.13 Soft / straight-through behavior[m
+[32m+[m[32m## 3.2 Logits[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Training:[m
+[31m-[m
+[31m-- categorical relaxation may be used[m
+[31m-- Gumbel-Softmax may be used[m
+[31m-- older S2 explicitly describes straight-through Gumbel for forward routing[m
+[31m-[m
+[31m-Inference:[m
+[32m+[m[32mA controller produces action logits / a categorical policy over the allowed[m
+[32m+[m[32mactions.[m
+ [m
+[31m-- hard categorical execution is specified[m
+[32m+[m[32m**UNSPECIFIED:**[m
+ [m
+[31m-Exact soft/straight-through implementation for every action type is not completely[m
+[31m-specified.[m
+[32m+[m[32m- exact logits tensor layout[m
+[32m+[m[32m- exact masking order[m
+[32m+[m[32m- whether masked logits are `-inf` or another sentinel[m
+[32m+[m[32m- exact normalization point[m
+[32m+[m[32m- exact parameterization of `ADVANCE(j')` logits[m
+ [m
+ ---[m
+ [m
+[31m-## 4.14 Temperature[m
+[32m+[m[32m## 3.3 Soft / straight-through behavior[m
+ [m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32m**[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mTraining may use a categorical relaxation; the older blueprint specifically[m
+[32m+[m[32mnamed straight-through Gumbel-Softmax.[m
+ [m
+[31m-No final scalar temperature is locked by the latest correction.[m
+[32m+[m[32mInference uses hard categorical execution.[m
+[32m+[m
+[32m+[m[32mThe source does not fully specify the backward estimator in the current correction.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.15 Temperature initialization[m
+[32m+[m[32m## 3.4 Temperature[m
+ [m
+ **[UNSPECIFIED]**[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mNo canonical Stage-3 temperature value is specified by the located sources.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.16 Temperature annealing schedule[m
+[32m+[m[32m## 3.5 Temperature initialization[m
+ [m
+ **[UNSPECIFIED]**[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mNo canonical initial temperature is specified.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.17 Routing loss[m
+[32m+[m[32m## 3.6 Temperature annealing schedule[m
+ [m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32m**[UNSPECIFIED]**[m
+[32m+[m
+[32m+[m[32mNo canonical annealing schedule is specified.[m
+ [m
+[31m-Older S2 material gives:[m
+[32m+[m[32m---[m
+ [m
+[31m-`L_route = κ · E[Σ_p 1[j_{p+1} != j_p]] - η · H(π̄)`[m
+[32m+[m[32m# 4. ROUTING LOSSES / REGULARIZATION[m
+ [m
+[31m-and interprets:[m
+[32m+[m[32m## 4.1 Routing loss[m
+ [m
+[31m-- `κ` as deliberation/switching cost[m
+[31m-- `η` as batch-marginal route entropy / load-balancing term[m
+[32m+[m[32m**[UNSPECIFIED]**[m
+ [m
+[31m-The later/current source does not restate these exact coefficients or declare them current[m
+[31m-locked constants.[m
+[32m+[m[32mNo unique Stage-3 routing loss equation is defined.[m
+ [m
+[31m-Therefore the existence/form of these historical terms is source-derived, but exact[m
+[31m-current coefficients are not locked.[m
+[32m+[m[32mThe research memo discusses routing evaluation and optimization risks but does not[m
+[32m+[m[32mestablish a final canonical routing-loss formula.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.18 Entropy regularization[m
+[32m+[m[32m## 4.2 Entropy regularization[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Older S2 source specifies a negative batch-marginal action entropy term:[m
+[32m+[m[32mThe minimum implementable v3 in Section R of S2 proposes:[m
+ [m
+[31m-`-η H(π̄)`[m
+[32m+[m[32m- batch-marginal entropy regularizer with coefficient `η`[m
+ [m
+[31m-Latest current correction does not lock `η`.[m
+[32m+[m[32mHowever:[m
+ [m
+[31m-Exact coefficient:[m
+[32m+[m[32m- `η` is not numerically specified[m
+[32m+[m[32m- this proposal is not present as a locked formula in the latest S1 correction[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mTherefore entropy regularization is a source-derived proposal, not a resolved[m
+[32m+[m[32mlocked hyperparameter.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.19 Deliberation / computation cost[m
+[32m+[m[32m## 4.3 Deliberation / computation cost[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Older S2 source explicitly specifies a switching/de deliberation cost proportional to[m
+[31m-changes of execution position.[m
+[31m-[m
+[31m-Current source preserves the unified policy and adaptive computation but does not lock a[m
+[31m-final numerical coefficient.[m
+[32m+[m[32mSection R of S2 proposes:[m
+ [m
+[31m----[m
+[32m+[m[32m- deliberation cost `κ`[m
+ [m
+[31m-## 4.20 Adaptive-depth loss[m
+[32m+[m[32mThe exact definition and coefficient are not fully specified.[m
+ [m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32mThe current S1 architecture establishes adaptive computation but does not provide[m
+[32m+[m[32mthe scalar cost equation.[m
+ [m
+[31m-The later source strongly specifies adaptive depth as an empirical objective, but the[m
+[31m-exact final adaptive-depth objective is not fully locked.[m
+[32m+[m[32m---[m
+ [m
+[31m-The dynamical memo instead emphasizes:[m
+[32m+[m[32m## 4.4 Adaptive-depth loss[m
+ [m
+[31m-- convergence-based stopping[m
+[31m-- depth-randomized training[m
+[31m-- multi-depth supervision[m
+[31m-- difficulty-dependent effective depth[m
+[32m+[m[32m**[UNSPECIFIED]**[m
+ [m
+[31m-A single canonical "adaptive-depth loss" formula is not fixed by the latest correction.[m
+[32m+[m[32mNo final adaptive-depth loss term or mathematical formula is specified by the[m
+[32m+[m[32mlocated AGT-v3 source set.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.21 Auxiliary losses[m
+[32m+[m[32m## 4.5 Auxiliary losses[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Older sources mention:[m
+[32m+[m[32mS2 discusses experiments such as:[m
+ [m
+[31m-- halt-distribution KL[m
+[31m-- route-switching / deliberation cost[m
+[31m-- route entropy[m
+[31m-- optional state norm regularization[m
+[31m-- deep supervision in the later training revision[m
+[31m-[m
+[31m-These do not all survive as current mandatory locked terms.[m
+[32m+[m[32m- sparse intermediate-depth supervision[m
+[32m+[m[32m- representation / trajectory consistency[m
+[32m+[m[32m- overthinking protection[m
+[32m+[m[32m- recurrence-stability diagnostics[m
+ [m
+[31m-Exact final auxiliary-loss inventory:[m
+[32m+[m[32mbut explicitly describes some of these as experiments, provisional ideas, or[m
+[32m+[m[32mopen choices rather than mandatory permanent losses.[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mTherefore there is no final locked auxiliary-loss package.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.22 Loss coefficients[m
+[32m+[m[32m## 4.6 Loss coefficients[m
+ [m
+ **[UNSPECIFIED]**[m
+ [m
+[31m-No final locked values are specified for:[m
+[32m+[m[32mNo canonical numerical values are provided for:[m
+ [m
+[31m-- halt coefficient[m
+[32m+[m[32m- routing coefficient[m
+ - entropy coefficient[m
+ - deliberation coefficient[m
+[31m-- deep-supervision coefficient[m
+ - adaptive-depth coefficient[m
+[31m-- any optional state-norm coefficient[m
+[32m+[m[32m- auxiliary-loss coefficients[m
+ [m
+ ---[m
+ [m
+[31m-## 4.23 Gradient flow[m
+[32m+[m[32m# 5. GRADIENT FLOW / PARAMETER STATUS[m
+[32m+[m
+[32m+[m[32m## 5.1 Gradient flow[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Source requires a differentiable training path through relaxed categorical routing and[m
+[31m-emphasizes state-consistency.[m
+[32m+[m[32mSource requirements:[m
+[32m+[m
+[32m+[m[32m- categorical relaxation may provide training gradients[m
+[32m+[m[32m- hard categorical execution is used at inference[m
+[32m+[m[32m- recurrent state must remain parameter-consistent[m
+[32m+[m[32m- cached states generated by previous optimizer-step parameters must not be used[m
+[32m+[m[32m  as differentiable state inputs[m
+ [m
+[31m-The source also says:[m
+[32m+[m[32mThe research memo's state-consistency contract additionally says:[m
+ [m
+[31m-- state used in gradient computation must be generated under current parameters[m
+[31m-- stale caches are invalid[m
+[31m-- detaching recurrent state changes the gradient[m
+[31m-- route replay in off-policy settings requires rerouting or correction[m
+[32m+[m[32m- no silent detachment across the token axis[m
+[32m+[m[32m- explicit BPTT truncation must be reported if used[m
+[32m+[m[32m- route replay must account for policy staleness in off-policy settings[m
+[32m+[m[32m- halt-state values must not be stale[m
+[32m+[m[32m- KV state generated by old parameters must not be reused after parameter updates[m
+ [m
+[31m-Exact Stage-3 BPTT truncation length / memory strategy is not locked.[m
+[32m+[m[32mNo final Stage-3 BPTT truncation length is specified.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.24 What is trainable[m
+[32m+[m[32m## 5.2 What is trainable[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Stage-3 conceptually trains the execution policy and the heterogeneous computational[m
+[31m-backbone jointly through a staged procedure.[m
+[32m+[m[32mThe architecture requires trainable policy parameters `ψ`.[m
+ [m
+[31m-However the exact freeze/unfreeze schedule in the latest source is not preserved as a[m
+[31m-single locked Stage-3 contract.[m
+[32m+[m[32mThe minimum v3 memo also assumes trainable heterogeneous block parameters during[m
+[32m+[m[32mthe staged training programme.[m
+ [m
+[31m-Older S2 training phases are historical guidance, not current frozen values.[m
+[32m+[m[32mNo final universal freeze/unfreeze schedule is defined by the current source.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.25 What remains frozen[m
+[32m+[m[32m## 5.3 What remains frozen[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The following are clearly architectural exclusions/current invariants:[m
+[32m+[m[32mGate A / Stage-1 explicitly froze routing/controller optimization.[m
+ [m
+[31m-- no GDN redesign[m
+[31m-- no outer reasoning loop[m
+[31m-- no separate PonderNet/global halt controllers[m
+[31m-- no unrestricted backward routing[m
+[31m-- no step-indexed block parameters[m
+[31m-- no step-indexed iteration embeddings[m
+[31m-- no fixed architectural recurrence ceiling[m
+[32m+[m[32mThat does NOT establish the Stage-3 freeze set.[m
+ [m
+[31m-Exact parameter-freeze staging for training is not fully specified.[m
+[32m+[m[32mThe current sources do not provide one final authoritative Stage-3 list of[m
+[32m+[m[32mfrozen versus trainable modules.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.26 Training-time behavior[m
+[32m+[m[32m## 5.4 Training-time behavior[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Training may use:[m
+[32m+[m[32mThe current source defines:[m
+ [m
+[31m-- categorical relaxation[m
+[31m-- budget-randomized rollout depth[m
+[31m-- multi-depth / deep supervision[m
+[31m-- staged routing/controller optimization[m
+[31m-- deep-start initialization[m
+[31m-- model-induced-state training in later revision[m
+[32m+[m[32m- adaptive policy during optimization[m
+[32m+[m[32m- categorical relaxation may be used[m
+[32m+[m[32m- hard execution is not the conceptual training-only route[m
+[32m+[m[32m- one selected action transition per conceptual execution step[m
+[32m+[m[32m- persistent state is carried across tokens[m
+[32m+[m[32m- terminal commit persists final token state[m
+[32m+[m
+[32m+[m[32mS2 additionally proposes staged controller unfreezing and deep-start initialization.[m
+ [m
+[31m-The precise final training schedule is not locked by the latest architecture correction.[m
+[32m+[m[32mThose proposals are not fully locked in S1.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.27 Inference-time behavior[m
+[32m+[m[32m## 5.5 Inference-time behavior[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-Inference uses:[m
+[32m+[m[32mInference is:[m
+ [m
+ - hard categorical execution[m
+[31m-- one selected transition at a time[m
+[31m-- monotone sweeps[m
+[31m-- RESTART as the state-preserving sweep boundary[m
+[31m-- convergence as a stopping signal[m
+[31m-- learned HALT as part of the unified policy[m
+[31m-- terminal state update and next-token emission[m
+[31m-[m
+[31m-The architecture has no fixed architectural upper bound on within-token depth.[m
+[32m+[m[32m- one selected action/block per transition[m
+[32m+[m[32m- monotone advancement[m
+[32m+[m[32m- repeat when selected[m
+[32m+[m[32m- restart to block zero while preserving latent hidden state[m
+[32m+[m[32m- halt when selected / stopping criterion satisfied[m
+[32m+[m[32m- terminal persistent-state update[m
+[32m+[m[32m- next-token generation from updated persistent state[m
+ [m
+ ---[m
+ [m
+[31m-## 4.28 D64 experimental setup[m
+[32m+[m[32m# 6. D64 EXPERIMENTAL SPECIFICATION[m
+ [m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32m## 6.1 D64 setup[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32m**[UNSPECIFIED]**[m
+ [m
+[31m-The source contains architectural scale examples such as D=768, but it does not provide[m
+[31m-a canonical D64 Stage-3 experiment specification.[m
+[32m+[m[32mThe located current macro-architecture does not define a canonical D64 Stage-3[m
+[32m+[m[32mconfiguration.[m
+ [m
+[31m-The Gate-A D64 parity experiment is a Stage-1 validation artifact and must not be silently[m
+[31m-promoted into Stage 3.[m
+[32m+[m[32mS2 contains small-scale experimental guidance but does not define one complete[m
+[32m+[m[32mD64 Stage-3 specification.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.29 Dataset / task[m
+[32m+[m[32m## 6.2 Dataset / task[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The older research plan names Level-1 algorithmic families including:[m
+[32m+[m[32mS2 recommends Level-1 / Level-2 task families and emphasizes tasks with known[m
+[32m+[m[32mdifficulty variation.[m
+[32m+[m
+[32m+[m[32mExamples discussed include:[m
+ [m
+ - parity[m
+[31m-- modular arithmetic[m
+[32m+[m[32m- modular arithmetic chains[m
+ - sorting[m
+ - cellular automata[m
+[31m-- Sudoku / constraint tasks[m
+[31m-[m
+[31m-and Level-2 controlled reasoning / OOD tasks.[m
+[31m-[m
+[31m-However no single canonical Stage-3 dataset/task is fixed.[m
+[32m+[m[32m- Sudoku-like constraint propagation[m
+[32m+[m[32m- compositional/OOD synthetic reasoning[m
+[32m+[m[32m- multi-hop retrieval[m
+ [m
+[31m-Current source-set status:[m
+[32m+[m[32mHowever no single Stage-3 mandatory dataset/task is locked.[m
+ [m
+[31m-`[PARTIALLY SPECIFIED]`[m
+[32m+[m[32mThe Gate-A parity task is a Stage-1 fixed-route task and must **not** be silently[m
+[32m+[m[32mreinterpreted as the final Stage-3 benchmark.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.30 Route constraints[m
+[32m+[m[32m## 6.3 Route constraints[m
+ [m
+ **[SPECIFIED]**[m
+ [m
+[31m-Current architecture requires:[m
+[32m+[m[32mCurrent source:[m
+ [m
+[31m-- forward monotonicity within sweep[m
+[31m-- REPEAT allowed[m
+[31m-- RESTART allowed[m
+[31m-- HALT allowed[m
+[31m-- no unrestricted backward routing[m
+[31m-- no arbitrary direct cyclic edge[m
+[32m+[m[32m- monotone forward advancement[m
+[32m+[m[32m- repeat allowed[m
+[32m+[m[32m- restart allowed[m
+[32m+[m[32m- halt allowed[m
+[32m+[m[32m- no unrestricted backward/cyclic topology[m
+[32m+[m[32m- no top-k simultaneous execution[m
+ [m
+ ---[m
+ [m
+[31m-## 4.31 Number of blocks[m
+[32m+[m[32m## 6.4 Number of blocks[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Older S2 minimum implementation gives `N=8`.[m
+[32m+[m[32mCurrent source uses symbolic:[m
+ [m
+[31m-The current correction preserves a heterogeneous block bank but explicitly warns that the[m
+[31m-exact species/ratio should not be treated as permanently locked.[m
+[32m+[m[32m\[[m
+[32m+[m[32mB_1,\ldots,B_N.[m
+[32m+[m[32m\][m
+ [m
+[31m-Therefore:[m
+[32m+[m[32mS2 Section R proposes an 8-block heterogeneous bank for a minimum v3 implementation.[m
+ [m
+[31m-- existence of a heterogeneous bank: specified[m
+[31m-- `N=8` as an older implementation target: specified historically[m
+[31m-- current permanently locked exact count/species: not fully specified[m
+[32m+[m[32mHowever S1 explicitly says exact block species and ratios are not permanently[m
+[32m+[m[32mlocked.[m
+[32m+[m
+[32m+[m[32mTherefore `N=8` is a source-derived proposed implementation value, not a fully[m
+[32m+[m[32mresolved macro-architecture invariant.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.32 Evaluation metrics[m
+[32m+[m[32m## 6.5 Evaluation metrics[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The source strongly recommends measuring:[m
+[32m+[m[32mS2 Q.2 requires, for the routing non-triviality experiment:[m
+ [m
+[31m-- task performance[m
+[31m-- inference compute / FLOPs[m
+[31m-- executed steps/depth[m
+[31m-- route entropy[m
+[32m+[m[32m- test performance[m
+[32m+[m[32m- mean and seed variation[m
+[32m+[m[32m- estimated `I(input ; route)`[m
+[32m+[m[32m- correlation between executed depth and known difficulty[m
+ - per-block utilization[m
+[31m-- input-route dependence / mutual information[m
+[31m-- depth vs known difficulty[m
+[31m-- convergence residual[m
+[31m-- overthinking behavior[m
+[31m-- seed variance[m
+[31m-- memory diagnostics[m
+[31m-- latency / memory / KV cost under matched compute[m
+[31m-[m
+[31m-The exact canonical Stage-3 metric table is not frozen.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 4.33 Baseline comparisons[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32m- route entropy[m
+ [m
+[31m-Older source proposes:[m
+[32m+[m[32mP.6 additionally requires compute matching including:[m
+ [m
+[31m-- static dense transformer[m
+[31m-- active-parameter-matched static transformer[m
+[31m-- homogeneous looped model[m
+[31m-- convergence-halted homogeneous model[m
+[31m-- heterogeneous fixed-route[m
+[31m-- adaptive topology[m
+[31m-- random-route control[m
+[31m-- length-only route control[m
+[31m-- persistent-state ablations[m
+[31m-- state-conditioned routing comparison[m
+[32m+[m[32m- active parameters/token[m
+[32m+[m[32m- training FLOPs[m
+[32m+[m[32m- inference FLOPs/token[m
+[32m+[m[32m- peak memory[m
+[32m+[m[32m- wall-clock latency[m
+[32m+[m[32m- mean/p95 executed blocks[m
+[32m+[m[32m- mean repeats[m
+[32m+[m[32m- mean distinct blocks[m
+[32m+[m[32m- mean cycles[m
+[32m+[m[32m- KV bytes/token[m
+ [m
+[31m-These are strong source-derived experimental requirements in the research plan, but the[m
+[31m-latest macro correction does not define a single mandatory Stage-3 baseline table.[m
+[32m+[m[32mNo single consolidated Stage-3 metric table is formally locked.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.34 Success criteria[m
+[32m+[m[32m## 6.6 Baseline comparisons[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The older detailed research plan gives concrete criteria including:[m
+[31m-[m
+[31m-- learned routing must be non-trivial[m
+[31m-- route should depend on input[m
+[31m-- compute should correlate with known difficulty[m
+[31m-- learned route should beat matched random/length controls[m
+[31m-- later depth extrapolation should remain useful[m
+[31m-- gains must be evaluated at matched compute[m
+[31m-[m
+[31m-Specific numerical thresholds such as:[m
+[32m+[m[32mThe memo's corrected arm ladder includes:[m
+ [m
+[31m-`ρ(P_eff, difficulty) > 0.3`[m
+[32m+[m[32m- A: static dense transformer[m
+[32m+[m[32m- A': static transformer at equal active parameters[m
+[32m+[m[32m- A'': MoE at equal active parameters[m
+[32m+[m[32m- B: adaptive duration only[m
+[32m+[m[32m- B': fixed-depth loop at matched mean depth[m
+[32m+[m[32m- C: topology only[m
+[32m+[m[32m- D: duration + topology[m
+[32m+[m[32m- D_hom: homogeneous control[m
+[32m+[m[32m- E1: persistent state without state-conditioned routing[m
+[32m+[m[32m- E2: persistent state + state-conditioned routing[m
+[32m+[m[32m- R_ctrl: frozen random path of equal length[m
+[32m+[m[32m- L_ctrl: path determined by sequence length only[m
+ [m
+[31m-appear in the older research plan.[m
+[31m-[m
+[31m-Because the latest architecture correction does not restate this as a locked Stage-3 gate,[m
+[31m-the threshold is historical/source-derived, not an independently authorized new constant.[m
+[32m+[m[32mS2 explicitly says D vs R_ctrl vs L_ctrl is the central routing non-triviality[m
+[32m+[m[32mgate.[m
+ [m
+ ---[m
+ [m
+[31m-## 4.35 Failure / falsification criteria[m
+[32m+[m[32m## 6.7 Success criteria[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The older source explicitly identifies failure modes:[m
+[31m-[m
+[31m-- route collapse[m
+[31m-- shallow-halt collapse[m
+[31m-- routing indistinguishable from random/length controls[m
+[31m-- heterogeneity adding no value over homogeneous recurrence[m
+[31m-- persistent-state routing adding no value[m
+[31m-- instability under deeper execution[m
+[31m-- no difficulty/depth relationship[m
+[31m-[m
+[31m-Exact Stage-3 statistical decision rules are not fully frozen in the latest correction.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 4.36 Transition criteria to Stage 4[m
+[32m+[m[32mThe strongest source-defined gate is Q.2:[m
+ [m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32m> the router should learn a non-trivial, input-dependent, difficulty-correlated[m
+[32m+[m[32m> policy and beat null controls at matched compute.[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32mS2 H2 / H6 additionally require evidence for dynamic topology and state-conditioned[m
+[32m+[m[32mtopology.[m
+ [m
+[31m-The source contains a long-term progression including v3 and a later v3.5 frozen-model[m
+[31m-retrofit, but does not provide an authoritative Stage-4 transition contract by that name.[m
+[32m+[m[32mNo exact numeric Stage-3 benchmark threshold is universally locked beyond the[m
+[32m+[m[32msource's hypothesis-specific formulations.[m
+ [m
+ ---[m
+ [m
+[31m-# 5. STAGE 4 — SOURCE EXTRACTION[m
+[31m-[m
+[31m-## 5.1 Critical source finding[m
+[31m-[m
+[31m-The located AGT-v3 source set does **not** contain a document/section that defines a canonical[m
+[31m-"Stage 4" specification.[m
+[31m-[m
+[31m-Therefore missing Stage-4 details must not be invented from:[m
+[31m-[m
+[31m-- generic adaptive-depth literature[m
+[31m-- PonderNet defaults[m
+[31m-- MoE routing[m
+[31m-- ANIRA[m
+[31m-- Ouro[m
+[31m-- FPRM[m
+[31m-- personal design intuition[m
+[31m-[m
+[31m-## 5.2 Stage-4 objective[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[31m-[m
+[31m-## 5.3 Stage-4 controller behavior[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[31m-[m
+[31m-## 5.4 Stage-4 adaptive-depth mechanism[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-The source discusses adaptive within-token depth, convergence-based stopping, and later[m
+[31m-test-time depth extension, but does not label an authoritative Stage-4 implementation.[m
+[31m-[m
+[31m-## 5.5 Stage-4 losses[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[31m-[m
+[31m-## 5.6 Stage-4 computation cost[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The overall research program explicitly treats compute/depth as an evaluation axis and[m
+[31m-discusses deliberation cost. No separate authoritative Stage-4 cost specification exists.[m
+[31m-[m
+[31m-## 5.7 Stage-4 difficulty definition[m
+[32m+[m[32m## 6.8 Failure / falsification criteria[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-Earlier source proposes graded algorithmic tasks with explicit difficulty knobs such as:[m
+[31m-[m
+[31m-- sequence length[m
+[31m-- expression complexity[m
+[31m-- graph size / reachable subgraph[m
+[31m-- Sudoku difficulty[m
+[31m-- reasoning horizon[m
+[32m+[m[32mSource-defined kill criteria include:[m
+ [m
+[31m-No unique Stage-4 difficulty definition is locked.[m
+[32m+[m[32m- **KILL-1:** dynamic topology approximately matches random/length-only controls at[m
+[32m+[m[32m  matched compute[m
+[32m+[m[32m- **KILL-2:** majority of seeds fail to obtain non-trivial routing despite[m
+[32m+[m[32m  optimization safeguards[m
+[32m+[m[32m- **KILL-3:** state-conditioned routing provides no measurable benefit over the[m
+[32m+[m[32m  persistent-state baseline[m
+[32m+[m[32m- **KILL-4:** AGT approximately matches a simpler looped model at matched[m
+[32m+[m[32m  active parameters and sequential steps[m
+ [m
+[31m-## 5.8 Stage-4 training procedure[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32mThe source also identifies router collapse as the primary optimization failure[m
+[32m+[m[32mmode.[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32m---[m
+ [m
+[31m-## 5.9 Stage-4 inference procedure[m
+[32m+[m[32m## 6.9 Transition criteria toward later stages[m
+ [m
+ **[PARTIALLY SPECIFIED]**[m
+ [m
+[31m-The architecture-level inference semantics are specified:[m
+[31m-[m
+[31m-- hard categorical execution[m
+[31m-- adaptive trajectory[m
+[31m-- convergence stopping[m
+[31m-- terminal update[m
+[31m-[m
+[31m-But no Stage-4-specific procedure is defined.[m
+[32m+[m[32mS2 Section S states:[m
+ [m
+[31m-## 5.10 Stage-4 experiment design[m
+[32m+[m[32m- v3 proceeds only if Q.2 passes and KILL-1/KILL-2 are cleared[m
+[32m+[m[32m- v3.5 is a cheap scale signal[m
+[32m+[m[32m- v4a richer memory occurs only if H6 passes[m
+[32m+[m[32m- v4b state-conditioned block behaviour occurs only if H4 passes[m
+[32m+[m[32m- v5 relaxes monotonicity only if the v3 monotone regime is demonstrably[m
+[32m+[m[32m  saturating[m
+[32m+[m[32m- v6 scaling follows consistent iso-FLOP evidence at multiple model sizes[m
+ [m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32mNo source-defined "Stage 3 -> Stage 4" transition is named in those terms.[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32m---[m
+ [m
+[31m-## 5.11 Stage-4 baselines[m
+[32m+[m[32m# 7. STAGE 4 — EXACT SOURCE STATUS[m
+ [m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[32m+[m[32m## 7.1 Numbered Stage 4[m
+ [m
+[31m-Earlier source provides a broad baseline ladder, but no canonical Stage-4-only baseline table.[m
+[32m+[m[32m**[UNSPECIFIED]**[m
+ [m
+[31m-## 5.12 Stage-4 success criteria[m
+[32m+[m[32mNo located AGT-v3 source defines a complete numbered Stage 4 specification.[m
+ [m
+[31m-**[UNSPECIFIED]**[m
+[32m+[m[32mTherefore the following items are NOT filled by inference:[m
+ [m
+[31m-`UNSPECIFIED — not defined by the original AGT-v3 source.`[m
+[32m+[m[32m- exact Stage-4 objective[m
+[32m+[m[32m- exact Stage-4 controller behavior[m
+[32m+[m[32m- exact Stage-4 adaptive-depth mechanism[m
+[32m+[m[32m- exact Stage-4 loss package[m
+[32m+[m[32m- exact Stage-4 computation cost[m
+[32m+[m[32m- exact difficulty definition[m
+[32m+[m[32m- exact training procedure[m
+[32m+[m[32m- exact inference procedure[m
+[32m+[m[32m- exact experiment design[m
+[32m+[m[32m- exact baselines[m
+[32m+[m[32m- exact success criteria[m
+ [m
+ ---[m
+ [m
+[31m-# 6. IMPORTANT HISTORICAL REVISIONS — DO NOT SILENTLY MERGE[m
+[32m+[m[32m# 8. LATER SOURCE-DEFINED ARCHITECTURAL PATH[m
+ [m
+[31m-## 6.1 Old `φ(p)` controller feature[m
+[32m+[m[32mThe source does define later versions, which must not be mislabeled as a numbered[m
+[32m+[m[32mStage 4.[m
+ [m
+[31m-Older S2:[m
+[32m+[m[32m## v3.5 — Frozen large-model routing signal[m
+ [m
+[31m-`φ(p)` = step-in-sweep feature.[m
+[31m-[m
+[31m-Later S3 explicitly retracts this.[m
+[32m+[m[32m**[SPECIFIED]**[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mRetrofit a state-conditioned router onto a frozen 7–8B open-weight model.[m
+ [m
+[31m-**RETRACTED**[m
+[32m+[m[32mGate:[m
+ [m
+[31m-Use of step-indexed iteration/depth features in the core architecture is not authorized.[m
+[32m+[m[32m> routing remains non-trivial at scale.[m
+ [m
+ ---[m
+ [m
+[31m-## 6.2 Old hard P_max mask[m
+[32m+[m[32m## v4a — richer persistent state[m
+ [m
+[31m-Older S2:[m
+[32m+[m[32m**[SPECIFIED]**[m
+ [m
+[31m-`P <= P_max`[m
+[32m+[m[32mOnly if H6 passes.[m
+ [m
+[31m-with ADVANCE/REPEAT masked at the bound.[m
+[32m+[m[32mPossible state directions named in the source:[m
+ [m
+[31m-Later S3 explicitly retracts the hard architectural halt mask.[m
+[32m+[m[32m- Titans-style test-time-learned memory[m
+[32m+[m[32m- mutable KV state[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mGate:[m
+ [m
+[31m-**RETRACTED as an architectural requirement**[m
+[32m+[m[32m> measurable gains on horizon-scaled tasks.[m
+ [m
+[31m-A deployment/training budget may still exist externally.[m
+[32m+[m[32mExact implementation remains open.[m
+ [m
+ ---[m
+ [m
+[31m-## 6.3 PonderNet as primary controller[m
+[32m+[m[32m## v4b — state-conditioned block behaviour[m
+ [m
+[31m-Older S2 uses PonderNet-style halting marginalization.[m
+[32m+[m[32m**[SPECIFIED]**[m
+ [m
+[31m-Later current architecture explicitly removes the separate PonderNet controller and instead[m
+[31m-uses one unified policy containing HALT, with convergence as a stopping signal.[m
+[32m+[m[32mOnly if H4 passes.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mNamed mechanism:[m
+ [m
+[31m-**Separate PonderNet controller: RETRACTED**[m
+[32m+[m[32m\[[m
+[32m+[m[32m\theta_j+\Delta(M_t)[m
+[32m+[m[32m\][m
+ [m
+[31m-A PonderNet-style probabilistic treatment in older training mathematics remains historical,[m
+[31m-not current locked architecture.[m
+[32m+[m[32musing low-rank parameter modulation.[m
+ [m
+[31m----[m
+[32m+[m[32mSource labels this as:[m
+ [m
+[31m-## 6.4 RESTART[m
+[32m+[m[32m- grade-2 novelty[m
+[32m+[m[32m- large optimization risk[m
+ [m
+[31m-Older detailed Section R omitted RESTART from its reduced action set.[m
+[32m+[m[32mExact implementation not locked.[m
+ [m
+[31m-Later current architecture explicitly adds:[m
+[32m+[m[32m---[m
+ [m
+[31m-`RESTART`[m
+[32m+[m[32m## v5 — topology relaxation[m
+ [m
+[31m-with:[m
+[32m+[m[32m**[SPECIFIED]**[m
+ [m
+[31m-`j <- 0, h preserved`[m
+[32m+[m[32mOnly if the monotone routing regime is demonstrably saturating.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mSource proposes relaxing monotonicity and using the outer-loop/sweep factorization[m
+[32m+[m[32mas the schedulable implementation.[m
+ [m
+[31m-**CURRENT / SPECIFIED**[m
+[32m+[m[32mThis is explicitly later than v3.[m
+ [m
+ ---[m
+ [m
+[31m-## 6.5 Exact block composition[m
+[31m-[m
+[31m-Older S2 gives an example N=8 composition.[m
+[32m+[m[32m## v6 — scaling[m
+ [m
+[31m-Later S1 explicitly says the exact species and ratios must not be implied as permanently[m
+[31m-locked.[m
+[32m+[m[32m**[SPECIFIED]**[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mOnly after v3–v5 produce consistent iso-FLOP advantage at multiple model sizes.[m
+ [m
+[31m-**Heterogeneity locked conceptually; exact composition provisional.**[m
+[32m+[m[32mThe source identifies iso-FLOP scaling curves as the deliverable.[m
+ [m
+ ---[m
+ [m
+[31m-## 6.6 Temperature / coefficients[m
+[32m+[m[32m# 9. REPOSITORY GAP ANALYSIS AT GATE-A-COMPLETE[m
+ [m
+[31m-Older documents contain formulas with symbols such as:[m
+[32m+[m[32mReference repository state:[m
+ [m
+[31m-`β_h`, `κ`, `η`, `β_z`[m
+[32m+[m[32m`09bed25c79b223f49893fb4f9c2038534498a5e6`[m
+ [m
+[31m-but do not establish one final current numerical parameter set.[m
+[32m+[m[32m## A. ALREADY IMPLEMENTED[m
+ [m
+[31m-Current status:[m
+[32m+[m[32m### A1 — Unified action vocabulary[m
+ [m
+[31m-**No numerical values should be invented.**[m
+[32m+[m[32mRepository:[m
+ [m
+[31m----[m
+[32m+[m[32m`src/controller.py`[m
+[32m+[m[32m`Controller.ACTIONS`[m
+ [m
+[31m-# 7. REPOSITORY GAP ANALYSIS AT GATE-A-COMPLETE[m
+[32m+[m[32mCurrent repository contains:[m
+ [m
+[31m-Repository reference point:[m
+[32m+[m[32m- ADVANCE[m
+[32m+[m[32m- REPEAT[m
+[32m+[m[32m- RESTART[m
+[32m+[m[32m- HALT[m
+ [m
+[31m-`09bed25c79b223f49893fb4f9c2038534498a5e6`[m
+[32m+[m[32mMatches S1 action semantics.[m
+ [m
+[31m----[m
+[32m+[m[32m### A2 — Execution controller object[m
+ [m
+[31m-## A. ALREADY IMPLEMENTED[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-### A1. Persistent cross-token state[m
+[32m+[m[32m`src/controller.py`[m
+[32m+[m[32m`Controller`[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mA shared controller module exists.[m
+ [m
+[31m-- `src/agt.py`[m
+[31m-- `src/terminal_commit.py`[m
+[31m-- `src/caches.py`[m
+[32m+[m[32mHowever its exact input/output representation is still provisional.[m
+ [m
+[31m-The persistent state object contains:[m
+[32m+[m[32m### A3 — Adaptive execution machinery[m
+ [m
+[31m-- summary state[m
+[31m-- persistent memory[m
+[31m-- typed execution context[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-This matches the architecture-level persistent-state concept.[m
+[32m+[m[32m`src/executor.py`[m
+[32m+[m[32m`AdaptiveExecutor`[m
+ [m
+[31m-### A2. GDN recurrent context[m
+[32m+[m[32mRepository can execute action sequences with:[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32m- ADVANCE[m
+[32m+[m[32m- REPEAT[m
+[32m+[m[32m- RESTART[m
+[32m+[m[32m- HALT[m
+ [m
+[31m-- `src/gdn_v3.py`[m
+[31m-- `src/blocks.py`[m
+[31m-- `src/terminal_commit.py`[m
+[31m-- `src/caches.py`[m
+[32m+[m[32mand applies execution/mask constraints.[m
+ [m
+[31m-The GDN recurrent state and terminal commit semantics are already implemented and were[m
+[31m-mechanistically validated in Gate A.[m
+[32m+[m[32m### A4 — Restart semantics[m
+ [m
+[31m-No Stage-3 work should modify this mechanism.[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-### A3. Heterogeneous block bank[m
+[32m+[m[32m`src/executor.py`[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mRestart preserves the live hidden state while resetting execution position.[m
+ [m
+[31m-- `src/blocks.py`[m
+[31m-- `src/config.py`[m
+[32m+[m[32mThis matches S1.[m
+ [m
+[31m-The Gate-A repository contains an 8-block heterogeneous bank.[m
+[32m+[m[32m### A5 — Adaptive model entry point[m
+ [m
+[31m-Important mismatch with current source semantics is documented below: the exact ratio is[m
+[31m-currently concrete in code while S1 says exact species/ratios are not permanently locked.[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-### A4. Unified action vocabulary[m
+[32m+[m[32m`src/agt.py`[m
+[32m+[m[32m`AGTv3.adaptive_step()`[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mThe adaptive execution path is integrated into the model.[m
+ [m
+[31m-- `src/controller.py`[m
+[32m+[m[32m### A6 — Persistent cross-token state[m
+ [m
+[31m-The controller declares:[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-`ADVANCE`, `REPEAT`, `RESTART`, `HALT`[m
+[32m+[m[32m`src/agt.py`[m
+[32m+[m[32m`src/terminal_commit.py`[m
+[32m+[m[32m`src/caches.py`[m
+ [m
+[31m-which is consistent with the latest action vocabulary.[m
+[32m+[m[32mPersistent state includes:[m
+ [m
+[31m-### A5. Adaptive executor machinery[m
+[32m+[m[32m\[[m
+[32m+[m[32mH_t=(s_t,M_{t+1},C_t).[m
+[32m+[m[32m\][m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mThis matches S1 at the architectural level.[m
+ [m
+[31m-- `src/executor.py`[m
+[31m-- `src/agt.py`[m
+[32m+[m[32m### A7 — Terminal commit[m
+ [m
+[31m-The executor understands the action family and enforces execution constraints.[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-### A6. Restart / monotone execution machinery[m
+[32m+[m[32m`src/terminal_commit.py`[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mThe repository enforces terminal persistent-state update and exactly-once commit.[m
+ [m
+[31m-- `src/executor.py`[m
+[32m+[m[32mMatches S1.[m
+ [m
+[31m-The existing executor contains restart handling and execution-mask logic compatible with the[m
+[31m-current architecture at the interface level.[m
+[32m+[m[32m### A8 — No top-k simultaneous core execution[m
+ [m
+[31m-### A7. Convergence mechanism[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32m`src/executor.py`[m
+ [m
+[31m-- `src/convergence.py`[m
+[31m-- `src/executor.py`[m
+[32m+[m[32mExecution is represented as one selected action transition rather than simultaneous[m
+[32m+[m[32mtop-k block execution.[m
+ [m
+[31m-A convergence module exists and is integrated with executor logic.[m
+[32m+[m[32mMatches S1.[m
+ [m
+[31m-### A8. Terminal commit[m
+[32m+[m[32m### A9 — Monotone forward advancement[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-- `src/terminal_commit.py`[m
+[32m+[m[32m`src/executor.py`[m
+[32m+[m[32mexecution legality / mask handling[m
+ [m
+[31m-The repository has a terminal commit path and atomic persistent-state update.[m
+[32m+[m[32mMatches the current macro-architecture requirement.[m
+ [m
+[31m----[m
+[32m+[m[32m### A10 — Convergence module exists[m
+ [m
+[31m-# 8. B. MISSING FROM THE CURRENT REPOSITORY[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-## B1. Stage-3 differentiable routing training[m
+[32m+[m[32m`src/convergence.py`[m
+ [m
+[31m-The current repository contains controller/executor interfaces, but no validated Stage-3[m
+[31m-training implementation matching the source-derived categorical-relaxation training[m
+[31m-contract.[m
+[32m+[m[32mA deterministic convergence gate exists.[m
+ [m
+[31m-## B2. Authoritative current ST-Gumbel implementation[m
+[32m+[m[32mThis is architecturally aligned with the existence of convergence-based stopping,[m
+[32m+[m[32mbut the exact stopping observable conflicts with the current source, described below.[m
+ [m
+[31m-No validated current ST-Gumbel formulation is established.[m
+[32m+[m[32m---[m
+ [m
+[31m-The repository must not invent a temperature or estimator.[m
+[32m+[m[32m# 10. B. MISSING FROM THE GATE-A-COMPLETE REPOSITORY[m
+ [m
+[31m-## B3. Final current routing objective[m
+[32m+[m[32m## B1 — Stage-3 categorical relaxation[m
+ [m
+[31m-The repository does not yet contain a source-authoritative implementation of:[m
+[32m+[m[32mRepository has controller logits, but no confirmed canonical ST-Gumbel training[m
+[32m+[m[32mimplementation at the Stage-3 level.[m
+ [m
+[31m-- switching/deliberation objective[m
+[31m-- route entropy term[m
+[31m-- halt-distribution objective[m
+[31m-- any final adaptive-depth objective[m
+[32m+[m[32m**Missing:** exact source-authorized categorical relaxation training path.[m
+ [m
+[31m-## B4. Difficulty-correlated compute diagnostics[m
+[32m+[m[32mSource basis:[m
+[32m+[m[32mS1 §17 / S3 §7.[m
+ [m
+[31m-The repository lacks a completed Stage-3 diagnostic system measuring, in one coherent driver:[m
+[32m+[m[32m---[m
+ [m
+[31m-- route dependence on input[m
+[31m-- depth vs known difficulty[m
+[31m-- route entropy[m
+[31m-- block utilization[m
+[31m-- convergence residual over depth[m
+[31m-- seed variance[m
+[31m-- matched-compute comparisons[m
+[32m+[m[32m## B2 — Stage-3 training objective[m
+ [m
+[31m-## B5. Source-authoritative Stage-3 experimental harness[m
+[32m+[m[32mNo complete Stage-3 routing objective exists.[m
+ [m
+[31m-`docs/TASK_A_SPEC.md` is Stage 1 fixed-route only.[m
+[32m+[m[32m**Missing:**[m
+ [m
+[31m-It cannot be reused as if it were the Stage-3 experimental contract.[m
+[32m+[m[32m- source-defined routing loss[m
+[32m+[m[32m- entropy term[m
+[32m+[m[32m- deliberation term[m
+[32m+[m[32m- adaptive-depth term[m
+[32m+[m[32m- coefficients[m
+ [m
+[31m-## B6. Compute-matched baseline ladder[m
+[32m+[m[32mSource status:[m
+[32m+[m[32mmostly unspecified in Gate B.[m
+ [m
+[31m-The repository does not yet implement the source-planned baseline ladder for:[m
+[32m+[m[32m---[m
+ [m
+[31m-- static[m
+[31m-- homogeneous loop[m
+[31m-- convergence-halted homogeneous[m
+[31m-- fixed-route heterogeneous[m
+[31m-- adaptive topology[m
+[31m-- random-route control[m
+[31m-- length-only control[m
+[31m-- persistent-state controls[m
+[32m+[m[32m## B3 — Stage-3 controller training loop[m
+ [m
+[31m-as one matched evaluation framework.[m
+[32m+[m[32mRepository only contains the Stage-1 training loop with controller disabled:[m
+ [m
+[31m-## B7. Stage-3 route replay / strict recompute contract[m
+[32m+[m[32m`experiments/train_stage1_taskA.py`[m
+ [m
+[31m-The research memo calls for strict current-parameter recomputation of persistent state and[m
+[31m-route state. The present repository does not expose this as a completed Stage-3 training[m
+[31m-contract.[m
+[32m+[m[32mThere is no authoritative Stage-3 controller training procedure.[m
+ [m
+ ---[m
+ [m
+[31m-# 9. C. CONFLICTING / REQUIRES CHANGE[m
+[31m-[m
+[31m-## C1. Controller dimensions[m
+[32m+[m[32m## B4 — D64 Stage-3 benchmark[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mThe repository's validated D64 parity experiment is fixed-route Stage 1.[m
+ [m
+[31m-`src/controller.py`[m
+[32m+[m[32mThere is no source-authorized Stage-3 routing benchmark.[m
+ [m
+[31m-Current implementation is a provisional controller.[m
+[32m+[m[32m---[m
+ [m
+[31m-The Gate-A D64 parameter audit observed a compact controller of the form:[m
+[32m+[m[32m## B5 — Required routing diagnostics[m
+ [m
+[31m-`D -> D -> 11`[m
+[32m+[m[32mThe source requires / strongly emphasizes:[m
+ [m
+[31m-with D64 giving:[m
+[32m+[m[32m- route entropy[m
+[32m+[m[32m- per-block utilization[m
+[32m+[m[32m- `I(input ; route)`[m
+[32m+[m[32m- executed depth versus difficulty[m
+[32m+[m[32m- route collapse monitoring[m
+[32m+[m[32m- compute-matched comparisons[m
+ [m
+[31m-`64 -> 64 -> 11`[m
+[32m+[m[32mThese are not yet implemented as a complete Stage-3 evaluation suite.[m
+ [m
+[31m-The current source set does not establish this as the final controller architecture.[m
+[32m+[m[32m---[m
+ [m
+[31m-Older project roadmap discussion had referenced a different controller dimensionality.[m
+[32m+[m[32m## B6 — Random-path / length-only routing controls[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mS2 Q.2 specifically identifies:[m
+ [m
+[31m-**CONFLICTING / REQUIRES EXPLICIT DECISION**[m
+[32m+[m[32m- `R_ctrl`[m
+[32m+[m[32m- `L_ctrl`[m
+ [m
+[31m-Do not silently reconcile these dimensions.[m
+[32m+[m[32mas decisive routing controls.[m
+ [m
+[31m-The final controller feature width, hidden width, and output indexing scheme must be[m
+[31m-explicitly fixed before implementation.[m
+[32m+[m[32mThey do not exist as a completed Gate-B / Stage-3 evaluation package.[m
+ [m
+ ---[m
+ [m
+[31m-## C2. Exact action-logit dimensionality[m
+[31m-[m
+[31m-**Repository:**[m
+[31m-[m
+[31m-`src/controller.py`[m
+[32m+[m[32m## B7 — Multi-seed routing study[m
+ [m
+[31m-The action vocabulary is present.[m
+[32m+[m[32mSource Q.2 calls for multiple seeds.[m
+ [m
+[31m-**Source:**[m
+[32m+[m[32mNo Stage-3 routing study exists.[m
+ [m
+[31m-Current source specifies action semantics but does not lock a final serialized logit[m
+[31m-layout for all possible `ADVANCE(j')` actions.[m
+[32m+[m[32m---[m
+ [m
+[31m-Current status:[m
+[32m+[m[32m## B8 — Difficulty-correlated adaptive computation test[m
+ [m
+[31m-**PARTIALLY IMPLEMENTED / REQUIRES SPECIFICATION**[m
+[32m+[m[32mThe current Gate-A parity setup proves fixed-route competence and mechanism relevance,[m
+[32m+[m[32mbut does not test whether routing depth tracks known problem difficulty.[m
+ [m
+ ---[m
+ [m
+[31m-## C3. Current exact block composition[m
+[32m+[m[32m# 11. C. CONFLICTING / REQUIRES CHANGE OR EXPLICIT DECISION[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32m## C1 — Old PonderNet vs current unified controller[m
+ [m
+[31m-`[SWA, SWA, GQA, GQA, GDN, GDN, FFN, FFN]`[m
+[32m+[m[32mOlder source S3:[m
+ [m
+[31m-**Source:**[m
+[32m+[m[32m- separate local PonderNet[m
+[32m+[m[32m- separate global HALT[m
+[32m+[m[32m- soft segment readout[m
+ [m
+[31m-S1 says heterogeneity is the macro requirement and warns against presenting exact species[m
+[31m-and ratios as permanently locked.[m
+[32m+[m[32mCurrent source S1:[m
+ [m
+[31m-Current status:[m
+[32m+[m[32m- one unified policy[m
+[32m+[m[32m- REPEAT / RESTART / HALT are policy actions[m
+[32m+[m[32m- no separate PonderNet controller[m
+[32m+[m[32m- no separate global halt controller[m
+ [m
+[31m-**CONFLICTING / REQUIRES EXPLICIT DECISION**[m
+[32m+[m[32m**Resolution status:** S1 supersedes S3.[m
+ [m
+[31m-Gate-A fixed-route composition must remain frozen for Gate-A reproducibility, but its status[m
+[31m-as the future Stage-3 bank must be explicitly decided.[m
+[32m+[m[32mNo code change should be made yet because Gate B is specification-only.[m
+ [m
+ ---[m
+ [m
+[31m-## C4. Convergence role[m
+[32m+[m[32m## C2 — Old sequence-level routing vs current token-indexed architecture[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mS3 states:[m
+ [m
+[31m-`src/convergence.py`[m
+[32m+[m[32m> Current prototype routing is sequence-level.[m
+ [m
+[31m-Convergence infrastructure exists.[m
+[32m+[m[32mS1 defines token-indexed recurrent execution:[m
+ [m
+[31m-**Current source:**[m
+[32m+[m[32m\[[m
+[32m+[m[32mh_{t,p}[m
+[32m+[m[32m\][m
+ [m
+[31m-Convergence is a stopping signal and diagnostic; there is no second halt controller.[m
+[32m+[m[32mand persistent state across token transitions.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mS2 P.4 / R then recommend token-level routing.[m
+ [m
+[31m-**REQUIRES TRAINING/INFERENCE INTEGRATION VALIDATION**[m
+[32m+[m[32m**Resolution status:** the later sources supersede the older sequence-level prototype.[m
+ [m
+[31m-The existence of the convergence module is not the same thing as demonstrating that Stage-3[m
+[31m-training/inference satisfies the current convergence semantics.[m
+[32m+[m[32mRepository's adaptive per-token path is therefore closer to current architecture than[m
+[32m+[m[32mthe old S3 blueprint.[m
+ [m
+ ---[m
+ [m
+[31m-## C5. Gumbel and temperature[m
+[32m+[m[32m## C3 — Controller dimensionality discrepancy[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-No validated current ST-Gumbel training protocol exists.[m
+[32m+[m[32m`src/controller.py`[m
+ [m
+[31m-**Source:**[m
+[32m+[m[32mCurrent implementation is a provisional architecture whose controller output is[m
+[32m+[m[32mdimensioned for the action space at the repository's model dimension.[m
+ [m
+[31m-Gumbel-Softmax is optional at the architecture level; exact temperature/schedule is not[m
+[31m-locked.[m
+[32m+[m[32mA prior AGT design artifact referenced a substantially different feature/controller[m
+[32m+[m[32mshape (historically described as something like `1803 -> 256 -> 11`), whereas the[m
+[32m+[m[32mcurrent repository uses a `D -> D -> 11`-style controller.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mThe located current S1 source does **not** define the 1803-dimensional feature[m
+[32m+[m[32mvector or a final controller hidden dimension.[m
+ [m
+[31m-**MISSING + HUMAN DECISION REQUIRED**[m
+[32m+[m[32m**Resolution status:** unresolved.[m
+[32m+[m
+[32m+[m[32mThis must NOT be silently reconciled.[m
+ [m
+ ---[m
+ [m
+[31m-## C6. Loss coefficients[m
+[32m+[m[32m## C4 — Controller input / persistent-memory conditioning[m
+ [m
+[31m-**Repository:**[m
+[32m+[m[32mS1 explicitly defines the policy as conditioned on:[m
+ [m
+[31m-No validated final Stage-3 objective exists.[m
+[32m+[m[32m\[[m
+[32m+[m[32m(h_{t,p},M_t,j_{t,p},b_p)[m
+[32m+[m[32m\][m
+ [m
+[31m-**Source:**[m
+[32m+[m[32mand S2 Section R emphasizes:[m
+ [m
+[31m-Symbols exist in historical detailed memos, but no final current numerical values are locked.[m
+[32m+[m[32m> router conditioned on `read(M_t)`.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mThe repository has a controller implementation, but there is not yet a completed[m
+[32m+[m[32mGate-B-verified demonstration that the controller receives the exact source-defined[m
+[32m+[m[32mmemory-conditioned feature set.[m
+ [m
+[31m-**MISSING + HUMAN DECISION REQUIRED**[m
+[32m+[m[32m**Resolution status:** requires explicit implementation review before Stage 3.[m
+ [m
+ ---[m
+ [m
+[31m-## C7. D64 Stage-3 task[m
+[31m-[m
+[31m-**Repository:**[m
+[31m-[m
+[31m-D64 parity exists only as Stage-1 fixed-route validation.[m
+[32m+[m[32m## C5 — Convergence observable[m
+ [m
+[31m-**Source:**[m
+[32m+[m[32mS1 specifies:[m
+ [m
+[31m-No canonical D64 Stage-3 task is locked.[m
+[32m+[m[32m\[[m
+[32m+[m[32m\delta_{\mathrm{out},t,p}[m
+[32m+[m[32m=[m
+[32m+[m[32m\|\ell_{t,p+1}-\ell_{t,p}\|[m
+[32m+[m[32m\][m
+ [m
+[31m-Current status:[m
+[32m+[m[32mand:[m
+ [m
+[31m-**MISSING + HUMAN DECISION REQUIRED**[m
+[32m+[m[32m\[[m
+[32m+[m[32m\delta_{\mathrm{out}}\rightarrow0[m
+[32m+[m[32m\Rightarrow[m
+[32m+[m[32m\operatorname{HALT}.[m
+[32m+[m[32m\][m
+ [m
+[31m----[m
+[32m+[m[32mRepository:[m
+ [m
+[31m-## C8. D768[m
+[32m+[m[32m`src/convergence.py`[m
+ [m
+[31m-The older detailed memo contains D768 implementation examples.[m
+[32m+[m[32mcurrently implements deterministic convergence from state representations / normalized[m
+[32m+[m[32mstate change rather than the source's explicitly written output-logit difference.[m
+ [m
+[31m-The current Gate-B instruction explicitly forbids touching D768 now.[m
+[32m+[m[32m**Resolution status:** conflict requiring explicit decision.[m
+ [m
+[31m-Current status:[m
+[32m+[m[32mDo not silently substitute one for the other.[m
+ [m
+[31m-**OUT OF BOUNDARY**[m
+[32m+[m[32m---[m
+ [m
+[31m-No D768 implementation is authorized by Gate B.[m
+[32m+[m[32m## C6 — Architectural depth ceiling[m
+ [m
+[31m----[m
+[32m+[m[32mS1 explicitly requires:[m
+ [m
+[31m-# 10. REQUIRED IMPLEMENTATION CHANGES AFTER GATE-B APPROVAL[m
+[32m+[m[32m\[[m
+[32m+[m[32mP_t\in\mathbb N[m
+[32m+[m[32m\][m
+ [m
+[31m-These are requirements to resolve, NOT implementation instructions.[m
+[32m+[m[32mand:[m
+ [m
+[31m-## 10.1 Resolve controller specification[m
+[32m+[m[32m> NO ARCHITECTURAL UPPER BOUND ON `P_t`.[m
+ [m
+[31m-Explicitly decide:[m
+[32m+[m[32mS2 Section R proposes:[m
+ [m
+[31m-- controller input feature construction[m
+[31m-- controller hidden dimension[m
+[31m-- action-logit serialization[m
+[31m-- whether `b_p` is enabled[m
+[31m-- exact position encoding representation, if any, consistent with the current source[m
+[32m+[m[32m> `P_max = 24` as a training safeguard.[m
+ [m
+[31m-## 10.2 Resolve differentiable routing specification[m
+[32m+[m[32mRepository executor currently contains an execution-depth safety mechanism.[m
+ [m
+[31m-Explicitly decide, only where source is silent:[m
+[32m+[m[32m**Resolution status:**[m
+ [m
+[31m-- exact ST-Gumbel estimator[m
+[31m-- temperature[m
+[31m-- temperature schedule[m
+[31m-- treatment of RESTART[m
+[31m-- treatment of REPEAT[m
+[31m-- treatment of HALT during relaxation[m
+[32m+[m[32mThe distinction between:[m
+ [m
+[31m-## 10.3 Resolve objective[m
+[32m+[m[32m- architectural maximum[m
+[32m+[m[32m- training safeguard[m
+[32m+[m[32m- serving budget[m
+ [m
+[31m-Explicitly decide:[m
+[32m+[m[32mmust be resolved explicitly.[m
+ [m
+[31m-- task-loss formulation[m
+[31m-- halt regularization[m
+[31m-- switching/deliberation coefficient[m
+[31m-- route entropy coefficient[m
+[31m-- adaptive-depth term[m
+[31m-- any deep-supervision term[m
+[31m-- any auxiliary state regularization[m
+[32m+[m[32mA finite safeguard must not be described as an architectural bound.[m
+ [m
+[31m-## 10.4 Resolve D64 Stage-3 benchmark[m
+[32m+[m[32m---[m
+ [m
+[31m-Select and freeze:[m
+[32m+[m[32m## C7 — Action set mismatch in older minimum-v3 memo[m
+ [m
+[31m-- task[m
+[31m-- difficulty axis[m
+[31m-- train/validation/test split[m
+[31m-- compute budgets[m
+[31m-- evaluation points[m
+[31m-- seed count[m
+[31m-- baseline arms[m
+[32m+[m[32mS2 Section R writes the minimum policy as:[m
+ [m
+[31m-No existing Stage-1 parity result should be silently reused as Stage-3 evidence.[m
+[32m+[m[32m`{ADVANCE(j'>j), REPEAT, HALT}`[m
+ [m
+[31m-## 10.5 Build instrumentation before training[m
+[32m+[m[32mwhile S1 later defines:[m
+ [m
+[31m-The research source treats diagnostics as a first-class result.[m
+[32m+[m[32m`{ADVANCE(j'), REPEAT, RESTART, HALT}`.[m
+ [m
+[31m-Required instrumentation should measure at minimum:[m
+[32m+[m[32m**Resolution status:** S1 is later and therefore authoritative.[m
+ [m
+[31m-- route distribution[m
+[31m-- route entropy[m
+[31m-- per-block utilization[m
+[31m-- executed depth[m
+[31m-- repeated-block count[m
+[31m-- restart count[m
+[31m-- convergence residual[m
+[31m-- depth vs difficulty[m
+[31m-- input-route dependence[m
+[31m-- seed variance[m
+[31m-- compute / latency / memory[m
+[32m+[m[32mRESTART is part of current architecture.[m
+ [m
+ ---[m
+ [m
+[31m-# 11. HUMAN DECISIONS REQUIRED[m
+[32m+[m[32m## C8 — PonderNet terminology[m
+ [m
+[31m-The following are deliberately NOT decided by Gate B:[m
+[32m+[m[32mS3 presents PonderNet local recurrence as a distinct mechanism.[m
+ [m
+[31m-1. Final controller hidden dimension.[m
+[31m-2. Final controller input feature vector.[m
+[31m-3. Whether `b_p = p/B` is enabled.[m
+[31m-4. Exact ST-Gumbel estimator.[m
+[31m-5. Gumbel temperature.[m
+[31m-6. Initial temperature.[m
+[31m-7. Temperature annealing schedule.[m
+[31m-8. Deliberation/switching coefficient.[m
+[31m-9. Route entropy coefficient.[m
+[31m-10. Adaptive-depth coefficient.[m
+[31m-11. Deep-supervision coefficient.[m
+[31m-12. Any state-norm auxiliary coefficient.[m
+[31m-13. Canonical D64 Stage-3 task.[m
+[31m-14. Canonical D64 difficulty variable.[m
+[31m-15. Final exact heterogenous block composition for Stage 3.[m
+[31m-16. Final Stage-3 success thresholds where the sources do not lock them.[m
+[31m-17. Any Stage-4-specific specification.[m
+[32m+[m[32mS1 explicitly removes the old PonderNet architecture and instead treats repeat and[m
+[32m+[m[32mhalting as unified policy actions.[m
+ [m
+[31m-No value should be inserted merely because it is "reasonable".[m
+[32m+[m[32m**Resolution status:** use current unified terminology for implementation.[m
+ [m
+ ---[m
+ [m
+[31m-# 12. PROPOSED GATE-C BOUNDARY[m
+[32m+[m[32m# 12. ALL CURRENTLY UNSPECIFIED ITEMS[m
+ [m
+[31m-**Gate C should begin only after explicit approval of the unresolved Gate-B decisions.**[m
+[32m+[m[32mThe following must remain unspecified unless a source is subsequently located:[m
+ [m
+[31m-Gate C implementation boundary:[m
+[32m+[m[32m1. exact Stage-3 scalar objective[m
+[32m+[m[32m2. exact controller hidden dimension[m
+[32m+[m[32m3. exact controller feature vector[m
+[32m+[m[32m4. exact controller activation / normalization[m
+[32m+[m[32m5. exact memory-read feature projection for routing[m
+[32m+[m[32m6. exact use of budget-relative conditioning[m
+[32m+[m[32m7. exact logits parameterization and masking tensor[m
+[32m+[m[32m8. exact ST-Gumbel formula under current architecture[m
+[32m+[m[32m9. temperature[m
+[32m+[m[32m10. temperature initialization[m
+[32m+[m[32m11. temperature annealing schedule[m
+[32m+[m[32m12. routing-loss formula[m
+[32m+[m[32m13. entropy coefficient[m
+[32m+[m[32m14. deliberation-cost coefficient[m
+[32m+[m[32m15. adaptive-depth-loss formula[m
+[32m+[m[32m16. auxiliary-loss package[m
+[32m+[m[32m17. exact loss-weight coefficients[m
+[32m+[m[32m18. exact BPTT truncation length[m
+[32m+[m[32m19. exact Stage-3 trainable/frozen module set[m
+[32m+[m[32m20. exact D64 Stage-3 task[m
+[32m+[m[32m21. exact D64 training dataset size[m
+[32m+[m[32m22. exact D64 sequence/task protocol[m
+[32m+[m[32m23. exact fixed block count as a permanent lock[m
+[32m+[m[32m24. exact Stage-3 baseline table[m
+[32m+[m[32m25. exact benchmark threshold[m
+[32m+[m[32m26. exact route-information estimator[m
+[32m+[m[32m27. exact route-entropy definition[m
+[32m+[m[32m28. exact depth/difficulty correlation statistic[m
+[32m+[m[32m29. exact Stage-4 specification[m
+[32m+[m[32m30. exact Stage-4 adaptive-depth loss[m
+[32m+[m[32m31. exact Stage-4 controller behaviour[m
+[32m+[m[32m32. exact Stage-4 training schedule[m
+[32m+[m[32m33. exact Stage-4 inference budget[m
+[32m+[m[32m34. exact Stage-4 baseline suite[m
+[32m+[m[32m35. exact Stage-4 success threshold[m
+ [m
+[31m-### IN SCOPE[m
+[32m+[m[32mThese are intentionally **not filled in**.[m
+ [m
+[31m-- D64 only[m
+[31m-- current frozen Gate-A backbone as the starting substrate[m
+[31m-- one unified controller[m
+[31m-- source-approved action semantics[m
+[31m-- differentiable categorical routing[m
+[31m-- exact chosen ST-Gumbel protocol[m
+[31m-- exact chosen objective[m
+[31m-- exact chosen D64 task[m
+[31m-- instrumentation-first implementation[m
+[31m-- fixed-route and null controls[m
+[31m-- deterministic/equivalence tests[m
+[31m-- no GDN redesign[m
+[31m-[m
+[31m-### OUT OF SCOPE[m
+[31m-[m
+[31m-- D768 scaling[m
+[31m-- real language-model training[m
+[31m-- real-world datasets[m
+[31m-- new GDN mathematics[m
+[31m-- MoE[m
+[31m-- outer reasoning loop[m
+[31m-- second controller[m
+[31m-- unrestricted topology[m
+[31m-- arbitrary backward routing[m
+[31m-- architectural recurrence ceiling[m
+[31m-- unapproved loss terms[m
+[31m-- unapproved controller features[m
+[31m-- unapproved temperature schedule[m
+[31m-[m
+[31m-### Gate-C stop condition[m
+[32m+[m[32m---[m
+ [m
+[31m-Do not promote to the next gate merely because training produces a positive number.[m
+[32m+[m[32m# 13. REQUIRED IMPLEMENTATION CHANGES AFTER GATE-B APPROVAL[m
+ [m
+[31m-Gate C must first establish that:[m
+[32m+[m[32mThese are consequences of the source/code comparison, not implementation instructions[m
+[32m+[m[32mfor the current Gate-B phase.[m
+ [m
+[31m-1. the routing implementation matches the frozen source-derived specification,[m
+[31m-2. null / fixed-route / random-route controls behave correctly,[m
+[31m-3. gradients flow through the intended routing path,[m
+[31m-4. the controller does not trivially collapse,[m
+[31m-5. the measured result is reproducible under the registered protocol.[m
+[32m+[m[32m## Required before Stage-3 implementation[m
+ [m
+[31m-Only then should adaptive-depth performance claims be made.[m
+[32m+[m[32m1. Resolve the controller feature/dimension discrepancy.[m
+[32m+[m[32m2. Define a source-consistent routing feature interface including persistent-memory[m
+[32m+[m[32m   conditioning if S1/S2 is retained as authoritative.[m
+[32m+[m[32m3. Define the exact categorical-relaxation estimator.[m
+[32m+[m[32m4. Define the exact routing objective and coefficient set.[m
+[32m+[m[32m5. Resolve convergence observable: logits versus state change.[m
+[32m+[m[32m6. Formalize training-safeguard versus architectural depth semantics.[m
+[32m+[m[32m7. Implement route diagnostics.[m
+[32m+[m[32m8. Implement `R_ctrl` and `L_ctrl`.[m
+[32m+[m[32m9. Define a difficulty-controlled D64 task family.[m
+[32m+[m[32m10. Define a reproducible multi-seed protocol.[m
+[32m+[m[32m11. Freeze the source-derived Stage-3 contract before modifying model code.[m
+ [m
+ ---[m
+ [m
+[31m-# 13. FINAL GATE-B STATUS[m
+[32m+[m[32m# 14. HUMAN DECISIONS REQUIRED[m
+ [m
+[31m-## Located source documents[m
+[32m+[m[32mThese decisions are intentionally left open:[m
+ [m
+[31m-1. `Pasted text(20260929-195559).txt` — current macro-architecture correction[m
+[31m-2. `Pasted markdown(20260913-120909).md` — extensibility / convergence decision memo[m
+[31m-3. `Pasted markdown(20260913-113624).md` — detailed older controller / training memo[m
+[31m-4. `AGT_v3_Literature_DeepDive_and_Architecture_Revision.md` — later literature synthesis[m
+[31m-[m
+[31m-## Stage 3[m
+[32m+[m[32m### Decision H1 — Stage-3 source authority[m
+ [m
+[31m-A source-derived architecture is identifiable.[m
+[32m+[m[32mShould the latest S1 macro-architecture correction be treated as the final[m
+[32m+[m[32mauthority over the older S3 PonderNet blueprint?[m
+ [m
+[31m-However, several critical numerical / implementation details are not source-locked,[m
+[31m-especially:[m
+[32m+[m[32mThe present document records that chronology but does not make a new scientific[m
+[32m+[m[32marchitecture choice.[m
+ [m
+[31m-- temperature[m
+[31m-- temperature schedule[m
+[31m-- final controller dimensionality[m
+[31m-- exact feature construction[m
+[31m-- final loss coefficients[m
+[31m-- canonical D64 Stage-3 benchmark[m
+[31m-- final transition gate[m
+[32m+[m[32m### Decision H2 — Controller dimensionality[m
+ [m
+[31m-## Stage 4[m
+[32m+[m[32mWhich source, if any, supplies the missing historical `1803 -> 256 -> 11`[m
+[32m+[m[32mspecification?[m
+ [m
+[31m-No authoritative Stage-4 specification was located.[m
+[32m+[m[32mUntil that source is recovered, the final dimensions remain unresolved.[m
+ [m
+[31m-Therefore Stage-4 implementation details must remain unspecified pending an actual[m
+[31m-source document or explicit human design decision.[m
+[32m+[m[32m### Decision H3 — Categorical estimator[m
+ [m
+[31m-## Repository status[m
+[32m+[m[32mDoes Stage 3 require the older explicit ST-Gumbel formulation from S3, or only the[m
+[32m+[m[32mbroader current S1 requirement that training may use a categorical relaxation?[m
+ [m
+[31m-The repository already contains substantial infrastructure:[m
+[32m+[m[32m### Decision H4 — Convergence[m
+ [m
+[31m-- persistent state[m
+[31m-- heterogeneous bank[m
+[31m-- unified action vocabulary[m
+[31m-- executor[m
+[31m-- restart / monotone execution machinery[m
+[31m-- convergence module[m
+[31m-- terminal commit[m
+[32m+[m[32mShould Stage 3 implement the explicitly written output-logit convergence signal,[m
+[32m+[m[32mor is the repository's state-change convergence intended to supersede it?[m
+ [m
+[31m-The repository does not yet contain a source-authoritative validated Stage-3 differentiable[m
+[31m-routing training system.[m
+[32m+[m[32m### Decision H5 — Depth safeguard[m
+ [m
+[31m-## Scientific boundary[m
+[32m+[m[32mWhat finite execution safeguard, if any, is permitted while preserving the source's[m
+[32m+[m[32m"No architectural upper bound" claim?[m
+ [m
+[31m-Gate B ends here.[m
+[32m+[m[32m### Decision H6 — Exact Stage-3 task[m
+ [m
+[31m-No Stage-3 implementation is authorized by this document until the unresolved[m
+[31m-specification decisions are explicitly approved.[m
+[32m+[m[32mWhich task/difficulty family is intended as the mandatory D64 routing gate?[m
+ [m
+[31m-# SOURCE-LOCKED RECONCILIATION[m
+[32m+[m[32m### Decision H7 — Exact Stage-4 interpretation[m
+ [m
+[31m-This section is the authoritative Gate-B reconciliation of the original AGT-v3[m
+[31m-source materials located in the Library.[m
+[32m+[m[32mWhat document, if any, defines the numbered Stage 4?[m
+ [m
+[31m-It does not authorize implementation.[m
+[32m+[m[32mUntil identified, no Stage-4 implementation should be started.[m
+ [m
+ ---[m
+ [m
+[31m-## B.1 Source hierarchy[m
+[32m+[m[32m# 15. GATE-C IMPLEMENTATION BOUNDARY[m
+ [m
+[31m-### S1 — latest macro-architecture correction[m
+[32m+[m[32mGate C may begin only after explicit approval.[m
+ [m
+[31m-Source:[m
+[32m+[m[32mThe boundary is:[m
+ [m
+[31m-`Pasted text(20260929-195559).txt`[m
+[32m+[m[32m**Gate C may implement only the source-approved D64 differentiable routing[m
+[32m+[m[32mmechanism required to test state-conditioned topology.**[m
+ [m
+[31m-This is the latest architecture correction and therefore has precedence over[m
+[31m-older topology/controller formulations where the two conflict.[m
+[32m+[m[32mGate C must NOT silently introduce:[m
+ [m
+[31m-S1 explicitly specifies:[m
+[32m+[m[32m- new GDN mechanics[m
+[32m+[m[32m- new memory hierarchy[m
+[32m+[m[32m- D768 scaling[m
+[32m+[m[32m- real-world dataset training[m
+[32m+[m[32m- outer reasoning loops[m
+[32m+[m[32m- arbitrary backward routing[m
+[32m+[m[32m- second halting controller[m
+[32m+[m[32m- MoE routing[m
+[32m+[m[32m- hypernetwork parameter modulation[m
+[32m+[m[32m- unspecified losses[m
+[32m+[m[32m- unspecified controller dimensions[m
+[32m+[m[32m- unspecified temperature schedules[m
+ [m
+[31m-- one unified state-conditioned execution policy;[m
+[31m-- persistent cross-token state;[m
+[31m-- adaptive within-token recurrence;[m
+[31m-- restartable monotone sweeps;[m
+[31m-- unbounded-in-principle computation depth;[m
+[31m-- action space[m
+[31m-  `{ADVANCE(j'), REPEAT, RESTART, HALT}`;[m
+[31m-- `ADVANCE: j' > j`;[m
+[31m-- `REPEAT: j' = j`;[m
+[31m-- `RESTART: j <- 0` while preserving live hidden state;[m
+[31m-- `HALT: terminate internal computation`;[m
+[31m-- categorical relaxation during training;[m
+[31m-- hard categorical execution at inference;[m
+[31m-- no unrestricted backward/cyclic topology;[m
+[31m-- no top-k simultaneous core execution.[m
+[32m+[m[32mThe first Stage-3 implementation target should be the smallest experiment capable[m
+[32m+[m[32mof testing:[m
+ [m
+[31m-Source locations:[m
+[31m-S1 lines 42–52, 145–170, 236–246, 373–383, 483–501.[m
+[32m+[m[32m\[[m
+[32m+[m[32mE2:[m
+[32m+[m[32m\text{persistent state + state-conditioned routing}[m
+[32m+[m[32m\][m
+ [m
+[31m-Classification: **architecture-level current source**.[m
+[32m+[m[32magainst the source-mandated controls, especially:[m
+ [m
+[31m-### S2 — detailed AGT-v3 mathematical/research memo[m
+[32m+[m[32m\[[m
+[32m+[m[32mR_{\mathrm{ctrl}}[m
+[32m+[m[32m\][m
+ [m
+[31m-Source:[m
+[32m+[m[32mand[m
+ [m
+[31m-`Pasted markdown(20260913-113624).md`[m
+[32m+[m[32m\[[m
+[32m+[m[32mL_{\mathrm{ctrl}}.[m
+[32m+[m[32m\][m
+ [m
+[31m-This document supplies the detailed mathematical formulation, loss design,[m
+[31m-training curriculum, experimental hypotheses, kill criteria, and minimum[m
+[31m-implementable architecture.[m
+[32m+[m[32mThe source's own Q.2 gate is the decisive reason for this boundary.[m
+ [m
+[31m-Important qualification:[m
+[32m+[m[32m---[m
+ [m
+[31m-S2 is a detailed/research specification and recommendation document, not a[m
+[31m-later architecture-correction freeze. Where S2 conflicts with S1, the[m
+[31m-conflict is recorded below rather than silently reconciled.[m
+[32m+[m[32m# 16. GATE-B CONCLUSION[m
+ [m
+[31m-Relevant sections:[m
+[32m+[m[32mGate B establishes:[m
+ [m
+[31m-- F.2/F.3 — controller simplification / outer-loop discussion[m
+[31m-- G.1–G.9 — mathematical AGT-v3 formulation[m
+[31m-- P.3–P.6 — curriculum, state-consistency and compute matching[m
+[31m-- Q.1–Q.3 — hypotheses, gating experiment, kill criteria[m
+[31m-- R — minimum implementable AGT-v3[m
+[31m-- S — long-term gated architecture path[m
+[32m+[m[32m1. The latest located source defines a coherent current macro-architecture.[m
+[32m+[m[32m2. The older PonderNet + separate-global-halt design is superseded by the later[m
+[32m+[m[32m   unified action policy.[m
+[32m+[m[32m3. Persistent cross-token state and state-conditioned routing are central source-defined[m
+[32m+[m[32m   mechanisms.[m
+[32m+[m[32m4. Categorical relaxation is source-supported, but the exact ST-Gumbel implementation[m
+[32m+[m[32m   is not fully specified by the latest source.[m
+[32m+[m[32m5. Temperature, annealing, routing loss, entropy coefficient, deliberation coefficient,[m
+[32m+[m[32m   adaptive-depth coefficient, and several controller dimensions are not fully specified.[m
+[32m+[m[32m6. A complete numbered Stage 4 specification was not located.[m
+[32m+[m[32m7. The repository contains substantial execution infrastructure but lacks the full[m
+[32m+[m[32m   source-authorized Stage-3 training/evaluation contract.[m
+[32m+[m[32m8. The controller dimensionality discrepancy remains unresolved and must not be guessed.[m
+[32m+[m[32m9. The convergence observable contains a real source/repository mismatch and must not[m
+[32m+[m[32m   be silently reconciled.[m
+[32m+[m[32m10. No Stage-3 implementation is justified until the unresolved human decisions above[m
+[32m+[m[32m    are explicitly settled.[m
+ [m
+[31m----[m
+[32m+[m[32m**Gate B ends here.**[m
+ [m
+[31m-# B.2 Stage-3 specification extraction[m
+[32m+[m[32mNo training.[m
+[32m+[m[32mNo ST-Gumbel implementation.[m
+[32m+[m[32mNo routing-loss implementation.[m
+[32m+[m[32mNo D768.[m
+[32m+[m[32mNo GDN modification.[m
+[32m+[m[32mNo Stage-3 experiment.[m
+ [m
+[31m-## 1. Stage-3 objective[m
+[32m+[m[32m---[m
+ [m
+[31m-**[SPECIFIED]**[m
+[32m+[m[32m# 17. SOURCE INDEX[m
+ [m
+[31m-The principal objective is to determine whether heterogeneous conditional[m
+[31m-computation with persistent state produces a genuinely useful learned[m
+[31m-execution topology.[m
+[32m+[m[32m### S1 — Current macro architecture correction[m
+[32m+[m[32m`Pasted text(20260929-195559).txt`[m
+ [m
+[31m-Operationally, Q.2 asks:[m
+[32m+[m[32mPrimary current semantics:[m
+ [m
+[31m-> Does the router learn a non-trivial, input-dependent,[m
+[31m-> difficulty-correlated policy and beat the two null controls at matched[m
+[31m-> compute?[m
+[32m+[m[32m- unified state-conditioned policy[m
+[32m+[m[32m- persistent `H_t`[m
+[32m+[m[32m- ADVANCE / REPEAT / RESTART / HALT[m
+[32m+[m[32m- monotone advancement[m
+[32m+[m[32m- restart with hidden-state preservation[m
+[32m+[m[32m- unbounded-in-principle within-token depth[m
+[32m+[m[32m- convergence stopping[m
+[32m+[m[32m- categorical relaxation / hard inference[m
+[32m+[m[32m- no top-k execution[m
+ [m
+[31m-Source: S2 §Q.2.[m
+[32m+[m[32m### S2 — Architectural research / adversarial memo[m
+[32m+[m[32m`Pasted markdown(20260913-113624).md`[m
+ [m
+[31m----[m
+[32m+[m[32mPrimary research-plan content:[m
+ [m
+[31m-## 2. Controller input[m
+[32m+[m[32m- P / experimental plan[m
+[32m+[m[32m- Q / hypotheses and kill criteria[m
+[32m+[m[32m- R / minimum implementable v3[m
+[32m+[m[32m- S / later architectural path[m
+[32m+[m[32m- T / final research framing[m
+ [m
+[31m-**[SPECIFIED — WITH A SOURCE CONFLICT]**[m
+[32m+[m[32m### S3 — Older internal-block blueprint[m
+[32m+[m[32m`Pasted text(20260911-094508).txt`[m
+ [m
+[31m-S2 G.4 specifies:[m
+[32m+[m[32mHistorical design content:[m
+ [m
+[31m-`ell_p = pi_psi([Pool(h_p); emb(j_p); m_p; phi(p)])`[m
+[32m+[m[32m- local PonderNet recurrence[m
+[32m+[m[32m- soft segment readout[m
+[32m+[m[32m- separate global HALT[m
+[32m+[m[32m- sequence-level routing[m
+[32m+[m[32m- ST-Gumbel[m
+[32m+[m[32m- monotone routing[m
+ [m
+[31m-where:[m
+[32m+[m[32mS3 is retained for provenance and change tracking, not current authority.[m
+ [m
+[31m-- `Pool(h_p)` is the pooled live within-token state;[m
+[31m-- `emb(j_p)` is the current block index embedding;[m
+[31m-- `m_p` is the memory read;[m
+[31m-- `phi(p)` is a position-in-sweep feature.[m
+[32m+[m[32m### S4 — Literature / architecture revision[m
+[32m+[m[32m`AGT_v3_Literature_DeepDive_and_Architecture_Revision.md`[m
+ [m
+[31m-S1 instead presents the abstract policy as:[m
+[32m+[m[32mPrimary role:[m
+ [m
+[31m-`pi_psi(a_{t,p} | h_{t,p}, M_t, j_{t,p}, b_p)`[m
+[31m-[m
+[31m-with `b_p = p/B` described as an optional bounded budget-relative condition.[m
+[31m-[m
+[31m-**Unresolved:** the exact final controller feature representation is not[m
+[31m-uniquely fixed across the two sources.[m
+[31m-[m
+[31m-Do not choose between `phi(p)`, `b_p`, raw `h_p`, pooled `h_p`, or any[m
+[31m-concatenation beyond what the source explicitly states.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 3. Controller architecture[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-The source specifies the controller's functional inputs/outputs but does not[m
+[31m-provide one unambiguously locked MLP width/depth specification.[m
+[31m-[m
+[31m-S2 gives the source-level controller as `pi_psi(...)`, not a unique layer[m
+[31m-stack.[m
+[31m-[m
+[31m-Any repository `D -> D -> ...` implementation must therefore be treated as[m
+[31m-repository state, not automatically as the canonical Stage-3 architecture.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 4. Controller output[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S1 explicitly defines the unified policy output as:[m
+[31m-[m
+[31m-`{ADVANCE(j'), REPEAT, RESTART, HALT}`.[m
+[31m-[m
+[31m-S2 G.4 defines logits over `N+2` actions corresponding to:[m
+[31m-[m
+[31m-`ADVANCE(j')`, `REPEAT`, `HALT`.[m
+[31m-[m
+[31m-**Conflict:** S1 adds explicit `RESTART`; S2's detailed mathematical action[m
+[31m-space omits it.[m
+[31m-[m
+[31m-Final action-logit dimensionality is therefore **not to be silently selected**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 5. Action space[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-Current source hierarchy:[m
+[31m-[m
+[31m-S1:[m
+[31m-`ADVANCE(j'), REPEAT, RESTART, HALT`.[m
+[31m-[m
+[31m-S2:[m
+[31m-`ADVANCE(j'>j), REPEAT, HALT`.[m
+[31m-[m
+[31m-The current repository's 11-output controller for an 8-block action encoding[m
+[31m-must not be declared the source truth until the RESTART discrepancy is[m
+[31m-resolved.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 6. ADVANCE semantics[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-`ADVANCE(j')` requires forward movement:[m
+[31m-[m
+[31m-`j' > j`.[m
+[31m-[m
+[31m-No unrestricted backward jump is allowed.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 7. REPEAT semantics[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-S1:[m
+[31m-the current block is repeated.[m
+[31m-[m
+[31m-S2:[m
+[31m-`j_{p+1}=j_p` and the same block is executed again.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 8. RESTART semantics[m
+[31m-[m
+[31m-**[SPECIFIED — CURRENT SOURCE ONLY]**[m
+[31m-[m
+[31m-S1 explicitly defines:[m
+[31m-[m
+[31m-`j <- 0`[m
+[31m-[m
+[31m-while preserving the live hidden state.[m
+[31m-[m
+[31m-This is a current architecture correction.[m
+[31m-[m
+[31m-S2's G.4 does not include RESTART in its mathematical action space.[m
+[31m-[m
+[31m-Therefore RESTART exists in the latest architecture source but is not fully[m
+[31m-defined inside the older G/P/Q mathematical training specification.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 9. HALT semantics[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-HALT terminates within-token computation.[m
+[31m-[m
+[31m-S2 additionally gives a PonderNet-style marginalized halt formulation.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 10. Execution-mask constraints[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S2 explicitly masks actions to preserve monotonicity:[m
+[31m-[m
+[31m-`A(j_p) = {ADVANCE(j'): j'>j_p} U {REPEAT} U {HALT}`[m
+[31m-[m
+[31m-with REPEAT disallowed at `j=0`.[m
+[31m-[m
+[31m-A training/deployment `P_max` is described as a safeguard, not an architectural[m
+[31m-depth constant.[m
+[31m-[m
+[31m-S1 additionally requires restartable monotone sweeps and no unrestricted[m
+[31m-backward/cyclic routing.[m
+[31m-[m
+[31m-Because RESTART is absent from S2's mathematical mask, its precise mask[m
+[31m-interaction is **UNSPECIFIED**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 11. ST-Gumbel formulation[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S1 specifies categorical relaxation during training and hard categorical[m
+[31m-execution at inference.[m
+[31m-[m
+[31m-S2 specifies straight-through Gumbel-Softmax for the ADVANCE branch.[m
+[31m-[m
+[31m-The exact combined four-action relaxation under S1's RESTART formulation is[m
+[31m-not specified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 12. Logits[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S2 gives:[m
+[31m-[m
+[31m-`ell_p = pi_psi([...]) in R^(N+2)`.[m
+[31m-[m
+[31m-That dimension corresponds to the older three-category action formulation.[m
+[31m-[m
+[31m-Under S1's explicit RESTART action, the final logits dimensionality is not[m
+[31m-independently specified by the latest source.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 13. Soft / straight-through behavior[m
+[31m-[m
+[31m-**[SPECIFIED — PARTIALLY]**[m
+[31m-[m
+[31m-S2:[m
+[31m-[m
+[31m-- HALT is marginalized through `rho_p`;[m
+[31m-- ADVANCE uses straight-through Gumbel-Softmax.[m
+[31m-[m
+[31m-S1:[m
+[31m-[m
+[31m-- categorical relaxation during training;[m
+[31m-- hard categorical execution at inference.[m
+[31m-[m
+[31m-The exact soft relaxation of RESTART/REPEAT in the newer four-action system[m
+[31m-is **UNSPECIFIED**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 14. Temperature[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-No exact ST-Gumbel temperature value is locked in the located sources.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 15. Temperature initialization[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-No exact initialization temperature is specified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 16. Temperature annealing schedule[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-No numeric annealing schedule is specified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 17. Routing loss[m
+[31m-[m
+[31m-**[SPECIFIED — COEFFICIENTS UNSPECIFIED]**[m
+[31m-[m
+[31m-S2 gives:[m
+[31m-[m
+[31m-`L_route = kappa * E[sum_p 1[j_{p+1} != j_p]][m
+[31m-           - eta * H(pi_bar)`[m
+[31m-[m
+[31m-where:[m
+[31m-[m
+[31m-- `kappa` is a switching/deliberation penalty;[m
+[31m-- `eta` weights batch-marginal action entropy.[m
+[31m-[m
+[31m-This is source-defined in form.[m
+[31m-[m
+[31m-The final numerical values of `kappa` and `eta` are **UNSPECIFIED**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 18. Entropy regularization[m
+[31m-[m
+[31m-**[SPECIFIED — COEFFICIENT UNSPECIFIED]**[m
+[31m-[m
+[31m-S2 explicitly includes batch-marginal route entropy:[m
+[31m-[m
+[31m-`- eta * H(pi_bar)`.[m
+[31m-[m
+[31m-The source does not lock a numerical `eta`.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 19. Deliberation/computation cost[m
+[31m-[m
+[31m-**[SPECIFIED — COEFFICIENT UNSPECIFIED]**[m
+[31m-[m
+[31m-S2 D.4 specifies a switching penalty:[m
+[31m-[m
+[31m-`kappa * 1[j_{k+1} != j_k]`[m
+[31m-[m
+[31m-and ties this to option-collapse prevention.[m
+[31m-[m
+[31m-A PonderNet-style halt prior is also specified.[m
+[31m-[m
+[31m-The numeric `kappa` is **UNSPECIFIED**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 20. Adaptive-depth loss[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S2 does not define one separately named "adaptive-depth loss."[m
+[31m-[m
+[31m-Instead, depth is handled through:[m
+[31m-[m
+[31m-- PonderNet-style halting marginalization;[m
+[31m-- routing/switching cost;[m
+[31m-- entropy/load-balancing regularization;[m
+[31m-- depth-dependent execution and evaluation.[m
+[31m-[m
+[31m-Therefore a separate additional adaptive-depth loss is **UNSPECIFIED** unless[m
+[31m-introduced by a later human decision.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 21. Auxiliary losses[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S2 G.8 includes:[m
+[31m-[m
+[31m-`beta_z * ||Z_t||^2/d`[m
+[31m-[m
+[31m-as an optional mild state-norm regularizer.[m
+[31m-[m
+[31m-S2 also specifies halt KL and route entropy.[m
+[31m-[m
+[31m-The source itself says the state-norm term may be dropped if convex memory[m
+[31m-update proves sufficient.[m
+[31m-[m
+[31m-Thus:[m
+[31m-[m
+[31m-- halt KL: specified;[m
+[31m-- route switching cost: specified;[m
+[31m-- route entropy: specified;[m
+[31m-- state-norm regularizer: optional/source-proposed;[m
+[31m-- any additional loss: unspecified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 22. Loss coefficients[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-The symbols are specified (`beta_h`, `kappa`, `eta`, `beta_z`) but the final[m
+[31m-numeric coefficients are not locked.[m
+[31m-[m
+[31m-Do not invent values.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 23. Gradient flow[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-Source-level constraints:[m
+[31m-[m
+[31m-- straight-through Gumbel is used for ADVANCE;[m
+[31m-- HALT admits PonderNet-style marginalization;[m
+[31m-- current-parameter states must be recomputed rather than stale;[m
+[31m-- truncation boundaries must be explicit;[m
+[31m-- route replay must account for policy staleness if used.[m
+[31m-[m
+[31m-The exact implementation of gradient flow for the four-action newer RESTART[m
+[31m-policy is **UNSPECIFIED**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 24. What is trainable[m
+[31m-[m
+[31m-**[SPECIFIED — BY CURRICULUM PHASE]**[m
+[31m-[m
+[31m-S2 P.3:[m
+[31m-[m
+[31m-Phase 1:[m
+[31m-- blocks train;[m
+[31m-- fixed path;[m
+[31m-- fixed depth.[m
+[31m-[m
+[31m-Phase 2:[m
+[31m-- router is unfrozen;[m
+[31m-- entropy regularization and deliberation cost active;[m
+[31m-- halting remains fixed.[m
+[31m-[m
+[31m-Phase 3:[m
+[31m-- halting is unfrozen;[m
+[31m-- halt-KL warmup.[m
+[31m-[m
+[31m-Phase 4:[m
+[31m-- persistent-state gates unfrozen;[m
+[31m-- entropy regularization annealed.[m
+[31m-[m
+[31m-Exact frozen parameter subsets outside this curriculum are not fully[m
+[31m-enumerated.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 25. What remains frozen[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The staged curriculum implies:[m
+[31m-[m
+[31m-- controller is frozen initially;[m
+[31m-- router is frozen during block-only warm-up;[m
+[31m-- halting stays fixed until Phase 3;[m
+[31m-- persistent-state gates remain frozen until Phase 4.[m
+[31m-[m
+[31m-Exact treatment of every backbone parameter and all memory parameters is[m
+[31m-not separately enumerated.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 26. Training-time behavior[m
+[31m-[m
+[31m-**[SPECIFIED — HIGH LEVEL]**[m
+[31m-[m
+[31m-Training is staged rather than fully joint from step zero.[m
+[31m-[m
+[31m-Instrument at phase boundaries:[m
+[31m-[m
+[31m-- route entropy;[m
+[31m-- `I(input;route)`;[m
+[31m-- mean halt depth;[m
+[31m-- `||Delta h||` decay;[m
+[31m-- per-block utilization.[m
+[31m-[m
+[31m-Variable-depth and model-induced-state training principles are recommended in[m
+[31m-the source program, but exact final rollout distribution is not numerically[m
+[31m-locked here.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 27. Inference-time behavior[m
+[31m-[m
+[31m-**[SPECIFIED — HIGH LEVEL]**[m
+[31m-[m
+[31m-S1 specifies hard categorical execution at inference.[m
+[31m-[m
+[31m-The execution process follows the unified policy with monotone sweeps,[m
+[31m-restart semantics from S1, and HALT termination.[m
+[31m-[m
+[31m-Exact production serving budget and stop policy are not completely specified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 28. D64 experimental setup[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-The located Stage-3 minimum implementation in S2 specifies `d=768`, not D64.[m
+[31m-[m
+[31m-The current Stage-1 parity experiment is D64, but it is explicitly a fixed-route[m
+[31m-Stage-1 experiment and is not a source-defined Stage-3 setup.[m
+[31m-[m
+[31m-A D64 Stage-3 translation is therefore a human decision, not source fact.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 29. Dataset / task[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-S2 identifies Level-1 and Level-2 task families including:[m
+[31m-[m
+[31m-- parity with varying length;[m
+[31m-- modular arithmetic;[m
+[31m-- sorting;[m
+[31m-- cellular automata;[m
+[31m-- Sudoku-Extreme;[m
+[31m-- compositional OOD;[m
+[31m-- multi-hop synthetic knowledge graphs;[m
+[31m-- length extrapolation.[m
+[31m-[m
+[31m-The source does not lock one unique Stage-3 benchmark/task.[m
+[31m-[m
+[31m-The central requirement is a controlled difficulty parameter whose variation[m
+[31m-can be compared against executed depth.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 30. Route constraints[m
+[31m-[m
+[31m-**[SPECIFIED — WITH RESTART GAP]**[m
+[31m-[m
+[31m-S1 locks monotone sweeps and restartable execution.[m
+[31m-[m
+[31m-S2 locks monotone forward advancement and same-block repeat.[m
+[31m-[m
+[31m-Precise post-RESTART masking rules are unspecified.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 31. Number of blocks[m
+[31m-[m
+[31m-**[SPECIFIED IN MINIMUM IMPLEMENTATION]**[m
+[31m-[m
+[31m-S2 Section R specifies:[m
+[31m-[m
+[31m-`N = 8`.[m
+[31m-[m
+[31m-However, S2 G.1/G.4 formulate the equations generically in `N`.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 32. Evaluation metrics[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Required source-level measurements include:[m
+[31m-[m
+[31m-- test performance;[m
+[31m-- mean ± seed standard deviation;[m
+[31m-- `I(input;route)`;[m
+[31m-- correlation of executed depth with known difficulty;[m
+[31m-- route entropy;[m
+[31m-- per-block utilization;[m
+[31m-- mean/p95 executed steps;[m
+[31m-- repeats;[m
+[31m-- distinct blocks;[m
+[31m-- cycles;[m
+[31m-- KV bytes per token;[m
+[31m-- wall-clock latency;[m
+[31m-- training and inference FLOPs;[m
+[31m-- peak memory.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 33. Baseline comparisons[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-The central controls include:[m
+[31m-[m
+[31m-- dense/fixed computation baseline;[m
+[31m-- `R_ctrl`: frozen random path of equal length;[m
+[31m-- `L_ctrl`: path determined by sequence length;[m
+[31m-- homogeneous looped baseline;[m
+[31m-- compute-matched static baseline.[m
+[31m-[m
+[31m-S2 explicitly states that capability comparisons should be made at equal[m
+[31m-inference FLOPs, with equal training-FLOP comparisons as a secondary axis.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 34. Success criteria[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Q.1/Q.2 define the main criteria:[m
+[31m-[m
+[31m-- non-trivial input-dependent routing;[m
+[31m-- routing differs from random and length-only controls;[m
+[31m-- depth correlates with known difficulty;[m
+[31m-- state-conditioned routing improves over the non-routing state-memory arm;[m
+[31m-- matched-compute comparisons are required.[m
+[31m-[m
+[31m-H6 specifically predicts:[m
+[31m-[m
+[31m-`E2 > E1`[m
+[31m-[m
+[31m-with measurable route shifts conditioned on persistent memory `M`.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 35. Failure / falsification criteria[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Source kill criteria include:[m
+[31m-[m
+[31m-- KILL-1: dynamic topology indistinguishable from random-path control;[m
+[31m-- KILL-2: optimization failure across the required seeds;[m
+[31m-- KILL-3: state-conditioned routing fails to improve over its ablation;[m
+[31m-- KILL-4: AGT is matched by an Ouro-style simpler looped model at equal[m
+[31m-  active parameters and sequential steps.[m
+[31m-[m
+[31m-Router collapse / near-zero mutual information between input and route is a[m
+[31m-critical failure mode.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## 36. Transition criteria to Stage 4[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-There is no separately titled "Stage 4" in the located source.[m
+[31m-[m
+[31m-The source instead defines a gated architectural path:[m
+[31m-[m
+[31m-- v3 proceeds only if Q.2 passes and KILL-1/KILL-2 are cleared;[m
+[31m-- v4a is unlocked only if H6/state-conditioned-routing evidence is positive;[m
+[31m-- v4b is unlocked only if H4/heterogeneity evidence is positive;[m
+[31m-- later topology relaxation is deferred to v5 if monotone routing saturates.[m
+[31m-[m
+[31m-Thus a single Stage-4 transition criterion is **not explicitly defined**.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.3 STAGE 4 — SOURCE EXTRACTION[m
+[31m-[m
+[31m-## Explicitly named Stage 4[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-No located source contains a distinct, authoritative section titled[m
+[31m-"Stage 4" with a complete objective/controller/loss/dataset/metric/success[m
+[31m-specification.[m
+[31m-[m
+[31m-The closest authoritative long-term source is Section S:[m
+[31m-[m
+[31m-### v4a — state[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Unlocked only if H6 passes.[m
+[31m-[m
+[31m-Direction:[m
+[31m-richer persistent memory, including possible Titans-style test-time-learned[m
+[31m-memory or mutable KV state.[m
+[31m-[m
+[31m-Gate:[m
+[31m-measurable gains on horizon-scaled tasks.[m
+[31m-[m
+[31m-### v4b — operator[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Unlocked only if H4 passes.[m
+[31m-[m
+[31m-Direction:[m
+[31m-state-conditioned block behavior such as low-rank parameter modulation[m
+[31m-`theta_j + Delta(M_t)`.[m
+[31m-[m
+[31m-The source does not define a complete training recipe for v4b.[m
+[31m-[m
+[31m-### v5 — topology relaxation[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Only after v3 monotone routing is demonstrably saturating.[m
+[31m-[m
+[31m-Relax monotonicity and use the outer-loop-as-sweep factorization as the[m
+[31m-servable implementation of that later relaxation.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## Stage-4 items requested by this Gate-B protocol[m
+[31m-[m
+[31m-### Objective[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Controller behavior[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Adaptive-depth mechanism[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Losses[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Costs[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Difficulty definition[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Training procedure[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Inference procedure[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Experiment design[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Baselines[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-### Success criteria[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-The source gives only the v4a/v4b/v5 gating directions above.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.4 REPOSITORY GAP ANALYSIS AT GATE-A-COMPLETE[m
+[31m-[m
+[31m-Repository snapshot:[m
+[31m-[m
+[31m-`09bed25c79b223f49893fb4f9c2038534498a5e6`[m
+[31m-[m
+[31m-## A. ALREADY IMPLEMENTED[m
+[31m-[m
+[31m-### Unified controller scaffold[m
+[31m-Repository:[m
+[31m-`src/controller.py`[m
+[31m-[m
+[31m-Current source-level role:[m
+[31m-controller module and action vocabulary scaffold.[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED AS SCAFFOLD, NOT STAGE-3 TRAINING.**[m
+[31m-[m
+[31m-### Executor[m
+[31m-Repository:[m
+[31m-`src/executor.py`[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED**[m
+[31m-[m
+[31m-The executor enforces the existing action execution machinery and adaptive-step[m
+[31m-integration.[m
+[31m-[m
+[31m-### Adaptive AGT step[m
+[31m-Repository:[m
+[31m-`src/agt.py`[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED**[m
+[31m-[m
+[31m-`adaptive_step()` exists, but this does not mean learned adaptive routing has[m
+[31m-been validated.[m
+[31m-[m
+[31m-### Convergence monitor[m
+[31m-Repository:[m
+[31m-`src/convergence.py`[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED**[m
+[31m-[m
+[31m-This is compatible with the source concept that convergence can act as a[m
+[31m-stopping signal.[m
+[31m-[m
+[31m-### Persistent state / memory[m
+[31m-Repository:[m
+[31m-`src/agt.py`[m
+[31m-`src/caches.py`[m
+[31m-`src/terminal_commit.py`[m
+[31m-`src/memory.py`[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED**[m
+[31m-[m
+[31m-These support the persistent cross-token state contract already validated by[m
+[31m-Gate A.[m
+[31m-[m
+[31m-### Fixed-route D64 task[m
+[31m-Repository:[m
+[31m-`data/task_a.py`[m
+[31m-`experiments/train_stage1_taskA.py`[m
+[31m-[m
+[31m-Status:[m
+[31m-**IMPLEMENTED FOR STAGE 1 ONLY**[m
+[31m-[m
+[31m-This must not be reclassified as the Stage-3 routing experiment.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.5 B. MISSING[m
+[31m-[m
+[31m-### Stage-3 learned controller training[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-No source snapshot at Gate-A-complete contains the complete staged Stage-3[m
+[31m-controller-training loop.[m
+[31m-[m
+[31m-### ST-Gumbel routing implementation[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-No Stage-3 ST-Gumbel training path is present in the Gate-A snapshot.[m
+[31m-[m
+[31m-### Source-defined routing losses[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-No Stage-3 implementation of the source-defined switching cost / entropy /[m
+[31m-halt-KL objective is present in the frozen Gate-A snapshot.[m
+[31m-[m
+[31m-### Stage-3 route instrumentation[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-Required:[m
+[31m-[m
+[31m-- route entropy;[m
+[31m-- `I(input;route)`;[m
+[31m-- route/difficulty correlation;[m
+[31m-- per-block utilization;[m
+[31m-- mean/p95 executed depth;[m
+[31m-- repeat count;[m
+[31m-- distinct-block count;[m
+[31m-- compute matching;[m
+[31m-- seed variance.[m
+[31m-[m
+[31m-### R_ctrl[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-No frozen-random-path matched-compute control is present.[m
+[31m-[m
+[31m-### L_ctrl[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-No sequence-length-only route control is present.[m
+[31m-[m
+[31m-### Stage-3 compute-matched benchmark framework[m
+[31m-Status:[m
+[31m-**MISSING**[m
+[31m-[m
+[31m-The repository does not yet provide the full source-required FLOP/latency/[m
+[31m-active-parameter matching protocol.[m
+[31m-[m
+[31m-### D64 Stage-3 benchmark definition[m
+[31m-Status:[m
+[31m-**MISSING / HUMAN DECISION REQUIRED**[m
+[31m-[m
+[31m-The source does not define a D64 Stage-3 experiment.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.6 C. CONFLICTING / REQUIRES CHANGE[m
+[31m-[m
+[31m-## Controller action space[m
+[31m-[m
+[31m-Repository:[m
+[31m-`src/controller.py`[m
+[31m-[m
+[31m-Source conflict:[m
+[31m-[m
+[31m-- current architecture correction: `ADVANCE / REPEAT / RESTART / HALT`;[m
+[31m-- detailed mathematical memo: `ADVANCE / REPEAT / HALT`.[m
+[31m-[m
+[31m-**Requires explicit resolution before implementation.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## Controller output dimensionality[m
+[31m-[m
+[31m-Repository:[m
+[31m-`src/controller.py`[m
+[31m-[m
+[31m-Source conflict:[m
+[31m-[m
+[31m-- current repository has a fixed output dimensionality;[m
+[31m-- S2 G.4 expresses `R^(N+2)`;[m
+[31m-- S1 has a fourth action category via RESTART.[m
+[31m-[m
+[31m-**Do not silently select the final dimension.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## Controller input features[m
+[31m-[m
+[31m-Repository:[m
+[31m-`src/controller.py`[m
+[31m-[m
+[31m-Source requires state-conditioned routing using current computation state,[m
+[31m-block index, and memory-related conditioning.[m
+[31m-[m
+[31m-Exact repository feature construction must be checked against S2 G.4 and[m
+[31m-S1's abstract policy.[m
+[31m-[m
+[31m-**Requires review before implementation.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## RESTART masking semantics[m
+[31m-[m
+[31m-Repository:[m
+[31m-`src/executor.py`[m
+[31m-[m
+[31m-Source:[m
+[31m-S1 explicitly requires restart while preserving hidden state.[m
+[31m-[m
+[31m-S2 does not mathematically define RESTART.[m
+[31m-[m
+[31m-**Requires explicit specification before implementation.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## P_max[m
+[31m-[m
+[31m-Repository:[m
+[31m-`src/executor.py`[m
+[31m-[m
+[31m-Current implementation has a finite execution safeguard.[m
+[31m-[m
+[31m-Source S2 specifies:[m
+[31m-[m
+[31m-`P_max = 24`[m
+[31m-[m
+[31m-as a training/deployment safeguard, not as an architectural constant.[m
+[31m-[m
+[31m-**Current repository value must not be silently assumed to equal the source[m
+[31m-value.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## D64 versus D768[m
+[31m-[m
+[31m-Repository Gate-A research:[m
+[31m-D64.[m
+[31m-[m
+[31m-Source minimum implementation:[m
+[31m-D768.[m
+[31m-[m
+[31m-**This is a scale discrepancy, not an architecture discrepancy. A D64[m
+[31m-Stage-3 experiment requires an explicit human-approved translation.**[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## Heterogeneous block composition[m
+[31m-[m
+[31m-Repository Gate-A:[m
+[31m-the experimentally validated fixed bank is:[m
+[31m-[m
+[31m-`[SWA, SWA, GQA, GQA, GDN, GDN, FFN, FFN]`.[m
+[31m-[m
+[31m-Source S2 Section R gives an example composition with genuine architectural[m
+[31m-heterogeneity that differs from the Gate-A experimental bank.[m
+[31m-[m
+[31m-Therefore the source does NOT authorize silently replacing the Gate-A bank[m
+[31m-before the Stage-3 decision is made.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.7 HUMAN DECISIONS REQUIRED[m
+[31m-[m
+[31m-The following are intentionally unresolved:[m
+[31m-[m
+[31m-1. Does current S1's four-action `RESTART` replace S2's older three-action[m
+[31m-   mathematical formulation for Stage 3?[m
+[31m-[m
+[31m-2. What exact controller architecture is authorized?[m
+[31m-[m
+[31m-3. What final action-logit dimension follows from the resolved action space?[m
+[31m-[m
+[31m-4. Should the Stage-3 experiment be D64 as an explicitly authorized pilot, or[m
+[31m-   use the D768 minimum implementation from S2?[m
+[31m-[m
+[31m-5. What exact controller features are allowed if S1 only describes budget[m
+[31m-   conditioning abstractly and S2 gives `phi(p)`?[m
+[31m-[m
+[31m-6. What exact ST-Gumbel temperature and annealing schedule should be used?[m
+[31m-[m
+[31m-7. What exact values should `kappa`, `eta`, `beta_h`, and optional `beta_z`[m
+[31m-   take, unless a later source is found?[m
+[31m-[m
+[31m-8. Should the S2 PonderNet-style halt marginalization survive unchanged under[m
+[31m-   the newer RESTART-inclusive policy?[m
+[31m-[m
+[31m-9. What exact Stage-3 benchmark/task should be selected from the Level-1/Level-2[m
+[31m-   family?[m
+[31m-[m
+[31m-10. What precise source-compatible compute-matching protocol is required for[m
+[31m-    the first pilot?[m
+[31m-[m
+[31m-No answer is chosen by this document.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.8 PROPOSED GATE-C BOUNDARY[m
+[31m-[m
+[31m-This is a **boundary, not an implementation authorization**.[m
+[31m-[m
+[31m-Gate C may begin only after the human decisions in B.7 are resolved.[m
+[31m-[m
+[31m-Gate C should be limited to:[m
+[31m-[m
+[31m-- the approved action-space formulation;[m
+[31m-- the approved controller input/architecture;[m
+[31m-- the approved categorical-relaxation formulation;[m
+[31m-- the approved D64 or D768 pilot scale;[m
+[31m-- the approved routing losses;[m
+[31m-- the approved training schedule;[m
+[31m-- mandatory route diagnostics;[m
+[31m-- R_ctrl and L_ctrl;[m
+[31m-- no GDN modification;[m
+[31m-- no memory redesign;[m
+[31m-- no D768 change unless explicitly selected as the Stage-3 scale;[m
+[31m-- no Stage-4 mechanisms;[m
+[31m-- no outer loop;[m
+[31m-- no topology relaxation beyond the approved source formulation.[m
+[31m-[m
+[31m-Gate C ends at the first reproducible routing-mechanism result and its[m
+[31m-matched-compute controls.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# B.9 GATE-B CONCLUSION[m
+[31m-[m
+[31m-Gate B is complete as a specification exercise.[m
+[31m-[m
+[31m-The located original source supports a strong, testable Stage-3 program, but[m
+[31m-does NOT support silently filling several implementation gaps.[m
+[31m-[m
+[31m-Most importantly:[m
+[31m-[m
+[31m-**The latest architecture source and the older detailed mathematical source[m
+[31m-are not perfectly identical.**[m
+[31m-[m
+[31m-The main unresolved architectural conflict is:[m
+[31m-[m
+[31m-`S1: ADVANCE / REPEAT / RESTART / HALT`[m
+[31m-[m
+[31m-versus[m
+[31m-[m
+[31m-`S2: ADVANCE / REPEAT / HALT`.[m
+[31m-[m
+[31m-Additionally, temperature values, annealing, several loss coefficients, exact[m
+[31m-controller architecture, and a D64 Stage-3 setup are not source-locked.[m
+[31m-[m
+[31m-Therefore no implementation should begin until those items are explicitly[m
+[31m-resolved.[m
+[31m-[m
+[31m-Gate B ends here.[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-# GATE-B SOURCE RECONCILIATION — FINAL CORRECTION[m
+[31m-[m
+[31m-This section supersedes any earlier Gate-B wording in this document that[m
+[31m-classified the following source-derived items as completely unspecified.[m
+[31m-[m
+[31m-The purpose is to distinguish:[m
+[31m-1. what the original AGT-v3 sources actually define,[m
+[31m-2. what is historical but later revised,[m
+[31m-3. what remains numerically/openly unspecified.[m
+[31m-[m
+[31m-## R1. Stage-3 training objective — corrected classification[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The located dynamical/extensibility source explicitly gives:[m
+[31m-[m
+[31m-L_task = Σ_p ρ_p · CE(LMHead(Norm(h_p)), x_{t+1})[m
+[31m-[m
+[31m-L_deep = (1/|D|) Σ_{p∈D} CE(LMHead(Norm(h_p)), x_{t+1})[m
+[31m-[m
+[31m-L_halt = KL(ρ || Geom(τ))[m
+[31m-[m
+[31m-L_route = κ·E[#switches] − η·H(π̄)[m
+[31m-[m
+[31m-L = L_task + β_d L_deep + β_h L_halt + L_route[m
+[31m-[m
+[31m-Source: `Pasted markdown(20260913-120909).md`, §F.3 / §R.2.[m
+[31m-[m
+[31m-Therefore the existence and symbolic structure of these terms are[m
+[31m-source-defined.[m
+[31m-[m
+[31m-However, the final numerical values of β_d, β_h, κ, η and any additional[m
+[31m-final coefficients are not locked by the latest source set.[m
+[31m-[m
+[31m-No numerical values may be invented.[m
+[31m-[m
+[31m-## R2. Budget-relative conditioning — corrected classification[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The source explicitly defines:[m
+[31m-[m
+[31m-b_p = p / B[m
+[31m-[m
+[31m-with B sampled per training example and gives the training-plan example:[m
+[31m-[m
+[31m-B ~ Uniform{4..24}[m
+[31m-[m
+[31m-The role is to keep budget awareness relative and extensible rather than[m
+[31m-using a raw step index.[m
+[31m-[m
+[31m-The latest architecture treatment presents budget conditioning as optional,[m
+[31m-so the existence of the feature is source-defined but whether it is enabled[m
+[31m-in the final Stage-3 controller remains unresolved.[m
+[31m-[m
+[31m-The old step feature φ(p) is RETRACTED.[m
+[31m-[m
+[31m-## R3. Training-depth sampling[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The located source specifies budget-randomized training and gives:[m
+[31m-[m
+[31m-B ~ Uniform{4..24}[m
+[31m-[m
+[31m-The source also recommends deep supervision at sampled depths and inclusion[m
+[31m-of at least one supervised depth beyond the modal budget.[m
+[31m-[m
+[31m-This is source-derived protocol information, not a newly proposed training[m
+[31m-choice.[m
+[31m-[m
+[31m-## R4. Evaluation depths[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The located research plan evaluates:[m
+[31m-[m
+[31m-P ∈ {8, 16, 32, 64, 128}[m
+[31m-[m
+[31m-The exact number of seeds is also given in the research plan as ≥8 seeds per[m
+[31m-arm for the main baseline program.[m
+[31m-[m
+[31m-These values belong to the source research protocol and must be distinguished[m
+[31m-from the separate Gate-A D64 parity experiment.[m
+[31m-[m
+[31m-## R5. Task families[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The source research program names graded-difficulty algorithmic families[m
+[31m-including:[m
+[31m-[m
+[31m-- n-digit addition[m
+[31m-- k-hop composition[m
+[31m-- Sudoku-Extreme with graded clue counts[m
+[31m-- state-tracking with graded sequence length[m
+[31m-[m
+[31m-Earlier Level-1 planning also mentions parity, modular arithmetic, sorting,[m
+[31m-cellular automata and related algorithmic tasks.[m
+[31m-[m
+[31m-The source set does not establish one uniquely canonical Stage-3 task arm[m
+[31m-for the present repository.[m
+[31m-[m
+[31m-Therefore the task family is source-defined at the program level, but the[m
+[31m-single repository benchmark remains unresolved.[m
+[31m-[m
+[31m-## R6. Baseline ladder[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The source defines the following arm structure:[m
+[31m-[m
+[31m-S[m
+[31m-Static transformer at fixed depth[m
+[31m-[m
+[31m-S'[m
+[31m-Static model at equal active parameter count[m
+[31m-[m
+[31m-H[m
+[31m-Homogeneous looped model with learned halt[m
+[31m-[m
+[31m-H_δ[m
+[31m-Homogeneous looped model with convergence/delta halt[m
+[31m-[m
+[31m-T[m
+[31m-Heterogeneous bank, one monotone sweep, no persistent memory[m
+[31m-[m
+[31m-A[m
+[31m-T + restartable sweeps + delta halt[m
+[31m-[m
+[31m-A_M[m
+[31m-A + persistent slot memory[m
+[31m-[m
+[31m-A_MR[m
+[31m-A_M + state-conditioned routing[m
+[31m-[m
+[31m-R_ctrl[m
+[31m-A with frozen random route of equal length[m
+[31m-[m
+[31m-L_ctrl[m
+[31m-A with route determined by sequence length[m
+[31m-[m
+[31m-The existence of these source-defined comparison arms must be preserved,[m
+[31m-even where the exact implementation parameters remain unresolved.[m
+[31m-[m
+[31m-## R7. Core execution semantics[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-Current architecture requires:[m
+[31m-[m
+[31m-- one unified execution policy[m
+[31m-- ADVANCE(j')[m
+[31m-- REPEAT[m
+[31m-- RESTART[m
+[31m-- HALT[m
+[31m-- monotone forward advancement inside a sweep[m
+[31m-- restart as a legal sweep boundary[m
+[31m-- no unrestricted backward jumps[m
+[31m-- no unrestricted cyclic routing[m
+[31m-- no top-k simultaneous core execution[m
+[31m-[m
+[31m-RESTART:[m
+[31m-[m
+[31m-j <- 0[m
+[31m-[m
+[31m-while preserving h.[m
+[31m-[m
+[31m-HALT is associated with termination followed by terminal emission/commit.[m
+[31m-[m
+[31m-## R8. Convergence stopping[m
+[31m-[m
+[31m-**[SPECIFIED]**[m
+[31m-[m
+[31m-The source defines:[m
+[31m-[m
+[31m-δ_p = ||h_{p+1} - h_p|| / ||h_p||[m
+[31m-[m
+[31m-and treats:[m
+[31m-[m
+[31m-δ_p < ε[m
+[31m-[m
+[31m-as the primary parameter-free convergence stopping criterion.[m
+[31m-[m
+[31m-Learned HALT is secondary.[m
+[31m-[m
+[31m-A serving/deployment budget may be used as an external boundary, but this[m
+[31m-is not an architectural P_max.[m
+[31m-[m
+[31m-## R9. PonderNet status[m
+[31m-[m
+[31m-**[SPECIFIED WITH HISTORICAL REVISION]**[m
+[31m-[m
+[31m-The source history distinguishes two concepts:[m
+[31m-[m
+[31m-1. A separate PonderNet-style controller is RETRACTED from the current[m
+[31m-   macro-architecture.[m
+[31m-[m
+[31m-2. PonderNet-style marginalization remains present in the training[m
+[31m-   mathematics through the halt probability distribution ρ_p.[m
+[31m-[m
+[31m-Therefore:[m
+[31m-[m
+[31m-Separate PonderNet controller = RETRACTED[m
+[31m-[m
+[31m-PonderNet-style halt marginalization in the training objective = RETAINED[m
+[31m-in the later source formulation.[m
+[31m-[m
+[31m-These must not be conflated.[m
+[31m-[m
+[31m-## R10. ST-Gumbel status[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The source explicitly retains a straight-through Gumbel router as a surviving[m
+[31m-routing mechanism.[m
+[31m-[m
+[31m-However:[m
+[31m-[m
+[31m-- exact estimator equations are not fully locked by the latest source set[m
+[31m-- exact temperature is not locked[m
+[31m-- exact initial temperature is not locked[m
+[31m-- exact annealing schedule is not locked[m
+[31m-- exact treatment of RESTART / REPEAT / HALT during relaxation is not fully[m
+[31m-  locked[m
+[31m-[m
+[31m-Therefore implementation must not invent these values during Gate B.[m
+[31m-[m
+[31m-## R11. Temperature[m
+[31m-[m
+[31m-**[UNSPECIFIED]**[m
+[31m-[m
+[31m-No final numerical Gumbel temperature is source-locked.[m
+[31m-[m
+[31m-Exact initialization:[m
+[31m-[m
+[31m-UNSPECIFIED — not defined by the original AGT-v3 source.[m
+[31m-[m
+[31m-Exact annealing schedule:[m
+[31m-[m
+[31m-UNSPECIFIED — not defined by the original AGT-v3 source.[m
+[31m-[m
+[31m-## R12. Routing objective[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The source defines the symbolic routing objective:[m
+[31m-[m
+[31m-L_route = κ·E[#switches] − η·H(π̄)[m
+[31m-[m
+[31m-but does not lock the final numerical values of κ and η.[m
+[31m-[m
+[31m-Therefore:[m
+[31m-[m
+[31m-symbolic form = source-defined[m
+[31m-[m
+[31m-numerical coefficients = unresolved.[m
+[31m-[m
+[31m-## R13. Adaptive-depth objective[m
+[31m-[m
+[31m-**[PARTIALLY SPECIFIED]**[m
+[31m-[m
+[31m-The source clearly makes adaptive computation/depth a central empirical[m
+[31m-objective and specifies convergence-based stopping, budget randomization,[m
+[31m-and deep supervision.[m
+[31m-[m
+[31m-However, no single final standalone numerical "adaptive-depth coefficient"[m
+[31m-is locked.[m
+[31m-[m
+[31m-Any coefficient or additional adaptive-depth term beyond the source formula[m
+[31m-requires explicit human authorization.[m
+[31m-[m
+[31m-## R14. Controller dimensions[m
+[31m-[m
+[31m-**[CONFLICTING / REQUIRES HUMAN DECISION]**[m
+[31m-[m
+[31m-Repository at Gate-A completion contains a provisional compact controller.[m
+[31m-[m
+[31m-The source history also contains older controller dimensionality descriptions.[m
+[31m-[m
+[31m-These dimensions must NOT be silently reconciled.[m
+[31m-[m
+[31m-The final controller feature width, hidden width and action-logit encoding[m
+[31m-must be explicitly frozen before implementation.[m
+[31m-[m
+[31m-## R15. Heterogeneous bank size/composition[m
+[31m-[m
+[31m-**[CONFLICTING / REQUIRES HUMAN DECISION]**[m
+[31m-[m
+[31m-The research source gives an N=8 heterogeneous example/implementation target.[m
+[31m-[m
+[31m-The latest macro-architecture treats heterogeneity as the locked concept while[m
+[31m-warning against treating one exact species ratio as permanently immutable.[m
+[31m-[m
+[31m-Therefore:[m
+[31m-[m
+[31m-heterogeneous computation = source-defined[m
+[31m-[m
+[31m-final Stage-3 bank composition = unresolved.[m
+[31m-[m
+[31m-The Gate-A `[SWA,SWA,GQA,GQA,GDN,GDN,FFN,FFN]` bank remains frozen as Gate-A[m
+[31m-evidence but must not automatically be promoted to final Stage-3 composition.[m
+[31m-[m
+[31m-## R16. Stage-3 diagnostics[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The source calls for measuring:[m
+[31m-[m
+[31m-- performance(P)[m
+[31m-- marginal performance with additional depth[m
+[31m-- P_eff distribution[m
+[31m-- ρ(P_eff, difficulty)[m
+[31m-- Var_x[P_eff][m
+[31m-- I(x; route)[m
+[31m-- route entropy[m
+[31m-- per-block utilization[m
+[31m-- convergence residual[m
+[31m-- overthinking behavior[m
+[31m-- seed variance[m
+[31m-- latency/memory/KV cost[m
+[31m-- matched-compute comparisons[m
+[31m-[m
+[31m-These are diagnostics, not optional presentation extras.[m
+[31m-[m
+[31m-## R17. Headline extensibility criteria[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The source defines genuine test-time scaling using all four conditions:[m
+[31m-[m
+[31m-1. performance non-decreasing to ≥4× training depth, per seed[m
+[31m-2. positive marginal benefit with a CI excluding zero at the specified[m
+[31m-   evaluation point[m
+[31m-3. performance gain not reproducible merely by a static model trained at[m
+[31m-   the longer depth[m
+[31m-4. ρ(P_eff, difficulty) > 0.3[m
+[31m-[m
+[31m-The last numerical threshold is source-derived from the research memo and is[m
+[31m-not an independently invented threshold.[m
+[31m-[m
+[31m-## R18. Kill criteria[m
+[31m-[m
+[31m-**[SPECIFIED at research-plan level]**[m
+[31m-[m
+[31m-The source provides explicit falsification criteria, including:[m
+[31m-[m
+[31m-- negligible Var_x[P_eff][m
+[31m-- negligible state-conditioned-routing effect[m
+[31m-- no advantage over homogeneous convergence-halted computation at matched[m
+[31m-  compute[m
+[31m-- routing indistinguishable from random control[m
+[31m-- failure of genuine scaling criteria[m
+[31m-[m
+[31m-These are falsification tests, not implementation requirements.[m
+[31m-[m
+[31m-## R19. Stage 4[m
+[31m-[m
+[31m-**[UNSPECIFIED AS A CANONICAL STAGE-4 SPECIFICATION]**[m
+[31m-[m
+[31m-The source set does not contain a canonical section that freezes a separate[m
+[31m-Stage-4 implementation/training specification.[m
+[31m-[m
+[31m-The research program contains later scale phases and broader experimental[m
+[31m-levels, but these must not be relabeled as an authoritative Stage-4[m
+[31m-implementation specification.[m
+[31m-[m
+[31m-Therefore:[m
+[31m-[m
+[31m-Stage-4 controller details = UNSPECIFIED[m
+[31m-[m
+[31m-Stage-4 loss details = UNSPECIFIED[m
+[31m-[m
+[31m-Stage-4 exact experiment = UNSPECIFIED[m
+[31m-[m
+[31m-Stage-4 exact success thresholds = UNSPECIFIED[m
+[31m-[m
+[31m-No Stage-4 code may be derived by extrapolation from generic literature.[m
+[31m-[m
+[31m-## R20. Gate-C boundary after reconciliation[m
+[31m-[m
+[31m-Gate C may begin only after explicit human decisions freeze every unresolved[m
+[31m-Stage-3 implementation parameter.[m
+[31m-[m
+[31m-Gate C is therefore:[m
+[31m-[m
+[31m-IN SCOPE[m
+[31m-[m
+[31m-- D64 only[m
+[31m-- frozen Gate-A backbone[m
+[31m-- one unified controller[m
+[31m-- source-approved execution semantics[m
+[31m-- source-approved differentiable routing framework[m
+[31m-- exact human-approved ST-Gumbel estimator[m
+[31m-- exact human-approved temperature and schedule[m
+[31m-- exact human-approved objective coefficients[m
+[31m-- exact human-approved D64 benchmark[m
+[31m-- instrumentation before training[m
+[31m-- fixed/null/random-route controls[m
+[31m-- deterministic equivalence tests[m
+[31m-- no GDN redesign[m
+[31m-[m
+[31m-OUT OF SCOPE[m
+[31m-[m
+[31m-- D768[m
+[31m-- real language-model training[m
+[31m-- real-world datasets[m
+[31m-- new GDN mathematics[m
+[31m-- MoE[m
+[31m-- second controller[m
+[31m-- unrestricted topology[m
+[31m-- arbitrary backward routing[m
+[31m-- architectural recurrence ceiling[m
+[31m-- unapproved losses[m
+[31m-- unapproved controller features[m
+[31m-- unapproved temperature schedules[m
+[32m+[m[32m- architectural stabilization[m
+[32m+[m[32m- recurrence / routing risk analysis[m
+[32m+[m[32m- provisional/open distinction[m
+[32m+[m[32m- current research direction.[m
+ [m
+ ---[m
+ [m
+[31m-# FINAL GATE-B RECONCILIATION STATUS[m
+[31m-[m
+[31m-Gate B is now considered SOURCE-RECONCILED, but NOT IMPLEMENTATION-APPROVED.[m
+[31m-[m
+[31m-The source-derived mechanism is sufficiently identified to define the shape of[m
+[31m-Gate C.[m
+[31m-[m
+[31m-The following remain explicit human decisions:[m
+[31m-[m
+[31m-1. final controller dimensions[m
+[31m-2. final exact controller feature construction[m
+[31m-3. whether budget-relative b_p is enabled[m
+[31m-4. exact ST-Gumbel estimator[m
+[31m-5. Gumbel temperature[m
+[31m-6. initial temperature[m
+[31m-7. annealing schedule[m
+[31m-8. exact handling of relaxed RESTART[m
+[31m-9. exact handling of relaxed REPEAT[m
+[31m-10. exact handling of relaxed HALT[m
+[31m-11. κ[m
+[31m-12. η[m
+[31m-13. β_d[m
+[31m-14. β_h[m
+[31m-15. any additional adaptive-depth coefficient[m
+[31m-16. any additional auxiliary losses[m
+[31m-17. canonical D64 Stage-3 task[m
+[31m-18. canonical difficulty axis[m
+[31m-19. final Stage-3 heterogeneous bank composition[m
+[31m-20. final success thresholds where not source-locked[m
+[31m-[m
+[31m-NO implementation decision is made by this document.[m
+[32m+[m[32m# FINAL GATE-B STATUS[m
+ [m
+[31m-Gate B ends here.[m
+[32m+[m[32m**Gate A:** COMPLETE[m[41m  [m
+[32m+[m[32m**Gate A commit:** `09bed25c79b223f49893fb4f9c2038534498a5e6`[m[41m  [m
+[32m+[m[32m**Gate A tag:** `AGT-v3-GateA-complete`[m
+ [m
+[31m-STOP.[m
+[32m+[m[32m**Gate B:** SPECIFICATION EXTRACTION COMPLETE[m[41m  [m
+[32m+[m[32m**Stage 3:** PARTIALLY SPECIFIED[m[41m  [m
+[32m+[m[32m**Stage 4:** NOT FOUND AS A NUMBERED SPECIFICATION[m[41m  [m
+[32m+[m[32m**Implementation:** NOT STARTED[m[41m  [m
+[32m+[m[32m**Training:** NOT STARTED[m[41m  [m
+[32m+[m[32m**D768 changes:** NONE[m[41m  [m
+[32m+[m[32m**GDN changes:** NONE[m
+ [m
+[31m-Do not implement Stage 3 until the unresolved decisions above are explicitly[m
+[31m-approved.[m
+[32m+[m[32m**STOP. Await explicit approval before Gate-C implementation.**[m

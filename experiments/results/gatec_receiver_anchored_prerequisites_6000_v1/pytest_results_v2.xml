@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.131" timestamp="2026-10-13T14:00:55.931472+00:00" hostname="spark-551e"><testcase classname="experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v2" name="test_descriptor_contract_fail_closed" time="0.001" /><testcase classname="experiments.results.gatec_receiver_anchored_prerequisites_6000_v1.test_receiver_anchored_v2" name="test_p0_archived_control_complete_forward_equivalence[cpu]" time="0.063"><failure message="ValueError: x_t must be [B, 64].">wrapper = CompleteProgramModule(
+  (model): AGTv3(
+    (memory): PersistentMemory(
+      (query_norm): RMSNorm()
+      (query_pr...orm()
+    )
+    (output_head): OutputHead(
+      (proj): Linear(in_features=64, out_features=2, bias=False)
+    )
+  )
+)
+
+    def test_p0_archived_control_complete_forward_equivalence(wrapper):
+        control = json.loads((ROOT / "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.json").read_text())
+        x, labels = fixture_encoding(control["bits"], next(wrapper.parameters()).device)
+        a, b = wrapper.initial(x), wrapper.initial(x)
+        differences = []
+        with torch.no_grad():
+            for j in range(8):
+&gt;               ref = wrapper(x[:, j], a, P0, "archival-control/reference", reference=True)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/test_receiver_anchored_v2.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/nn/modules/module.py:1776: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/nn/modules/module.py:1787: in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/receiver_anchored_v1.py:278: in forward
+    out = self.model.step(x, parent, x.new_zeros(1, 64))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = AGTv3(
+  (memory): PersistentMemory(
+    (query_norm): RMSNorm()
+    (query_proj): Linear(in_features=64, out_features..._norm): RMSNorm()
+  )
+  (output_head): OutputHead(
+    (proj): Linear(in_features=64, out_features=2, bias=False)
+  )
+)
+x_t = tensor([[[-0.1872,  0.8352,  0.0195, -0.1611, -1.0131,  1.0155,  0.9998,
+           0.4044, -1.3791, -0.2146,  0.1846,....6056,  0.8074, -0.3714,
+          -1.8727,  0.0103,  2.5268, -1.2139,  1.6515, -1.0970, -1.4744,
+          -0.1138]]])
+state = AGTPersistentState(s=tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., ...009]]],
+       grad_fn=&lt;CloneBackward0&gt;), ctx=&lt;src.caches.ExecutionCache object at 0xeb8beda7c5f0&gt;, tokens_committed=0)
+C_prev = tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., ... 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]])
+
+    def step(
+        self,
+        x_t,
+        state,
+        C_prev,
+    ):
+        """
+        Sequential fixed-route token step.
+    
+        This milestone deliberately does NOT invoke AdaptiveExecutor.
+        Every block in the locked bank is visited once in deterministic
+        bank order. The caller receives a new persistent state.
+    
+        C_prev remains an explicit compatibility input because the current
+        Prelude API still defines it as a [B, D] tensor; no new C_t update
+        rule is invented here.
+        """
+        if x_t.ndim != 2 or x_t.shape[-1] != self.dim:
+&gt;           raise ValueError(
+                f"x_t must be [B, {self.dim}]."
+            )
+E           ValueError: x_t must be [B, 64].
+
+src/agt.py:192: ValueError</failure></testcase></testsuite></testsuites>

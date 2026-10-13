@@ -1,0 +1,81 @@
+{
+  "status": "STOPPED_DURING_INSPECTION",
+  "reason": "Separate research-runner gate/stopping conflict; permitted mask-device correction alone cannot enforce required sequential prerequisites.",
+  "device_diagnosis": {
+    "confirmed_from": "sealed source plus retained v1 exception; no new runtime measurements",
+    "expression": "row['logits'][:, :10].masked_fill(~result[:10], -torch.inf)",
+    "source": "v1/complete_program_feasibility.py:229",
+    "mask": {
+      "device": "cpu",
+      "dtype": "torch.bool",
+      "shape": [
+        11
+      ],
+      "operand_shape": [
+        10
+      ]
+    },
+    "logits": {
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        11
+      ],
+      "operand_shape": [
+        1,
+        10
+      ]
+    },
+    "production_placement": "src/executor.py:647-652 moves the returned source mask to action_logits.device after the observer returns",
+    "proposed_only_correction": "Use result[:10].to(device=row['logits'].device) as the local legality-mask operand; leave logits and returned original mask unchanged.",
+    "preservation": "Device-only to(device=...) preserves boolean dtype,shape,values,legal indices,action order,inversion and -inf masked_fill/argmax conventions; no in-place operation or RNG.",
+    "applied": false
+  },
+  "gate_conflict": {
+    "current_pair_recorded": "sealed implementation:672-674",
+    "future_execution_begins": "sealed implementation:679-690",
+    "acceptance_evaluated": "sealed implementation:726-731",
+    "consequence": "A current-task or pointwise compatibility failure would not prevent later future/switch execution. Handling this requires a separate gate-control change, prohibited under this observer-only authorization.",
+    "interpretation": "Source-verified protocol incompatibility, not evidence that P1 is incorrect or that production semantics are broken."
+  },
+  "archival_comparison_scope": {
+    "new_reference_vs_adapter": "Current full state,logits,intermediate fields and discrete action metadata compared at624-626.",
+    "retained_archive": "Historical logits and h_before/h_after checked at627-631; stored terminal,commit/commit_pre,cache/version summaries and all archival discrete fields are not explicitly compared there.",
+    "consequence": "The requested all-field archival comparison is not already implemented by the sealed runner; extending it also exceeds device-only scope."
+  },
+  "original_source_sha256": "5a0988cb7b94688bf058d111d1691a1b0b9b085ac35f3364cf18f5dfbea457be",
+  "corrected_source_sha256": null,
+  "protocol_manifest_sha256": "9335ee7a6d236c985a1029afc6f9226aa6c03e0ad5c345352ef0fa93eb45f5cf",
+  "input_manifest_sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80",
+  "encoded_inputs_sha256": "1c52bd823aa65bd6c4a574cfd5043e79f0dad4660b4517839a9bf8a1dcf780ac",
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3"
+  },
+  "new_test_runs": 0,
+  "new_model_forwards": 0,
+  "new_model_backwards": 0,
+  "new_optimizer_steps": 0,
+  "v2_study_counts": {
+    "reference_tokens": 0,
+    "branch_tokens": 0,
+    "future_continuations": 0,
+    "selected_bank_calls": 0,
+    "commits": 0
+  },
+  "v1_partial_counts": {
+    "completed_reference_tokens": 1,
+    "selected_bank_calls": 8,
+    "commits": 1,
+    "P1_study_forwards": 0,
+    "pooled_with_v2": false
+  },
+  "engineering": "Observer root cause confirmed; correction and CUDA regression not performed because inspection stop was triggered.",
+  "current_task": "UNVERIFIED in v2",
+  "future_compatibility": "UNVERIFIED in v2",
+  "research_hypothesis": "UNTESTED in v2",
+  "no_training": true,
+  "no_source_edits": true,
+  "no_commit": true
+}

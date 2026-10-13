@@ -1,0 +1,18 @@
+{
+  "status": "ACCEPTED",
+  "transitions_per_path": 64,
+  "tokens_per_path": 8,
+  "final_CE": 0.0014546061865985394,
+  "full_record_coverage": true,
+  "historical_full_tensor_agreement": true,
+  "historical_summary_agreement": true,
+  "full_within_v4_reference_adapter_agreement": true,
+  "monitor": {
+    "status": "REPRODUCED",
+    "role": "non-gating monitor diagnostic",
+    "evaluated_records": 128,
+    "first_mismatch": null,
+    "parameter_sha256": "589b08b5a0280c15558e4968473c651d48a658cab58e6f617b9d569e3895cb4b",
+    "provenance": "original stage3_measurements.load_model(3401, cuda); full constructor RNG ordering; isolated RNG; retained features"
+  }
+}

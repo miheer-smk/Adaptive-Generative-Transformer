@@ -1,0 +1,23 @@
+{
+  "states": 24,
+  "pairs": 12,
+  "complete_action_rows": 192,
+  "CF_outcomes": 1536,
+  "ST_roots": 192,
+  "probability_and_projection_identities_verified": true,
+  "mixtures_halves_intervals_summaries_verified": true,
+  "prior_identities_verified": 215,
+  "no_model_calls": true,
+  "no_backwards": true,
+  "no_new_noise": true,
+  "historical_exceptions_preserved": {
+    "bytecode": "preserved bytecode-only identity failure; post-exception recorded diff/cache identities match; all experiment-relevant identities verified",
+    "temporal_failures": "preserved pre-execution toy-fixture failure and offline_verification_failure_1.json; no model failure or rerun"
+  },
+  "focused_tests": "7 passed; array-only",
+  "git_diff_check": "clean",
+  "training_state_exposure_gate": "not specified; cannot certify; training-only contrast unresolved",
+  "primary_verdict": "UNRESOLVED at snapshot1040 six-pair panel; one evaluation pair supports",
+  "coverage_verdict": "all predefined 1% B groups empty",
+  "CE_parity_verdict": "no resolved opposing parity credit; some CE-only credit with constant observed binary outcomes"
+}

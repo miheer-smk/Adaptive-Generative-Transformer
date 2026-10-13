@@ -1,0 +1,1850 @@
+[
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 0,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 1,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 1,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 1,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 2,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 2,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 2,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 3,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 3,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 3,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 4,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 4,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 4,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 5,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 5,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 5,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 6,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 6,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 6,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 7,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 7,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 7,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 8,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 8,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 8,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 9,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 9,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 9,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 10,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 10,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 10,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 11,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 11,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 11,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 12,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 12,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 12,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 13,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 13,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 13,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 14,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 14,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "token": 14,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 0,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row00",
+        "history_program": 1,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "history": "P0_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row00",
+    "history": "P1_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 0,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 1,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 1,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 1,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 2,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 2,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 2,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 3,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 3,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 3,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 4,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 4,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 4,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 5,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 5,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 5,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 6,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 6,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 6,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 7,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 7,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 7,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 8,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 8,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 8,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 9,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 9,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 9,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 10,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 10,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 10,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 11,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 11,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 11,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 12,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 12,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 12,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 13,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 13,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 13,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 14,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 14,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "token": 14,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 0,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row01",
+        "history_program": 1,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "history": "P0_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row01",
+    "history": "P1_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 0,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 1,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 1,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 1,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 2,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 2,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 2,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 3,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 3,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 3,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 4,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 4,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 4,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 5,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 5,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 5,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 6,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 6,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 6,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 7,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 7,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 7,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 8,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 8,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 8,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 9,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 9,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 9,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 10,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 10,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 10,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 11,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 11,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 11,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 12,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 12,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 12,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 13,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 13,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 13,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 14,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 14,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "token": 14,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 0,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row02",
+        "history_program": 1,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "history": "P0_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row02",
+    "history": "P1_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 0,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 1,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 1,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 1,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 2,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 2,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 2,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 3,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 3,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 3,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 4,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 4,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 4,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 5,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 5,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 5,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 6,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 6,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 6,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 7,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 7,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 7,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 8,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 8,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 8,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 9,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 9,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 9,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 10,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 10,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 10,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 11,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 11,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 11,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 12,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 12,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 12,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 13,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 13,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 13,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 14,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "prefix",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 14,
+        "boundary_program": 1
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "token": 14,
+    "P0": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 0,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    },
+    "P1": {
+      "available": true,
+      "source": {
+        "phase": "current",
+        "sequence_id": "acquisition/L16/row03",
+        "history_program": 1,
+        "token_index": 15,
+        "boundary_program": 0
+      },
+      "outgoing_incoming_fingerprint_equal": true,
+      "caution": "Retained next-input summary linked by state fingerprint; not a direct commit-time full tensor."
+    }
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "history": "P0_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  },
+  {
+    "sequence_id": "acquisition/L16/row03",
+    "history": "P1_history",
+    "token": 15,
+    "terminal_snapshot_matches_last_live_array": {
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": true,
+      "allclose": true,
+      "max_abs_difference": 0.0,
+      "L2_of_actual_difference": 0.0,
+      "RMS_of_actual_difference": 0.0,
+      "signed_mean_difference": 0.0
+    },
+    "commit_pre_matches_incoming_summary": true
+  }
+]

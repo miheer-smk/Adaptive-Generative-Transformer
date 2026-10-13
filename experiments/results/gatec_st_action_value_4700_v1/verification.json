@@ -1,0 +1,42 @@
+{
+  "offline_only": true,
+  "model_calls": 0,
+  "additional_continuations": 0,
+  "additional_ST_probes": 0,
+  "manifest_sha256": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+  "counts": {
+    "states": 36,
+    "CF": 2304,
+    "ST": 288,
+    "completed_continuation_tokens": 20160,
+    "forced_decisions": 2304,
+    "continuation_decisions": 213118,
+    "unforced_noise_reconstructions": 210814
+  },
+  "benchmark_bootstrap_recomputed_all_36": true,
+  "source_backbone_checkpoint_noise_state_hashes_verified": true,
+  "original_tracked_diff_unchanged": true,
+  "git_diff_check_clean": true,
+  "connected_gradient_probes": 288,
+  "disconnected_gradient_probes": 0,
+  "exact_zero_gradient_probes": 0,
+  "small_connected_gradient_probes": 16,
+  "action_counts": {
+    "0": 10800,
+    "1": 9888,
+    "5": 17655,
+    "8": 34793,
+    "6": 19081,
+    "7": 29267,
+    "2": 10491,
+    "4": 15242,
+    "9": 51838,
+    "3": 14063
+  },
+  "physical_candidate_bank_calls": 1918062,
+  "GDN_purity_checks": {
+    "4": 228724,
+    "5": 232654
+  },
+  "interpretation": "Continuation selected-block accounting is distinct from nine physical speculative bank calls per routing decision. Purity was asserted at runtime; offline accounting and noise reconstructions are additional checks."
+}

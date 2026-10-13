@@ -21,6 +21,7 @@ from experiments.stage3_measurements import (
 )
 from src.masks import build_execution_mask
 from src.executor import AdaptiveExecutor
+from experiments.stage3_decision_prefix import observe_decision_prefix
 
 
 def metadata_credit_probe():
@@ -73,15 +74,20 @@ def metadata_credit_probe():
             controller = BranchController(values)
             executor = AdaptiveExecutor(Bank(),controller,max_execution_depth=8)
             h0 = torch.zeros(1,2,requires_grad=True)
-            result = executor.execute_differentiable(h0,torch.zeros_like(h0),training=True)
-            loss = result.h_terminal.square().mean()
+            result = observe_decision_prefix(executor, h0, torch.zeros_like(h0),
+                                              decision_horizon=8, training=True)
+            loss = result.h_observed.square().mean()
             loss.backward()
             probabilities = controller.branch.detach().double().softmax(-1)
             conditional_losses = torch.tensor([1.,10000.], dtype=torch.float64)
             expected_loss = (probabilities * conditional_losses).sum()
             expected_gradient = probabilities * (conditional_losses - expected_loss)
-            results.append(dict(branch_logits=values, terminal=result.h_terminal.detach().tolist(),
+            results.append(dict(branch_logits=values, observed_h=result.h_observed.detach().tolist(),
                                 loss=loss.item(), branch_gradient=controller.branch.grad.tolist(),
+                                decision_count=result.decision_count, execution_count=result.execution_count,
+                                committed=result.committed, termination_reason=result.termination_reason,
+                                live_state_has_grad_fn=result.h_observed.grad_fn is not None,
+                                input_gradient=h0.grad.tolist(), rows=result.rows,
                                 branch_probabilities=probabilities.tolist(),
                                 expected_loss_resampling_branch_only=expected_loss.item(),
                                 expected_categorical_gradient_resampling_branch_only=expected_gradient.tolist(),
@@ -244,7 +250,7 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
         index = int(result["selected_action"].item())
         retained.append(dict(logits=kwargs["action_logits"], candidates=result["candidates"],
                              h_next=result["h_next"], h=kwargs["h"], h0=kwargs["h0"],
-                             selected=index, mask=mask,
+                             selected=index, mask=mask, execution_before=kwargs["execution_count"],
                              hard_forward_exact=torch.equal(result["h_next"].detach(),
                                                             result["candidates"][:, index].detach()),
                              illegal_forward_mass=result["probs"][:, ~mask].abs().sum().item(),
@@ -259,13 +265,24 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
         loss.backward()
     finally:
         model.executor.differentiable_route_step = original
+    coordinates = [(token, decision, action)
+                   for token, history in enumerate(histories)
+                   for decision, action in enumerate(history)]
+    if len(coordinates) != len(retained):
+        raise RuntimeError("Retained route steps differ from observed token histories")
     steps = []
-    for i, row in enumerate(retained):
+    for (token, decision, (kind, block)), row in zip(coordinates, retained):
         grad = row["logits"].grad
         candidate_grad = row["candidates"].grad
         selected = row["selected"]
         other = torch.arange(10, device=x.device) != selected
-        steps.append(dict(token=i//8, decision=i%8, selected=selected,
+        recorded_action = block if kind == "ADVANCE" else {"REPEAT": 8, "RESTART": 9}[kind]
+        if selected != recorded_action:
+            raise RuntimeError("Retained action differs from observed token history")
+        steps.append(dict(token=token, decision=decision, selected=selected,
+                          execution_before=row["execution_before"],
+                          execution_after=row["execution_before"] + int(kind != "RESTART"),
+                          terminal_decision=decision == len(histories[token]) - 1,
                           logits_gradient=tensor_stats(grad),
                           selected_successor_gradient=tensor_stats(candidate_grad[:, selected]),
                           unselected_successor_gradient=tensor_stats(candidate_grad[:, other]),
@@ -292,7 +309,7 @@ def gradient_trial(model, x, target, noise_seed, backbone_probe=False):
                     entry["squared_l2"] += stats["l2"] ** 2
     return dict(noise_seed=noise_seed, ce=loss.item(), controller_gradients=gradients,
                 token_input_gradient=tensor_stats(token_input.grad), steps=steps,
-                backbone_probe=backbone, routes=route_metrics(histories)), vector.cpu()
+                backbone_probe=backbone, histories=histories, routes=route_metrics(histories)), vector.cpu()
 
 
 class ScriptedSweep:
@@ -324,9 +341,9 @@ def compact_report(report):
             unselected_successor_gradient_max=max(s["unselected_successor_gradient"]["l2"] for s in steps),
         )
         result["gradient_l2_by_decision"] = []
-        for decision in range(8):
+        for decision in sorted({s["decision"] for s in steps}):
             rows = [s for s in steps if s["decision"] == decision]
-            metrics = {}
+            metrics = dict(decision=decision, observations=len(rows))
             for name in ("logits_gradient", "selected_successor_gradient", "live_gradient", "anchor_gradient"):
                 values = [s[name]["l2"] for s in rows]
                 metrics[name] = dict(mean=sum(values)/len(values), minimum=min(values), maximum=max(values))

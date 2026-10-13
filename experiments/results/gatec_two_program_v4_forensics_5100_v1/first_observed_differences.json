@@ -1,0 +1,347 @@
+{
+  "acquisition/L16/row00": {
+    "first_prefix_program_difference": {
+      "token": 0,
+      "decision": 6,
+      "P0_action": 6,
+      "P1_action": 8,
+      "P0_blocks": [
+        6
+      ],
+      "P1_blocks": [
+        5
+      ],
+      "interpretation": "Prescribed compound program substitution, not a defect"
+    },
+    "first_prefix_full_array_difference": {
+      "token": 0,
+      "decision": 6,
+      "field": "h_after",
+      "comparison": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.14370501041412354,
+        "L2_of_actual_difference": 1.1109685458996967,
+        "RMS_of_actual_difference": 0.1388710682374621,
+        "signed_mean_difference": -0.13884139152651187
+      },
+      "same_action_and_block": false
+    },
+    "first_prefix_prediction_disagreement": null,
+    "final_P0_boundary_first_incoming_summary_difference": {
+      "field": "/s",
+      "left": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.087959289550781,
+        "max_abs": 1.172702431678772
+      },
+      "right": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.086141586303711,
+        "max_abs": 1.208348035812378
+      },
+      "locked_match": false,
+      "comparable": true,
+      "representation": "Retained summary",
+      "shape_equal": true,
+      "summary_l2_delta": -0.0018177032470703125,
+      "summary_max_abs_delta": 0.03564560413360596,
+      "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+    },
+    "final_P0_boundary_first_full_live_array_difference": {
+      "sequence_id": "acquisition/L16/row00",
+      "phase": "final_P0_boundary",
+      "token": 15,
+      "decision": 0,
+      "stage": "same_program_live_execution",
+      "field": "h_before",
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": false,
+      "allclose": false,
+      "max_abs_difference": 0.11622005701065063,
+      "L2_of_actual_difference": 0.3661047334083292,
+      "RMS_of_actual_difference": 0.04576309167604115,
+      "signed_mean_difference": -0.003399622713914141
+    },
+    "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+  },
+  "acquisition/L16/row01": {
+    "first_prefix_program_difference": {
+      "token": 0,
+      "decision": 6,
+      "P0_action": 6,
+      "P1_action": 8,
+      "P0_blocks": [
+        6
+      ],
+      "P1_blocks": [
+        5
+      ],
+      "interpretation": "Prescribed compound program substitution, not a defect"
+    },
+    "first_prefix_full_array_difference": {
+      "token": 0,
+      "decision": 6,
+      "field": "h_after",
+      "comparison": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.14370501041412354,
+        "L2_of_actual_difference": 1.1109685458996967,
+        "RMS_of_actual_difference": 0.1388710682374621,
+        "signed_mean_difference": -0.13884139152651187
+      },
+      "same_action_and_block": false
+    },
+    "first_prefix_prediction_disagreement": null,
+    "final_P0_boundary_first_incoming_summary_difference": {
+      "field": "/s",
+      "left": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.122279167175293,
+        "max_abs": 1.628637433052063
+      },
+      "right": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.12346076965332,
+        "max_abs": 1.6783725023269653
+      },
+      "locked_match": false,
+      "comparable": true,
+      "representation": "Retained summary",
+      "shape_equal": true,
+      "summary_l2_delta": 0.0011816024780273438,
+      "summary_max_abs_delta": 0.049735069274902344,
+      "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+    },
+    "final_P0_boundary_first_full_live_array_difference": {
+      "sequence_id": "acquisition/L16/row01",
+      "phase": "final_P0_boundary",
+      "token": 15,
+      "decision": 0,
+      "stage": "same_program_live_execution",
+      "field": "h_before",
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": false,
+      "allclose": false,
+      "max_abs_difference": 0.2913108468055725,
+      "L2_of_actual_difference": 1.0456992413217976,
+      "RMS_of_actual_difference": 0.1307124051652247,
+      "signed_mean_difference": 0.034869870280090254
+    },
+    "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+  },
+  "acquisition/L16/row02": {
+    "first_prefix_program_difference": {
+      "token": 0,
+      "decision": 6,
+      "P0_action": 6,
+      "P1_action": 8,
+      "P0_blocks": [
+        6
+      ],
+      "P1_blocks": [
+        5
+      ],
+      "interpretation": "Prescribed compound program substitution, not a defect"
+    },
+    "first_prefix_full_array_difference": {
+      "token": 0,
+      "decision": 6,
+      "field": "h_after",
+      "comparison": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.14370501041412354,
+        "L2_of_actual_difference": 1.1109685458996967,
+        "RMS_of_actual_difference": 0.1388710682374621,
+        "signed_mean_difference": -0.13884139152651187
+      },
+      "same_action_and_block": false
+    },
+    "first_prefix_prediction_disagreement": null,
+    "final_P0_boundary_first_incoming_summary_difference": {
+      "field": "/s",
+      "left": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.08820915222168,
+        "max_abs": 1.1738463640213013
+      },
+      "right": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.086374282836914,
+        "max_abs": 1.2147812843322754
+      },
+      "locked_match": false,
+      "comparable": true,
+      "representation": "Retained summary",
+      "shape_equal": true,
+      "summary_l2_delta": -0.001834869384765625,
+      "summary_max_abs_delta": 0.04093492031097412,
+      "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+    },
+    "final_P0_boundary_first_full_live_array_difference": {
+      "sequence_id": "acquisition/L16/row02",
+      "phase": "final_P0_boundary",
+      "token": 15,
+      "decision": 0,
+      "stage": "same_program_live_execution",
+      "field": "h_before",
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": false,
+      "allclose": false,
+      "max_abs_difference": 0.10120350122451782,
+      "L2_of_actual_difference": 0.3286791252461736,
+      "RMS_of_actual_difference": 0.0410848906557717,
+      "signed_mean_difference": -0.005108410870889202
+    },
+    "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+  },
+  "acquisition/L16/row03": {
+    "first_prefix_program_difference": {
+      "token": 0,
+      "decision": 6,
+      "P0_action": 6,
+      "P1_action": 8,
+      "P0_blocks": [
+        6
+      ],
+      "P1_blocks": [
+        5
+      ],
+      "interpretation": "Prescribed compound program substitution, not a defect"
+    },
+    "first_prefix_full_array_difference": {
+      "token": 0,
+      "decision": 6,
+      "field": "h_after",
+      "comparison": {
+        "available": true,
+        "representation": "Retained full array",
+        "shape": [
+          1,
+          64
+        ],
+        "element_count": 64,
+        "exact_values_equal": false,
+        "allclose": false,
+        "max_abs_difference": 0.5965418815612793,
+        "L2_of_actual_difference": 4.602453876230403,
+        "RMS_of_actual_difference": 0.5753067345288003,
+        "signed_mean_difference": 0.5751722924760543
+      },
+      "same_action_and_block": false
+    },
+    "first_prefix_prediction_disagreement": {
+      "token": 2,
+      "label": 0,
+      "P0_prediction": 0,
+      "P1_prediction": 1
+    },
+    "final_P0_boundary_first_incoming_summary_difference": {
+      "field": "/s",
+      "left": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.08937931060791,
+        "max_abs": 1.2035367488861084
+      },
+      "right": {
+        "shape": [
+          1,
+          64
+        ],
+        "l2": 8.11923885345459,
+        "max_abs": 1.869328498840332
+      },
+      "locked_match": false,
+      "comparable": true,
+      "representation": "Retained summary",
+      "shape_equal": true,
+      "summary_l2_delta": 0.029859542846679688,
+      "summary_max_abs_delta": 0.6657917499542236,
+      "caution": "Differences of published norms/maxima, not a tensor distance or state equality proof"
+    },
+    "final_P0_boundary_first_full_live_array_difference": {
+      "sequence_id": "acquisition/L16/row03",
+      "phase": "final_P0_boundary",
+      "token": 15,
+      "decision": 0,
+      "stage": "same_program_live_execution",
+      "field": "h_before",
+      "available": true,
+      "representation": "Retained full array",
+      "shape": [
+        1,
+        64
+      ],
+      "element_count": 64,
+      "exact_values_equal": false,
+      "allclose": false,
+      "max_abs_difference": 2.804329514503479,
+      "L2_of_actual_difference": 9.447902328398799,
+      "RMS_of_actual_difference": 1.1809877910498499,
+      "signed_mean_difference": 0.03254814655520022
+    },
+    "caution": "Observation order and numerical association do not identify the first causal error or causal component."
+  }
+}

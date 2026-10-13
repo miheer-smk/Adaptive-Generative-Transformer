@@ -1,0 +1,37 @@
+
+# AGT archival snapshot: direct verified Git LFS payloads.
+/experiments/results/gatec_fresh_task_discovery_4700_v1/decisions.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_fresh_task_discovery_4700_v1/results.json filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_fresh_task_discovery_4700_v1/sequences.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_fresh_task_discovery_4700_v1/tokens.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_fresh_task_discovery_4700_v1/updates.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_imitation_seed_replication_4401_4402_v1/common_teacher_features.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_imitation_seed_replication_4401_4402_v1/minibatch_indices_4401.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_imitation_seed_replication_4401_4402_v1/minibatch_indices_4402.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_imitation_seed_replication_4401_4402_v1/replay_decisions.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_imitation_seed_replication_4401_4402_v1/replay_tokens.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/decisions.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/tokens.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_paired_gradient_average_4900_v1/decisions.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_paired_gradient_average_4900_v1/tokens.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_paired_task_maintenance_4401_v1/decisions_verified.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_paired_task_maintenance_4401_v1/tokens_verified.jsonl filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/analysis_case_arrays.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/C_update0256.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/C_update0512.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/T_update0256.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/T_update0512.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/common_update0512.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/confirmation_C.json filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/confirmation_T.json filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/runtime_cache/0/0/0d444c3eb3d5d8 filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/runtime_cache/0/7/a0e4960f6ba31e filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/runtime_cache/d/5/ebd5b3bfe6f4c1 filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/sealed_encoded_inputs.pt filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_compatibility_6000_v1/token_traces.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/runtime_cache/0/0/0d444c3eb3d5d8 filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/runtime_cache/0/7/a0e4960f6ba31e filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/runtime_cache/d/5/ebd5b3bfe6f4c1 filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_st_action_value_4700_v1/decisions.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_temporal_vjp_4700_update1040_v1/adjoints.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+/experiments/results/gatec_two_program_feasibility_5100_v4/token_traces.jsonl.gz filter=lfs diff=lfs merge=lfs -text

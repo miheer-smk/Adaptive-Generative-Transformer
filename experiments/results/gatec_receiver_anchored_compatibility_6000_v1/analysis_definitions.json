@@ -1,0 +1,9 @@
+{
+  "native_mean_CE": "current boundary plus both suffixes, 17 outputs per case; prefix readouts descriptive",
+  "reported_horizon_CE": "h0 current boundary; h1/h4/h8 endpoint means over both suffixes",
+  "native_gate": "current>=.99, robust>=.98, mean_CE<=.05 and each reported horizon_CE<=.05",
+  "effective_batch": "arithmetic mean of the two per-episode losses; physical B1; clip after both backward calls",
+  "primary": "equal length/parity weighted E[D_control-D_treatment]",
+  "profiling": "z0 only; 32 predetermined cases; one warmup+five timed; no reused prefixes",
+  "source_of_constants": "protocol_original_copy.txt plus clarifications_copy.md; latest user authorization enables full study"
+}

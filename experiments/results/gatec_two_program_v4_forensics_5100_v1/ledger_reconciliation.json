@@ -1,0 +1,87 @@
+{
+  "observed": {
+    "tokens": 1979,
+    "commits": 1979,
+    "decisions": 15832,
+    "executions": 15832,
+    "restart": 0,
+    "repeat": 67
+  },
+  "published_expected": {
+    "tokens": 1979,
+    "executions": 15832,
+    "commits": 1979
+  },
+  "counts_match": true,
+  "ledger_calls_match": true,
+  "phase_program_reference": [
+    {
+      "phase": "archival",
+      "program": "P0",
+      "reference": false,
+      "tokens": 8
+    },
+    {
+      "phase": "archival",
+      "program": "P0",
+      "reference": true,
+      "tokens": 8
+    },
+    {
+      "phase": "current",
+      "program": "P0",
+      "reference": false,
+      "tokens": 100
+    },
+    {
+      "phase": "current",
+      "program": "P1",
+      "reference": false,
+      "tokens": 7
+    },
+    {
+      "phase": "prefix",
+      "program": "P0",
+      "reference": true,
+      "tokens": 1696
+    },
+    {
+      "phase": "prefix",
+      "program": "P1",
+      "reference": false,
+      "tokens": 60
+    },
+    {
+      "phase": "supplied_reference",
+      "program": "P0",
+      "reference": true,
+      "tokens": 100
+    }
+  ],
+  "P1": {
+    "tokens": 67,
+    "prefix": 60,
+    "block5": 134,
+    "repeat_actions": 67,
+    "current": 7
+  },
+  "block_execution_counts": {
+    "0": 1979,
+    "1": 1979,
+    "2": 1979,
+    "3": 1979,
+    "4": 1979,
+    "5": 2046,
+    "6": 1912,
+    "7": 1979
+  },
+  "block5_extra_over_one_per_token": 67,
+  "P1_extra_block5_corresponds_to_67_tokens": true,
+  "block6_omissions": 67,
+  "future_calls_recorded": 0,
+  "future_records_observed": 0,
+  "joint_bootstrap_record": "Not executed, recorded in final_report/results; no joint_uncertainty.json exists",
+  "joint_uncertainty_artifact_present": false,
+  "historical_work": "Separate published historical ledgers, not pooled",
+  "caution": "Arithmetic corroboration of retained traces and counters; not new implementation validation."
+}

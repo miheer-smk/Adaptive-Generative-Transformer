@@ -1,0 +1,14 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/test_supplemental_boundaries_v1.py::test_all_committed_cardinalities_positions_and_read_purity[cuda]
+  /home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+      Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+      Minimum and Maximum cuda capability supported by this version of PyTorch is
+      (8.0) - (12.0)
+      
+    queued_call()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 1 warning in 1.20s

@@ -1,0 +1,6 @@
+{
+  "required_overall_tokens_per_second": 12.367777777777778,
+  "measured_fixture_rates": [],
+  "conservative_all_tokens_at_slowest_fixture_rate_hours": null,
+  "not_a_guarantee": "fixture time includes observation/ledger overhead but excludes optimizer work, complete study I/O and statistical analysis; no deployment latency measured"
+}

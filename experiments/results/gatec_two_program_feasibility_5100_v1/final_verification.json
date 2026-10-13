@@ -1,0 +1,18 @@
+{
+  "protected_files_verified": 579,
+  "changed_files": [],
+  "parameters_unchanged": true,
+  "buffers_unchanged": true,
+  "source_seal_verified": true,
+  "production_diff_unchanged": true,
+  "diff_check": "clean",
+  "status": "STOPPED",
+  "completed_reference_tokens": 1,
+  "P1_study_forwards": 0,
+  "future_continuations": 0,
+  "bootstrap_replicates_executed": 0,
+  "no_training": true,
+  "no_optimizer": true,
+  "no_selector": true,
+  "no_git_commit": true
+}

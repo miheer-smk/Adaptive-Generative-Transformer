@@ -1,0 +1,23 @@
+{
+  "manifest_sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+  "pre_training": true,
+  "protocol_change": false,
+  "encoding": "existing TaskAParity fixed two-row FP32 token_features[bits], target sum(bits) mod2",
+  "feature_seed": 3002,
+  "token_feature_fingerprint": "0b0417667a8c3b16ab84596fe6d98bc56d306add3229aa5d18854f30631e1f3e",
+  "token_feature_shape": [
+    2,
+    64
+  ],
+  "token_feature_trainable": false,
+  "dataset_source_sha256": "345cb186461904cf224408cfa41617c90739bd6a103c1c9cf857f7b4544dd9d9",
+  "helper_source_sha256": {
+    "experiments/run_gatec_paired_task_maintenance.py": "e80b27dd3bcd3674b2c063cc0964df5c1f34cd6aecc4b2d3b2a31b088244582e",
+    "experiments/replicate_gatec_locked_imitation.py": "9c86782334a0825c7e9f8976067cb2b45c073c132b440c878f687ad62e93c14f",
+    "experiments/replay_gatec_learned_policy.py": "ee6be11e1a209a0d78126399c181bf01dda3dcbd4e88d0eead2c80a6628a0748",
+    "experiments/audit_gatec_canonical_replay.py": "79d0fc55d650531a1c181e10421661e5522eba18153dfab0254f7e29de47a740",
+    "experiments/evaluate_gatec_locked_policy.py": "1503fc2cc3dc75eccde7f3c70cbc56d4f3a3b574f04a2d43048536d0a2dbbcb4",
+    "experiments/stage3_measurements.py": "b4ea700c104444c39d0c681721cbf034fe9c2684b0c4fec08ac4f6108737c9ac",
+    "experiments/run_stage3_route_imitation.py": "592bcd9b5d9e2f2df1030318ff826c3c510a07589ab5ce7cc65be182121371f6"
+  }
+}

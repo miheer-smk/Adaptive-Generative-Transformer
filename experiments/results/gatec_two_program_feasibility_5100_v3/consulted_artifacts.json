@@ -1,0 +1,70 @@
+[
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/protocol_manifest.json",
+    "sha256": "9335ee7a6d236c985a1029afc6f9226aa6c03e0ad5c345352ef0fa93eb45f5cf"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/input_manifest.json",
+    "sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/complete_program_feasibility.py",
+    "sha256": "5a0988cb7b94688bf058d111d1691a1b0b9b085ac35f3364cf18f5dfbea457be"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/failure.json",
+    "sha256": "5f5248c6a9f800d2297b3423d3f98d5b4de5d0642a8817cfb1fb09a8eea80a85"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/report.md",
+    "sha256": "c9470dc970be438f669367b8b095a12616f38a97bcdc051e4cacf3c7f5217eb6"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/execution_boundary_note.md",
+    "sha256": "665e3f266359b6dfc41fb347af4428783cb8a2b91cc29bb707332389e9fa99aa"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v2/report.md",
+    "sha256": "516cd37b0bd2aa7f027d3b7b9b2c989385fc784dfaca9d48a8c7a3c98fd52055"
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v2/inspection_failure.json",
+    "sha256": "430914abf67ea9bd93a9a6ba91e22d8e25f139bf4f7dc60d0c27451791d59fec"
+  },
+  {
+    "path": "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.json",
+    "sha256": "9303100f6dccca7701e0fddc601ebb79049f3d0a34d7e4331475d443760fd5ba"
+  },
+  {
+    "path": "experiments/audit_gatec_canonical_replay.py",
+    "sha256": "79d0fc55d650531a1c181e10421661e5522eba18153dfab0254f7e29de47a740"
+  },
+  {
+    "path": "experiments/stage3_measurements.py",
+    "sha256": "b4ea700c104444c39d0c681721cbf034fe9c2684b0c4fec08ac4f6108737c9ac"
+  },
+  {
+    "path": "src/masks.py",
+    "sha256": "de0cf2eb64a34ad1261e5d9d077eefd6bdf667f155a953a1494717cd03d4fdcb"
+  },
+  {
+    "path": "src/executor.py",
+    "sha256": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f"
+  },
+  {
+    "path": "src/agt.py",
+    "sha256": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e"
+  },
+  {
+    "path": "src/caches.py",
+    "sha256": "c768b5f06e8dec622a9f75b0848c8a4f94bad2296d496451c8b9fc4c07a539a1"
+  },
+  {
+    "path": "src/terminal_commit.py",
+    "sha256": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3"
+  },
+  {
+    "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json",
+    "sha256": "506c485bc7cdda615a15ab991b86175298c6e83bae973f6abe8e756ebe1a0f9e"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "checkpoints": [
+    {
+      "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+      "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/runs/stage3_imitation_replication_3305_v1.pt",
+      "sha256": "259e2b86786c6cd037e3ba0db71d91fd05cdb76753bdb462be414bd1b9400df3",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/runs/stage3_imitation_replication_4401_locked_v1.pt",
+      "sha256": "4e14f56d3762aac1442a8dcc6fd86eb950e0013986409ff31b48d514fd972fcd",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt",
+      "sha256": "c2dcee934edbc60e5e3faf0167ad202f9e25bf76ef47029a723d3fdcc4e39504",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/runs/stage3_imitation_replication_4401_locked_v1.pt",
+      "sha256": "4e14f56d3762aac1442a8dcc6fd86eb950e0013986409ff31b48d514fd972fcd",
+      "unchanged": true
+    },
+    {
+      "path": "experiments/runs/stage3_imitation_replication_4402_locked_v1.pt",
+      "sha256": "771dd6cb845e73eac7fcb5b6641ed200af76fb22e7f35921cd7792139a190766",
+      "unchanged": true
+    }
+  ],
+  "prior_replication_artifact_hashes_unchanged": true,
+  "known_hashes_only": true
+}

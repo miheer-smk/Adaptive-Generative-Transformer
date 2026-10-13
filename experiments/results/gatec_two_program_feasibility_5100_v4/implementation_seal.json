@@ -1,0 +1,20 @@
+{
+  "phase": "FINAL IMPLEMENTATION SEALED BEFORE STUDY FORWARDS",
+  "files": {
+    "protocol_amendment.md": "4054b45372f59b86d3f0e12deba42054c03508546197e5d878f5a2fc34ed2d68",
+    "requirements_matrix_annotated.json": "95720af9b905e97ab4f632c7d32772057a5ffb703d30b5a2969ce04c1e7f9dda",
+    "requirements_matrix_annotated.md": "ca34782ff9e73430be4be222f092fe780f457a12d089b29f5e7f776602ae22df",
+    "research_programs_v4.py": "d32772212f6c97f225e4aeb788d149cd890eea81ec6c2ae9484ce05524c34834",
+    "archival_monitor_v4.py": "4d1fe2ebd9c6387ccc64a660ac080bc32a60d6d6869fa7334dec431e3370feab",
+    "runner_v4.py": "6b05764f43e42f843abe4777ee3cbe1efe1f0bf065ca0d305a488cb6603c5415",
+    "test_programs_v4.py": "0dabaafe9ef338a2439e0cb34b0322dd732a9a5261f48d1002a266e721e875e7",
+    "test_amendments_v4.py": "29dc9625804850300cbebf12b160547cca9716dfd81abbd589a1408610999f6f",
+    "research_amendment.diff": "453f4032998a1340a5c46e616a00b4b4cf21631e81326dc0466fd72d338a9db5",
+    "test_results.json": "aba0c44a918cafedd4cce32895d797a878a571038e09580e9f527e34feca97a2"
+  },
+  "original_source": {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/complete_program_feasibility.py",
+    "sha256": "5a0988cb7b94688bf058d111d1691a1b0b9b085ac35f3364cf18f5dfbea457be"
+  },
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+}

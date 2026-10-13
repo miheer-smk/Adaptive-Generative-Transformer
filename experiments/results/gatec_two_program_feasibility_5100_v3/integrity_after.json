@@ -1,0 +1,18 @@
+{
+  "verified_original_602": true,
+  "expanded_protected_files_verified": 607,
+  "changed_files": [],
+  "v1_preserved": true,
+  "v2_preserved": true,
+  "sealed_inputs_preserved": true,
+  "archived_checkpoints_preserved": true,
+  "production_source_unchanged": true,
+  "original_tracked_diff_unchanged": true,
+  "historical_integrity_exception_preserved": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting",
+  "new_integrity_exceptions": 0,
+  "diff_check": "clean",
+  "implementation_edits": 0,
+  "model_forwards": 0,
+  "tests": 0,
+  "git_commits": 0
+}

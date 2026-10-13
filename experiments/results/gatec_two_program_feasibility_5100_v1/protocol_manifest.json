@@ -1,0 +1,452 @@
+{
+  "created_utc": "2026-10-10T19:22:26.131225+00:00",
+  "protocol": "Latest finalized conversation specification; frozen two-program feasibility only",
+  "git": {
+    "head": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "branch": "research/stage3-routing-gate-c-audit",
+    "status": " M experiments/diagnose_stage3_gradients.py\n M experiments/evaluate_stage3_stochastic_continuation.py\n M experiments/runs/stage1_taskA_tiny.json\n M experiments/stage3_measurements.py\n M src/__pycache__/agt.cpython-312.pyc\n M src/__pycache__/blocks.cpython-312.pyc\n M src/__pycache__/controller.cpython-312.pyc\n M src/__pycache__/executor.cpython-312.pyc\n M src/__pycache__/masks.cpython-312.pyc\n M src/executor.py\n M tests/test_stage3_measurements.py\n M tests/test_stage3_replication.py\n M tests/test_stage3_stochastic_evaluation.py\n M tests/test_stage3_successor_mix.py\n?? AUDIT_PRECHECK.md\n?? GATE_B_STAGE3_SPEC.before_source_reconciliation.md\n?? GATE_B_STAGE3_SPEC.md.pre_inspection\n?? GATE_B_STAGE3_SPEC.md.pre_reconcile\n?? GATE_B_STAGE3_SPEC.md.pre_source_lock\n?? HALT\n?? RESTART\n?? data/__pycache__/\n?? experiments/__pycache__/\n?? experiments/analyze_gatec_matched_prefix_4700.py\n?? experiments/audit_gatec_canonical_replay.py\n?? experiments/check_stage3_equivalence_batch1.py\n?? experiments/complete_program_feasibility.py\n?? experiments/diagnose_gatec_st_action_values_4700.py\n?? experiments/diagnose_gatec_temporal_vjp_4700.py\n?? experiments/diagnose_stage1_taskA.py\n?? experiments/diagnose_stage3_closed_loop_parity.py\n?? experiments/diagnose_stage3_route_equivalence.py\n?? experiments/diagnose_stage3_taskA_gradient_flow.py\n?? experiments/evaluate_gatec_locked_policy.py\n?? experiments/evaluate_stage3_closed_loop_equivalence.py\n?? experiments/evaluate_stage3_route_controller.py\n?? experiments/evaluate_stage3_warmstart.py\n?? experiments/evaluate_stage3_warmstart_parity.py\n?? experiments/evaluate_stage3_warmstart_taskA.py\n?? experiments/gateA_a3_state_vs_output.py\n?? experiments/gateA_a4_state_ablation.py\n?? experiments/gateA_a5_state_shuffle.py\n?? experiments/gateA_a6_state_patching.py\n?? experiments/gateA_a7_controls.py\n?? experiments/replay_gatec_learned_policy.py\n?? experiments/replicate_gatec_locked_imitation.py\n?? experiments/results/\n?? experiments/run_gatec_fresh_task_discovery.py\n?? experiments/run_gatec_paired_gradient_average_4900.py\n?? experiments/run_gatec_paired_task_maintenance.py\n?? experiments/run_stage1_taskA_overfit.py\n?? experiments/run_stage3_masked_route_imitation.py\n?? experiments/run_stage3_taskA_warmstart.py\n?? experiments/run_stage3_warmstart_taskA_train.py\n?? experiments/runs/stage3_controller_masked_route_imitation_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3401_reproduced.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3402.pt\n?? experiments/runs/stage3_controller_route_imitation_audit_seed3403.pt\n?? experiments/runs/stage3_controller_route_imitation_v2_seed3401.pt\n?? experiments/runs/stage3_fresh_task_4700_update0000_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update0104_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update0520_locked_v1.pt\n?? experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_C_update0000_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_C_update0104_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_C_update0260_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_C_update0520_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_T_update0000_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_T_update0104_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_T_update0260_locked_v1.pt\n?? experiments/runs/stage3_gradient_average_4900_T_update0520_locked_v1.pt\n?? experiments/runs/stage3_gradient_diagnostics_3305_v1.json\n?? experiments/runs/stage3_gradient_short_imitation_3305_v1.json\n?? experiments/runs/stage3_imitation_partial_3305_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3306_100_v1.pt\n?? experiments/runs/stage3_imitation_partial_3307_100_v1.pt\n?? experiments/runs/stage3_imitation_replication_3305_v1.pt\n?? experiments/runs/stage3_imitation_replication_3306_v1.pt\n?? experiments/runs/stage3_imitation_replication_3307_v1.pt\n?? experiments/runs/stage3_imitation_replication_4401_locked_v1.pt\n?? experiments/runs/stage3_imitation_replication_4402_locked_v1.pt\n?? experiments/runs/stage3_metadata_credit_probe_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3305_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3306_random.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_replication_3305_3307_100_v1_3307_random.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1.json\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3305_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3306_imitation.pt\n?? experiments/runs/stage3_replication_short_imitation_3305_3307_100_v1_3307_imitation.pt\n?? experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt\n?? experiments/runs/stage3_variance_ablation_3305_3307_20_v1.json\n?? experiments/stage3_decision_prefix.py\n?? experiments/train_stage1_taskA_len8.py\n?? \"n' '===== BRANCH =====' && \"\n?? \"n' '===== CURRENT WORKTREE =====' && \"\n?? src/__pycache__/routing.cpython-312.pyc\n?? src/agt.py.pre_adaptive_step.bak\n?? src/executor.py.pre_adaptive_integration.bak\n?? tests/__pycache__/test_gatec_canonical_replay_audit.cpython-312.pyc\n?? tests/__pycache__/test_stage3_audit_metrics.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_controller.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_executor_controller_inputs.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_measurements.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_replication.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_routing.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_stochastic_evaluation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_successor_mix.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_taskA_gradient_diagnostic.cpython-312.pyc\n?? tests/__pycache__/test_stage3_transition.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage3_variance_ablation.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halt.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_stage4_halting.cpython-312-pytest-9.1.1.pyc\n?? tests/__pycache__/test_task_a.cpython-312-pytest-9.1.1.pyc\n?? tests/test_complete_program_feasibility.py\n?? tests/test_gatec_canonical_replay_audit.py\n?? tests/test_gatec_fresh_task_discovery.py\n?? tests/test_gatec_matched_prefix_analysis.py\n?? tests/test_gatec_paired_gradient_average.py\n?? tests/test_gatec_paired_noise.py\n?? tests/test_gatec_st_action_values_4700.py\n?? tests/test_gatec_temporal_vjp_4700.py\n?? tests/test_stage3_decision_prefix.py\n?? tests/test_stage3_execution_accounting.py\n?? tests/test_stage3_route_metrics.py\n?? tests/test_stage3_taskA_gradient_diagnostic.py\n?? tests/test_stage4_halt.py\n?? tests/test_stage4_halting.py\n",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac"
+  },
+  "backbone": {
+    "path": "experiments/runs/stage1_parity_seed3305_best.pt",
+    "sha256": "53b56e7e90f7eb7a6570107b6dfe3a297caac48d637fe27e5f00fbe94c6f09c3"
+  },
+  "programs": {
+    "P0": {
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "validation": [
+        {
+          "decision": 0,
+          "pointer_before": 0,
+          "execution_before": 0,
+          "action": 0,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true
+          ],
+          "pointer_after": 0,
+          "execution_after": 1,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 1,
+          "pointer_before": 0,
+          "execution_before": 1,
+          "action": 1,
+          "mask": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 1,
+          "execution_after": 2,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 2,
+          "pointer_before": 1,
+          "execution_before": 2,
+          "action": 2,
+          "mask": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 2,
+          "execution_after": 3,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 3,
+          "pointer_before": 2,
+          "execution_before": 3,
+          "action": 3,
+          "mask": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 3,
+          "execution_after": 4,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 4,
+          "pointer_before": 3,
+          "execution_before": 4,
+          "action": 4,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 4,
+          "execution_after": 5,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 5,
+          "pointer_before": 4,
+          "execution_before": 5,
+          "action": 5,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 5,
+          "execution_after": 6,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 6,
+          "pointer_before": 5,
+          "execution_before": 6,
+          "action": 6,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 6,
+          "execution_after": 7,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 7,
+          "pointer_before": 6,
+          "execution_before": 7,
+          "action": 7,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 7,
+          "execution_after": 8,
+          "just_restarted_after": false
+        }
+      ]
+    },
+    "P1": {
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        7
+      ],
+      "validation": [
+        {
+          "decision": 0,
+          "pointer_before": 0,
+          "execution_before": 0,
+          "action": 0,
+          "mask": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            true
+          ],
+          "pointer_after": 0,
+          "execution_after": 1,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 1,
+          "pointer_before": 0,
+          "execution_before": 1,
+          "action": 1,
+          "mask": [
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 1,
+          "execution_after": 2,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 2,
+          "pointer_before": 1,
+          "execution_before": 2,
+          "action": 2,
+          "mask": [
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 2,
+          "execution_after": 3,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 3,
+          "pointer_before": 2,
+          "execution_before": 3,
+          "action": 3,
+          "mask": [
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 3,
+          "execution_after": 4,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 4,
+          "pointer_before": 3,
+          "execution_before": 4,
+          "action": 4,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 4,
+          "execution_after": 5,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 5,
+          "pointer_before": 4,
+          "execution_before": 5,
+          "action": 5,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 5,
+          "execution_after": 6,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 6,
+          "pointer_before": 5,
+          "execution_before": 6,
+          "action": 8,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 5,
+          "execution_after": 7,
+          "just_restarted_after": false
+        },
+        {
+          "decision": 7,
+          "pointer_before": 5,
+          "execution_before": 7,
+          "action": 7,
+          "mask": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "pointer_after": 7,
+          "execution_after": 8,
+          "just_restarted_after": false
+        }
+      ]
+    }
+  },
+  "numerical": {
+    "batch": 1,
+    "dtype": "float32",
+    "device": "cuda",
+    "budget": [
+      0.0,
+      0.0
+    ],
+    "presence": 0,
+    "HALT": false,
+    "convergence": false,
+    "ST_Gumbel": false,
+    "optimizer": null,
+    "selector": null,
+    "trainable_parameters": 0
+  },
+  "thresholds": {
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "no_additional_parity_errors": true,
+    "single_positive_CE_max": 0.05,
+    "mean_positive_CE_upper_bound": 0.01,
+    "total_variation_max": 0.01,
+    "selector_authorization": "all declared current/future fixture answers correct, both programs safe and informative"
+  },
+  "uncertainty": {
+    "replicates": 10000,
+    "seed": 5103,
+    "resampling_unit": "prefix ID within parity; all conditions/suffixes together",
+    "acceptance": "mean per-prefix worst positive mean-suffix CE deterioration; one-sided97.5% bound for each confirmation panel",
+    "per_prefix_statistic": "maximum of positive current CE difference and positive mean-suffix future CE differences across history, schedule, and primary horizon",
+    "limitations": "conditional on frozen model, fixed structured suffix bank and sampled prefix population; zero errors do not establish zero risk"
+  },
+  "gate_order": [
+    "P0 archival equivalence",
+    "mechanical/isolation",
+    "current correctness",
+    "future/switch contract",
+    "alternative usefulness"
+  ],
+  "history_conditions": [
+    0,
+    1
+  ],
+  "boundary_programs": [
+    0,
+    1
+  ],
+  "max_completed_tokens": 40848,
+  "maximum_future_continuations": 4608,
+  "complete_future_tokens": 36864,
+  "input_manifest_sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80",
+  "research_source_sha256": "5a0988cb7b94688bf058d111d1691a1b0b9b085ac35f3364cf18f5dfbea457be",
+  "focused_tests_sha256": "2201e07ac8f62ddd941274c57b8bca96f4a4cbe67f9e05728243a45b7cc8e647",
+  "no_training": true,
+  "historical_integrity_exception": "experiments/results/gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged; no cache restoration or historical rewriting"
+}
