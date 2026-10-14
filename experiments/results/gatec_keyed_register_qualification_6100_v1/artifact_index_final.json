@@ -1,0 +1,186 @@
+{
+  "files": {
+    "adapter_source_diff.patch": {
+      "size": 5362,
+      "sha256": "a653e1f675684fb23054f3e09402632231b41c38ab5e5ca9b17dae075a9b836c"
+    },
+    "analysis_v1.py": {
+      "size": 4160,
+      "sha256": "3f211ddf5d423b81efdc3babddec4b4ffefb784db16a8494b6afc16b75b0dd3e"
+    },
+    "closure_report_v1.md": {
+      "size": 3066,
+      "sha256": "5b0d64723b3919bf92937acb7e5b6f3863170004d3c772b5ef4d61dcab7a284d"
+    },
+    "closure_results_v1.json": {
+      "size": 4900,
+      "sha256": "da5d3900e2be2b1dea274dd60df808d8f7704671eb57b27c5b84a8abadb1cdc2"
+    },
+    "complete_trace_verification.json": {
+      "size": 11566,
+      "sha256": "d404aef2f939d9ea37f020e8976a84e163990f6967d839f9ae12bf84fa97a8d5"
+    },
+    "development_inputs.json": {
+      "size": 1557579,
+      "sha256": "7f5fd12cf60f1347d19d9aad461938334bd77429a7ade87f8811049d2f047ff7"
+    },
+    "diagnostic_selection.json": {
+      "size": 547,
+      "sha256": "7709f90b24db992c359b75e75e8871c6b823e5b9f78ae70827af92be820f9006"
+    },
+    "execution.log": {
+      "size": 1155,
+      "sha256": "dc98a272100bb526a0c3c768d6ce7349a7460c3183e4ad555713e5ad6895514c"
+    },
+    "execution_ledger.json": {
+      "size": 1063,
+      "sha256": "90f6047168deb7d9965619580d4d9dd3061652387098adc84ceb65b66f13a3f0"
+    },
+    "execution_started.json": {
+      "size": 69,
+      "sha256": "885b263ae68ab8e275508eb25e8b6ed7a1ee2f946c0c35fcd0c7347e71b91091"
+    },
+    "exposure_inventory.json": {
+      "size": 8808,
+      "sha256": "61bdfa713af81fe245892a05d399a6c15a53fefa00265b6e286261eeca282493"
+    },
+    "failure.json": {
+      "size": 3177,
+      "sha256": "5a1a32b77b484e41663916db98d7385b615326007a1e771d5bb85fbe17e55603"
+    },
+    "final_report.md": {
+      "size": 1891,
+      "sha256": "9084be632e6d75be589fed2e5481b9ed67bc1bc263bbb643324afdc94fd7326e"
+    },
+    "final_results.json": {
+      "size": 6444,
+      "sha256": "f8088aa7a22f7013b9ff92c2924bd8e4ed5a37ecaa64905ce2b7ccd5e6b63f70"
+    },
+    "fixture_complete_states_cpu.pt": {
+      "size": 11427799,
+      "sha256": "c72a5463fc16ccacc35ad9156d4fb15d0230ef0bc83a92f752a2504cef8886c0"
+    },
+    "fixture_complete_states_cuda.pt": {
+      "size": 11428205,
+      "sha256": "acf890a5795a7040d162fbf0986374f5f7b227dc505b30611fdecff59ff132c4"
+    },
+    "fixtures_cpu.json": {
+      "size": 7848,
+      "sha256": "62222f7faf554058fc0fb6254e6505739eda2154347e606e2342103a97d2d3ba"
+    },
+    "fixtures_cuda.json": {
+      "size": 7850,
+      "sha256": "dd8c2d27486b3897a3f6d53f9c6398beb3f4ece6ce1a056ef64a944bedb97d53"
+    },
+    "generation_rejections.json": {
+      "size": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "implementation_seal.json": {
+      "size": 865,
+      "sha256": "4f476570d3076d92286c013fa15d37d3dc886856cf5ebb4f0828d776e6da3c83"
+    },
+    "initial_diagnostic_results.json": {
+      "size": 205703,
+      "sha256": "cccb5a6dbcd1006970b0e249263defec3cffe69f9504524090bcf3b8c9acdcda"
+    },
+    "initial_model_identity.json": {
+      "size": 279,
+      "sha256": "13a7d1fdf84dd0bc1e73a4951d9fb6c5c0741f0adcaf4554b44563e3fae29e75"
+    },
+    "input_manifest.json": {
+      "size": 244995,
+      "sha256": "5730a8bb0d536a0b1128d1d7375ec3f70f0d5818d62f62d5f61aa41dab1673ac"
+    },
+    "input_seal.json": {
+      "size": 1140,
+      "sha256": "776eb7e0491b8b9d3c21f002c703be8e033e6f11d1f1abb867a09d73b50d03df"
+    },
+    "integrity_final.json": {
+      "size": 460,
+      "sha256": "ce778e75c89cfd24332c905ef64ecdec96c96a17f9ca69741ccece1fc4f52ca2"
+    },
+    "integrity_initial.json": {
+      "size": 702835,
+      "sha256": "0af8e21c3c6a6025dea6e916a1c8a919af36685b386a52c92b59a821f647f186"
+    },
+    "offline_close_v1.py": {
+      "size": 8666,
+      "sha256": "4106651982a7ad68d45b99525d0fee2453a96d8788dfab630b6d95649c6bf670"
+    },
+    "pilot_runner_v1.py": {
+      "size": 21062,
+      "sha256": "b9aefdfe27818b3056a495df6cd714a89a3796f664f5228342471bf7d151c319"
+    },
+    "preflight.json": {
+      "size": 575,
+      "sha256": "fa9a8ca36730e60ffdfc222f677bf9c6470a82874a9757fc721928cb7500da95"
+    },
+    "program_adapter_v1.py": {
+      "size": 15998,
+      "sha256": "1202df02ed1ddbcd9418b5c86f275f9c2609cc531bfd482aa5a41c74c51ac580"
+    },
+    "protocol_approved_verbatim.md": {
+      "size": 17762,
+      "sha256": "cc9c1d6aac44f7949070a51225363d000efa34905c1324bde91a70f0fab42d26"
+    },
+    "protocol_identity.json": {
+      "size": 516,
+      "sha256": "5739118db8cbff71d04ac4bbb1f03d321827cc709f6ef2aa430033b3102fc968"
+    },
+    "sealed_encoded_inputs.pt": {
+      "size": 7988819,
+      "sha256": "c1257d9748682b5be8b0402b644647bd19fbb0f34b7d5a6a00f52e03d4e751b7"
+    },
+    "shortcut_records.json": {
+      "size": 350892,
+      "sha256": "ab34397873036d2e8a5d1dcaa01f98c8ca4514fc2e9e8a1e611ac24a5c1c62d2"
+    },
+    "shortcut_screen.json": {
+      "size": 1490,
+      "sha256": "7558b47cd1aac2485375770d72e79853e5410b1e5819a7c2b10d15b3a51649e2"
+    },
+    "symbolic_validation.json": {
+      "size": 418,
+      "sha256": "01f5e3fad4255c1e25462316f472d036ed0a8de7112fc3a4460c0238c019974a"
+    },
+    "task_data_v1.py": {
+      "size": 10962,
+      "sha256": "be0b158ee8d74446641df36e2d059989294c874fcd391a9d2a97c894332a68fb"
+    },
+    "tests_pure_results.json": {
+      "size": 476,
+      "sha256": "2c465bcf5db1e06efd0440b5350a2950240acbcf95b2200a813eecab8024e598"
+    },
+    "tests_v1.py": {
+      "size": 2111,
+      "sha256": "4b8bcb5fc2e7e363dcc215d3514bfe9fd24c2c00a548ae6944ac3d8553a0c17c"
+    },
+    "time_ceiling_enforcement_event.json": {
+      "size": 430,
+      "sha256": "34041e2286b2f854d4b20f802575dbc34c5534c57518b90f4395740ee7e38af5"
+    },
+    "time_ceiling_enforcement_plan.json": {
+      "size": 261,
+      "sha256": "e3fa100d3839b4a5c50249e46bbe0584227721b32302ec157e6e326c14de37a9"
+    },
+    "token_traces.jsonl.gz": {
+      "size": 4846635,
+      "sha256": "febc83e3c105288533aed4c7eaf3dbc7ea5095f6cb8b712fe259368ac73ab589"
+    },
+    "training_inputs.json": {
+      "size": 778071,
+      "sha256": "404924d519190d02e4382bddc3887f9fb9e8e73a31b134efaab60b54df332573"
+    },
+    "training_order.json": {
+      "size": 789,
+      "sha256": "9fd1b605e4c7e35469fc8ff211346ff5ce062eddec7301dd4f552de8057ecad8"
+    },
+    "training_updates.jsonl": {
+      "size": 602161,
+      "sha256": "94bfc0422f7b5c1aa96e7db3b13239bf988fe947e10c40f9823e119863d51682"
+    }
+  },
+  "self_excluded": true,
+  "utc": "2026-10-14T13:12:08.897618+00:00"
+}

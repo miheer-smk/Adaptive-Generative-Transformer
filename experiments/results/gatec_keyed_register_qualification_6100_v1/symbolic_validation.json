@@ -1,0 +1,14 @@
+{
+  "passes": true,
+  "episodes": 384,
+  "families": 96,
+  "independent_labels": 3072,
+  "counterfactual_properties_pass": true,
+  "encoding_properties_pass": true,
+  "split_history_disjoint": true,
+  "reserved_unused_seeds": [
+    6104,
+    6105
+  ],
+  "historical_exposure_limitations": "Only retained comparable command inputs excluded; binary parity inputs are a different alphabet; unretained exposure unknown"
+}

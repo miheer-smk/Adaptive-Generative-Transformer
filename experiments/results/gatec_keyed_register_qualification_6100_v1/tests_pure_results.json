@@ -1,0 +1,20 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=repo:study python3 -B tests_v1.py",
+  "tests_executed": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "AGT_models_constructed": 0,
+  "model_token_executions": 0,
+  "elapsed_seconds": 0.006,
+  "names": [
+    "scalar_copy_and_alias",
+    "illegal_fields",
+    "deterministic_families",
+    "query_encoding_has_no_answer",
+    "programs",
+    "fail_closed_scripts",
+    "quantile",
+    "rng_bounds_and_permutation"
+  ]
+}

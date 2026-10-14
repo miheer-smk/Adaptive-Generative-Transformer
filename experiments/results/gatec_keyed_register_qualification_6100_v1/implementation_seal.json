@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-14T11:11:26.194318+00:00",
+  "sealed_before_AGT_forward": true,
+  "files": {
+    "protocol_approved_verbatim.md": "cc9c1d6aac44f7949070a51225363d000efa34905c1324bde91a70f0fab42d26",
+    "protocol_identity.json": "5739118db8cbff71d04ac4bbb1f03d321827cc709f6ef2aa430033b3102fc968",
+    "program_adapter_v1.py": "1202df02ed1ddbcd9418b5c86f275f9c2609cc531bfd482aa5a41c74c51ac580",
+    "task_data_v1.py": "be0b158ee8d74446641df36e2d059989294c874fcd391a9d2a97c894332a68fb",
+    "analysis_v1.py": "3f211ddf5d423b81efdc3babddec4b4ffefb784db16a8494b6afc16b75b0dd3e",
+    "tests_v1.py": "4b8bcb5fc2e7e363dcc215d3514bfe9fd24c2c00a548ae6944ac3d8553a0c17c",
+    "pilot_runner_v1.py": "b9aefdfe27818b3056a495df6cd714a89a3796f664f5228342471bf7d151c319",
+    "adapter_source_diff.patch": "a653e1f675684fb23054f3e09402632231b41c38ab5e5ca9b17dae075a9b836c"
+  }
+}

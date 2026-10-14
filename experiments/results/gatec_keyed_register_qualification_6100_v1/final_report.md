@@ -1,0 +1,72 @@
+# Keyed-register qualification pilot v1
+
+**Final classification: engineering/integrity/resource stop.**
+
+Protocol SHA-256: `cc9c1d6aac44f7949070a51225363d000efa34905c1324bde91a70f0fab42d26`.
+
+Receiver-anchored study remains COMPLETED_NON_SUCCESS; no historical outcome changed.
+
+## Phase status
+
+- symbolic: PASS
+- encoding: PASS
+- counterfactual: PASS
+- shortcut: PASS
+- cpu_fixtures: PASS
+- cuda_fixtures: PASS
+- initial_diagnostic: COMPLETE
+
+## Accounting
+
+```json
+{
+  "attempted_tokens": 22935,
+  "completed_tokens": 22934,
+  "failed_tokens": 1,
+  "selected_bank_attempts": 183480,
+  "selected_bank_completed": 183480,
+  "commit_attempts": 22935,
+  "commits": 22935,
+  "backward_VJP_evaluations": 248,
+  "optimizer_updates": 78,
+  "phase_counts": {
+    "fixtures_cpu/completed": 57,
+    "fixtures_cuda/completed": 57,
+    "initial_diagnostic/completed": 3840,
+    "training/completed": 18980,
+    "training/failed": 1
+  },
+  "selected_block_counts": {
+    "0": 22935,
+    "1": 22935,
+    "2": 22935,
+    "3": 22962,
+    "4": 22908,
+    "5": 22935,
+    "6": 22935,
+    "7": 22935
+  },
+  "contextual_commit_payload_calls": {
+    "SWA_bank": 45870,
+    "GQA_bank": 45870,
+    "GDN_bank": 45870,
+    "SWA_prelude": 22935
+  },
+  "elapsed_accelerator_seconds": 7193.7623585923575,
+  "peak_memory_allocated": 450295296,
+  "peak_memory_reserved": 457179136,
+  "ceilings": {
+    "attempted_tokens": 100000,
+    "bank_calls": 800000,
+    "accelerator_seconds": 7200
+  },
+  "planned_max_tokens": 99954,
+  "no_warmups_or_profiling": true
+}
+```
+
+## Limits
+
+One initialization and one shared model. No learned selector, compatibility objective, length-transfer confirmation, profiling or model-selection sweep. Empirical oracle is clairvoyant and not deployable. Preliminary ablation, if executed, is descriptive only. No retry. Historical integrity exception preserved.
+
+Failure: KeyboardInterrupt: 

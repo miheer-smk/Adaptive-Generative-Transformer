@@ -1,0 +1,65 @@
+{
+  "passes": true,
+  "by_length": {
+    "64": {
+      "constant0": {
+        "robust_accuracy": 0.015625,
+        "query_accuracy": 0.5
+      },
+      "constant1": {
+        "robust_accuracy": 0.015625,
+        "query_accuracy": 0.5
+      },
+      "latest_SET": {
+        "robust_accuracy": 0.078125,
+        "query_accuracy": 0.69140625
+      },
+      "last_operand": {
+        "robust_accuracy": 0.0,
+        "query_accuracy": 0.4765625
+      },
+      "global_XOR": {
+        "robust_accuracy": 0.0,
+        "query_accuracy": 0.5
+      },
+      "inverse_global_XOR": {
+        "robust_accuracy": 0.0,
+        "query_accuracy": 0.5
+      },
+      "window16": {
+        "robust_accuracy": 0.078125,
+        "query_accuracy": 0.716796875
+      }
+    },
+    "96": {
+      "constant0": {
+        "robust_accuracy": 0.0078125,
+        "query_accuracy": 0.5
+      },
+      "constant1": {
+        "robust_accuracy": 0.0078125,
+        "query_accuracy": 0.5
+      },
+      "latest_SET": {
+        "robust_accuracy": 0.0625,
+        "query_accuracy": 0.65625
+      },
+      "last_operand": {
+        "robust_accuracy": 0.0078125,
+        "query_accuracy": 0.52734375
+      },
+      "global_XOR": {
+        "robust_accuracy": 0.0078125,
+        "query_accuracy": 0.5
+      },
+      "inverse_global_XOR": {
+        "robust_accuracy": 0.0078125,
+        "query_accuracy": 0.5
+      },
+      "window16": {
+        "robust_accuracy": 0.078125,
+        "query_accuracy": 0.712890625
+      }
+    }
+  }
+}

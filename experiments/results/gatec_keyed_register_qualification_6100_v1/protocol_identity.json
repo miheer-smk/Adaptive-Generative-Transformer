@@ -1,0 +1,8 @@
+{
+  "protocol_source": "approved preceding response, verbatim Markdown",
+  "protocol_sha256": "cc9c1d6aac44f7949070a51225363d000efa34905c1324bde91a70f0fab42d26",
+  "original_adapter_path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/study_adapter_v1.py",
+  "original_adapter_sha256": "722393c3b25b10a0c7929280807b5f748e335e493c47560b9340ea3c95802c57",
+  "new_adapter_sha256": "1202df02ed1ddbcd9418b5c86f275f9c2609cc531bfd482aa5a41c74c51ac580",
+  "historical_status": "COMPLETED_NON_SUCCESS"
+}

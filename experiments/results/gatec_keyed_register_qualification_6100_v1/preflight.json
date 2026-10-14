@@ -1,0 +1,16 @@
+{
+  "disk_free": 226287996928,
+  "cuda_available": true,
+  "device": "NVIDIA GB10",
+  "device_memory_bytes": 130595926016,
+  "python": "3.12.3",
+  "torch": "2.10.0+cu130",
+  "cuda": "13.0",
+  "github_repo": "miheer-smk/Adaptive-Generative-Transformer",
+  "github_push_permission": true,
+  "parent_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+  "estimated_output_upper_bytes": 250000000,
+  "conservative_runtime_estimate_seconds": 5680,
+  "estimate_is_not_guarantee": true,
+  "existing_numpy_and_cuda_capability_warnings": "retained, no package/environment changes"
+}

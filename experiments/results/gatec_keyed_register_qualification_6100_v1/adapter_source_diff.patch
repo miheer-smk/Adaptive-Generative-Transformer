@@ -1,0 +1,116 @@
+--- experiments/results/gatec_receiver_anchored_compatibility_6000_v1/study_adapter_v1.py
++++ experiments/results/gatec_keyed_register_qualification_6100_v1/program_adapter_v1.py
+@@ -120,11 +120,13 @@
+         return rows
+ 
+ 
+-P0 = ResearchProgram("receiver_anchored_v1/P0", (0, 1, 2, 3, 4, 5, 6, 7))
+-P1 = ResearchProgram("receiver_anchored_v1/P1", (0, 1, 2, 3, 8, 5, 6, 7))
+-
+-
+-class ResourceLedger:
++P0 = ResearchProgram("keyed_register_v1/B", (0, 1, 2, 3, 4, 5, 6, 7))
++P1 = ResearchProgram("keyed_register_v1/A", (0, 1, 2, 3, 8, 5, 6, 7))
++PR = ResearchProgram("keyed_register_v1/R", (0, 1, 2, 4, 8, 5, 6, 7))
++PROGRAMS = (P0, P1, PR)
++
++
++class HistoricalFixtureLedgerUnused:
+     def __init__(self, directory):
+         self.directory = Path(directory)
+         self.rows = []
+@@ -201,6 +203,7 @@
+         super().__init__()
+         self.model = model
+         self.ledger = ledger
++        self.ablate_fifth = False
+ 
+     def initial(self, x):
+         return self.model.initial_persistent_state(1, x.device, x.dtype)
+@@ -211,6 +214,7 @@
+             raise ValueError("Canonical reference only accepts research P0")
+         row = self.ledger.begin(case, program, x.device, parent.tokens_committed)
+         parent_snapshot = snapshot(parent)
++        row["incoming_metadata"] = {k: ({"shape": list(v.shape), "dtype": str(v.dtype)} if torch.is_tensor(v) else v) for k, v in fields(parent).items()}
+         ex = self.model.executor
+         saved = (ex.controller, ex._run_block, ex.candidate_successors, agt_module.terminal_commit)
+         handles = []
+@@ -244,8 +248,12 @@
+             output = saved[1](block_index, h, h0, memory, context, **kwargs)
+             assert_equal(before, snapshot(context), exact=True)
+             assert torch.equal(anchor, h0)
++            suppress = self.ablate_fifth and len(executed) == 4
+             executed.append(block_index)
+             self.ledger.block_completed += 1
++            if suppress:
++                row["suppressed_decision"] = 4
++                return h
+             return output
+ 
+         def forbidden_candidates(*args, **kwargs):
+@@ -300,10 +308,12 @@
+                 assert out["action_history"] == expected_history
+             assert executed == [d["block"] for d in expected] and len(decisions) == 8
+             assert row["commits"] == 1
++            assert bool(torch.isfinite(out["logits"]).all()), "Nonfinite token output"
++            row["returned_metadata"] = {k: ({"shape": list(v.shape), "dtype": str(v.dtype)} if torch.is_tensor(v) else v) for k, v in fields(out["state"]).items()}
+             assert_equal(parent_snapshot, snapshot(parent), exact=True)
+             assert_disjoint(parent, out["state"])
+             row.update(status="completed", decisions=decisions, executed_blocks=executed, D=8, P=8,
+-                       restart_count=0, repeat_count=int(program == P1),
++                       restart_count=0, repeat_count=sum(a == 8 for a in program.actions),
+                        termination="execution_budget_reached", logits=out["logits"].detach().cpu().tolist())
+             self.ledger.completed += 1
+             return out
+@@ -318,51 +328,3 @@
+                 handle.remove()
+             self.ledger.persist()
+ 
+-
+-class DetachedReceiver:
+-    """Current parameter VALUES, fixed within branch; incoming state remains connected."""
+-    def __init__(self, wrapper):
+-        self.wrapper = wrapper
+-        self.parameters = {k: v.detach().clone() for k, v in wrapper.named_parameters()}
+-        self.buffers = {k: v.detach().clone() for k, v in wrapper.named_buffers()}
+-
+-    def __call__(self, x, state, program, case):
+-        return functional_call(self.wrapper, (self.parameters, self.buffers),
+-                               (x, state, program, case), strict=True)
+-
+-
+-def rollout(wrapper, x, labels, program, case, initial=None, receiver=None, handoff=None):
+-    state = wrapper.initial(x) if initial is None else initial
+-    retained = None
+-    losses = []
+-    for j in range(x.shape[1]):
+-        out = (receiver or wrapper)(x[:, j], state, program, case)
+-        state = out["state"]
+-        losses.append(F.cross_entropy(out["logits"], labels[j:j+1]))
+-        if handoff == j + 1:
+-            retained = state
+-    return torch.stack(losses).mean(), state, retained
+-
+-
+-def native_loss(p0_losses, p1_losses):
+-    return (p0_losses.mean() + p1_losses.mean()) / 2
+-
+-
+-def arm_loss(native, first_continuation, second_continuation):
+-    return .5 * native + .25 * first_continuation + .25 * second_continuation
+-
+-
+-def episode(wrapper, x, labels, arm, case):
+-    if arm not in ("T", "C") or x.shape[1] not in (16, 24):
+-        raise ValueError("Disposable representative episode must use locked arm/length")
+-    t = x.shape[1] - 8
+-    n0, _, h0 = rollout(wrapper, x, labels, P0, case + "/nativeP0", handoff=t)
+-    n1, _, h1 = rollout(wrapper, x, labels, P1, case + "/nativeP1", handoff=t)
+-    r = DetachedReceiver(wrapper)
+-    b0 = P1 if arm == "T" else P0
+-    b1 = P0 if arm == "T" else P1
+-    c0, _, _ = rollout(wrapper, x[:, t:], labels[t:], b0, case + "/receiver0",
+-                       initial=h0.clone(), receiver=r)
+-    c1, _, _ = rollout(wrapper, x[:, t:], labels[t:], b1, case + "/receiver1",
+-                       initial=h1.clone(), receiver=r)
+-    return arm_loss((n0 + n1) / 2, c0, c1), r

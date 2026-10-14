@@ -1,0 +1,10 @@
+{
+  "pid": 2050706,
+  "absolute_max_seconds": 7200,
+  "graceful_shutdown_reserve_seconds": 10,
+  "graceful_stop_at_allocation_seconds": 7190,
+  "scope": "Only the authorized pilot process; no scientific or model-code changes; deadline independent of results",
+  "signal": "SIGINT",
+  "utc": "2026-10-14T13:11:16.961646+00:00",
+  "reason": "Stop within locked 7200-second allocation including graceful final integrity/reporting"
+}

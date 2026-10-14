@@ -1,0 +1,577 @@
+{
+  "trace_rows": 22935,
+  "completed_tokens": 22934,
+  "failed_tokens": 1,
+  "commits": 22935,
+  "verified_bank_completions": 183480,
+  "by_phase": {
+    "fixtures_cpu/completed": 57,
+    "fixtures_cuda/completed": 57,
+    "initial_diagnostic/completed": 3840,
+    "training/completed": 18980,
+    "training/failed": 1
+  },
+  "by_block": {
+    "0": 22935,
+    "1": 22935,
+    "2": 22935,
+    "3": 22962,
+    "4": 22908,
+    "5": 22935,
+    "6": 22935,
+    "7": 22935
+  },
+  "counter_checks": {
+    "trace_attempts_vs_ledger": true,
+    "completed_vs_ledger": true,
+    "failed_vs_ledger": true,
+    "verified_bank_completions_vs_ledger": true,
+    "commits_vs_ledger": true
+  },
+  "completed_call_violations": [],
+  "truncated_trace": false,
+  "last_record": {
+    "attempt": 22935,
+    "phase": "training",
+    "case": {
+      "id": "training/L96/family011/V2",
+      "family": "training/L96/family011",
+      "variant": 2,
+      "length": 96,
+      "ablation": false
+    },
+    "program": "keyed_register_v1/R",
+    "device": "cuda:0",
+    "token": 68,
+    "status": "failed",
+    "decisions": [
+      {
+        "decision": 0,
+        "action": 0,
+        "block": 0,
+        "pointer_before": 0,
+        "pointer_after": 0,
+        "execution_after": 1,
+        "legal_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true
+        ],
+        "selected": 0
+      },
+      {
+        "decision": 1,
+        "action": 1,
+        "block": 1,
+        "pointer_before": 0,
+        "pointer_after": 1,
+        "execution_after": 2,
+        "legal_mask": [
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 1
+      },
+      {
+        "decision": 2,
+        "action": 2,
+        "block": 2,
+        "pointer_before": 1,
+        "pointer_after": 2,
+        "execution_after": 3,
+        "legal_mask": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 2
+      },
+      {
+        "decision": 3,
+        "action": 4,
+        "block": 4,
+        "pointer_before": 2,
+        "pointer_after": 4,
+        "execution_after": 4,
+        "legal_mask": [
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 4
+      },
+      {
+        "decision": 4,
+        "action": 8,
+        "block": 4,
+        "pointer_before": 4,
+        "pointer_after": 4,
+        "execution_after": 5,
+        "legal_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 8
+      },
+      {
+        "decision": 5,
+        "action": 5,
+        "block": 5,
+        "pointer_before": 4,
+        "pointer_after": 5,
+        "execution_after": 6,
+        "legal_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 5
+      },
+      {
+        "decision": 6,
+        "action": 6,
+        "block": 6,
+        "pointer_before": 5,
+        "pointer_after": 6,
+        "execution_after": 7,
+        "legal_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 6
+      },
+      {
+        "decision": 7,
+        "action": 7,
+        "block": 7,
+        "pointer_before": 6,
+        "pointer_after": 7,
+        "execution_after": 8,
+        "legal_mask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "selected": 7
+      }
+    ],
+    "commits": 1,
+    "incoming_metadata": {
+      "/s": {
+        "shape": [
+          1,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/memory": {
+        "shape": [
+          1,
+          16,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa_window": 256,
+      "/ctx/kv/2/committed_keys": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/2/committed_values": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/2/version": 68,
+      "/ctx/kv/3/committed_keys": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/3/committed_values": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/3/version": 68,
+      "/ctx/swa/0/committed_keys": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/0/committed_values": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/0/version": 68,
+      "/ctx/swa/0/window_size": 256,
+      "/ctx/swa/0/num_committed_tokens": 68,
+      "/ctx/swa/1/committed_keys": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/1/committed_values": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/1/version": 68,
+      "/ctx/swa/1/window_size": 256,
+      "/ctx/swa/1/num_committed_tokens": 68,
+      "/ctx/swa/pre/committed_keys": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/pre/committed_values": {
+        "shape": [
+          1,
+          2,
+          68,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/pre/version": 68,
+      "/ctx/swa/pre/window_size": 256,
+      "/ctx/swa/pre/num_committed_tokens": 68,
+      "/ctx/gdn/4/committed_state": {
+        "shape": [
+          1,
+          6,
+          128,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/4/committed_conv_buffer": {
+        "shape": [
+          1,
+          3,
+          1536
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/4/version": 68,
+      "/ctx/gdn/5/committed_state": {
+        "shape": [
+          1,
+          6,
+          128,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/5/committed_conv_buffer": {
+        "shape": [
+          1,
+          3,
+          1536
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/5/version": 68,
+      "/tokens_committed": 68,
+      "/_consumed": false
+    },
+    "commit": {
+      "token_index": 68,
+      "entry_count": 7,
+      "versions_before": {
+        "/ctx/kv/2/version": 68,
+        "/ctx/kv/3/version": 68,
+        "/ctx/swa/0/version": 68,
+        "/ctx/swa/1/version": 68,
+        "/ctx/swa/pre/version": 68,
+        "/ctx/gdn/4/version": 68,
+        "/ctx/gdn/5/version": 68
+      },
+      "versions_after": {
+        "/ctx/kv/2/version": 69,
+        "/ctx/kv/3/version": 69,
+        "/ctx/swa/0/version": 69,
+        "/ctx/swa/1/version": 69,
+        "/ctx/swa/pre/version": 69,
+        "/ctx/gdn/4/version": 69,
+        "/ctx/gdn/5/version": 69
+      }
+    },
+    "returned_metadata": {
+      "/s": {
+        "shape": [
+          1,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/memory": {
+        "shape": [
+          1,
+          16,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa_window": 256,
+      "/ctx/kv/2/committed_keys": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/2/committed_values": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/2/version": 69,
+      "/ctx/kv/3/committed_keys": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/3/committed_values": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/kv/3/version": 69,
+      "/ctx/swa/0/committed_keys": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/0/committed_values": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/0/version": 69,
+      "/ctx/swa/0/window_size": 256,
+      "/ctx/swa/0/num_committed_tokens": 69,
+      "/ctx/swa/1/committed_keys": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/1/committed_values": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/1/version": 69,
+      "/ctx/swa/1/window_size": 256,
+      "/ctx/swa/1/num_committed_tokens": 69,
+      "/ctx/swa/pre/committed_keys": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/pre/committed_values": {
+        "shape": [
+          1,
+          2,
+          69,
+          8
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/swa/pre/version": 69,
+      "/ctx/swa/pre/window_size": 256,
+      "/ctx/swa/pre/num_committed_tokens": 69,
+      "/ctx/gdn/4/committed_state": {
+        "shape": [
+          1,
+          6,
+          128,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/4/committed_conv_buffer": {
+        "shape": [
+          1,
+          3,
+          1536
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/4/version": 69,
+      "/ctx/gdn/5/committed_state": {
+        "shape": [
+          1,
+          6,
+          128,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/5/committed_conv_buffer": {
+        "shape": [
+          1,
+          3,
+          1536
+        ],
+        "dtype": "torch.float32"
+      },
+      "/ctx/gdn/5/version": 69,
+      "/tokens_committed": 69,
+      "/_consumed": false
+    },
+    "error": "KeyboardInterrupt: ",
+    "executed_blocks": [
+      0,
+      1,
+      2,
+      4,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "reference_D_note": "Fixed-reference legacy D=8 is the observed canonical bank-visit count; controller_decisions=0 is retained explicitly. Program-adapter D=8 counts script-provider decisions.",
+  "no_new_model_execution": true,
+  "success": true
+}

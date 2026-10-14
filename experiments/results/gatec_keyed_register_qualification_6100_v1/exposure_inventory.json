@@ -1,0 +1,206 @@
+[
+  {
+    "path": "experiments/runs/stage3_validation_manifest_v1.json",
+    "sha256": "872a10d2d0a08392354a7eb7a5832fa7f330aef04a76eb6d4c9419edfa317794",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_paired_task_maintenance_4401_v1/manifest_reporting_correction.json",
+    "sha256": "10ebe3df594899975212b731b1eaaf0bdf66daebc1b95b85f2345569c1976430",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_paired_task_maintenance_4401_v1/manifest.json",
+    "sha256": "d6885ab2de2a6924754db83b34c43d4c97bd1a3be73cdcbfa30135c6f204eb7f",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v3/manifest.json",
+    "sha256": "2ad43a20a4d25cd3b0461bf52e10e3ec49b907ee6fd9b176d5042458f58977c9",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_paired_gradient_average_4900_v1/prior_input_inventory.json",
+    "sha256": "6a60117c9cdafcaf5b58f1aa74cde783e559cb6601e6d817cf1bf6c933b8183a",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_paired_gradient_average_4900_v1/confirmation_panel.json",
+    "sha256": "e07f0eafd0238924e8ccf013298a09f7a6c1bb74534bf414fb753210da63dc0d",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_paired_gradient_average_4900_v1/manifest.json",
+    "sha256": "3ebaad9fdedd65d938dedbfb7eb097f4d36b178b8ffa037db7a00f074a236b3c",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/prior_input_inventory.json",
+    "sha256": "7c56d657cd4743ff33b770359938ec1c560e3d980ff892c26b4d193c1740c410",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/input_manifest.json",
+    "sha256": "cbc80bd2e8b12627d03245db1926403af068479e090f28c7b7e154286162ef80",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/sealed_inputs_after.json",
+    "sha256": "89b1a66ebae1534f196faf573206f43e7e7c553bb3e0ec08228daabfc1020989",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v1/protocol_manifest.json",
+    "sha256": "9335ee7a6d236c985a1029afc6f9226aa6c03e0ad5c345352ef0fa93eb45f5cf",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/final_manifest_v2.json",
+    "sha256": "e7a71e78419371c30798b293617c28c1d2476b1ecc544f4c0a26aa0584971059",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/final_manifest_v3.json",
+    "sha256": "0c8c18ebffd205acc3a3a06faa6f085b222327b327c5862dd30e143b4403219c",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/final_manifest.json",
+    "sha256": "9567b0e9782105147c726b0fb244eb8fac0f190a854220307d2e1654d28bcc10",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/manifest.json",
+    "sha256": "7f6b0e277cd2b8207400c5be7d9e10153a123b7abfcbe0571526a022e31a9d0c",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_st_action_value_4700_v1/manifest.json",
+    "sha256": "11dac7bfc74b883f7b4ea89743816cb61ea21d502447a4ab737672e435276bfa",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_matched_prefix_analysis_4700_v1/manifest.json",
+    "sha256": "c562cbdc54d3900d2b044bb91f3e7dfd8111a539a4ccd9a7f7fe440302dd0aba",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/prior_input_inventory.json",
+    "sha256": "0eafdba7277a135f7ccdfc2f6064ad874b9ad92a294261191794b5d1f3e31d50",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/final_panel.json",
+    "sha256": "3846476e454d272b3b92040e60eee254ad36be6a4160a8ec021bf6294c8f0fd3",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/training_sequences.json",
+    "sha256": "c87fa2ac69a689adf140c7db9c7f0b81c5165d3b059c294318d7f6c2566fd7fd",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json",
+    "sha256": "5c891e9b6939822cac7e937353c4077aae909d40dc405c01c5ab1a72d769bf38",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/panel.json",
+    "sha256": "f155ba6477e2f9283a82e3d93f3db00c51620dbab6a36811a3f3a02cb23e3f41",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/training_sequences.json",
+    "sha256": "5ff1173e5a024d431c5a211287f3fb5595b3822baea2416d3cb0b344e02a1e2a",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/manifest.json",
+    "sha256": "b661d0042c56880fc324a7efd758ab744753d7fc63fa6770838cb50408c6fb0c",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/training_inputs.json",
+    "sha256": "4d76cc4ff8554d7b68b3bd572f1407fcbfddd7c9145fda36328de6093c10e410",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/input_manifest.json",
+    "sha256": "0ba4174730ad142561d099441c1228f4e56e84d3451d8e545b0738ae4a90ffcb",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/sealed_input_validation.json",
+    "sha256": "7569bee000beeb4e549b277628c1dd994755d13099deb22c0a41bf791579b2c6",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/selection_inputs.json",
+    "sha256": "46a78f8cf6cc5a28dca3b7242c442bf6bdfa4776608af0c8068ec25e3d589113",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/confirmation_inputs.json",
+    "sha256": "d329f7abf6fb1efba880e6e8c3ecc487de7b0dc21be6f0afacf364f986ba09eb",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/development_inputs.json",
+    "sha256": "6229eb4ca51a0aa96853f71bcc90d021b92361a5c14c7642130b1d99fad641d0",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v4/attempt_manifest.json",
+    "sha256": "0efdefb80fb5a5f3a739f1434f164331737426463f3eee1b8cf56f898cf36af6",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_temporal_vjp_4700_update1040_v1/manifest.json",
+    "sha256": "6c549c09420060e8ee5c64e0c14abecbc7a126d7ed7c9532d1fe311da364bf03",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_complete_program_source_audit_v1/manifest.json",
+    "sha256": "91614a8756cf38cf413e75499062944c52615c8c022c1a44ac077d3730bf9310",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  },
+  {
+    "path": "experiments/results/gatec_two_program_feasibility_5100_v2/manifest.json",
+    "sha256": "c1b1051169ba06ad002dc79efb6176b1070f3bc6fc63464123b35813a1a8e176",
+    "status": "NO_COMPARABLE_COMMAND_INPUTS",
+    "comparable_inputs": 0
+  }
+]

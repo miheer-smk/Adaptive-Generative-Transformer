@@ -1,0 +1,12 @@
+{
+  "protected_count": 2244,
+  "changed_or_missing": [],
+  "unexpected_outside_run": [],
+  "HEAD": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+  "HEAD_unchanged": true,
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "tracked_diff_unchanged": true,
+  "historical_exception": "gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged",
+  "no_new_exception": true,
+  "success": true
+}

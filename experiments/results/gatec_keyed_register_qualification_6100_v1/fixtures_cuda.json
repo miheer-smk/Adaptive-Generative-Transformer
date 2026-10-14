@@ -1,0 +1,293 @@
+{
+  "device": "cuda",
+  "passed": true,
+  "completed_tokens": 57,
+  "backward_VJP_evaluations": 6,
+  "canonical_CE": 0.0014546061865985394,
+  "canonical_comparisons": [
+    {
+      "token": 0,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 1,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 2,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 3,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 4,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 5,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 6,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    },
+    {
+      "token": 7,
+      "state_and_metadata_pass": true,
+      "logits_max_abs": 0.0
+    }
+  ],
+  "gradients": [
+    {
+      "program": "keyed_register_v1/B",
+      "loss": 0.16540762782096863,
+      "parameter_gradient_norm": 71.50817108154297,
+      "state_adjoints": {
+        "/s": {
+          "norm": 0.15369611978530884,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/memory": {
+          "norm": 0.011573737487196922,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_keys": {
+          "norm": 0.00029553542844951153,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_values": {
+          "norm": 0.0011945689329877496,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/3/committed_keys": {
+          "norm": 0.0001963329705176875,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/3/committed_values": {
+          "norm": 0.0009156785090453923,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/0/committed_keys": {
+          "norm": 0.00019865443755406886,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/0/committed_values": {
+          "norm": 0.0009662998490966856,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_keys": {
+          "norm": 0.00015751065802760422,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_values": {
+          "norm": 0.0009571665432304144,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/pre/committed_keys": {
+          "disconnected": true
+        },
+        "/ctx/swa/pre/committed_values": {
+          "disconnected": true
+        },
+        "/ctx/gdn/4/committed_state": {
+          "norm": 0.041933465749025345,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/4/committed_conv_buffer": {
+          "norm": 0.002158099552616477,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/5/committed_state": {
+          "norm": 0.055403824895620346,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/5/committed_conv_buffer": {
+          "norm": 0.002949472051113844,
+          "finite": true,
+          "exact_zero": false
+        }
+      }
+    },
+    {
+      "program": "keyed_register_v1/A",
+      "loss": 0.015333197079598904,
+      "parameter_gradient_norm": 3.442291736602783,
+      "state_adjoints": {
+        "/s": {
+          "norm": 0.015071962028741837,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/memory": {
+          "norm": 0.0014766431413590908,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_keys": {
+          "norm": 2.5532557629048824e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_values": {
+          "norm": 0.00011018967052223161,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/3/committed_keys": {
+          "norm": 3.994067810708657e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/3/committed_values": {
+          "norm": 0.00019780259754043072,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/0/committed_keys": {
+          "norm": 1.8891356376116164e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/0/committed_values": {
+          "norm": 9.704777767183259e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_keys": {
+          "norm": 1.4223065591068007e-05,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_values": {
+          "norm": 0.00010311746154911816,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/pre/committed_keys": {
+          "disconnected": true
+        },
+        "/ctx/swa/pre/committed_values": {
+          "disconnected": true
+        },
+        "/ctx/gdn/4/committed_state": {
+          "disconnected": true
+        },
+        "/ctx/gdn/4/committed_conv_buffer": {
+          "disconnected": true
+        },
+        "/ctx/gdn/5/committed_state": {
+          "norm": 0.008261987939476967,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/5/committed_conv_buffer": {
+          "norm": 0.000360838690539822,
+          "finite": true,
+          "exact_zero": false
+        }
+      }
+    },
+    {
+      "program": "keyed_register_v1/R",
+      "loss": 1.3853681087493896,
+      "parameter_gradient_norm": 257.5320129394531,
+      "state_adjoints": {
+        "/s": {
+          "norm": 0.6831849813461304,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/memory": {
+          "norm": 1.0652353763580322,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_keys": {
+          "norm": 0.04831387475132942,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/2/committed_values": {
+          "norm": 0.1320515275001526,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/kv/3/committed_keys": {
+          "disconnected": true
+        },
+        "/ctx/kv/3/committed_values": {
+          "disconnected": true
+        },
+        "/ctx/swa/0/committed_keys": {
+          "norm": 0.025047127157449722,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/0/committed_values": {
+          "norm": 0.0927700474858284,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_keys": {
+          "norm": 0.016166670247912407,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/1/committed_values": {
+          "norm": 0.09972803294658661,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/swa/pre/committed_keys": {
+          "disconnected": true
+        },
+        "/ctx/swa/pre/committed_values": {
+          "disconnected": true
+        },
+        "/ctx/gdn/4/committed_state": {
+          "norm": 7.9294819831848145,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/4/committed_conv_buffer": {
+          "norm": 0.6755558252334595,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/5/committed_state": {
+          "norm": 6.076993465423584,
+          "finite": true,
+          "exact_zero": false
+        },
+        "/ctx/gdn/5/committed_conv_buffer": {
+          "norm": 0.30058035254478455,
+          "finite": true,
+          "exact_zero": false
+        }
+      }
+    }
+  ],
+  "parameters_unchanged": true
+}

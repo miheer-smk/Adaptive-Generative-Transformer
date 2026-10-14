@@ -1,0 +1,165 @@
+{
+  "classification": "engineering/integrity/resource stop",
+  "protocol_sha256": "cc9c1d6aac44f7949070a51225363d000efa34905c1324bde91a70f0fab42d26",
+  "training_completed_optimizer_updates": 78,
+  "training_online_metrics": {
+    "64": {
+      "B": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.46474358974358976,
+        "mean_CE": 0.9667298656243545
+      },
+      "A": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.47115384615384615,
+        "mean_CE": 0.9887665571310581
+      },
+      "R": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.4807692307692308,
+        "mean_CE": 0.9454463131916828
+      }
+    },
+    "96": {
+      "B": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5192307692307693,
+        "mean_CE": 0.9853412868120731
+      },
+      "A": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5160256410256411,
+        "mean_CE": 0.9852398236592611
+      },
+      "R": {
+        "episodes": 39,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5128205128205128,
+        "mean_CE": 0.9802536391294919
+      }
+    }
+  },
+  "training_metrics_note": "Completed-update online rollouts under evolving parameters, not final-checkpoint evaluation. An interrupted batch may have extra retained token outputs outside this table.",
+  "initial_diagnostic_metrics": {
+    "64": {
+      "B": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.3295090198516846
+      },
+      "A": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.4723628759384155
+      },
+      "R": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.3715533912181854
+      }
+    },
+    "96": {
+      "B": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.3306033611297607
+      },
+      "A": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.657442405819893
+      },
+      "R": {
+        "episodes": 8,
+        "complete_accuracy": 0.0,
+        "query_accuracy": 0.5,
+        "mean_CE": 2.3026155680418015
+      }
+    }
+  },
+  "final_development_executed": false,
+  "preliminary_ablation_executed": false,
+  "qualification_analysis_executed": false,
+  "final_checkpoint_created": false,
+  "interrupted_backward_attempt": false,
+  "resource_interruption": {
+    "pid": 2050706,
+    "absolute_max_seconds": 7200,
+    "graceful_shutdown_reserve_seconds": 10,
+    "graceful_stop_at_allocation_seconds": 7190,
+    "scope": "Only the authorized pilot process; no scientific or model-code changes; deadline independent of results",
+    "signal": "SIGINT",
+    "utc": "2026-10-14T13:11:16.961646+00:00",
+    "reason": "Stop within locked 7200-second allocation including graceful final integrity/reporting"
+  },
+  "ledger": {
+    "attempted_tokens": 22935,
+    "completed_tokens": 22934,
+    "failed_tokens": 1,
+    "selected_bank_attempts": 183480,
+    "selected_bank_completed": 183480,
+    "commit_attempts": 22935,
+    "commits": 22935,
+    "backward_VJP_evaluations": 248,
+    "optimizer_updates": 78,
+    "phase_counts": {
+      "fixtures_cpu/completed": 57,
+      "fixtures_cuda/completed": 57,
+      "initial_diagnostic/completed": 3840,
+      "training/completed": 18980,
+      "training/failed": 1
+    },
+    "selected_block_counts": {
+      "0": 22935,
+      "1": 22935,
+      "2": 22935,
+      "3": 22962,
+      "4": 22908,
+      "5": 22935,
+      "6": 22935,
+      "7": 22935
+    },
+    "contextual_commit_payload_calls": {
+      "SWA_bank": 45870,
+      "GQA_bank": 45870,
+      "GDN_bank": 45870,
+      "SWA_prelude": 22935
+    },
+    "elapsed_accelerator_seconds": 7193.761162369046,
+    "peak_memory_allocated": 450295296,
+    "peak_memory_reserved": 457179136,
+    "ceilings": {
+      "attempted_tokens": 100000,
+      "bank_calls": 800000,
+      "accelerator_seconds": 7200
+    },
+    "planned_max_tokens": 99954,
+    "no_warmups_or_profiling": true
+  },
+  "trace_verification_success": true,
+  "integrity": {
+    "protected_count": 2244,
+    "changed_or_missing": [],
+    "unexpected_outside_run": [],
+    "HEAD": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "HEAD_unchanged": true,
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+    "tracked_diff_unchanged": true,
+    "historical_exception": "gatec_fresh_task_discovery_4700_v1/artifact_integrity_incident.json retained unchanged",
+    "no_new_exception": true,
+    "success": true
+  },
+  "disk_free_after": 225589153792,
+  "remaining_phases_unverified": true,
+  "no_retry_or_followup": true
+}
