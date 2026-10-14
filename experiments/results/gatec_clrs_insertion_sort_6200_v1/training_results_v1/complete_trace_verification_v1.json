@@ -1,0 +1,48 @@
+{
+  "counts": {
+    "attempted": 41472,
+    "completed": 41472,
+    "blocks": 331776,
+    "commits": 41472
+  },
+  "phases": {
+    "initial_diagnostic": {
+      "attempted": 256,
+      "completed": 256,
+      "blocks": 2048,
+      "commits": 256
+    },
+    "training": {
+      "attempted": 32000,
+      "completed": 32000,
+      "blocks": 256000,
+      "commits": 32000
+    },
+    "training_subset": {
+      "attempted": 4096,
+      "completed": 4096,
+      "blocks": 32768,
+      "commits": 4096
+    },
+    "development": {
+      "attempted": 1024,
+      "completed": 1024,
+      "blocks": 8192,
+      "commits": 1024
+    },
+    "size_transfer": {
+      "attempted": 4096,
+      "completed": 4096,
+      "blocks": 32768,
+      "commits": 4096
+    }
+  },
+  "checks": {
+    "attempted": true,
+    "completed": true,
+    "failed": true,
+    "bank_completed": true,
+    "commits": true
+  },
+  "success": true
+}

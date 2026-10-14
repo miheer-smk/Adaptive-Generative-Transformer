@@ -1,0 +1,17 @@
+{
+  "files": {
+    "instrumentation_diff_v1.patch": "19b3070185457d238bb9ab8b77842fcb14f18962869d38f089a825654d4ae118",
+    "offline_support_v1.py": "9d8126254653f72ca73454f554834468f80fa768822679b7daf5532f861511ad",
+    "engineering_verification_v1.json": "4231ccc8ded83a6a5e52ccf121f40ffe47d18f595f49ab488baaf13869216e43",
+    "training_instrumentation_v1.py": "ba77fff80a59191bcca8db36688e972f220aee430b324c3f5406639d334f8518",
+    "scope_lock_v1.json": "874402b780212e32cf285e8ce44ea6786cedc0824d2c681c2cc6fc1c24155188",
+    "training_order_v1.json": "512a0e8386ffe8852e42c75881bed2859b4398aec6faf11488ff418a94e34135",
+    "runtime_reconciliation_v1.json": "7d986d3bde1084fa495fe3d9afd742afb1a505b3a932f2211f24f401a879718e",
+    "train_once_v1.py": "c58f50e3e94ac650db10fdcd0a49ad012233ab3d1c6bb5dff1daa694ae3b47de"
+  },
+  "adapter": "../clrs_adapter_v1.py",
+  "adapter_sha256": "53b9e7106a233e34d6a072ab1ff80bb69e82c3d09e507466df36447eeeb67f00",
+  "model_calls_before_start": 0,
+  "offline_schema_checks_pass": true,
+  "no_engineering_suite_repeat": true
+}

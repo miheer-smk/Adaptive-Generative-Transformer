@@ -1,0 +1,23 @@
+{
+  "measured_source_sha256": "9bcd3b471105b4408b49ffd6192d22c6f43a186d515d91ed82c7289cf73519b7",
+  "previous_full_projection_seconds": 8305.784200978931,
+  "completed_engineering_seconds": 63.60001838719472,
+  "remaining_original_margin_seconds": 8242.184182591736,
+  "contention_margin": 2.0,
+  "optimizer_log_allowance_seconds_per_update": 1,
+  "remaining_components_seconds": {
+    "training": 9470.693252049387,
+    "initial_diagnostic": 58.854238368570805,
+    "training_subset": 941.6678138971329,
+    "development": 235.41695347428322,
+    "size_transfer": 920.8624343574047,
+    "closure_reserve": 600
+  },
+  "remaining_projected_seconds": 12227.494692146778,
+  "eligibility_limit_seconds": 17280,
+  "pass_gate": true,
+  "fixtures_repeated": false,
+  "estimated_output_storage_upper_bytes": 200000000,
+  "free_bytes": 222376587264,
+  "contention": "Unrelated GPU process PID2041267 observed at 94% utilization; not modified"
+}

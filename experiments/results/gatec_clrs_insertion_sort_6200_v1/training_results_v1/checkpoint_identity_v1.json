@@ -1,0 +1,7 @@
+{
+  "path": "model_update1000_v1.pt",
+  "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "size": 22507575,
+  "optimizer_updates": 1000,
+  "selection": "Predetermined final update1000 only"
+}

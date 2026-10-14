@@ -1,0 +1,8 @@
+{
+  "arrays": 128,
+  "n": 16,
+  "pointer_accuracy": 0.033203125,
+  "exact_array_accuracy": 0.0,
+  "CE": 2.772870821878314,
+  "invalid_chain": 1.0
+}

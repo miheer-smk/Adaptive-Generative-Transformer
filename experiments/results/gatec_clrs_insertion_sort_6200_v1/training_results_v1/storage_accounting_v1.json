@@ -1,0 +1,33 @@
+{
+  "free_before_bytes": 222376587264,
+  "free_after_model_work_bytes": 222002110464,
+  "new_study_files": 36,
+  "new_study_regular_file_bytes": 40083541,
+  "largest_new_files": [
+    {
+      "path": "model_update1000_v1.pt",
+      "bytes": 22507575
+    },
+    {
+      "path": "training_metrics_v1.jsonl",
+      "bytes": 6571616
+    },
+    {
+      "path": "token_traces_v1.jsonl.gz",
+      "bytes": 6420583
+    },
+    {
+      "path": "size_transfer_records_v1.jsonl",
+      "bytes": 2815060
+    },
+    {
+      "path": "training_subset_records_v1.jsonl",
+      "bytes": 796419
+    },
+    {
+      "path": "integrity_initial_v1.json",
+      "bytes": 572807
+    }
+  ],
+  "no_local_archive_or_checkpoint_duplicate": true
+}

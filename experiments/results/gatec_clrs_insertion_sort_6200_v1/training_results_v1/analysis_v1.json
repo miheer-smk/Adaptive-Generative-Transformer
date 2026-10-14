@@ -1,0 +1,168 @@
+{
+  "metrics": {
+    "training_subset": {
+      "arrays": 128,
+      "n": 16,
+      "pointer_accuracy": 0.033203125,
+      "exact_array_accuracy": 0.0,
+      "CE": 2.772870821878314,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.02783203125,
+          0.03857421875
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          2.772863594489172,
+          2.7728783993516117
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    },
+    "development": {
+      "arrays": 32,
+      "n": 16,
+      "pointer_accuracy": 0.03125,
+      "exact_array_accuracy": 0.0,
+      "CE": 2.772864416241646,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.021484375,
+          0.041015625
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          2.7728523312136533,
+          2.7728765534237025
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    },
+    "size_transfer": {
+      "arrays": 32,
+      "n": 64,
+      "pointer_accuracy": 0.01171875,
+      "exact_array_accuracy": 0.0,
+      "CE": 4.158960267901421,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.00927734375,
+          0.01416015625
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          4.1589585691690445,
+          4.158962294459343
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    }
+  },
+  "controls": {
+    "training_subset": {
+      "uniform_pointer": {
+        "pointer_accuracy": 0.0625,
+        "exact_array_accuracy": 5.421010862427522e-20,
+        "CE": 2.772588722239781,
+        "invalid_chain": "Not estimated; analytic expectations only, no random control draws"
+      },
+      "self_pointer": {
+        "arrays": 128,
+        "n": 16,
+        "pointer_accuracy": 0.0625,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 1.0
+      },
+      "original_order": {
+        "arrays": 128,
+        "n": 16,
+        "pointer_accuracy": 0.0517578125,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 0.0
+      }
+    },
+    "development": {
+      "uniform_pointer": {
+        "pointer_accuracy": 0.0625,
+        "exact_array_accuracy": 5.421010862427522e-20,
+        "CE": 2.772588722239781,
+        "invalid_chain": "Not estimated; analytic expectations only, no random control draws"
+      },
+      "self_pointer": {
+        "arrays": 32,
+        "n": 16,
+        "pointer_accuracy": 0.0625,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 1.0
+      },
+      "original_order": {
+        "arrays": 32,
+        "n": 16,
+        "pointer_accuracy": 0.076171875,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 0.0
+      }
+    },
+    "size_transfer": {
+      "uniform_pointer": {
+        "pointer_accuracy": 0.015625,
+        "exact_array_accuracy": 2.5379418373156492e-116,
+        "CE": 4.1588830833596715,
+        "invalid_chain": "Not estimated; analytic expectations only, no random control draws"
+      },
+      "self_pointer": {
+        "arrays": 32,
+        "n": 64,
+        "pointer_accuracy": 0.015625,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 1.0
+      },
+      "original_order": {
+        "arrays": 32,
+        "n": 64,
+        "pointer_accuracy": 0.013671875,
+        "exact_array_accuracy": 0.0,
+        "CE": "Undefined for hard-only control; no fitted probabilities",
+        "invalid_chain": 0.0
+      }
+    }
+  },
+  "bootstrap": {
+    "replicates": 20000,
+    "seed": 6202,
+    "unit": "complete array",
+    "quantiles": "linear",
+    "per_split_rng_reset": true
+  },
+  "size_transfer_not_pooled": true,
+  "no_checkpoint_selection": true
+}

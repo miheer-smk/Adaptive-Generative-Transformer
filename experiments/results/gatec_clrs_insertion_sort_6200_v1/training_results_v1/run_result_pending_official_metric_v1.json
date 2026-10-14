@@ -1,0 +1,106 @@
+{
+  "status": "AWAITING_OFFLINE_VERIFICATION",
+  "phases": {
+    "initial_diagnostic": "COMPLETED_DESCRIPTIVE_ONLY",
+    "training": "COMPLETED_1000_UPDATES",
+    "training_subset": "COMPLETED",
+    "development": "COMPLETED",
+    "size_transfer": "COMPLETED"
+  },
+  "gates_unverified": true,
+  "resource_ledger": {
+    "attempted_tokens": 41472,
+    "completed_tokens": 41472,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 331776,
+    "selected_bank_completed": 331776,
+    "commits": 41472,
+    "backward_attempted": 1000,
+    "backward_completed": 1000,
+    "optimizer_objects": 1,
+    "optimizer_attempted": 1000,
+    "optimizer_updates": 1000,
+    "optimizer_failed": 0,
+    "array_attempted": 1200,
+    "array_completed": 1200,
+    "array_failed": 0,
+    "phase_counts": {
+      "initial_diagnostic": {
+        "attempted": 256,
+        "completed": 256,
+        "failed": 0,
+        "selected_attempted": 2048,
+        "selected_completed": 2048,
+        "commits": 256
+      },
+      "training": {
+        "attempted": 32000,
+        "completed": 32000,
+        "failed": 0,
+        "selected_attempted": 256000,
+        "selected_completed": 256000,
+        "commits": 32000
+      },
+      "training_subset": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      },
+      "development": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0,
+        "selected_attempted": 8192,
+        "selected_completed": 8192,
+        "commits": 1024
+      },
+      "size_transfer": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      }
+    },
+    "engineering_completed": {
+      "attempted_tokens": 512,
+      "completed_tokens": 512,
+      "failed_tokens": 0,
+      "selected_bank_calls": 4096,
+      "commits": 512,
+      "backwards": 6,
+      "optimizer_updates": 0
+    },
+    "combined_attempted_tokens": 41984,
+    "combined_completed_tokens": 41984,
+    "combined_selected_bank_calls": 335872,
+    "combined_commits": 41984,
+    "combined_backwards": 1006,
+    "contextual_commit_entries": 290304,
+    "elapsed_seconds": 5171.713088182267,
+    "peak_CUDA_allocated": 169708544,
+    "peak_CUDA_reserved": 178257920
+  },
+  "integrity": {
+    "protected_count": 2365,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true,
+    "no_new_exception": true,
+    "success": true
+  },
+  "final_checkpoint": {
+    "path": "model_update1000_v1.pt",
+    "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+    "size": 22507575,
+    "optimizer_updates": 1000,
+    "selection": "Predetermined final update1000 only"
+  },
+  "allocation_seconds_at_gpu_completion": 5175.056862505153,
+  "deadline_met": true
+}

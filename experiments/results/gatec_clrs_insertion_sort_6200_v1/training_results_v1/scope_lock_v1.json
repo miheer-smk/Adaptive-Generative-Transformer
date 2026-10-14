@@ -1,0 +1,82 @@
+{
+  "authorization": "User FOR CODEX AUTHORIZE AGT-v3 CLRS INSERTION-SORT TRAINING RUN",
+  "task": "official insertion_sort predecessor",
+  "official_revision": "6d5728b9efadf8648413c8c473929a733caacced",
+  "fresh_model_seed": 6200,
+  "training_order_seed": 6201,
+  "bootstrap_seed": 6202,
+  "updates": 1000,
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_global_norm": 1
+  },
+  "precision": "FP32",
+  "batch_size": 1,
+  "program": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "full_BPTT": true,
+  "controller_and_original_head_frozen_unused": true,
+  "no_hints": true,
+  "no_checkpoint_selection": true,
+  "initial_diagnostic": 8,
+  "final_evaluation": {
+    "training_subset": [
+      128,
+      16
+    ],
+    "development": [
+      32,
+      16
+    ],
+    "size_transfer": [
+      32,
+      64
+    ]
+  },
+  "gates": {
+    "development_pointer_accuracy": 0.95,
+    "development_exact_array_accuracy": 0.8,
+    "size_transfer_pointer_accuracy": 0.9,
+    "size_transfer_exact_array_accuracy": 0.5
+  },
+  "remaining_caps": {
+    "attempted_tokens": 41472,
+    "selected_bank_calls": 331776,
+    "backwards": 1000,
+    "optimizer_updates": 1000
+  },
+  "engineering_completed": {
+    "attempted_tokens": 512,
+    "completed_tokens": 512,
+    "failed_tokens": 0,
+    "selected_bank_calls": 4096,
+    "commits": 512,
+    "backwards": 6,
+    "optimizer_updates": 0
+  },
+  "combined_scheduled": {
+    "tokens": 41984,
+    "bank_calls": 335872,
+    "commits": 41984,
+    "backwards": 1006,
+    "updates": 1000
+  },
+  "deadline_seconds": 21600,
+  "no_retry_resume": true,
+  "engineering_files_not_modified": true
+}

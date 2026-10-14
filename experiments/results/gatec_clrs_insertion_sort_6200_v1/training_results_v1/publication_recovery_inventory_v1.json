@@ -1,0 +1,351 @@
+{
+  "files": [
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/analysis_v1.json",
+      "size": 4740,
+      "sha256": "71a96bbaa1386a66b193f6db98ae8a20daf54213b30275bf4acf2a20458c471b",
+      "git_oid": "eb6f97ddda2207a0f6d8c88b334340c3d37fd283",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/arithmetic_consistency_v1.json",
+      "size": 303,
+      "sha256": "d635f39006f6efbd21ccfbaa58a81e6bee0779953695da3d35f6088977c6b11b",
+      "git_oid": "7b903367cb5029211e8533c12fdd2959c93a8ee7",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/artifact_index_final_v1.json",
+      "size": 6480,
+      "sha256": "2d812e18ba536012219ef81193d250a0a62069999d6de7f2d32b76c0ecf70c2e",
+      "git_oid": "a071ca555e4c67602c73a12c1dc3a8d147fe855d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/checkpoint_identity_v1.json",
+      "size": 222,
+      "sha256": "dbce6f4ada7ff5ff384be2ea0ebee15dfcf73eb069cbd44483809282acc57a75",
+      "git_oid": "78b8d80a6b739eccfb6eab72d61bd16a4c8801ca",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/checkpoint_validation_execution_v1.log",
+      "size": 376,
+      "sha256": "bd4c287e14cbd2383ccffc7b30c6994e9d8fc763ad900a9c0260270859ff695e",
+      "git_oid": "038603e995ce40cd8810255dc907f75d63f1a74d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/checkpoint_validation_v1.json",
+      "size": 453,
+      "sha256": "50ab72a9a1735c205f05e2479c33f07af8d6e945ce3247023b5978128ea405f0",
+      "git_oid": "749015f38b7483e9dc02acccf6a22df10bccd5cb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/complete_trace_verification_v1.json",
+      "size": 907,
+      "sha256": "9bb0a16e1dae5a653d1e4bceb91082993eba3b58a1b36328b42774d6951318c4",
+      "git_oid": "2e6655ec55704b0424a6cd14570f3f61c5c61d21",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/cpu_runtime_home/keras/keras.json",
+      "size": 120,
+      "sha256": "760f24a997adf5b270e12494d6614c28f7d9665b0a3b9281d9c2beb5400adcdb",
+      "git_oid": "bc2cae3746b23582bf9fcb654cd6c849c56b69ee",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/development_records_v1.jsonl",
+      "size": 199327,
+      "sha256": "23e348af008677af1b30e3a771b7d7f823400be011590854897b3eada1a71bac",
+      "git_oid": "75c2552ad22b428c5d5859308ef14c5dbbf4e174",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/development_summary_v1.json",
+      "size": 143,
+      "sha256": "2b0a9ea91417f956e9ba3a8248bc85c1546bf9a07852b925d698bbe432528545",
+      "git_oid": "138e3b2e264df313b837d8eb70333ef4684a0791",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/engineering_verification_v1.json",
+      "size": 8356,
+      "sha256": "4231ccc8ded83a6a5e52ccf121f40ffe47d18f595f49ab488baaf13869216e43",
+      "git_oid": "8eba9c7aabc01bcc58c5e89036a79914c9bccccf",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/execution_ledger_v1.json",
+      "size": 1943,
+      "sha256": "a3d041c7ba018faa16310214adeb07143e1f49dc0013bef2ecaed869d26590d7",
+      "git_oid": "8c72297acbe7ea63ab6ef1ba4126be2787b969c8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_report_v1.md",
+      "size": 4505,
+      "sha256": "d37216435ee02e519d30a5dbaa7781d5db4c136d55007e73e9f3e779f3ba850e",
+      "git_oid": "49059ec9c927855b1a9d0c2170bb8d68a18a4d66",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_results_v1.json",
+      "size": 5938,
+      "sha256": "cfd94ef8cc3185bdc9bee76e8ecd7ff3e36b0d56a546b76c9ac2fe0adbe9fa8e",
+      "git_oid": "71f0e59c5993de8559c862bc889cbf2df1e806b9",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/initial_diagnostic_records_v1.jsonl",
+      "size": 51727,
+      "sha256": "7f9d05aa07f52899182dcc0714d1f2a5482cf33dd2f3f40ced0ed6675d7d8ecd",
+      "git_oid": "46f85252f4eb9da409590acabedefd868c4db3cf",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/initial_diagnostic_summary_v1.json",
+      "size": 145,
+      "sha256": "b7c2c6e8b9ea9ae55af49bb2746dfbc175b37a6c8f21ffd06a8584e5675d201b",
+      "git_oid": "03d9407bb7c2674ace404164d2662252b2078d44",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/initial_training_model_v1.json",
+      "size": 5858,
+      "sha256": "dafc1c62a2eb1a11d83d01902c09ec0654df5d0a46c2275e838b2a17cd1b3c5e",
+      "git_oid": "234ef7198a8aaa362024572dc074a774f9025f43",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/instrumentation_diff_v1.patch",
+      "size": 7611,
+      "sha256": "19b3070185457d238bb9ab8b77842fcb14f18962869d38f089a825654d4ae118",
+      "git_oid": "40d34776e01a0c67554b111af6649ee87afcb639",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/integrity_final_v1.json",
+      "size": 207,
+      "sha256": "0ffb9f060fd65cd0d1cc1721d26cdc45a4d3103c81946dc7df3decc449722625",
+      "git_oid": "5b40ab14bf561a409dd864f6aa737eb798a88733",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/integrity_initial_v1.json",
+      "size": 572807,
+      "sha256": "de78b4f04d3140486ab02e39abf7f4eda39a34fcdf2d87cfe4942b463d4487d1",
+      "git_oid": "0d5848909a3a06ecfc2aca42cbaadde7d7c5277c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/model_update1000_v1.pt",
+      "size": 22507575,
+      "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+      "git_oid": "40cfd475f45c8d9d744815862d1b2c5e63489455",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/official_metric_verification_v1.json",
+      "size": 853,
+      "sha256": "41364b2f110b2cfcf8d8013e74dd81a09b30ad196cfd6ae2e1d63b27f64d61fa",
+      "git_oid": "5c1f816afd83f1c6760c58f64ac27b0332f26da5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/offline_closure_execution_v1.log",
+      "size": 2956,
+      "sha256": "894186f83001cb947b130089c580bb8b264165063dbd4d620091a117f1f032b6",
+      "git_oid": "a03426b5e26cb79b76a2497c89ecc12e70291961",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/offline_support_v1.py",
+      "size": 4351,
+      "sha256": "9d8126254653f72ca73454f554834468f80fa768822679b7daf5532f861511ad",
+      "git_oid": "c05c56ef495daabdf980266770a6decb034df20c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publication_failure_v1.json",
+      "size": 89,
+      "sha256": "10a1419748806ce34297af68247db0c58a961ec96eca0853662ee17bc7920f16",
+      "git_oid": "6f2b113bb4d4bf2432b7bb052736f04b9af1ad83",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publication_input_inventory_v1.json",
+      "size": 14623,
+      "sha256": "2ce5999b7cef9e6127d9fb80efff3d9ca4c8e9214768bbb20ae4b8caa8a0812a",
+      "git_oid": "d8ac62e7c86c2285937048f9f987a69965e23001",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publication_recovery_started_v1.json",
+      "size": 410,
+      "sha256": "3a0358d8fa051e869d035e0017be05b70dd18979be1de8f177cd4e8b54ff6bc2",
+      "git_oid": "f62ca8a252c31fc5233bccd239ea613be199a0d6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publication_recovery_v1.py",
+      "size": 9017,
+      "sha256": "df519d1083f339722c3b7841a19a693b439c80e69c7e91036ef17523e0948800",
+      "git_oid": "0e69ea5643314ca1c24cb44da6d8d9c9926d7be6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publication_started_v1.json",
+      "size": 289,
+      "sha256": "8e48af1856e58534f9c9f67dab7aa43aac1fdd4a1dc718668b98a40b0f936c69",
+      "git_oid": "dc2a5c67b41c12589a44133ea47153f451572eb7",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/publish_training_v1.py",
+      "size": 9086,
+      "sha256": "c6aa3739c88e6b8aa2d8d8a592cb775695ffb30b802e0878baa1e16b5a78ba43",
+      "git_oid": "c0dd83d95f82dbbb76837d13a473db58ef4f0e08",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/run_result_pending_official_metric_v1.json",
+      "size": 2992,
+      "sha256": "28363038057c34febf4de92530135ba8b5f0975a476b7874251b84eeb7222a73",
+      "git_oid": "5d6ed9105bb323a6a51e1bb99dff3ce7ffd8fd9d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/runtime_reconciliation_v1.json",
+      "size": 936,
+      "sha256": "7d986d3bde1084fa495fe3d9afd742afb1a505b3a932f2211f24f401a879718e",
+      "git_oid": "158636f91872542bf72547e76d99a2a4d72df7bd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/scope_lock_v1.json",
+      "size": 1729,
+      "sha256": "874402b780212e32cf285e8ce44ea6786cedc0824d2c681c2cc6fc1c24155188",
+      "git_oid": "b1a9203bdd497374699e0b1c9deed85989025a69",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/size_transfer_records_v1.jsonl",
+      "size": 2815060,
+      "sha256": "262f04a56466185468d0d7851843331d075cf940455294ce66839210c8e25a3a",
+      "git_oid": "ae5898aab697c197ca6f42bdd9839e04ca8afc2d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/size_transfer_summary_v1.json",
+      "size": 146,
+      "sha256": "b33b7bc043395083a201f18832ca17a5ee2295dbbd8eff438cd797fd08e5208d",
+      "git_oid": "2ff93eb326f674040f1a8ce7a1aac999d9557abf",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/storage_accounting_v1.json",
+      "size": 718,
+      "sha256": "a005f574c06914570b517c515b8c590a31c4a4ac184d85677beebe4918f3bb68",
+      "git_oid": "def22dde3a6a68b1628b5f3fa8bc47f9cac95bdb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/token_traces_v1.jsonl.gz",
+      "size": 6420583,
+      "sha256": "b122f30a7cd2ee2592d433769cc1efb2914cd88f8cad63302fbbe3dbe3041740",
+      "git_oid": "ccdd693e781393724893d5a21cfe94d9e1ed7aa2",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/train_once_v1.py",
+      "size": 13578,
+      "sha256": "c58f50e3e94ac650db10fdcd0a49ad012233ab3d1c6bb5dff1daa694ae3b47de",
+      "git_oid": "d50ec908335f9fdb6b455bb54b2f5326c0140e87",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_execution_v1.log",
+      "size": 25224,
+      "sha256": "cdf5f8fc48185f35dd7f883a7db84d6da89e7bdeb81eaa6f90d311521d848b8c",
+      "git_oid": "606e484803c037d4fb55ca0327087dc9ae8c83a3",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_implementation_seal_v1.json",
+      "size": 1061,
+      "sha256": "b4a58b00aa8bb83ae03be3d2fc1147fa6075d92f1bbd337a0d83e38060c900fa",
+      "git_oid": "4ab1412841f1c01bb5359aaab77ae49e7e4cbd5b",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_instrumentation_v1.py",
+      "size": 9101,
+      "sha256": "ba77fff80a59191bcca8db36688e972f220aee430b324c3f5406639d334f8518",
+      "git_oid": "77240406c7489caecfa4b9371989fbb9b8e31721",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_metrics_v1.jsonl",
+      "size": 6571616,
+      "sha256": "55d74473c00e6c3914438cdea9abc7d61f5633a4775dcbcd94aba088acda729d",
+      "git_oid": "2695000991cf7ea74a540d171c47e4fa768c92d0",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_order_v1.json",
+      "size": 39248,
+      "sha256": "512a0e8386ffe8852e42c75881bed2859b4398aec6faf11488ff418a94e34135",
+      "git_oid": "2f89a0b313ac280b79929cdeb74a9854bf72c4a5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_started_v1.json",
+      "size": 124,
+      "sha256": "b74e334853fd673f58dcda491d1d8e8fcbae1062bf162d20661826aadc2921d7",
+      "git_oid": "d689645af822dbeac766007ba5e3736a1fe31db4",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_subset_records_v1.jsonl",
+      "size": 796419,
+      "sha256": "21a2a5d746cc422c1a5bfd8c0e27154f993545e62defe25dafd24b39e5d1769e",
+      "git_oid": "8f80611fbed3dc7849719da8f0e144f29e4b1fdd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_subset_summary_v1.json",
+      "size": 148,
+      "sha256": "1ca44c1419b428b192c5e7c9314127d7371640b52cf35b5e9372c7730126754f",
+      "git_oid": "f9d9e724fbc44d370b6e11760c90befb5de8a30a",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_summary_v1.json",
+      "size": 483,
+      "sha256": "64afb9d25529085b81b67ab8d4aa3120e2d3851c7825ce33d3f88c203c9dfec0",
+      "git_oid": "08738569ae02b3d77e0b11ca61fcb332cef96efa",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/validate_checkpoint_v1.py",
+      "size": 1866,
+      "sha256": "66ca32efc17718bcfaaf280b23d217813158e8e5b18d596ff7544c93a213b3ff",
+      "git_oid": "5b65fe23c104a5655c5f0d9c78de54d9a129d764",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/verify_and_report_v1.py",
+      "size": 7393,
+      "sha256": "ab53f91b42971cfdfd7f614e1250cfa172604cfe411f70476eb80bbfd0365ff4",
+      "git_oid": "0c2596793b66ee1deadf25c40614d0bedfe5ce68",
+      "mode": "100644"
+    }
+  ],
+  "self_excluded": true,
+  "old_uploaded_files": 46,
+  "prior_failure_preserved": true,
+  "LFS_required": false
+}

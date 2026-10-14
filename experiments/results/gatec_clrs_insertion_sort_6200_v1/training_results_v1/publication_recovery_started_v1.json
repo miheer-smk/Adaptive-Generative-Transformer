@@ -1,0 +1,10 @@
+{
+  "branch": "research/clrs-insertion-sort-training-6200-20261014T170026Z",
+  "parent": "0998852e515bde46be6049e373a357217c8c115a",
+  "prior_failure": "publication_failure_v1.json",
+  "prior_failure_retained": true,
+  "method": "Reuse uploaded objects; raw streamed content verification; at most3 read attempts, mutations not retried",
+  "model_calls": 0,
+  "optimizer_steps": 0,
+  "no_local_staging": true
+}

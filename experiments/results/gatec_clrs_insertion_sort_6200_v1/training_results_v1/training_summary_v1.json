@@ -1,0 +1,15 @@
+{
+  "online_metrics": {
+    "arrays": 1000,
+    "n": 16,
+    "pointer_accuracy": 0.09375,
+    "exact_array_accuracy": 0.0,
+    "CE": 2.7632065632343292,
+    "invalid_chain": 1.0
+  },
+  "training_seconds": 4620.53674774617,
+  "update_count": 1000,
+  "final_model_parameter_sha256": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "frozen_parameters_unchanged": true,
+  "note": "Online predictions are pre-update training observations, not held-out evaluation"
+}

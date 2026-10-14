@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "arrays_checked": 1200,
+  "maximum_CE_recomputation_error": 4.2341812633850395e-07,
+  "prediction_argmax_matches": true,
+  "precision": "Recorded FP32 logits, offline float64 log-sum-exp; existing atol1e-6/rtol1e-5",
+  "model_calls": 0,
+  "backwards": 0,
+  "optimizer_steps": 0
+}

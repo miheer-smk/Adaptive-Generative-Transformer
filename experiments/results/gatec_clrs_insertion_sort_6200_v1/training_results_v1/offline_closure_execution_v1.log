@@ -1,0 +1,120 @@
+{
+  "status": "COMPLETED_NON_SUCCESS",
+  "metrics": {
+    "training_subset": {
+      "arrays": 128,
+      "n": 16,
+      "pointer_accuracy": 0.033203125,
+      "exact_array_accuracy": 0.0,
+      "CE": 2.772870821878314,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.02783203125,
+          0.03857421875
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          2.772863594489172,
+          2.7728783993516117
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    },
+    "development": {
+      "arrays": 32,
+      "n": 16,
+      "pointer_accuracy": 0.03125,
+      "exact_array_accuracy": 0.0,
+      "CE": 2.772864416241646,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.021484375,
+          0.041015625
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          2.7728523312136533,
+          2.7728765534237025
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    },
+    "size_transfer": {
+      "arrays": 32,
+      "n": 64,
+      "pointer_accuracy": 0.01171875,
+      "exact_array_accuracy": 0.0,
+      "CE": 4.158960267901421,
+      "invalid_chain": 1.0,
+      "bootstrap_95_intervals": {
+        "pointer_accuracy": [
+          0.00927734375,
+          0.01416015625
+        ],
+        "exact_array_accuracy": [
+          0.0,
+          0.0
+        ],
+        "CE": [
+          4.1589585691690445,
+          4.158962294459343
+        ],
+        "invalid_chain": [
+          1.0,
+          1.0
+        ]
+      },
+      "uncertainty": "20,000 complete-array bootstrap resamples, seed6202 per split, linear empirical quantiles; conditional on this trained model"
+    }
+  },
+  "gates": {
+    "development_pointer_accuracy": {
+      "value": 0.03125,
+      "threshold": 0.95,
+      "passed": false
+    },
+    "development_exact_array_accuracy": {
+      "value": 0.0,
+      "threshold": 0.8,
+      "passed": false
+    },
+    "size_transfer_pointer_accuracy": {
+      "value": 0.01171875,
+      "threshold": 0.9,
+      "passed": false
+    },
+    "size_transfer_exact_array_accuracy": {
+      "value": 0.0,
+      "threshold": 0.5,
+      "passed": false
+    },
+    "mechanical_numerical_integrity": {
+      "passed": true
+    }
+  },
+  "integrity": {
+    "protected_count": 2365,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true,
+    "no_new_exception": true,
+    "success": true
+  }
+}

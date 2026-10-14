@@ -1,0 +1,20 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-insertion-sort-training-6200-20261014T170026Z",
+  "parent": "0998852e515bde46be6049e373a357217c8c115a",
+  "verified_candidate_tree": "fc9b62a396b388f24fb8e6d04c668da09da7edff",
+  "verified_files": 50,
+  "historical_remote_files_preserved": 1986,
+  "verification": "Every payload streamed from raw Git Blobs API; exact size, Git OID and SHA256 verified",
+  "retries": [
+    {
+      "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/runtime_reconciliation_v1.json",
+      "attempt": 1,
+      "type": "HTTPError"
+    }
+  ],
+  "prior_failure_preserved": true,
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

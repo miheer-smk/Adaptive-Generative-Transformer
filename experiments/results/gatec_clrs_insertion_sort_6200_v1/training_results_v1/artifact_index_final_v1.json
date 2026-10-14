@@ -1,0 +1,179 @@
+{
+  "self_excluded": true,
+  "sealed_after_offline_process_exit": true,
+  "files": {
+    "training_subset_records_v1.jsonl": {
+      "size": 796419,
+      "sha256": "21a2a5d746cc422c1a5bfd8c0e27154f993545e62defe25dafd24b39e5d1769e"
+    },
+    "instrumentation_diff_v1.patch": {
+      "size": 7611,
+      "sha256": "19b3070185457d238bb9ab8b77842fcb14f18962869d38f089a825654d4ae118"
+    },
+    "arithmetic_consistency_v1.json": {
+      "size": 303,
+      "sha256": "d635f39006f6efbd21ccfbaa58a81e6bee0779953695da3d35f6088977c6b11b"
+    },
+    "development_records_v1.jsonl": {
+      "size": 199327,
+      "sha256": "23e348af008677af1b30e3a771b7d7f823400be011590854897b3eada1a71bac"
+    },
+    "publish_training_v1.py": {
+      "size": 9086,
+      "sha256": "c6aa3739c88e6b8aa2d8d8a592cb775695ffb30b802e0878baa1e16b5a78ba43"
+    },
+    "token_traces_v1.jsonl.gz": {
+      "size": 6420583,
+      "sha256": "b122f30a7cd2ee2592d433769cc1efb2914cd88f8cad63302fbbe3dbe3041740"
+    },
+    "offline_support_v1.py": {
+      "size": 4351,
+      "sha256": "9d8126254653f72ca73454f554834468f80fa768822679b7daf5532f861511ad"
+    },
+    "verify_and_report_v1.py": {
+      "size": 7393,
+      "sha256": "ab53f91b42971cfdfd7f614e1250cfa172604cfe411f70476eb80bbfd0365ff4"
+    },
+    "complete_trace_verification_v1.json": {
+      "size": 907,
+      "sha256": "9bb0a16e1dae5a653d1e4bceb91082993eba3b58a1b36328b42774d6951318c4"
+    },
+    "final_results_v1.json": {
+      "size": 5938,
+      "sha256": "cfd94ef8cc3185bdc9bee76e8ecd7ff3e36b0d56a546b76c9ac2fe0adbe9fa8e"
+    },
+    "model_update1000_v1.pt": {
+      "size": 22507575,
+      "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8"
+    },
+    "training_implementation_seal_v1.json": {
+      "size": 1061,
+      "sha256": "b4a58b00aa8bb83ae03be3d2fc1147fa6075d92f1bbd337a0d83e38060c900fa"
+    },
+    "training_started_v1.json": {
+      "size": 124,
+      "sha256": "b74e334853fd673f58dcda491d1d8e8fcbae1062bf162d20661826aadc2921d7"
+    },
+    "training_metrics_v1.jsonl": {
+      "size": 6571616,
+      "sha256": "55d74473c00e6c3914438cdea9abc7d61f5633a4775dcbcd94aba088acda729d"
+    },
+    "official_metric_verification_v1.json": {
+      "size": 853,
+      "sha256": "41364b2f110b2cfcf8d8013e74dd81a09b30ad196cfd6ae2e1d63b27f64d61fa"
+    },
+    "initial_training_model_v1.json": {
+      "size": 5858,
+      "sha256": "dafc1c62a2eb1a11d83d01902c09ec0654df5d0a46c2275e838b2a17cd1b3c5e"
+    },
+    "engineering_verification_v1.json": {
+      "size": 8356,
+      "sha256": "4231ccc8ded83a6a5e52ccf121f40ffe47d18f595f49ab488baaf13869216e43"
+    },
+    "validate_checkpoint_v1.py": {
+      "size": 1866,
+      "sha256": "66ca32efc17718bcfaaf280b23d217813158e8e5b18d596ff7544c93a213b3ff"
+    },
+    "training_summary_v1.json": {
+      "size": 483,
+      "sha256": "64afb9d25529085b81b67ab8d4aa3120e2d3851c7825ce33d3f88c203c9dfec0"
+    },
+    "checkpoint_validation_v1.json": {
+      "size": 453,
+      "sha256": "50ab72a9a1735c205f05e2479c33f07af8d6e945ce3247023b5978128ea405f0"
+    },
+    "checkpoint_validation_execution_v1.log": {
+      "size": 376,
+      "sha256": "bd4c287e14cbd2383ccffc7b30c6994e9d8fc763ad900a9c0260270859ff695e"
+    },
+    "offline_closure_execution_v1.log": {
+      "size": 2956,
+      "sha256": "894186f83001cb947b130089c580bb8b264165063dbd4d620091a117f1f032b6"
+    },
+    "integrity_initial_v1.json": {
+      "size": 572807,
+      "sha256": "de78b4f04d3140486ab02e39abf7f4eda39a34fcdf2d87cfe4942b463d4487d1"
+    },
+    "run_result_pending_official_metric_v1.json": {
+      "size": 2992,
+      "sha256": "28363038057c34febf4de92530135ba8b5f0975a476b7874251b84eeb7222a73"
+    },
+    "training_execution_v1.log": {
+      "size": 25224,
+      "sha256": "cdf5f8fc48185f35dd7f883a7db84d6da89e7bdeb81eaa6f90d311521d848b8c"
+    },
+    "initial_diagnostic_summary_v1.json": {
+      "size": 145,
+      "sha256": "b7c2c6e8b9ea9ae55af49bb2746dfbc175b37a6c8f21ffd06a8584e5675d201b"
+    },
+    "training_instrumentation_v1.py": {
+      "size": 9101,
+      "sha256": "ba77fff80a59191bcca8db36688e972f220aee430b324c3f5406639d334f8518"
+    },
+    "final_report_v1.md": {
+      "size": 4505,
+      "sha256": "d37216435ee02e519d30a5dbaa7781d5db4c136d55007e73e9f3e779f3ba850e"
+    },
+    "initial_diagnostic_records_v1.jsonl": {
+      "size": 51727,
+      "sha256": "7f9d05aa07f52899182dcc0714d1f2a5482cf33dd2f3f40ced0ed6675d7d8ecd"
+    },
+    "scope_lock_v1.json": {
+      "size": 1729,
+      "sha256": "874402b780212e32cf285e8ce44ea6786cedc0824d2c681c2cc6fc1c24155188"
+    },
+    "size_transfer_summary_v1.json": {
+      "size": 146,
+      "sha256": "b33b7bc043395083a201f18832ca17a5ee2295dbbd8eff438cd797fd08e5208d"
+    },
+    "training_subset_summary_v1.json": {
+      "size": 148,
+      "sha256": "1ca44c1419b428b192c5e7c9314127d7371640b52cf35b5e9372c7730126754f"
+    },
+    "training_order_v1.json": {
+      "size": 39248,
+      "sha256": "512a0e8386ffe8852e42c75881bed2859b4398aec6faf11488ff418a94e34135"
+    },
+    "runtime_reconciliation_v1.json": {
+      "size": 936,
+      "sha256": "7d986d3bde1084fa495fe3d9afd742afb1a505b3a932f2211f24f401a879718e"
+    },
+    "storage_accounting_v1.json": {
+      "size": 718,
+      "sha256": "a005f574c06914570b517c515b8c590a31c4a4ac184d85677beebe4918f3bb68"
+    },
+    "checkpoint_identity_v1.json": {
+      "size": 222,
+      "sha256": "dbce6f4ada7ff5ff384be2ea0ebee15dfcf73eb069cbd44483809282acc57a75"
+    },
+    "train_once_v1.py": {
+      "size": 13578,
+      "sha256": "c58f50e3e94ac650db10fdcd0a49ad012233ab3d1c6bb5dff1daa694ae3b47de"
+    },
+    "execution_ledger_v1.json": {
+      "size": 1943,
+      "sha256": "a3d041c7ba018faa16310214adeb07143e1f49dc0013bef2ecaed869d26590d7"
+    },
+    "size_transfer_records_v1.jsonl": {
+      "size": 2815060,
+      "sha256": "262f04a56466185468d0d7851843331d075cf940455294ce66839210c8e25a3a"
+    },
+    "development_summary_v1.json": {
+      "size": 143,
+      "sha256": "2b0a9ea91417f956e9ba3a8248bc85c1546bf9a07852b925d698bbe432528545"
+    },
+    "integrity_final_v1.json": {
+      "size": 207,
+      "sha256": "0ffb9f060fd65cd0d1cc1721d26cdc45a4d3103c81946dc7df3decc449722625"
+    },
+    "analysis_v1.json": {
+      "size": 4740,
+      "sha256": "71a96bbaa1386a66b193f6db98ae8a20daf54213b30275bf4acf2a20458c471b"
+    },
+    "cpu_runtime_home/keras/keras.json": {
+      "size": 120,
+      "sha256": "760f24a997adf5b270e12494d6614c28f7d9665b0a3b9281d9c2beb5400adcdb"
+    }
+  },
+  "publication_receipts_added_later": true
+}

@@ -1,0 +1,37 @@
+{
+  "model_calls": 0,
+  "checked_arrays": 200,
+  "source_revision": "6d5728b9efadf8648413c8c473929a733caacced",
+  "records": [
+    {
+      "split": "initial_diagnostic",
+      "arrays": 8,
+      "official_score": 0.0234375,
+      "converted_score": 0.0234375,
+      "exact_match": true
+    },
+    {
+      "split": "training_subset",
+      "arrays": 128,
+      "official_score": 0.033203125,
+      "converted_score": 0.033203125,
+      "exact_match": true
+    },
+    {
+      "split": "development",
+      "arrays": 32,
+      "official_score": 0.03125,
+      "converted_score": 0.03125,
+      "exact_match": true
+    },
+    {
+      "split": "size_transfer",
+      "arrays": 32,
+      "official_score": 0.01171875,
+      "converted_score": 0.01171875,
+      "exact_match": true
+    }
+  ],
+  "training_order_and_target_alignment": true,
+  "success": true
+}

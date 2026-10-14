@@ -1,0 +1,414 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+initial_diagnostic 1 / 8 CE 2.787968635559082 pointer 0.0
+initial_diagnostic 2 / 8 CE 2.7859630584716797 pointer 0.0
+initial_diagnostic 3 / 8 CE 2.7846603393554688 pointer 0.0
+initial_diagnostic 4 / 8 CE 2.780831813812256 pointer 0.0625
+initial_diagnostic 5 / 8 CE 2.8195738792419434 pointer 0.0625
+initial_diagnostic 6 / 8 CE 2.7879409790039062 pointer 0.0
+initial_diagnostic 7 / 8 CE 2.7813801765441895 pointer 0.0625
+initial_diagnostic 8 / 8 CE 2.7703442573547363 pointer 0.0
+UPDATE 10 CE 2.7619805335998535 pointer 0.125 grad 0.22723375260829926 elapsed 83.89548648521304
+UPDATE 20 CE 2.756403684616089 pointer 0.0625 grad 0.09307517111301422 elapsed 136.94722902122885
+UPDATE 30 CE 2.753760814666748 pointer 0.125 grad 0.16039638221263885 elapsed 189.7362882453017
+UPDATE 40 CE 2.7577295303344727 pointer 0.125 grad 0.10593036562204361 elapsed 205.99787749024108
+UPDATE 50 CE 2.7591323852539062 pointer 0.0625 grad 0.03033856488764286 elapsed 258.8001418611966
+UPDATE 60 CE 2.7496566772460938 pointer 0.125 grad 0.1281638890504837 elapsed 311.09287349833176
+UPDATE 70 CE 2.753622055053711 pointer 0.125 grad 0.034058135002851486 elapsed 362.6706106909551
+UPDATE 80 CE 2.7685883045196533 pointer 0.125 grad 0.12863890826702118 elapsed 413.34234318323433
+UPDATE 90 CE 2.758254051208496 pointer 0.125 grad 0.047142792493104935 elapsed 459.8489895039238
+UPDATE 100 CE 2.75032377243042 pointer 0.125 grad 0.03775976970791817 elapsed 510.67138953506947
+UPDATE 110 CE 2.751969814300537 pointer 0.0625 grad 0.06091310828924179 elapsed 561.5997504461557
+UPDATE 120 CE 2.753871202468872 pointer 0.125 grad 0.09050357341766357 elapsed 612.1757722459733
+UPDATE 130 CE 2.754124164581299 pointer 0.125 grad 0.041116174310445786 elapsed 662.7906162091531
+UPDATE 140 CE 2.759349822998047 pointer 0.0625 grad 0.051387254148721695 elapsed 678.7998973890208
+UPDATE 150 CE 2.758755683898926 pointer 0.125 grad 0.04701056703925133 elapsed 720.792860195972
+UPDATE 160 CE 2.754704475402832 pointer 0.125 grad 0.03519974648952484 elapsed 771.511426338926
+UPDATE 170 CE 2.753091812133789 pointer 0.125 grad 0.053198911249637604 elapsed 822.43560643401
+UPDATE 180 CE 3.12027645111084 pointer 0.125 grad 18.531225204467773 elapsed 873.331075293012
+UPDATE 190 CE 2.803626775741577 pointer 0.0625 grad 0.9559356570243835 elapsed 924.0593812139705
+UPDATE 200 CE 2.850168466567993 pointer 0.0 grad 1.5135678052902222 elapsed 975.1882302542217
+UPDATE 210 CE 2.7967278957366943 pointer 0.125 grad 0.6664901971817017 elapsed 1026.2487083240412
+UPDATE 220 CE 2.836771011352539 pointer 0.0625 grad 0.846362829208374 elapsed 1077.292423801031
+UPDATE 230 CE 2.838712692260742 pointer 0.0625 grad 1.06177818775177 elapsed 1128.4745742590167
+UPDATE 240 CE 2.773179054260254 pointer 0.0625 grad 0.014764879830181599 elapsed 1148.7154553439468
+UPDATE 250 CE 2.7713499069213867 pointer 0.125 grad 0.052814338356256485 elapsed 1181.0975596220233
+UPDATE 260 CE 2.769023895263672 pointer 0.0625 grad 0.33465775847435 elapsed 1231.99970017327
+UPDATE 270 CE 2.771742343902588 pointer 0.125 grad 0.006891046185046434 elapsed 1282.8623916101642
+UPDATE 280 CE 2.7708683013916016 pointer 0.125 grad 0.013902740553021431 elapsed 1333.7100715823472
+UPDATE 290 CE 2.769998550415039 pointer 0.125 grad 0.02659570425748825 elapsed 1384.5538220782764
+UPDATE 300 CE 2.7689952850341797 pointer 0.125 grad 0.02521919086575508 elapsed 1435.0935874902643
+UPDATE 310 CE 2.7674450874328613 pointer 0.0625 grad 0.03181908652186394 elapsed 1485.9824038492516
+UPDATE 320 CE 2.764019250869751 pointer 0.125 grad 0.027174893766641617 elapsed 1536.7828803840093
+UPDATE 330 CE 2.758338451385498 pointer 0.125 grad 0.04204103350639343 elapsed 1587.6426774859428
+UPDATE 340 CE 2.7604689598083496 pointer 0.0625 grad 0.045148491859436035 elapsed 1618.3061485379003
+UPDATE 350 CE 2.7617104053497314 pointer 0.0625 grad 0.031162811443209648 elapsed 1628.1079209852032
+UPDATE 360 CE 2.7556309700012207 pointer 0.125 grad 0.022538481280207634 elapsed 1678.8309465139173
+UPDATE 370 CE 2.7438974380493164 pointer 0.0625 grad 0.04572487249970436 elapsed 1729.7046838952228
+UPDATE 380 CE 2.749340057373047 pointer 0.0 grad 0.0631624087691307 elapsed 1780.343594409991
+UPDATE 390 CE 2.7521324157714844 pointer 0.125 grad 0.040577761828899384 elapsed 1831.014162632171
+UPDATE 400 CE 2.7551867961883545 pointer 0.125 grad 0.05532621592283249 elapsed 1881.8251386662014
+UPDATE 410 CE 2.7586076259613037 pointer 0.125 grad 0.027707180008292198 elapsed 1932.6721775960177
+UPDATE 420 CE 2.7493395805358887 pointer 0.125 grad 0.038943760097026825 elapsed 1983.2345594540238
+UPDATE 430 CE 2.7628955841064453 pointer 0.0625 grad 0.09499692171812057 elapsed 2034.1444565760903
+UPDATE 440 CE 2.755708694458008 pointer 0.125 grad 0.028367262333631516 elapsed 2083.6838638251647
+UPDATE 450 CE 2.7576756477355957 pointer 0.125 grad 0.04168098047375679 elapsed 2095.3438312429935
+UPDATE 460 CE 2.757521867752075 pointer 0.0625 grad 0.022757571190595627 elapsed 2116.9854225548916
+UPDATE 470 CE 2.753673553466797 pointer 0.125 grad 0.026949550956487656 elapsed 2168.164749317337
+UPDATE 480 CE 2.7589669227600098 pointer 0.0625 grad 0.018623337149620056 elapsed 2219.3545545060188
+UPDATE 490 CE 2.7450742721557617 pointer 0.125 grad 0.025505756959319115 elapsed 2270.4193848841824
+UPDATE 500 CE 2.7552385330200195 pointer 0.125 grad 0.04021579772233963 elapsed 2321.5790166761726
+UPDATE 510 CE 2.7513351440429688 pointer 0.125 grad 0.025667762383818626 elapsed 2372.491043653339
+UPDATE 520 CE 2.761146306991577 pointer 0.125 grad 0.02780100889503956 elapsed 2423.729736865964
+UPDATE 530 CE 2.7575840950012207 pointer 0.125 grad 0.028132431209087372 elapsed 2474.9835242470726
+UPDATE 540 CE 2.7587316036224365 pointer 0.125 grad 0.04441521689295769 elapsed 2526.1897711381316
+UPDATE 550 CE 2.753791093826294 pointer 0.125 grad 0.021535340696573257 elapsed 2565.7096770862117
+UPDATE 560 CE 2.7569620609283447 pointer 0.125 grad 0.01524239033460617 elapsed 2581.4207093771547
+UPDATE 570 CE 2.756472110748291 pointer 0.0625 grad 0.02247997187077999 elapsed 2632.698970170226
+UPDATE 580 CE 2.753089427947998 pointer 0.125 grad 0.01770004816353321 elapsed 2684.1695294729434
+UPDATE 590 CE 2.7522130012512207 pointer 0.125 grad 0.01782340183854103 elapsed 2735.512501195073
+UPDATE 600 CE 2.7427687644958496 pointer 0.125 grad 0.12025997787714005 elapsed 2786.855474803131
+UPDATE 610 CE 2.754420518875122 pointer 0.0625 grad 0.010074402205646038 elapsed 2833.7513425881043
+UPDATE 620 CE 2.7493157386779785 pointer 0.125 grad 0.0242012832313776 elapsed 2885.0094118323177
+UPDATE 630 CE 2.760394334793091 pointer 0.125 grad 0.03268027305603027 elapsed 2936.2923012161627
+UPDATE 640 CE 2.7521145343780518 pointer 0.125 grad 0.023169133812189102 elapsed 2987.5927598732524
+UPDATE 650 CE 2.756160259246826 pointer 0.0625 grad 0.01506776362657547 elapsed 3037.003161460161
+UPDATE 660 CE 2.7569503784179688 pointer 0.125 grad 0.02037469670176506 elapsed 3054.9439687998965
+UPDATE 670 CE 2.7521915435791016 pointer 0.125 grad 0.024539291858673096 elapsed 3105.959908761084
+UPDATE 680 CE 2.74820876121521 pointer 0.125 grad 0.027264131233096123 elapsed 3157.1350210988894
+UPDATE 690 CE 2.750631809234619 pointer 0.125 grad 0.024810152128338814 elapsed 3208.42221119022
+UPDATE 700 CE 2.750481605529785 pointer 0.125 grad 0.03337542712688446 elapsed 3259.397669222206
+UPDATE 710 CE 2.757317066192627 pointer 0.0625 grad 0.03334277868270874 elapsed 3310.5298104202375
+UPDATE 720 CE 2.758098602294922 pointer 0.125 grad 0.06526684015989304 elapsed 3361.731631272938
+UPDATE 730 CE 2.753124475479126 pointer 0.125 grad 0.05631347745656967 elapsed 3413.0681596519426
+UPDATE 740 CE 2.756587505340576 pointer 0.0625 grad 0.012177146971225739 elapsed 3464.3637631023303
+UPDATE 750 CE 2.7534232139587402 pointer 0.125 grad 0.023061994463205338 elapsed 3510.1980402921326
+UPDATE 760 CE 2.751431941986084 pointer 0.125 grad 0.016813738271594048 elapsed 3524.206549004186
+UPDATE 770 CE 2.7532172203063965 pointer 0.125 grad 0.008455767296254635 elapsed 3575.583046737127
+UPDATE 780 CE 2.7537472248077393 pointer 0.125 grad 0.01930583454668522 elapsed 3626.7899960330687
+UPDATE 790 CE 2.752720355987549 pointer 0.125 grad 0.04148878529667854 elapsed 3678.190774510149
+UPDATE 800 CE 2.753363847732544 pointer 0.0625 grad 0.022735046222805977 elapsed 3729.545953191351
+UPDATE 810 CE 2.7480297088623047 pointer 0.125 grad 0.05082103982567787 elapsed 3780.6426367932
+UPDATE 820 CE 2.7480826377868652 pointer 0.125 grad 0.04583463817834854 elapsed 3831.996368646156
+UPDATE 830 CE 2.7479381561279297 pointer 0.125 grad 0.0707266628742218 elapsed 3883.3496685349382
+UPDATE 840 CE 2.7594552040100098 pointer 0.125 grad 0.10929940640926361 elapsed 3934.768547087908
+UPDATE 850 CE 2.791914463043213 pointer 0.0 grad 0.4265681207180023 elapsed 3980.105975227896
+UPDATE 860 CE 2.77368426322937 pointer 0.0625 grad 0.0031719577964395285 elapsed 3993.4433632539585
+UPDATE 870 CE 2.7732648849487305 pointer 0.0625 grad 0.0020887323189526796 elapsed 4044.3038541162387
+UPDATE 880 CE 2.7731142044067383 pointer 0.0625 grad 0.0016934910090640187 elapsed 4095.1706762230024
+UPDATE 890 CE 2.7730839252471924 pointer 0.0625 grad 0.0016262184362858534 elapsed 4146.079369999003
+UPDATE 900 CE 2.7730236053466797 pointer 0.0 grad 0.0014850121224299073 elapsed 4196.946101638954
+UPDATE 910 CE 2.773037910461426 pointer 0.0625 grad 0.0015590769471600652 elapsed 4247.7221851833165
+UPDATE 920 CE 2.773028612136841 pointer 0.0625 grad 0.0015629534609615803 elapsed 4298.514562796336
+UPDATE 930 CE 2.772843360900879 pointer 0.0 grad 0.0019538081251084805 elapsed 4348.9677929258905
+UPDATE 940 CE 2.772953987121582 pointer 0.0625 grad 0.0013531451113522053 elapsed 4399.7468061032705
+UPDATE 950 CE 2.772934913635254 pointer 0.0625 grad 0.0013124938122928143 elapsed 4449.5235987012275
+UPDATE 960 CE 2.7731003761291504 pointer 0.0 grad 0.002997355302795768 elapsed 4458.261665621307
+UPDATE 970 CE 2.772937297821045 pointer 0.0625 grad 0.0014304035576060414 elapsed 4499.069865391124
+UPDATE 980 CE 2.7728872299194336 pointer 0.0625 grad 0.00122497184202075 elapsed 4549.539563426282
+UPDATE 990 CE 2.7728865146636963 pointer 0.0625 grad 0.001246744068339467 elapsed 4600.3417072072625
+UPDATE 1000 CE 2.772829055786133 pointer 0.0625 grad 0.0010543313110247254 elapsed 4651.141571782064
+training_subset 1 / 128 CE 2.772866725921631 pointer 0.0
+training_subset 2 / 128 CE 2.772885322570801 pointer 0.0
+training_subset 3 / 128 CE 2.7728984355926514 pointer 0.0625
+training_subset 4 / 128 CE 2.7728161811828613 pointer 0.0625
+training_subset 5 / 128 CE 2.7728004455566406 pointer 0.0
+training_subset 6 / 128 CE 2.772859811782837 pointer 0.0625
+training_subset 7 / 128 CE 2.772895336151123 pointer 0.0625
+training_subset 8 / 128 CE 2.7729899883270264 pointer 0.0
+training_subset 9 / 128 CE 2.7729039192199707 pointer 0.0
+training_subset 10 / 128 CE 2.7728803157806396 pointer 0.0625
+training_subset 11 / 128 CE 2.772891044616699 pointer 0.0
+training_subset 12 / 128 CE 2.772841453552246 pointer 0.0625
+training_subset 13 / 128 CE 2.772892951965332 pointer 0.0625
+training_subset 14 / 128 CE 2.7728943824768066 pointer 0.0625
+training_subset 15 / 128 CE 2.7728798389434814 pointer 0.0
+training_subset 16 / 128 CE 2.77288556098938 pointer 0.0
+training_subset 17 / 128 CE 2.7727789878845215 pointer 0.0625
+training_subset 18 / 128 CE 2.7728443145751953 pointer 0.0625
+training_subset 19 / 128 CE 2.7728748321533203 pointer 0.0625
+training_subset 20 / 128 CE 2.7728521823883057 pointer 0.0
+training_subset 21 / 128 CE 2.7728137969970703 pointer 0.0625
+training_subset 22 / 128 CE 2.7728781700134277 pointer 0.0
+training_subset 23 / 128 CE 2.7728400230407715 pointer 0.0625
+training_subset 24 / 128 CE 2.7728829383850098 pointer 0.0625
+training_subset 25 / 128 CE 2.772846221923828 pointer 0.0
+training_subset 26 / 128 CE 2.7729976177215576 pointer 0.0
+training_subset 27 / 128 CE 2.772975444793701 pointer 0.0
+training_subset 28 / 128 CE 2.772874355316162 pointer 0.0625
+training_subset 29 / 128 CE 2.7728652954101562 pointer 0.0
+training_subset 30 / 128 CE 2.7728867530822754 pointer 0.0625
+training_subset 31 / 128 CE 2.7728660106658936 pointer 0.0625
+training_subset 32 / 128 CE 2.772975206375122 pointer 0.0
+training_subset 33 / 128 CE 2.772885799407959 pointer 0.0
+training_subset 34 / 128 CE 2.7728958129882812 pointer 0.0625
+training_subset 35 / 128 CE 2.772907257080078 pointer 0.0
+training_subset 36 / 128 CE 2.772880792617798 pointer 0.0
+training_subset 37 / 128 CE 2.7728161811828613 pointer 0.0
+training_subset 38 / 128 CE 2.7728652954101562 pointer 0.0625
+training_subset 39 / 128 CE 2.7728638648986816 pointer 0.0
+training_subset 40 / 128 CE 2.7728686332702637 pointer 0.0625
+training_subset 41 / 128 CE 2.7728617191314697 pointer 0.0625
+training_subset 42 / 128 CE 2.772843837738037 pointer 0.0625
+training_subset 43 / 128 CE 2.77291202545166 pointer 0.0
+training_subset 44 / 128 CE 2.772891044616699 pointer 0.0
+training_subset 45 / 128 CE 2.7728185653686523 pointer 0.0
+training_subset 46 / 128 CE 2.7728681564331055 pointer 0.0
+training_subset 47 / 128 CE 2.772913694381714 pointer 0.0625
+training_subset 48 / 128 CE 2.772879123687744 pointer 0.0625
+training_subset 49 / 128 CE 2.7728254795074463 pointer 0.0625
+training_subset 50 / 128 CE 2.772796630859375 pointer 0.0625
+training_subset 51 / 128 CE 2.7728705406188965 pointer 0.0625
+training_subset 52 / 128 CE 2.772810935974121 pointer 0.0
+training_subset 53 / 128 CE 2.7728281021118164 pointer 0.0
+training_subset 54 / 128 CE 2.7728676795959473 pointer 0.0
+training_subset 55 / 128 CE 2.7728888988494873 pointer 0.0625
+training_subset 56 / 128 CE 2.772874355316162 pointer 0.0
+training_subset 57 / 128 CE 2.7728793621063232 pointer 0.0625
+training_subset 58 / 128 CE 2.7728562355041504 pointer 0.0625
+training_subset 59 / 128 CE 2.772895336151123 pointer 0.0
+training_subset 60 / 128 CE 2.7728381156921387 pointer 0.0
+training_subset 61 / 128 CE 2.7730002403259277 pointer 0.0
+training_subset 62 / 128 CE 2.772850513458252 pointer 0.0
+training_subset 63 / 128 CE 2.772883415222168 pointer 0.0
+training_subset 64 / 128 CE 2.7727556228637695 pointer 0.0625
+training_subset 65 / 128 CE 2.7728967666625977 pointer 0.0
+training_subset 66 / 128 CE 2.7728071212768555 pointer 0.0
+training_subset 67 / 128 CE 2.772847890853882 pointer 0.0625
+training_subset 68 / 128 CE 2.7728328704833984 pointer 0.0625
+training_subset 69 / 128 CE 2.7728898525238037 pointer 0.0
+training_subset 70 / 128 CE 2.7729763984680176 pointer 0.0
+training_subset 71 / 128 CE 2.7729053497314453 pointer 0.0
+training_subset 72 / 128 CE 2.7729830741882324 pointer 0.0
+training_subset 73 / 128 CE 2.772958517074585 pointer 0.0
+training_subset 74 / 128 CE 2.7728586196899414 pointer 0.0625
+training_subset 75 / 128 CE 2.772869348526001 pointer 0.0625
+training_subset 76 / 128 CE 2.7728707790374756 pointer 0.0625
+training_subset 77 / 128 CE 2.772890567779541 pointer 0.0
+training_subset 78 / 128 CE 2.772902011871338 pointer 0.0
+training_subset 79 / 128 CE 2.7728524208068848 pointer 0.0
+training_subset 80 / 128 CE 2.772864580154419 pointer 0.0
+training_subset 81 / 128 CE 2.7728981971740723 pointer 0.0625
+training_subset 82 / 128 CE 2.7728705406188965 pointer 0.0
+training_subset 83 / 128 CE 2.7728524208068848 pointer 0.0625
+training_subset 84 / 128 CE 2.772789478302002 pointer 0.0625
+training_subset 85 / 128 CE 2.7729039192199707 pointer 0.0625
+training_subset 86 / 128 CE 2.7728829383850098 pointer 0.0625
+training_subset 87 / 128 CE 2.772874116897583 pointer 0.0
+training_subset 88 / 128 CE 2.7727890014648438 pointer 0.0625
+training_subset 89 / 128 CE 2.7728819847106934 pointer 0.0625
+training_subset 90 / 128 CE 2.772839069366455 pointer 0.0625
+training_subset 91 / 128 CE 2.7728638648986816 pointer 0.0
+training_subset 92 / 128 CE 2.7729029655456543 pointer 0.0625
+training_subset 93 / 128 CE 2.7728357315063477 pointer 0.0625
+training_subset 94 / 128 CE 2.772838592529297 pointer 0.0625
+training_subset 95 / 128 CE 2.772876739501953 pointer 0.0
+training_subset 96 / 128 CE 2.7728912830352783 pointer 0.0
+training_subset 97 / 128 CE 2.772876262664795 pointer 0.0625
+training_subset 98 / 128 CE 2.7728190422058105 pointer 0.0625
+training_subset 99 / 128 CE 2.7728805541992188 pointer 0.0
+training_subset 100 / 128 CE 2.7728428840637207 pointer 0.0625
+training_subset 101 / 128 CE 2.7728188037872314 pointer 0.0
+training_subset 102 / 128 CE 2.772843360900879 pointer 0.0
+training_subset 103 / 128 CE 2.7728657722473145 pointer 0.0
+training_subset 104 / 128 CE 2.772885799407959 pointer 0.0625
+training_subset 105 / 128 CE 2.772932529449463 pointer 0.0
+training_subset 106 / 128 CE 2.772881507873535 pointer 0.0625
+training_subset 107 / 128 CE 2.772892951965332 pointer 0.0625
+training_subset 108 / 128 CE 2.772890090942383 pointer 0.0625
+training_subset 109 / 128 CE 2.772885322570801 pointer 0.0625
+training_subset 110 / 128 CE 2.7728805541992188 pointer 0.0625
+training_subset 111 / 128 CE 2.772883176803589 pointer 0.0
+training_subset 112 / 128 CE 2.7727742195129395 pointer 0.0625
+training_subset 113 / 128 CE 2.772883415222168 pointer 0.0625
+training_subset 114 / 128 CE 2.772862434387207 pointer 0.0
+training_subset 115 / 128 CE 2.772855520248413 pointer 0.0625
+training_subset 116 / 128 CE 2.772822141647339 pointer 0.0625
+training_subset 117 / 128 CE 2.7728090286254883 pointer 0.0
+training_subset 118 / 128 CE 2.7728447914123535 pointer 0.0
+training_subset 119 / 128 CE 2.772902488708496 pointer 0.0625
+training_subset 120 / 128 CE 2.772848129272461 pointer 0.0625
+training_subset 121 / 128 CE 2.772904396057129 pointer 0.0625
+training_subset 122 / 128 CE 2.7728989124298096 pointer 0.0625
+training_subset 123 / 128 CE 2.772819995880127 pointer 0.0625
+training_subset 124 / 128 CE 2.772876501083374 pointer 0.0
+training_subset 125 / 128 CE 2.7728514671325684 pointer 0.0625
+training_subset 126 / 128 CE 2.772869110107422 pointer 0.0625
+training_subset 127 / 128 CE 2.772862195968628 pointer 0.0
+training_subset 128 / 128 CE 2.7728776931762695 pointer 0.0625
+development 1 / 32 CE 2.7728257179260254 pointer 0.0625
+development 2 / 32 CE 2.7729644775390625 pointer 0.0
+development 3 / 32 CE 2.7728466987609863 pointer 0.0625
+development 4 / 32 CE 2.772890329360962 pointer 0.0
+development 5 / 32 CE 2.7728934288024902 pointer 0.0
+development 6 / 32 CE 2.7728919982910156 pointer 0.0625
+development 7 / 32 CE 2.772838592529297 pointer 0.0625
+development 8 / 32 CE 2.772852897644043 pointer 0.0
+development 9 / 32 CE 2.7728800773620605 pointer 0.0
+development 10 / 32 CE 2.7728512287139893 pointer 0.0625
+development 11 / 32 CE 2.772878646850586 pointer 0.0625
+development 12 / 32 CE 2.7728919982910156 pointer 0.0625
+development 13 / 32 CE 2.77288556098938 pointer 0.0625
+development 14 / 32 CE 2.772860288619995 pointer 0.0625
+development 15 / 32 CE 2.7727832794189453 pointer 0.0625
+development 16 / 32 CE 2.7728638648986816 pointer 0.0
+development 17 / 32 CE 2.772869825363159 pointer 0.0
+development 18 / 32 CE 2.772874593734741 pointer 0.0625
+development 19 / 32 CE 2.7728755474090576 pointer 0.0
+development 20 / 32 CE 2.772861957550049 pointer 0.0625
+development 21 / 32 CE 2.772897720336914 pointer 0.0
+development 22 / 32 CE 2.772831439971924 pointer 0.0
+development 23 / 32 CE 2.772907257080078 pointer 0.0625
+development 24 / 32 CE 2.772857189178467 pointer 0.0625
+development 25 / 32 CE 2.7728476524353027 pointer 0.0
+development 26 / 32 CE 2.7728431224823 pointer 0.0
+development 27 / 32 CE 2.7728710174560547 pointer 0.0625
+development 28 / 32 CE 2.7728898525238037 pointer 0.0
+development 29 / 32 CE 2.772890567779541 pointer 0.0
+development 30 / 32 CE 2.7728071212768555 pointer 0.0625
+development 31 / 32 CE 2.7728402614593506 pointer 0.0
+development 32 / 32 CE 2.772797107696533 pointer 0.0
+size_transfer 1 / 32 CE 4.158961296081543 pointer 0.0
+size_transfer 2 / 32 CE 4.158953666687012 pointer 0.015625
+size_transfer 3 / 32 CE 4.1589555740356445 pointer 0.015625
+size_transfer 4 / 32 CE 4.158958435058594 pointer 0.015625
+size_transfer 5 / 32 CE 4.158956527709961 pointer 0.015625
+size_transfer 6 / 32 CE 4.158960819244385 pointer 0.015625
+size_transfer 7 / 32 CE 4.158958435058594 pointer 0.0
+size_transfer 8 / 32 CE 4.15898323059082 pointer 0.0
+size_transfer 9 / 32 CE 4.158961296081543 pointer 0.015625
+size_transfer 10 / 32 CE 4.158964157104492 pointer 0.015625
+size_transfer 11 / 32 CE 4.158965110778809 pointer 0.015625
+size_transfer 12 / 32 CE 4.158963203430176 pointer 0.015625
+size_transfer 13 / 32 CE 4.15895938873291 pointer 0.015625
+size_transfer 14 / 32 CE 4.158956527709961 pointer 0.015625
+size_transfer 15 / 32 CE 4.158961296081543 pointer 0.0
+size_transfer 16 / 32 CE 4.158960819244385 pointer 0.015625
+size_transfer 17 / 32 CE 4.15896463394165 pointer 0.0
+size_transfer 18 / 32 CE 4.158963203430176 pointer 0.0
+size_transfer 19 / 32 CE 4.158958435058594 pointer 0.015625
+size_transfer 20 / 32 CE 4.158960342407227 pointer 0.015625
+size_transfer 21 / 32 CE 4.158966064453125 pointer 0.0
+size_transfer 22 / 32 CE 4.158954620361328 pointer 0.015625
+size_transfer 23 / 32 CE 4.158960342407227 pointer 0.015625
+size_transfer 24 / 32 CE 4.158961296081543 pointer 0.015625
+size_transfer 25 / 32 CE 4.158963680267334 pointer 0.015625
+size_transfer 26 / 32 CE 4.158961296081543 pointer 0.0
+size_transfer 27 / 32 CE 4.158956527709961 pointer 0.015625
+size_transfer 28 / 32 CE 4.158954620361328 pointer 0.015625
+size_transfer 29 / 32 CE 4.1589579582214355 pointer 0.015625
+size_transfer 30 / 32 CE 4.158956527709961 pointer 0.015625
+size_transfer 31 / 32 CE 4.158955097198486 pointer 0.015625
+size_transfer 32 / 32 CE 4.15895414352417 pointer 0.015625
+{
+  "status": "AWAITING_OFFLINE_VERIFICATION",
+  "phases": {
+    "initial_diagnostic": "COMPLETED_DESCRIPTIVE_ONLY",
+    "training": "COMPLETED_1000_UPDATES",
+    "training_subset": "COMPLETED",
+    "development": "COMPLETED",
+    "size_transfer": "COMPLETED"
+  },
+  "gates_unverified": true,
+  "resource_ledger": {
+    "attempted_tokens": 41472,
+    "completed_tokens": 41472,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 331776,
+    "selected_bank_completed": 331776,
+    "commits": 41472,
+    "backward_attempted": 1000,
+    "backward_completed": 1000,
+    "optimizer_objects": 1,
+    "optimizer_attempted": 1000,
+    "optimizer_updates": 1000,
+    "optimizer_failed": 0,
+    "array_attempted": 1200,
+    "array_completed": 1200,
+    "array_failed": 0,
+    "phase_counts": {
+      "initial_diagnostic": {
+        "attempted": 256,
+        "completed": 256,
+        "failed": 0,
+        "selected_attempted": 2048,
+        "selected_completed": 2048,
+        "commits": 256
+      },
+      "training": {
+        "attempted": 32000,
+        "completed": 32000,
+        "failed": 0,
+        "selected_attempted": 256000,
+        "selected_completed": 256000,
+        "commits": 32000
+      },
+      "training_subset": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      },
+      "development": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0,
+        "selected_attempted": 8192,
+        "selected_completed": 8192,
+        "commits": 1024
+      },
+      "size_transfer": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      }
+    },
+    "engineering_completed": {
+      "attempted_tokens": 512,
+      "completed_tokens": 512,
+      "failed_tokens": 0,
+      "selected_bank_calls": 4096,
+      "commits": 512,
+      "backwards": 6,
+      "optimizer_updates": 0
+    },
+    "combined_attempted_tokens": 41984,
+    "combined_completed_tokens": 41984,
+    "combined_selected_bank_calls": 335872,
+    "combined_commits": 41984,
+    "combined_backwards": 1006,
+    "contextual_commit_entries": 290304,
+    "elapsed_seconds": 5171.713088182267,
+    "peak_CUDA_allocated": 169708544,
+    "peak_CUDA_reserved": 178257920
+  },
+  "integrity": {
+    "protected_count": 2365,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true,
+    "no_new_exception": true,
+    "success": true
+  },
+  "final_checkpoint": {
+    "path": "model_update1000_v1.pt",
+    "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+    "size": 22507575,
+    "optimizer_updates": 1000,
+    "selection": "Predetermined final update1000 only"
+  },
+  "allocation_seconds_at_gpu_completion": 5175.056862505153,
+  "deadline_met": true
+}

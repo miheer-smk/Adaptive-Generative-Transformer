@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "optimizer_update_count": 1000,
+  "model_state_tensors": 136,
+  "optimizer_state_entries": 116,
+  "parameter_state_step_histogram": {
+    "1000": 116
+  },
+  "all_tensors_finite": true,
+  "metadata_and_seals_match": true,
+  "model_constructions": 0,
+  "optimizer_constructions": 0,
+  "model_token_calls": 0,
+  "backwards": 0,
+  "optimizer_steps": 0
+}
