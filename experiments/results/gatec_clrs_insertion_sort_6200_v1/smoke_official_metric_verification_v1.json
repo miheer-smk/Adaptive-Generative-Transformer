@@ -1,0 +1,58 @@
+{
+  "success": true,
+  "synthetic_fixtures": [
+    {
+      "device": "cpu",
+      "id": "engineering/synthetic/N2",
+      "score_matches_official": true
+    },
+    {
+      "device": "cpu",
+      "id": "engineering/synthetic/N4",
+      "score_matches_official": true
+    },
+    {
+      "device": "cpu",
+      "id": "engineering/synthetic/N8",
+      "score_matches_official": true
+    },
+    {
+      "device": "cpu",
+      "id": "engineering/synthetic/N16",
+      "score_matches_official": true
+    },
+    {
+      "device": "cpu",
+      "id": "engineering/synthetic/N64",
+      "score_matches_official": true
+    },
+    {
+      "device": "cuda",
+      "id": "engineering/synthetic/N2",
+      "score_matches_official": true
+    },
+    {
+      "device": "cuda",
+      "id": "engineering/synthetic/N4",
+      "score_matches_official": true
+    },
+    {
+      "device": "cuda",
+      "id": "engineering/synthetic/N8",
+      "score_matches_official": true
+    },
+    {
+      "device": "cuda",
+      "id": "engineering/synthetic/N16",
+      "score_matches_official": true
+    },
+    {
+      "device": "cuda",
+      "id": "engineering/synthetic/N64",
+      "score_matches_official": true
+    }
+  ],
+  "model_tokens": 0,
+  "official_pool_model_evaluation": false,
+  "description": "Only metric-conversion verification, not task competence"
+}

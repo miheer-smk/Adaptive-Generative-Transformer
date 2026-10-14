@@ -1,0 +1,16 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "names": [
+    "mean_pointer_CE_shapes_and_arithmetic",
+    "strict_metadata_and_schema_negatives",
+    "ownership_negative",
+    "canonical_script_legality",
+    "computational_interface_excludes_labels_and_hints",
+    "locked_menu_arithmetic"
+  ],
+  "AGT_models_constructed": 0,
+  "model_tokens": 0,
+  "backwards": 0,
+  "optimizer_objects": 0
+}

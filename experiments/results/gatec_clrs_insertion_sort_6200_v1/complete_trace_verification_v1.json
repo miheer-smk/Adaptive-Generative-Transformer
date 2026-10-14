@@ -1,0 +1,8 @@
+{
+  "trace_attempts": true,
+  "completed": true,
+  "failed": true,
+  "selected_completions": true,
+  "commits": true,
+  "completed_paths": true
+}

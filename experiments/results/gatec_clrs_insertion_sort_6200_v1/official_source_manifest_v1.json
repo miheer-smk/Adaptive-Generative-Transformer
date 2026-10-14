@@ -1,0 +1,262 @@
+{
+  "revision": "6d5728b9efadf8648413c8c473929a733caacced",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/LICENSE",
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "imports": []
+    },
+    {
+      "path": "clrs/__init__.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/__init__.py",
+      "size": 2850,
+      "sha256": "2d46e736bc78022d419de6cd2fec4ec233ea96421658b353da7cd0f57aa314e2",
+      "imports": [
+        "clrs",
+        "clrs._src",
+        "clrs._src",
+        "clrs._src",
+        "clrs._src",
+        "clrs._src",
+        "clrs._src.dataset",
+        "clrs._src.dataset",
+        "clrs._src.dataset",
+        "clrs._src.dataset",
+        "clrs._src.dataset",
+        "clrs._src.dataset",
+        "clrs._src.evaluation",
+        "clrs._src.evaluation",
+        "clrs._src.model",
+        "clrs._src.probing",
+        "clrs._src.probing",
+        "clrs._src.processors",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.samplers",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs",
+        "clrs._src.specs"
+      ]
+    },
+    {
+      "path": "clrs/_src/samplers.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/samplers.py",
+      "size": 34640,
+      "sha256": "01921e9ca7fa0cc81a8ce82dd76869820f1e9ad8863d5b76b088b0610a2e0473",
+      "imports": [
+        "abc",
+        "collections",
+        "copy",
+        "inspect",
+        "itertools",
+        "types",
+        "typing",
+        "absl",
+        "clrs._src",
+        "clrs._src",
+        "clrs._src",
+        "jax",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/probing.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/probing.py",
+      "size": 14204,
+      "sha256": "7f913db199a58655190d4d34f18e3bb0684edca89e5c18025f32466ed7666251",
+      "imports": [
+        "functools",
+        "typing",
+        "attr",
+        "clrs._src",
+        "jax",
+        "jax.numpy",
+        "numpy",
+        "tensorflow"
+      ]
+    },
+    {
+      "path": "clrs/_src/specs.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/specs.py",
+      "size": 24680,
+      "sha256": "51f1cc936b28189c7b2e3b2030c30e224fb448f3d2846181983329448f1ed018",
+      "imports": [
+        "types",
+        "typing"
+      ]
+    },
+    {
+      "path": "clrs/_src/evaluation.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/evaluation.py",
+      "size": 6993,
+      "sha256": "fb9400f4c653b70d2a996908a10a82dbe0e433a620fe66d3b663ecc779ce902d",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/__init__.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/__init__.py",
+      "size": 2607,
+      "sha256": "a0d12a89a5a9956e66f8ff6fa0216b75fd274c02ffb0e5f84e8bbb783f836e8b",
+      "imports": [
+        "clrs._src.algorithms.divide_and_conquer",
+        "clrs._src.algorithms.divide_and_conquer",
+        "clrs._src.algorithms.dynamic_programming",
+        "clrs._src.algorithms.dynamic_programming",
+        "clrs._src.algorithms.dynamic_programming",
+        "clrs._src.algorithms.geometry",
+        "clrs._src.algorithms.geometry",
+        "clrs._src.algorithms.geometry",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.graphs",
+        "clrs._src.algorithms.greedy",
+        "clrs._src.algorithms.greedy",
+        "clrs._src.algorithms.searching",
+        "clrs._src.algorithms.searching",
+        "clrs._src.algorithms.searching",
+        "clrs._src.algorithms.sorting",
+        "clrs._src.algorithms.sorting",
+        "clrs._src.algorithms.sorting",
+        "clrs._src.algorithms.sorting",
+        "clrs._src.algorithms.strings",
+        "clrs._src.algorithms.strings"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/divide_and_conquer.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/divide_and_conquer.py",
+      "size": 16964,
+      "sha256": "a4a9740cb041fb6b58b3e9494c05b00c16b49fc83607f896a713f5294becbd7c",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/dynamic_programming.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/dynamic_programming.py",
+      "size": 6195,
+      "sha256": "d966b8cfc3867e06daa2c9352e0371b3364cdf35272f11efe084c1a88460b0f9",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/geometry.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/geometry.py",
+      "size": 11352,
+      "sha256": "d0ad3ee0eacd35ab54a601cd5b37f55bcffe36146455d70e71fb7c1c67aaf776",
+      "imports": [
+        "math",
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/graphs.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/graphs.py",
+      "size": 48116,
+      "sha256": "75366fdd2bd72e8f84103dbda6417214fa071bd42237130909b0035b3cd34940",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/greedy.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/greedy.py",
+      "size": 4137,
+      "sha256": "996c56bfcafb87a30d6b9fa3bb4f73855b77ef32ee82b56fda2e2431eedbc549",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/searching.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/searching.py",
+      "size": 6107,
+      "sha256": "4a410b290d94efacb112235757185dcafe97d27a59b4faec29e6196a5f0af117",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/sorting.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/sorting.py",
+      "size": 8598,
+      "sha256": "f38d82a93c1e4b987c5f68d9ad72eb4205a3572bdec490c9317cff573fb59ca4",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    },
+    {
+      "path": "clrs/_src/algorithms/strings.py",
+      "url": "https://raw.githubusercontent.com/google-deepmind/clrs/6d5728b9efadf8648413c8c473929a733caacced/clrs/_src/algorithms/strings.py",
+      "size": 8595,
+      "sha256": "b9a7c21460c1689c283f7353b827add518c99800adcd39f85f1be84ac220bc75",
+      "imports": [
+        "typing",
+        "chex",
+        "clrs._src",
+        "clrs._src",
+        "numpy"
+      ]
+    }
+  ],
+  "source_edits": false,
+  "import_strategy": "Namespace clrs and clrs._src only; unchanged official algorithms package, sampler, probing and evaluation. Top-level convenience __init__ not executed; avoids models/TFDS."
+}

@@ -1,0 +1,1 @@
+PASS: 1000 train/32 development/32 size-transfer; official sampler and evaluator

@@ -1,0 +1,38 @@
+Looking in links: /tmp/agt_clrs_cpu_6200_v1/resolved_wheels
+Collecting numpy==2.5.4 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 1))
+  Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 2.6 MB/s eta 0:00:00
+Collecting jax==0.11.2 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 2))
+  Downloading jax-0.11.2-py3-none-any.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 2.7 MB/s eta 0:00:00
+Collecting chex==0.1.92 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 3))
+  Downloading chex-0.1.92-py3-none-any.whl (102 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.3/102.3 kB 3.1 MB/s eta 0:00:00
+Collecting attrs==26.1.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 4))
+  Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 3.2 MB/s eta 0:00:00
+Collecting absl-py==2.5.1 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 5))
+  Downloading absl_py-2.5.1-py3-none-any.whl (137 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.7/137.7 kB 3.3 MB/s eta 0:00:00
+Collecting tensorflow==2.21.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 6))
+  Downloading tensorflow-2.21.0-cp312-cp312-manylinux_2_27_aarch64.whl (281.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 281.9/281.9 MB 2.1 MB/s eta 0:00:00
+Collecting astunparse==1.6.3 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 7))
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Collecting flatbuffers==25.12.19 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 8))
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Collecting gast==0.7.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 9))
+  Downloading gast-0.7.0-py3-none-any.whl (22 kB)
+Collecting google-pasta==0.2.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 10))
+  Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 761.6 kB/s eta 0:00:00
+Collecting grpcio==1.84.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 11))
+  Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (7.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 3.2 MB/s eta 0:00:00
+Collecting h5py==3.14.0 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 12))
+  Downloading h5py-3.14.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 2.5 MB/s eta 0:00:00
+Collecting jaxlib==0.11.2 (from -r experiments/results/gatec_clrs_insertion_sort_6200_v1/cpu_requirements_locked_v1.txt (line 13))
+  Downloading jaxlib-0.11.2-cp312-cp312-manylinux_2_27_aarch64.whl (84.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━     76.3/84.7 MB 4.5 MB/s eta 0:00:02
+ERROR: Operation cancelled by user

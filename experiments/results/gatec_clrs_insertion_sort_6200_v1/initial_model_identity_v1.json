@@ -1,0 +1,11 @@
+{
+  "seed": 6200,
+  "identities": {
+    "cpu": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+    "cuda": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e"
+  },
+  "initialization": "Fresh AGTv3 constructor, then encoder/query/key; CPU/CUDA independently owned identical copies",
+  "model_parameters": 1942836,
+  "trainable_parameters": 1838377,
+  "no_archival_checkpoint_loaded": true
+}

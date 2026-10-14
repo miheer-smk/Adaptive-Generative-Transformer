@@ -1,0 +1,147 @@
+Collecting numpy
+  Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+Collecting jax
+  Downloading jax-0.11.2-py3-none-any.whl.metadata (13 kB)
+Collecting chex
+  Downloading chex-0.1.92-py3-none-any.whl.metadata (19 kB)
+Collecting attrs
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting absl-py
+  Downloading absl_py-2.5.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting tensorflow
+  Downloading tensorflow-2.21.0-cp312-cp312-manylinux_2_27_aarch64.whl.metadata (4.4 kB)
+Collecting jaxlib<=0.11.2,>=0.11.2 (from jax)
+  Downloading jaxlib-0.11.2-cp312-cp312-manylinux_2_27_aarch64.whl.metadata (1.3 kB)
+Collecting ml_dtypes>=0.5.0 (from jax)
+  Downloading ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (8.8 kB)
+Collecting opt_einsum (from jax)
+  Downloading opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting scipy>=1.15 (from jax)
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.4/62.4 kB 4.0 MB/s eta 0:00:00
+Collecting typing_extensions>=4.15.0 (from chex)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting toolz>=1.0.0 (from chex)
+  Downloading toolz-1.2.0-py3-none-any.whl.metadata (5.2 kB)
+Collecting astunparse>=1.6.0 (from tensorflow)
+  Downloading astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+Collecting flatbuffers>=25.9.23 (from tensorflow)
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 (from tensorflow)
+  Downloading gast-0.7.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting google_pasta>=0.1.1 (from tensorflow)
+  Downloading google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+Collecting libclang>=13.0.0 (from tensorflow)
+  Downloading libclang-18.1.1-py2.py3-none-manylinux2014_aarch64.whl.metadata (5.2 kB)
+Collecting packaging (from tensorflow)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting protobuf<8.0.0,>=6.31.1 (from tensorflow)
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_aarch64.whl.metadata (595 bytes)
+Collecting requests<3,>=2.21.0 (from tensorflow)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting setuptools (from tensorflow)
+  Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting six>=1.12.0 (from tensorflow)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting termcolor>=1.1.0 (from tensorflow)
+  Downloading termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting wrapt>=1.11.0 (from tensorflow)
+  Downloading wrapt-2.5.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (7.6 kB)
+Collecting grpcio<2.0,>=1.24.3 (from tensorflow)
+  Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl.metadata (3.8 kB)
+Collecting keras>=3.12.0 (from tensorflow)
+  Downloading keras-3.15.1-py3-none-any.whl.metadata (6.4 kB)
+Collecting h5py<3.15.0,>=3.11.0 (from tensorflow)
+  Downloading h5py-3.14.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (2.7 kB)
+Collecting wheel<1.0,>=0.23.0 (from astunparse>=1.6.0->tensorflow)
+  Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting rich (from keras>=3.12.0->tensorflow)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting namex (from keras>=3.12.0->tensorflow)
+  Downloading namex-0.1.0-py3-none-any.whl.metadata (322 bytes)
+Collecting optree (from keras>=3.12.0->tensorflow)
+  Downloading optree-0.20.0-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl.metadata (32 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.21.0->tensorflow)
+  Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.4/46.4 kB 5.3 MB/s eta 0:00:00
+Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorflow)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting urllib3<3,>=1.26 (from requests<3,>=2.21.0->tensorflow)
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting certifi>=2023.5.7 (from requests<3,>=2.21.0->tensorflow)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->keras>=3.12.0->tensorflow)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->keras>=3.12.0->tensorflow)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->keras>=3.12.0->tensorflow)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 954.4 kB/s eta 0:00:00
+Downloading jax-0.11.2-py3-none-any.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 993.6 kB/s eta 0:00:00
+Downloading chex-0.1.92-py3-none-any.whl (102 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.3/102.3 kB 1.2 MB/s eta 0:00:00
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 1.4 MB/s eta 0:00:00
+Downloading absl_py-2.5.1-py3-none-any.whl (137 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.7/137.7 kB 1.6 MB/s eta 0:00:00
+Downloading tensorflow-2.21.0-cp312-cp312-manylinux_2_27_aarch64.whl (281.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 281.9/281.9 MB 176.6 kB/s eta 0:00:00
+Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Downloading gast-0.7.0-py3-none-any.whl (22 kB)
+Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 1.0 MB/s eta 0:00:00
+Downloading grpcio-1.84.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (7.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.0/7.0 MB 345.0 kB/s eta 0:00:00
+Downloading h5py-3.14.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 473.1 kB/s eta 0:00:00
+Downloading jaxlib-0.11.2-cp312-cp312-manylinux_2_27_aarch64.whl (84.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.7/84.7 MB 781.8 kB/s eta 0:00:00
+Downloading keras-3.15.1-py3-none-any.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 442.5 kB/s eta 0:00:00
+Downloading libclang-18.1.1-py2.py3-none-manylinux2014_aarch64.whl (23.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 1.4 MB/s eta 0:00:00
+Downloading ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (360 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 360.2/360.2 kB 336.9 kB/s eta 0:00:00
+Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 1.2 MB/s eta 0:00:00
+Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_aarch64.whl (344 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 344.2/344.2 kB 1.1 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 kB 911.2 kB/s eta 0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (34.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.0/34.0 MB 999.9 kB/s eta 0:00:00
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+Downloading toolz-1.2.0-py3-none-any.whl (60 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.8/60.8 kB 923.3 kB/s eta 0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 1.2 MB/s eta 0:00:00
+Downloading wrapt-2.5.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (250 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.6/250.6 kB 1.2 MB/s eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 1.5 MB/s eta 0:00:00
+Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 660.5 kB/s eta 0:00:00
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 kB 685.3 kB/s eta 0:00:00
+Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (246 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.7/246.7 kB 1.0 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.6/69.6 kB 1.5 MB/s eta 0:00:00
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 1.7 MB/s eta 0:00:00
+Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Downloading namex-0.1.0-py3-none-any.whl (5.9 kB)
+Downloading optree-0.20.0-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (439 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 439.9/439.9 kB 1.3 MB/s eta 0:00:00
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 1.5 MB/s eta 0:00:00
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 kB 1.3 MB/s eta 0:00:00
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 1.8 MB/s eta 0:00:00
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Would install Pygments-2.21.0 absl-py-2.5.1 astunparse-1.6.3 attrs-26.1.0 certifi-2026.7.22 charset-normalizer-3.5.2 chex-0.1.92 flatbuffers-25.12.19 gast-0.7.0 google-pasta-0.2.0 grpcio-1.84.0 h5py-3.14.0 idna-3.20 jax-0.11.2 jaxlib-0.11.2 keras-3.15.1 libclang-18.1.1 markdown-it-py-4.2.0 mdurl-0.1.2 ml_dtypes-0.6.0 namex-0.1.0 numpy-2.5.4 opt_einsum-3.4.0 optree-0.20.0 packaging-26.3 protobuf-7.36.2 requests-2.34.2 rich-15.0.0 scipy-1.18.1 setuptools-84.0.0 six-1.17.0 tensorflow-2.21.0 termcolor-3.3.0 toolz-1.2.0 typing_extensions-4.16.0 urllib3-2.8.0 wheel-0.48.0 wrapt-2.5.1

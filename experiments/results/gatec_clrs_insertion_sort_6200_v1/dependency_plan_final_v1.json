@@ -1,0 +1,276 @@
+{
+  "packages": [
+    {
+      "name": "numpy",
+      "version": "2.5.4",
+      "wheel": "numpy-2.5.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "fe4d21ab149f15e4e6043dfb0de87e6e5f34ac176cde83060e9802981fca2ac2",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "jax",
+      "version": "0.11.2",
+      "wheel": "jax-0.11.2-py3-none-any.whl",
+      "sha256": "59e7ed9bd9ace049f4856752fe580c890e0164e1c023f40fadac386408daad66",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "chex",
+      "version": "0.1.92",
+      "wheel": "chex-0.1.92-py3-none-any.whl",
+      "sha256": "f34989d9bff7954edfab09fba7757e3d62404da34577bff0d253599ec5b4f93d",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "wheel": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "absl-py",
+      "version": "2.5.1",
+      "wheel": "absl_py-2.5.1-py3-none-any.whl",
+      "sha256": "721200f2f0e9960f2ca9dc3a2a706b201f5f75d812c158f059cbbe29eeafbdb8",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "tensorflow",
+      "version": "2.21.0",
+      "wheel": "tensorflow-2.21.0-cp312-cp312-manylinux_2_27_aarch64.whl",
+      "sha256": "b07d15737406533898e36c7ef7944b1be18e9028dc521b9229952c537bbc5552",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "astunparse",
+      "version": "1.6.3",
+      "wheel": "astunparse-1.6.3-py2.py3-none-any.whl",
+      "sha256": "c2652417f2c8b5bb325c885ae329bdf3f86424075c4fd1a128674bc6fba4b8e8",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "flatbuffers",
+      "version": "25.12.19",
+      "wheel": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "gast",
+      "version": "0.7.0",
+      "wheel": "gast-0.7.0-py3-none-any.whl",
+      "sha256": "99cbf1365633a74099f69c59bd650476b96baa5ef196fec88032b00b31ba36f7",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "google-pasta",
+      "version": "0.2.0",
+      "wheel": "google_pasta-0.2.0-py3-none-any.whl",
+      "sha256": "b32482794a366b5366a32c92a9a9201b107821889935a02b3e51f6b432ea84ed",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "grpcio",
+      "version": "1.84.0",
+      "wheel": "grpcio-1.84.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+      "sha256": "fbdbcd06986ede3ce584083b1dc2afe6808e8943e5cf50ad11183c03aceda25a",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "h5py",
+      "version": "3.14.0",
+      "wheel": "h5py-3.14.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "sha256": "554ef0ced3571366d4d383427c00c966c360e178b5fb5ee5bb31a435c424db0c",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "jaxlib",
+      "version": "0.11.2",
+      "wheel": "jaxlib-0.11.2-cp312-cp312-manylinux_2_27_aarch64.whl",
+      "sha256": "d497004e80daa91b98258d645b374e8dff480bf017d2c5f3e30b1371ac8f54b1",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "keras",
+      "version": "3.15.1",
+      "wheel": "keras-3.15.1-py3-none-any.whl",
+      "sha256": "836460e480930acbd19bb7a17e62f9ecad40e8a9af9a651fc8d0586a96d27e20",
+      "already_retained_no_copy": true
+    },
+    {
+      "name": "libclang",
+      "version": "18.1.1",
+      "wheel": "libclang-18.1.1-py2.py3-none-manylinux2014_aarch64.whl",
+      "sha256": "54dda940a4a0491a9d1532bf071ea3ef26e6dbaf03b5000ed94dd7174e8f9592",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "ml_dtypes",
+      "version": "0.6.0",
+      "wheel": "ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "37da32aa97749251025666d62372775019594577b9c9e9cfda83bed48d778fdb",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "opt_einsum",
+      "version": "3.4.0",
+      "wheel": "opt_einsum-3.4.0-py3-none-any.whl",
+      "sha256": "69bb92469f86a1565195ece4ac0323943e83477171b91d24c35afe028a90d7cd",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "protobuf",
+      "version": "7.36.2",
+      "wheel": "protobuf-7.36.2-cp310-abi3-manylinux2014_aarch64.whl",
+      "sha256": "e11e1f0180583a2af89db6a2ecd9e8dc40aa6d2988ca175bfd0e6d12ea72d74e",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "wheel": "requests-2.34.2-py3-none-any.whl",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "scipy",
+      "version": "1.18.1",
+      "wheel": "scipy-1.18.1-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "3c085faa2cfa879c5141df483f836f4d691045a078224a670fa570fa01612d89",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "wheel": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "termcolor",
+      "version": "3.3.0",
+      "wheel": "termcolor-3.3.0-py3-none-any.whl",
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "toolz",
+      "version": "1.2.0",
+      "wheel": "toolz-1.2.0-py3-none-any.whl",
+      "sha256": "890f820b1cb8152785aaf9386d8707770110809035800985ca65cb24ce1120ef",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "wheel": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "wrapt",
+      "version": "2.5.1",
+      "wheel": "wrapt-2.5.1-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "d6d274ec50a5b208be75596dc44ea253e65deaa6ee3a600babc86dafbb957dfc",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "wheel": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "setuptools",
+      "version": "84.0.0",
+      "wheel": "setuptools-84.0.0-py3-none-any.whl",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22",
+      "wheel": "certifi-2026.7.22-py3-none-any.whl",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "wheel": "charset_normalizer-3.5.2-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "b91363207bd9dc966a691e959bb47f64b30f7ac4b072be9968b366982f7db77c",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "wheel": "idna-3.20-py3-none-any.whl",
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "wheel": "urllib3-2.8.0-py3-none-any.whl",
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "wheel",
+      "version": "0.48.0",
+      "wheel": "wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "namex",
+      "version": "0.1.0",
+      "wheel": "namex-0.1.0-py3-none-any.whl",
+      "sha256": "e2012a474502f1e2251267062aae3114611f07df4224b6e06334c57b0f2ce87c",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "optree",
+      "version": "0.20.0",
+      "wheel": "optree-0.20.0-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "7ce0418dac7763358e96bacc7d586cfc5b820af2c7c17d1e48331edc806e1f12",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "wheel": "rich-15.0.0-py3-none-any.whl",
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "wheel": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "wheel": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "already_retained_no_copy": false
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "wheel": "mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "already_retained_no_copy": false
+    }
+  ],
+  "retained_wheels": 14,
+  "known_uncompressed_retained_bytes": 1793503202,
+  "disk_allowance_bytes": 5368709120,
+  "available_bytes": 224836325376,
+  "no_TFDS": true,
+  "AGT_environment_modified": false
+}

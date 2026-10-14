@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-insertion-sort-engineering-6200-20261014T145602Z",
+  "candidate_commit": "6fb160cd1d627ad1d43b3e27ba08ca07e40942cf",
+  "candidate_tree": "f450b9412e23dd0e688f5b2fd2477f42230d5657",
+  "parent": "db0e62ca0fad464fd840ac2754eb759bf53bb44b",
+  "candidate_is_unreferenced": true,
+  "verified_artifact_files": 74,
+  "verification": "Downloaded each remote blob into memory; checked size, Git OID and SHA-256; no disk payload copies",
+  "historical_remote_files_preserved": 1911,
+  "LFS_required": false,
+  "omitted_files": [],
+  "final_commit_identity": "Reported in terminal after final branch verification; receipt is included in final commit without circular self-hashing"
+}

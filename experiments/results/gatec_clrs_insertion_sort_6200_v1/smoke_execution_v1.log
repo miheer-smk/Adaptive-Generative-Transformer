@@ -1,0 +1,9 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+SMOKE_PASSED {"attempted_tokens": 512, "completed_tokens": 512, "failed_tokens": 0, "selected_bank_attempted": 4096, "selected_bank_completed": 4096, "commits": 512, "backward_attempted": 6, "backward_completed": 6, "optimizer_objects": 0, "optimizer_updates": 0, "contextual_commit_entries": 3584, "elapsed_seconds": 67.10049451189116, "peak_CUDA_allocated": 147773952, "peak_CUDA_reserved": 157286400}

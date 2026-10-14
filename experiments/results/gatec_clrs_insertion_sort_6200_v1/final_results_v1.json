@@ -1,0 +1,89 @@
+{
+  "engineering_pass": true,
+  "status": "ENGINEERING_PASSED",
+  "ledger": {
+    "attempted_tokens": 512,
+    "completed_tokens": 512,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 4096,
+    "selected_bank_completed": 4096,
+    "commits": 512,
+    "backward_attempted": 6,
+    "backward_completed": 6,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "contextual_commit_entries": 3584,
+    "elapsed_seconds": 63.60001838719472,
+    "peak_CUDA_allocated": 147773952,
+    "peak_CUDA_reserved": 157286400
+  },
+  "trace_checks": {
+    "trace_attempts": true,
+    "completed": true,
+    "failed": true,
+    "selected_completions": true,
+    "commits": true,
+    "completed_paths": true
+  },
+  "runtime": {
+    "assessable": true,
+    "training_authorized": false,
+    "measured_three_timed_updates_seconds": [
+      4.122069245669991,
+      4.131428122520447,
+      4.235346626024693
+    ],
+    "measured_forward_seconds": [
+      3.596380884759128,
+      3.619867077562958,
+      3.6997534641996026
+    ],
+    "measured_backward_seconds": [
+      0.5256883609108627,
+      0.5115610449574888,
+      0.5355931618250906
+    ],
+    "measured_warmup_seconds": 4.030905099585652,
+    "measured_CUDA_N16_fixture_forward_seconds": 3.6783898980356753,
+    "N16_fixture_autograd_enabled": true,
+    "measured_CUDA_N64_fixture_inference_seconds": 14.388475536834449,
+    "measured_smoke_elapsed_seconds": 63.60001838719472,
+    "margin_multiplier": 1.25,
+    "unmeasured_optimizer_clipping_logging_allowance_per_update": 1.0,
+    "setup_checkpoint_analysis_reporting_reserve_seconds": 600.0,
+    "estimated_training_seconds": 6294.183282530867,
+    "estimated_initial_diagnostic_seconds": 36.78389898035675,
+    "estimated_final_training_subset_seconds": 588.542383685708,
+    "estimated_development_seconds": 147.135595921427,
+    "estimated_size_transfer_seconds": 575.5390214733779,
+    "conservative_complete_seconds": 8305.784200978931,
+    "ceiling_seconds": 21600,
+    "eligibility_limit_seconds": 17280,
+    "resource_gate_pass": true,
+    "limitations": [
+      "Three synthetic calibration runs are not a runtime guarantee.",
+      "Native N16 fixture timing includes autograd; used as conservative inference proxy.",
+      "Optimizer steps and checkpoint/analysis times were not executed.",
+      "No official train/development/size-transfer arrays were model-evaluated.",
+      "Common filesystem/accelerator contention can change runtime."
+    ]
+  },
+  "official_metric_verified": true,
+  "official_samples": {
+    "train": 1000,
+    "development": 32,
+    "size_transfer": 32
+  },
+  "no_optimizer_or_weight_update": true,
+  "no_study_checkpoint": true,
+  "recommendation": "Separate training authorization may be considered; not granted by this milestone.",
+  "integrity": {
+    "protected_count": 2290,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true,
+    "success": true
+  },
+  "disk_free": 222541840384
+}

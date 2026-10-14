@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "target_generation": true,
+  "stable_ties": true,
+  "pointer_bounds": true,
+  "FP32_fidelity": true,
+  "round_trip_official_metric": true,
+  "duplicate_and_overlap_check": true,
+  "no_AGT_import": true,
+  "model_tokens": 0
+}

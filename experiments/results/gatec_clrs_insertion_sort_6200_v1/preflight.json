@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-14T14:22:05.596505+00:00",
+  "disk_free_before": 225257144320,
+  "temporary_free_before": 225257144320,
+  "cuda": "NVIDIA GB10 available; existing PyTorch capability warning retained",
+  "existing_AGT_python": "/home/iiitn/agt-v3-env/bin/python3",
+  "CPU_environment": "/tmp/agt_clrs_cpu_6200_v1",
+  "CPU_environment_disk_allowance_bytes": 5368709120,
+  "study_output_allowance_bytes": 268435456,
+  "minimal_import_dependencies": [
+    "numpy",
+    "jax CPU",
+    "jaxlib CPU",
+    "chex",
+    "attrs",
+    "absl-py",
+    "tensorflow"
+  ],
+  "TensorFlow_requirement": "Pinned clrs/_src/probing.py lines 34 and 51: unconditional import and tf.Tensor type check",
+  "TFDS_required": false,
+  "existing_import_environments_checked": [
+    "/usr/bin/python3",
+    "/home/iiitn/agt-v3-env/bin/python3"
+  ],
+  "no_existing_environment_has_sampler_dependencies": true,
+  "protected_count": 2290
+}

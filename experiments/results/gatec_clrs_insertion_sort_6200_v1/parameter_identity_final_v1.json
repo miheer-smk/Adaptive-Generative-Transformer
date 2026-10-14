@@ -1,0 +1,11 @@
+{
+  "initial": {
+    "cpu": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+    "cuda": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e"
+  },
+  "final": {
+    "cpu": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+    "cuda": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e"
+  },
+  "equal": true
+}

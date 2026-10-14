@@ -1,0 +1,77 @@
+{
+  "upstream_revision": "6d5728b9efadf8648413c8c473929a733caacced",
+  "task": "insertion_sort",
+  "pools": {
+    "train": [
+      1000,
+      16,
+      1
+    ],
+    "development": [
+      32,
+      16,
+      2
+    ],
+    "size_transfer": [
+      32,
+      64,
+      3
+    ]
+  },
+  "model_seed": 6200,
+  "dim": 64,
+  "memory_slots": 16,
+  "program": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "smoke_menu": [
+    {
+      "phase": "fixtures",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "sizes": [
+        2,
+        4,
+        8,
+        16,
+        64
+      ],
+      "tokens": 376
+    },
+    {
+      "phase": "canonical_executor_comparison",
+      "devices": [
+        "cpu",
+        "cuda"
+      ],
+      "size": 2,
+      "tokens": 8
+    },
+    {
+      "phase": "calibration",
+      "device": "cuda",
+      "size": 16,
+      "rollouts": 4,
+      "warmups": 1,
+      "timed": 3,
+      "tokens": 128
+    }
+  ],
+  "attempted_token_cap": 512,
+  "selected_bank_cap": 4096,
+  "backward_cap": 6,
+  "optimizer_updates": 0,
+  "training_authorized": false,
+  "heldout_model_evaluation_authorized": false,
+  "future_six_hour_gate_fraction": 0.8,
+  "no_retry": true
+}
