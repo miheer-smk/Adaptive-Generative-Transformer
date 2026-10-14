@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "counts": {
+    "attempted": 64,
+    "completed": 64,
+    "bank_calls": 512,
+    "commits": 64
+  },
+  "per_model_tokens": {
+    "initial": 32,
+    "final": 32
+  },
+  "continuity_verified": true,
+  "canonical_blocks": true,
+  "one_commit_per_token": true,
+  "zero_extra_model_calls": true
+}

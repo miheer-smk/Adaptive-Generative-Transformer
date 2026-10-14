@@ -1,0 +1,13 @@
+{
+  "files": {
+    "manifest_v1.json": "a2b6cb7b4cfc8329f0ba8890eb712e3438b2565bafa19db6715f3aef4c002b12",
+    "observer_diff_v1.patch": "1186f0ee577a88fe360c004224b2a49b01c7d51675af171c5d737d39d9b4e100",
+    "locked_input_v1.json": "a8af9b7fa6f013fecb12db690e2e3239b579bb5e9dca0cfc4c8b818ba5627807",
+    "run_diagnostic_v1.py": "89f23d9053a697ecc15cff76cab01060f5d54b9a4ee9eb96a856e4e00abb13fb",
+    "diagnostic_observer_v1.py": "9086d76d29ea3604dc95d4722076d5b95444ae622d762d9340c3b9f2cc9d1abd"
+  },
+  "model_calls_before_seal": 0,
+  "original_adapter_unchanged": true,
+  "observer_hooks_return_none": true,
+  "no_new_forward_math": true
+}

@@ -1,0 +1,39 @@
+{
+  "authorized_models": [
+    "fresh_seed6200",
+    "update1000"
+  ],
+  "attempted_token_cap": 64,
+  "bank_call_cap": 512,
+  "backward_cap": 2,
+  "optimizer_objects": 0,
+  "optimizer_updates": 0,
+  "rollouts": 2,
+  "array_identity": "official/train/row0000",
+  "input_pool_sha256": "a3e7a17717c44ef7202bf2072f23981a089e5b09c39694740834dccc227b6851",
+  "original_input_sha256": "e147c8817d320036834f4318fe40485a7fa37e9fa243d2ef500b1a08017f1b7c",
+  "checkpoint_sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "initial_identity": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+  "final_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "device": "cuda",
+  "precision": "FP32",
+  "TF32": false,
+  "program": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "retry": false,
+  "expected_new_storage_upper_bytes": 10000000,
+  "free_bytes": 220337311744,
+  "comparison_tolerances": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "semantics": "Unchanged approved adapter forward; observation hooks return None; single original CE backward per model; no clipping or optimizer"
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-pointer-localization-6200-20261014T181120Z",
+  "parent": "386ea1be31abe05d1ccf31f59511c1fd1d470aed",
+  "status": "COMPLETED_NO_UPDATE_DIAGNOSTIC",
+  "verified_files": 29,
+  "verified_tree": "4d1b94be8b4576bf5f90d6b187970990d2ec9700",
+  "historical_remote_files_preserved": 2037,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

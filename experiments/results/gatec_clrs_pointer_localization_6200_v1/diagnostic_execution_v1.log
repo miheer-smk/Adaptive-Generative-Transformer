@@ -1,0 +1,53 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+{
+  "status": "COMPLETED_NO_UPDATE_DIAGNOSTIC",
+  "ledger": {
+    "attempted_tokens": 64,
+    "completed_tokens": 64,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 512,
+    "selected_bank_completed": 512,
+    "commits": 64,
+    "backward_attempted": 2,
+    "backward_completed": 2,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "phase_counts": {
+      "initial": {
+        "attempted": 32,
+        "completed": 32,
+        "failed": 0,
+        "selected_attempted": 256,
+        "selected_completed": 256,
+        "commits": 32
+      },
+      "final": {
+        "attempted": 32,
+        "completed": 32,
+        "failed": 0,
+        "selected_attempted": 256,
+        "selected_completed": 256,
+        "commits": 32
+      }
+    },
+    "contextual_commit_entries": 448,
+    "elapsed_seconds": 4.4101756159216166,
+    "peak_CUDA_allocated": 163053056,
+    "peak_CUDA_reserved": 171966464
+  },
+  "integrity": {
+    "protected_files": 2416,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true,
+    "success": true
+  }
+}
