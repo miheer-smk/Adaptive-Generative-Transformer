@@ -1,0 +1,9 @@
+{
+  "measured_start_monotonic": 4316082.405935773,
+  "measured_start_epoch": 1792141470.9897263,
+  "prior_extraction_charged_seconds": 31.302,
+  "remaining_authorized_seconds": 2668,
+  "conservative_opening_preflight_reserve_seconds": 600,
+  "guard_seconds_after_marker": 2068,
+  "notes": "600 seconds charged conservatively for opening inspection, not reported as measured runtime. All subsequent implementation/fit/extraction/analysis/report/publication included in guard."
+}

@@ -1,0 +1,117 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+Verified development 1 /32
+Verified development 2 /32
+Verified development 3 /32
+Verified development 4 /32
+Verified development 5 /32
+Verified development 6 /32
+Verified development 7 /32
+Verified development 8 /32
+Verified development 9 /32
+Verified development 10 /32
+Verified development 11 /32
+Verified development 12 /32
+Verified development 13 /32
+Verified development 14 /32
+Verified development 15 /32
+Verified development 16 /32
+Verified development 17 /32
+Verified development 18 /32
+Verified development 19 /32
+Verified development 20 /32
+Verified development 21 /32
+Verified development 22 /32
+Verified development 23 /32
+Verified development 24 /32
+Verified development 25 /32
+Verified development 26 /32
+Verified development 27 /32
+Verified development 28 /32
+Verified development 29 /32
+Verified development 30 /32
+Verified development 31 /32
+Verified development 32 /32
+Verified size_transfer 1 /32
+Verified size_transfer 2 /32
+Verified size_transfer 3 /32
+Verified size_transfer 4 /32
+Verified size_transfer 5 /32
+Verified size_transfer 6 /32
+Verified size_transfer 7 /32
+Verified size_transfer 8 /32
+Verified size_transfer 9 /32
+Verified size_transfer 10 /32
+Verified size_transfer 11 /32
+Verified size_transfer 12 /32
+Verified size_transfer 13 /32
+Verified size_transfer 14 /32
+Verified size_transfer 15 /32
+Verified size_transfer 16 /32
+Verified size_transfer 17 /32
+Verified size_transfer 18 /32
+Verified size_transfer 19 /32
+Verified size_transfer 20 /32
+Verified size_transfer 21 /32
+Verified size_transfer 22 /32
+Verified size_transfer 23 /32
+Verified size_transfer 24 /32
+Verified size_transfer 25 /32
+Verified size_transfer 26 /32
+Verified size_transfer 27 /32
+Verified size_transfer 28 /32
+Verified size_transfer 29 /32
+Verified size_transfer 30 /32
+Verified size_transfer 31 /32
+Verified size_transfer 32 /32
+{
+  "status": "COMPLETED_VERIFIED_HELDOUT_CACHE",
+  "arrays_attempted": 64,
+  "arrays_completed": 64,
+  "arrays_failed": 0,
+  "AGT_optimizer_objects": 0,
+  "AGT_backwards": 0,
+  "ledger": {
+    "attempted_tokens": 5120,
+    "completed_tokens": 5120,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 40960,
+    "selected_bank_completed": 40960,
+    "commits": 5120,
+    "backward_attempted": 0,
+    "backward_completed": 0,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "phase_counts": {
+      "development_cache": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0,
+        "selected_attempted": 8192,
+        "selected_completed": 8192,
+        "commits": 1024
+      },
+      "size_transfer_cache": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      }
+    },
+    "contextual_commit_entries": 35840,
+    "elapsed_seconds": 39.79499945882708,
+    "peak_CUDA_allocated": 21242880,
+    "peak_CUDA_reserved": 35651584
+  },
+  "parameter_identity_after": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "cache_sha256": "6132eef9c5638b4575098144ac9d9b8dff3e7fd51a8ad7e8e5807ce4949fd793",
+  "cache_file": "heldout_representations_v1.pt"
+}

@@ -1,0 +1,10 @@
+{
+  "device": "cuda",
+  "name": "NVIDIA GB10",
+  "torch": "2.10.0+cu130",
+  "CUDA": "13.0",
+  "FP32": true,
+  "TF32": false,
+  "all_parameters_frozen": true,
+  "model_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0"
+}

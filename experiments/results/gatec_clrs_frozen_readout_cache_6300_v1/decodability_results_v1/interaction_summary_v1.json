@@ -1,0 +1,32 @@
+{
+  "fitting": {
+    "pair_comparisons": 30720,
+    "interaction_improves": 16706,
+    "interaction_worsens": 14014,
+    "common_positive": 17188,
+    "actual_positive": 17401,
+    "flipped_toward_target": 2405,
+    "flipped_against_target": 2192,
+    "total_target_rank_improvement": 214
+  },
+  "development": {
+    "pair_comparisons": 7680,
+    "interaction_improves": 3805,
+    "interaction_worsens": 3875,
+    "common_positive": 4298,
+    "actual_positive": 4194,
+    "flipped_toward_target": 567,
+    "flipped_against_target": 671,
+    "total_target_rank_improvement": -104
+  },
+  "size_transfer": {
+    "pair_comparisons": 129024,
+    "interaction_improves": 65133,
+    "interaction_worsens": 63891,
+    "common_positive": 62893,
+    "actual_positive": 62916,
+    "flipped_toward_target": 3661,
+    "flipped_against_target": 3638,
+    "total_target_rank_improvement": 23
+  }
+}

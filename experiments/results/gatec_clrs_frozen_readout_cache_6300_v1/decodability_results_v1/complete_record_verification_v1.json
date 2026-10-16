@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "fit_seal_intact": true,
+  "fit_completed_before_heldout_extraction": true,
+  "all_original_head_comparisons_before_new_metrics": true,
+  "trial_evaluations": 271,
+  "accepted_steps": 256,
+  "no_trial_met_convergence": true,
+  "full_trace_rows": 5120,
+  "arrays": 64,
+  "selected": 40960,
+  "commits": 5120,
+  "contextual_entries": 35840,
+  "native_original_scores_all_bitwise": true,
+  "no_AGT_backwards_or_optimizers": true,
+  "training_cache_not_reextracted": true,
+  "bootstrap_replicates": 20000,
+  "bootstrap_unit": "complete array"
+}

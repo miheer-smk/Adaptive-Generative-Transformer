@@ -1,0 +1,15 @@
+{
+  "files": {
+    "terminal_readout_v1.pt": "b9a94437863f7428d9f248df94040acde80dcd25acf64f3662e61102a5bce586",
+    "preconditioners_v1.pt": "4117bddef4d4e1b8016a0571c2f7069dbe5ddd0e4dbc9e3015bb75fea98c1608",
+    "fit_results_v1.json": "4b7c9337885edc61d47b4afce4e8bf563c45984dfd9004b216b412808516545f",
+    "fit_evaluations_v1.jsonl": "9d7fe4bbfb3ea1802ac799cb7dcc0de4a02c6e6d13ec7e386c74e16306e1e2c8",
+    "fit_iterations_v1.jsonl": "76107ab2c40cf92a803209ae425739008c0bb8eb2652a06d467ab7c4eab58a98",
+    "scope_lock_v1.json": "e14e88f37eb184fc19b2a962bafe82b18feddb43177299cf69a2e8862ba58c08",
+    "fit_readout_v1.py": "d2d673e03bfdb15440b695d48847e45e2a76c51feab432d741698e8d18092d1d",
+    "support_v1.py": "d956f79ea3a573906c4b595afaaea2c3ba81a83faebc6f53197f4ad597a75cf8"
+  },
+  "sealed_before_heldout_extraction": true,
+  "terminal_iterate_only": true,
+  "training_cache_sha256": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41"
+}

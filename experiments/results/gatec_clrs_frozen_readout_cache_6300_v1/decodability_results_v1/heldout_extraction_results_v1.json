@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETED_VERIFIED_HELDOUT_CACHE",
+  "arrays_attempted": 64,
+  "arrays_completed": 64,
+  "arrays_failed": 0,
+  "AGT_optimizer_objects": 0,
+  "AGT_backwards": 0,
+  "ledger": {
+    "attempted_tokens": 5120,
+    "completed_tokens": 5120,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 40960,
+    "selected_bank_completed": 40960,
+    "commits": 5120,
+    "backward_attempted": 0,
+    "backward_completed": 0,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "phase_counts": {
+      "development_cache": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0,
+        "selected_attempted": 8192,
+        "selected_completed": 8192,
+        "commits": 1024
+      },
+      "size_transfer_cache": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0,
+        "selected_attempted": 32768,
+        "selected_completed": 32768,
+        "commits": 4096
+      }
+    },
+    "contextual_commit_entries": 35840,
+    "elapsed_seconds": 39.79499945882708,
+    "peak_CUDA_allocated": 21242880,
+    "peak_CUDA_reserved": 35651584
+  },
+  "parameter_identity_after": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "cache_sha256": "6132eef9c5638b4575098144ac9d9b8dff3e7fd51a8ad7e8e5807ce4949fd793",
+  "cache_file": "heldout_representations_v1.pt"
+}

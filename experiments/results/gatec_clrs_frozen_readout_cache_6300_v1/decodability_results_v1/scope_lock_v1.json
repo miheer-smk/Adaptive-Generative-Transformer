@@ -1,0 +1,70 @@
+{
+  "historical_status": "COMPLETED_NON_SUCCESS",
+  "training_cache_sha256": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41",
+  "core_checkpoint_sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "fit": {
+    "arrays": 128,
+    "n": 16,
+    "parameters": 4096,
+    "initial_B": 0,
+    "objective": "meanCE+1e-6/2*||B||_F^2",
+    "preconditioner": "Separate uncentered moments; symmetric inverse square root with every eigenvalue floored at1e-8 times its own largest; all64 dimensions retained",
+    "optimizer": "CPU deterministic full-batch FP64 PyTorch L-BFGS; one persistent history20; strong_wolfe; default lr1; default stopping tolerances disabled",
+    "convergence": "||grad F||_F^2/(2e-6)<=1e-6",
+    "max_accepted_iterations": 256,
+    "max_loss_gradient_evaluations": 1024,
+    "max_seconds": 300
+  },
+  "extraction": {
+    "development_arrays": 32,
+    "development_n": 16,
+    "transfer_arrays": 32,
+    "transfer_n": 64,
+    "attempted_tokens": 5120,
+    "selected_calls": 40960,
+    "commits": 5120,
+    "program": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "device": "cuda",
+    "FP32": true,
+    "TF32": false,
+    "backwards": 0,
+    "AGT_optimizers": 0,
+    "retries": 0,
+    "warmups": 0
+  },
+  "evaluation": {
+    "primary": "CUDA FP32; states@whitener followed by transformed_queries@B then @transformed_candidates.T /8",
+    "sensitivity": "Same operations CUDA FP64, same terminal artifacts; no alternate iterate or fit",
+    "uniform": "Zero score matrix; deterministic lowest-index argmax metrics plus analytic uniform-random accuracy/exact-array expectations separately",
+    "hard_controls": "Self i; original-order [0,0,1,...n-2]; CE/ranks/margins unavailable without scores",
+    "ties": "Lowest candidate index for argmax; retain competition rank and stable index rank",
+    "common": "K=whitened candidates; Q=whitened queries@B; b=Kc@meanQ/8, repeated across queries; analytical component not fitted",
+    "bootstrap": {
+      "replicates": 20000,
+      "seed": 6300,
+      "unit": "complete development array",
+      "generator": "Python random.Random(6300), randint/randrange with replacement; identical resamples for both paired contrasts",
+      "lower_quantile": 0.025,
+      "interpolation": "linear"
+    },
+    "competence": {
+      "L16_pointer": 0.95,
+      "L16_exact": 0.8,
+      "L64_pointer": 0.9,
+      "L64_exact": 0.5
+    },
+    "strong": "Converged, bothL16 competence thresholds, both paired lower bounds>0; FP64-only recovery flagged fragile"
+  },
+  "fitting_before_heldout_extraction": true,
+  "heldout_disclosure": "Held out from readout fitting; previously examined in historical studies",
+  "storage_estimate_upper_bytes": 26214400
+}

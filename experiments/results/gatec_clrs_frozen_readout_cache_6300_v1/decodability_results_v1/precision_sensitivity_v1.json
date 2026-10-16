@@ -1,0 +1,17 @@
+{
+  "fitting": {
+    "prediction_disagreements": 4,
+    "total_queries": 2048,
+    "max_score_difference": 0.003931229655102078
+  },
+  "development": {
+    "prediction_disagreements": 1,
+    "total_queries": 512,
+    "max_score_difference": 0.004081434331057121
+  },
+  "size_transfer": {
+    "prediction_disagreements": 10,
+    "total_queries": 2048,
+    "max_score_difference": 0.0048268382973675195
+  }
+}

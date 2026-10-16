@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-bilinear-decodability-6300-20261016T092110Z",
+  "parent": "377c222b7a274c7d41c39df67c4336c57bd57bee",
+  "status": "COMPLETED_FROZEN_READOUT_STUDY",
+  "verified_files": 54,
+  "verified_tree": "7d489c716a5a7601bed7923916a5d67a71071696",
+  "historical_remote_files_preserved": 2197,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

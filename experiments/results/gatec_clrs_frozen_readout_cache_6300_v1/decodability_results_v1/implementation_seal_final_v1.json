@@ -1,0 +1,13 @@
+{
+  "files": {
+    "heldout_observer_v1.py": "6409d46f034eef496fdac95332ad84cd7c1120b088f7c04df5c73770a7dd4aef",
+    "fit_readout_v1.py": "d2d673e03bfdb15440b695d48847e45e2a76c51feab432d741698e8d18092d1d",
+    "extract_heldout_v1.py": "0577a8d3355155ef55c0fb68dee423d90f8a2fe7b2babbb5ceb55ed070c8f2df",
+    "publish_study_v1.py": "ee315df8e68f9b8a9ceade437a8930459b7a369577d99a4e9a1c742ed122717f",
+    "close_and_report_v1.py": "25411d4e666ebc1615146b93a8a1a6758de16c90a568983fb58441675fe1cc1d",
+    "support_v1.py": "d956f79ea3a573906c4b595afaaea2c3ba81a83faebc6f53197f4ad597a75cf8",
+    "evaluate_readout_v1.py": "c887d577b7dbf2d23ed8f96cab32ca7b5320ea72e9f79ca422304e480f0166a8"
+  },
+  "fit_artifacts_sealed_earlier": "fit_seal_v1.json",
+  "no_new_fits_or_AGT_calls": true
+}

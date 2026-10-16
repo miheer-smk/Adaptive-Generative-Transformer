@@ -1,0 +1,34 @@
+{
+  "attempted_tokens": 5120,
+  "completed_tokens": 5120,
+  "failed_tokens": 0,
+  "selected_bank_attempted": 40960,
+  "selected_bank_completed": 40960,
+  "commits": 5120,
+  "backward_attempted": 0,
+  "backward_completed": 0,
+  "optimizer_objects": 0,
+  "optimizer_updates": 0,
+  "phase_counts": {
+    "development_cache": {
+      "attempted": 1024,
+      "completed": 1024,
+      "failed": 0,
+      "selected_attempted": 8192,
+      "selected_completed": 8192,
+      "commits": 1024
+    },
+    "size_transfer_cache": {
+      "attempted": 4096,
+      "completed": 4096,
+      "failed": 0,
+      "selected_attempted": 32768,
+      "selected_completed": 32768,
+      "commits": 4096
+    }
+  },
+  "contextual_commit_entries": 35840,
+  "elapsed_seconds": 39.71395149640739,
+  "peak_CUDA_allocated": 21242880,
+  "peak_CUDA_reserved": 35651584
+}

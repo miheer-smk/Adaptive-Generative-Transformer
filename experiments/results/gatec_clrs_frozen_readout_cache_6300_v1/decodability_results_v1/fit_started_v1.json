@@ -1,0 +1,9 @@
+{
+  "monotonic": 4316207.16754243,
+  "deadline": 4316507.16754243,
+  "initial": "B=0",
+  "optimizer": "One persistent PyTorch LBFGS object; max_iter1 calls retain global history20",
+  "closure_gradient": "Exact analytical gradient of full objective; no autograd backward or AGT import",
+  "unprescribed_defaults": "lr1; PyTorch strong-Wolfe c1=1e-4,c2=.9",
+  "no_restart": true
+}

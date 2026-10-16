@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "arrays": 128,
+  "identities_and_roles": true,
+  "source_manifest_sha256": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92",
+  "targets_sha256": "829df56db350f812d8621d2cc14f43f62aa77289fb341a9816b3784c21539608",
+  "heldout_representations_accessed": false
+}

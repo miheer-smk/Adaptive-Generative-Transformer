@@ -1,0 +1,378 @@
+{
+  "files": [
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/analysis_results_v1.json",
+      "size": 958,
+      "sha256": "83edf440ec01ffb48b88c6abc67ccc54f0fee0aed88ecb0fa564f0da59164f96",
+      "git_oid": "ea43c82c903190f7795e965d64974bcf80b1fd33",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/artifact_inventory_v1.json",
+      "size": 7445,
+      "sha256": "8a16e118f3387dde28dcf46d7b2a9438c01b0055c2b04e29f5c2610eb6e13a2c",
+      "git_oid": "94a7543f3dae98a10d1c6bbd7b41085984af4c05",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/bootstrap_bank_v1.pt",
+      "size": 1281577,
+      "sha256": "31bc83ed6b6bd889ed457fe9a7a2f0cd2852a5b582783dced57e082ae5142487",
+      "git_oid": "dcefaec285d676a0e6e033e691192cd847f24d9e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/close_and_report_v1.py",
+      "size": 18788,
+      "sha256": "25411d4e666ebc1615146b93a8a1a6758de16c90a568983fb58441675fe1cc1d",
+      "git_oid": "87caafaed948533ff3bf16071582a39f50b4946a",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/closure_execution_v1.log",
+      "size": 1631,
+      "sha256": "fefb1a93c4ccb733ee4f14ccb8c3b7d61833a52c017dad64aec6ffa7d048fe1b",
+      "git_oid": "63fdacab0a35486c82f829fd0d3d8b451856c177",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/complete_record_verification_v1.json",
+      "size": 564,
+      "sha256": "3ecaea046aaa8528260d56fe0a55f5fa84318db75e757cb7e6d9db41700b2ebe",
+      "git_oid": "68e13b215b747e009c3aaba038b06ae3844c5c45",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/evaluate_readout_v1.py",
+      "size": 12247,
+      "sha256": "c887d577b7dbf2d23ed8f96cab32ca7b5320ea72e9f79ca422304e480f0166a8",
+      "git_oid": "9ad99a5b77fe7511f5a4a38e5664e561c03ac63a",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/evaluation_execution_v1.log",
+      "size": 13818,
+      "sha256": "df0eb22d77098affa7f24ed5a0223991fa421ce1b5e089bfb0bd99f2892c65b9",
+      "git_oid": "cba2307f8358ab84e897878036aa1bf5821cc388",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/evaluation_started_v1.json",
+      "size": 128,
+      "sha256": "545fae183c95425fda3cee11e5b24b1b63ac34f3e0b646513ade5863752bf044",
+      "git_oid": "6079d7cfbf8c4498b750abd5e36b198aa23ee51e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/execution_ledger_v1.json",
+      "size": 839,
+      "sha256": "c2c1115065681214d2c2ec4c69e6344d516298fd8787172de74c1d21e0786139",
+      "git_oid": "0aa4d369cf3ff207632a8155b632955e4fc641b9",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/extract_heldout_v1.py",
+      "size": 8161,
+      "sha256": "0577a8d3355155ef55c0fb68dee423d90f8a2fe7b2babbb5ceb55ed070c8f2df",
+      "git_oid": "dc3484e92d6b0ede16786916041266bedaee10e5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/final_results_v1.json",
+      "size": 4405,
+      "sha256": "d9d0c1a05f1ce3d8d6664fd1374e395bac90e392e83190cc07118da96327959e",
+      "git_oid": "032270be944e58f2fede488fec0fd959bee3e4c6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_cache_verification_v1.json",
+      "size": 300,
+      "sha256": "85a954d820d99a9440baff2928a607861af935a51fcc4d0d10a121dc36dc4b57",
+      "git_oid": "fd1dcfc128db52c59cf715be016bb7936a0ae1cf",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_evaluations_v1.jsonl",
+      "size": 92988,
+      "sha256": "9d7fe4bbfb3ea1802ac799cb7dcc0de4a02c6e6d13ec7e386c74e16306e1e2c8",
+      "git_oid": "ac1423d8352046e31e63086fe7e887256c5bedf8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_execution_v1.log",
+      "size": 857,
+      "sha256": "4b7c9337885edc61d47b4afce4e8bf563c45984dfd9004b216b412808516545f",
+      "git_oid": "7bb9f76b068376e29fb7942a2f615599fd0e1abb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_iterations_v1.jsonl",
+      "size": 62842,
+      "sha256": "76107ab2c40cf92a803209ae425739008c0bb8eb2652a06d467ab7c4eab58a98",
+      "git_oid": "1ba2a3817d8186301b1fd0bae92fff49c38e7317",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_readout_v1.py",
+      "size": 9942,
+      "sha256": "d2d673e03bfdb15440b695d48847e45e2a76c51feab432d741698e8d18092d1d",
+      "git_oid": "3ec0481c390947ca82428588c55eff22e9af338d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_results_v1.json",
+      "size": 857,
+      "sha256": "4b7c9337885edc61d47b4afce4e8bf563c45984dfd9004b216b412808516545f",
+      "git_oid": "7bb9f76b068376e29fb7942a2f615599fd0e1abb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_seal_v1.json",
+      "size": 957,
+      "sha256": "c7d3602adb5f5520df885043c4aa5b1e3238bb7a9f77cfb817afb30511c4c352",
+      "git_oid": "10d4ad4a25fdedfca91f091f85734e32b21795ec",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_started_v1.json",
+      "size": 380,
+      "sha256": "0b0ade7240ed14c857569058e47ace5348885f152b0d3596a1f0f73a55e0491d",
+      "git_oid": "67ccec8ac28c9238732dad978afdee09ee5373e7",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_equivalence_progress_v1.json",
+      "size": 24790,
+      "sha256": "d6338b87039827ed0355c44cc57f7b9dcc700099c87d6012107cb556c2fbf584",
+      "git_oid": "fc4a6a8cf591abc17728b9345735ffd4f0ae38bd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_equivalence_v1.json",
+      "size": 26570,
+      "sha256": "778e9701b13d41baecd300f093752e2fb23844ca733e3e3cae4e9b0a8b8fe2b1",
+      "git_oid": "41b2c7047ecc097611d5c0e2df2d60f1f1a33237",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_execution_ledger_v1.json",
+      "size": 839,
+      "sha256": "9dec1a91af1e0c629a896ccf020445369e71a8607a87f7425a08bb3f34033861",
+      "git_oid": "f2683be3773b0a002282d86baed60ea4cb665b58",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_execution_v1.log",
+      "size": 3739,
+      "sha256": "a47bff1bd87e88815083288e06b7bc9e862f3344f092ea5fbc53a0cbcf2bbb7c",
+      "git_oid": "176b9ec2db8a1c28719002a1dd3b32a316b597a5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_extraction_results_v1.json",
+      "size": 1328,
+      "sha256": "8e52bb594de6b89aa6b32f32bf5bf7a046cd911ebcee7a69a037d63fb1b7bbeb",
+      "git_oid": "16f14cc356856ea67e6e127295fb168bd8241c71",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_input_manifest_v1.json",
+      "size": 52205,
+      "sha256": "1aa81bb82960a8ad8af0835729792406e8311a616ddf4fafc30c6c1df0dd0c78",
+      "git_oid": "eac4c759739e64a4d4b38e6c146847ec5b02f3f6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_observer_v1.py",
+      "size": 8386,
+      "sha256": "6409d46f034eef496fdac95332ad84cd7c1120b088f7c04df5c73770a7dd4aef",
+      "git_oid": "98e6ef541c0c5f9821d7331a134ab96fef67533e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_representations_v1.pt",
+      "size": 1964799,
+      "sha256": "6132eef9c5638b4575098144ac9d9b8dff3e7fd51a8ad7e8e5807ce4949fd793",
+      "git_oid": "0b1f0a48439ecfc6ca39d963de2a306a059baa5f",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_runtime_v1.json",
+      "size": 247,
+      "sha256": "25e9891653be77d72087108fe7ef707c5a10d36b774eff78fb564ba87dcaa087",
+      "git_oid": "43c91701e698c3e6a4049857af704a246c3cdcc5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_started_v1.json",
+      "size": 131,
+      "sha256": "05795abca307645744ea02c469d48e4a953782da2fdd0cf8f74cba6c23122065",
+      "git_oid": "a9ab299d2e898196c045b6c513dd51c0b071fbd5",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/implementation_seal_final_v1.json",
+      "size": 778,
+      "sha256": "94d284afa047cfed9a6014533a7fdf681d2e7d2218328f448aaa20a5c726f40a",
+      "git_oid": "7067872d584b4811eec81f052561e75cd8cc3de9",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/integrity_before_fit_v1.json",
+      "size": 179,
+      "sha256": "ca3eeeec24124aa87f404ecc46f3192f070c8f843657b418a620fffb933bb9db",
+      "git_oid": "cc2f0572bf6fd219aec56c5c1d90388f6012a550",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/integrity_final_v1.json",
+      "size": 179,
+      "sha256": "ca3eeeec24124aa87f404ecc46f3192f070c8f843657b418a620fffb933bb9db",
+      "git_oid": "cc2f0572bf6fd219aec56c5c1d90388f6012a550",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/integrity_initial_v1.json",
+      "size": 625294,
+      "sha256": "e67220dc839df1ee389766d9c79c2f2cf0a4b55117d8421b433058c27f7637d7",
+      "git_oid": "50e33c5a03ba5f1d4f3734a010ebcd6e7558d45d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/interaction_summary_v1.json",
+      "size": 883,
+      "sha256": "5f04c5350526d6d1b698290dddedca6ec3bc056a7217309c2605ba6369ff0ca4",
+      "git_oid": "eec94fc1a8b4fcdecaebbec99d585b31d99774a9",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/metrics_table_v1.csv",
+      "size": 2060,
+      "sha256": "b58ed1b769267c1c1ca759f2c8742957a72e13fdbd18216b9509a144386e5f42",
+      "git_oid": "2684fd58778d79562d9d6e69bce238c5ec7da3cb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/metrics_v1.json",
+      "size": 9563,
+      "sha256": "b1013f5a5a88bea8f30bf4ccbc4111f05e4e774ee9ef0c09089c0bd307c1758e",
+      "git_oid": "2e14c1ca09c93a1234e1c9d5f2cfd5e4d401b4dc",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/observer_diff_v1.patch",
+      "size": 2664,
+      "sha256": "dbc57d4e425c9fe0510ea645b2ade4c84687c84ee0d18cfabe050dad2370b2a4",
+      "git_oid": "d22523470d0f6df951051585074951b6c493f4a0",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/paired_contrasts_v1.json",
+      "size": 3131,
+      "sha256": "7a6e340979180c48a76516cb6426582a87d9c7a1304aa485036a2bfc5345e150",
+      "git_oid": "d3222ed2a8223c86531f2ba040b6d4d6370a4dad",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/per_array_predictions_v1.json",
+      "size": 4006270,
+      "sha256": "c39542e0c68b153946a7a93c416695fd4f9639bf4f4f16a7df5b29186b8c3779",
+      "git_oid": "d1fa130c3132223d2b4c748d441be7becc585d24",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/precision_sensitivity_v1.json",
+      "size": 407,
+      "sha256": "b7eaf9d76be2203d116ed3af3cb7072b7639f654648c6af9669927c1e53cfaca",
+      "git_oid": "37a73e6e38599a0324b2cb4a8debc0bd8eba65b8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/preconditioners_v1.pt",
+      "size": 205893,
+      "sha256": "4117bddef4d4e1b8016a0571c2f7069dbe5ddd0e4dbc9e3015bb75fea98c1608",
+      "git_oid": "755fa1698174f90fb2cc902f7f9c39c2276460d2",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/publication_started_v1.json",
+      "size": 255,
+      "sha256": "06de8cf9191e1c137f7dd02c1f5b9b401fdf5dcc72415b1f194adf523afc3eb9",
+      "git_oid": "bf149d7322706847d1d8e7081bf25366476c84db",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/publish_study_v1.py",
+      "size": 8817,
+      "sha256": "ee315df8e68f9b8a9ceade437a8930459b7a369577d99a4e9a1c742ed122717f",
+      "git_oid": "e1ccd6343808b36186558b61476a8615d2098885",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/report_v1.md",
+      "size": 12928,
+      "sha256": "d43c0534a02fbe359c53d44b08434d9c0a368102902cdac9ed946334f3855b78",
+      "git_oid": "d34aa4e881b74cda4b48baca4147955601b20dda",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/resource_ledger_v1.json",
+      "size": 1278,
+      "sha256": "a67752700e4b6ceeb044d49ed20cc5378b8e441499934013d901b04caaec60b0",
+      "git_oid": "fcee9e167c5b788bb741a8c69347df0653388092",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/scope_lock_v1.json",
+      "size": 2777,
+      "sha256": "e14e88f37eb184fc19b2a962bafe82b18feddb43177299cf69a2e8862ba58c08",
+      "git_oid": "0fa7b483740dba8d865520f5178097c85d38ee70",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/score_decomposition_tensors_v1.pt",
+      "size": 7200023,
+      "sha256": "fc50a00b17c3a313c60e6ddf3ee4ba4e51d620244c3e625bf77bc886e2721f5b",
+      "git_oid": "741d14aec6181a7570c6945041be693ffa8fbe43",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/source_input_provenance_v1.json",
+      "size": 2906,
+      "sha256": "7d5b84f6c5353a85ea73bafdc4506dbd6bae4d377887948eff45e00ac77e3b7d",
+      "git_oid": "d37ffceb4ea9b9bb4ad0282a9b62be9c3e60c0fe",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/stage_clock_v1.json",
+      "size": 478,
+      "sha256": "8aa281b43479ac611ab33ef9511be3645ef1cf942dcf37ee107b225ed6c2745a",
+      "git_oid": "0c128bd1c9b728df1debabc2593122985d8a1392",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/support_v1.py",
+      "size": 1854,
+      "sha256": "d956f79ea3a573906c4b595afaaea2c3ba81a83faebc6f53197f4ad597a75cf8",
+      "git_oid": "f102f89972e0da6ac1374f5aa5c282fa973a4004",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/terminal_readout_v1.pt",
+      "size": 100577,
+      "sha256": "b9a94437863f7428d9f248df94040acde80dcd25acf64f3662e61102a5bce586",
+      "git_oid": "a1d04c4e2a3a486e3523fbd5b9936e8d48d7d099",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/token_traces_v1.jsonl.gz",
+      "size": 793026,
+      "sha256": "62146ac350fbd9dc5db6185e76be090b546893065e63a2eedd73c016fad29cc0",
+      "git_oid": "76f087707c57ed4441d73a712056d2d8fd1c3050",
+      "mode": "100644"
+    }
+  ],
+  "self_excluded": true,
+  "LFS_required": false,
+  "secret_scan": "Common credential/private-key signatures; heuristic limitation disclosed"
+}
