@@ -1,0 +1,23 @@
+{
+  "sealed_before_outcomes": true,
+  "conditions": {
+    "A": "Exact saved committed representations; checkpoint Wq/Wk unchanged",
+    "B": "Actual saved terminal live states; checkpoint Wq/Wk unchanged",
+    "B_global": "One alpha multiplied into every raw candidate and query representation; no per-vector or separate group scaling",
+    "C": "Each raw vector divided by its L2 norm; no learned gain; original Wq/Wk"
+  },
+  "global_scalar_recipe": "alpha = pooled_RMS(committed queries and candidates) / pooled_RMS(raw queries and candidates), pooling all32x64 coordinates equally. No targets used.",
+  "scores": "S = (query representations @ Wq.T) @ (candidate representations @ Wk.T).T / 8",
+  "decomposition": "b=Kc @ mean(Q)/8; I=Qc @ Kc.T/8; Srow=1 b.T+I",
+  "metrics": {
+    "CE": "mean(logsumexp(S_i)-S_i,target)",
+    "target_rank": "competition rank 1+number strictly greater; stable index-broken rank also retained",
+    "target_margin": "target score minus largest incorrect score",
+    "pair_margins": "all240 target-minus-incorrect margins; not independent observations",
+    "global_scalar_check": "all argmax predictions and full candidate rankings unchanged between B and B_global"
+  },
+  "interpretation": "Analytic readouts of retained states only. No recomputed persistent trajectories, new learned interfaces or evidence of parameter realizability. B versus C differs only by per-vector radii; A also includes learned coordinate gains and RMS epsilon.",
+  "fitting": false,
+  "inference": false,
+  "uncertainty": "Descriptive single-array comparison only; no bootstrap or inferential intervals"
+}

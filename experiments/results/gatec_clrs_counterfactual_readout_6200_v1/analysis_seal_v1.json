@@ -1,0 +1,10 @@
+{
+  "files": {
+    "analyze_readouts_v1.py": "43461fda4056a0f9004befafaf9e9cf7bb8a1f1b5302f5a6e87b037734ac2df1",
+    "analysis_definitions_v1.json": "0a72047a1ec1da33faff1ec6f7769efab9bc7414894deadd72345e1610310f4d",
+    "manifest_v1.json": "0ec2a32e27dea8a142d9229428a822f5ff0d29635ebc5aab17d1b5fa869ddd44"
+  },
+  "sealed_before_counterfactual_outcomes": true,
+  "AST_parse_only": true,
+  "model_execution": 0
+}

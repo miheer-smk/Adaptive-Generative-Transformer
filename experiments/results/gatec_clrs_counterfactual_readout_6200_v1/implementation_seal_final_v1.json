@@ -1,0 +1,10 @@
+{
+  "files": {
+    "publish_analysis_v1.py": "2d42805dba3ca5c6bd368e48ac8390f2325bf3ddd8dfd2e0def1dd9ee4491050",
+    "write_report_v1.py": "644abd48e509c84fc70a95d61256d73a5fa1f0cce1e06ca49d88a87a7359e912",
+    "analyze_readouts_v1.py": "43461fda4056a0f9004befafaf9e9cf7bb8a1f1b5302f5a6e87b037734ac2df1"
+  },
+  "prior_analysis_seal": "analysis_seal_v1.json",
+  "CPU_only": true,
+  "no_model_execution": true
+}

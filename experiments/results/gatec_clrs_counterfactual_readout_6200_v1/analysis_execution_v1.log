@@ -1,0 +1,142 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+{
+  "scalar": {
+    "alpha": 0.00397872767852804,
+    "recipe": "alpha = pooled_RMS(committed queries and candidates) / pooled_RMS(raw queries and candidates), pooling all32x64 coordinates equally. No targets used.",
+    "raw_pooled_RMS": 242.04910697061737,
+    "committed_pooled_RMS": 0.9630474814669896,
+    "globally_scaled_raw_pooled_RMS": 0.9630474814669896,
+    "scalar_squared": 1.5830273939885125e-05,
+    "targets_used": false,
+    "separate_per_group_or_per_token_scales": false
+  },
+  "conditions": {
+    "A": {
+      "pointer_accuracy": 0.0,
+      "mean_target_rank": 9.4375,
+      "mean_CE": 2.772866721271475,
+      "predictions": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "interaction_common_norm_ratio": 0.0003593143196256454,
+      "GS_inner_I": -1.4371130680295188e-07
+    },
+    "B": {
+      "pointer_accuracy": 0.0625,
+      "mean_target_rank": 7.75,
+      "mean_CE": 1284.6773849012293,
+      "predictions": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "interaction_common_norm_ratio": 0.0028444637049553417,
+      "GS_inner_I": 1.4365908790239057
+    },
+    "B_global": {
+      "pointer_accuracy": 0.0625,
+      "mean_target_rank": 7.75,
+      "mean_CE": 2.771090800450536,
+      "predictions": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "interaction_common_norm_ratio": 0.0028444637049553426,
+      "GS_inner_I": 2.2748271175665917e-05
+    },
+    "C": {
+      "pointer_accuracy": 0.0,
+      "mean_target_rank": 9.4375,
+      "mean_CE": 2.772593301039583,
+      "predictions": [
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "interaction_common_norm_ratio": 0.00035988485627472445,
+      "GS_inner_I": -2.385892283794305e-09
+    }
+  },
+  "comparisons": {
+    "B": {
+      "pointer_accuracy_change_vs_A": 0.0625,
+      "mean_rank_change_vs_A": -1.6875,
+      "queries_with_better_rank": 9,
+      "queries_with_worse_rank": 7,
+      "queries_with_equal_rank": 0,
+      "CE_change_vs_A": 1281.904518179958
+    },
+    "B_global": {
+      "pointer_accuracy_change_vs_A": 0.0625,
+      "mean_rank_change_vs_A": -1.6875,
+      "queries_with_better_rank": 9,
+      "queries_with_worse_rank": 7,
+      "queries_with_equal_rank": 0,
+      "CE_change_vs_A": -0.0017759208209389143
+    },
+    "C": {
+      "pointer_accuracy_change_vs_A": 0.0,
+      "mean_rank_change_vs_A": 0.0,
+      "queries_with_better_rank": 0,
+      "queries_with_worse_rank": 0,
+      "queries_with_equal_rank": 16,
+      "CE_change_vs_A": -0.0002734202318919188
+    }
+  }
+}

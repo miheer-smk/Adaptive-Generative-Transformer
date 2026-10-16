@@ -1,0 +1,26 @@
+{
+  "B": {
+    "pointer_accuracy_change_vs_A": 0.0625,
+    "mean_rank_change_vs_A": -1.6875,
+    "queries_with_better_rank": 9,
+    "queries_with_worse_rank": 7,
+    "queries_with_equal_rank": 0,
+    "CE_change_vs_A": 1281.904518179958
+  },
+  "B_global": {
+    "pointer_accuracy_change_vs_A": 0.0625,
+    "mean_rank_change_vs_A": -1.6875,
+    "queries_with_better_rank": 9,
+    "queries_with_worse_rank": 7,
+    "queries_with_equal_rank": 0,
+    "CE_change_vs_A": -0.0017759208209389143
+  },
+  "C": {
+    "pointer_accuracy_change_vs_A": 0.0,
+    "mean_rank_change_vs_A": 0.0,
+    "queries_with_better_rank": 0,
+    "queries_with_worse_rank": 0,
+    "queries_with_equal_rank": 16,
+    "CE_change_vs_A": -0.0002734202318919188
+  }
+}

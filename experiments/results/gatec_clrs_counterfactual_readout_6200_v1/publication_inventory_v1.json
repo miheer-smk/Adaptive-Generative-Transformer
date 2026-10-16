@@ -1,0 +1,182 @@
+{
+  "files": [
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/all_target_margins_v1.csv",
+      "size": 111405,
+      "sha256": "693a30490f95b20af228284909b412c1fac65ac856aa1c02fc069c929604f644",
+      "git_oid": "207d4593ed10d05a82ba8802a7a58328ef149eca",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analysis_definitions_v1.json",
+      "size": 1620,
+      "sha256": "0a72047a1ec1da33faff1ec6f7769efab9bc7414894deadd72345e1610310f4d",
+      "git_oid": "c2c701552cb98624f1e9462eb291967a0910e250",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analysis_execution_v1.log",
+      "size": 3411,
+      "sha256": "1204f67bc610db5afaf9455ac6c514d05e5915f5508c91c15aaca1b13d518a50",
+      "git_oid": "55a3f640c2adc139577432f4bf2b233fc0ce0213",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analysis_seal_v1.json",
+      "size": 413,
+      "sha256": "c42212ba4f4a9458d37bb265c0d21b3c30dc1e2996017e0b8c2739e4960af974",
+      "git_oid": "101656a662658f230ee6ad524c8c6a82778c99be",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analytical_readout_tensors_v1.pt",
+      "size": 192424,
+      "sha256": "2754cd0555c822b7ba90bedbd452c8fab722a19741e51cecb44dff2da87def63",
+      "git_oid": "00194631574b9b8f2d8da3be5b16457fb77dd028",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analyze_readouts_v1.py",
+      "size": 15478,
+      "sha256": "43461fda4056a0f9004befafaf9e9cf7bb8a1f1b5302f5a6e87b037734ac2df1",
+      "git_oid": "1630cfc48e752c506db987f29085d2c73082e154",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/artifact_inventory_v1.json",
+      "size": 3435,
+      "sha256": "f29294987aebd415745b73d632746731cc4d0af1bb2a89d3d2bcd463c7058171",
+      "git_oid": "881bef1b8e8875798fbd7d1b33ce7246e6d59fc2",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/condition_comparisons_v1.json",
+      "size": 731,
+      "sha256": "bfff34c31a3e591f5de3c321b46e87d9a788e97744b8cf0aef3ce785e0e2709c",
+      "git_oid": "3d2b5ec659ffe8003921f631e5229cd6feb7949a",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/condition_summaries_v1.json",
+      "size": 55542,
+      "sha256": "d51d568cdd182528663bbd7cdb8a70fa91448882512f583c0e62c521298c4a12",
+      "git_oid": "eea6eb5a9ecb22cde2077b7ccabdccf3a87cbf8e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/condition_summary_v1.csv",
+      "size": 751,
+      "sha256": "89d87f6d031edb9cf18877c64b5228a252c3091a3a5b3dd0a288abdbb62cfa46",
+      "git_oid": "4c4a5b0471491e86c372204ce72ee80f44f819e0",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/evidence_verification_v1.json",
+      "size": 1412,
+      "sha256": "4cef9026b1a2e96fa4d3e45d3b91472553d9aa5485d326239424f0ff8f588cf8",
+      "git_oid": "95d717da18fa77fab22ab2724a2a7ad3862c9436",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/final_results_v1.json",
+      "size": 2351,
+      "sha256": "a0955c48b216b57f00c383da79b3864cfa83d7d8be7d174c8b40a3f8521eb57d",
+      "git_oid": "b27fd87380dd080a1ec4999b68ca8dc45a23171d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/global_scalar_v1.json",
+      "size": 462,
+      "sha256": "1c55aea88026bca859201e8aeb69d41cffe909b50ef421869bbabf0601121a78",
+      "git_oid": "8576a9bd4c06e7987bd37feb1be71b509d85d0a1",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/implementation_seal_final_v1.json",
+      "size": 410,
+      "sha256": "2160c7217d7a613d886e3f539377207b02541e80b718ecb60ada3a98d420fa6d",
+      "git_oid": "2b67eca2d6853fa2ca5910ad469202a95bb7a0cb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/integrity_final_v1.json",
+      "size": 179,
+      "sha256": "bbc61590497ca46f28ee79cc0b38cb88d5e3ec6a305f2ff702088bf9793b7fec",
+      "git_oid": "03c78fd8b7f382d415c95861317f55094bb91daa",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/integrity_initial_v1.json",
+      "size": 610480,
+      "sha256": "997e1f10f346df9952b5ccda9306b7269d931bef7feefd6acdea8b0050235d52",
+      "git_oid": "aa40aea428e8300e4e42385e793d945bf6d2d668",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/manifest_v1.json",
+      "size": 5294,
+      "sha256": "0ec2a32e27dea8a142d9229428a822f5ff0d29635ebc5aab17d1b5fa869ddd44",
+      "git_oid": "1bf82e60cc3c809515c6f0d30495d972398b4be8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/pairwise_geometry_v1.csv",
+      "size": 295345,
+      "sha256": "b4549c8f2f18141ad35035aa2703c37aff43e0085f61dc668e0fcd01dd5f7231",
+      "git_oid": "ee4e36151533e28ad511df161c94c5d5a4102d6f",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/per_query_v1.csv",
+      "size": 9624,
+      "sha256": "cdb8dcef064bd0a98f3968e5b87681eff61e360c0d309eba84da119e6e4916e7",
+      "git_oid": "f097f31a12648b8f5c8411d0579f99cc7d54aea4",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/publication_started_v1.json",
+      "size": 283,
+      "sha256": "7ad0ee43466bcefcef8e28a011167dee5e8551511f514f822a351bbb288653b6",
+      "git_oid": "fb6c30f3ffc8caa2ec79fe3655d6ff1448c2015d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/publish_analysis_v1.py",
+      "size": 8290,
+      "sha256": "2d42805dba3ca5c6bd368e48ac8390f2325bf3ddd8dfd2e0def1dd9ee4491050",
+      "git_oid": "0857aca3eac50abae86cf62829b8a5b3431924ca",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/query_independence_accounting_v1.json",
+      "size": 2549,
+      "sha256": "039532f4d7218f0a0c2bdaacdae45e482eb70df41dc6256d50df6e72c84068c5",
+      "git_oid": "95600050bbf559bb65d43b803c4f0dd8b77e0e3c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/report_v1.md",
+      "size": 13876,
+      "sha256": "f330ac8c2239eb157c62930094ee8a70b55d00399ce9058c49c4cd2f73fbe5f9",
+      "git_oid": "d3f3fca05cdfb8f1e58934421eee68d6fcbe4092",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/unavailable_evidence_v1.json",
+      "size": 448,
+      "sha256": "d26c8132fb83e4ee1dc9a4a846b11ea242db8eb0324d14757e43b0555d29bab3",
+      "git_oid": "31d69414b29b7a9f9eef4438cda3b2608fb66596",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/write_report_v1.py",
+      "size": 15518,
+      "sha256": "644abd48e509c84fc70a95d61256d73a5fa1f0cce1e06ca49d88a87a7359e912",
+      "git_oid": "fef08d366e6b1989f16adc1d5d27f77fed2fb9cb",
+      "mode": "100644"
+    }
+  ],
+  "self_excluded": true,
+  "LFS_required": false,
+  "secret_scan": "Common credential/private-key signatures; heuristic limitation disclosed"
+}

@@ -1,0 +1,10 @@
+{
+  "alpha": 0.00397872767852804,
+  "recipe": "alpha = pooled_RMS(committed queries and candidates) / pooled_RMS(raw queries and candidates), pooling all32x64 coordinates equally. No targets used.",
+  "raw_pooled_RMS": 242.04910697061737,
+  "committed_pooled_RMS": 0.9630474814669896,
+  "globally_scaled_raw_pooled_RMS": 0.9630474814669896,
+  "scalar_squared": 1.5830273939885125e-05,
+  "targets_used": false,
+  "separate_per_group_or_per_token_scales": false
+}

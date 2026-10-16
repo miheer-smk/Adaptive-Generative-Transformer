@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-counterfactual-pointer-readout-6200-20261016T072029Z",
+  "parent": "d9d5eb0061b860b796f64fbc559420caff863509",
+  "status": "COMPLETED_OFFLINE_COUNTERFACTUAL_READOUT_ANALYSIS",
+  "verified_files": 26,
+  "verified_tree": "38d0f4b5b97afa644ec0bee9f757c97eb6856200",
+  "historical_remote_files_preserved": 2137,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

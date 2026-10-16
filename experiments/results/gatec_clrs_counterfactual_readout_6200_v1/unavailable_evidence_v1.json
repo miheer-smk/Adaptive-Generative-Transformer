@@ -1,0 +1,11 @@
+{
+  "not_available_or_not_evaluated": [
+    "Raw-state recurrent trajectory if normalization were removed",
+    "Fitted readout exploiting radius",
+    "Other arrays, independently trained models or intermediate checkpoints",
+    "Task-specific causal intervention or historical onset"
+  ],
+  "no_missing_tensor_substituted": true,
+  "one_array_one_checkpoint": true,
+  "interpretation": "No recommendation to bypass RMSNorm from this analysis."
+}
