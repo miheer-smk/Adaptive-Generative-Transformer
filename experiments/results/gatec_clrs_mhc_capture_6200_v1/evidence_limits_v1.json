@@ -1,0 +1,21 @@
+{
+  "direct": [
+    "256 actual mHC inputs and outputs, detached after invocation",
+    "Corresponding raw residual inputs and block outputs",
+    "One complete canonical trajectory and committed-state summaries",
+    "Exact retained-output replay"
+  ],
+  "algebraic": [
+    "Centered energies, singular spectra, radial/angular decomposition, pair geometry",
+    "Dominant directions from previously retained effective A",
+    "CPU algebraic A replay; no mixer/module execution"
+  ],
+  "not_captured": [
+    "Intermediates inside attention/GDN/FFN cores before their output projections",
+    "Full information content/readability of all persistent-state channels",
+    "Historical training trajectory of these tensors",
+    "Counterfactual identity-mixer or architecture-change outcomes",
+    "Other arrays or seeds"
+  ],
+  "interpretation": "Compression of positional distinctions is directly observed where present. Their task usefulness and causal contribution to historical failure remain unestablished. Residual addition and normal contextual commits remain active."
+}

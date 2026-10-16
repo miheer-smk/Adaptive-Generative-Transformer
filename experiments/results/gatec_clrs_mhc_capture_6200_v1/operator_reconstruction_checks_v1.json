@@ -1,0 +1,114 @@
+[
+  {
+    "block": 0,
+    "positions": "candidate",
+    "max_absolute_error": 1.9338177825733993e-07,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 0,
+    "positions": "query",
+    "max_absolute_error": 5.4345827005253255e-08,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 1,
+    "positions": "candidate",
+    "max_absolute_error": 1.3642795249069195e-07,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 1,
+    "positions": "query",
+    "max_absolute_error": 2.553636054003494e-08,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 2,
+    "positions": "candidate",
+    "max_absolute_error": 9.942916623373321e-08,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 2,
+    "positions": "query",
+    "max_absolute_error": 3.596247891146653e-08,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 3,
+    "positions": "candidate",
+    "max_absolute_error": 2.943755550433025e-07,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 3,
+    "positions": "query",
+    "max_absolute_error": 3.1009244283453086e-07,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 4,
+    "positions": "candidate",
+    "max_absolute_error": 1.5442989864666856e-06,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 4,
+    "positions": "query",
+    "max_absolute_error": 1.3145576103212875e-06,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 5,
+    "positions": "candidate",
+    "max_absolute_error": 1.320350765610101e-06,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 5,
+    "positions": "query",
+    "max_absolute_error": 6.16046005763593e-07,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 6,
+    "positions": "candidate",
+    "max_absolute_error": 5.3473218059707506e-05,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 6,
+    "positions": "query",
+    "max_absolute_error": 3.948357743865927e-05,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 7,
+    "positions": "candidate",
+    "max_absolute_error": 1.558199048190545e-05,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  },
+  {
+    "block": 7,
+    "positions": "query",
+    "max_absolute_error": 1.7257746321774903e-05,
+    "approved_tolerance_pass": true,
+    "provenance": "Actual CUDA input/output compared with source-equation CPU-FP32 A retained by prior audit; comparison is parameter algebra, not another model call"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "files": {
+    "capture_forward_v1.py": "93b54a703588b2fae8036bd0786477a5edbed22362eabfe971b7df69ed6ccaa7",
+    "capture_boundaries_v1.json": "3bab27dc53e51b6ba47f386009277c938ca197c2d601f3f08aab03d111e16b4b",
+    "manifest_v1.json": "3b8fdefe6def6360c39aeba2c6fe475338e880a9e270cac100fe3e5e3921f8f9"
+  },
+  "AST_parse_only": true,
+  "tests_run": 0,
+  "model_calls_before_seal": 0,
+  "no_retry": true
+}

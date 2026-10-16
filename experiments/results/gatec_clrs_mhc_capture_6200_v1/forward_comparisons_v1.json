@@ -1,0 +1,124 @@
+{
+  "success": true,
+  "tolerances": {
+    "atol": 1e-06,
+    "rtol": 1e-05
+  },
+  "comparisons": {
+    "pointer_scores": {
+      "pass_comparison": true,
+      "shape": [
+        16,
+        16
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "h0": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "committed_streams": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_0": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_1": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_2": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_3": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_4": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_5": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_6": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    },
+    "block_output_7": {
+      "pass_comparison": true,
+      "shape": [
+        32,
+        64
+      ],
+      "max_absolute_difference": 0.0,
+      "exact": true
+    }
+  },
+  "CE": 2.772866725921631,
+  "retained_CE": 2.772866725921631,
+  "absolute_CE_difference": 0.0,
+  "residual_addition_bitwise": true,
+  "parameter_and_buffer_identity_unchanged": true,
+  "module_invocation_counts": {
+    "body.prelude_block.mhc": 0,
+    "body.blocks.blocks.0.mhc": 32,
+    "body.blocks.blocks.1.mhc": 32,
+    "body.blocks.blocks.2.mhc": 32,
+    "body.blocks.blocks.3.mhc": 32,
+    "body.blocks.blocks.4.mhc": 32,
+    "body.blocks.blocks.5.mhc": 32,
+    "body.blocks.blocks.6.core.mhc": 32,
+    "body.blocks.blocks.7.core.mhc": 32
+  }
+}

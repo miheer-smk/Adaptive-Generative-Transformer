@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "block_group_comparisons": 16,
+  "pair_stage_comparisons": 7680,
+  "all_prior_block_energies_reused": true,
+  "source_equation_operator_matches": true,
+  "max_operator_absolute_error": 5.3473218059707506e-05,
+  "offline_only": true,
+  "additional_model_calls": 0,
+  "additional_backwards": 0,
+  "no_inverse": true,
+  "SVD": "installed CPU SciPy gesvd, unchanged arrays"
+}

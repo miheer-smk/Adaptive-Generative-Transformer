@@ -1,0 +1,11 @@
+{
+  "files": {
+    "analyze_capture_v1.py": "82e6cfe2d3ecd218e11dfcf26a3c8082a15d484d109ec008acf7522acd5e7b10",
+    "capture_forward_v1.py": "93b54a703588b2fae8036bd0786477a5edbed22362eabfe971b7df69ed6ccaa7",
+    "publish_capture_v1.py": "75919c89b7740faa83fd03d041ee79b91b87a23f6236ad3b15fcd5867a65d3c4",
+    "write_report_v1.py": "913894479074c01203913ea9e62ecf66900004986e67ce848a360c86d110655f"
+  },
+  "initial_capture_seal": "capture_seal_v1.json",
+  "analysis_and_publication_sealed_after_capture": true,
+  "no_further_model_calls": true
+}

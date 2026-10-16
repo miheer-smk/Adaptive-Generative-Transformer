@@ -1,0 +1,53 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+{
+  "status": "COMPLETED_ONE_FROZEN_FORWARD",
+  "model_constructions_attempted": 1,
+  "model_constructions_completed": 1,
+  "checkpoint_loads": 1,
+  "rollouts_attempted": 1,
+  "rollouts_completed": 1,
+  "backwards": 0,
+  "optimizer_objects": 0,
+  "optimizer_updates": 0,
+  "ledger": {
+    "attempted_tokens": 32,
+    "completed_tokens": 32,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 256,
+    "selected_bank_completed": 256,
+    "commits": 32,
+    "backward_attempted": 0,
+    "backward_completed": 0,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "phase_counts": {
+      "final_frozen_capture": {
+        "attempted": 32,
+        "completed": 32,
+        "failed": 0,
+        "selected_attempted": 256,
+        "selected_completed": 256,
+        "commits": 32
+      }
+    },
+    "contextual_commit_entries": 224,
+    "elapsed_seconds": 1.1617539916187525,
+    "peak_CUDA_allocated": 30306304,
+    "peak_CUDA_reserved": 54525952
+  },
+  "integrity": {
+    "success": true,
+    "protected_files": 2481,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true
+  }
+}

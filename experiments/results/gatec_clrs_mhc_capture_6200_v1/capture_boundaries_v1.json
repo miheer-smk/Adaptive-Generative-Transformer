@@ -1,0 +1,28 @@
+{
+  "SWA": {
+    "mixer": "body.blocks.blocks.{0,1}.mhc",
+    "input": "Immediate value returned by SlidingWindowAttention.forward, after internal o_proj. AGTBlock norm/injection precedes the core, not the mixer.",
+    "source": "src/blocks.py:27-110,388-410"
+  },
+  "GQA": {
+    "mixer": "body.blocks.blocks.{2,3}.mhc",
+    "input": "Immediate tensor returned by GQA.forward, after its internal output projection.",
+    "source": "src/blocks.py:388-410; src/gqa.py"
+  },
+  "GDN": {
+    "mixer": "body.blocks.blocks.{4,5}.mhc",
+    "input": "The y component returned by GDNv3.forward; gated, per-head-normalized and o_proj-projected core output. Ephemeral recurrent state is not the mixer input.",
+    "source": "src/blocks.py:412-438; src/gdn_v3.py:158-197"
+  },
+  "FFN": {
+    "mixer": "body.blocks.blocks.{6,7}.core.mhc",
+    "input": "Immediate output of SwiGLU within FFNHeavyCore, after sublayer pre-norm and before addition of the raw residual. Not the output of the complete FFNHeavyCore.",
+    "source": "src/blocks.py:113-150"
+  },
+  "all": {
+    "output": "Actual scaled mHC output before raw residual addition; no unmixing.",
+    "source": "src/mhc.py:75-83",
+    "invocations": "8 active mixers * 32 tokens; prelude mixer unused. Terminal contextual commits do not invoke these mixers.",
+    "hook_semantics": "Forward hooks return None; copy detached args[0] and result after MHC.forward; no replacement or in-place operation."
+  }
+}

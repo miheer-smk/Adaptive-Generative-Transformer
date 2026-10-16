@@ -1,0 +1,5122 @@
+[
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 8.686732292175293,
+    "output_norm": 7.309704780578613,
+    "input_mean": -0.9148263335227966,
+    "output_mean": -0.9134674668312073,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 8.497048377990723,
+    "output_norm": 6.8676371574401855,
+    "input_mean": -0.8587827086448669,
+    "output_mean": -0.858115553855896,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 7.124425888061523,
+    "output_norm": 5.647960662841797,
+    "input_mean": -0.7099500298500061,
+    "output_mean": -0.705815315246582,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 10.558060646057129,
+    "output_norm": 7.919975280761719,
+    "input_mean": 0.9923278093338013,
+    "output_mean": 0.989550769329071,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.140285015106201,
+    "output_norm": 2.0723278522491455,
+    "input_mean": 0.2604505121707916,
+    "output_mean": 0.25896796584129333,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 43.54903793334961,
+    "output_norm": 43.265167236328125,
+    "input_mean": 5.441726207733154,
+    "output_mean": 5.406586647033691,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1652.942626953125,
+    "output_norm": 1659.332275390625,
+    "input_mean": -206.60414123535156,
+    "output_mean": -207.36402893066406,
+    "finite": true
+  },
+  {
+    "token": 0,
+    "kind": "candidate",
+    "original_index": 0,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3213500976562,
+    "output_norm": 577.0245361328125,
+    "input_mean": -72.781494140625,
+    "output_mean": -72.10749053955078,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.7524663209915161,
+    "output_norm": 0.9887558221817017,
+    "input_mean": 0.12376759946346283,
+    "output_mean": 0.12357290834188461,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 3.171880006790161,
+    "output_norm": 2.1234796047210693,
+    "input_mean": -0.26552844047546387,
+    "output_mean": -0.26532474160194397,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 3.0328047275543213,
+    "output_norm": 1.9903069734573364,
+    "input_mean": -0.25017568469047546,
+    "output_mean": -0.24872086942195892,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.19890308380127,
+    "output_norm": 8.799826622009277,
+    "input_mean": 1.1026166677474976,
+    "output_mean": 1.0995140075683594,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.4689302444458,
+    "output_norm": 11.386421203613281,
+    "input_mean": 1.430970549583435,
+    "output_mean": 1.4228644371032715,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 12.552525520324707,
+    "output_norm": 12.438587188720703,
+    "input_mean": 1.5644625425338745,
+    "output_mean": 1.5543673038482666,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1493.5438232421875,
+    "output_norm": 1499.316650390625,
+    "input_mean": -186.68051147460938,
+    "output_mean": -187.3671112060547,
+    "finite": true
+  },
+  {
+    "token": 1,
+    "kind": "candidate",
+    "original_index": 1,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3665161132812,
+    "output_norm": 577.0692138671875,
+    "input_mean": -72.78711700439453,
+    "output_mean": -72.1130599975586,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.709815740585327,
+    "output_norm": 2.1022379398345947,
+    "input_mean": 0.2631223201751709,
+    "output_mean": 0.26272183656692505,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.2279865741729736,
+    "output_norm": 0.701293408870697,
+    "input_mean": -0.08768631517887115,
+    "output_mean": -0.08761785924434662,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 3.4173476696014404,
+    "output_norm": 2.7715373039245605,
+    "input_mean": 0.3484465479850769,
+    "output_mean": 0.34639015793800354,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.56877613067627,
+    "output_norm": 10.060737609863281,
+    "input_mean": 1.260705828666687,
+    "output_mean": 1.2571247816085815,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 43.60307312011719,
+    "output_norm": 43.34676742553711,
+    "input_mean": 5.447536468505859,
+    "output_mean": 5.416676998138428,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.001428604125977,
+    "output_norm": 19.849851608276367,
+    "input_mean": 2.4966044425964355,
+    "output_mean": 2.480499267578125,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1422.2701416015625,
+    "output_norm": 1427.76611328125,
+    "input_mean": -177.77175903320312,
+    "output_mean": -178.42556762695312,
+    "finite": true
+  },
+  {
+    "token": 2,
+    "kind": "candidate",
+    "original_index": 2,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3875732421875,
+    "output_norm": 577.0900268554688,
+    "input_mean": -72.78974914550781,
+    "output_mean": -72.11566162109375,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5940744876861572,
+    "output_norm": 1.9829590320587158,
+    "input_mean": 0.24819256365299225,
+    "output_mean": 0.2478148639202118,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.456101179122925,
+    "output_norm": 1.1406351327896118,
+    "input_mean": -0.14263120293617249,
+    "output_mean": -0.14251893758773804,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.7758170366287231,
+    "output_norm": 0.8526091575622559,
+    "input_mean": 0.10720472037792206,
+    "output_mean": 0.1065649762749672,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.503944396972656,
+    "output_norm": 9.45664119720459,
+    "input_mean": 1.184943437576294,
+    "output_mean": 1.1816022396087646,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 51.497314453125,
+    "output_norm": 51.1981315612793,
+    "input_mean": 6.434215545654297,
+    "output_mean": 6.397780418395996,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 21.803396224975586,
+    "output_norm": 21.647605895996094,
+    "input_mean": 2.7227261066436768,
+    "output_mean": 2.7051570415496826,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1457.5772705078125,
+    "output_norm": 1463.20947265625,
+    "input_mean": -182.18482971191406,
+    "output_mean": -182.85488891601562,
+    "finite": true
+  },
+  {
+    "token": 3,
+    "kind": "candidate",
+    "original_index": 3,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3206176757812,
+    "output_norm": 577.023681640625,
+    "input_mean": -72.78137969970703,
+    "output_mean": -72.10737609863281,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6409735679626465,
+    "output_norm": 2.0262088775634766,
+    "input_mean": 0.2536027431488037,
+    "output_mean": 0.2532182037830353,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.3857598304748535,
+    "output_norm": 0.9629431366920471,
+    "input_mean": -0.12040723115205765,
+    "output_mean": -0.1203128769993782,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.7462655305862427,
+    "output_norm": 0.9501734972000122,
+    "input_mean": 0.11947090178728104,
+    "output_mean": 0.11875925213098526,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.531071662902832,
+    "output_norm": 9.523221969604492,
+    "input_mean": 1.1932897567749023,
+    "output_mean": 1.1899237632751465,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 55.457252502441406,
+    "output_norm": 55.13724899291992,
+    "input_mean": 6.929261207580566,
+    "output_mean": 6.890021324157715,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.421268463134766,
+    "output_norm": 20.272966384887695,
+    "input_mean": 2.549828052520752,
+    "output_mean": 2.5333762168884277,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1441.6993408203125,
+    "output_norm": 1447.2701416015625,
+    "input_mean": -180.20022583007812,
+    "output_mean": -180.86297607421875,
+    "finite": true
+  },
+  {
+    "token": 4,
+    "kind": "candidate",
+    "original_index": 4,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.328857421875,
+    "output_norm": 577.0319213867188,
+    "input_mean": -72.78241729736328,
+    "output_mean": -72.10840606689453,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6401207447052,
+    "output_norm": 2.017125368118286,
+    "input_mean": 0.2524639070034027,
+    "output_mean": 0.25208190083503723,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.4174420833587646,
+    "output_norm": 0.9323040843009949,
+    "input_mean": -0.11657335609197617,
+    "output_mean": -0.11648249626159668,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.614631175994873,
+    "output_norm": 0.7291741967201233,
+    "input_mean": 0.09168638288974762,
+    "output_mean": 0.09113828837871552,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.508344650268555,
+    "output_norm": 9.448580741882324,
+    "input_mean": 1.1839313507080078,
+    "output_mean": 1.1805939674377441,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.14879608154297,
+    "output_norm": 55.82478332519531,
+    "input_mean": 7.0156660079956055,
+    "output_mean": 6.975935935974121,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.0836181640625,
+    "output_norm": 19.937162399291992,
+    "input_mean": 2.507591724395752,
+    "output_mean": 2.49141263961792,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1436.1151123046875,
+    "output_norm": 1441.664306640625,
+    "input_mean": -179.5022430419922,
+    "output_mean": -180.16244506835938,
+    "finite": true
+  },
+  {
+    "token": 5,
+    "kind": "candidate",
+    "original_index": 5,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3234252929688,
+    "output_norm": 577.0264892578125,
+    "input_mean": -72.78173065185547,
+    "output_mean": -72.10772705078125,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.613905668258667,
+    "output_norm": 1.9848741292953491,
+    "input_mean": 0.24842652678489685,
+    "output_mean": 0.24805095791816711,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.4678871631622314,
+    "output_norm": 1.038527011871338,
+    "input_mean": -0.12985830008983612,
+    "output_mean": -0.12975667417049408,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.449737548828125,
+    "output_norm": 0.30779823660850525,
+    "input_mean": 0.03870731219649315,
+    "output_mean": 0.03847038373351097,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.430880546569824,
+    "output_norm": 9.215818405151367,
+    "input_mean": 1.1547497510910034,
+    "output_mean": 1.1514999866485596,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.47488784790039,
+    "output_norm": 56.14885330200195,
+    "input_mean": 7.056392669677734,
+    "output_mean": 7.016432762145996,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.012130737304688,
+    "output_norm": 19.86598777770996,
+    "input_mean": 2.4986398220062256,
+    "output_mean": 2.4825186729431152,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1445.0927734375,
+    "output_norm": 1450.6767578125,
+    "input_mean": -180.62437438964844,
+    "output_mean": -181.2886962890625,
+    "finite": true
+  },
+  {
+    "token": 6,
+    "kind": "candidate",
+    "original_index": 6,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.3095703125,
+    "output_norm": 577.0127563476562,
+    "input_mean": -72.77999877929688,
+    "output_mean": -72.10601043701172,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.577676296234131,
+    "output_norm": 1.94459068775177,
+    "input_mean": 0.24338413774967194,
+    "output_mean": 0.2430163472890854,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5460498332977295,
+    "output_norm": 1.2149608135223389,
+    "input_mean": -0.15192535519599915,
+    "output_mean": -0.15180543065071106,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.474677324295044,
+    "output_norm": 0.24503561854362488,
+    "input_mean": -0.030770251527428627,
+    "output_mean": -0.030599063262343407,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.323171615600586,
+    "output_norm": 8.8899564743042,
+    "input_mean": 1.1138983964920044,
+    "output_mean": 1.1107699871063232,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.49532699584961,
+    "output_norm": 56.16904830932617,
+    "input_mean": 7.058929920196533,
+    "output_mean": 7.018955230712891,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.010337829589844,
+    "output_norm": 19.864091873168945,
+    "input_mean": 2.498401403427124,
+    "output_mean": 2.4822816848754883,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1460.6807861328125,
+    "output_norm": 1466.3251953125,
+    "input_mean": -182.57275390625,
+    "output_mean": -183.24423217773438,
+    "finite": true
+  },
+  {
+    "token": 7,
+    "kind": "candidate",
+    "original_index": 7,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.2725830078125,
+    "output_norm": 576.9761352539062,
+    "input_mean": -72.77537536621094,
+    "output_mean": -72.10142517089844,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5691568851470947,
+    "output_norm": 1.9323958158493042,
+    "input_mean": 0.24185732007026672,
+    "output_mean": 0.24149204790592194,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5884251594543457,
+    "output_norm": 1.2722045183181763,
+    "input_mean": -0.15908481180667877,
+    "output_mean": -0.15895891189575195,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.551447868347168,
+    "output_norm": 0.4642607271671295,
+    "input_mean": -0.05833696573972702,
+    "output_mean": -0.05800357833504677,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.282491683959961,
+    "output_norm": 8.746977806091309,
+    "input_mean": 1.095974087715149,
+    "output_mean": 1.0928986072540283,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.31806945800781,
+    "output_norm": 55.99276351928711,
+    "input_mean": 7.036774635314941,
+    "output_mean": 6.996926307678223,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.00725746154785,
+    "output_norm": 19.861000061035156,
+    "input_mean": 2.4980125427246094,
+    "output_mean": 2.4818952083587646,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1465.2139892578125,
+    "output_norm": 1470.875732421875,
+    "input_mean": -183.13934326171875,
+    "output_mean": -183.8129119873047,
+    "finite": true
+  },
+  {
+    "token": 8,
+    "kind": "candidate",
+    "original_index": 8,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.2509155273438,
+    "output_norm": 576.95458984375,
+    "input_mean": -72.77266693115234,
+    "output_mean": -72.09874725341797,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5410377979278564,
+    "output_norm": 1.9025760889053345,
+    "input_mean": 0.23812462389469147,
+    "output_mean": 0.2377651333808899,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.678908109664917,
+    "output_norm": 1.4178656339645386,
+    "input_mean": -0.17730291187763214,
+    "output_mean": -0.1771618127822876,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.8430372476577759,
+    "output_norm": 0.9271504282951355,
+    "input_mean": -0.11653319746255875,
+    "output_mean": -0.11585769057273865,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.239884376525879,
+    "output_norm": 8.578310012817383,
+    "input_mean": 1.0748298168182373,
+    "output_mean": 1.0718165636062622,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 55.71533203125,
+    "output_norm": 55.39332962036133,
+    "input_mean": 6.961440086364746,
+    "output_mean": 6.922019004821777,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.014968872070312,
+    "output_norm": 19.86859703063965,
+    "input_mean": 2.4989681243896484,
+    "output_mean": 2.482844352722168,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1478.055419921875,
+    "output_norm": 1483.7667236328125,
+    "input_mean": -184.74441528320312,
+    "output_mean": -185.4238739013672,
+    "finite": true
+  },
+  {
+    "token": 9,
+    "kind": "candidate",
+    "original_index": 9,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1959228515625,
+    "output_norm": 576.900146484375,
+    "input_mean": -72.76580047607422,
+    "output_mean": -72.09193420410156,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5720975399017334,
+    "output_norm": 1.9280754327774048,
+    "input_mean": 0.24131573736667633,
+    "output_mean": 0.24095162749290466,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6193771362304688,
+    "output_norm": 1.2803032398223877,
+    "input_mean": -0.16009706258773804,
+    "output_mean": -0.15997043251991272,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.6930053234100342,
+    "output_norm": 0.711011528968811,
+    "input_mean": -0.08936048299074173,
+    "output_mean": -0.08884456753730774,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.250664710998535,
+    "output_norm": 8.62051773071289,
+    "input_mean": 1.080120325088501,
+    "output_mean": 1.077091932296753,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.10496139526367,
+    "output_norm": 55.78089141845703,
+    "input_mean": 7.010147571563721,
+    "output_mean": 6.970450401306152,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.008893966674805,
+    "output_norm": 19.86261558532715,
+    "input_mean": 2.498215436935425,
+    "output_mean": 2.4820969104766846,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1466.1578369140625,
+    "output_norm": 1471.8232421875,
+    "input_mean": -183.25732421875,
+    "output_mean": -183.93133544921875,
+    "finite": true
+  },
+  {
+    "token": 10,
+    "kind": "candidate",
+    "original_index": 10,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.228271484375,
+    "output_norm": 576.9321899414062,
+    "input_mean": -72.76983642578125,
+    "output_mean": -72.09593963623047,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5154178142547607,
+    "output_norm": 1.8723007440567017,
+    "input_mean": 0.2343343198299408,
+    "output_mean": 0.23398098349571228,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.748227596282959,
+    "output_norm": 1.512502670288086,
+    "input_mean": -0.18913906812667847,
+    "output_mean": -0.1889880895614624,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.228379964828491,
+    "output_norm": 1.3661386966705322,
+    "input_mean": -0.17172221839427948,
+    "output_mean": -0.1707223653793335,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.222400665283203,
+    "output_norm": 8.481138229370117,
+    "input_mean": 1.062648057937622,
+    "output_mean": 1.0596706867218018,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 54.82634353637695,
+    "output_norm": 54.50923538208008,
+    "input_mean": 6.850332260131836,
+    "output_mean": 6.811541557312012,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.013473510742188,
+    "output_norm": 19.867061614990234,
+    "input_mean": 2.498775005340576,
+    "output_mean": 2.4826526641845703,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1488.97021484375,
+    "output_norm": 1494.7236328125,
+    "input_mean": -186.10867309570312,
+    "output_mean": -186.79315185546875,
+    "finite": true
+  },
+  {
+    "token": 11,
+    "kind": "candidate",
+    "original_index": 11,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.125,
+    "output_norm": 576.829833984375,
+    "input_mean": -72.7569351196289,
+    "output_mean": -72.08316040039062,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.600393295288086,
+    "output_norm": 1.9475880861282349,
+    "input_mean": 0.24375706911087036,
+    "output_mean": 0.24338963627815247,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.614452362060547,
+    "output_norm": 1.0912344455718994,
+    "input_mean": -0.13644641637802124,
+    "output_mean": -0.13634027540683746,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.6059222221374512,
+    "output_norm": 0.49740803241729736,
+    "input_mean": -0.06250663101673126,
+    "output_mean": -0.062148191034793854,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.269109725952148,
+    "output_norm": 8.694875717163086,
+    "input_mean": 1.0894415378570557,
+    "output_mean": 1.0863858461380005,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 56.03181838989258,
+    "output_norm": 55.70835876464844,
+    "input_mean": 7.001034259796143,
+    "output_mean": 6.9613871574401855,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.99094009399414,
+    "output_norm": 19.844879150390625,
+    "input_mean": 2.4959847927093506,
+    "output_mean": 2.4798808097839355,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1444.978271484375,
+    "output_norm": 1450.5616455078125,
+    "input_mean": -180.61004638671875,
+    "output_mean": -181.27430725097656,
+    "finite": true
+  },
+  {
+    "token": 12,
+    "kind": "candidate",
+    "original_index": 12,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.2571411132812,
+    "output_norm": 576.9608154296875,
+    "input_mean": -72.77345275878906,
+    "output_mean": -72.09951782226562,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.463184356689453,
+    "output_norm": 1.8188705444335938,
+    "input_mean": 0.22764575481414795,
+    "output_mean": 0.22730305790901184,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.801582098007202,
+    "output_norm": 1.591424822807312,
+    "input_mean": -0.19900982081890106,
+    "output_mean": -0.198850616812706,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.5409529209136963,
+    "output_norm": 1.681796669960022,
+    "input_mean": -0.21140633523464203,
+    "output_mean": -0.210173100233078,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.216581344604492,
+    "output_norm": 8.436859130859375,
+    "input_mean": 1.0570974349975586,
+    "output_mean": 1.054136037826538,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 53.66205978393555,
+    "output_norm": 53.351287841796875,
+    "input_mean": 6.704807758331299,
+    "output_mean": 6.666841506958008,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.99526596069336,
+    "output_norm": 19.84892463684082,
+    "input_mean": 2.4964938163757324,
+    "output_mean": 2.480386257171631,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1501.0863037109375,
+    "output_norm": 1506.886474609375,
+    "input_mean": -187.62307739257812,
+    "output_mean": -188.31314086914062,
+    "finite": true
+  },
+  {
+    "token": 13,
+    "kind": "candidate",
+    "original_index": 13,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.0347290039062,
+    "output_norm": 576.7404174804688,
+    "input_mean": -72.74565124511719,
+    "output_mean": -72.07197570800781,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6102676391601562,
+    "output_norm": 1.9525185823440552,
+    "input_mean": 0.24437366425991058,
+    "output_mean": 0.24400551617145538,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.672433853149414,
+    "output_norm": 1.0034546852111816,
+    "input_mean": -0.12546426057815552,
+    "output_mean": -0.12536796927452087,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.642423152923584,
+    "output_norm": 0.4446781575679779,
+    "input_mean": -0.05587784945964813,
+    "output_mean": -0.05555795133113861,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.273299217224121,
+    "output_norm": 8.71147632598877,
+    "input_mean": 1.091522216796875,
+    "output_mean": 1.0884606838226318,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 55.47391891479492,
+    "output_norm": 55.15373992919922,
+    "input_mean": 6.931334972381592,
+    "output_mean": 6.892082214355469,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.968929290771484,
+    "output_norm": 19.823101043701172,
+    "input_mean": 2.4932456016540527,
+    "output_mean": 2.477159023284912,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1428.925048828125,
+    "output_norm": 1434.4462890625,
+    "input_mean": -178.603515625,
+    "output_mean": -179.26040649414062,
+    "finite": true
+  },
+  {
+    "token": 14,
+    "kind": "candidate",
+    "original_index": 14,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.25439453125,
+    "output_norm": 576.9580688476562,
+    "input_mean": -72.77310943603516,
+    "output_mean": -72.09917449951172,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.549816370010376,
+    "output_norm": 1.8942890167236328,
+    "input_mean": 0.2370854914188385,
+    "output_mean": 0.23672838509082794,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.7138662338256836,
+    "output_norm": 1.4134879112243652,
+    "input_mean": -0.1767551600933075,
+    "output_mean": -0.17661437392234802,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.2325398921966553,
+    "output_norm": 1.3521647453308105,
+    "input_mean": -0.16996625065803528,
+    "output_mean": -0.16897639632225037,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.214917182922363,
+    "output_norm": 8.43552303314209,
+    "input_mean": 1.0569288730621338,
+    "output_mean": 1.0539686679840088,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 55.17160415649414,
+    "output_norm": 54.852657318115234,
+    "input_mean": 6.893491744995117,
+    "output_mean": 6.854455947875977,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 20.010099411010742,
+    "output_norm": 19.86372947692871,
+    "input_mean": 2.4983558654785156,
+    "output_mean": 2.48223614692688,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1483.50390625,
+    "output_norm": 1489.2362060546875,
+    "input_mean": -185.4254150390625,
+    "output_mean": -186.10740661621094,
+    "finite": true
+  },
+  {
+    "token": 15,
+    "kind": "candidate",
+    "original_index": 15,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.105224609375,
+    "output_norm": 576.8102416992188,
+    "input_mean": -72.75445556640625,
+    "output_mean": -72.08070373535156,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6563546657562256,
+    "output_norm": 1.9997291564941406,
+    "input_mean": 0.25028252601623535,
+    "output_mean": 0.2499055564403534,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.770617961883545,
+    "output_norm": 0.8375866413116455,
+    "input_mean": -0.10471401363611221,
+    "output_mean": -0.10463592410087585,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1.995390772819519,
+    "output_norm": 0.7085261940956116,
+    "input_mean": -0.08904235810041428,
+    "output_mean": -0.08852981775999069,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.351858139038086,
+    "output_norm": 8.910158157348633,
+    "input_mean": 1.1164274215698242,
+    "output_mean": 1.1132932901382446,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.3228759765625,
+    "output_norm": 49.03804397583008,
+    "input_mean": 6.1627583503723145,
+    "output_mean": 6.127857208251953,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.6719913482666,
+    "output_norm": 19.52848243713379,
+    "input_mean": 2.4561896324157715,
+    "output_mean": 2.440342426300049,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1381.1363525390625,
+    "output_norm": 1386.472900390625,
+    "input_mean": -172.6303253173828,
+    "output_mean": -173.26524353027344,
+    "finite": true
+  },
+  {
+    "token": 16,
+    "kind": "query",
+    "original_index": 0,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1863403320312,
+    "output_norm": 576.890625,
+    "input_mean": -72.76460266113281,
+    "output_mean": -72.09074401855469,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.651078701019287,
+    "output_norm": 1.9934815168380737,
+    "input_mean": 0.24950052797794342,
+    "output_mean": 0.2491247057914734,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.7870054244995117,
+    "output_norm": 0.8580148816108704,
+    "input_mean": -0.10726846754550934,
+    "output_mean": -0.10718847066164017,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.046869993209839,
+    "output_norm": 0.8034926652908325,
+    "input_mean": -0.10098101943731308,
+    "output_mean": -0.10039862245321274,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.328811645507812,
+    "output_norm": 8.846223831176758,
+    "input_mean": 1.108412742614746,
+    "output_mean": 1.105302095413208,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.398250579833984,
+    "output_norm": 49.113006591796875,
+    "input_mean": 6.172179698944092,
+    "output_mean": 6.137225151062012,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.689558029174805,
+    "output_norm": 19.545917510986328,
+    "input_mean": 2.4583826065063477,
+    "output_mean": 2.442521095275879,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1382.143310546875,
+    "output_norm": 1387.483642578125,
+    "input_mean": -172.7561798095703,
+    "output_mean": -173.39157104492188,
+    "finite": true
+  },
+  {
+    "token": 17,
+    "kind": "query",
+    "original_index": 1,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1910400390625,
+    "output_norm": 576.8953247070312,
+    "input_mean": -72.76518249511719,
+    "output_mean": -72.09132385253906,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6470534801483154,
+    "output_norm": 1.988407015800476,
+    "input_mean": 0.2488653063774109,
+    "output_mean": 0.24849046766757965,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.800553321838379,
+    "output_norm": 0.8753364682197571,
+    "input_mean": -0.10943447053432465,
+    "output_mean": -0.10935284197330475,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.0765342712402344,
+    "output_norm": 0.8581802845001221,
+    "input_mean": -0.10785596072673798,
+    "output_mean": -0.10723333060741425,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.311284065246582,
+    "output_norm": 8.795173645019531,
+    "input_mean": 1.1020129919052124,
+    "output_mean": 1.098921298980713,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.51515579223633,
+    "output_norm": 49.22925567626953,
+    "input_mean": 6.186789035797119,
+    "output_mean": 6.15175199508667,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.704883575439453,
+    "output_norm": 19.561134338378906,
+    "input_mean": 2.460296392440796,
+    "output_mean": 2.444422721862793,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1383.32373046875,
+    "output_norm": 1388.668701171875,
+    "input_mean": -172.90371704101562,
+    "output_mean": -173.53964233398438,
+    "finite": true
+  },
+  {
+    "token": 18,
+    "kind": "query",
+    "original_index": 2,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1939697265625,
+    "output_norm": 576.8982543945312,
+    "input_mean": -72.76554870605469,
+    "output_mean": -72.0916976928711,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6433005332946777,
+    "output_norm": 1.9837311506271362,
+    "input_mean": 0.24827998876571655,
+    "output_mean": 0.24790608882904053,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8119122982025146,
+    "output_norm": 0.8902186155319214,
+    "input_mean": -0.11129546910524368,
+    "output_mean": -0.11121243983507156,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.0934550762176514,
+    "output_norm": 0.8910921216011047,
+    "input_mean": -0.11199340224266052,
+    "output_mean": -0.11134655773639679,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.296095848083496,
+    "output_norm": 8.74838638305664,
+    "input_mean": 1.0961476564407349,
+    "output_mean": 1.0930732488632202,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.66328048706055,
+    "output_norm": 49.37655258178711,
+    "input_mean": 6.205300331115723,
+    "output_mean": 6.1701579093933105,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.7185115814209,
+    "output_norm": 19.574655532836914,
+    "input_mean": 2.4619970321655273,
+    "output_mean": 2.4461123943328857,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1384.5926513671875,
+    "output_norm": 1389.9425048828125,
+    "input_mean": -173.06234741210938,
+    "output_mean": -173.69882202148438,
+    "finite": true
+  },
+  {
+    "token": 19,
+    "kind": "query",
+    "original_index": 3,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1954956054688,
+    "output_norm": 576.8997192382812,
+    "input_mean": -72.76573944091797,
+    "output_mean": -72.09188842773438,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6390817165374756,
+    "output_norm": 1.978541612625122,
+    "input_mean": 0.24763038754463196,
+    "output_mean": 0.24725747108459473,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8219377994537354,
+    "output_norm": 0.9033536911010742,
+    "input_mean": -0.1129380315542221,
+    "output_mean": -0.11285374313592911,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.112159490585327,
+    "output_norm": 0.9233413338661194,
+    "input_mean": -0.11604765802621841,
+    "output_mean": -0.1153770387172699,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.281600952148438,
+    "output_norm": 8.700936317443848,
+    "input_mean": 1.0901994705200195,
+    "output_mean": 1.0871424674987793,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.815025329589844,
+    "output_norm": 49.52745056152344,
+    "input_mean": 6.2242631912231445,
+    "output_mean": 6.189013957977295,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.731843948364258,
+    "output_norm": 19.587888717651367,
+    "input_mean": 2.4636614322662354,
+    "output_mean": 2.447766065597534,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1385.8731689453125,
+    "output_norm": 1391.2279052734375,
+    "input_mean": -173.22238159179688,
+    "output_mean": -173.85948181152344,
+    "finite": true
+  },
+  {
+    "token": 20,
+    "kind": "query",
+    "original_index": 4,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1956176757812,
+    "output_norm": 576.8998413085938,
+    "input_mean": -72.76576232910156,
+    "output_mean": -72.09190368652344,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.634714126586914,
+    "output_norm": 1.9730534553527832,
+    "input_mean": 0.24694345891475677,
+    "output_mean": 0.2465716004371643,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.831247091293335,
+    "output_norm": 0.915064811706543,
+    "input_mean": -0.11440252512693405,
+    "output_mean": -0.11431711167097092,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.1391525268554688,
+    "output_norm": 0.9635388255119324,
+    "input_mean": -0.12110114842653275,
+    "output_mean": -0.12040090560913086,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.268815994262695,
+    "output_norm": 8.65650463104248,
+    "input_mean": 1.0846292972564697,
+    "output_mean": 1.0815887451171875,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 49.96058654785156,
+    "output_norm": 49.672203063964844,
+    "input_mean": 6.242455005645752,
+    "output_mean": 6.2071027755737305,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.744930267333984,
+    "output_norm": 19.600875854492188,
+    "input_mean": 2.46529483795166,
+    "output_mean": 2.4493889808654785,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1387.14013671875,
+    "output_norm": 1392.4998779296875,
+    "input_mean": -173.3807373046875,
+    "output_mean": -174.01841735839844,
+    "finite": true
+  },
+  {
+    "token": 21,
+    "kind": "query",
+    "original_index": 5,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.194580078125,
+    "output_norm": 576.8987426757812,
+    "input_mean": -72.765625,
+    "output_mean": -72.09176635742188,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6312551498413086,
+    "output_norm": 1.9686870574951172,
+    "input_mean": 0.24639686942100525,
+    "output_mean": 0.24602586030960083,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8397302627563477,
+    "output_norm": 0.9252434372901917,
+    "input_mean": -0.11567535996437073,
+    "output_mean": -0.11558897793292999,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.1744866371154785,
+    "output_norm": 1.013972282409668,
+    "input_mean": -0.12744151055812836,
+    "output_mean": -0.12670406699180603,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.25867748260498,
+    "output_norm": 8.619078636169434,
+    "input_mean": 1.0799375772476196,
+    "output_mean": 1.0769108533859253,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.10272979736328,
+    "output_norm": 49.813560485839844,
+    "input_mean": 6.260220527648926,
+    "output_mean": 6.224767208099365,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.757740020751953,
+    "output_norm": 19.61358642578125,
+    "input_mean": 2.4668936729431152,
+    "output_mean": 2.4509775638580322,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1388.3941650390625,
+    "output_norm": 1393.7586669921875,
+    "input_mean": -173.53749084472656,
+    "output_mean": -174.1757354736328,
+    "finite": true
+  },
+  {
+    "token": 22,
+    "kind": "query",
+    "original_index": 6,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1921997070312,
+    "output_norm": 576.8964233398438,
+    "input_mean": -72.76533508300781,
+    "output_mean": -72.09147644042969,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6288504600524902,
+    "output_norm": 1.9655582904815674,
+    "input_mean": 0.24600522220134735,
+    "output_mean": 0.24563482403755188,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8468425273895264,
+    "output_norm": 0.9337032437324524,
+    "input_mean": -0.11673324555158615,
+    "output_mean": -0.11664605140686035,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.210278034210205,
+    "output_norm": 1.0653884410858154,
+    "input_mean": -0.13390550017356873,
+    "output_mean": -0.13313010334968567,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.250807762145996,
+    "output_norm": 8.588655471801758,
+    "input_mean": 1.076123595237732,
+    "output_mean": 1.073108196258545,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.24843215942383,
+    "output_norm": 49.95845031738281,
+    "input_mean": 6.2784295082092285,
+    "output_mean": 6.242873191833496,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.769811630249023,
+    "output_norm": 19.625568389892578,
+    "input_mean": 2.468400478363037,
+    "output_mean": 2.452474594116211,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1389.6444091796875,
+    "output_norm": 1395.0137939453125,
+    "input_mean": -173.6937713623047,
+    "output_mean": -174.3325653076172,
+    "finite": true
+  },
+  {
+    "token": 23,
+    "kind": "query",
+    "original_index": 7,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.188720703125,
+    "output_norm": 576.8930053710938,
+    "input_mean": -72.764892578125,
+    "output_mean": -72.09103393554688,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6271536350250244,
+    "output_norm": 1.9631671905517578,
+    "input_mean": 0.24570587277412415,
+    "output_mean": 0.24533596634864807,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8522963523864746,
+    "output_norm": 0.9405542016029358,
+    "input_mean": -0.11758995056152344,
+    "output_mean": -0.1175021082162857,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.231121063232422,
+    "output_norm": 1.0974547863006592,
+    "input_mean": -0.13793697953224182,
+    "output_mean": -0.13713787496089935,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.244797706604004,
+    "output_norm": 8.564327239990234,
+    "input_mean": 1.0730737447738647,
+    "output_mean": 1.0700671672821045,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.41366958618164,
+    "output_norm": 50.12276840209961,
+    "input_mean": 6.299078941345215,
+    "output_mean": 6.263406276702881,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.78046989440918,
+    "output_norm": 19.636144638061523,
+    "input_mean": 2.469730854034424,
+    "output_mean": 2.453796148300171,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1390.9190673828125,
+    "output_norm": 1396.2933349609375,
+    "input_mean": -173.85308837890625,
+    "output_mean": -174.4924774169922,
+    "finite": true
+  },
+  {
+    "token": 24,
+    "kind": "query",
+    "original_index": 8,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1842651367188,
+    "output_norm": 576.8885498046875,
+    "input_mean": -72.76433563232422,
+    "output_mean": -72.09048461914062,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6257224082946777,
+    "output_norm": 1.9610998630523682,
+    "input_mean": 0.2454470843076706,
+    "output_mean": 0.24507758021354675,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8562777042388916,
+    "output_norm": 0.9461201429367065,
+    "input_mean": -0.11828597635030746,
+    "output_mean": -0.11819760501384735,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.2408385276794434,
+    "output_norm": 1.114867091178894,
+    "input_mean": -0.1401263177394867,
+    "output_mean": -0.13931423425674438,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.23965835571289,
+    "output_norm": 8.542585372924805,
+    "input_mean": 1.0703482627868652,
+    "output_mean": 1.0673497915267944,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.589229583740234,
+    "output_norm": 50.29734802246094,
+    "input_mean": 6.321019172668457,
+    "output_mean": 6.285222053527832,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.789936065673828,
+    "output_norm": 19.645536422729492,
+    "input_mean": 2.470912218093872,
+    "output_mean": 2.454969882965088,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1392.1885986328125,
+    "output_norm": 1397.5677490234375,
+    "input_mean": -174.0117645263672,
+    "output_mean": -174.65174865722656,
+    "finite": true
+  },
+  {
+    "token": 25,
+    "kind": "query",
+    "original_index": 9,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1785888671875,
+    "output_norm": 576.8829345703125,
+    "input_mean": -72.76362609863281,
+    "output_mean": -72.08979797363281,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6240992546081543,
+    "output_norm": 1.958863615989685,
+    "input_mean": 0.24516715109348297,
+    "output_mean": 0.24479807913303375,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.859339714050293,
+    "output_norm": 0.9507995843887329,
+    "input_mean": -0.11887116730213165,
+    "output_mean": -0.11878233402967453,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.2510805130004883,
+    "output_norm": 1.1310641765594482,
+    "input_mean": -0.14216288924217224,
+    "output_mean": -0.1413387656211853,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.234762191772461,
+    "output_norm": 8.520916938781738,
+    "input_mean": 1.0676316022872925,
+    "output_mean": 1.0646412372589111,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.758567810058594,
+    "output_norm": 50.46574020385742,
+    "input_mean": 6.342181205749512,
+    "output_mean": 6.306264400482178,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.798744201660156,
+    "output_norm": 19.654277801513672,
+    "input_mean": 2.4720115661621094,
+    "output_mean": 2.4560623168945312,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1393.411865234375,
+    "output_norm": 1398.7957763671875,
+    "input_mean": -174.16465759277344,
+    "output_mean": -174.80520629882812,
+    "finite": true
+  },
+  {
+    "token": 26,
+    "kind": "query",
+    "original_index": 10,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1723022460938,
+    "output_norm": 576.876708984375,
+    "input_mean": -72.7628402709961,
+    "output_mean": -72.08900451660156,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.622293710708618,
+    "output_norm": 1.9563907384872437,
+    "input_mean": 0.24485760927200317,
+    "output_mean": 0.24448901414871216,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.862111806869507,
+    "output_norm": 0.9548389911651611,
+    "input_mean": -0.11937633156776428,
+    "output_mean": -0.11928708851337433,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.26806640625,
+    "output_norm": 1.152348518371582,
+    "input_mean": -0.14483897387981415,
+    "output_mean": -0.14399904012680054,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.230387687683105,
+    "output_norm": 8.500472068786621,
+    "input_mean": 1.0650686025619507,
+    "output_mean": 1.062085747718811,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 50.91594314575195,
+    "output_norm": 50.62223815917969,
+    "input_mean": 6.361848831176758,
+    "output_mean": 6.325819969177246,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.80708122253418,
+    "output_norm": 19.662548065185547,
+    "input_mean": 2.4730520248413086,
+    "output_mean": 2.4570958614349365,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1394.5753173828125,
+    "output_norm": 1399.963623046875,
+    "input_mean": -174.31007385253906,
+    "output_mean": -174.951171875,
+    "finite": true
+  },
+  {
+    "token": 27,
+    "kind": "query",
+    "original_index": 11,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1654663085938,
+    "output_norm": 576.8699340820312,
+    "input_mean": -72.76199340820312,
+    "output_mean": -72.08816528320312,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6209027767181396,
+    "output_norm": 1.9544888734817505,
+    "input_mean": 0.24461953341960907,
+    "output_mean": 0.2442513108253479,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.864872455596924,
+    "output_norm": 0.9582485556602478,
+    "input_mean": -0.11980269849300385,
+    "output_mean": -0.11971312016248703,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.29184889793396,
+    "output_norm": 1.1802316904067993,
+    "input_mean": -0.14834460616111755,
+    "output_mean": -0.14748400449752808,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.227030754089355,
+    "output_norm": 8.483526229858398,
+    "input_mean": 1.0629442930221558,
+    "output_mean": 1.0599676370620728,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 51.06230545043945,
+    "output_norm": 50.767791748046875,
+    "input_mean": 6.380140781402588,
+    "output_mean": 6.344008922576904,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.814903259277344,
+    "output_norm": 19.67030906677246,
+    "input_mean": 2.4740281105041504,
+    "output_mean": 2.4580655097961426,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1395.681640625,
+    "output_norm": 1401.0743408203125,
+    "input_mean": -174.44834899902344,
+    "output_mean": -175.0899658203125,
+    "finite": true
+  },
+  {
+    "token": 28,
+    "kind": "query",
+    "original_index": 12,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1581420898438,
+    "output_norm": 576.8626708984375,
+    "input_mean": -72.76107788085938,
+    "output_mean": -72.0872573852539,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.6201212406158447,
+    "output_norm": 1.9533940553665161,
+    "input_mean": 0.24448250234127045,
+    "output_mean": 0.244114488363266,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8673741817474365,
+    "output_norm": 0.960888147354126,
+    "input_mean": -0.12013274431228638,
+    "output_mean": -0.12004293501377106,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.3180439472198486,
+    "output_norm": 1.2118726968765259,
+    "input_mean": -0.1523226499557495,
+    "output_mean": -0.1514386087656021,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.224509239196777,
+    "output_norm": 8.470098495483398,
+    "input_mean": 1.0612609386444092,
+    "output_mean": 1.0582892894744873,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 51.200218200683594,
+    "output_norm": 50.90493392944336,
+    "input_mean": 6.397375106811523,
+    "output_mean": 6.361145973205566,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.822126388549805,
+    "output_norm": 19.67747688293457,
+    "input_mean": 2.4749293327331543,
+    "output_mean": 2.4589614868164062,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1396.7353515625,
+    "output_norm": 1402.132080078125,
+    "input_mean": -174.580078125,
+    "output_mean": -175.22213745117188,
+    "finite": true
+  },
+  {
+    "token": 29,
+    "kind": "query",
+    "original_index": 13,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1505126953125,
+    "output_norm": 576.8551025390625,
+    "input_mean": -72.76012420654297,
+    "output_mean": -72.08631134033203,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.619659423828125,
+    "output_norm": 1.9526594877243042,
+    "input_mean": 0.24439051747322083,
+    "output_mean": 0.2440226525068283,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.8692612648010254,
+    "output_norm": 0.9627379775047302,
+    "input_mean": -0.12036402523517609,
+    "output_mean": -0.12027402967214584,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.336266279220581,
+    "output_norm": 1.2349542379379272,
+    "input_mean": -0.15522469580173492,
+    "output_mean": -0.1543235182762146,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.222540855407715,
+    "output_norm": 8.459342002868652,
+    "input_mean": 1.0599124431610107,
+    "output_mean": 1.0569448471069336,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 51.33956527709961,
+    "output_norm": 51.04350662231445,
+    "input_mean": 6.414790153503418,
+    "output_mean": 6.378462314605713,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.828401565551758,
+    "output_norm": 19.683704376220703,
+    "input_mean": 2.475712776184082,
+    "output_mean": 2.4597394466400146,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1397.7557373046875,
+    "output_norm": 1403.156494140625,
+    "input_mean": -174.70761108398438,
+    "output_mean": -175.3501434326172,
+    "finite": true
+  },
+  {
+    "token": 30,
+    "kind": "query",
+    "original_index": 14,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1426391601562,
+    "output_norm": 576.8473510742188,
+    "input_mean": -72.7591323852539,
+    "output_mean": -72.08533477783203,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 0,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.0.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.619267463684082,
+    "output_norm": 1.951993465423584,
+    "input_mean": 0.24430713057518005,
+    "output_mean": 0.24393939971923828,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 1,
+    "operator": "SWA",
+    "module": "body.blocks.blocks.1.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.870455503463745,
+    "output_norm": 0.9639639258384705,
+    "input_mean": -0.12051726877689362,
+    "output_mean": -0.12042716890573502,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 2,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.2.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 2.3459503650665283,
+    "output_norm": 1.2477843761444092,
+    "input_mean": -0.15683799982070923,
+    "output_mean": -0.15592722594738007,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 3,
+    "operator": "GQA",
+    "module": "body.blocks.blocks.3.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 11.220829963684082,
+    "output_norm": 8.449942588806152,
+    "input_mean": 1.0587341785430908,
+    "output_mean": 1.055769920349121,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 4,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.4.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 51.480167388916016,
+    "output_norm": 51.183319091796875,
+    "input_mean": 6.432361602783203,
+    "output_mean": 6.395934104919434,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 5,
+    "operator": "GDN",
+    "module": "body.blocks.blocks.5.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 19.833765029907227,
+    "output_norm": 19.689022064208984,
+    "input_mean": 2.476381778717041,
+    "output_mean": 2.4604039192199707,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 6,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.6.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 1398.741455078125,
+    "output_norm": 1404.1458740234375,
+    "input_mean": -174.830810546875,
+    "output_mean": -175.47381591796875,
+    "finite": true
+  },
+  {
+    "token": 31,
+    "kind": "query",
+    "original_index": 15,
+    "block": 7,
+    "operator": "FFN",
+    "module": "body.blocks.blocks.7.core.mhc",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "torch.float32",
+    "device": "cuda:0",
+    "input_norm": 582.1342163085938,
+    "output_norm": 576.8389892578125,
+    "input_mean": -72.75808715820312,
+    "output_mean": -72.08428955078125,
+    "finite": true
+  }
+]

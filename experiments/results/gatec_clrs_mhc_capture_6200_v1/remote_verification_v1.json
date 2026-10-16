@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-mhc-input-output-capture-6200-20261016T065806Z",
+  "parent": "d3cf866419c6fa93507e70008d9d8ea58fd51960",
+  "status": "COMPLETED_MHC_INPUT_OUTPUT_CAPTURE",
+  "verified_files": 34,
+  "verified_tree": "4e3ec5b2de6cdedd91a1a70816164d22cf5e79c7",
+  "historical_remote_files_preserved": 2102,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

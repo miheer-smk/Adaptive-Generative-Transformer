@@ -1,0 +1,62 @@
+{
+  "src/gqa.py": {
+    "kind": "file",
+    "size": 13028,
+    "mode": 384,
+    "sha256": "603758a59275dff35ba13542ce61ce6a90d482cd4112c720f680223dbcb7d8cb"
+  },
+  "src/swiglu.py": {
+    "kind": "file",
+    "size": 1007,
+    "mode": 384,
+    "sha256": "326ceb8516782b9788f7be01645f48f97d0df8c524f93e313486a95a46bdaec1"
+  },
+  "src/mhc.py": {
+    "kind": "file",
+    "size": 1790,
+    "mode": 384,
+    "sha256": "f85f5d57e1dcfda4a40cc712de9f614ca17fbd29ce391d034e1fdb1cb0bc3408"
+  },
+  "src/blocks.py": {
+    "kind": "file",
+    "size": 17317,
+    "mode": 384,
+    "sha256": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf"
+  },
+  "src/gdn_v3.py": {
+    "kind": "file",
+    "size": 7634,
+    "mode": 420,
+    "sha256": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c"
+  },
+  "src/agt.py": {
+    "kind": "file",
+    "size": 16008,
+    "mode": 384,
+    "sha256": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e"
+  },
+  "src/terminal_commit.py": {
+    "kind": "file",
+    "size": 9542,
+    "mode": 420,
+    "sha256": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3"
+  },
+  "src/prelude.py": {
+    "kind": "file",
+    "size": 1569,
+    "mode": 384,
+    "sha256": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91"
+  },
+  "src/commit.py": {
+    "kind": "file",
+    "size": 1081,
+    "mode": 384,
+    "sha256": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb"
+  },
+  "experiments/results/gatec_clrs_residual_score_audit_6200_v1/audit_numeric_v3.py": {
+    "kind": "file",
+    "size": 22663,
+    "mode": 436,
+    "sha256": "b061f571fe68303fb6aa44f0894b00a623d11a964e7441615a087d5231bf353b"
+  }
+}
