@@ -1,0 +1,12 @@
+{
+  "files": {
+    "extract_cache_v1.py": "2b2103241163fa96f107ff6be05af3b3f1e2ab6597a59bb0b23dacc4cef10470",
+    "write_report_v1.py": "1c3f6c8de09c38e88a04a1aba6dbd787995d7a5852790230f114bf9e9ba3c85e",
+    "publish_cache_v1.py": "7305d88a9e232625c12a67886175b8e38cfd2e55f98d0efebefd6460f40da930",
+    "verify_cache_offline_v1.py": "d56d3c7c64ee71e75ca088eefb8ae87e34d2329f411143d7b8f35a36b3975b34",
+    "cache_observer_v1.py": "da86d50ac0d19db55505d791c94046a0cb4a9219d6db230d041ecfd2bdff5c6c"
+  },
+  "pre_execution_seal": "extraction_seal_v1.json",
+  "no_further_model_calls": true,
+  "checkpoint_frozen": true
+}

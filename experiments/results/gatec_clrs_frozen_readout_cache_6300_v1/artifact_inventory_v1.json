@@ -1,0 +1,122 @@
+{
+  "files": {
+    "extraction_results_v1.json": {
+      "bytes": 1459,
+      "sha256": "d5e626afe7bc074452cbbea5c158acf424af1744e2a6c36e9e5e39c9e8381725"
+    },
+    "per_array_extraction_v1.jsonl": {
+      "bytes": 240861,
+      "sha256": "770d32e3ecc82658d24ac7841e979697ef614ca5075f63b69a21e56a8f87f707"
+    },
+    "extraction_seal_v1.json": {
+      "bytes": 710,
+      "sha256": "42b113843cb9ea59da12c0dbd4309539fbdb398255fafdf55d872e06e8c61957"
+    },
+    "token_traces_v1.jsonl.gz": {
+      "bytes": 635035,
+      "sha256": "83106b290a27dc540e9af7b4bff16ad22dd830cf6402018581cb50e7c248e307"
+    },
+    "implementation_seal_final_v1.json": {
+      "bytes": 616,
+      "sha256": "d1d6b63d453e8e88bc4c053cdd74f35b5663e32df8be22c10b00a2bb09a93888"
+    },
+    "final_results_v1.json": {
+      "bytes": 4444,
+      "sha256": "7ecf5de2a72e534d9f48e8db5265e9fe4f97cc351ffbb2c1bab45e253d22c42b"
+    },
+    "cache_verification_v1.json": {
+      "bytes": 983,
+      "sha256": "81a8c25b4fce0201feee12900803f277e700e5753bacb50c044f691a2f9d1ed8"
+    },
+    "runtime_identity_v1.json": {
+      "bytes": 395,
+      "sha256": "b6b420a0f02805612516bc4106296e0513053461fc77c697f54c2f481767bcee"
+    },
+    "manifest_v1.json": {
+      "bytes": 6362,
+      "sha256": "52bf479d4a900b0c660295c168205b73f1711f83b95e57c19dfa6b4edb6bd1e6"
+    },
+    "offline_verification_execution_v1.log": {
+      "bytes": 1281,
+      "sha256": "d84f163af5a7ebfdad332af281f748f3df7b0fdf5a5aef3ce28c0e4becf5cc65"
+    },
+    "extraction_execution_v1.log": {
+      "bytes": 9227,
+      "sha256": "3238a040ed8400adb9445661f810914c4e0223e6a2dd9e662b90a286ed751f53"
+    },
+    "extract_cache_v1.py": {
+      "bytes": 16451,
+      "sha256": "2b2103241163fa96f107ff6be05af3b3f1e2ab6597a59bb0b23dacc4cef10470"
+    },
+    "numerical_equivalence_v1.json": {
+      "bytes": 63173,
+      "sha256": "b5d00aaec45297425486e98696551d89a3a0eb0301e4d81247a94baa7262eda6"
+    },
+    "integrity_initial_v1.json": {
+      "bytes": 617171,
+      "sha256": "cdd2e9b8797cc2d74cceb17232e8dd0a5b5a01289b5330306c00b6f3856bcba0"
+    },
+    "preflight_verification_v1.json": {
+      "bytes": 636,
+      "sha256": "1ec2c33b7e24911329f67f37a0978c172d9cc2c2ce328bd4ab20f9eba90152f0"
+    },
+    "observer_diff_v1.patch": {
+      "bytes": 2829,
+      "sha256": "134fa39fa5f157781a7a30e5b9e1105b5e21fe3601ef9c3a8840de9af236add4"
+    },
+    "report_v1.md": {
+      "bytes": 8842,
+      "sha256": "f212e1a80634be6893b97b5db746a3ad1eacc539035bba69525725422d29e64a"
+    },
+    "write_report_v1.py": {
+      "bytes": 10142,
+      "sha256": "1c3f6c8de09c38e88a04a1aba6dbd787995d7a5852790230f114bf9e9ba3c85e"
+    },
+    "input_manifest_v1.json": {
+      "bytes": 150409,
+      "sha256": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92"
+    },
+    "extraction_started_v1.json": {
+      "bytes": 346,
+      "sha256": "1bb536d3bb32d995e72d3e2f1a32ca3a3ed1e11197a27155fc9716dfc4f397f0"
+    },
+    "training_representation_cache_v1.pt": {
+      "bytes": 1082197,
+      "sha256": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41"
+    },
+    "publish_cache_v1.py": {
+      "bytes": 8269,
+      "sha256": "7305d88a9e232625c12a67886175b8e38cfd2e55f98d0efebefd6460f40da930"
+    },
+    "numerical_equivalence_partial_v1.json": {
+      "bytes": 58998,
+      "sha256": "31b16e77950ca5cfd45f139bdb7faa09d304f96441575c7979a5a13715aad4b1"
+    },
+    "verify_cache_offline_v1.py": {
+      "bytes": 6758,
+      "sha256": "d56d3c7c64ee71e75ca088eefb8ae87e34d2329f411143d7b8f35a36b3975b34"
+    },
+    "execution_ledger_v1.json": {
+      "bytes": 758,
+      "sha256": "cd993acb97972aa002e39d60faacdad23e53578d77eed731fb12fd609b99856e"
+    },
+    "cache_observer_v1.py": {
+      "bytes": 8375,
+      "sha256": "da86d50ac0d19db55505d791c94046a0cb4a9219d6db230d041ecfd2bdff5c6c"
+    },
+    "cache_progress_v1.json": {
+      "bytes": 129,
+      "sha256": "be0f05373c9a404d6182ab47c71dd57f1117822decc3348ebfe3a1c0feff6c50"
+    },
+    "integrity_final_v1.json": {
+      "bytes": 179,
+      "sha256": "1a250f91ed29c186187dd6e740470d10199fdc8debe99e2876a3504814140cc3"
+    },
+    "cache_manifest_v1.json": {
+      "bytes": 1119,
+      "sha256": "05145e7bd7e28be0f33e84b60b3685414c42572d1737fd6ab753f69a4ab7e944"
+    }
+  },
+  "self_excluded": true,
+  "publication_receipts_added_after": true
+}

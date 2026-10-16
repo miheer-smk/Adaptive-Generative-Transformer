@@ -1,0 +1,43 @@
+--- sealed_localization/diagnostic_observer_v1.py
++++ cache_observer_v1.py
+@@ -1,4 +1,4 @@
+-"""Training-only instrumentation derived from the sealed engineering observer; production token execution unchanged."""
++"""Frozen-cache instrumentation derived from the sealed diagnostic observer; production token execution unchanged."""
+ import os
+ os.environ['PYTHONDONTWRITEBYTECODE']='1'
+ import copy,datetime,gzip,hashlib,json,shutil,subprocess,time,traceback
+@@ -38,7 +38,7 @@
+         self.phase='setup';self.pending=None;self.started=time.monotonic()
+         self.optimizer_attempted=self.optimizer_completed=self.optimizer_failed=0
+         self.array_attempted=self.array_completed=self.array_failed=0
+-        self.phase_counts={};self.deadline=self.started+21600
++        self.phase_counts={};self.deadline=self.started+900
+         self.trace=gzip.open(OUT/'token_traces_v1.jsonl.gz','wt')
+     def summary(self):
+         return dict(attempted_tokens=self.attempted,completed_tokens=self.completed,failed_tokens=self.failed,
+@@ -49,12 +49,12 @@
+             peak_CUDA_allocated=torch.cuda.max_memory_allocated() if torch.cuda.is_initialized() else 0,
+             peak_CUDA_reserved=torch.cuda.max_memory_reserved() if torch.cuda.is_initialized() else 0)
+     def check(self):
+-        if time.monotonic()>=self.deadline:raise RuntimeError("RESOURCE_STOP: six-hour allocation deadline")
++        if time.monotonic()>=self.deadline:raise RuntimeError("RESOURCE_STOP: 15-minute extraction deadline")
+         if shutil.disk_usage(OUT).free<256*1024**2:raise RuntimeError("RESOURCE_STOP: storage reserve")
+     def token(self,body,x,parent,case_id,token,scripted):
+         self.check()
+-        if self.attempted>=64:raise RuntimeError('RESOURCE_STOP: attempted-token cap')
+-        if self.bank_attempted+8>512:raise RuntimeError('RESOURCE_STOP: bank cap')
++        if self.attempted>=4064:raise RuntimeError('RESOURCE_STOP: attempted-token cap')
++        if self.bank_attempted+8>32512:raise RuntimeError('RESOURCE_STOP: bank cap')
+         if shutil.disk_usage(OUT).free<128*1024**2:raise RuntimeError('RESOURCE_STOP: disk reserve')
+         self.attempted+=1
+         pc=self.phase_counts.setdefault(self.phase,dict(attempted=0,completed=0,failed=0,selected_attempted=0,selected_completed=0,commits=0))
+@@ -135,8 +135,4 @@
+             self.trace.write(json.dumps(row,allow_nan=False)+'\n');self.trace.flush();self.pending=None
+             save('execution_ledger_v1.json',self.summary())
+     def backward(self,loss):
+-        if self.backward_attempted>=2:raise RuntimeError('RESOURCE_STOP: backward cap')
+-        self.check()
+-        self.backward_attempted+=1
+-        loss.backward();self.backward_completed+=1
+-        self.check()
++        raise RuntimeError('Backward is not authorized for cache extraction')

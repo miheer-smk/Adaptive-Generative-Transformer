@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-16T08:27:56.887873+00:00",
+  "pid": 2191083,
+  "no_retry": true,
+  "phase_start_monotonic": 4313888.303814553,
+  "deadline_monotonic": 4314788.303814553,
+  "limit_seconds": 900,
+  "scopes": "CUDA initialization, construction/load, row0 replay and 127 new frozen trajectories; offline closure/publication outside extraction"
+}

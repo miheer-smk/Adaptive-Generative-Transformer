@@ -1,0 +1,224 @@
+{
+  "files": [
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/artifact_inventory_v1.json",
+      "size": 4321,
+      "sha256": "0b19480dadab894d596ed1feb40febdea63314a7a9db46a8f141e3872c573e7b",
+      "git_oid": "fbe4a219bc0154582ff6dc75b5e286f35429b713",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/cache_manifest_v1.json",
+      "size": 1119,
+      "sha256": "05145e7bd7e28be0f33e84b60b3685414c42572d1737fd6ab753f69a4ab7e944",
+      "git_oid": "0ae22a40c5b812737e9d3898afdaa859a127b456",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/cache_observer_v1.py",
+      "size": 8375,
+      "sha256": "da86d50ac0d19db55505d791c94046a0cb4a9219d6db230d041ecfd2bdff5c6c",
+      "git_oid": "46540e5d5c2227cae84b8d180033b88bc770214f",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/cache_progress_v1.json",
+      "size": 129,
+      "sha256": "be0f05373c9a404d6182ab47c71dd57f1117822decc3348ebfe3a1c0feff6c50",
+      "git_oid": "94cc62fc37a07b27d071b8e3964bada68dfe3387",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/cache_verification_v1.json",
+      "size": 983,
+      "sha256": "81a8c25b4fce0201feee12900803f277e700e5753bacb50c044f691a2f9d1ed8",
+      "git_oid": "77401141e44c797c9a250d360af722d904fa9e69",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/execution_ledger_v1.json",
+      "size": 758,
+      "sha256": "cd993acb97972aa002e39d60faacdad23e53578d77eed731fb12fd609b99856e",
+      "git_oid": "08da3be9f7c633375f7378599d2d7afcda8daa78",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/extract_cache_v1.py",
+      "size": 16451,
+      "sha256": "2b2103241163fa96f107ff6be05af3b3f1e2ab6597a59bb0b23dacc4cef10470",
+      "git_oid": "90eaf0bde7c34c6b84d08b04e0c7b71d1ae8c84b",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/extraction_execution_v1.log",
+      "size": 9227,
+      "sha256": "3238a040ed8400adb9445661f810914c4e0223e6a2dd9e662b90a286ed751f53",
+      "git_oid": "784694193491cd67901e576a1a5c27b33869f751",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/extraction_results_v1.json",
+      "size": 1459,
+      "sha256": "d5e626afe7bc074452cbbea5c158acf424af1744e2a6c36e9e5e39c9e8381725",
+      "git_oid": "d584f7a385396ead86a9b2828a4896a88e0a13ac",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/extraction_seal_v1.json",
+      "size": 710,
+      "sha256": "42b113843cb9ea59da12c0dbd4309539fbdb398255fafdf55d872e06e8c61957",
+      "git_oid": "e827b378292167e9b263a1c8fe8df0f77264bc08",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/extraction_started_v1.json",
+      "size": 346,
+      "sha256": "1bb536d3bb32d995e72d3e2f1a32ca3a3ed1e11197a27155fc9716dfc4f397f0",
+      "git_oid": "9ae69dad87f68ec8132f78c7f8fabe769150d726",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/final_results_v1.json",
+      "size": 4444,
+      "sha256": "7ecf5de2a72e534d9f48e8db5265e9fe4f97cc351ffbb2c1bab45e253d22c42b",
+      "git_oid": "728221bc8926d52a5fa000f8889fea608e5d6d05",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/implementation_seal_final_v1.json",
+      "size": 616,
+      "sha256": "d1d6b63d453e8e88bc4c053cdd74f35b5663e32df8be22c10b00a2bb09a93888",
+      "git_oid": "9b1dbd998f57eba398e0d4388edb63f5efa8f6f4",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/input_manifest_v1.json",
+      "size": 150409,
+      "sha256": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92",
+      "git_oid": "7042aaac52d61d1b19e9bcfdfa47e41fdea68f70",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/integrity_final_v1.json",
+      "size": 179,
+      "sha256": "1a250f91ed29c186187dd6e740470d10199fdc8debe99e2876a3504814140cc3",
+      "git_oid": "bd100c808ce1497d62bc36a3fb0718bfd492938c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/integrity_initial_v1.json",
+      "size": 617171,
+      "sha256": "cdd2e9b8797cc2d74cceb17232e8dd0a5b5a01289b5330306c00b6f3856bcba0",
+      "git_oid": "c49a6fba35099b0f4cbc1580e2da94e698c0a520",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/manifest_v1.json",
+      "size": 6362,
+      "sha256": "52bf479d4a900b0c660295c168205b73f1711f83b95e57c19dfa6b4edb6bd1e6",
+      "git_oid": "8d6e09ce4e71b8ef5402dceba9fd0770bc09a5dd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/numerical_equivalence_partial_v1.json",
+      "size": 58998,
+      "sha256": "31b16e77950ca5cfd45f139bdb7faa09d304f96441575c7979a5a13715aad4b1",
+      "git_oid": "a7f5ce0bf6938f402a42f6f04a555fdc28237bbb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/numerical_equivalence_v1.json",
+      "size": 63173,
+      "sha256": "b5d00aaec45297425486e98696551d89a3a0eb0301e4d81247a94baa7262eda6",
+      "git_oid": "e94a53a2e4ac8197e375654df89df5d6301e64f2",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/observer_diff_v1.patch",
+      "size": 2829,
+      "sha256": "134fa39fa5f157781a7a30e5b9e1105b5e21fe3601ef9c3a8840de9af236add4",
+      "git_oid": "da165432075c4e0fae9acf86dfb735f72c4426ff",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/offline_verification_execution_v1.log",
+      "size": 1281,
+      "sha256": "d84f163af5a7ebfdad332af281f748f3df7b0fdf5a5aef3ce28c0e4becf5cc65",
+      "git_oid": "7b0219edbb967dd9beb925a3a5a70aeb2e3e821c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/per_array_extraction_v1.jsonl",
+      "size": 240861,
+      "sha256": "770d32e3ecc82658d24ac7841e979697ef614ca5075f63b69a21e56a8f87f707",
+      "git_oid": "f4aad48d79c27aba20d5b5635cb4deae509081e4",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/preflight_verification_v1.json",
+      "size": 636,
+      "sha256": "1ec2c33b7e24911329f67f37a0978c172d9cc2c2ce328bd4ab20f9eba90152f0",
+      "git_oid": "2e771916bc6f78e50748bdab30c415fa6740e1b8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/publication_started_v1.json",
+      "size": 257,
+      "sha256": "a3659ce827ea0f2ce37ecf6730efbd71b6b8537d0e0156ce0394453793cb68eb",
+      "git_oid": "4b879508e0cce9f84e26f8bc571d1ba0e95d57a8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/publish_cache_v1.py",
+      "size": 8269,
+      "sha256": "7305d88a9e232625c12a67886175b8e38cfd2e55f98d0efebefd6460f40da930",
+      "git_oid": "e88b7762a716d3b23b74b354850616eeea00e7e2",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/report_v1.md",
+      "size": 8842,
+      "sha256": "f212e1a80634be6893b97b5db746a3ad1eacc539035bba69525725422d29e64a",
+      "git_oid": "c4589ee1f52a4fbd55575a306e016b3fc0d22ae0",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/runtime_identity_v1.json",
+      "size": 395,
+      "sha256": "b6b420a0f02805612516bc4106296e0513053461fc77c697f54c2f481767bcee",
+      "git_oid": "db105d1ec9600e61be975ce659baf433bd7c8bca",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/token_traces_v1.jsonl.gz",
+      "size": 635035,
+      "sha256": "83106b290a27dc540e9af7b4bff16ad22dd830cf6402018581cb50e7c248e307",
+      "git_oid": "0154259c21a49d6585d29383aff6a94933850dcd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/training_representation_cache_v1.pt",
+      "size": 1082197,
+      "sha256": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41",
+      "git_oid": "9b59d68686afaf997ecac8df45590c6c882d2cc1",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/verify_cache_offline_v1.py",
+      "size": 6758,
+      "sha256": "d56d3c7c64ee71e75ca088eefb8ae87e34d2329f411143d7b8f35a36b3975b34",
+      "git_oid": "2014e8c38494355e7b87dbc8bf114c7439a18f9c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/write_report_v1.py",
+      "size": 10142,
+      "sha256": "1c3f6c8de09c38e88a04a1aba6dbd787995d7a5852790230f114bf9e9ba3c85e",
+      "git_oid": "8674eadb6fc518a6dcea739d04abf3eb110773db",
+      "mode": "100644"
+    }
+  ],
+  "self_excluded": true,
+  "LFS_required": false,
+  "secret_scan": "Common credential/private-key signatures; heuristic limitation disclosed"
+}

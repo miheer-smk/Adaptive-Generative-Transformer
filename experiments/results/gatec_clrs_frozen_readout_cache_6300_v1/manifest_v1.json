@@ -1,0 +1,174 @@
+{
+  "created_utc": "2026-10-16T08:23:14.581926+00:00",
+  "checkpoint_sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "model_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "inputs": {
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/model_update1000_v1.pt": {
+      "kind": "file",
+      "size": 22507575,
+      "mode": 436,
+      "sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/train_pool_v1.json": {
+      "kind": "file",
+      "size": 1445779,
+      "mode": 436,
+      "sha256": "a3e7a17717c44ef7202bf2072f23981a089e5b09c39694740834dccc227b6851"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/train_official_arrays_v1.npz": {
+      "kind": "file",
+      "size": 451820,
+      "mode": 436,
+      "sha256": "686d0fd178beb600b056cd6ac6a213c8ce8b9f3ea18f7c117a4541723a3fa1f9"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/official_data_manifest_v1.json": {
+      "kind": "file",
+      "size": 5973,
+      "mode": 436,
+      "sha256": "be275a03872699cc7d8c36919619214bae68a7851d2537f71d0fac5389ddb2ea"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/official_source_manifest_v1.json": {
+      "kind": "file",
+      "size": 8801,
+      "mode": 436,
+      "sha256": "e7f38c388223e28ac49f9ebb8765343596cd0c424bd0982ba3a0f35c302b8a6f"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/clrs_adapter_v1.py": {
+      "kind": "file",
+      "size": 4846,
+      "mode": 436,
+      "sha256": "53b9e7106a233e34d6a072ab1ff80bb69e82c3d09e507466df36447eeeb67f00"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_order_v1.json": {
+      "kind": "file",
+      "size": 39248,
+      "mode": 436,
+      "sha256": "512a0e8386ffe8852e42c75881bed2859b4398aec6faf11488ff418a94e34135"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_subset_records_v1.jsonl": {
+      "kind": "file",
+      "size": 796419,
+      "mode": 436,
+      "sha256": "21a2a5d746cc422c1a5bfd8c0e27154f993545e62defe25dafd24b39e5d1769e"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/artifact_index_final_v1.json": {
+      "kind": "file",
+      "size": 6480,
+      "mode": 436,
+      "sha256": "2d812e18ba536012219ef81193d250a0a62069999d6de7f2d32b76c0ecf70c2e"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/training_implementation_seal_v1.json": {
+      "kind": "file",
+      "size": 1061,
+      "mode": 436,
+      "sha256": "b4a58b00aa8bb83ae03be3d2fc1147fa6075d92f1bbd337a0d83e38060c900fa"
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/implementation_seal_v1.json": {
+      "kind": "file",
+      "size": 4035,
+      "mode": 436,
+      "sha256": "443ed767167af71825441988e1b4b2f3f5a2e4a1cd8220c4c176f15d7a0e0c32"
+    },
+    "experiments/results/gatec_clrs_pointer_localization_6200_v1/final_tensor_evidence_v1.pt": {
+      "kind": "file",
+      "size": 274027,
+      "mode": 436,
+      "sha256": "607ca991f8f021c839948b2a85cca8709470e5651b8b09aedbacf32ce970ab42"
+    },
+    "experiments/results/gatec_clrs_pointer_localization_6200_v1/final_results_v1.json": {
+      "kind": "file",
+      "size": 63985,
+      "mode": 436,
+      "sha256": "07f8f9f35246b4231832ccab4b62d33653d74fa5bd6c768f93fae759d39dbdfc"
+    },
+    "experiments/results/gatec_clrs_pointer_localization_6200_v1/locked_input_v1.json": {
+      "kind": "file",
+      "size": 1295,
+      "mode": 436,
+      "sha256": "a8af9b7fa6f013fecb12db690e2e3239b579bb5e9dca0cfc4c8b818ba5627807"
+    },
+    "experiments/results/gatec_clrs_pointer_localization_6200_v1/diagnostic_observer_v1.py": {
+      "kind": "file",
+      "size": 8512,
+      "mode": 436,
+      "sha256": "9086d76d29ea3604dc95d4722076d5b95444ae622d762d9340c3b9f2cc9d1abd"
+    },
+    "experiments/results/gatec_clrs_pointer_localization_6200_v1/verified_model_identities_v1.json": {
+      "kind": "file",
+      "size": 318,
+      "mode": 436,
+      "sha256": "8b74a3b34733f98e1957fc5c510db82d726125896f3a50e7fa2afdd62a7e902b"
+    },
+    "src/agt.py": {
+      "kind": "file",
+      "size": 16008,
+      "mode": 384,
+      "sha256": "fcf34eac6e906e94ab611ebddb29705a13c526deae05180c4ed6b6a3462ae00e"
+    },
+    "src/blocks.py": {
+      "kind": "file",
+      "size": 17317,
+      "mode": 384,
+      "sha256": "a65826ed4370369c87b9ba6f37ce71a13ddf733534d8fd4aa82cca426943dacf"
+    },
+    "src/executor.py": {
+      "kind": "file",
+      "size": 30079,
+      "mode": 384,
+      "sha256": "f6edca3f7d4307bfb57bf2961d5476f277f72363aff73338276d78a6ebe8dc9f"
+    },
+    "src/norms.py": {
+      "kind": "file",
+      "size": 807,
+      "mode": 384,
+      "sha256": "2b2dd2ccb8f3315e176cb95985230c0cd15d766af994fbffa1007a07b60f1e68"
+    },
+    "src/terminal_commit.py": {
+      "kind": "file",
+      "size": 9542,
+      "mode": 420,
+      "sha256": "3323931f4a9f3c01483d28caa679415b52111f0500eac5d61e5032d06ee0d8b3"
+    },
+    "src/commit.py": {
+      "kind": "file",
+      "size": 1081,
+      "mode": 384,
+      "sha256": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb"
+    }
+  },
+  "historical_training_status": "COMPLETED_NON_SUCCESS",
+  "scope": "128 size16 training arrays only; reuse row0, extract rows1..127; no readout fitting or held-out collection",
+  "device": "cuda",
+  "precision": "FP32",
+  "TF32": false,
+  "program": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "runtime_limit_seconds": 900,
+  "attempted_token_cap": 4064,
+  "selected_bank_cap": 32512,
+  "commits_cap": 4064,
+  "backwards": 0,
+  "optimizer_objects": 0,
+  "optimizer_updates": 0,
+  "warmups": 0,
+  "retries": 0,
+  "expected_cache_payload_bytes": 1064960,
+  "expected_total_storage_upper_bytes": 20971520,
+  "free_bytes_before": 204768153600,
+  "protected_files": 2543,
+  "comparisons": {
+    "atol": 1e-06,
+    "rtol": 1e-05,
+    "predictions": "exact discrete",
+    "archive_coverage": "all128 training-subset rows retain exact 16x16 score matrices and predictions"
+  },
+  "extraction_clock": "900 seconds from start marker immediately before CUDA/model initialization; signal alarm plus per-token checks; offline closure excluded"
+}

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "cache_observer_v1.py": "da86d50ac0d19db55505d791c94046a0cb4a9219d6db230d041ecfd2bdff5c6c",
+    "extract_cache_v1.py": "2b2103241163fa96f107ff6be05af3b3f1e2ab6597a59bb0b23dacc4cef10470",
+    "observer_diff_v1.patch": "134fa39fa5f157781a7a30e5b9e1105b5e21fe3601ef9c3a8840de9af236add4",
+    "manifest_v1.json": "52bf479d4a900b0c660295c168205b73f1711f83b95e57c19dfa6b4edb6bd1e6",
+    "input_manifest_v1.json": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92",
+    "preflight_verification_v1.json": "1ec2c33b7e24911329f67f37a0978c172d9cc2c2ce328bd4ab20f9eba90152f0"
+  },
+  "sealed_before_model_calls": true,
+  "AST_parse_only": true,
+  "no_test_suite_or_model_fixture": true
+}

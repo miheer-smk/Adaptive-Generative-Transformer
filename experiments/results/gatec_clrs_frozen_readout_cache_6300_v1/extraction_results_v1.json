@@ -1,0 +1,50 @@
+{
+  "status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+  "model_constructions_attempted": 1,
+  "model_constructions_completed": 1,
+  "checkpoint_loads": 1,
+  "new_arrays_attempted": 127,
+  "new_arrays_forward_completed": 127,
+  "new_arrays_verified": 127,
+  "new_arrays_failed": 0,
+  "reused_arrays": 1,
+  "backwards": 0,
+  "optimizer_objects": 0,
+  "optimizer_updates": 0,
+  "held_out_arrays": 0,
+  "retries": 0,
+  "warmups": 0,
+  "extraction_elapsed_seconds": 31.3016986111179,
+  "ledger": {
+    "attempted_tokens": 4064,
+    "completed_tokens": 4064,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 32512,
+    "selected_bank_completed": 32512,
+    "commits": 4064,
+    "backward_attempted": 0,
+    "backward_completed": 0,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "phase_counts": {
+      "training_cache_extraction": {
+        "attempted": 4064,
+        "completed": 4064,
+        "failed": 0,
+        "selected_attempted": 32512,
+        "selected_completed": 32512,
+        "commits": 4064
+      }
+    },
+    "contextual_commit_entries": 28448,
+    "elapsed_seconds": 31.301768707111478,
+    "peak_CUDA_allocated": 20866560,
+    "peak_CUDA_reserved": 35651584,
+    "new_arrays_attempted": 127,
+    "new_arrays_verified": 127,
+    "failed_arrays": 0,
+    "reused_arrays": 1
+  },
+  "parameter_and_buffer_identity_after": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "parameters_and_buffers_unchanged": true
+}

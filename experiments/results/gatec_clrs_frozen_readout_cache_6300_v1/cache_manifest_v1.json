@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+  "cache_file": "training_representation_cache_v1.pt",
+  "sha256": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41",
+  "bytes": 1082197,
+  "verified_arrays": 128,
+  "new_arrays_verified": 127,
+  "reused_arrays": 1,
+  "candidate_shape": [
+    128,
+    16,
+    64
+  ],
+  "query_shape": [
+    128,
+    16,
+    64
+  ],
+  "target_shape": [
+    128,
+    16
+  ],
+  "representation_dtype": "torch.float32",
+  "target_dtype": "torch.int64",
+  "device": "cpu",
+  "gradients_retained": false,
+  "checkpoint_sha256": "2c0e3d6ad3711d8f0ee209eb3e3b0f8db8964e6eeaf2be77b7bd56120f29e6c8",
+  "input_manifest_sha256": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92",
+  "per_array_payload_hash_recipe": "SHA256 raw contiguous CPU tensor bytes; dtype/shape separately recorded",
+  "candidate_role": "state.s committed after original element j",
+  "query_role": "state.s committed after query for original element i",
+  "target_role": "Official predecessor index in original candidate-element coordinates",
+  "no_fitting": true,
+  "held_out_rows": 0
+}

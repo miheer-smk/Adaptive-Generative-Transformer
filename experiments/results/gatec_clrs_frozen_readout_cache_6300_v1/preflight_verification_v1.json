@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "official_revision": "6d5728b9efadf8648413c8c473929a733caacced",
+  "train_rows_in_original_order": 1000,
+  "selected_training_rows": 128,
+  "training_npz_targets_and_FP32_encoding_match": true,
+  "archived_reference_rows": 128,
+  "row0000_input_matches": true,
+  "checkpoint_source_adapter_seals_match": true,
+  "held_out_representations_not_accessed": true,
+  "minimum_archived_top2_gap": 3.5762786865234375e-06,
+  "runtime_model_calls": 0,
+  "expected_storage_upper_bytes": 20971520,
+  "free_bytes": 204768153600,
+  "NumPy_version": "2.5.4",
+  "NumPy_source": "Existing /tmp/agt_clrs_cpu_6200_v1; no install"
+}

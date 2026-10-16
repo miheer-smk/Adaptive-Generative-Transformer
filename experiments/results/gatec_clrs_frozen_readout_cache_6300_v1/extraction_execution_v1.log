@@ -1,0 +1,189 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/cuda/__init__.py:435: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  queued_call()
+Verified training cache 2 /128 official/train/row0001
+Verified training cache 3 /128 official/train/row0002
+Verified training cache 4 /128 official/train/row0003
+Verified training cache 5 /128 official/train/row0004
+Verified training cache 6 /128 official/train/row0005
+Verified training cache 7 /128 official/train/row0006
+Verified training cache 8 /128 official/train/row0007
+Verified training cache 9 /128 official/train/row0008
+Verified training cache 10 /128 official/train/row0009
+Verified training cache 11 /128 official/train/row0010
+Verified training cache 12 /128 official/train/row0011
+Verified training cache 13 /128 official/train/row0012
+Verified training cache 14 /128 official/train/row0013
+Verified training cache 15 /128 official/train/row0014
+Verified training cache 16 /128 official/train/row0015
+Verified training cache 17 /128 official/train/row0016
+Verified training cache 18 /128 official/train/row0017
+Verified training cache 19 /128 official/train/row0018
+Verified training cache 20 /128 official/train/row0019
+Verified training cache 21 /128 official/train/row0020
+Verified training cache 22 /128 official/train/row0021
+Verified training cache 23 /128 official/train/row0022
+Verified training cache 24 /128 official/train/row0023
+Verified training cache 25 /128 official/train/row0024
+Verified training cache 26 /128 official/train/row0025
+Verified training cache 27 /128 official/train/row0026
+Verified training cache 28 /128 official/train/row0027
+Verified training cache 29 /128 official/train/row0028
+Verified training cache 30 /128 official/train/row0029
+Verified training cache 31 /128 official/train/row0030
+Verified training cache 32 /128 official/train/row0031
+Verified training cache 33 /128 official/train/row0032
+Verified training cache 34 /128 official/train/row0033
+Verified training cache 35 /128 official/train/row0034
+Verified training cache 36 /128 official/train/row0035
+Verified training cache 37 /128 official/train/row0036
+Verified training cache 38 /128 official/train/row0037
+Verified training cache 39 /128 official/train/row0038
+Verified training cache 40 /128 official/train/row0039
+Verified training cache 41 /128 official/train/row0040
+Verified training cache 42 /128 official/train/row0041
+Verified training cache 43 /128 official/train/row0042
+Verified training cache 44 /128 official/train/row0043
+Verified training cache 45 /128 official/train/row0044
+Verified training cache 46 /128 official/train/row0045
+Verified training cache 47 /128 official/train/row0046
+Verified training cache 48 /128 official/train/row0047
+Verified training cache 49 /128 official/train/row0048
+Verified training cache 50 /128 official/train/row0049
+Verified training cache 51 /128 official/train/row0050
+Verified training cache 52 /128 official/train/row0051
+Verified training cache 53 /128 official/train/row0052
+Verified training cache 54 /128 official/train/row0053
+Verified training cache 55 /128 official/train/row0054
+Verified training cache 56 /128 official/train/row0055
+Verified training cache 57 /128 official/train/row0056
+Verified training cache 58 /128 official/train/row0057
+Verified training cache 59 /128 official/train/row0058
+Verified training cache 60 /128 official/train/row0059
+Verified training cache 61 /128 official/train/row0060
+Verified training cache 62 /128 official/train/row0061
+Verified training cache 63 /128 official/train/row0062
+Verified training cache 64 /128 official/train/row0063
+Verified training cache 65 /128 official/train/row0064
+Verified training cache 66 /128 official/train/row0065
+Verified training cache 67 /128 official/train/row0066
+Verified training cache 68 /128 official/train/row0067
+Verified training cache 69 /128 official/train/row0068
+Verified training cache 70 /128 official/train/row0069
+Verified training cache 71 /128 official/train/row0070
+Verified training cache 72 /128 official/train/row0071
+Verified training cache 73 /128 official/train/row0072
+Verified training cache 74 /128 official/train/row0073
+Verified training cache 75 /128 official/train/row0074
+Verified training cache 76 /128 official/train/row0075
+Verified training cache 77 /128 official/train/row0076
+Verified training cache 78 /128 official/train/row0077
+Verified training cache 79 /128 official/train/row0078
+Verified training cache 80 /128 official/train/row0079
+Verified training cache 81 /128 official/train/row0080
+Verified training cache 82 /128 official/train/row0081
+Verified training cache 83 /128 official/train/row0082
+Verified training cache 84 /128 official/train/row0083
+Verified training cache 85 /128 official/train/row0084
+Verified training cache 86 /128 official/train/row0085
+Verified training cache 87 /128 official/train/row0086
+Verified training cache 88 /128 official/train/row0087
+Verified training cache 89 /128 official/train/row0088
+Verified training cache 90 /128 official/train/row0089
+Verified training cache 91 /128 official/train/row0090
+Verified training cache 92 /128 official/train/row0091
+Verified training cache 93 /128 official/train/row0092
+Verified training cache 94 /128 official/train/row0093
+Verified training cache 95 /128 official/train/row0094
+Verified training cache 96 /128 official/train/row0095
+Verified training cache 97 /128 official/train/row0096
+Verified training cache 98 /128 official/train/row0097
+Verified training cache 99 /128 official/train/row0098
+Verified training cache 100 /128 official/train/row0099
+Verified training cache 101 /128 official/train/row0100
+Verified training cache 102 /128 official/train/row0101
+Verified training cache 103 /128 official/train/row0102
+Verified training cache 104 /128 official/train/row0103
+Verified training cache 105 /128 official/train/row0104
+Verified training cache 106 /128 official/train/row0105
+Verified training cache 107 /128 official/train/row0106
+Verified training cache 108 /128 official/train/row0107
+Verified training cache 109 /128 official/train/row0108
+Verified training cache 110 /128 official/train/row0109
+Verified training cache 111 /128 official/train/row0110
+Verified training cache 112 /128 official/train/row0111
+Verified training cache 113 /128 official/train/row0112
+Verified training cache 114 /128 official/train/row0113
+Verified training cache 115 /128 official/train/row0114
+Verified training cache 116 /128 official/train/row0115
+Verified training cache 117 /128 official/train/row0116
+Verified training cache 118 /128 official/train/row0117
+Verified training cache 119 /128 official/train/row0118
+Verified training cache 120 /128 official/train/row0119
+Verified training cache 121 /128 official/train/row0120
+Verified training cache 122 /128 official/train/row0121
+Verified training cache 123 /128 official/train/row0122
+Verified training cache 124 /128 official/train/row0123
+Verified training cache 125 /128 official/train/row0124
+Verified training cache 126 /128 official/train/row0125
+Verified training cache 127 /128 official/train/row0126
+Verified training cache 128 /128 official/train/row0127
+{
+  "status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+  "verified_arrays": 128,
+  "result": {
+    "status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+    "model_constructions_attempted": 1,
+    "model_constructions_completed": 1,
+    "checkpoint_loads": 1,
+    "new_arrays_attempted": 127,
+    "new_arrays_forward_completed": 127,
+    "new_arrays_verified": 127,
+    "new_arrays_failed": 0,
+    "reused_arrays": 1,
+    "backwards": 0,
+    "optimizer_objects": 0,
+    "optimizer_updates": 0,
+    "held_out_arrays": 0,
+    "retries": 0,
+    "warmups": 0,
+    "extraction_elapsed_seconds": 31.3016986111179,
+    "ledger": {
+      "attempted_tokens": 4064,
+      "completed_tokens": 4064,
+      "failed_tokens": 0,
+      "selected_bank_attempted": 32512,
+      "selected_bank_completed": 32512,
+      "commits": 4064,
+      "backward_attempted": 0,
+      "backward_completed": 0,
+      "optimizer_objects": 0,
+      "optimizer_updates": 0,
+      "phase_counts": {
+        "training_cache_extraction": {
+          "attempted": 4064,
+          "completed": 4064,
+          "failed": 0,
+          "selected_attempted": 32512,
+          "selected_completed": 32512,
+          "commits": 4064
+        }
+      },
+      "contextual_commit_entries": 28448,
+      "elapsed_seconds": 31.301768707111478,
+      "peak_CUDA_allocated": 20866560,
+      "peak_CUDA_reserved": 35651584,
+      "new_arrays_attempted": 127,
+      "new_arrays_verified": 127,
+      "failed_arrays": 0,
+      "reused_arrays": 1
+    },
+    "parameter_and_buffer_identity_after": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+    "parameters_and_buffers_unchanged": true
+  }
+}

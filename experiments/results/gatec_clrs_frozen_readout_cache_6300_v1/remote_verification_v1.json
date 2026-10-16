@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-frozen-readout-cache-6300-20261016T083448Z",
+  "parent": "1ed1d773264b3f5f53bd1ba169e819709d33cbb2",
+  "status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+  "verified_files": 32,
+  "verified_tree": "f98c13e0a583b3ee319b3d2ad5fa009e2808f7f5",
+  "historical_remote_files_preserved": 2164,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}
