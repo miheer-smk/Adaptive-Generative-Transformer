@@ -1,0 +1,16 @@
+{
+  "preserved_failed_producers": [
+    "audit_numeric_v1.py",
+    "audit_numeric_v2.py"
+  ],
+  "preserved_failure_logs": [
+    "numeric_execution_v1.log",
+    "numeric_execution_v2.log"
+  ],
+  "localized_failure": "Torch LAPACK SVD on a finite source-defined constant64x64 initial operator with entries0.015624985098838806; process STOP1/DLASCL parameter4",
+  "replacement": "Installed SciPy gesvd driver on unchanged CPU float64 matrices; no jitter, inversion, hidden activations or model calls",
+  "existing_library_path": "/tmp/agt_clrs_cpu_6200_v1/lib/python3.12/site-packages",
+  "packages_installed": false,
+  "scientific_inputs_unchanged": true,
+  "production_or_historical_edits": false
+}

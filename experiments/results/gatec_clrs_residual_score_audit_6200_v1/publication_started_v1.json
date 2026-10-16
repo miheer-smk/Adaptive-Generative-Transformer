@@ -1,0 +1,6 @@
+{
+  "branch": "research/clrs-residual-score-audit-6200-20261016T061547Z",
+  "parent": "f40f65d6c4008f407669085cd5655ccc52f3424c",
+  "status": "COMPLETED_OFFLINE_AUDIT",
+  "method": "Git Database API; streamed raw verification; no local staging"
+}

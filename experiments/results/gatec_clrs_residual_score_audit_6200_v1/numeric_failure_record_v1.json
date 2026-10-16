@@ -1,0 +1,10 @@
+{
+  "producer": "audit_numeric_v1.py",
+  "source_sha256": "b4564447c6948890e327fe2318b49ff73497f29c47e3c5c669ad2616729af09d",
+  "exit_code": 1,
+  "retained_log": "numeric_execution_v1.log",
+  "error": "LAPACK STOP1, DLASCL parameter4 illegal value",
+  "model_calls": 0,
+  "GPU_execution": 0,
+  "next_action": "Identify failing actual evidence matrix; no altered data or singular-value jitter"
+}

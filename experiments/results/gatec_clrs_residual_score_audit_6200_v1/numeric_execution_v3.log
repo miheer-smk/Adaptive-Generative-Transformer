@@ -1,0 +1,48 @@
+{
+  "scores": {
+    "initial": {
+      "common_matrix_Frobenius_norm": 1.4762572780094512,
+      "interaction_Frobenius_norm": 0.19479923445727726,
+      "interaction_to_common_norm_ratio": 0.13195480039897906,
+      "interaction_margin_positive": 129,
+      "interaction_margin_negative": 111,
+      "GS_inner_I": 0.0008867852625729202,
+      "CE_effect_of_existing_interaction": 0.0008219391736483672
+    },
+    "final": {
+      "common_matrix_Frobenius_norm": 0.022821176695614988,
+      "interaction_Frobenius_norm": 8.199959048980213e-06,
+      "interaction_to_common_norm_ratio": 0.0003593135953658256,
+      "interaction_margin_positive": 153,
+      "interaction_margin_negative": 87,
+      "GS_inner_I": -1.437203555742261e-07,
+      "CE_effect_of_existing_interaction": -1.4372048351418698e-07
+    }
+  },
+  "normalization": {
+    "initial/candidate": {
+      "pre_centered_energy": 102.11105092481009,
+      "normalized_centered_energy": 99.2930145439249,
+      "committed_centered_energy": 99.29301499292538,
+      "gain_ratio": 1.0
+    },
+    "initial/query": {
+      "pre_centered_energy": 30.319404685993234,
+      "normalized_centered_energy": 29.575552272853894,
+      "committed_centered_energy": 29.575553139855142,
+      "gain_ratio": 1.0
+    },
+    "final/candidate": {
+      "pre_centered_energy": 69632.37139313814,
+      "normalized_centered_energy": 0.00202380200559897,
+      "committed_centered_energy": 0.0018900335232987509,
+      "gain_ratio": 0.9339007944987344
+    },
+    "final/query": {
+      "pre_centered_energy": 433.1973544438224,
+      "normalized_centered_energy": 0.00011877565881487307,
+      "committed_centered_energy": 0.00011042540342032225,
+      "gain_ratio": 0.9296919948493647
+    }
+  }
+}

@@ -1,0 +1,5 @@
+/home/iiitn/agt-v3-env/lib/python3.12/site-packages/torch/_subclasses/functional_tensor.py:283: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+SVD_MIXER True (64, 64) finite True max 0.015624985098838806
+STOP 1
+ ** On entry to DLASCL parameter number  4 had an illegal value

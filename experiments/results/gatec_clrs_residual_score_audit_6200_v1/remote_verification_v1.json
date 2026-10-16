@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/miheer-smk/Adaptive-Generative-Transformer",
+  "branch": "research/clrs-residual-score-audit-6200-20261016T061547Z",
+  "parent": "f40f65d6c4008f407669085cd5655ccc52f3424c",
+  "status": "COMPLETED_OFFLINE_AUDIT",
+  "verified_files": 34,
+  "verified_tree": "a4e41f4bef014089a01e3e93a0ed7282b8ce161b",
+  "historical_remote_files_preserved": 2067,
+  "verification": "Every raw payload streamed; size, Git OID and SHA256 match",
+  "retries": [],
+  "LFS_objects": 0,
+  "omitted_files": [],
+  "final_commit_identity": "Printed after final ref verification; receipt included without circular self-hashing"
+}

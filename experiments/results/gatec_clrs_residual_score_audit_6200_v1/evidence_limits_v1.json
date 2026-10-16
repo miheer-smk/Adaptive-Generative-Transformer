@@ -1,0 +1,29 @@
+{
+  "direct": [
+    "Stored h0 and all block outputs for32 positions per model",
+    "Committed and projected candidate/query tensors, scores, probabilities and original CE adjoints",
+    "Final checkpoint mHC parameters and RMSNorm gains",
+    "Sealed input keys, original positions and official predecessor targets"
+  ],
+  "algebraic": [
+    "Block input from h0/previous output; Delta=Y-X",
+    "Centered residual energy, radial/angular identities",
+    "Pre-gain RMS normalization and gain application",
+    "Effective mHC A from checkpoint/source equations",
+    "Fixed initial mHC and RMSNorm constants from source; no initial model built",
+    "Common and interaction score components and target margins"
+  ],
+  "unavailable": [
+    "Core activations immediately before mHC",
+    "Full initial parameter checkpoint, including initial query/key weight matrices",
+    "Intermediate training checkpoints and optimizer history beyond retained scalar records",
+    "Multi-input or independently trained-seed mechanistic replication",
+    "Causal intervention on residuals, RMSNorm, gains or mixers"
+  ],
+  "prohibited_not_performed": [
+    "No inverse or pseudoinverse of mixers",
+    "No reconstructed pre-mHC core outputs",
+    "No model construction, AGT import, forward, backward, tests, profiling, optimizer or GPU execution"
+  ],
+  "initial_constants_provenance": "src/mhc.py:38-46 and src/norms.py:27-28; AGTv3/adapter source inspected for overrides; fresh recorded identity verified by prior diagnostic"
+}

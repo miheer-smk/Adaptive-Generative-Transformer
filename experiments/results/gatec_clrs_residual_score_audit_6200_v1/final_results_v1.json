@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETED_OFFLINE_AUDIT",
+  "historical_training_status": "COMPLETED_NON_SUCCESS",
+  "numeric_verification": {
+    "success": true,
+    "residual_decompositions": 32,
+    "radial_pairs": 1920,
+    "target_margin_rows": 480,
+    "max_residual_energy_error": 7.275957614183426e-12,
+    "max_residual_coordinate_error": 0.0,
+    "score_max_errors": {
+      "initial": 6.669843019904698e-08,
+      "final": 1.011752148924721e-07
+    },
+    "normalization_max_errors": {
+      "initial/candidate": 2.8979777200177637e-07,
+      "initial/query": 1.9638048387449203e-07,
+      "final/candidate": 1.6769446187225867e-07,
+      "final/query": 1.7823242304260134e-07
+    },
+    "model_constructions": 0,
+    "model_calls": 0,
+    "backward_calls": 0,
+    "optimizer_operations": 0,
+    "tests": 0,
+    "profiling": 0,
+    "GPU_execution": 0,
+    "numeric_precision": "CPU float64 audit; source-equivalent FP32 mHC/RMSNorm reconstructions identified separately",
+    "numpy_version": "2.5.4",
+    "scipy_version": "1.18.1",
+    "SVD_driver": "SciPy LAPACK gesvd; no jitter, inverse or matrix alteration"
+  },
+  "integrity_success": true,
+  "limitations": "One array, two model identities; no pre-mHC core outputs; initial fixed constants source-derived; no causal proof",
+  "report": "report_v1.md",
+  "ranked_diagnosis": "ranked_diagnosis_v1.json",
+  "prior_offline_numerical_failures_preserved": true,
+  "publication_status_at_offline_closure": "Pending at closure; separate verified publication receipt added later"
+}

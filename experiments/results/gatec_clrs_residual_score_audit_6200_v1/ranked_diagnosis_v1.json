@@ -1,0 +1,32 @@
+{
+  "ranked": [
+    {
+      "rank": 1,
+      "explanation": "Common-component growth and predominantly radial variation before normalization",
+      "evidence": "Direct retained geometry and exact radial decomposition; no historical causality claim"
+    },
+    {
+      "rank": 2,
+      "explanation": "Common candidate bias dominates tiny, weakly useful final interaction",
+      "evidence": "All target margins, original CE adjoint inner product and algebraic CE decomposition"
+    },
+    {
+      "rank": 3,
+      "explanation": "mHC anisotropic susceptibility",
+      "evidence": "Effective A spectra and increment alignment; initial rank1 and missing pre-mHC tensors weaken causality"
+    },
+    {
+      "rank": 4,
+      "explanation": "Local active cancellation",
+      "evidence": "Negative cross terms and limited net reductions; global centered energy generally increases"
+    },
+    {
+      "rank": 5,
+      "explanation": "Terminal gain attenuation / projection suppression",
+      "evidence": "Modest gain effects and preserved relative projection variation; weak as main explanations"
+    }
+  ],
+  "next_step": "Separately authorize one frozen32-token same-array forward retaining pre-mHC core outputs; zero backwards/updates. Not executed.",
+  "historical_result": "COMPLETED_NON_SUCCESS",
+  "model_calls": 0
+}

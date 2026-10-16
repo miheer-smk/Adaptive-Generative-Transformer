@@ -1,0 +1,170 @@
+{
+  "initial/candidate": {
+    "precommit": {
+      "radial_sum": 0.34327565749256156,
+      "angular_sum": 1633.433539139468,
+      "total_pairwise_squared_distance": 1633.7768147969614,
+      "radial_fraction": 0.0002101117205138098,
+      "angular_fraction": 0.9997898882794857,
+      "maximum_identity_error": 2.1316282072803006e-14,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "pre_gain_normalized": {
+      "radial_sum": 3.137895629667142e-13,
+      "angular_sum": 1588.688232702797,
+      "total_pairwise_squared_distance": 1588.6882327027972,
+      "radial_fraction": 1.9751487831748557e-16,
+      "angular_fraction": 0.9999999999999999,
+      "maximum_identity_error": 2.842170943040401e-14,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "gain_weighted": {
+      "radial_sum": 3.137895629667142e-13,
+      "angular_sum": 1588.688232702797,
+      "total_pairwise_squared_distance": 1588.6882327027972,
+      "radial_fraction": 1.9751487831748557e-16,
+      "angular_fraction": 0.9999999999999999,
+      "maximum_identity_error": 2.842170943040401e-14,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "retained_committed": {
+      "radial_sum": 1.888443005684922e-11,
+      "angular_sum": 1588.6882398867874,
+      "total_pairwise_squared_distance": 1588.6882398868058,
+      "radial_fraction": 1.1886806726909955e-14,
+      "angular_fraction": 0.9999999999999885,
+      "maximum_identity_error": 2.842170943040401e-14,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    }
+  },
+  "initial/query": {
+    "precommit": {
+      "radial_sum": 0.14391552860460727,
+      "angular_sum": 484.96655944728747,
+      "total_pairwise_squared_distance": 485.11047497589163,
+      "radial_fraction": 0.00029666547318270005,
+      "angular_fraction": 0.9997033345268183,
+      "maximum_identity_error": 1.7763568394002505e-15,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "pre_gain_normalized": {
+      "radial_sum": 1.3387739189611375e-13,
+      "angular_sum": 473.20883636566225,
+      "total_pairwise_squared_distance": 473.2088363656623,
+      "radial_fraction": 2.8291397287573634e-16,
+      "angular_fraction": 0.9999999999999999,
+      "maximum_identity_error": 3.552713678800501e-15,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "gain_weighted": {
+      "radial_sum": 1.3387739189611375e-13,
+      "angular_sum": 473.20883636566225,
+      "total_pairwise_squared_distance": 473.2088363656623,
+      "radial_fraction": 2.8291397287573634e-16,
+      "angular_fraction": 0.9999999999999999,
+      "maximum_identity_error": 3.552713678800501e-15,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "retained_committed": {
+      "radial_sum": 1.1926514364314104e-11,
+      "angular_sum": 473.20885023767033,
+      "total_pairwise_squared_distance": 473.2088502376823,
+      "radial_fraction": 2.520348966069354e-14,
+      "angular_fraction": 0.9999999999999747,
+      "maximum_identity_error": 3.552713678800501e-15,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    }
+  },
+  "final/candidate": {
+    "precommit": {
+      "radial_sum": 1112000.6738803685,
+      "angular_sum": 2117.2684098422737,
+      "total_pairwise_squared_distance": 1114117.9422902102,
+      "radial_fraction": 0.998099601191693,
+      "angular_fraction": 0.001900398808307459,
+      "maximum_identity_error": 8.625988812127616e-11,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "pre_gain_normalized": {
+      "radial_sum": 3.91126067554209e-21,
+      "angular_sum": 0.03238083208958351,
+      "total_pairwise_squared_distance": 0.032380832089583526,
+      "radial_fraction": 1.2078938134515356e-19,
+      "angular_fraction": 0.9999999999999996,
+      "maximum_identity_error": 1.1926223897340549e-17,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "gain_weighted": {
+      "radial_sum": 6.144241397541234e-07,
+      "angular_sum": 0.030239870390852318,
+      "total_pairwise_squared_distance": 0.03024048481499214,
+      "radial_fraction": 2.0317932847740394e-05,
+      "angular_fraction": 0.9999796820671499,
+      "maximum_identity_error": 1.1709383462843448e-17,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "retained_committed": {
+      "radial_sum": 6.155562544845518e-07,
+      "angular_sum": 0.030239920816525653,
+      "total_pairwise_squared_distance": 0.030240536372780014,
+      "radial_fraction": 2.035533519963038e-05,
+      "angular_fraction": 0.9999796446648045,
+      "maximum_identity_error": 1.089623183347932e-17,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    }
+  },
+  "final/query": {
+    "precommit": {
+      "radial_sum": 6824.762587730479,
+      "angular_sum": 106.39508337065149,
+      "total_pairwise_squared_distance": 6931.1576711011585,
+      "radial_fraction": 0.9846497384103259,
+      "angular_fraction": 0.015350261589670117,
+      "maximum_identity_error": 5.653699730601147e-12,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "pre_gain_normalized": {
+      "radial_sum": 3.8914521076326996e-23,
+      "angular_sum": 0.0019004105410379717,
+      "total_pairwise_squared_distance": 0.0019004105410379694,
+      "radial_fraction": 2.0476902351358565e-20,
+      "angular_fraction": 1.0000000000000013,
+      "maximum_identity_error": 1.8431436932253575e-18,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "gain_weighted": {
+      "radial_sum": 3.386171153256452e-08,
+      "angular_sum": 0.00176676260521882,
+      "total_pairwise_squared_distance": 0.0017667964669303494,
+      "radial_fraction": 1.9165598395946655e-05,
+      "angular_fraction": 0.9999808344016059,
+      "maximum_identity_error": 1.7550522667109103e-18,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    },
+    "retained_committed": {
+      "radial_sum": 3.496762163214509e-08,
+      "angular_sum": 0.001766771487103511,
+      "total_pairwise_squared_distance": 0.001766806454725156,
+      "radial_fraction": 1.9791427373738365e-05,
+      "angular_fraction": 0.9999802085726189,
+      "maximum_identity_error": 3.0831999280056532e-18,
+      "zero_vector_count": 0,
+      "fraction_definition": "Ratio of summed pair squared-distance components; not mean of per-pair fractions"
+    }
+  }
+}

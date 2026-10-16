@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "protected_files": 2446,
+  "changed_or_missing": [],
+  "HEAD_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "historical_exception_preserved": true,
+  "exact_hashed_inputs_verified": 15,
+  "model_artifacts_unchanged": true
+}

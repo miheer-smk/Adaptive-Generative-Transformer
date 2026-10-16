@@ -1,0 +1,22 @@
+{
+  "additional_source_referenced": {
+    "src/commit.py": {
+      "sha256": "c53e3f3193f2a2bc29244cd24f744758de708e5a747a70dd3c1fc0a985a70ccb",
+      "bytes": 1081
+    },
+    "src/gdn_v3.py": {
+      "sha256": "15933242295cc06d5b3f0307dc60aaadba18a3c994732807fcb0526c5abe598c",
+      "bytes": 7634
+    },
+    "src/prelude.py": {
+      "sha256": "3d664e1f3d426ba756c7c58cfc860eea5b71e560f3b0b3d98a107ef60e60cb91",
+      "bytes": 1569
+    },
+    "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/arithmetic_consistency_v1.json": {
+      "sha256": "d635f39006f6efbd21ccfbaa58a81e6bee0779953695da3d35f6088977c6b11b",
+      "bytes": 303
+    }
+  },
+  "all_also_covered_by_protected_inventory": true,
+  "original_manifest_unchanged": true
+}
