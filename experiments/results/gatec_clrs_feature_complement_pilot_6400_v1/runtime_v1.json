@@ -1,0 +1,13 @@
+{
+  "torch": "2.10.0+cu130",
+  "CUDA": "13.0",
+  "device": "NVIDIA GB10",
+  "FP32": true,
+  "TF32": false,
+  "threads": 1,
+  "full_BPTT": true,
+  "initialization_order": "Original adapter constructor separately twice; no checkpoint initialization",
+  "paired_execution_order": "For each locked training row: C update then T update",
+  "matched_RNG": "Restore identical CPU/CUDA states before each paired update; require identical post-update RNG states",
+  "source_reference": "1ed1d773264b3f5f53bd1ba169e819709d33cbb2"
+}

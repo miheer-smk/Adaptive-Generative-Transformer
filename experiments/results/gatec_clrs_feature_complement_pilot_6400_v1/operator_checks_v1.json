@@ -1,0 +1,158 @@
+{
+  "success": true,
+  "fixtures": [
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "shape": [
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "shape": [
+        2,
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cpu",
+      "dtype": "torch.float64",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "shape": [
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "shape": [
+        2,
+        3,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    },
+    {
+      "device": "cuda",
+      "dtype": "torch.float32",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "exact_formula": true,
+      "Q_uniform_annihilation": true,
+      "complement_action": true,
+      "transpose_check": true,
+      "gain_placement": true,
+      "input_and_parameters_unchanged": true
+    }
+  ],
+  "CPU_cases": 6,
+  "CUDA_cases": 3,
+  "skips": 0,
+  "full_AGT_constructions": 0,
+  "model_tokens": 0,
+  "backwards": 0,
+  "optimizer_objects": 0,
+  "sites": [
+    "body.blocks.blocks.0.mhc",
+    "body.blocks.blocks.1.mhc",
+    "body.blocks.blocks.2.mhc",
+    "body.blocks.blocks.3.mhc",
+    "body.blocks.blocks.4.mhc",
+    "body.blocks.blocks.5.mhc",
+    "body.blocks.blocks.6.core.mhc",
+    "body.blocks.blocks.7.core.mhc"
+  ],
+  "torch": "2.10.0+cu130",
+  "CUDA": "13.0",
+  "device": "NVIDIA GB10",
+  "interpretation": "Synthetic operator fixtures only, not pilot task outcomes"
+}

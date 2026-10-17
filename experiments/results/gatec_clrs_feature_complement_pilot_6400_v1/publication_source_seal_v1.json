@@ -1,0 +1,6 @@
+{
+  "source": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/publish_study_v1.py",
+  "source_sha256": "555404149df364e639f5c9c3d9a0c2772cb90632dc5a5ca0c37129d2bd9ab3b0",
+  "publisher_sha256": "5de34ee7e8de7507ecaa731b97ab776f97edcf8f00cb307060d9579535f7ef92",
+  "method": "Prior verified Git Database publisher adapted only for pilot branch/paths/status; no scientific execution"
+}

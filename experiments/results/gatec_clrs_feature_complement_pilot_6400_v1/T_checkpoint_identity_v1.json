@@ -1,0 +1,7 @@
+{
+  "path": "T_update1000_v1.pt",
+  "sha256": "57458b259619eb00ff9bbbceb4a0978b22b0fdf668e7ae1c80166b35da2a7300",
+  "size": 22507831,
+  "optimizer_updates": 1000,
+  "selection": "Predetermined update1000 only"
+}

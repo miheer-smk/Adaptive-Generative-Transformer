@@ -1,0 +1,19 @@
+--- unchanged_src_mhc.py_original_forward
++++ research_only_bound_feature_complement_forward
+@@ -1,11 +1,5 @@
+-    def forward(self, x: torch.Tensor) -> torch.Tensor:
+-        """
+-        Apply constrained residual mixing.
+-        """
+-
+-        matrix = self.mixing_matrix()
+-
+-        # Mix the final feature dimension.
+-        y = torch.matmul(x, matrix.T)
+-
+-        return y * self.scale
++def feature_complement_forward(self,x):
++    assert self.dim==64 and x.shape[-1]==64
++    matrix=self.mixing_matrix()
++    Q=torch.eye(64,device=x.device,dtype=x.dtype)-torch.ones((64,64),device=x.device,dtype=x.dtype)/64
++    return torch.matmul(x,(matrix+Q).T)*self.scale

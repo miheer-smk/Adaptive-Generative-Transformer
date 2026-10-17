@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "protected_files": 2675,
+  "changed_or_missing": [],
+  "original_branch_ref_unchanged": true,
+  "HEAD_commit_unchanged": true,
+  "tracked_diff_unchanged": true,
+  "pilot_branch": "research/clrs-feature-complement-6400-20261017T102044Z",
+  "intentional_Git_metadata_updates": [
+    ".git/HEAD",
+    ".git/logs/HEAD"
+  ],
+  "historical_exception_preserved": true
+}

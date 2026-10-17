@@ -1,0 +1,106 @@
+{
+  "description_only": true,
+  "no_new_statistics_or_acceptance_criteria": true,
+  "control_historical_parameter_buffer_identity_match": true,
+  "control_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "historical_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "score_summaries": {
+    "C": {
+      "training_subset": {
+        "pair_comparisons": 30720,
+        "interaction_improves": 15665,
+        "interaction_worsens": 15055,
+        "common_positive": 13572,
+        "actual_positive": 13572,
+        "flips_toward_target": 0,
+        "flips_against_target": 0,
+        "arrays": 128,
+        "native_common_predictions_identical_arrays": 128,
+        "native_single_candidate_arrays": 128,
+        "mean_common_component_norm": 0.024067936492429828,
+        "mean_interaction_norm": 8.023997294299385e-06
+      },
+      "development": {
+        "pair_comparisons": 7680,
+        "interaction_improves": 3823,
+        "interaction_worsens": 3857,
+        "common_positive": 3392,
+        "actual_positive": 3392,
+        "flips_toward_target": 0,
+        "flips_against_target": 0,
+        "arrays": 32,
+        "native_common_predictions_identical_arrays": 32,
+        "native_single_candidate_arrays": 32,
+        "mean_common_component_norm": 0.022736236101082268,
+        "mean_interaction_norm": 7.671822188339861e-06
+      },
+      "size_transfer": {
+        "pair_comparisons": 129024,
+        "interaction_improves": 64271,
+        "interaction_worsens": 64753,
+        "common_positive": 62578,
+        "actual_positive": 62578,
+        "flips_toward_target": 0,
+        "flips_against_target": 0,
+        "arrays": 32,
+        "native_common_predictions_identical_arrays": 32,
+        "native_single_candidate_arrays": 32,
+        "mean_common_component_norm": 0.09486866477598269,
+        "mean_interaction_norm": 2.5336799202067375e-05
+      }
+    },
+    "T": {
+      "training_subset": {
+        "pair_comparisons": 30720,
+        "interaction_improves": 15526,
+        "interaction_worsens": 15194,
+        "common_positive": 17209,
+        "actual_positive": 17209,
+        "flips_toward_target": 0,
+        "flips_against_target": 0,
+        "arrays": 128,
+        "native_common_predictions_identical_arrays": 128,
+        "native_single_candidate_arrays": 128,
+        "mean_common_component_norm": 1.8877950536371737,
+        "mean_interaction_norm": 0.004431137066026135
+      },
+      "development": {
+        "pair_comparisons": 7680,
+        "interaction_improves": 3934,
+        "interaction_worsens": 3746,
+        "common_positive": 4297,
+        "actual_positive": 4297,
+        "flips_toward_target": 0,
+        "flips_against_target": 0,
+        "arrays": 32,
+        "native_common_predictions_identical_arrays": 32,
+        "native_single_candidate_arrays": 32,
+        "mean_common_component_norm": 1.7640249491168323,
+        "mean_interaction_norm": 0.004134789060780212
+      },
+      "size_transfer": {
+        "pair_comparisons": 129024,
+        "interaction_improves": 64478,
+        "interaction_worsens": 64546,
+        "common_positive": 66471,
+        "actual_positive": 66470,
+        "flips_toward_target": 1,
+        "flips_against_target": 2,
+        "arrays": 32,
+        "native_common_predictions_identical_arrays": 32,
+        "native_single_candidate_arrays": 32,
+        "mean_common_component_norm": 7.725006418181224,
+        "mean_interaction_norm": 0.017462268005815018
+      }
+    }
+  },
+  "input_hashes": {
+    "C_training_subset_records_v1.jsonl": "c36c59bc2dd63b799932cea6097fea5e2e31ba538ac06051d9565dfff010e1fa",
+    "C_development_records_v1.jsonl": "758a6f7467c6cfead08436662a040b0df4dbcc101f1465db82450f50f675b594",
+    "C_size_transfer_records_v1.jsonl": "bd05e61a55a9bc53f984dc3d1cff236dd0204ce29c99290a2fed39f058db907b",
+    "T_training_subset_records_v1.jsonl": "bc463a19c5b522368bd690a52aca4c9dd82c252b9bb6b5381cc810f5f7596ce0",
+    "T_development_records_v1.jsonl": "09f201d8afac53e753ca903c9525235c2cbc1bb006bdc9c86be38f8d0418eab2",
+    "T_size_transfer_records_v1.jsonl": "a157ecd06702f81547fbdfdabe1fbcf6616f252e5a51a24d2921d3de5d35bbab"
+  },
+  "classification_unchanged": "PARTIAL_EFFECT_TASK_NON_SUCCESS"
+}

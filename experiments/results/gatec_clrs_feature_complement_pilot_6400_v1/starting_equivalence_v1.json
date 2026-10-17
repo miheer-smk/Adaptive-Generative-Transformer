@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "model_constructions": 2,
+  "initial_parameter_buffer_identity": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+  "frozen_parameter_identity": "6bbea651fb2a44f9581141abc16741a475ddcc1315bebb3833cbf4717c603182",
+  "parameters_equal": true,
+  "buffers_equal": true,
+  "all_parameter_buffer_storages_independently_owned": true,
+  "initial_persistent_states_equal_and_disjoint": true,
+  "optimizer_states_fresh_empty_independent": true,
+  "trainable_parameters": 1838377,
+  "parameters_total": 1942836,
+  "mode": "Original adapter eval mode with full gradient recording",
+  "treatment_sites": [
+    "body.blocks.blocks.0.mhc",
+    "body.blocks.blocks.1.mhc",
+    "body.blocks.blocks.2.mhc",
+    "body.blocks.blocks.3.mhc",
+    "body.blocks.blocks.4.mhc",
+    "body.blocks.blocks.5.mhc",
+    "body.blocks.blocks.6.core.mhc",
+    "body.blocks.blocks.7.core.mhc"
+  ],
+  "excluded_site": "body.prelude_block.mhc",
+  "added_trainable_parameters": 0,
+  "full_model_calls_before_first_training_update": 0,
+  "failed_final_checkpoint_loaded": false
+}

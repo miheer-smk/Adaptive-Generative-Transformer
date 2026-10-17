@@ -1,0 +1,8 @@
+{
+  "updates": 1000,
+  "mean_online_CE": 2.7632065632343292,
+  "mean_online_pointer_accuracy": 0.09375,
+  "mean_online_exact_array_accuracy": 0.0,
+  "final_model_identity": "7ab9239da5b1a4957cde546bb95e4c2961800b337f8bf677f8202e662e94f1a0",
+  "note": "Online pre-update training metrics; not generalization evidence"
+}

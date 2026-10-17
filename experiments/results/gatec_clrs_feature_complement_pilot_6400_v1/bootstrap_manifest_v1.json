@@ -1,0 +1,15 @@
+{
+  "replicates": 20000,
+  "array_count": 32,
+  "seed": 6400,
+  "unit": "complete development array",
+  "encoding": "row-major uint8 indices; shape20000x32",
+  "sha256": "5ea784a7bf53078fa3db7db95c7bf7bd4ac139f4fd64a5dd3db86333d9a813c9",
+  "quantile": 0.025,
+  "interpolation": "linear",
+  "contrasts": [
+    "T_minus_C",
+    "T_minus_own_query_independent"
+  ],
+  "sealed_before_any_pilot_model_call": true
+}

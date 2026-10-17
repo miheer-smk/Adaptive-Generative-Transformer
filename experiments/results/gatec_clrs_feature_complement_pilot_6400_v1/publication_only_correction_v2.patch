@@ -1,0 +1,42 @@
+--- publish_pilot_v1.py
++++ publish_pilot_v2.py
+@@ -52,7 +52,7 @@
+     data=api('/git/trees/'+tree+'?recursive=1');assert not data.get('truncated')
+     return {r['path']:r for r in data['tree'] if r['type']=='blob'}
+ def main():
+-    assert not (OUT/'publication_started_v1.json').exists(),'No publication overwrite/retry'
++    assert not (OUT/'publication_started_v2.json').exists(),'No publication overwrite/retry'
+     assert (OUT/'run_result_v1.json').exists() and (OUT/'report_v1.md').exists()
+     final=json.loads((OUT/'final_results_v1.json').read_text())
+     assert integrity()['success']
+@@ -62,7 +62,7 @@
+     except RuntimeError as e:
+         if not str(e).startswith('HTTP 404 '):raise
+     else:raise RuntimeError('Remote branch already exists')
+-    save('publication_started_v1.json',dict(branch=branch,parent=parent,method='Git Database API; no local staging, objects or ref changes'))
++    save('publication_started_v2.json',dict(branch=branch,parent=parent,method='Git Database API; no local staging, objects or ref changes'))
+     original=api('/git/commits/'+parent);old=tree_records(original['tree']['sha'])
+     patterns=[re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),re.compile(rb'gh[pousr]_[A-Za-z0-9]{36,}'),re.compile(rb'github_pat_[A-Za-z0-9_]{40,}'),re.compile(rb'AKIA[0-9A-Z]{16}')]
+     rows=[]
+@@ -72,8 +72,8 @@
+         assert r['path'] not in old and r['size']<100*1024**2
+         b=p.read_bytes();assert not any(x.search(b) for x in patterns),'Secret signature detected; value not printed'
+         rows.append(r)
+-    save('publication_inventory_v1.json',dict(files=rows,self_excluded=True,secret_scan='Common key/token signatures; heuristic, not universal proof',LFS_required=False))
+-    rows.append(record(OUT/'publication_inventory_v1.json'))
++    save('publication_inventory_v2.json',dict(files=rows,self_excluded=True,secret_scan='Common key/token signatures; heuristic, not universal proof',LFS_required=False))
++    rows.append(record(OUT/'publication_inventory_v2.json'))
+     entries=[]
+     for i,r in enumerate(rows,1):
+         upload(r);verify(r)
+@@ -83,8 +83,8 @@
+     actual=tree_records(tree['sha'])
+     for n,r in old.items():assert actual[n]['sha']==r['sha'] and actual[n]['mode']==r['mode']
+     for r in rows:assert actual[r['path']]['sha']==r['git_oid'] and actual[r['path']]['size']==r['size']
+-    save('remote_verification_v1.json',dict(repository='https://github.com/'+REPO,branch=branch,parent=parent,scientific_status=final['classification'],raw_files_verified_before_receipt=len(rows),final_file_count_including_receipt=len(rows)+1,preserved_parent_paths=len(old),verification='All raw content SHA256, size, Git OID and tree modes checked; receipt separately uploaded and raw-verified',final_commit='Reported after final branch-ref verification in terminal; no circular commit self-hash',LFS_objects=0,omissions=[],retries=RETRIES,local_integrity=integrity()))
+-    receipt=record(OUT/'remote_verification_v1.json');upload(receipt);verify(receipt);rows.append(receipt)
++    save('remote_verification_v2.json',dict(repository='https://github.com/'+REPO,branch=branch,parent=parent,scientific_status=final['classification'],raw_files_verified_before_receipt=len(rows),final_file_count_including_receipt=len(rows)+1,preserved_parent_paths=len(old),verification='All raw content SHA256, size, Git OID and tree modes checked; receipt separately uploaded and raw-verified',final_commit='Reported after final branch-ref verification in terminal; no circular commit self-hash',LFS_objects=0,omissions=[],retries=RETRIES,local_integrity=integrity()))
++    receipt=record(OUT/'remote_verification_v2.json');upload(receipt);verify(receipt);rows.append(receipt)
+     finaltree=api('/git/trees','POST',dict(base_tree=tree['sha'],tree=[dict(path=receipt['path'],type='blob',mode=receipt['mode'],sha=receipt['git_oid'])]))
+     actual=tree_records(finaltree['sha'])
+     expected={p.relative_to(ROOT).as_posix() for p in OUT.rglob('*') if p.is_file()}

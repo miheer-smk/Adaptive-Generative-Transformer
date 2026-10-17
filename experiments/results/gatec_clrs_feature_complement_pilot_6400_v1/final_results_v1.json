@@ -1,0 +1,277 @@
+{
+  "status": "COMPLETED_PAIRED_EXPLORATORY_PILOT",
+  "classification": "PARTIAL_EFFECT_TASK_NON_SUCCESS",
+  "gates": {
+    "C": {
+      "development": {
+        "predecessor_accuracy": 0.03125,
+        "predecessor_threshold": 0.95,
+        "predecessor_pass": false,
+        "exact_array_accuracy": 0.0,
+        "exact_threshold": 0.8,
+        "exact_pass": false
+      },
+      "size_transfer": {
+        "predecessor_accuracy": 0.01171875,
+        "predecessor_threshold": 0.9,
+        "predecessor_pass": false,
+        "exact_array_accuracy": 0.0,
+        "exact_threshold": 0.5,
+        "exact_pass": false
+      },
+      "all_competence_pass": false
+    },
+    "T": {
+      "development": {
+        "predecessor_accuracy": 0.109375,
+        "predecessor_threshold": 0.95,
+        "predecessor_pass": false,
+        "exact_array_accuracy": 0.0,
+        "exact_threshold": 0.8,
+        "exact_pass": false
+      },
+      "size_transfer": {
+        "predecessor_accuracy": 0.0234375,
+        "predecessor_threshold": 0.9,
+        "predecessor_pass": false,
+        "exact_array_accuracy": 0.0,
+        "exact_threshold": 0.5,
+        "exact_pass": false
+      },
+      "all_competence_pass": false
+    }
+  },
+  "contrasts": {
+    "T_minus_C": {
+      "point_estimate": 0.078125,
+      "adjusted_one_sided_lower_bound": 0.06440429687500004,
+      "resolved_positive": true,
+      "per_array_differences": [
+        0.0625,
+        0.0625,
+        0.0625,
+        0.125,
+        0.0625,
+        0.0,
+        0.0625,
+        0.125,
+        0.125,
+        0.0,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0625,
+        0.0,
+        0.125,
+        0.0625,
+        0.0625,
+        0.125,
+        0.0625,
+        0.125,
+        0.125,
+        0.0625,
+        0.0625,
+        0.125,
+        0.125,
+        0.0625,
+        0.125,
+        0.125,
+        0.0,
+        0.125,
+        0.0625
+      ]
+    },
+    "T_minus_own_query_independent": {
+      "point_estimate": 0.0,
+      "adjusted_one_sided_lower_bound": 0.0,
+      "resolved_positive": false,
+      "per_array_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "resource_totals": {
+    "attempted_tokens": 82432,
+    "completed_tokens": 82432,
+    "failed_tokens": 0,
+    "selected_bank_attempted": 659456,
+    "selected_bank_completed": 659456,
+    "commits": 82432,
+    "contextual_commit_entries": 577024,
+    "backward_attempted": 2000,
+    "backward_completed": 2000,
+    "backward_failed": 0,
+    "optimizer_attempted": 2000,
+    "optimizer_updates": 2000,
+    "optimizer_failed": 0
+  },
+  "per_arm_resource": {
+    "C": {
+      "arm": "C",
+      "attempted_tokens": 41216,
+      "completed_tokens": 41216,
+      "failed_tokens": 0,
+      "selected_bank_attempted": 329728,
+      "selected_bank_completed": 329728,
+      "commits": 41216,
+      "contextual_commit_entries": 288512,
+      "backward_attempted": 1000,
+      "backward_completed": 1000,
+      "backward_failed": 0,
+      "optimizer_attempted": 1000,
+      "optimizer_updates": 1000,
+      "optimizer_failed": 0,
+      "array_attempted": 1192,
+      "array_completed": 1192,
+      "array_failed": 0,
+      "phase_counts": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0,
+          "selected_attempted": 256000,
+          "selected_completed": 256000,
+          "commits": 32000,
+          "contextual_entries": 224000
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0,
+          "selected_attempted": 8192,
+          "selected_completed": 8192,
+          "commits": 1024,
+          "contextual_entries": 7168
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        }
+      },
+      "elapsed_since_shared_clock": 1491.8495252020657
+    },
+    "T": {
+      "arm": "T",
+      "attempted_tokens": 41216,
+      "completed_tokens": 41216,
+      "failed_tokens": 0,
+      "selected_bank_attempted": 329728,
+      "selected_bank_completed": 329728,
+      "commits": 41216,
+      "contextual_commit_entries": 288512,
+      "backward_attempted": 1000,
+      "backward_completed": 1000,
+      "backward_failed": 0,
+      "optimizer_attempted": 1000,
+      "optimizer_updates": 1000,
+      "optimizer_failed": 0,
+      "array_attempted": 1192,
+      "array_completed": 1192,
+      "array_failed": 0,
+      "phase_counts": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0,
+          "selected_attempted": 256000,
+          "selected_completed": 256000,
+          "commits": 32000,
+          "contextual_entries": 224000
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0,
+          "selected_attempted": 8192,
+          "selected_completed": 8192,
+          "commits": 1024,
+          "contextual_entries": 7168
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        }
+      },
+      "elapsed_since_shared_clock": 1491.8495265785605
+    }
+  },
+  "run_execution_seconds": 1491.849522098899,
+  "analysis_finished_seconds_since_clock": 1516.7629435686395,
+  "peak_cuda_allocated_bytes": 192163328,
+  "peak_cuda_reserved_bytes": 201326592,
+  "integrity": {
+    "success": true,
+    "protected_files": 2675,
+    "changed_or_missing": [],
+    "original_branch_ref_unchanged": true,
+    "HEAD_commit_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "pilot_branch": "research/clrs-feature-complement-6400-20261017T102044Z",
+    "intentional_Git_metadata_updates": [
+      ".git/HEAD",
+      ".git/logs/HEAD"
+    ],
+    "historical_exception_preserved": true
+  },
+  "historical_statuses_unchanged": true,
+  "learned_adaptive_routing_established": false
+}

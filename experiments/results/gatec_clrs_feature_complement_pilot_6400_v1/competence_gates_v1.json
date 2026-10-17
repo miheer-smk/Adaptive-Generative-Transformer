@@ -1,0 +1,40 @@
+{
+  "C": {
+    "development": {
+      "predecessor_accuracy": 0.03125,
+      "predecessor_threshold": 0.95,
+      "predecessor_pass": false,
+      "exact_array_accuracy": 0.0,
+      "exact_threshold": 0.8,
+      "exact_pass": false
+    },
+    "size_transfer": {
+      "predecessor_accuracy": 0.01171875,
+      "predecessor_threshold": 0.9,
+      "predecessor_pass": false,
+      "exact_array_accuracy": 0.0,
+      "exact_threshold": 0.5,
+      "exact_pass": false
+    },
+    "all_competence_pass": false
+  },
+  "T": {
+    "development": {
+      "predecessor_accuracy": 0.109375,
+      "predecessor_threshold": 0.95,
+      "predecessor_pass": false,
+      "exact_array_accuracy": 0.0,
+      "exact_threshold": 0.8,
+      "exact_pass": false
+    },
+    "size_transfer": {
+      "predecessor_accuracy": 0.0234375,
+      "predecessor_threshold": 0.9,
+      "predecessor_pass": false,
+      "exact_array_accuracy": 0.0,
+      "exact_threshold": 0.5,
+      "exact_pass": false
+    },
+    "all_competence_pass": false
+  }
+}

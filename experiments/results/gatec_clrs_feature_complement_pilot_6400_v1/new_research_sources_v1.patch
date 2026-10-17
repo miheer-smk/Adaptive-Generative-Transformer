@@ -1,0 +1,648 @@
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/analyze_report_v1.py
+@@ -0,0 +1,97 @@
++"""Locked primary analysis and closure from retained prescribed results only."""
++import os,json,csv,time
++import torch
++from support_v1 import OUT,ROOT,ENG,save,sha,integrity
++torch.set_num_threads(1);torch.set_grad_enabled(False)
++
++def main():
++    assert not (OUT/'final_results_v1.json').exists(),'No analysis restart/overwrite'
++    run=json.loads((OUT/'run_result_v1.json').read_text());complete=run['status']=='ALL_TRAINING_AND_PRESCRIBED_EVALUATIONS_COMPLETED'
++    seal=json.loads((OUT/'implementation_seal_v1.json').read_text())
++    for n,h in seal['files'].items():assert sha(ROOT/n)==h,n
++    before=integrity();assert before['success']
++    classification='INCOMPLETE_ENGINEERING_OR_RESOURCE';metrics={};gates={};contrasts={};geometry={}
++    if run['status']=='TREATMENT_NUMERICAL_OUTCOME_PAIRED_EVALUATION_INCOMPLETE':classification=run['status']
++    if complete:
++        started=json.loads((OUT/'execution_started_v1.json').read_text());assert time.monotonic()<started['deadline_monotonic'],'Analysis exceeded shared six-hour ceiling'
++        metrics=json.loads((OUT/'evaluation_summaries_v1.json').read_text())
++        dev={arm:[json.loads(s) for s in (OUT/(arm+'_development_records_v1.jsonl')).read_text().splitlines()] for arm in ['C','T']}
++        assert len(dev['C'])==len(dev['T'])==32 and [r['id'] for r in dev['C']]==[r['id'] for r in dev['T']]
++        assert [r['original_input_sha256'] for r in dev['C']]==[r['original_input_sha256'] for r in dev['T']]
++        bankpath=OUT/'bootstrap_bank_v1.bin';raw=bytearray(bankpath.read_bytes());assert len(raw)==20000*32
++        bank=torch.frombuffer(raw,dtype=torch.uint8).reshape(20000,32).long();assert int(bank.min())>=0 and int(bank.max())<32
++        differences={
++            'T_minus_C':[t['conditions']['native']['predecessor_accuracy']-c['conditions']['native']['predecessor_accuracy'] for t,c in zip(dev['T'],dev['C'])],
++            'T_minus_own_query_independent':[t['conditions']['native']['predecessor_accuracy']-t['conditions']['query_independent']['predecessor_accuracy'] for t in dev['T']]}
++        for name,values in differences.items():
++            x=torch.tensor(values,dtype=torch.float64);boot=x[bank].mean(1);lower=float(torch.quantile(boot,.025,interpolation='linear'))
++            contrasts[name]=dict(point_estimate=float(x.mean()),adjusted_one_sided_lower_bound=lower,resolved_positive=lower>0,per_array_differences=values)
++        save('paired_bootstrap_v1.json',dict(contrasts=contrasts,replicates=20000,seed=6400,unit='complete size16 development array',quantile=.025,interpolation='linear',family='two contrasts, Bonferroni-adjusted',bank_sha256=sha(bankpath),conditional_on_one_paired_seed=True,previously_examined_panels=True))
++        for arm in ['C','T']:
++            gates[arm]={}
++            for split,pointer,exact in [('development',.95,.80),('size_transfer',.90,.50)]:
++                v=metrics[split][arm]['native'];gates[arm][split]=dict(predecessor_accuracy=v['predecessor_accuracy'],predecessor_threshold=pointer,predecessor_pass=v['predecessor_accuracy']>=pointer,exact_array_accuracy=v['exact_array_accuracy'],exact_threshold=exact,exact_pass=v['exact_array_accuracy']>=exact)
++            gates[arm]['all_competence_pass']=all(gates[arm][s]['predecessor_pass'] and gates[arm][s]['exact_pass'] for s in ['development','size_transfer'])
++        T=gates['T']['all_competence_pass'];C=gates['C']['all_competence_pass'];both=all(v['resolved_positive'] for v in contrasts.values())
++        if T and both and not C:classification='CREDIBLE_RESEARCH_CANDIDATE_EXPLORATORY'
++        elif T and C:classification='BOTH_COMPETENT_NO_REQUIRED_INTERVENTION_ATTRIBUTION'
++        elif not T and contrasts['T_minus_C']['resolved_positive']:classification='PARTIAL_EFFECT_TASK_NON_SUCCESS'
++        elif T:classification='COMPETENT_TREATMENT_WITHOUT_REQUIRED_PAIRED_EVIDENCE'
++        else:classification='COMPLETED_NON_SUCCESS_INTERVENTION_INSUFFICIENT'
++        for arm in ['C','T']:
++            geometry[arm]={}
++            for split in ['training_subset','development','size_transfer']:
++                rows=[json.loads(s) for s in (OUT/(arm+'_'+split+'_mechanistic_v1.jsonl')).read_text().splitlines()]
++                geometry[arm][split]={}
++                for role in ['candidates','queries']:
++                    g={}
++                    for i in range(8):
++                        v=[r['roles'][role]['mixers'][str(i)] for r in rows]
++                        g[str(i)]=dict(mean_input_centered_energy=sum(x['input']['centered_energy'] for x in v)/len(v),mean_output_centered_energy=sum(x['output']['centered_energy'] for x in v)/len(v),mean_input_pair_difference_squared=sum(x['mean_input_difference_squared'] for x in v)/len(v),mean_output_pair_difference_squared=sum(x['mean_transported_difference_squared'] for x in v)/len(v))
++                    norms=[r['roles'][role]['terminal_normalization'] for r in rows]
++                    geometry[arm][split][role]=dict(mixers=g,terminal=dict(mean_input_centered_energy=sum(x['input']['centered_energy'] for x in norms)/len(norms),mean_output_centered_energy=sum(x['output']['centered_energy'] for x in norms)/len(norms),mean_input_norm=sum(x['input']['mean_norm'] for x in norms)/len(norms),mean_output_norm=sum(x['output']['mean_norm'] for x in norms)/len(norms),mean_input_angular_dispersion=sum(x['input']['mean_angular_dispersion'] for x in norms)/len(norms),mean_output_angular_dispersion=sum(x['output']['mean_angular_dispersion'] for x in norms)/len(norms)))
++        save('mechanistic_summary_v1.json',geometry);save('competence_gates_v1.json',gates)
++        with (OUT/'metric_table_v1.csv').open('x',newline='') as f:
++            fields=['arm','panel','condition','predecessor_accuracy','exact_array_accuracy','CE','invalid_chain','mean_target_rank','mean_target_margin','distinct_predicted_candidates'];w=csv.DictWriter(f,fields);w.writeheader()
++            for panel,arms in metrics.items():
++                for arm,conditions in arms.items():
++                    for condition,m in conditions.items():w.writerow(dict(arm=arm,panel=panel,condition=condition,**{k:m[k] for k in fields[3:]}))
++        if time.monotonic()>=started['deadline_monotonic']:classification='INCOMPLETE_ENGINEERING_OR_RESOURCE';complete=False
++    total_keys=['attempted_tokens','completed_tokens','failed_tokens','selected_bank_attempted','selected_bank_completed','commits','contextual_commit_entries','backward_attempted','backward_completed','backward_failed','optimizer_attempted','optimizer_updates','optimizer_failed']
++    total={k:sum(v[k] for v in run['resource'].values()) for k in total_keys}
++    if complete:assert total['attempted_tokens']==total['completed_tokens']==total['commits']==82432 and total['selected_bank_attempted']==total['selected_bank_completed']==659456 and total['optimizer_updates']==total['backward_completed']==2000 and not total['failed_tokens']
++    final_integrity=integrity();assert final_integrity['success'];save('integrity_final_v1.json',final_integrity)
++    result=dict(status='COMPLETED_PAIRED_EXPLORATORY_PILOT' if complete else 'INCOMPLETE',classification=classification,gates=gates,contrasts=contrasts,resource_totals=total,per_arm_resource=run['resource'],run_execution_seconds=run['elapsed_seconds_to_execution_boundary'],analysis_finished_seconds_since_clock=time.monotonic()-json.loads((OUT/'execution_started_v1.json').read_text())['start_monotonic'],peak_cuda_allocated_bytes=run['peak_cuda_allocated_bytes'],peak_cuda_reserved_bytes=run['peak_cuda_reserved_bytes'],integrity=final_integrity,historical_statuses_unchanged=True,learned_adaptive_routing_established=False)
++    save('final_results_v1.json',result)
++    branch=json.loads((OUT/'branch_creation_v1.json').read_text())
++    protocol=ROOT/'AGT_v3_feature_complement_causal_pilot_locked_protocol_6400_v1.md'
++    report=['# AGT-v3 feature-complement causal pilot','',f"**{classification}**. Status: {result['status']}. This is one paired exploratory intervention under the locked insertion-sort task/recipe, not learned routing or broad AGT superiority.",'',
++        '## Protocol, preservation and exact intervention','',f"Protocol `{protocol.relative_to(ROOT)}` SHA256 `{sha(protocol)}`. Reviewed source commit `1ed1d773264b3f5f53bd1ba169e819709d33cbb2`; local source HEAD `{branch['HEAD']}` with the preserved historical diff. All41 checked local source files match the reviewed remote content. Branch `{branch['branch']}`. Production and historical scientific artifacts are unchanged; source-level diffs and seals document research-only code.",'',
++        'Control uses `(X @ P.T)*g`. Treatment uses exactly `(X @ (P+Q).T)*g`, with `Q=I64-ones(64,64)/64`, at six outer bank mixers0–5 and FFN-core mixers6/7. No prelude-mixer change, coefficient, renormalization, moved gain, parameter-capacity increase or residual/commit/normalization change. Active-site calls and the unexecuted prelude mixer are checked on every token.','',
++        'Operator-only checks passed6 CPU cases and3 genuinely executed CUDA cases, with no full AGT construction/calls/backwards. Starting equality and independent ownership of the two actual arms are recorded in `starting_equivalence_v1.json` when that gate ran. Exact original initial parameter/buffer identity: `c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e`. No failed-final-checkpoint initialization.','',
++        '## Locked training, data and execution','',
++        'Original sealed1000 size16 training arrays, order seed6201, fresh initialization seed6200. Original native mean pointer CE, AdamW LR1e-3 WD0 betas(.9,.999) eps1e-8, clip global norm1, FP32 TF32off, full BPTT, original eval-mode flags, frozen controller/vocabulary head. C then T on each identical row; CPU/CUDA RNG streams matched without intervention draws. Exactly1000 prescribed updates/arm at completion; no initial diagnostic, warm-up, hints, selector, whitening, extra loss/readout fit, checkpoint selection or retry.','',
++        'Training pool/target/source/order hashes and original configuration seals are in `preflight_source_configuration_v1.json`. Development/size64 pools are reused and historically examined, not untouched confirmation. Training subset is the original first128 rows; development32 size16 and transfer32 size64 rows retain sealed order and targets. Native final heads are evaluated once per prescribed row. No task error filters a case.','',
++        '## Task results','']
++    if complete:
++        report+=['|Panel|Arm/condition|Predecessor accuracy|Exact-array accuracy|CE|Invalid chains|','|---|---|---:|---:|---:|---:|']
++        for panel,arms in metrics.items():
++            for arm,conditions in arms.items():
++                for name,v in conditions.items():report.append(f"|{panel}|{arm}/{name}|{100*v['predecessor_accuracy']:.9g}%|{100*v['exact_array_accuracy']:.9g}%|{'unavailable' if v['CE'] is None else format(v['CE'],'.10g')}|{100*v['invalid_chain']:.9g}%|")
++        report+=['','Uniform probability metrics use established deterministic lowest-index ties, with analytic independent-random expectations separately recorded. Competition rank1 on tied scores is not discrimination. Self-pointer and original-order hard controls have no invented CE, score margin or target rank. Full scores, targets, predictions, ranks, ties and target margins are retained per array. Invalid chains are task errors, not executor failures.','',
++            '## Prospective gates and paired uncertainty','',json.dumps(gates,indent=2),'','|Size16 development contrast|Point estimate|Adjusted one-sided lower bound|Resolved positive|','|---|---:|---:|---|']
++        for name,c in contrasts.items():report.append(f"|{name}|{100*c['point_estimate']:.9g} pp|{100*c['adjusted_one_sided_lower_bound']:.9g} pp|{c['resolved_positive']}|")
++        report+=['','Exactly20000 paired complete-array bootstrap replicates, seed6400, shared bank, linear empirical quantile.025 for each of two contrasts. The bank was sealed before training. All queries within an array stay together. Intervals condition on one paired initialization/recipe and previously examined panels; they do not establish seed reproducibility or untouched population confirmation. Strongest positive classification additionally requires treatment to pass all competence gates while control fails overall competence.','',
++            '## Secondary mechanistic measurements','',
++            'Each prescribed evaluation captures every active mixer input/output, whole-block input/output, pre-terminal-normalization and committed vectors, native query/key projections and scores. Source labels distinguish core outputs from later FFN transforms. No mixer inversion or extra forward is used. Per-array candidate/query roles remain separate. Recorded centered energy and common components, actual corresponding-pair difference transport, norms, angular/radial decomposition and terminal normalization summaries are in each arm/panel mechanistic JSONL; raw tensors are retained. Every captured whole-block residual identity is checked exactly.','',
++            'The native score matrix is decomposed into repeated query-independent candidate preference plus query-dependent interaction; target/incorrect margins, component norms, rank changes and positive/negative interaction counts are retained. Geometry is descriptive only: no new binary collapse threshold, independent-pair inference, component attribution or task-success claim is introduced. A change in variation cannot substitute for competence or the paired contrasts.']
++    else:report+=['The paired experiment is incomplete. Only actually executed checks/results in the run record and partial logs are evidence. Unexecuted final gates/contrasts/mechanistic panels remain unverified. No scientific non-success is inferred from an engineering/resource stop.',json.dumps(run.get('execution_boundary',{}),indent=2),str(run.get('failure',''))]
++    report+=['','## Resource and integrity accounting','',json.dumps(total,indent=2),'',f"Execution boundary elapsed {run['elapsed_seconds_to_execution_boundary']:.6f}s under the21600s paired ceiling. Peak allocated/reserved CUDA bytes: {run['peak_cuda_allocated_bytes']}/{run['peak_cuda_reserved_bytes']}. Per-arm phase and attempted/completed/failed counters, actual selected calls, contextual commit entries, backwards and optimizer steps are retained. Complete token-trace reconciliation is in `complete_trace_verification_v1.json`. No additional model trajectories, diagnostics, profiling or warm-ups were run.",'',
++        f"All{final_integrity['protected_files']} pre-existing file identities are preserved except the explicitly authorized Git HEAD switch/log append for the new branch; original Git log bytes remain a verified prefix. Original branch ref, HEAD commit, index and tracked diff are preserved. All14 historical tracked modifications and2093 original untracked paths remain. The supplied protocol adds one new root file; pilot evidence is isolated. No reset, clean, stash, source overwrite or deletion occurred.",'',
++        'Final checkpoints and optimizer/update metadata, when completed, are named C_update1000_v1.pt and T_update1000_v1.pt; their individual identity records contain SHA256. All new file hashes, source amendment diff and configuration seals accompany publication. The original training remains COMPLETED_NON_SUCCESS; original readout remains INCONCLUSIVE_NONCONVERGED_OPTIMIZATION; converged refit remains CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS.','',
++        '## Interpretation and stop','',
++        f"Outcome: **{classification}**. Any positive effect concerns the complete prescribed intervention under this task/recipe; it does not uniquely identify historical collapse causation. No claim of internally learned insertion sort, seed replication, untouched confirmation, learned adaptive routing or general architectural superiority is established. No variant, seed, extra update, coefficient, gain/normalization change, task, fitted readout, selector or follow-up is launched. Stop after verified publication and report; await a new research decision.",'']
++    with (OUT/'report_v1.md').open('x') as f:f.write('\n'.join(report))
++    save('artifact_inventory_v1.json',dict(files={p.name:dict(size=p.stat().st_size,sha256=sha(p)) for p in sorted(OUT.iterdir()) if p.is_file()},self_excluded=True))
++    print(json.dumps(dict(classification=classification,metrics=metrics,contrasts=contrasts,resource_totals=total,integrity=final_integrity),indent=2),flush=True)
++if __name__=='__main__':main()
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/evaluation_v1.py
+@@ -0,0 +1,55 @@
++"""Prescribed native evaluations and accompanying captures, no extra trajectories."""
++import json,time,math
++import torch
++from support_v1 import OUT,save
++from observer_v1 import pointer_loss,NumericalFailure
++from mechanistic_v1 import Capture
++from metrics_v1 import metrics,aggregate
++
++def score_record(row,out,loss,capture):
++    n=row['n'];S=out['pointer_logits'][0].detach().cpu();y=torch.tensor(row['pred'],dtype=torch.long)
++    Q=capture['projected_queries'].double();K=capture['projected_keys'].double()
++    double=Q@K.T/8
++    assert torch.allclose(S.double(),double,atol=1e-6,rtol=1e-5),'Native pointer score/projection mismatch'
++    Qc=Q-Q.mean(0,keepdim=True);Kc=K-K.mean(0,keepdim=True);b=Kc@Q.mean(0)/8;I=Qc@Kc.T/8
++    rowcenter=double-double.mean(1,keepdim=True);err=float((rowcenter-b[None,:]-I).abs().max())
++    assert err<=1024*torch.finfo(torch.float64).eps*(1+float(double.abs().max()))
++    common=b[None,:].expand(n,-1).float().clone()
++    conditions=dict(native=metrics(S,y),query_independent=metrics(common,y),uniform=metrics(torch.zeros_like(S),y),self_pointer=metrics(None,y,list(range(n))),original_order=metrics(None,y,[0]+list(range(n-1))))
++    pos=neg=cp=ap=fg=fb=0;sum_im=0.
++    for i,t in enumerate(y.tolist()):
++        for j in range(n):
++            if j==t:continue
++            cm=float(b[t]-b[j]);im=float(I[i,t]-I[i,j]);am=float(S[i,t]-S[i,j])
++            pos+=im>0;neg+=im<0;cp+=cm>0;ap+=am>0;fg+=cm<=0 and am>0;fb+=cm>0 and am<=0;sum_im+=im
++    detail=dict(identity_error=err,pair_comparisons=n*(n-1),interaction_improves=pos,interaction_worsens=neg,common_positive=cp,actual_positive=ap,flips_toward_target=fg,flips_against_target=fb,mean_interaction_target_margin=sum_im/(n*(n-1)),common_component_norm=float((b[None,:].expand(n,-1)).norm()),interaction_norm=float(I.norm()),mean_target_rank_native=conditions['native']['mean_target_rank'],mean_target_rank_common=conditions['query_independent']['mean_target_rank'])
++    capture.update(scores=S,common_scores=common,common_candidate_preference=b,query_dependent_interaction=I)
++    return dict(id=row['id'],n=n,original_input_sha256=row['original_input_sha256'],targets=row['pred'],conditions=conditions,native_loss_CE_FP32=float(loss.detach()),scores=S.tolist(),interaction=detail,uniform_analytic=dict(predecessor_accuracy=1/n,exact_array_accuracy=n**(-n),CE=math.log(n),note='Analytic independent random-pointer expectation only; uniform condition records deterministic lowest-index tie-breaking'))
++
++def evaluate(model,rows,ledger,phase):
++    ledger.phase=phase;records=[];captures=[];summaries=[]
++    with (OUT/(ledger.arm+'_'+phase+'_records_v1.jsonl')).open('x') as f,(OUT/(ledger.arm+'_'+phase+'_mechanistic_v1.jsonl')).open('x') as m:
++        for row in rows:
++            ledger.check();ledger.array_attempted+=1;cap=Capture(model,ledger,row['n']);start=time.monotonic()
++            try:
++                with torch.no_grad():
++                    out=model(row['key_fp32'],row['pos'],ledger,row['id'])
++                    loss=pointer_loss(out['pointer_logits'],row['pred'])
++                torch.cuda.synchronize()
++                if not bool(torch.isfinite(loss)):raise NumericalFailure('Nonfinite evaluation CE')
++                cap.close();data,summary=cap.finish(out,row);record=score_record(row,out,loss,data)
++                record['elapsed_seconds']=time.monotonic()-start;record['commits']=out['state'].tokens_committed
++                assert record['commits']==2*row['n']
++                f.write(json.dumps(record,allow_nan=False)+'\n');f.flush()
++                m.write(json.dumps(summary,allow_nan=False)+'\n');m.flush()
++                records.append(record);captures.append(data);summaries.append(summary);ledger.array_completed+=1;ledger.persist()
++                if len(records)%8==0:print('EVAL',ledger.arm,phase,len(records),'/',len(rows),'CE',record['native_loss_CE_FP32'],flush=True)
++                del out,loss;ledger.check()
++            except BaseException:
++                partial=dict(completed=captures,active_case=row['id'],active_mixers=cap.mix,active_blocks=cap.blocks,active_pre_terminal_norm=cap.raw,active_committed=cap.committed)
++                with (OUT/(ledger.arm+'_'+phase+'_partial_capture_v1.pt')).open('xb') as partial_file:torch.save(partial,partial_file)
++                ledger.array_failed+=1;ledger.persist();raise
++            finally:cap.close()
++    with (OUT/(ledger.arm+'_'+phase+'_captures_v1.pt')).open('xb') as f:torch.save(captures,f)
++    summary=aggregate(records);save(ledger.arm+'_'+phase+'_summary_v1.json',summary)
++    return records,summary,summaries
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/mechanistic_v1.py
+@@ -0,0 +1,60 @@
++"""Read-only captures during prescribed evaluation, plus CPU tensor summaries."""
++import torch
++from pilot_modules_v1 import active_mixers
++
++def cloud(x):
++    x=x.double();n=len(x);r=x.norm(dim=1);u=x/r.clamp_min(torch.finfo(torch.float64).tiny)[:,None]
++    ij=torch.triu_indices(n,n,1);i,j=ij[0],ij[1];diff=x[i]-x[j];d2=diff.square().sum(1)
++    radial=(r[i]-r[j]).square();angular=r[i]*r[j]*(u[i]-u[j]).square().sum(1)
++    error=float((d2-radial-angular).abs().max()) if len(d2) else 0.
++    assert error<=1e-10*(1+float(d2.max()) if len(d2) else 1)
++    nonzero=(r[i]>0)&(r[j]>0);cos=(u[i]*u[j]).sum(1)[nonzero]
++    centered=x-x.mean(0,keepdim=True)
++    return dict(positions=n,finite=bool(torch.isfinite(x).all()),mean_norm=float(r.mean()),min_norm=float(r.min()),max_norm=float(r.max()),common_component_norm=float(x.mean(0).norm()),centered_energy=float(centered.square().sum()),mean_pair_distance=float(d2.sqrt().mean()),mean_pair_cosine=float(cos.mean()) if len(cos) else None,mean_angular_dispersion=float((1-cos).mean()) if len(cos) else None,mean_radial_squared=float(radial.mean()),mean_angular_squared=float(angular.mean()),radial_fraction=float(radial.sum()/d2.sum()) if d2.sum()>0 else None,radial_angular_identity_error=error)
++
++def transport(x,y):
++    x=x.double();y=y.double();ij=torch.triu_indices(len(x),len(x),1);dx=x[ij[0]]-x[ij[1]];dy=y[ij[0]]-y[ij[1]]
++    nx=dx.square().sum(1);ny=dy.square().sum(1);keep=nx>0;ratio=(ny[keep]/nx[keep]).sqrt()
++    return dict(input=cloud(x),output=cloud(y),observed_pairs=len(nx),nonzero_input_pairs=int(keep.sum()),mean_input_difference_squared=float(nx.mean()),mean_transported_difference_squared=float(ny.mean()),mean_observed_amplification=float(ratio.mean()) if len(ratio) else None,min_observed_amplification=float(ratio.min()) if len(ratio) else None,max_observed_amplification=float(ratio.max()) if len(ratio) else None,zero_input_pairs_output_squared_max=float(ny[~keep].max()) if (~keep).any() else None,interpretation='Actual corresponding position differences; not a worst-case singular-value inference')
++
++class Capture:
++    def __init__(self,model,ledger,n):
++        self.n=n;self.ledger=ledger;self.handles=[];self.query=[];self.key=[];self.raw=[];self.committed=[]
++        self.mix={str(i):dict(inputs=[],outputs=[]) for i in range(8)};self.blocks={str(i):dict(inputs=[],outputs=[]) for i in range(8)}
++        def cpu(x):return x.detach().cpu().clone()
++        def mhook(i):
++            def hook(module,args,value):
++                assert self.ledger.current_token==len(self.mix[str(i)]['inputs'])
++                self.mix[str(i)]['inputs'].append(cpu(args[0]).reshape(1,64));self.mix[str(i)]['outputs'].append(cpu(value).reshape(1,64))
++            return hook
++        def bhook(i):
++            def hook(module,args,value):
++                value=value[0] if isinstance(value,tuple) else value
++                self.blocks[str(i)]['inputs'].append(cpu(args[0]).reshape(1,64));self.blocks[str(i)]['outputs'].append(cpu(value).reshape(1,64))
++            return hook
++        def normhook(module,args,value):
++            self.raw.append(cpu(args[0]).reshape(1,64));self.committed.append(cpu(value).reshape(1,64))
++        for i,(name,module) in enumerate(active_mixers(model).items()):
++            self.handles.append(module.register_forward_hook(mhook(i)))
++            self.handles.append(model.body.blocks.blocks[i].register_forward_hook(bhook(i)))
++        self.handles.append(model.body.commit.state_norm.register_forward_hook(normhook))
++        self.handles.append(model.query.register_forward_hook(lambda m,a,o:self.query.append(cpu(o).reshape(1,64))))
++        self.handles.append(model.key.register_forward_hook(lambda m,a,o:self.key.append(cpu(o).reshape(n,64))))
++    def close(self):
++        for h in self.handles:h.remove()
++    def finish(self,output,row):
++        assert len(self.query)==self.n and len(self.key)==1 and len(self.raw)==len(self.committed)==2*self.n
++        data=dict(id=row['id'],input_sha256=row['original_input_sha256'],targets=torch.tensor(row['pred']),projected_queries=torch.cat(self.query),projected_keys=self.key[0],pre_terminal_norm=torch.cat(self.raw),committed=torch.cat(self.committed),mixers={},blocks={})
++        assert torch.equal(data['committed'][:self.n],torch.cat([v.detach().cpu() for v in output['candidates']]))
++        for family,source in [('mixers',self.mix),('blocks',self.blocks)]:
++            for i,values in source.items():
++                assert all(len(v)==2*self.n for v in values.values())
++                data[family][i]={k:torch.cat(v) for k,v in values.items()}
++        for i in range(8):
++            assert torch.equal(data['blocks'][str(i)]['outputs'],data['blocks'][str(i)]['inputs']+data['mixers'][str(i)]['outputs'])
++        assert all(torch.isfinite(t).all() for t in [data['projected_queries'],data['projected_keys'],data['pre_terminal_norm'],data['committed']])
++        summary=dict(id=row['id'],n=self.n,roles={})
++        for role,sl in [('candidates',slice(0,self.n)),('queries',slice(self.n,2*self.n))]:
++            self.ledger.check()
++            summary['roles'][role]=dict(mixers={i:transport(v['inputs'][sl],v['outputs'][sl]) for i,v in data['mixers'].items()},blocks={i:transport(v['inputs'][sl],v['outputs'][sl]) for i,v in data['blocks'].items()},terminal_normalization=transport(data['pre_terminal_norm'][sl],data['committed'][sl]))
++        return data,summary
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/metrics_v1.py
+@@ -0,0 +1,44 @@
++"""Unchanged established score/control metrics, without module-level grad changes."""
++import torch
++def invalid(p):
++    n=len(p)
++    if any(not isinstance(v,int) or not 0<=v<n for v in p):return True
++    roots=[i for i,v in enumerate(p) if i==v]
++    if len(roots)!=1:return True
++    successors=[[] for _ in range(n)]
++    for i,v in enumerate(p):
++        if i!=v:successors[v].append(i)
++    if any(len(v)>1 for v in successors):return True
++    seen=set();node=roots[0]
++    while node not in seen:
++        seen.add(node)
++        if not successors[node]:return len(seen)!=n
++        node=successors[node][0]
++    return True
++
++def metrics(scores,target,pred=None):
++    n=len(target);y=target.tolist()
++    if scores is None:
++        assert pred is not None
++        return dict(predictions=pred,predecessor_accuracy=sum(a==b for a,b in zip(pred,y))/n,exact_array_accuracy=int(pred==y),invalid_chain=int(invalid(pred)),
++            CE=None,target_ranks=None,stable_index_ranks=None,target_margins=None,distinct_predicted_candidates=len(set(pred)),score_metrics='Unavailable for hard-only control; no probability smoothing')
++    S=scores.cpu().double();assert S.shape==(n,n) and torch.isfinite(S).all()
++    p=S.argmax(1).tolist();shift=S-S.max(1,keepdim=True).values;logp=shift-torch.logsumexp(shift,1,keepdim=True)
++    ce=-logp[torch.arange(n),target].mean();ranks=[];stable=[];margins=[];ties=[]
++    for i,t in enumerate(y):
++        ranks.append(1+int((S[i]>S[i,t]).sum()));ties.append(int((S[i]==S[i,t]).sum()))
++        stable.append(ranks[-1]+int(((S[i]==S[i,t])&(torch.arange(n)<t)).sum()))
++        wrong=S[i].clone();wrong[t]=-torch.inf;margins.append(float(S[i,t]-wrong.max()))
++    return dict(predictions=p,predecessor_accuracy=sum(a==b for a,b in zip(p,y))/n,exact_array_accuracy=int(p==y),invalid_chain=int(invalid(p)),CE=float(ce),
++        target_ranks=ranks,stable_index_ranks=stable,target_ties=ties,target_margins=margins,mean_target_rank=sum(ranks)/n,
++        mean_stable_index_rank=sum(stable)/n,mean_target_margin=sum(margins)/n,distinct_predicted_candidates=len(set(p)),mean_max_probability=float(logp.exp().max(1).values.mean()))
++
++def aggregate(rows):
++    names=rows[0]['conditions'].keys();out={}
++    for name in names:
++        values=[x['conditions'][name] for x in rows]
++        keys=['predecessor_accuracy','exact_array_accuracy','invalid_chain','distinct_predicted_candidates','CE','mean_target_rank','mean_stable_index_rank','mean_target_margin','mean_max_probability']
++        out[name]={k:sum(v[k] for v in values)/len(values) if all(v.get(k) is not None for v in values) else None for k in keys}
++        out[name]['arrays']=len(values)
++    return out
++
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/observer_v1.py
+@@ -0,0 +1,99 @@
++"""Versioned paired accounting around the unchanged native production step.
++
++Purity/commit observations follow the sealed CLRS training observer. No candidate
++construction, selector, alternate dispatch or state transition is implemented.
++"""
++import os,sys,gzip,json,time,shutil
++from support_v1 import OUT,ENG,save
++sys.path.insert(0,str(ENG))
++import torch
++from clrs_adapter_v1 import InsertionSortAdapter,fields,snapshot,assert_equal,assert_disjoint,metadata,pointer_loss,pointer_predictions
++import src.agt as agt_module
++from pilot_modules_v1 import active_mixers,EXCLUDED_NAME
++
++class ResourceStop(RuntimeError):pass
++class NumericalFailure(RuntimeError):pass
++
++class Ledger:
++    def __init__(self,arm,start,deadline):
++        self.arm=arm;self.started=start;self.deadline=deadline;self.phase='initialization'
++        self.attempted=self.completed=self.failed=0
++        self.bank_attempted=self.bank_completed=self.commits=self.contextual_entries=0
++        self.backward_attempted=self.backward_completed=self.backward_failed=0
++        self.optimizer_attempted=self.optimizer_completed=self.optimizer_failed=0
++        self.array_attempted=self.array_completed=self.array_failed=0
++        self.phase_counts={};self.current_token=None
++        self.trace=gzip.open(OUT/(arm+'_token_traces_v1.jsonl.gz'),'xt')
++    def check(self):
++        if time.monotonic()>=self.deadline:raise ResourceStop('Six-hour paired deadline')
++        if shutil.disk_usage(OUT).free<256*1024**2:raise ResourceStop('Storage reserve')
++    def summary(self):
++        return dict(arm=self.arm,attempted_tokens=self.attempted,completed_tokens=self.completed,failed_tokens=self.failed,selected_bank_attempted=self.bank_attempted,selected_bank_completed=self.bank_completed,commits=self.commits,contextual_commit_entries=self.contextual_entries,backward_attempted=self.backward_attempted,backward_completed=self.backward_completed,backward_failed=self.backward_failed,optimizer_attempted=self.optimizer_attempted,optimizer_updates=self.optimizer_completed,optimizer_failed=self.optimizer_failed,array_attempted=self.array_attempted,array_completed=self.array_completed,array_failed=self.array_failed,phase_counts=self.phase_counts,elapsed_since_shared_clock=time.monotonic()-self.started)
++    def persist(self):save(self.arm+'_execution_ledger_v1.json',self.summary())
++    def token(self,body,x,parent,case_id,token,scripted):
++        self.check();assert not scripted
++        if self.attempted>=41216 or self.bank_attempted+8>329728:raise ResourceStop('Per-arm model-token/bank cap')
++        self.attempted+=1;self.current_token=token
++        pc=self.phase_counts.setdefault(self.phase,dict(attempted=0,completed=0,failed=0,selected_attempted=0,selected_completed=0,commits=0,contextual_entries=0));pc['attempted']+=1
++        row=dict(arm=self.arm,phase=self.phase,attempt=self.attempted,case=case_id,token=token,device=str(x.device),status='attempted',blocks=[],selected_attempted=0,commits=0,selection_source='Unchanged production native canonical bank loop',elapsed_seconds=time.monotonic()-self.started)
++        handles=[];block_snap={};counts={i:0 for i in range(8)};old_commit=agt_module.terminal_commit
++        ex=body.executor;old_candidates=ex.candidate_successors
++        def blocked(*a,**k):raise AssertionError('Controller/exhaustive candidate path forbidden')
++        def pre(i):
++            def hook(module,args,kwargs):
++                self.check();assert i==len(row['blocks']),'Selected block order'
++                self.bank_attempted+=1;pc['selected_attempted']+=1;row['selected_attempted']+=1
++                block_snap[i]=(snapshot(kwargs['C_prev']) if kwargs.get('C_prev') is not None else {},kwargs['h0'].detach().clone(),kwargs['R'].detach().clone())
++            return hook
++        def post(i):
++            def hook(module,args,kwargs,value):
++                previous,anchor,memory=block_snap[i]
++                assert_equal(previous,snapshot(kwargs['C_prev']) if kwargs.get('C_prev') is not None else {},True)
++                assert torch.equal(anchor,kwargs['h0']) and torch.equal(memory,kwargs['R'])
++                assert counts[i]==1,'Each selected block must invoke its exact active mixer once'
++                row['blocks'].append(i);self.bank_completed+=1;pc['selected_completed']+=1
++            return hook
++        def mhc(i):
++            def hook(module,args,value):
++                assert args[0].shape==value.shape==(1,1,64) and args[0].dtype==value.dtype==torch.float32
++                counts[i]+=1
++            return hook
++        def commit(state,**kwargs):
++            versions={k:v for k,v in fields(state).items() if k.endswith('/version')}
++            result,plan=old_commit(state,**kwargs)
++            self.commits+=1;pc['commits']+=1;row['commits']+=1
++            self.contextual_entries+=len(plan.entries);pc['contextual_entries']+=len(plan.entries)
++            after={k:v for k,v in fields(result).items() if k.endswith('/version')}
++            row['commit']=dict(token_index=plan.token_index,entry_count=len(plan.entries),versions_before=versions,versions_after=after)
++            assert len(plan.entries)==7 and versions.keys()==after.keys() and all(after[k]==versions[k]+1 for k in versions)
++            assert state._consumed and not result._consumed and result.tokens_committed==parent.tokens_committed+1
++            return result,plan
++        try:
++            row['incoming_metadata']=metadata(parent);before=snapshot(parent)
++            handles.append(body.controller.register_forward_pre_hook(blocked))
++            handles.append(body.prelude_block.mhc.register_forward_pre_hook(lambda *a:(_ for _ in ()).throw(AssertionError('Unexecuted prelude mixer called'))))
++            for i,block in enumerate(body.blocks.blocks):
++                handles.append(block.register_forward_pre_hook(pre(i),with_kwargs=True));handles.append(block.register_forward_hook(post(i),with_kwargs=True))
++                module=block.mhc if i<6 else block.core.mhc;handles.append(module.register_forward_hook(mhc(i)))
++            agt_module.terminal_commit=commit;ex.candidate_successors=blocked
++            result=body.step(x,parent,x.new_zeros(1,64))
++            assert row['blocks']==list(range(8)) and row['commits']==1 and all(v==1 for v in counts.values())
++            assert_equal(before,snapshot(parent),True);assert_disjoint(parent,result['state'])
++            if not bool(torch.isfinite(result['logits']).all()):raise NumericalFailure('Nonfinite frozen vocabulary output')
++            row.update(status='completed',D=8,P=8,selected_actions=list(row['blocks']),mixer_calls=[counts[i] for i in range(8)],parent_unchanged=True,returned_state_disjoint=True,returned_metadata=metadata(result['state']))
++            self.completed+=1;pc['completed']+=1
++            return result
++        except BaseException as e:
++            self.failed+=1;pc['failed']+=1;row.update(status='failed',error_type=type(e).__name__,error=str(e));raise
++        finally:
++            agt_module.terminal_commit=old_commit;ex.candidate_successors=old_candidates
++            for h in handles:h.remove()
++            self.trace.write(json.dumps(row,allow_nan=False)+'\n');self.trace.flush();self.current_token=None
++            self.persist()
++    def backward(self,loss):
++        self.check()
++        if self.backward_attempted>=1000:raise ResourceStop('Per-arm backward cap')
++        self.backward_attempted+=1
++        try:loss.backward();self.backward_completed+=1
++        except BaseException:self.backward_failed+=1;raise
++        self.check()
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/operator_checks_v1.py
+@@ -0,0 +1,42 @@
++"""Only isolated MHC fixtures; no AGT construction, trajectory or backward."""
++import os
++os.environ['PYTHONDONTWRITEBYTECODE']='1'
++import sys,json,types
++from support_v1 import ROOT,OUT,save,integrity
++sys.path.insert(0,str(ROOT))
++import torch
++from src.mhc import MHC
++from pilot_modules_v1 import feature_complement_forward,ACTIVE_NAMES
++torch.set_num_threads(1)
++def main():
++    assert not (OUT/'operator_checks_v1.json').exists(),'No check rerun'
++    assert integrity()['success']
++    assert torch.cuda.is_available(),'Required DGX CUDA unavailable'
++    torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
++    results=[]
++    for device,dtype in [('cpu',torch.float32),('cpu',torch.float64),('cuda',torch.float32)]:
++        control=MHC(dim=64).to(device=device,dtype=dtype);treat=MHC(dim=64).to(device=device,dtype=dtype)
++        with torch.no_grad():
++            z=torch.arange(4096,device=device,dtype=dtype).reshape(64,64)
++            control.logits.copy_(torch.sin(z*.031)+torch.cos(z*.007))
++            control.scale.copy_(torch.linspace(.5,1.5,64,device=device,dtype=dtype));treat.load_state_dict(control.state_dict())
++            treat.forward=types.MethodType(feature_complement_forward,treat)
++            P=control.mixing_matrix();Q=torch.eye(64,device=device,dtype=dtype)-torch.ones((64,64),device=device,dtype=dtype)/64;u=torch.ones(64,device=device,dtype=dtype)/8
++            assert torch.allclose(Q@u,torch.zeros_like(u),atol=1e-6,rtol=1e-5)
++            assert torch.allclose(Q@Q,Q,atol=1e-6,rtol=1e-5) and torch.equal(Q,Q.T)
++            for shape in [(3,64),(2,3,64),(1,1,64)]:
++                x=torch.sin(torch.arange(__import__('math').prod(shape),device=device,dtype=dtype).reshape(shape)*.017)
++                saved=x.clone();state={k:v.clone() for k,v in treat.state_dict().items()}
++                y=treat(x);expected=(x@(P+Q).T)*control.scale
++                assert y.shape==x.shape and y.dtype==dtype and y.device==x.device and torch.equal(x,saved)
++                assert torch.equal(y,expected)
++                assert all(torch.equal(v,treat.state_dict()[k]) for k,v in state.items())
++                assert torch.allclose(x@Q.T,x-x.mean(-1,keepdim=True),atol=1e-6,rtol=1e-5)
++                assert torch.allclose(y,control(x)+(x@Q.T)*control.scale,atol=1e-6,rtol=1e-5)
++                assert not torch.allclose(y,(x@(P+Q))*control.scale,atol=1e-6,rtol=1e-5),'Fixture must detect wrong transpose'
++                assert not torch.allclose(y,control(x)+x@Q.T,atol=1e-6,rtol=1e-5),'Fixture must detect gain moved off Q'
++                results.append(dict(device=device,dtype=str(dtype),shape=list(shape),exact_formula=True,Q_uniform_annihilation=True,complement_action=True,transpose_check=True,gain_placement=True,input_and_parameters_unchanged=True))
++    torch.cuda.synchronize()
++    save('operator_checks_v1.json',dict(success=True,fixtures=results,CPU_cases=6,CUDA_cases=3,skips=0,full_AGT_constructions=0,model_tokens=0,backwards=0,optimizer_objects=0,sites=list(ACTIVE_NAMES),torch=torch.__version__,CUDA=torch.version.cuda,device=torch.cuda.get_device_name(),interpretation='Synthetic operator fixtures only, not pilot task outcomes'))
++    print(json.dumps(dict(operator_checks='PASS',CPU_cases=6,CUDA_cases=3,full_model_calls=0),indent=2))
++if __name__=='__main__':main()
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/pilot_modules_v1.py
+@@ -0,0 +1,26 @@
++"""The sole scientific amendment: exact feature complement at eight bank mixers."""
++import types
++import torch
++
++ACTIVE_NAMES=tuple('body.blocks.blocks.'+str(i)+('.mhc' if i<6 else '.core.mhc') for i in range(8))
++EXCLUDED_NAME='body.prelude_block.mhc'
++def feature_complement_forward(self,x):
++    assert self.dim==64 and x.shape[-1]==64
++    matrix=self.mixing_matrix()
++    Q=torch.eye(64,device=x.device,dtype=x.dtype)-torch.ones((64,64),device=x.device,dtype=x.dtype)/64
++    return torch.matmul(x,(matrix+Q).T)*self.scale
++
++def active_mixers(model):
++    modules=dict(model.named_modules())
++    assert tuple(b.species for b in model.body.blocks.blocks)==('SWA','SWA','GQA','GQA','GDN','GDN','FFN','FFN')
++    assert all(n in modules and modules[n].dim==64 for n in ACTIVE_NAMES)
++    assert modules[EXCLUDED_NAME].dim==64
++    return {n:modules[n] for n in ACTIVE_NAMES}
++
++def install_treatment(model):
++    targets=active_mixers(model)
++    for module in targets.values():
++        assert 'forward' not in module.__dict__, 'No duplicate amendment'
++        module.forward=types.MethodType(feature_complement_forward,module)
++    assert 'forward' not in dict(model.named_modules())[EXCLUDED_NAME].__dict__
++    return list(targets)
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/run_paired_v1.py
+@@ -0,0 +1,163 @@
++"""Exactly one locked paired pilot; no diagnostics, retries or resume."""
++import os
++os.environ['PYTHONDONTWRITEBYTECODE']='1'
++import sys,json,time,hashlib,signal,traceback,datetime
++from support_v1 import OUT,ROOT,ENG,save,sha,integrity
++import torch
++from observer_v1 import Ledger,InsertionSortAdapter,pointer_loss,pointer_predictions,fields,snapshot,assert_equal,assert_disjoint,ResourceStop,NumericalFailure
++from pilot_modules_v1 import install_treatment,active_mixers,ACTIVE_NAMES,EXCLUDED_NAME
++from evaluation_v1 import evaluate
++
++def identity(model):
++    h=hashlib.sha256()
++    for n,v in sorted(list(model.named_parameters())+list(model.named_buffers())):
++        h.update(n.encode());h.update(str((v.shape,v.dtype)).encode());h.update(bytes(v.detach().cpu().contiguous().reshape(-1).view(torch.uint8).tolist()))
++    return h.hexdigest()
++def frozen_identity(model):
++    h=hashlib.sha256()
++    for n,p in model.named_parameters():
++        if not p.requires_grad:h.update(n.encode());h.update(bytes(p.detach().cpu().contiguous().reshape(-1).view(torch.uint8).tolist()))
++    return h.hexdigest()
++def rng():return (torch.random.get_rng_state().clone(),torch.cuda.get_rng_state().clone())
++def set_rng(pair):torch.random.set_rng_state(pair[0]);torch.cuda.set_rng_state(pair[1])
++def same_rng(a,b):return torch.equal(a[0],b[0]) and torch.equal(a[1],b[1])
++
++def train_update(model,optimizer,ledger,row,update,index,stream):
++    ledger.phase='training';ledger.check();ledger.array_attempted+=1;begin=time.monotonic()
++    try:
++        assert torch.is_grad_enabled() and not model.training
++        optimizer.zero_grad(set_to_none=True)
++        out=model(row['key_fp32'],row['pos'],ledger,row['id'])
++        loss=pointer_loss(out['pointer_logits'],row['pred'])
++        if not bool(torch.isfinite(loss)):raise NumericalFailure('Nonfinite training CE')
++        torch.cuda.synchronize();forward=time.monotonic()-begin
++        scores=out['pointer_logits'][0].detach().cpu();pred=scores.argmax(1).tolist()
++        record=dict(arm=ledger.arm,update=update,canonical_pool_index=index,id=row['id'],n=row['n'],input_sha256=row['original_input_sha256'],predictions=pred,targets=row['pred'],pointer_logits=scores.tolist(),pointer_accuracy=sum(x==y for x,y in zip(pred,row['pred']))/row['n'],exact_array_accuracy=int(pred==row['pred']),CE=float(loss.detach()))
++        back_start=time.monotonic();ledger.backward(loss)
++        assert all(p.grad is None for p in model.parameters() if not p.requires_grad)
++        grads=[p.grad for p in model.parameters() if p.grad is not None]
++        if not grads or not all(bool(torch.isfinite(g).all()) for g in grads):raise NumericalFailure('Nonfinite or absent training gradients')
++        groups={}
++        for prefix in ['body.','encoder.','query.','key.']:
++            values=[p.grad.detach().square().sum() for n,p in model.named_parameters() if n.startswith(prefix) and p.grad is not None]
++            groups[prefix]=float(torch.stack(values).sum().sqrt())
++        norm=torch.nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad],1.,error_if_nonfinite=True)
++        torch.cuda.synchronize();backward=time.monotonic()-back_start
++        before=[p.detach().clone() for p in model.parameters() if p.requires_grad]
++        ledger.check();assert ledger.optimizer_attempted<1000;ledger.optimizer_attempted+=1
++        try:optimizer.step();ledger.optimizer_completed+=1
++        except BaseException:ledger.optimizer_failed+=1;raise
++        if not all(bool(torch.isfinite(p).all()) for p in model.parameters()):raise NumericalFailure('Nonfinite parameters after optimizer update')
++        if not all(bool(torch.isfinite(v).all()) for s in optimizer.state.values() for v in s.values() if torch.is_tensor(v)):raise NumericalFailure('Nonfinite optimizer state')
++        displacement=float(torch.stack([(p.detach()-b).square().sum() for p,b in zip([p for p in model.parameters() if p.requires_grad],before)]).sum().sqrt())
++        torch.cuda.synchronize()
++        record.update(unclipped_gradient_norm=float(norm),gradient_norms_by_group=groups,step_parameter_displacement=displacement,forward_seconds=forward,backward_and_clip_seconds=backward,elapsed_update_seconds=time.monotonic()-begin,total_elapsed_seconds=time.monotonic()-ledger.started,all_gradients_finite=True,parameters_optimizer_finite=True)
++        stream.write(json.dumps(record,allow_nan=False)+'\n');stream.flush();ledger.array_completed+=1;ledger.persist()
++        del out,loss,before;ledger.check()
++        return record
++    except BaseException:
++        ledger.array_failed+=1;ledger.persist();raise
++
++def reconcile(ledgers):
++    results={}
++    for arm,l in ledgers.items():
++        counts=dict(attempted=0,completed=0,failed=0,selected_attempted=0,selected_completed=0,commits=0,contextual_entries=0);phase={}
++        import gzip
++        with gzip.open(OUT/(arm+'_token_traces_v1.jsonl.gz'),'rt') as f:
++            for s in f:
++                r=json.loads(s);counts['attempted']+=1;counts[r['status']]+=1;counts['selected_attempted']+=r['selected_attempted'];counts['selected_completed']+=len(r['blocks']);counts['commits']+=r['commits'];counts['contextual_entries']+=r.get('commit',{}).get('entry_count',0)
++                p=phase.setdefault(r['phase'],dict(attempted=0,completed=0,failed=0));p['attempted']+=1;p[r['status']]+=1
++                if r['status']=='completed':assert r['D']==r['P']==8 and r['blocks']==r['selected_actions']==list(range(8)) and r['mixer_calls']==[1]*8 and r['commits']==1 and r['parent_unchanged'] and r['returned_state_disjoint']
++        assert counts==dict(attempted=l.attempted,completed=l.completed,failed=l.failed,selected_attempted=l.bank_attempted,selected_completed=l.bank_completed,commits=l.commits,contextual_entries=l.contextual_entries)
++        results[arm]=dict(success=True,counts=counts,phases=phase)
++    save('complete_trace_verification_v1.json',results)
++    return results
++
++def main():
++    if (OUT/'execution_started_v1.json').exists():raise RuntimeError('No second attempt/resume authorized')
++    seal=json.loads((OUT/'implementation_seal_v1.json').read_text())
++    for n,h in seal['files'].items():assert sha(ROOT/n)==h,n
++    assert json.loads((OUT/'operator_checks_v1.json').read_text())['success']
++    assert integrity()['success']
++    data={n:json.loads((ENG/(n+'_pool_v1.json')).read_text()) for n in ['train','development','size_transfer']}
++    order=json.loads((ENG/'training_results_v1/training_order_v1.json').read_text());assert sorted(order['indices'])==list(range(1000))
++    torch.set_num_threads(1);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
++    assert torch.cuda.is_available();torch.cuda.init();torch.cuda.reset_peak_memory_stats()
++    models={};optimizers={};ledgers={};logs={};summaries={};updates={};frozen={};current_arm=None
++    result=dict(status='INCOMPLETE',phases={},outcomes={},no_diagnostic_forward=True)
++    def alarm(*unused):raise ResourceStop('Six-hour paired hard deadline')
++    signal.signal(signal.SIGALRM,alarm)
++    start=time.monotonic();deadline=start+21600;signal.setitimer(signal.ITIMER_REAL,21600)
++    save('execution_started_v1.json',dict(pid=os.getpid(),UTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),start_monotonic=start,deadline_monotonic=deadline,seconds=21600,no_retry_resume=True,first_forward='First prescribed control training array',no_preliminary_full_model_call=True))
++    try:
++        for arm in ['C','T']:
++            current_arm=arm;ledgers[arm]=Ledger(arm,start,deadline)
++            models[arm]=InsertionSortAdapter().to('cuda')
++            assert identity(models[arm])=='c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e','Original seed6200 initialization mismatch'
++            assert not models[arm].training and all(not m.training for m in models[arm].modules())
++            assert sum(p.numel() for p in models[arm].parameters())==1942836 and sum(p.numel() for p in models[arm].parameters() if p.requires_grad)==1838377
++        paramsC=dict(models['C'].named_parameters());paramsT=dict(models['T'].named_parameters());buffersC=dict(models['C'].named_buffers());buffersT=dict(models['T'].named_buffers())
++        assert paramsC.keys()==paramsT.keys() and buffersC.keys()==buffersT.keys()
++        for groupC,groupT in [(paramsC,paramsT),(buffersC,buffersT)]:
++            for name,p in groupC.items():
++                assert torch.equal(p,groupT[name]) and (not p.numel() or p.untyped_storage().data_ptr()!=groupT[name].untyped_storage().data_ptr()),name
++        own=[]
++        for arm in ['C','T']:
++            model=models[arm];own.append(model.body.initial_persistent_state(1,torch.device('cuda'),torch.float32));frozen[arm]=frozen_identity(model)
++            assert frozen[arm]=='6bbea651fb2a44f9581141abc16741a475ddcc1315bebb3833cbf4717c603182'
++        assert_equal(snapshot(own[0]),snapshot(own[1]),True);assert_disjoint(own[0],own[1]);del own
++        sites=install_treatment(models['T'])
++        assert sites==list(ACTIVE_NAMES) and identity(models['T'])==identity(models['C'])=='c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e'
++        for arm in ['C','T']:
++            optimizers[arm]=torch.optim.AdamW([p for p in models[arm].parameters() if p.requires_grad],lr=.001,weight_decay=0,betas=(.9,.999),eps=1e-8)
++            assert not optimizers[arm].state
++            logs[arm]=(OUT/(arm+'_training_metrics_v1.jsonl')).open('x');updates[arm]=[]
++        assert optimizers['C'] is not optimizers['T']
++        save('starting_equivalence_v1.json',dict(success=True,model_constructions=2,initial_parameter_buffer_identity='c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e',frozen_parameter_identity=frozen['C'],parameters_equal=True,buffers_equal=True,all_parameter_buffer_storages_independently_owned=True,initial_persistent_states_equal_and_disjoint=True,optimizer_states_fresh_empty_independent=True,trainable_parameters=1838377,parameters_total=1942836,mode='Original adapter eval mode with full gradient recording',treatment_sites=sites,excluded_site=EXCLUDED_NAME,added_trainable_parameters=0,full_model_calls_before_first_training_update=0,failed_final_checkpoint_loaded=False))
++        save('runtime_v1.json',dict(torch=torch.__version__,CUDA=torch.version.cuda,device=torch.cuda.get_device_name(),FP32=True,TF32=False,threads=1,full_BPTT=True,initialization_order='Original adapter constructor separately twice; no checkpoint initialization',paired_execution_order='For each locked training row: C update then T update',matched_RNG='Restore identical CPU/CUDA states before each paired update; require identical post-update RNG states',source_reference='1ed1d773264b3f5f53bd1ba169e819709d33cbb2'))
++        result['phases']['starting_equivalence']='PASS'
++        for update,index in enumerate(order['indices'],1):
++            shared=rng();after=None
++            for arm in ['C','T']:
++                current_arm=arm;set_rng(shared)
++                r=train_update(models[arm],optimizers[arm],ledgers[arm],data['train'][index],update,index,logs[arm]);updates[arm].append(r)
++                if arm=='C':after=rng()
++                else:assert same_rng(after,rng()),'Intervention unexpectedly changed RNG consumption'
++            if update%10==0:
++                print('PAIRED_UPDATE',update,'C_CE',updates['C'][-1]['CE'],'T_CE',updates['T'][-1]['CE'],'C_acc',updates['C'][-1]['pointer_accuracy'],'T_acc',updates['T'][-1]['pointer_accuracy'],'elapsed',time.monotonic()-start,flush=True)
++            save('paired_progress_v1.json',dict(completed_paired_updates=update,elapsed_seconds=time.monotonic()-start,C=ledgers['C'].summary(),T=ledgers['T'].summary(),RNG_post_states_equal=True))
++        for arm in ['C','T']:
++            current_arm=arm;l=ledgers[arm];assert l.optimizer_completed==l.backward_completed==1000 and frozen_identity(models[arm])==frozen[arm]
++            logs[arm].close();m=updates[arm]
++            save(arm+'_training_summary_v1.json',dict(updates=1000,mean_online_CE=sum(r['CE'] for r in m)/1000,mean_online_pointer_accuracy=sum(r['pointer_accuracy'] for r in m)/1000,mean_online_exact_array_accuracy=sum(r['exact_array_accuracy'] for r in m)/1000,final_model_identity=identity(models[arm]),note='Online pre-update training metrics; not generalization evidence'))
++            path=OUT/(arm+'_update1000_v1.pt')
++            with path.open('xb') as f:torch.save(dict(model_state_dict=models[arm].state_dict(),optimizer_state_dict=optimizers[arm].state_dict(),optimizer_update_count=1000,model_seed=6200,arm=arm,intervention='original' if arm=='C' else '(X @ (P+Q).T)*g; Q=I-ones/64; eight bank mixers only',intervention_sites=[] if arm=='C' else sites,training_order_sha256=sha(ENG/'training_results_v1/training_order_v1.json'),implementation_seal_sha256=sha(OUT/'implementation_seal_v1.json')),f)
++            save(arm+'_checkpoint_identity_v1.json',dict(path=path.name,sha256=sha(path),size=path.stat().st_size,optimizer_updates=1000,selection='Predetermined update1000 only'))
++        result['phases']['training']='BOTH_COMPLETED_1000_UPDATES'
++        for phase,rows in [('training_subset',data['train'][:128]),('development',data['development']),('size_transfer',data['size_transfer'])]:
++            summaries[phase]={}
++            for arm in ['C','T']:
++                current_arm=arm;records,summary,mechanism=evaluate(models[arm],rows,ledgers[arm],phase);summaries[phase][arm]=summary
++                result['phases'][arm+'_'+phase]='COMPLETED'
++        for arm,l in ledgers.items():
++            assert l.attempted==l.completed==l.commits==41216 and l.failed==0 and l.bank_attempted==l.bank_completed==329728
++            assert l.contextual_entries==288512 and l.optimizer_completed==l.backward_completed==1000 and frozen_identity(models[arm])==frozen[arm]
++        save('evaluation_summaries_v1.json',summaries)
++        result['status']='ALL_TRAINING_AND_PRESCRIBED_EVALUATIONS_COMPLETED'
++    except BaseException as e:
++        result.update(status='TREATMENT_NUMERICAL_OUTCOME_PAIRED_EVALUATION_INCOMPLETE' if current_arm=='T' and isinstance(e,NumericalFailure) else 'INCOMPLETE',failure_type=type(e).__name__,failure=str(e),execution_boundary=dict(arm=current_arm,phase=ledgers[current_arm].phase if current_arm in ledgers else 'construction'))
++        save('failure_v1.json',dict(type=type(e).__name__,message=str(e),traceback=traceback.format_exc(),boundary=result['execution_boundary'],treatment_numerical_outcome=current_arm=='T' and isinstance(e,NumericalFailure),no_retry=True))
++        print('STOP',type(e).__name__,str(e),flush=True)
++    finally:
++        for f in logs.values():
++            if not f.closed:f.close()
++        for l in ledgers.values():l.trace.close();l.persist()
++        result['elapsed_seconds_to_execution_boundary']=time.monotonic()-start
++        result['deadline_met']=result['elapsed_seconds_to_execution_boundary']<=21600
++        result['resource']={a:l.summary() for a,l in ledgers.items()}
++        result['peak_cuda_allocated_bytes']=torch.cuda.max_memory_allocated();result['peak_cuda_reserved_bytes']=torch.cuda.max_memory_reserved()
++        result['trace_verification']=reconcile(ledgers);result['integrity']=integrity()
++        if not result['integrity']['success'] or not result['deadline_met']:result['status']='INCOMPLETE'
++        save('run_result_v1.json',result);signal.setitimer(signal.ITIMER_REAL,0)
++        print(json.dumps(dict(status=result['status'],elapsed=result['elapsed_seconds_to_execution_boundary'],resource=result['resource'],integrity=result['integrity']),indent=2),flush=True)
++if __name__=='__main__':main()
+--- /dev/null
++++ experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/support_v1.py
+@@ -0,0 +1,35 @@
++"""File/provenance helpers only; no model imports."""
++from pathlib import Path
++import json,hashlib,os,stat,subprocess,time,shutil
++OUT=Path(__file__).resolve().parent
++ROOT=OUT.parents[2]
++ENG=OUT.parent/'gatec_clrs_insertion_sort_6200_v1'
++def save(name,value):
++    p=OUT/name;temporary=p.with_name(p.name+'.tmp')
++    temporary.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n');temporary.replace(p)
++def sha(path):
++    h=hashlib.sha256()
++    with path.open('rb') as f:
++        for b in iter(lambda:f.read(1048576),b''):h.update(b)
++    return h.hexdigest()
++def integrity():
++    base=json.loads((OUT/'integrity_initial_v1.json').read_text());branch=json.loads((OUT/'branch_creation_v1.json').read_text());bad=[];intentional=[]
++    allowed={'.git/HEAD','.git/logs/HEAD'}
++    for name,r in base['files'].items():
++        p=ROOT/name
++        try:
++            s=p.lstat();mode=stat.S_IMODE(s.st_mode)==r['mode']
++            if name=='.git/HEAD':
++                ok=mode and p.read_text()=='ref: refs/heads/'+branch['branch']+'\n';intentional.append(name)
++            elif name=='.git/logs/HEAD':
++                b=p.read_bytes();ok=mode and len(b)>=r['size'] and hashlib.sha256(b[:r['size']]).hexdigest()==r['sha256'];intentional.append(name)
++            elif r['kind']=='symlink':ok=mode and p.is_symlink() and os.readlink(p)==r['target']
++            else:ok=mode and stat.S_ISREG(s.st_mode) and s.st_size==r['size'] and sha(p)==r['sha256']
++        except OSError:ok=False
++        if not ok:bad.append(name)
++    env=dict(os.environ,GIT_OPTIONAL_LOCKS='0')
++    head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,env=env,text=True).strip()
++    oldhead=subprocess.check_output(['git','rev-parse',base['original_branch']],cwd=ROOT,env=env,text=True).strip()
++    diff=hashlib.sha256(subprocess.check_output(['git','diff','--binary','HEAD'],cwd=ROOT,env=env)).hexdigest()
++    current=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,env=env,text=True).strip()
++    return dict(success=not bad and head==oldhead==base['HEAD'] and diff==base['tracked_diff_sha256'] and current==branch['branch'],protected_files=len(base['files']),changed_or_missing=bad,original_branch_ref_unchanged=oldhead==base['HEAD'],HEAD_commit_unchanged=head==base['HEAD'],tracked_diff_unchanged=diff==base['tracked_diff_sha256'],pilot_branch=current,intentional_Git_metadata_updates=sorted(intentional),historical_exception_preserved=True)

@@ -1,0 +1,56 @@
+{
+  "success": true,
+  "checks": [
+    {
+      "arm": "C",
+      "panel": "training_subset",
+      "arrays": 128,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "f295015afa6613a4943160199a599d32521c6048f3cde44fc7ca1ad4454c9421"
+    },
+    {
+      "arm": "C",
+      "panel": "development",
+      "arrays": 32,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "ceeef505df8cbbecefad7e3d302a3224f9e5111e0ad022c0b96bf4a62ab009a5"
+    },
+    {
+      "arm": "C",
+      "panel": "size_transfer",
+      "arrays": 32,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "274a93ef8fd3b95f0da5d9f34787ee527ef17c8d5883fc5680a7f99c96516480"
+    },
+    {
+      "arm": "T",
+      "panel": "training_subset",
+      "arrays": 128,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "6976186edd932acbc981c636e204be0817100faf22eadc4eb13213430b837a8c"
+    },
+    {
+      "arm": "T",
+      "panel": "development",
+      "arrays": 32,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "b34423f6a8b1c7ba1794c49ddd0a71a4e87b17280da3bc2486f05184e10b7fa7"
+    },
+    {
+      "arm": "T",
+      "panel": "size_transfer",
+      "arrays": 32,
+      "identities_targets_shapes_commits_and_capture_coverage": "PASS",
+      "captures_sha256": "351a5d22bb78f71924be91d52d3069b35f69decca281929814654d433cbac0e1"
+    }
+  ],
+  "arrays": 384,
+  "scientific_source_seal_intact": true,
+  "checkpoint_hashes_match": true,
+  "model_calls_during_verification": 0,
+  "source_AST_checks": true,
+  "new_study_bytes": 276294868,
+  "disk_free_bytes": 204944408576,
+  "LFS_required": false,
+  "original_classifications_unchanged": true
+}

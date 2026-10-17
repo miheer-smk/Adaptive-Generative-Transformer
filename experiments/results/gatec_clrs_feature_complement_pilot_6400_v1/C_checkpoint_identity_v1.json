@@ -1,0 +1,7 @@
+{
+  "path": "C_update1000_v1.pt",
+  "sha256": "f410dacdfa19ef06fa9f27fe3bf594b1f341e3571fb0da8a1303e9692be2610a",
+  "size": 22507511,
+  "optimizer_updates": 1000,
+  "selection": "Predetermined update1000 only"
+}

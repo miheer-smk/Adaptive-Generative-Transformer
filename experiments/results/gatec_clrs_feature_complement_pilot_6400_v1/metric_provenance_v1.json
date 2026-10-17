@@ -1,0 +1,11 @@
+{
+  "source": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/evaluate_readout_v1.py",
+  "source_sha256": "c887d577b7dbf2d23ed8f96cab32ca7b5320ea72e9f79ca422304e480f0166a8",
+  "extracted_functions": [
+    "invalid",
+    "metrics",
+    "aggregate"
+  ],
+  "module_level_grad_disabling_not_copied": true,
+  "new_sha256": "e03173cd821d9e03e46e10282efcc7fd2bc166e1df8da7709d584789a3a9865c"
+}

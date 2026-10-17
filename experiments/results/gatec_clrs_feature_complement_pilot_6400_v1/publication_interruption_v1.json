@@ -1,0 +1,20 @@
+{
+  "stage": "PUBLICATION_ONLY",
+  "reason": "Live stdout log was included in its own snapshot inventory and would change after hashing",
+  "uploader_interrupted_with_SIGINT": true,
+  "uploader_exit_code": 130,
+  "remote_branch_absent_verified": true,
+  "scientific_run_complete_and_unchanged": true,
+  "classification": "PARTIAL_EFFECT_TASK_NON_SUCCESS",
+  "new_model_calls": 0,
+  "new_optimizer_updates": 0,
+  "original_publication_files_preserved": {
+    "publish_pilot_v1.py": "5de34ee7e8de7507ecaa731b97ab776f97edcf8f00cb307060d9579535f7ef92",
+    "publish_pilot_v2.py": "34b6d5588ffe29844dfcb183d5bfb93db03df3278fefd352abfb7992827e8142",
+    "publication_execution_v1.log": "dda49917525e487ade9f47c662f602e61628645c2df73ec829029d9119c33b6e",
+    "publication_started_v1.json": "32082c4edee2681f2a6136448f7dfae26b05a5d8675204dc0bda452098f5ef6c",
+    "publication_inventory_v1.json": "1199a9044c63c4db63a14b9b8d0170951534a0caefa8270aa9430f0e3a688fec"
+  },
+  "correction": "Distinct v2 marker/inventory/receipt; stdout remains only in tool terminal, no growing file inside snapshot; unchanged payload/branch/scientific results",
+  "not_a_scientific_retry": true
+}

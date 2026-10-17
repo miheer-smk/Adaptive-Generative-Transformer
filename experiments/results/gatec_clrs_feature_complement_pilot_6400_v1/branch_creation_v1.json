@@ -1,0 +1,15 @@
+{
+  "branch": "research/clrs-feature-complement-6400-20261017T102044Z",
+  "original_branch": "research/stage3-routing-gate-c-audit",
+  "HEAD": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+  "original_branch_ref_unchanged": true,
+  "index_unchanged": true,
+  "working_files_not_checked_out_or_rewritten": true,
+  "method": "git branch followed by symbolic-ref; no reset/clean/stash/switch/index refresh",
+  "intentional_Git_changes": [
+    ".git/HEAD",
+    ".git/logs/HEAD",
+    ".git/refs/heads/research/clrs-feature-complement-6400-20261017T102044Z",
+    ".git/logs/refs/heads/research/clrs-feature-complement-6400-20261017T102044Z"
+  ]
+}

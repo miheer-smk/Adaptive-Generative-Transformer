@@ -1,0 +1,20 @@
+Uploaded and content-verified 1 / 84 AGT_v3_feature_complement_causal_pilot_locked_protocol_6400_v1.md
+Uploaded and content-verified 2 / 84 experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_checkpoint_identity_v1.json
+Uploaded and content-verified 3 / 84 experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_development_captures_v1.pt
+Uploaded and content-verified 4 / 84 experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_development_mechanistic_v1.jsonl
+Uploaded and content-verified 5 / 84 experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_development_records_v1.jsonl
+Uploaded and content-verified 6 / 84 experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_development_summary_v1.json
+Traceback (most recent call last):
+  File "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/publish_pilot_v1.py", line 100, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/publish_pilot_v1.py", line 79, in main
+    upload(r);verify(r)
+    ^^^^^^^^^
+  File "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/publish_pilot_v1.py", line 35, in upload
+    assert api('/git/blobs','POST',dict(encoding='base64',content=base64.b64encode(b).decode()))['sha']==r['git_oid']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/iiitn/Desktop/Miheer Projects/AGT/AGT_v3_POC/experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/publish_pilot_v1.py", line 18, in api
+    if delay:time.sleep(delay)
+             ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

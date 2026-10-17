@@ -1,0 +1,88 @@
+{
+  "task": "Official CLRS insertion_sort, original serialized four-feature adapter and native predecessor pointer head",
+  "initial_seed": 6200,
+  "training_order_seed": 6201,
+  "analysis_seed": 6400,
+  "initial_model_identity": "c28e83425e505734e1b6a39f4c6d5ecf414f1b1fb28a77e01ddc31bbfa92280e",
+  "arms": [
+    "C",
+    "T"
+  ],
+  "updates_per_arm": 1000,
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip_global_norm": 1
+  },
+  "FP32": true,
+  "full_BPTT": true,
+  "mode": "Original adapter .eval(), gradients enabled during training",
+  "program": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "intervention": "(X @ (P+Q).T)*g; Q=I64-ones64x64/64; six outer bank and two FFN core mixers only",
+  "trainable_parameter_increase": 0,
+  "excluded_prelude_mixer": true,
+  "initial_diagnostic": 0,
+  "warmups": 0,
+  "profiling": 0,
+  "extra_trajectories": 0,
+  "model_constructions": 2,
+  "per_arm_tokens": 41216,
+  "total_tokens": 82432,
+  "total_selected_bank_calls": 659456,
+  "total_terminal_commits": 82432,
+  "total_backward_evaluations": 2000,
+  "total_optimizer_updates": 2000,
+  "hard_wall_seconds": 21600,
+  "training_arrays": 1000,
+  "training_size": 16,
+  "evaluation": {
+    "training_subset": [
+      128,
+      16
+    ],
+    "development": [
+      32,
+      16
+    ],
+    "size_transfer": [
+      32,
+      64
+    ]
+  },
+  "final_only_update": 1000,
+  "competence": {
+    "development": [
+      0.95,
+      0.8
+    ],
+    "size_transfer": [
+      0.9,
+      0.5
+    ]
+  },
+  "paired_contrasts": [
+    "T native minus C native",
+    "T native minus T own query independent"
+  ],
+  "one_sided_lower_quantile": 0.025,
+  "bootstrap_replicates": 20000,
+  "no_retry_resume": true,
+  "no_new_readout_fit": true,
+  "original_single_arm_diagnostic_and_caps_not_carried_forward": true,
+  "mechanistic": "Same prescribed evaluation forwards only; no new numerical collapse threshold"
+}

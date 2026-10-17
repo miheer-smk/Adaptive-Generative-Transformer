@@ -1,0 +1,70 @@
+{
+  "C": {
+    "success": true,
+    "counts": {
+      "attempted": 41216,
+      "completed": 41216,
+      "failed": 0,
+      "selected_attempted": 329728,
+      "selected_completed": 329728,
+      "commits": 41216,
+      "contextual_entries": 288512
+    },
+    "phases": {
+      "training": {
+        "attempted": 32000,
+        "completed": 32000,
+        "failed": 0
+      },
+      "training_subset": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0
+      },
+      "development": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0
+      },
+      "size_transfer": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0
+      }
+    }
+  },
+  "T": {
+    "success": true,
+    "counts": {
+      "attempted": 41216,
+      "completed": 41216,
+      "failed": 0,
+      "selected_attempted": 329728,
+      "selected_completed": 329728,
+      "commits": 41216,
+      "contextual_entries": 288512
+    },
+    "phases": {
+      "training": {
+        "attempted": 32000,
+        "completed": 32000,
+        "failed": 0
+      },
+      "training_subset": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0
+      },
+      "development": {
+        "attempted": 1024,
+        "completed": 1024,
+        "failed": 0
+      },
+      "size_transfer": {
+        "attempted": 4096,
+        "completed": 4096,
+        "failed": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "status": "ALL_TRAINING_AND_PRESCRIBED_EVALUATIONS_COMPLETED",
+  "phases": {
+    "starting_equivalence": "PASS",
+    "training": "BOTH_COMPLETED_1000_UPDATES",
+    "C_training_subset": "COMPLETED",
+    "T_training_subset": "COMPLETED",
+    "C_development": "COMPLETED",
+    "T_development": "COMPLETED",
+    "C_size_transfer": "COMPLETED",
+    "T_size_transfer": "COMPLETED"
+  },
+  "outcomes": {},
+  "no_diagnostic_forward": true,
+  "elapsed_seconds_to_execution_boundary": 1491.849522098899,
+  "deadline_met": true,
+  "resource": {
+    "C": {
+      "arm": "C",
+      "attempted_tokens": 41216,
+      "completed_tokens": 41216,
+      "failed_tokens": 0,
+      "selected_bank_attempted": 329728,
+      "selected_bank_completed": 329728,
+      "commits": 41216,
+      "contextual_commit_entries": 288512,
+      "backward_attempted": 1000,
+      "backward_completed": 1000,
+      "backward_failed": 0,
+      "optimizer_attempted": 1000,
+      "optimizer_updates": 1000,
+      "optimizer_failed": 0,
+      "array_attempted": 1192,
+      "array_completed": 1192,
+      "array_failed": 0,
+      "phase_counts": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0,
+          "selected_attempted": 256000,
+          "selected_completed": 256000,
+          "commits": 32000,
+          "contextual_entries": 224000
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0,
+          "selected_attempted": 8192,
+          "selected_completed": 8192,
+          "commits": 1024,
+          "contextual_entries": 7168
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        }
+      },
+      "elapsed_since_shared_clock": 1491.8495252020657
+    },
+    "T": {
+      "arm": "T",
+      "attempted_tokens": 41216,
+      "completed_tokens": 41216,
+      "failed_tokens": 0,
+      "selected_bank_attempted": 329728,
+      "selected_bank_completed": 329728,
+      "commits": 41216,
+      "contextual_commit_entries": 288512,
+      "backward_attempted": 1000,
+      "backward_completed": 1000,
+      "backward_failed": 0,
+      "optimizer_attempted": 1000,
+      "optimizer_updates": 1000,
+      "optimizer_failed": 0,
+      "array_attempted": 1192,
+      "array_completed": 1192,
+      "array_failed": 0,
+      "phase_counts": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0,
+          "selected_attempted": 256000,
+          "selected_completed": 256000,
+          "commits": 32000,
+          "contextual_entries": 224000
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0,
+          "selected_attempted": 8192,
+          "selected_completed": 8192,
+          "commits": 1024,
+          "contextual_entries": 7168
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0,
+          "selected_attempted": 32768,
+          "selected_completed": 32768,
+          "commits": 4096,
+          "contextual_entries": 28672
+        }
+      },
+      "elapsed_since_shared_clock": 1491.8495265785605
+    }
+  },
+  "peak_cuda_allocated_bytes": 192163328,
+  "peak_cuda_reserved_bytes": 201326592,
+  "trace_verification": {
+    "C": {
+      "success": true,
+      "counts": {
+        "attempted": 41216,
+        "completed": 41216,
+        "failed": 0,
+        "selected_attempted": 329728,
+        "selected_completed": 329728,
+        "commits": 41216,
+        "contextual_entries": 288512
+      },
+      "phases": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0
+        }
+      }
+    },
+    "T": {
+      "success": true,
+      "counts": {
+        "attempted": 41216,
+        "completed": 41216,
+        "failed": 0,
+        "selected_attempted": 329728,
+        "selected_completed": 329728,
+        "commits": 41216,
+        "contextual_entries": 288512
+      },
+      "phases": {
+        "training": {
+          "attempted": 32000,
+          "completed": 32000,
+          "failed": 0
+        },
+        "training_subset": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0
+        },
+        "development": {
+          "attempted": 1024,
+          "completed": 1024,
+          "failed": 0
+        },
+        "size_transfer": {
+          "attempted": 4096,
+          "completed": 4096,
+          "failed": 0
+        }
+      }
+    }
+  },
+  "integrity": {
+    "success": true,
+    "protected_files": 2675,
+    "changed_or_missing": [],
+    "original_branch_ref_unchanged": true,
+    "HEAD_commit_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "pilot_branch": "research/clrs-feature-complement-6400-20261017T102044Z",
+    "intentional_Git_metadata_updates": [
+      ".git/HEAD",
+      ".git/logs/HEAD"
+    ],
+    "historical_exception_preserved": true
+  }
+}
