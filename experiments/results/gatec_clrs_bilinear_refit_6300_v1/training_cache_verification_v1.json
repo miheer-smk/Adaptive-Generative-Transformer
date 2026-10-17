@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "arrays": 128,
+  "order_verified": true,
+  "all_per_array_hashes_verified": true,
+  "preconditioners_reused_without_recalculation": true,
+  "heldout_tensors_opened": false
+}

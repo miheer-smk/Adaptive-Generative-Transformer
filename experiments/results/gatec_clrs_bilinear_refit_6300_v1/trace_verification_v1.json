@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "first_passing_accepted_iteration": 341,
+  "zero_initialization_verified": true,
+  "fresh_optimizer": true,
+  "continuous_history": 20,
+  "accepted_updates": 341,
+  "actual_evaluations": 360,
+  "cache_hits": 341,
+  "rejected_trial_evaluations": 18,
+  "matching_terminal_full_gradient": true,
+  "extra_terminal_full_evaluations": 0,
+  "accepted_strong_Wolfe_checks_all_pass": true,
+  "no_new_model_calls": true
+}

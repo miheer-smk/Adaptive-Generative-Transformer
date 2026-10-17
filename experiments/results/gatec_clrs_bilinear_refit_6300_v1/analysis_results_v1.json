@@ -1,0 +1,31 @@
+{
+  "classification": "CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS",
+  "fit_converged": true,
+  "development_competence_FP32": false,
+  "transfer_competence_FP32": false,
+  "development_competence_FP64": false,
+  "both_primary_contrasts_positive": false,
+  "strong_positive_evidence": false,
+  "precision_sensitivity": {
+    "fitting": {
+      "prediction_disagreements": 6,
+      "total_queries": 2048,
+      "max_score_difference": 0.003881712337558116
+    },
+    "development": {
+      "prediction_disagreements": 3,
+      "total_queries": 512,
+      "max_score_difference": 0.004050956764487523
+    },
+    "size_transfer": {
+      "prediction_disagreements": 7,
+      "total_queries": 2048,
+      "max_score_difference": 0.0047884311800059365
+    }
+  },
+  "mean_fitting_CE_FP64": 2.7415247279357113,
+  "sealed_fit_CE": 2.741524727935711,
+  "historical_training_result": "COMPLETED_NON_SUCCESS",
+  "new_AGT_calls_during_evaluation": 0,
+  "readout_fits": 1
+}

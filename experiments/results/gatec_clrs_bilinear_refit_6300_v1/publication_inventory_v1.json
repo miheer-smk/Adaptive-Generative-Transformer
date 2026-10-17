@@ -1,0 +1,294 @@
+{
+  "files": [
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/analysis_results_v1.json",
+      "size": 955,
+      "sha256": "80852c29c0bab2a9394f1fbe39526d5ebd0124d7ac947e3ef9aae23bbdc28c05",
+      "git_oid": "a9b4f6a8047dbec8097446c7dbf27b32f104210c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/artifact_inventory_v1.json",
+      "size": 5377,
+      "sha256": "bbaf1dcfd16c4df454f44829bcf3127ab2f93670159639b35c7d8a107358d3d6",
+      "git_oid": "7c24556dcd6dbbf853e599e52bd1616c9fd975c9",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/bootstrap_bank_v1.pt",
+      "size": 1281577,
+      "sha256": "31bc83ed6b6bd889ed457fe9a7a2f0cd2852a5b582783dced57e082ae5142487",
+      "git_oid": "dcefaec285d676a0e6e033e691192cd847f24d9e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/close_report_v1.py",
+      "size": 15408,
+      "sha256": "e005f8be6eedcbf31d4d48b6b93f0c5d931331caa10466da2756cdb0898b7df3",
+      "git_oid": "5fc702b47554c892681b507ad05f85f2e0874232",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/evaluate_readout_v1.py",
+      "size": 14018,
+      "sha256": "bb99bbe5a86def2e9860314e1851391064bb1f3e6230a6853a16ae49925a599a",
+      "git_oid": "e606905e7ee1efffa653f237541192e8713a2072",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/evaluation_adapter_diff_v1.patch",
+      "size": 6742,
+      "sha256": "7f1f9d19d045572b5c62e9e4bffd79072d3fd93e9c98f7f823cb5b07d566d83b",
+      "git_oid": "835edce7f2c5864a5da37ff4379a6daf833d3c21",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/evaluation_runtime_v1.json",
+      "size": 190,
+      "sha256": "7d8b5eda802454118abdff381b6cbe9239cb6e988782879d457b042e2a318723",
+      "git_oid": "798dfe32f6962f9ab74779c878f3da98d521ce45",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/evaluation_source_seal_v1.json",
+      "size": 333,
+      "sha256": "7a6919fa4039bcdcde2bf9aff009b2f98726be185b193a3413fccda2d9f18d08",
+      "git_oid": "dfead87de68dd8281e0101bd5c83ea99e0ceca68",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/evaluation_started_v1.json",
+      "size": 128,
+      "sha256": "273c2718b7a7efdf9f2ccab8b6fd2a6443cb601a2289ae9c5e1bd9baca6dc529",
+      "git_oid": "0ab686e7ef9f970662b6d137c496bcc9e8a976a3",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/final_results_v1.json",
+      "size": 3337,
+      "sha256": "e02db6461ec2b7e3a22b0d2f6d94d581e0ffcf6b5220ca8448edadc8dceaff25",
+      "git_oid": "e39b26297ad6bfbf2353a56fe49ca786b2cb4166",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_evaluations_v1.jsonl",
+      "size": 283019,
+      "sha256": "ecf49c399b4347fcec4645799a90ac54a887cbf7882497dd7851a6c0431b6002",
+      "git_oid": "8db541218665fb14c4f74061b71a3bf0b5658da4",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_iterations_v1.jsonl",
+      "size": 161475,
+      "sha256": "191f71080564ebaed3523d9230f18bc1666f7bd144544c49edfa4f72d6ac3abb",
+      "git_oid": "ba1246637877815ea4df72604df36bd719c7d79a",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_readout_v1.py",
+      "size": 11000,
+      "sha256": "bc2dc83140636dae7724accf2ad484c76914a9a7ad5392a5f1c6ad1c4bba69e2",
+      "git_oid": "1621cb1f5580e648f4fc00cbc3c158726df96130",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_results_v1.json",
+      "size": 766,
+      "sha256": "3b72aecb7cce1bd829e25be0165645604d0656d534ad22685577e0adc40157cf",
+      "git_oid": "1db92c411f5815269404076aba6d09a70b636c71",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_seal_v1.json",
+      "size": 974,
+      "sha256": "e83f851e33ebed7e76c06a5563786054dfe5703c543d0a101730b556be64dd4b",
+      "git_oid": "1c9e74dcbe3e574292adb8ae0a6e441bb5f15421",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_started_v1.json",
+      "size": 529,
+      "sha256": "d823cacd4e665a9897b5662fb95bb70f47b6524cdb159fdf23acf1dfa8678dcd",
+      "git_oid": "c22ff90daa5d76dd26a3350d93b88a46cf43c482",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/implementation_seal_v1.json",
+      "size": 702,
+      "sha256": "acd72e03f3537a92e9a31286fa1a6d782a5269b5a55051e7dc6cfb5671655d34",
+      "git_oid": "44e6076853fff6a9ceaccbfea78f6dcc1188534d",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/input_verification_v1.json",
+      "size": 11649,
+      "sha256": "589512b28adba686e91420090fe565fa482922a65953bdb649edbae79ffe9c94",
+      "git_oid": "4247df66d22b8beee2e60dc226b65788c0fb5a0e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/integrity_before_fit_v1.json",
+      "size": 179,
+      "sha256": "989c82c339eab04eba9736272b8b867af049c929492d87d0bf0266ba534e253e",
+      "git_oid": "a42f380a55bad2912ee1ce0666cc30d42b0d94a7",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/integrity_final_v1.json",
+      "size": 179,
+      "sha256": "989c82c339eab04eba9736272b8b867af049c929492d87d0bf0266ba534e253e",
+      "git_oid": "a42f380a55bad2912ee1ce0666cc30d42b0d94a7",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/integrity_initial_v1.json",
+      "size": 640113,
+      "sha256": "1ec97493916370e58e63ec3046da7932512136776503059dd9692c9182002cd1",
+      "git_oid": "63e43d6ff6dfc9b71682d9269a1096feeb449f7e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/interaction_summary_v1.json",
+      "size": 2485,
+      "sha256": "05561095eb51f00b1672e90592bd43c9bc4e4da07dda8587aa48e7f65e12f857",
+      "git_oid": "3e4f75035ab657681406d8e51861188abbba40ab",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/metrics_table_v1.csv",
+      "size": 2188,
+      "sha256": "4dcb22dcfbc21df7bd83130b542e2957ac2a3a431cc893e5b031ad937c894483",
+      "git_oid": "4e953d69bb0b248b81bbd8013e95197410fdf8b8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/metrics_v1.json",
+      "size": 9584,
+      "sha256": "3cb756be8a3726c6a1048378e0efc1c59515a84eca015bd1d2311a618037eac8",
+      "git_oid": "83ccdf1a44dba2b46fae314a5411a2d6c7358660",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/paired_contrasts_v1.json",
+      "size": 3131,
+      "sha256": "7a6e340979180c48a76516cb6426582a87d9c7a1304aa485036a2bfc5345e150",
+      "git_oid": "d3222ed2a8223c86531f2ba040b6d4d6370a4dad",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/per_array_predictions_v1.json",
+      "size": 4006620,
+      "sha256": "dfd68a079a95dc5580bef0a60d61ec5fd3b53f7019062060b0af4e56e326437b",
+      "git_oid": "da50f6a9558b99a9d737c742ff4de44cc4cafcc6",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/precision_sensitivity_v1.json",
+      "size": 406,
+      "sha256": "efc02a23bc13e12b3d5724d9cac038a4c01ee739d8654a5c7105e516a4df11d5",
+      "git_oid": "3c3aa069f4fcc5084bf763ff5e383fb54ecc1196",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/protocol_seal_v1.json",
+      "size": 2913,
+      "sha256": "087aff27ef4e5d768be81dba45ffcac1fa031e39bd8354d79582652487a1cd18",
+      "git_oid": "dce79605552b8f7e9189fdd667b75a963d2760ee",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/protocol_v1.md",
+      "size": 5740,
+      "sha256": "a9e10113d8405d9a34a04dcd9fe6960b7b9c169314eb0a4a0f3e075a74f99704",
+      "git_oid": "f24b336fd43b1f40ecdfd94fbb7b7d0b9e89d72f",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/publication_source_seal_v1.json",
+      "size": 519,
+      "sha256": "6e1c910ec019e398f6a4bb7af67d05960960a8b50fc55225995dbd38cafce76e",
+      "git_oid": "b50b6529b8ea827630022ca43f853869619360fd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/publication_started_v1.json",
+      "size": 199,
+      "sha256": "b7ff39e63972fb7c82bc0b492fd1fef09ac2a699c8b0d6bbc9ae62704d98f27f",
+      "git_oid": "0dff498e8ab0433fbeb6a92df47599c05465e6ce",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/publish_study_v1.py",
+      "size": 7632,
+      "sha256": "555404149df364e639f5c9c3d9a0c2772cb90632dc5a5ca0c37129d2bd9ab3b0",
+      "git_oid": "e19ee1e3186ba615acf1fa766973b17ffb4673fd",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/report_v1.md",
+      "size": 10033,
+      "sha256": "f3c0429df6d3761722494095140c12164fd5e78a6fc205e564054fe88e8d5da2",
+      "git_oid": "5ba70e6edf5ace5792128fe81897aec1a047bd49",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/resource_ledger_v1.json",
+      "size": 893,
+      "sha256": "9f4847c599903b1d7dbab1f577e9b62af952653f1ba2cf6563e1e87796b181b3",
+      "git_oid": "1cad44730df09ae2bf15b36be6bfbf348d5952c0",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/retained_original_head_verification_v1.json",
+      "size": 149,
+      "sha256": "45e69ab8ec89aa0f399f5ed4500069500c98019c2fb4ad6026fd85ccd4ae9853",
+      "git_oid": "f780fd3f8e958feb9ddfa120983345a2fafbd66e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/score_decomposition_tensors_v1.pt",
+      "size": 7200023,
+      "sha256": "3ca107b6a8dc082a85a0507d7b46bf83c3ec861821372d6d501f996b694fac59",
+      "git_oid": "eb4c1c6d6e2111183c2bf11785aef92a9224d35c",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/support_v1.py",
+      "size": 1674,
+      "sha256": "6bb4133ed77e3529d07f35f5e9550d90f58a7a3eb8594e65e1cc2f27c63cce52",
+      "git_oid": "8d998d9813788877593e9ecaec4a293d886ec1bb",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/terminal_optimizer_state_v1.pt",
+      "size": 1397866,
+      "sha256": "6ebe9d620ee86cda2ff213f57e1e2e5095f79b6a57df83be1ec055c7ca7c330f",
+      "git_oid": "c2bcb5d44e8fe6185cec47ca51708228b1fe00a1",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/terminal_readout_v1.pt",
+      "size": 133469,
+      "sha256": "7480544bc42cfad5f671b04cc61afa566dd04deb2175cb4e218274a04c7f844d",
+      "git_oid": "04105df58f90891bc98f4f1e8acf34f35a549cd8",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/trace_verification_v1.json",
+      "size": 435,
+      "sha256": "44ad5d5fd9bd2d72a88fe47a2817925baa7b66a610cfbeb6a162a47182ce9e83",
+      "git_oid": "b7b975d7223effeccb08c60ed1312c470c64326e",
+      "mode": "100644"
+    },
+    {
+      "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/training_cache_verification_v1.json",
+      "size": 197,
+      "sha256": "e13fb7525a486078ceace1125e7c073a515ecdd3a285e8ea772082e2e44059a7",
+      "git_oid": "bf5e94dca36709351ac72c4e416e6562519154e0",
+      "mode": "100644"
+    }
+  ],
+  "self_excluded": true,
+  "secret_scan": "Common key/token signatures; heuristic, not universal proof",
+  "LFS_required": false
+}

@@ -1,0 +1,80 @@
+{
+  "fitting": {
+    "FP32": {
+      "pair_comparisons": 30720,
+      "interaction_improves": 16719,
+      "interaction_worsens": 14001,
+      "common_positive": 17187,
+      "actual_positive": 17395,
+      "flipped_toward_target": 2403,
+      "flipped_against_target": 2195,
+      "total_target_rank_improvement": 208,
+      "mean_common_norm": 3.100707387596337,
+      "mean_interaction_norm": 2.40628900157296
+    },
+    "FP64": {
+      "pair_comparisons": 30720,
+      "interaction_improves": 16710,
+      "interaction_worsens": 14010,
+      "common_positive": 17187,
+      "actual_positive": 17396,
+      "flipped_toward_target": 2403,
+      "flipped_against_target": 2194,
+      "total_target_rank_improvement": 209,
+      "mean_common_norm": 3.101071846750937,
+      "mean_interaction_norm": 2.4065852030968893
+    }
+  },
+  "development": {
+    "FP32": {
+      "pair_comparisons": 7680,
+      "interaction_improves": 3808,
+      "interaction_worsens": 3872,
+      "common_positive": 4298,
+      "actual_positive": 4193,
+      "flipped_toward_target": 566,
+      "flipped_against_target": 671,
+      "total_target_rank_improvement": -105,
+      "mean_common_norm": 2.9473748570617566,
+      "mean_interaction_norm": 2.295089698094125
+    },
+    "FP64": {
+      "pair_comparisons": 7680,
+      "interaction_improves": 3808,
+      "interaction_worsens": 3872,
+      "common_positive": 4298,
+      "actual_positive": 4191,
+      "flipped_toward_target": 565,
+      "flipped_against_target": 672,
+      "total_target_rank_improvement": -107,
+      "mean_common_norm": 2.9474893018080657,
+      "mean_interaction_norm": 2.295032835522482
+    }
+  },
+  "size_transfer": {
+    "FP32": {
+      "pair_comparisons": 129024,
+      "interaction_improves": 65111,
+      "interaction_worsens": 63913,
+      "common_positive": 62901,
+      "actual_positive": 62932,
+      "flipped_toward_target": 3709,
+      "flipped_against_target": 3678,
+      "total_target_rank_improvement": 31,
+      "mean_common_norm": 37.02839141566686,
+      "mean_interaction_norm": 15.83948334662864
+    },
+    "FP64": {
+      "pair_comparisons": 129024,
+      "interaction_improves": 65121,
+      "interaction_worsens": 63903,
+      "common_positive": 62901,
+      "actual_positive": 62945,
+      "flipped_toward_target": 3720,
+      "flipped_against_target": 3676,
+      "total_target_rank_improvement": 44,
+      "mean_common_norm": 37.02292554543028,
+      "mean_interaction_norm": 15.841983177639484
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "torch": "2.10.0+cu130",
+  "CUDA": "13.0",
+  "device": "NVIDIA GB10",
+  "arithmetic": "Prior FP32/FP64 readout tensor algebra only; no AGT construction or calls",
+  "new_AGT_calls": 0
+}

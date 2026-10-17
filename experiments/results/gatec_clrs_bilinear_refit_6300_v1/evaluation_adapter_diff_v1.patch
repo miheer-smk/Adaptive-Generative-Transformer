@@ -1,0 +1,75 @@
+--- prior/evaluate_readout_v1.py
++++ refit/evaluate_readout_v1.py
+@@ -3,7 +3,7 @@
+ os.environ['PYTHONDONTWRITEBYTECODE']='1'
+ import json,math,random,hashlib,time
+ import torch
+-from support_v1 import OUT,CACHE,ENG,save,sha,check
++from support_v1 import OUT,CACHE,PRIOR,ENG,ROOT,save,sha,check
+ torch.set_num_threads(1);torch.set_grad_enabled(False)
+ 
+ def invalid(p):
+@@ -65,16 +65,32 @@
+ def main():
+     check();assert not (OUT/'evaluation_started_v1.json').exists(),'No evaluation retry'
+     for n,h in json.loads((OUT/'fit_seal_v1.json').read_text())['files'].items():assert sha(OUT/n)==h
+-    ext=json.loads((OUT/'heldout_extraction_results_v1.json').read_text());assert ext['status']=='COMPLETED_VERIFIED_HELDOUT_CACHE'
+-    eq=json.loads((OUT/'heldout_equivalence_v1.json').read_text());assert eq['success'] and len(eq['comparisons'])==64
++    assert json.loads((OUT/'fit_results_v1.json').read_text())['certified'], 'Certificate barrier'
++    for n,h in json.loads((OUT/'protocol_seal_v1.json').read_text())['files'].items():assert sha(ROOT/n)==h,n
++    ext=json.loads((PRIOR/'heldout_extraction_results_v1.json').read_text());assert ext['status']=='COMPLETED_VERIFIED_HELDOUT_CACHE'
++    eq=json.loads((PRIOR/'heldout_equivalence_v1.json').read_text());assert eq['success'] and len(eq['comparisons'])==64
+     assert all(x['scores_within_tolerance'] and x['predictions_exact'] for x in eq['comparisons'])
+-    assert sha(OUT/ext['cache_file'])==ext['cache_sha256']
++    assert sha(PRIOR/ext['cache_file'])==ext['cache_sha256']
+     save('evaluation_started_v1.json',dict(monotonic=time.monotonic(),fit_sealed=True,all64_archived_original_heads_verified_before_new_metrics=True))
+     B=torch.load(OUT/'terminal_readout_v1.pt',map_location='cpu',weights_only=True)
+     train=torch.load(CACHE/'training_representation_cache_v1.pt',map_location='cpu',weights_only=True)
+     fitting_refs=[json.loads(s) for s in (ENG/'training_results_v1/training_subset_records_v1.jsonl').read_text().splitlines()]
+     sets={'fitting':[dict(id=identity,candidate_committed_s=train['candidate_committed_s'][i],query_committed_s=train['query_committed_s'][i],targets=train['predecessor_targets'][i],original_pointer_scores=torch.tensor(fitting_refs[i]['pointer_logits'],dtype=torch.float32)) for i,identity in enumerate(train['array_ids'])]}
+-    sets.update(torch.load(OUT/ext['cache_file'],map_location='cpu',weights_only=True))
++    sets.update(torch.load(PRIOR/ext['cache_file'],map_location='cpu',weights_only=True))
++    # Retained original outputs and labels must still agree with the archive.
++    for split in ['development','size_transfer']:
++        refs=[json.loads(s) for s in (ENG/'training_results_v1'/(split+'_records_v1.jsonl')).read_text().splitlines()]
++        pools=json.loads((ENG/(split+'_pool_v1.json')).read_text())
++        assert len(sets[split])==len(refs)==len(pools)==32
++        for i,(a,r,p) in enumerate(zip(sets[split],refs,pools)):
++            assert a['id']==r['id']==p['id']==f'official/{split}/row{i:04d}'
++            assert a['targets'].tolist()==r['truth']==p['pred']
++            assert a['input_sha256']==r['original_input_sha256']==p['original_input_sha256']
++            assert torch.equal(a['original_pointer_scores'],torch.tensor(r['pointer_logits'],dtype=torch.float32))
++            assert a['original_pointer_scores'].argmax(1).tolist()==r['predictions']
++    save('retained_original_head_verification_v1.json',dict(success=True,arrays=64,bitwise_archived_scores=True,predictions_exact=True,targets_exact=True,new_AGT_calls=0))
++    assert torch.cuda.is_available(), 'Prior operational CUDA tensor arithmetic required'
++    save('evaluation_runtime_v1.json',dict(torch=torch.__version__,CUDA=torch.version.cuda,device=torch.cuda.get_device_name(),arithmetic='Prior FP32/FP64 readout tensor algebra only; no AGT construction or calls',new_AGT_calls=0))
+     torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
+     predictions={};summaries={};score_evidence={};interaction_records=[];sensitivity={}
+     with torch.no_grad():
+@@ -108,7 +124,8 @@
+     save('per_array_predictions_v1.json',predictions);save('metrics_v1.json',summaries);save('precision_sensitivity_v1.json',sensitivity)
+     with (OUT/'score_decomposition_tensors_v1.pt').open('xb') as f:torch.save(score_evidence,f)
+     # One shared paired whole-development-array resampling bank for both contrasts.
+-    rng=random.Random(6300);bank=torch.tensor([[rng.randrange(32) for _ in range(32)] for _ in range(20000)],dtype=torch.int16)
++    bank=torch.load(PRIOR/'bootstrap_bank_v1.pt',map_location='cpu',weights_only=True)
++    assert bank.shape==(20000,32) and bank.dtype==torch.int16 and int(bank.min())>=0 and int(bank.max())<32
+     with (OUT/'bootstrap_bank_v1.pt').open('xb') as f:torch.save(bank,f)
+     contrasts={}
+     for mode in ['FP32','FP64']:
+@@ -126,13 +143,13 @@
+     strong64=fit['converged'] and competence('development','FP64') and both64
+     if competence('development','FP64') and both64 and not (competence('development','FP32') and both32):classification='NUMERICALLY_FRAGILE_FP64_ONLY_RECOVERY'
+     elif strong32:classification='STRONG_BILINEAR_DECODABILITY'
+-    elif both32:classification='PARTIAL_DECODABILITY'
++    elif both32:classification='CERTIFIED_BELOW_COMPETENCE_THRESHOLDS'
+     elif competence('fitting','FP32') and not competence('development','FP32'):classification='FITTING_WITHOUT_ESTABLISHED_TRANSFER'
+     elif not fit['converged']:classification='INCONCLUSIVE_NONCONVERGED_OPTIMIZATION'
+-    else:classification='REGULARIZED_BILINEAR_PROBE_NON_SUCCESS'
++    else:classification='CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS'
+     save('analysis_results_v1.json',dict(classification=classification,fit_converged=fit['converged'],development_competence_FP32=competence('development','FP32'),transfer_competence_FP32=competence('size_transfer','FP32'),development_competence_FP64=competence('development','FP64'),both_primary_contrasts_positive=both32,strong_positive_evidence=strong32,precision_sensitivity=sensitivity,
+         mean_fitting_CE_FP64=summaries['fitting']['fitted_FP64']['CE'],sealed_fit_CE=fit['CE'],historical_training_result='COMPLETED_NON_SUCCESS',new_AGT_calls_during_evaluation=0,readout_fits=1))
+     assert abs(summaries['fitting']['fitted_FP64']['CE']-fit['CE'])<1e-9
+-    check();print(json.dumps(dict(classification=classification,metrics=summaries,contrasts=contrasts),indent=2),flush=True)
++    check();print(json.dumps(dict(classification=classification,development=summaries['development']['fitted_FP32'],transfer=summaries['size_transfer']['fitted_FP32'],contrasts=contrasts['FP32']),indent=2),flush=True)
+ 
+ if __name__=='__main__':main()

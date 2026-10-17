@@ -1,0 +1,18 @@
+{
+  "initialization": "B=0; fresh optimizer",
+  "optimizer": "torch.optim.LBFGS",
+  "lr": 1.0,
+  "history_size": 20,
+  "line_search_fn": "strong_wolfe",
+  "c1": 0.0001,
+  "c2": 0.9,
+  "tolerance_grad": 0.0,
+  "tolerance_change": 0.0,
+  "accepted_update_limit": 512,
+  "actual_evaluation_limit": 1024,
+  "wall_seconds": 10.0,
+  "clock_boundary": "Immediately before optimizer construction; constructor included",
+  "gradient": "Exact analytic full regularized objective gradient",
+  "no_AGT_imports": true,
+  "no_restart": true
+}

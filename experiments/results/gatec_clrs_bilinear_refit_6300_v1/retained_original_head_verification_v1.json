@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "arrays": 64,
+  "bitwise_archived_scores": true,
+  "predictions_exact": true,
+  "targets_exact": true,
+  "new_AGT_calls": 0
+}

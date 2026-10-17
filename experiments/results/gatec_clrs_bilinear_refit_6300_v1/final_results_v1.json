@@ -1,0 +1,97 @@
+{
+  "status": "COMPLETED_EXPLORATORY_REFIT",
+  "classification": "CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS",
+  "fit": {
+    "certified": true,
+    "converged": true,
+    "stop_reason": "converged",
+    "accepted_iterations": 341,
+    "step_calls": 341,
+    "closure_calls": 700,
+    "evaluations_attempted": 360,
+    "evaluations_completed": 360,
+    "evaluations_failed": 0,
+    "cache_hits": 341,
+    "elapsed_seconds": 1.5530671961605549,
+    "objective": 2.7430075098149667,
+    "CE": 2.741524727935711,
+    "regularizer": 0.0014827818792558108,
+    "gradient_norm": 1.1756482252332946e-06,
+    "certificate_bound": 6.910743747470981e-07,
+    "certificate_threshold": 1e-06,
+    "heldout_opened": false,
+    "AGT_model_calls": 0,
+    "AGT_backwards": 0,
+    "AGT_optimizers": 0,
+    "terminal_extra_evaluations": 0,
+    "terminal_gradient_source": "Matching retained full regularized-objective evaluation; no recomputation"
+  },
+  "analysis": {
+    "classification": "CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS",
+    "fit_converged": true,
+    "development_competence_FP32": false,
+    "transfer_competence_FP32": false,
+    "development_competence_FP64": false,
+    "both_primary_contrasts_positive": false,
+    "strong_positive_evidence": false,
+    "precision_sensitivity": {
+      "fitting": {
+        "prediction_disagreements": 6,
+        "total_queries": 2048,
+        "max_score_difference": 0.003881712337558116
+      },
+      "development": {
+        "prediction_disagreements": 3,
+        "total_queries": 512,
+        "max_score_difference": 0.004050956764487523
+      },
+      "size_transfer": {
+        "prediction_disagreements": 7,
+        "total_queries": 2048,
+        "max_score_difference": 0.0047884311800059365
+      }
+    },
+    "mean_fitting_CE_FP64": 2.7415247279357113,
+    "sealed_fit_CE": 2.741524727935711,
+    "historical_training_result": "COMPLETED_NON_SUCCESS",
+    "new_AGT_calls_during_evaluation": 0,
+    "readout_fits": 1
+  },
+  "resource": {
+    "AGT_model_constructions": 0,
+    "model_tokens_attempted": 0,
+    "model_tokens_completed": 0,
+    "model_tokens_failed": 0,
+    "selected_bank_calls": 0,
+    "terminal_commits": 0,
+    "AGT_backwards": 0,
+    "AGT_optimizers": 0,
+    "AGT_optimizer_updates": 0,
+    "readout_fits": 1,
+    "readout_optimizer_objects": 1,
+    "readout_accepted_updates": 341,
+    "actual_full_loss_gradient_evaluations_attempted": 360,
+    "actual_full_loss_gradient_evaluations_completed": 360,
+    "actual_full_loss_gradient_evaluations_failed": 0,
+    "exact_B_cache_hits": 341,
+    "closure_calls": 700,
+    "readout_autograd_backwards": 0,
+    "fit_wall_seconds_including_optimizer_construction": 1.5530671961605549,
+    "extra_terminal_full_loss_gradient_evaluations": 0,
+    "heldout_extraction_calls": 0,
+    "evaluation": "One terminal iterate; fixed FP32 primary and FP64 sensitivity tensor algebra only",
+    "tests": 0,
+    "retries": 0
+  },
+  "integrity": {
+    "success": true,
+    "protected_files": 2631,
+    "changed_or_missing": [],
+    "HEAD_unchanged": true,
+    "tracked_diff_unchanged": true,
+    "historical_exception_preserved": true
+  },
+  "original_study_classification": "INCONCLUSIVE_NONCONVERGED_OPTIMIZATION",
+  "historical_AGT_training": "COMPLETED_NON_SUCCESS",
+  "publication_status": "Pending independently verified publication receipt"
+}

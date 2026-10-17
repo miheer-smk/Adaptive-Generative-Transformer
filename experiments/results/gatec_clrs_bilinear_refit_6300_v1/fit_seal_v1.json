@@ -1,0 +1,15 @@
+{
+  "certified": true,
+  "files": {
+    "terminal_readout_v1.pt": "7480544bc42cfad5f671b04cc61afa566dd04deb2175cb4e218274a04c7f844d",
+    "terminal_optimizer_state_v1.pt": "6ebe9d620ee86cda2ff213f57e1e2e5095f79b6a57df83be1ec055c7ca7c330f",
+    "fit_results_v1.json": "3b72aecb7cce1bd829e25be0165645604d0656d534ad22685577e0adc40157cf",
+    "fit_evaluations_v1.jsonl": "ecf49c399b4347fcec4645799a90ac54a887cbf7882497dd7851a6c0431b6002",
+    "fit_iterations_v1.jsonl": "191f71080564ebaed3523d9230f18bc1666f7bd144544c49edfa4f72d6ac3abb",
+    "protocol_v1.md": "a9e10113d8405d9a34a04dcd9fe6960b7b9c169314eb0a4a0f3e075a74f99704",
+    "protocol_seal_v1.json": "087aff27ef4e5d768be81dba45ffcac1fa031e39bd8354d79582652487a1cd18",
+    "fit_readout_v1.py": "bc2dc83140636dae7724accf2ad484c76914a9a7ad5392a5f1c6ad1c4bba69e2",
+    "training_cache_verification_v1.json": "e13fb7525a486078ceace1125e7c073a515ecdd3a285e8ea772082e2e44059a7"
+  },
+  "sealed_before_heldout_evaluation": true
+}

@@ -1,0 +1,24 @@
+{
+  "protocol_sha256": "a9e10113d8405d9a34a04dcd9fe6960b7b9c169314eb0a4a0f3e075a74f99704",
+  "exploratory_followup": true,
+  "files": {
+    "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_readout_v1.py": "bc2dc83140636dae7724accf2ad484c76914a9a7ad5392a5f1c6ad1c4bba69e2",
+    "experiments/results/gatec_clrs_bilinear_refit_6300_v1/protocol_v1.md": "a9e10113d8405d9a34a04dcd9fe6960b7b9c169314eb0a4a0f3e075a74f99704",
+    "experiments/results/gatec_clrs_bilinear_refit_6300_v1/integrity_initial_v1.json": "1ec97493916370e58e63ec3046da7932512136776503059dd9692c9182002cd1",
+    "experiments/results/gatec_clrs_bilinear_refit_6300_v1/support_v1.py": "6bb4133ed77e3529d07f35f5e9550d90f58a7a3eb8594e65e1cc2f27c63cce52",
+    "experiments/results/gatec_clrs_bilinear_refit_6300_v1/input_verification_v1.json": "589512b28adba686e91420090fe565fa482922a65953bdb649edbae79ffe9c94",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/preconditioners_v1.pt": "4117bddef4d4e1b8016a0571c2f7069dbe5ddd0e4dbc9e3015bb75fea98c1608",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/terminal_readout_v1.pt": "b9a94437863f7428d9f248df94040acde80dcd25acf64f3662e61102a5bce586",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_results_v1.json": "4b7c9337885edc61d47b4afce4e8bf563c45984dfd9004b216b412808516545f",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_readout_v1.py": "d2d673e03bfdb15440b695d48847e45e2a76c51feab432d741698e8d18092d1d",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/evaluate_readout_v1.py": "c887d577b7dbf2d23ed8f96cab32ca7b5320ea72e9f79ca422304e480f0166a8",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_representations_v1.pt": "6132eef9c5638b4575098144ac9d9b8dff3e7fd51a8ad7e8e5807ce4949fd793",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/heldout_equivalence_v1.json": "778e9701b13d41baecd300f093752e2fb23844ca733e3e3cae4e9b0a8b8fe2b1",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/bootstrap_bank_v1.pt": "31bc83ed6b6bd889ed457fe9a7a2f0cd2852a5b582783dced57e082ae5142487",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/training_representation_cache_v1.pt": "83b8a4c1d19ba479901d5714c246e89385aadfc76eb971c463fe9ac115352f41",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/input_manifest_v1.json": "452134a544040c60107522c256bc0473e7eeea1da0a7fd93d1f421c70d999b92",
+    "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/per_array_extraction_v1.jsonl": "770d32e3ecc82658d24ac7841e979697ef614ca5075f63b69a21e56a8f87f707"
+  },
+  "original_status_unchanged": true,
+  "heldout_contents_not_opened": true
+}

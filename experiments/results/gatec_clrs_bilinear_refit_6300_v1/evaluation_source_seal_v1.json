@@ -1,0 +1,8 @@
+{
+  "source_sha256": "bb99bbe5a86def2e9860314e1851391064bb1f3e6230a6853a16ae49925a599a",
+  "prior_source_sha256": "c887d577b7dbf2d23ed8f96cab32ca7b5320ea72e9f79ca422304e480f0166a8",
+  "certificate_barrier_passed": true,
+  "first_passing_accepted_iteration": 341,
+  "prior_bootstrap_bank_reused": true,
+  "no_new_model_calls": true
+}
