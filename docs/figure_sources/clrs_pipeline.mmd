@@ -1,0 +1,17 @@
+flowchart LR
+    array["Official array<br/>Original keys + positions"]
+    inputs["First n input tokens<br/>Type flags, position, key<br/>Candidate index = original j"]
+    queries["Next n query tokens<br/>Type flags, position i<br/>No key or answer feature"]
+    head["Dynamic pointer head<br/>score(i,j) = Q_i dot K_j / 8<br/>All n candidates"]
+    candidates["Save committed candidate z_j<br/>After input element j<br/>Autograd-connected in training"]
+    core["Same AGT step, 2n calls<br/>8 selected blocks per token<br/>Normal state carry + commits"]
+    loss["Query-only mean pointer CE<br/>Official original-index targets<br/>Minimum self-pointer; stable ties"]
+    array --> inputs
+    inputs -->|"serialization order"| queries
+    inputs -->|"input calls"| core
+    queries -->|"query calls"| core
+    core -->|"input states"| candidates
+    candidates -->|"projected keys"| head
+    core -->|"projected queries"| head
+    head -->|"predictions"| loss
+    array -.->|"targets: supervision only"| loss

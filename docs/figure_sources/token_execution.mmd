@@ -1,0 +1,16 @@
+flowchart LR
+    in["Incoming state<br/>Parent stays unchanged"]
+    prep["Owned clone<br/>Memory read + Prelude"]
+    act["Legal action loop<br/>ADVANCE / REPEAT: D+1, P+1<br/>RESTART: D+1, P+0<br/>RESTART preserves live h"]
+    term["Terminal live state<br/>Reached actual P budget"]
+    plan["Pure terminal plan<br/>Validate ownership / versions"]
+    return["Apply once<br/>Return new committed state"]
+    cache["Committed KV / GDN / window context<br/>Read-only during all in-flight block calls"]
+    in --> prep
+    prep --> act
+    act -->|"P = 8 (pilot)"| term
+    term --> plan
+    plan --> return
+    prep -.->|"cloned"| cache
+    cache -.->|"read only"| act
+    cache -.->|"terminal context"| plan

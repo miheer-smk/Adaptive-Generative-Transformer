@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "figures": [
+    {
+      "files": [
+        "clrs_outcomes.svg",
+        "clrs_outcomes.png"
+      ],
+      "caption": "Native training, two separately sealed frozen-core readouts and the paired feature-complement arms on reused panels. Every exact-array score is zero; dashed segments show the original competence thresholds.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_results_v1.json",
+          "commit": "386ea1be31abe05d1ccf31f59511c1fd1d470aed",
+          "sha256": "cfd94ef8cc3185bdc9bee76e8ecd7ff3e36b0d56a546b76c9ac2fe0adbe9fa8e"
+        },
+        {
+          "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/metrics_v1.json",
+          "commit": "94a7b19079dad3fd21afc801f62d65ed9101b613",
+          "sha256": "b1013f5a5a88bea8f30bf4ccbc4111f05e4e774ee9ef0c09089c0bd307c1758e"
+        },
+        {
+          "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/metrics_v1.json",
+          "commit": "97f3b78a17d4060d2b0fef8b52c606596de6ca5e",
+          "sha256": "3cb756be8a3726c6a1048378e0efc1c59515a84eca015bd1d2311a618037eac8"
+        },
+        {
+          "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/evaluation_summaries_v1.json",
+          "commit": "ea183970feea1f49677f186e26065ce4e333f709",
+          "sha256": "d1384a992f84d58dbf750871f5328075acbcbdaef17397e16d67a5a69a808d32"
+        }
+      ],
+      "transformations": "Fractions multiplied by100; no error bars or newly estimated uncertainty. Each panel uses32 complete arrays (512 or2048 pointers).",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "Variants are different studies, not independent replicates. Fits use frozen original states; feature arms train fresh cores. No official CLRS GNN comparison.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "19099eab1866707fb6dc064aa639d73ec96bfc746b99bdcb2207fe9f009c8b8f",
+        "png": "4656989d4f11a441318d0117aee4241aac60f26d54aa5b71b7f5c527ed2ece0b"
+      }
+    },
+    {
+      "files": [
+        "feature_contrasts.svg",
+        "feature_contrasts.png"
+      ],
+      "caption": "Two locked development contrasts: point estimates and retained adjusted one-sided lower bounds. The connecting segment is not a two-sided confidence interval.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/final_results_v1.json",
+          "commit": "ea183970feea1f49677f186e26065ce4e333f709",
+          "sha256": "f89b09684a419bba2d526c16ee8b370bc7051fcb0e40af4240bf4d0fa0501947"
+        }
+      ],
+      "transformations": "Existing32-array,20000-replicate seed6400 bootstrap results multiplied by100; no resampling here.",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "One paired seed and previously examined development panel. A degenerate zero bound does not prove universal equivalence. Both competence panels failed.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "74d092f82167116e165ce27ae6cdeff5c34fba37c29d2dbcfe2ba15e45cd8e95",
+        "png": "db0465ccf55681e905030dcf2ab69b61b439f06f840f3e26e947ac70c337ab7a"
+      }
+    },
+    {
+      "files": [
+        "receiver_outcome.svg",
+        "receiver_outcome.png"
+      ],
+      "caption": "Both arms have512/512 cases fully robust across all four cells, but primary delta=0 with retained95% interval[0,0]; all four ablation decreases and adjusted lower bounds are0.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/final_analysis.json",
+          "commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+          "sha256": "4e090c1d2e885d2155f880172433b35921161f561226eb2ec794254f42a55fd2"
+        }
+      ],
+      "transformations": "Robust-pattern1111 count divided by512; retained ablation fractions multiplied by100. No new confidence estimates.",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "Parity saturated both arms. Neither a compatibility-training benefit nor task-relevant heterogeneous operations were established; one initialization, not seed replication.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "463702b6520991544ac20f0d57c7e28b138b8ef9c6064b282105c1e1d537a94c",
+        "png": "4530aefb302ec361084073477277f97b8426728dff4b267ab428cb9b7b720908"
+      }
+    },
+    {
+      "files": [
+        "gradient_averaging.svg",
+        "gradient_averaging.png"
+      ],
+      "caption": "Declared final paired gradient-averaging evaluation: canonical reference versus duplicate-noise and independent-noise controller arms.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_paired_gradient_average_4900_v1/results.json",
+          "commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+          "sha256": "ebcdbfc8b2b570e6f21ed4f9e0c2664fd9c329dec9d05423abe8830923f3e548"
+        }
+      ],
+      "transformations": "C/T pooled accuracy across four locked tapes; reference is deterministic on the same unique inputs. No error bars.",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "One initialization.128/256 tape-sequence observations correspond to32/64 unique sequences; tapes are not independent datasets. No useful-policy repair under the locked rule.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "f151c87c0900c2f4a916b06e2f877b194fc17a0e875ae8572cf9fccdf74f128f",
+        "png": "5f65fe0a82a7b5d71a2222b79c517ecf9650e2a32ecb8d8034174ce6acccf308"
+      }
+    },
+    {
+      "files": [
+        "mhc_observed_transfer.svg",
+        "mhc_observed_transfer.png"
+      ],
+      "caption": "Actual captured mixer inputs/outputs for16 candidate and16 query positions of official/train/row0000. Absolute energies use a labeled log scale; ratios start at zero.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_clrs_mhc_capture_6200_v1/blockwise_summary_v1.csv",
+          "commit": "d9d5eb0061b860b796f64fbc559420caff863509",
+          "sha256": "23675f1b3e9739c1389bafe254be5a6ba13c1801466ebb423e6cf4d1bf057dfa"
+        }
+      ],
+      "transformations": "Read existing CSV input/output centered energies and ratios; no activation reconstruction or new model calls.",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "Attention-mixer attenuation is directly observed, but task relevance and historical causation are not established. The surrounding residual path can preserve distinctions.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "cc2008c3428e2448e453402c922d6088902ccb2f7aecb8d990d05ae96b6cbd20",
+        "png": "aec441ba255855db53c4673404433bd2580863c4a15c0b75ede3c914cfe02580"
+      }
+    },
+    {
+      "files": [
+        "feature_terminal_geometry.svg",
+        "feature_terminal_geometry.png"
+      ],
+      "caption": "Development means over32 arrays, separately for candidate/query positions in the final trained control and treatment.",
+      "sources": [
+        {
+          "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/mechanistic_summary_v1.json",
+          "commit": "ea183970feea1f49677f186e26065ce4e333f709",
+          "sha256": "a6f336ac668d72f79dd9347ae2e90696d5d512c5e8866962de8f83f55bfe3f9b"
+        }
+      ],
+      "transformations": "Existing terminal summary means; dot plots use log axes to show several orders of magnitude. No error bars or new statistics.",
+      "command": "python scripts/documentation/render_figures.py",
+      "limits": "Arms have different learned parameters and trajectories. Geometry is descriptive, not a same-weight component intervention, task-relevance proof or universal collapse criterion.",
+      "generator": "Matplotlib 3.10.7",
+      "outputs": {
+        "svg": "1ec4dee41cdd6070600b374c507aec7f6029b4b67a89506a61c3197ee790cd72",
+        "png": "f4b758a1c88dc085244a2c973eda7b39bd047f47bc29c4a6fcd66b08b8936502"
+      }
+    }
+  ],
+  "scientific_execution": false
+}

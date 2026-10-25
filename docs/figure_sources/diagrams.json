@@ -1,0 +1,638 @@
+{
+  "architecture": {
+    "title": "AGT-v3: implemented token computation and persistent state",
+    "scope": "D64 research pilots; task adapters vary; fixed-execution HALT disabled",
+    "size": [
+      14,
+      8
+    ],
+    "nodes": [
+      {
+        "id": "input",
+        "x": 1.6,
+        "y": 6.5,
+        "w": 2.6,
+        "h": 1.0,
+        "text": "Input / task encoder",
+        "color": "blue"
+      },
+      {
+        "id": "state",
+        "x": 1.6,
+        "y": 2.0,
+        "w": 2.8,
+        "h": 1.4,
+        "text": "Incoming committed state\ns, M, typed context C\nPilot memory: 16 x 256",
+        "color": "blue"
+      },
+      {
+        "id": "prepare",
+        "x": 4.7,
+        "y": 4.25,
+        "w": 2.8,
+        "h": 1.3,
+        "text": "Clone working state\nRead(s_previous, M)\nR reused within token",
+        "color": "blue"
+      },
+      {
+        "id": "prelude",
+        "x": 4.7,
+        "y": 6.5,
+        "w": 2.8,
+        "h": 1.0,
+        "text": "Prelude -> h0\nRead-only token anchor",
+        "color": "blue"
+      },
+      {
+        "id": "route",
+        "x": 8.1,
+        "y": 6.5,
+        "w": 3.0,
+        "h": 1.15,
+        "text": "Execution path\nCanonical / scripted / controller\nChosen by experiment",
+        "color": "blue"
+      },
+      {
+        "id": "bank",
+        "x": 8.1,
+        "y": 4.25,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Heterogeneous bank\nSWA x2 -> GQA x2\n-> GDN x2 -> FFN x2",
+        "color": "blue"
+      },
+      {
+        "id": "context",
+        "x": 7.9,
+        "y": 1.9,
+        "w": 3.0,
+        "h": 1.4,
+        "text": "Working typed context\nKV / SWA windows\nGDN state + conv buffers",
+        "color": "blue"
+      },
+      {
+        "id": "commit",
+        "x": 11.65,
+        "y": 4.25,
+        "w": 2.9,
+        "h": 1.3,
+        "text": "Terminal commit\nNormalize stream; write memory\nCommit all contextual entries",
+        "color": "blue"
+      },
+      {
+        "id": "output",
+        "x": 11.65,
+        "y": 6.5,
+        "w": 2.9,
+        "h": 1.15,
+        "text": "Task readout\nParity projection /\nCLRS dynamic pointer head",
+        "color": "blue"
+      },
+      {
+        "id": "next",
+        "x": 11.65,
+        "y": 1.9,
+        "w": 2.9,
+        "h": 1.3,
+        "text": "Returned committed state\ns_new, M_new, C_new\nCarry to next token",
+        "color": "blue"
+      }
+    ],
+    "edges": [
+      {
+        "source": "input",
+        "target": "prelude",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "state",
+        "target": "prepare",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prepare",
+        "target": "prelude",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prelude",
+        "target": "route",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "route",
+        "target": "bank",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prepare",
+        "target": "bank",
+        "label": "h0 / R",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prepare",
+        "target": "context",
+        "label": "cloned context",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "context",
+        "target": "bank",
+        "label": "read only",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "bank",
+        "target": "commit",
+        "label": "h_terminal",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "context",
+        "target": "commit",
+        "label": "plan inputs",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "commit",
+        "target": "output",
+        "label": "s_new",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "commit",
+        "target": "next",
+        "label": "once only",
+        "style": "solid",
+        "rad": 0
+      }
+    ]
+  },
+  "token_execution": {
+    "title": "One token: live execution ends at a single commit boundary",
+    "scope": "Corrected fixed-execution path; P=8 is a pilot setting, D counts decisions",
+    "size": [
+      16,
+      5
+    ],
+    "nodes": [
+      {
+        "id": "in",
+        "x": 1.5,
+        "y": 3.5,
+        "w": 2.5,
+        "h": 1.3,
+        "text": "Incoming state\nParent stays unchanged",
+        "color": "blue"
+      },
+      {
+        "id": "prep",
+        "x": 4.4,
+        "y": 3.5,
+        "w": 2.6,
+        "h": 1.3,
+        "text": "Owned clone\nMemory read + Prelude",
+        "color": "blue"
+      },
+      {
+        "id": "act",
+        "x": 7.5,
+        "y": 3.5,
+        "w": 2.9,
+        "h": 1.65,
+        "text": "Legal action loop\nADVANCE / REPEAT: D+1, P+1\nRESTART: D+1, P+0\nRESTART preserves live h",
+        "color": "blue"
+      },
+      {
+        "id": "term",
+        "x": 10.7,
+        "y": 3.5,
+        "w": 2.6,
+        "h": 1.3,
+        "text": "Terminal live state\nReached actual P budget",
+        "color": "blue"
+      },
+      {
+        "id": "plan",
+        "x": 13.8,
+        "y": 3.5,
+        "w": 2.7,
+        "h": 1.3,
+        "text": "Pure terminal plan\nValidate ownership / versions",
+        "color": "blue"
+      },
+      {
+        "id": "return",
+        "x": 13.8,
+        "y": 1.1,
+        "w": 2.7,
+        "h": 1.25,
+        "text": "Apply once\nReturn new committed state",
+        "color": "blue"
+      },
+      {
+        "id": "cache",
+        "x": 6.7,
+        "y": 1.1,
+        "w": 4.8,
+        "h": 1.2,
+        "text": "Committed KV / GDN / window context\nRead-only during all in-flight block calls",
+        "color": "blue"
+      }
+    ],
+    "edges": [
+      {
+        "source": "in",
+        "target": "prep",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prep",
+        "target": "act",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "act",
+        "target": "term",
+        "label": "P = 8 (pilot)",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "term",
+        "target": "plan",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "plan",
+        "target": "return",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "prep",
+        "target": "cache",
+        "label": "cloned",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "cache",
+        "target": "act",
+        "label": "read only",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "cache",
+        "target": "plan",
+        "label": "terminal context",
+        "style": "dashed",
+        "rad": 0
+      }
+    ]
+  },
+  "evidence_map": {
+    "title": "Research lineage: questions and evidence, not a chain of successes",
+    "scope": "Dashed arrows mean next question / reused substrate; exact statuses remain in the index",
+    "size": [
+      16,
+      8
+    ],
+    "nodes": [
+      {
+        "id": "mechanics",
+        "x": 2,
+        "y": 6.4,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Mechanics + parity reference\nScoped positive controls",
+        "color": "blue"
+      },
+      {
+        "id": "imitation",
+        "x": 5.9,
+        "y": 6.4,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Canonical imitation / replay\nSupervised recovery",
+        "color": "blue"
+      },
+      {
+        "id": "discovery",
+        "x": 10,
+        "y": 6.4,
+        "w": 3.1,
+        "h": 1.3,
+        "text": "Task-loss routing discovery\nNot established",
+        "color": "orange"
+      },
+      {
+        "id": "programs",
+        "x": 13.8,
+        "y": 6.4,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Complete-program feasibility\nv1-v3 stopped; v4 rejected",
+        "color": "gray"
+      },
+      {
+        "id": "receiver",
+        "x": 13.8,
+        "y": 3.9,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Receiver-anchored parity\nCOMPLETED_NON_SUCCESS",
+        "color": "orange"
+      },
+      {
+        "id": "keyed",
+        "x": 10,
+        "y": 3.9,
+        "w": 3.1,
+        "h": 1.3,
+        "text": "Keyed-register qualification\nResource stop; unqualified",
+        "color": "gray"
+      },
+      {
+        "id": "clrs",
+        "x": 5.9,
+        "y": 3.9,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "CLRS fixed-program learning\nCOMPLETED_NON_SUCCESS",
+        "color": "orange"
+      },
+      {
+        "id": "audit",
+        "x": 2,
+        "y": 3.9,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Localization / residual / mHC\nBounded diagnostics",
+        "color": "blue"
+      },
+      {
+        "id": "probe",
+        "x": 2,
+        "y": 1.3,
+        "w": 3.0,
+        "h": 1.3,
+        "text": "Frozen bilinear readouts\nUncertified then certified\nCompetence not recovered",
+        "color": "orange"
+      },
+      {
+        "id": "feature",
+        "x": 7.8,
+        "y": 1.3,
+        "w": 5.0,
+        "h": 1.3,
+        "text": "Feature-complement paired pilot\nPARTIAL_EFFECT_TASK_NON_SUCCESS",
+        "color": "orange"
+      },
+      {
+        "id": "next",
+        "x": 13.6,
+        "y": 1.3,
+        "w": 3.1,
+        "h": 1.3,
+        "text": "No executed successor found\nNew research decision required",
+        "color": "gray"
+      }
+    ],
+    "edges": [
+      {
+        "source": "mechanics",
+        "target": "imitation",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "imitation",
+        "target": "discovery",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "discovery",
+        "target": "programs",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "programs",
+        "target": "receiver",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "receiver",
+        "target": "keyed",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "keyed",
+        "target": "clrs",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "clrs",
+        "target": "audit",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "audit",
+        "target": "probe",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "probe",
+        "target": "feature",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      },
+      {
+        "source": "feature",
+        "target": "next",
+        "label": "",
+        "style": "dashed",
+        "rad": 0
+      }
+    ]
+  },
+  "clrs_pipeline": {
+    "title": "Serialized official insertion-sort predecessor task",
+    "scope": "Fresh D64 AGT + task adapter; not the official CLRS GNN; fixed canonical execution",
+    "size": [
+      15,
+      6
+    ],
+    "nodes": [
+      {
+        "id": "array",
+        "x": 1.7,
+        "y": 4.5,
+        "w": 2.8,
+        "h": 1.25,
+        "text": "Official array\nOriginal keys + positions",
+        "color": "blue"
+      },
+      {
+        "id": "inputs",
+        "x": 5.2,
+        "y": 4.5,
+        "w": 3.0,
+        "h": 1.35,
+        "text": "First n input tokens\nType flags, position, key\nCandidate index = original j",
+        "color": "blue"
+      },
+      {
+        "id": "queries",
+        "x": 8.8,
+        "y": 4.5,
+        "w": 3.0,
+        "h": 1.35,
+        "text": "Next n query tokens\nType flags, position i\nNo key or answer feature",
+        "color": "blue"
+      },
+      {
+        "id": "head",
+        "x": 12.5,
+        "y": 4.5,
+        "w": 3.1,
+        "h": 1.35,
+        "text": "Dynamic pointer head\nscore(i,j) = Q_i dot K_j / 8\nAll n candidates",
+        "color": "blue"
+      },
+      {
+        "id": "candidates",
+        "x": 5.2,
+        "y": 1.5,
+        "w": 3.0,
+        "h": 1.4,
+        "text": "Save committed candidate z_j\nAfter input element j\nAutograd-connected in training",
+        "color": "blue"
+      },
+      {
+        "id": "core",
+        "x": 8.8,
+        "y": 1.5,
+        "w": 3.0,
+        "h": 1.4,
+        "text": "Same AGT step, 2n calls\n8 selected blocks per token\nNormal state carry + commits",
+        "color": "blue"
+      },
+      {
+        "id": "loss",
+        "x": 12.5,
+        "y": 1.5,
+        "w": 3.1,
+        "h": 1.4,
+        "text": "Query-only mean pointer CE\nOfficial original-index targets\nMinimum self-pointer; stable ties",
+        "color": "blue"
+      }
+    ],
+    "edges": [
+      {
+        "source": "array",
+        "target": "inputs",
+        "label": "",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "inputs",
+        "target": "queries",
+        "label": "serialization order",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "inputs",
+        "target": "core",
+        "label": "input calls",
+        "style": "solid",
+        "rad": 0.15
+      },
+      {
+        "source": "queries",
+        "target": "core",
+        "label": "query calls",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "core",
+        "target": "candidates",
+        "label": "input states",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "candidates",
+        "target": "head",
+        "label": "projected keys",
+        "style": "solid",
+        "rad": -0.15
+      },
+      {
+        "source": "core",
+        "target": "head",
+        "label": "projected queries",
+        "style": "solid",
+        "rad": -0.15
+      },
+      {
+        "source": "head",
+        "target": "loss",
+        "label": "predictions",
+        "style": "solid",
+        "rad": 0
+      },
+      {
+        "source": "array",
+        "target": "loss",
+        "label": "targets: supervision only",
+        "style": "dashed",
+        "rad": 0.35
+      }
+    ]
+  }
+}

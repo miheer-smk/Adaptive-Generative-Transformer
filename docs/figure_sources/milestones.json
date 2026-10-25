@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-25",
+  "canonical_evidence_snapshot": "ea183970feea1f49677f186e26065ce4e333f709",
+  "milestones": [
+    {
+      "id": "gate-a",
+      "name": "Gate-A persistent GDN state",
+      "question": "Does committed GDN recurrence influence parity?",
+      "report": "GATE_A_REPORT.md",
+      "recorded_status": "Report: causal state involvement; transfer not established",
+      "editorial_summary": "Zero/shuffle interventions affect parity; donor-state patching did not establish parity transfer.",
+      "limitations": "One available successful backbone; representation probes are not causal proof; no unique-state explanation.",
+      "configuration": "Frozen D64 seed3305 parity; canonical route",
+      "protocol": "docs/TASK_A_SPEC.md",
+      "result_data": [
+        "experiments/gateA_a4_state_ablation.json",
+        "experiments/gateA_a6_state_patching.json"
+      ],
+      "reproduction_entry": "experiments/gateA_a4_state_ablation.py",
+      "checkpoints": [
+        "experiments/runs/stage1_parity_seed3305_best.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "stage1",
+      "name": "Stage-1 canonical parity reference",
+      "question": "Can the fixed bank learn parity?",
+      "report": "GATE_A_REPORT.md",
+      "recorded_status": "Reported working fixed-route reference",
+      "editorial_summary": "The seed3305 backbone supplies the frozen positive control used by later routing work.",
+      "limitations": "Not a language-model result, routing discovery, or multi-backbone replication.",
+      "configuration": "D64; 16 memory slots; final-token parity CE; fixed sweep",
+      "protocol": "docs/TASK_A_SPEC.md",
+      "result_data": [
+        "experiments/runs/stage1_taskA_tiny.json"
+      ],
+      "reproduction_entry": "experiments/train_stage1_taskA_len8.py",
+      "checkpoints": [
+        "experiments/runs/stage1_parity_seed3305_best.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "stage3-historical",
+      "name": "Early Stage-3 validation",
+      "question": "Can controller-only task loss discover useful routing?",
+      "report": "STAGE3_VALIDATION_RECORD.md",
+      "recorded_status": "Historical mixed validation; discovery not established",
+      "editorial_summary": "Strong supervised imitation preserved parity; fresh task-loss controllers did not recover reference performance.",
+      "limitations": "Earlier eight-decision protocols are not retroactively eight-execution experiments.",
+      "configuration": "Frozen Stage1 backbone; several controller initializations",
+      "protocol": "GATE_B_STAGE3_SPEC.md",
+      "result_data": [
+        "experiments/runs/stage3_validation_manifest_v1.json"
+      ],
+      "reproduction_entry": "experiments/run_stage3_taskA_warmstart.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "accounting",
+      "name": "Execution accounting correction",
+      "question": "Does P count actual selected block executions?",
+      "report": "experiments/results/gatec_execution_accounting_v1/gatec_canonical_replay.md",
+      "recorded_status": "VERIFIED accounting/equivalence; regression not green",
+      "editorial_summary": "Canonical paths agree; an alternating ADVANCE/RESTART trace has P=8 and D=15.",
+      "limitations": "One canonical fixture; historical diagnostic assumptions and Stage4 failures remain recorded.",
+      "configuration": "Corrected Stage3 fixed P=8; no updates",
+      "protocol": "GATE_B_STAGE3_SPEC.md",
+      "result_data": [],
+      "reproduction_entry": "experiments/audit_gatec_canonical_replay.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "replay",
+      "name": "Learned-policy closed-loop replay",
+      "question": "Does the imitated controller recover the canonical route?",
+      "report": "experiments/results/gatec_learned_policy_replay_seed3305_v1/replay.md",
+      "recorded_status": "A: canonical route recovered and parity preserved",
+      "editorial_summary": "First no-update replay recovered the canonical control on its retained fixture.",
+      "limitations": "One train control; not discovery or diversity.",
+      "configuration": "Frozen seed3305 backbone; imitated controller; P=8",
+      "protocol": null,
+      "result_data": [],
+      "reproduction_entry": "experiments/replay_gatec_learned_policy.py",
+      "checkpoints": [
+        "experiments/runs/stage3_imitation_replication_3305_v1.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "replay-panels",
+      "name": "Locked validation and OOD replay",
+      "question": "Does canonical replay hold on locked panels?",
+      "report": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/ood_test.md",
+      "recorded_status": "Report: canonical recovery on locked panels",
+      "editorial_summary": "Reference-equivalent canonical routing is supported on retained validation/OOD inputs.",
+      "limitations": "Panel overlap/exposure caveats remain; no new route discovered.",
+      "configuration": "D64; deterministic; zero budget features",
+      "protocol": "experiments/results/gatec_locked_policy_validation_ood_seed3305_v1/manifest.json",
+      "result_data": [],
+      "reproduction_entry": "experiments/evaluate_gatec_locked_policy.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "imitation",
+      "name": "Imitation seed replication",
+      "question": "Can fresh controllers reproduce the teacher route?",
+      "report": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/report.md",
+      "recorded_status": "strict_replication_success = true",
+      "editorial_summary": "Both fresh seeds4401/4402 recovered canonical routes and frozen-reference parity.",
+      "limitations": "Two controller seeds share one backbone; supervision prescribes the route.",
+      "configuration": "5000 supervised updates per fresh controller; final checkpoints",
+      "protocol": "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_imitation_seed_replication_4401_4402_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/replicate_gatec_locked_imitation.py",
+      "checkpoints": [
+        "experiments/runs/stage3_imitation_replication_4401_locked_v1.pt",
+        "experiments/runs/stage3_imitation_replication_4402_locked_v1.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "maintenance",
+      "name": "Warm task-loss maintenance",
+      "question": "Does task loss preserve an already competent imitated policy?",
+      "report": "experiments/results/gatec_paired_task_maintenance_4401_v1/report.md",
+      "recorded_status": "strong_bounded_maintenance = true",
+      "editorial_summary": "Competence/reference equivalence was maintained under the bounded continuation.",
+      "limitations": "Preservation of an imitated route does not demonstrate useful diverse routing or discovery.",
+      "configuration": "104 task-CE updates from seed4401 imitation; matched zero-update arm",
+      "protocol": "experiments/results/gatec_paired_task_maintenance_4401_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_paired_task_maintenance_4401_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/run_gatec_paired_task_maintenance.py",
+      "checkpoints": [
+        "experiments/runs/stage3_task_maintenance_4401_104_locked_v1.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "fresh-routing",
+      "name": "Fresh task-loss routing",
+      "question": "Can a fresh controller discover reference-level parity computation?",
+      "report": "experiments/results/gatec_fresh_task_discovery_4700_v1/report.md",
+      "recorded_status": "strong_reference_level_discovery = false",
+      "editorial_summary": "Parameters/routes changed; reference-level discovery was not established.",
+      "limitations": "One initialization, small panels, historical nine-bytecode integrity exception; original failure preserved.",
+      "configuration": "1040 predetermined controller-only updates; four stochastic tapes",
+      "protocol": "experiments/results/gatec_fresh_task_discovery_4700_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_fresh_task_discovery_4700_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/run_gatec_fresh_task_discovery.py",
+      "checkpoints": [
+        "experiments/runs/stage3_fresh_task_4700_update1040_locked_v1.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "action-values",
+      "name": "Action Values",
+      "question": "How do retained branch values relate to ST credit?",
+      "report": "experiments/results/gatec_st_action_value_4700_v1/report.md",
+      "recorded_status": "Completed bounded diagnostic (report)",
+      "editorial_summary": "Bounded counterfactual bank and full-ST gradients were retained for matched probes.",
+      "limitations": "Diagnostic branches are not a deployable oracle or a replacement estimator.",
+      "configuration": "Saved seed4700 snapshot1040; matched final-token states",
+      "protocol": "experiments/results/gatec_st_action_value_4700_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_st_action_value_4700_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/diagnose_gatec_st_action_values_4700.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "temporal-credit",
+      "name": "Temporal Credit",
+      "question": "Which temporal paths contribute to the existing backward?",
+      "report": "experiments/results/gatec_temporal_vjp_4700_update1040_v1/report.md",
+      "recorded_status": "Completed bounded diagnostic (report)",
+      "editorial_summary": "A bounded no-update temporal-gradient decomposition characterized the existing estimator.",
+      "limitations": "Components were not used as replacement training gradients.",
+      "configuration": "Saved seed4700 snapshot1040; matched final-token states",
+      "protocol": "experiments/results/gatec_temporal_vjp_4700_update1040_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_temporal_vjp_4700_update1040_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/diagnose_gatec_temporal_vjp_4700.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "matched-prefix",
+      "name": "Matched-prefix offline analysis",
+      "question": "Does generated prefix state hurt parity with root probabilities held fixed?",
+      "report": "experiments/results/gatec_matched_prefix_analysis_4700_v1/report.md",
+      "recorded_status": "UNRESOLVED",
+      "editorial_summary": "Six snapshot1040 pairs give +1.65821 pp with approximate conditional interval including zero.",
+      "limitations": "Saved-branch conditional Monte Carlo; snapshots not independent replicates; no new model calls.",
+      "configuration": "12 B/C pairs across snapshots0/1040; primary six final pairs",
+      "protocol": "experiments/results/gatec_matched_prefix_analysis_4700_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_matched_prefix_analysis_4700_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/analyze_gatec_matched_prefix_4700.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "gradient-average",
+      "name": "Independent-noise gradient averaging",
+      "question": "Does averaging independent ST gradients repair discovery?",
+      "report": "experiments/results/gatec_paired_gradient_average_4900_v1/paired_report.md",
+      "recorded_status": "intervention_helped = false; useful_policy_repair = false",
+      "editorial_summary": "Neither independent-noise treatment nor duplicate-noise control acquired a useful policy.",
+      "limitations": "One controller initialization; four locked tapes; duplicate control rollouts are not independent observations.",
+      "configuration": "520 updates/arm; two rollouts/update; fresh original controller",
+      "protocol": "experiments/results/gatec_paired_gradient_average_4900_v1/manifest.json",
+      "result_data": [
+        "experiments/results/gatec_paired_gradient_average_4900_v1/results.json"
+      ],
+      "reproduction_entry": "experiments/run_gatec_paired_gradient_average_4900.py",
+      "checkpoints": [
+        "experiments/runs/stage3_gradient_average_4900_C_update0520_locked_v1.pt",
+        "experiments/runs/stage3_gradient_average_4900_T_update0520_locked_v1.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-audit",
+      "name": "Complete-program source audit",
+      "question": "Can existing execution/state contracts support a finite program study?",
+      "report": "experiments/results/gatec_complete_program_source_audit_v1/report.md",
+      "recorded_status": "Recommendation: separate specification, not training",
+      "editorial_summary": "Reusable executor, state cloning and continuation interfaces were identified.",
+      "limitations": "Source feasibility is not empirical success; the full standalone blueprint is unavailable here.",
+      "configuration": "Read-only source inventory; no model calls",
+      "protocol": "experiments/results/gatec_complete_program_source_audit_v1/manifest.json",
+      "result_data": [],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "source audit",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-v1",
+      "name": "Two-program feasibility v1",
+      "question": "Can the fixed alternative satisfy current/future committed-state contracts?",
+      "report": "experiments/results/gatec_two_program_feasibility_5100_v1/report.md",
+      "recorded_status": "STOPPED BEFORE P1",
+      "editorial_summary": "Observer CPU-mask/CUDA-logits mismatch stopped the archival gate.",
+      "limitations": "No P1 scientific outcome.",
+      "configuration": "Frozen D64 parity; v4 P1 executes [0,1,2,3,4,5,5,7]",
+      "protocol": "experiments/results/gatec_two_program_feasibility_5100_v1/protocol_manifest.json",
+      "result_data": [
+        "experiments/results/gatec_two_program_feasibility_5100_v1/results.json"
+      ],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "feasibility / stopped attempt",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-v2",
+      "name": "Two-program feasibility v2",
+      "question": "Can the fixed alternative satisfy current/future committed-state contracts?",
+      "report": "experiments/results/gatec_two_program_feasibility_5100_v2/report.md",
+      "recorded_status": "STOPPED_DURING_INSPECTION",
+      "editorial_summary": "Inspection exposed sequential-gate and archival-comparison gaps.",
+      "limitations": "No repair/model execution; not a scientific negative.",
+      "configuration": "Frozen D64 parity; v4 P1 executes [0,1,2,3,4,5,5,7]",
+      "protocol": "experiments/results/gatec_two_program_feasibility_5100_v2/manifest.json",
+      "result_data": [],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "feasibility / stopped attempt",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-v3",
+      "name": "Two-program feasibility v3",
+      "question": "Can the fixed alternative satisfy current/future committed-state contracts?",
+      "report": "experiments/results/gatec_two_program_feasibility_5100_v3/report.md",
+      "recorded_status": "STOPPED_AT_SPECIFICATION_BARRIER",
+      "editorial_summary": "Requirements matrix identified unresolved gate scope and monitor targets.",
+      "limitations": "No model execution or implementation amendment.",
+      "configuration": "Frozen D64 parity; v4 P1 executes [0,1,2,3,4,5,5,7]",
+      "protocol": "experiments/results/gatec_two_program_feasibility_5100_v3/manifest.json",
+      "result_data": [],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "feasibility / stopped attempt",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-v4",
+      "name": "Two-program feasibility v4",
+      "question": "Can the fixed alternative satisfy current/future committed-state contracts?",
+      "report": "experiments/results/gatec_two_program_feasibility_5100_v4/final_report.md",
+      "recorded_status": "STOPPED / CURRENT_CANDIDATE_REJECTED",
+      "editorial_summary": "P0 archival/current gates passed; P1-history/P0-boundary row03 failed current correctness.",
+      "limitations": "Ordered partial cases only; zero future calls/joint bootstrap; P1-to-P1 row03 unobserved.",
+      "configuration": "Frozen D64 parity; v4 P1 executes [0,1,2,3,4,5,5,7]",
+      "protocol": "experiments/results/gatec_two_program_feasibility_5100_v4/protocol_amendment.md",
+      "result_data": [
+        "experiments/results/gatec_two_program_feasibility_5100_v4/results.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_two_program_feasibility_5100_v4/runner_v4.py",
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "feasibility / stopped attempt",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "program-forensics",
+      "name": "v4 offline forensics",
+      "question": "What do retained prefixes/boundaries establish about the rejected case?",
+      "report": "experiments/results/gatec_two_program_v4_forensics_5100_v1/report.md",
+      "recorded_status": "Completed offline forensic analysis (report)",
+      "editorial_summary": "Four executed P1-prefix cases were descriptively aligned; ledger and component coverage reconciled.",
+      "limitations": "Summary differences are not tensor distances or causal attribution; missing cells remain unobserved.",
+      "configuration": "Zero model calls; acquisition/L16/row03 plus three preceding controls",
+      "protocol": null,
+      "result_data": [
+        "experiments/results/gatec_two_program_v4_forensics_5100_v1/analysis_summary.json"
+      ],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "receiver-prerequisites",
+      "name": "Receiver-anchored prerequisites",
+      "question": "Can gradients traverse real committed-state handoffs with detached receiver parameters?",
+      "report": "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/prerequisite_report_final_v1.md",
+      "recorded_status": "20 passed; 3 documented intentional skips",
+      "editorial_summary": "CPU/CUDA fixtures established forward/state and writer-directed gradient paths under the retained scope.",
+      "limitations": "Earlier failures and one failed call remain; fixtures are not task-learning success.",
+      "configuration": "Bounded disposable fixtures; zero optimizer updates",
+      "protocol": "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/protocol_clarifications_v1.md",
+      "result_data": [
+        "experiments/results/gatec_receiver_anchored_prerequisites_6000_v1/final_results_v1.json"
+      ],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "engineering",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "receiver",
+      "name": "Receiver-anchored compatibility",
+      "question": "Does cross-program continuation training add compatibility beyond matched native training?",
+      "report": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/concise_report_v1.md",
+      "recorded_status": "COMPLETED_NON_SUCCESS",
+      "editorial_summary": "Both arms saturated robust/switching panels; delta0 with interval[0,0]; all four operation-ablation drops0.",
+      "limitations": "One initialization; parity saturation; reused panels; zero-width interval is not universal equivalence.",
+      "configuration": "512 common updates then512/arm; new namespaced P1 repeats block3",
+      "protocol": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/protocol_original_copy.txt",
+      "result_data": [
+        "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/final_results.json",
+        "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/final_analysis.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/study_runner_v1.py",
+      "checkpoints": [
+        "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/T_update0512.pt",
+        "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/checkpoints/C_update0512.pt"
+      ],
+      "evidence_commit": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "keyed-register",
+      "name": "Streaming keyed-register qualification",
+      "question": "Can fixed programs acquire a nontrivial mutable-register benchmark?",
+      "report": "experiments/results/gatec_keyed_register_qualification_6100_v1/closure_report_v1.md",
+      "recorded_status": "engineering/integrity/resource stop",
+      "editorial_summary": "78/128 updates completed before closure; final development/ablations did not execute.",
+      "limitations": "Incomplete and unqualified; online training metrics are not held-out evidence; no nine-hour retry assumed.",
+      "configuration": "Single initialization; 100000 attempted-token /7200-second cap",
+      "protocol": "experiments/results/gatec_keyed_register_qualification_6100_v1/protocol_approved_verbatim.md",
+      "result_data": [
+        "experiments/results/gatec_keyed_register_qualification_6100_v1/final_results.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_keyed_register_qualification_6100_v1/pilot_runner_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "db0e62ca0fad464fd840ac2754eb759bf53bb44b",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "clrs-engineering",
+      "name": "CLRS insertion-sort engineering",
+      "question": "Can a serialized AGT pointer adapter faithfully execute the official target task?",
+      "report": "experiments/results/gatec_clrs_insertion_sort_6200_v1/engineering_report_v1.md",
+      "recorded_status": "ENGINEERING_PASSED",
+      "editorial_summary": "Official pinned sampler examples, alignment, gradients, canonical execution and CPU/CUDA fixtures were verified.",
+      "limitations": "512-token fixtures are not benchmark competence; not a reproduction of the official CLRS GNN.",
+      "configuration": "Fresh seed6200 D64; four-feature encoder; dynamic pointer head",
+      "protocol": "experiments/results/gatec_clrs_insertion_sort_6200_v1/scope_lock.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_insertion_sort_6200_v1/final_results_v1.json",
+        "experiments/results/gatec_clrs_insertion_sort_6200_v1/official_data_manifest_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_insertion_sort_6200_v1/clrs_adapter_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "0998852e515bde46be6049e373a357217c8c115a",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "engineering",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "clrs-training",
+      "name": "Original CLRS fixed-program training",
+      "question": "Does the fresh model learn predecessor pointers at n16 and transfer to n64?",
+      "report": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_report_v1.md",
+      "recorded_status": "COMPLETED_NON_SUCCESS",
+      "editorial_summary": "1000 updates/evaluations completed; development3.125% and transfer1.171875% pointer accuracy; exact arrays0.",
+      "limitations": "One seed, near-uniform CE; no learned routing or full CLRS-suite claim.",
+      "configuration": "Official size16 train1000; train subset128; dev32; n64 transfer32",
+      "protocol": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/scope_lock_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_results_v1.json",
+        "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/analysis_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/train_once_v1.py",
+      "checkpoints": [
+        "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/model_update1000_v1.pt"
+      ],
+      "evidence_commit": "386ea1be31abe05d1ccf31f59511c1fd1d470aed",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "pointer-localization",
+      "name": "Pointer Localization",
+      "question": "Where do query/candidate distinctions and adjoints survive?",
+      "report": "experiments/results/gatec_clrs_pointer_localization_6200_v1/report_v1.md",
+      "recorded_status": "COMPLETED_NO_UPDATE_DIAGNOSTIC",
+      "editorial_summary": "Two retained-checkpoint passes localize representation/score behavior and connected gradients.",
+      "limitations": "One fitting array, two checkpoints; not a history of gradient alignment.",
+      "configuration": "Frozen update1000; official/train/row0000",
+      "protocol": "experiments/results/gatec_clrs_pointer_localization_6200_v1/manifest_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_pointer_localization_6200_v1/final_results_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_pointer_localization_6200_v1/analyze_diagnostic_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "f40f65d6c4008f407669085cd5655ccc52f3424c",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic / offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "residual-audit",
+      "name": "Residual Audit",
+      "question": "How do residual energy, radial coding and target-conditioned scores relate?",
+      "report": "experiments/results/gatec_clrs_residual_score_audit_6200_v1/report_v1.md",
+      "recorded_status": "COMPLETED_OFFLINE_AUDIT",
+      "editorial_summary": "Common-component growth and weak/misaligned score interactions were quantified offline.",
+      "limitations": "One array; omitted pre-mHC core activations were not reconstructed; numerical failures retained.",
+      "configuration": "Frozen update1000; official/train/row0000",
+      "protocol": "experiments/results/gatec_clrs_residual_score_audit_6200_v1/manifest_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_residual_score_audit_6200_v1/final_results_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_residual_score_audit_6200_v1/audit_numeric_v3.py",
+      "checkpoints": [],
+      "evidence_commit": "d3cf866419c6fa93507e70008d9d8ea58fd51960",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic / offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "mhc-capture",
+      "name": "Mhc Capture",
+      "question": "Do actual mixers attenuate distinctions already present at their inputs?",
+      "report": "experiments/results/gatec_clrs_mhc_capture_6200_v1/report_v1.md",
+      "recorded_status": "COMPLETED_MHC_INPUT_OUTPUT_CAPTURE",
+      "editorial_summary": "A single frozen forward captures actual active-mixer inputs/outputs and surrounding residuals.",
+      "limitations": "One array/checkpoint; attenuation is not proof of task relevance or historical causation.",
+      "configuration": "Frozen update1000; official/train/row0000",
+      "protocol": "experiments/results/gatec_clrs_mhc_capture_6200_v1/manifest_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_mhc_capture_6200_v1/final_results_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_mhc_capture_6200_v1/analyze_capture_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "d9d5eb0061b860b796f64fbc559420caff863509",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic / offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "raw-readout",
+      "name": "Raw Readout",
+      "question": "Do saved raw radii improve the existing readout?",
+      "report": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/report_v1.md",
+      "recorded_status": "COMPLETED_OFFLINE_COUNTERFACTUAL_READOUT_ANALYSIS",
+      "editorial_summary": "Raw-state rankings remained query-independent; restoring magnitude did not recover sorting.",
+      "limitations": "Offline same-weight readouts do not simulate changed recurrent state evolution.",
+      "configuration": "Frozen update1000; official/train/row0000",
+      "protocol": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/manifest_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/final_results_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_counterfactual_readout_6200_v1/analyze_readouts_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "1ed1d773264b3f5f53bd1ba169e819709d33cbb2",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "diagnostic / offline analysis",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "frozen-cache",
+      "name": "Frozen fitting-representation cache",
+      "question": "Can committed states/targets be retained with verified alignment?",
+      "report": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/report_v1.md",
+      "recorded_status": "COMPLETED_VERIFIED_TRAINING_CACHE",
+      "editorial_summary": "128 n16 fitting arrays verified; row0000 reused and127 newly extracted.",
+      "limitations": "Cache preparation only; fitting arrays were seen by original core training.",
+      "configuration": "Frozen core; committed candidates/queries; zero backwards",
+      "protocol": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/manifest_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/cache_manifest_v1.json"
+      ],
+      "reproduction_entry": null,
+      "checkpoints": [],
+      "evidence_commit": "377c222b7a274c7d41c39df67c4336c57bd57bee",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "extraction",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "bilinear-original",
+      "name": "Original frozen bilinear readout",
+      "question": "Can one bilinear readout expose held-out decodability?",
+      "report": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/report_v1.md",
+      "recorded_status": "INCONCLUSIVE_NONCONVERGED_OPTIMIZATION",
+      "editorial_summary": "256 accepted iterations missed the certificate; held-out competence was not recovered.",
+      "limitations": "Nonconverged optimization; reused panels; not representation impossibility.",
+      "configuration": "128 cached fitting arrays; FP64 L-BFGS; FP32 primary readout",
+      "protocol": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/scope_lock_v1.json",
+      "result_data": [
+        "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/final_results_v1.json",
+        "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/metrics_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/fit_readout_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "94a7b19079dad3fd21afc801f62d65ed9101b613",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "readout fitting",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "bilinear-refit",
+      "name": "Separately sealed certified refit",
+      "question": "Does a certified solve of the same objective recover competence?",
+      "report": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/report_v1.md",
+      "recorded_status": "CERTIFIED_FIXED_OBJECTIVE_NON_SUCCESS",
+      "editorial_summary": "First certificate at341 accepted updates; competence and own-common-component advantage were not established.",
+      "limitations": "One regularized bilinear objective, historically exposed held-out panels; not all-readout impossibility.",
+      "configuration": "Fresh zero B; same train-only whiteners; frozen core; no new AGT calls",
+      "protocol": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/protocol_v1.md",
+      "result_data": [
+        "experiments/results/gatec_clrs_bilinear_refit_6300_v1/final_results_v1.json",
+        "experiments/results/gatec_clrs_bilinear_refit_6300_v1/metrics_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/fit_readout_v1.py",
+      "checkpoints": [],
+      "evidence_commit": "97f3b78a17d4060d2b0fef8b52c606596de6ca5e",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "exploratory readout fitting",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    },
+    {
+      "id": "feature-complement",
+      "name": "Feature-complement causal pilot",
+      "question": "Does the exact P+Q intervention improve query-conditioned task acquisition?",
+      "report": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/report_v1.md",
+      "recorded_status": "PARTIAL_EFFECT_TASK_NON_SUCCESS",
+      "editorial_summary": "Treatment gains7.8125 pp over control on dev but0 over its own common component; all competence gates fail.",
+      "limitations": "One paired seed; reused panels; one predicted candidate/array; increased variation is not task success.",
+      "configuration": "1000 fresh seed6200 updates/arm; eight active mixers only;82432 tokens",
+      "protocol": "AGT_v3_feature_complement_causal_pilot_locked_protocol_6400_v1.md",
+      "result_data": [
+        "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/final_results_v1.json",
+        "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/evaluation_summaries_v1.json",
+        "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/mechanistic_summary_v1.json"
+      ],
+      "reproduction_entry": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/run_paired_v1.py",
+      "checkpoints": [
+        "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/C_update1000_v1.pt",
+        "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/T_update1000_v1.pt"
+      ],
+      "evidence_commit": "ea183970feea1f49677f186e26065ce4e333f709",
+      "evidence_revision_role": "Published evidence snapshot; not necessarily the execution HEAD",
+      "kind": "experiment",
+      "reproduction_requirements": "Read reports without dependencies. Model entry points are archived, often hardware/path-specific and guarded against reusing sealed output directories; not rerun by this maintenance task."
+    }
+  ]
+}

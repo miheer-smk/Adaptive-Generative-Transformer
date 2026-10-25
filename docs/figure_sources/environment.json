@@ -1,0 +1,59 @@
+{
+  "purpose": "Documentation rendering only; no research environment changes",
+  "python": "Python 3.12.3",
+  "packages": [
+    {
+      "name": "contourpy",
+      "version": "1.4.0"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.67.0"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.10.7"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.4"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0"
+    },
+    {
+      "name": "pip",
+      "version": "24.0"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "3.0.0"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.5"
+    }
+  ],
+  "model_execution": false
+}

@@ -1,0 +1,32 @@
+{
+  "HEAD": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+  "original_branch": "research/clrs-feature-complement-6400-20261017T102044Z",
+  "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+  "index_sha256": "6fd045af51e81b61e0a91af890a396646f5a242396bef214a385d728372ff857",
+  "documentation_branch": "docs/research-repository-guide-20261025T174455Z",
+  "remote_base": "ea183970feea1f49677f186e26065ce4e333f709",
+  "default_branch": "archive/agt-v3-existing-history-20261013T183904Z",
+  "audit_date": "2026-10-25",
+  "original_modified_tracked_paths": 14,
+  "original_untracked_paths": 2184,
+  "pre_existing_file_count": 2385,
+  "research_branches": {
+    "archive/agt-v3-complete-dgx-snapshot-20261013T183904Z": "1dd215e24407b8e497abd7e4c92de5702fc25821",
+    "archive/agt-v3-existing-history-20261013T183904Z": "75f138e6b909c5ca9884e9a7755de63489d3d6f2",
+    "research/clrs-bilinear-decodability-6300-20261016T092110Z": "94a7b19079dad3fd21afc801f62d65ed9101b613",
+    "research/clrs-bilinear-refit-6300-20261017T055819Z": "97f3b78a17d4060d2b0fef8b52c606596de6ca5e",
+    "research/clrs-counterfactual-pointer-readout-6200-20261016T072029Z": "1ed1d773264b3f5f53bd1ba169e819709d33cbb2",
+    "research/clrs-feature-complement-6400-20261017T102044Z": "ea183970feea1f49677f186e26065ce4e333f709",
+    "research/clrs-frozen-readout-cache-6300-20261016T083448Z": "377c222b7a274c7d41c39df67c4336c57bd57bee",
+    "research/clrs-insertion-sort-engineering-6200-20261014T145602Z": "0998852e515bde46be6049e373a357217c8c115a",
+    "research/clrs-insertion-sort-training-6200-20261014T170026Z": "386ea1be31abe05d1ccf31f59511c1fd1d470aed",
+    "research/clrs-mhc-input-output-capture-6200-20261016T065806Z": "d9d5eb0061b860b796f64fbc559420caff863509",
+    "research/clrs-pointer-localization-6200-20261014T181120Z": "f40f65d6c4008f407669085cd5655ccc52f3424c",
+    "research/clrs-residual-score-audit-6200-20261016T061547Z": "d3cf866419c6fa93507e70008d9d8ea58fd51960",
+    "research/keyed-register-qualification-6100-20261014T131545Z": "db0e62ca0fad464fd840ac2754eb759bf53bb44b"
+  },
+  "project_license": "No project-wide license found",
+  "CI": "No GitHub Actions workflows found",
+  "standalone_blueprint": "Referenced pre-freeze v0.1; full document not located in checkout",
+  "metadata_updates_authorized": false
+}

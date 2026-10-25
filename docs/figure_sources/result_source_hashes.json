@@ -1,0 +1,47 @@
+{
+  "original": {
+    "path": "experiments/results/gatec_clrs_insertion_sort_6200_v1/training_results_v1/final_results_v1.json",
+    "sha256": "cfd94ef8cc3185bdc9bee76e8ecd7ff3e36b0d56a546b76c9ac2fe0adbe9fa8e",
+    "commit": "386ea1be31abe05d1ccf31f59511c1fd1d470aed"
+  },
+  "fit": {
+    "path": "experiments/results/gatec_clrs_frozen_readout_cache_6300_v1/decodability_results_v1/metrics_v1.json",
+    "sha256": "b1013f5a5a88bea8f30bf4ccbc4111f05e4e774ee9ef0c09089c0bd307c1758e",
+    "commit": "94a7b19079dad3fd21afc801f62d65ed9101b613"
+  },
+  "refit": {
+    "path": "experiments/results/gatec_clrs_bilinear_refit_6300_v1/metrics_v1.json",
+    "sha256": "3cb756be8a3726c6a1048378e0efc1c59515a84eca015bd1d2311a618037eac8",
+    "commit": "97f3b78a17d4060d2b0fef8b52c606596de6ca5e"
+  },
+  "feature": {
+    "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/evaluation_summaries_v1.json",
+    "sha256": "d1384a992f84d58dbf750871f5328075acbcbdaef17397e16d67a5a69a808d32",
+    "commit": "ea183970feea1f49677f186e26065ce4e333f709"
+  },
+  "contrast": {
+    "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/final_results_v1.json",
+    "sha256": "f89b09684a419bba2d526c16ee8b370bc7051fcb0e40af4240bf4d0fa0501947",
+    "commit": "ea183970feea1f49677f186e26065ce4e333f709"
+  },
+  "geometry": {
+    "path": "experiments/results/gatec_clrs_feature_complement_pilot_6400_v1/mechanistic_summary_v1.json",
+    "sha256": "a6f336ac668d72f79dd9347ae2e90696d5d512c5e8866962de8f83f55bfe3f9b",
+    "commit": "ea183970feea1f49677f186e26065ce4e333f709"
+  },
+  "receiver": {
+    "path": "experiments/results/gatec_receiver_anchored_compatibility_6000_v1/final_analysis.json",
+    "sha256": "4e090c1d2e885d2155f880172433b35921161f561226eb2ec794254f42a55fd2",
+    "commit": "1dd215e24407b8e497abd7e4c92de5702fc25821"
+  },
+  "gradient": {
+    "path": "experiments/results/gatec_paired_gradient_average_4900_v1/results.json",
+    "sha256": "ebcdbfc8b2b570e6f21ed4f9e0c2664fd9c329dec9d05423abe8830923f3e548",
+    "commit": "1dd215e24407b8e497abd7e4c92de5702fc25821"
+  },
+  "mhc": {
+    "path": "experiments/results/gatec_clrs_mhc_capture_6200_v1/blockwise_summary_v1.csv",
+    "sha256": "23675f1b3e9739c1389bafe254be5a6ba13c1801466ebb423e6cf4d1bf057dfa",
+    "commit": "d9d5eb0061b860b796f64fbc559420caff863509"
+  }
+}

@@ -1,0 +1,2 @@
+# Documentation plots only; no model dependencies
+matplotlib==3.10.7

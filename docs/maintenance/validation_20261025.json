@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "counts": {
+    "preserved_files": 2385,
+    "markdown_files": 19,
+    "local_links": 174,
+    "pinned_links": 201,
+    "figure_outputs": 12,
+    "diagrams": 4
+  },
+  "added_files_checked": 63,
+  "errors": [],
+  "scientific_execution": false,
+  "project_tests_executed": false,
+  "preservation": {
+    "baseline": "docs/maintenance/preservation_before_20261025.json",
+    "tracked_diff_sha256": "45b3d093bd7fd7976019bf4572dc574784ed271b3294b86194f80c05826a8eac",
+    "index_unchanged": true,
+    "original_branch_unchanged": true
+  },
+  "rendering": {
+    "static_SVG_PNG": "Generated and visually inspected, all ten figures",
+    "Mermaid": "Graph/source consistency checked; no Mermaid engine available; engine rendering unverified"
+  },
+  "limits": [
+    "No full project test suite or model execution",
+    "No large LFS payload re-download; indexed pointer/local identities checked separately",
+    "No claim of a project-wide license, complete blueprint or current green CI"
+  ]
+}

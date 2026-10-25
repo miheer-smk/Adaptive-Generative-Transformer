@@ -1,0 +1,22 @@
+flowchart LR
+    mechanics["Mechanics + parity reference<br/>Scoped positive controls"]
+    imitation["Canonical imitation / replay<br/>Supervised recovery"]
+    discovery["Task-loss routing discovery<br/>Not established"]
+    programs["Complete-program feasibility<br/>v1-v3 stopped; v4 rejected"]
+    receiver["Receiver-anchored parity<br/>COMPLETED_NON_SUCCESS"]
+    keyed["Keyed-register qualification<br/>Resource stop; unqualified"]
+    clrs["CLRS fixed-program learning<br/>COMPLETED_NON_SUCCESS"]
+    audit["Localization / residual / mHC<br/>Bounded diagnostics"]
+    probe["Frozen bilinear readouts<br/>Uncertified then certified<br/>Competence not recovered"]
+    feature["Feature-complement paired pilot<br/>PARTIAL_EFFECT_TASK_NON_SUCCESS"]
+    next["No executed successor found<br/>New research decision required"]
+    mechanics -.-> imitation
+    imitation -.-> discovery
+    discovery -.-> programs
+    programs -.-> receiver
+    receiver -.-> keyed
+    keyed -.-> clrs
+    clrs -.-> audit
+    audit -.-> probe
+    probe -.-> feature
+    feature -.-> next

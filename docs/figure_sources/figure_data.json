@@ -1,0 +1,1113 @@
+{
+  "clrs": {
+    "development": {
+      "Original native": {
+        "pointer": 0.03125,
+        "exact": 0.0
+      },
+      "Frozen fit (uncertified)": {
+        "pointer": 0.099609375,
+        "exact": 0.0
+      },
+      "Certified refit": {
+        "pointer": 0.099609375,
+        "exact": 0.0
+      },
+      "Feature control": {
+        "pointer": 0.03125,
+        "exact": 0.0
+      },
+      "Feature treatment": {
+        "pointer": 0.109375,
+        "exact": 0.0
+      }
+    },
+    "size_transfer": {
+      "Original native": {
+        "pointer": 0.01171875,
+        "exact": 0.0
+      },
+      "Frozen fit (uncertified)": {
+        "pointer": 0.0146484375,
+        "exact": 0.0
+      },
+      "Certified refit": {
+        "pointer": 0.01513671875,
+        "exact": 0.0
+      },
+      "Feature control": {
+        "pointer": 0.01171875,
+        "exact": 0.0
+      },
+      "Feature treatment": {
+        "pointer": 0.0234375,
+        "exact": 0.0
+      }
+    }
+  },
+  "feature_contrasts": {
+    "T_minus_C": {
+      "point": 0.078125,
+      "lower": 0.06440429687500004
+    },
+    "T_minus_own_query_independent": {
+      "point": 0.0,
+      "lower": 0.0
+    }
+  },
+  "receiver_all_cells_robust": {
+    "C": 1.0,
+    "T": 1.0
+  },
+  "receiver_ablation": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "receiver_delta": 0.0,
+  "receiver_interval": [
+    0.0,
+    0.0
+  ],
+  "gradient": {
+    "val": {
+      "C": 0.484375,
+      "T": 0.453125,
+      "reference": 1.0
+    },
+    "ood_test": {
+      "C": 0.4765625,
+      "T": 0.4921875,
+      "reference": 1.0
+    }
+  },
+  "geometry": {
+    "C": {
+      "training_subset": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 106.58239611348243,
+              "mean_output_centered_energy": 78.25359442075786,
+              "mean_input_pair_difference_squared": 14.210986148464322,
+              "mean_output_pair_difference_squared": 10.43381258943438
+            },
+            "1": {
+              "mean_input_centered_energy": 53.22294104774555,
+              "mean_output_centered_energy": 29.478373395267994,
+              "mean_input_pair_difference_squared": 7.0963921396994065,
+              "mean_output_pair_difference_squared": 3.9304497860357324
+            },
+            "2": {
+              "mean_input_centered_energy": 58.895304995229345,
+              "mean_output_centered_energy": 37.71920792562088,
+              "mean_input_pair_difference_squared": 7.852707332697246,
+              "mean_output_pair_difference_squared": 5.029227723416117
+            },
+            "3": {
+              "mean_input_centered_energy": 11.297129239955238,
+              "mean_output_centered_energy": 2.724753927909546,
+              "mean_input_pair_difference_squared": 1.5062838986606986,
+              "mean_output_pair_difference_squared": 0.3633005237212728
+            },
+            "4": {
+              "mean_input_centered_energy": 3688.190990442165,
+              "mean_output_centered_energy": 3642.901862819475,
+              "mean_input_pair_difference_squared": 491.758798725622,
+              "mean_output_pair_difference_squared": 485.72024837593
+            },
+            "5": {
+              "mean_input_centered_energy": 588.2183513940919,
+              "mean_output_centered_energy": 578.1203974270635,
+              "mean_input_pair_difference_squared": 78.42911351921225,
+              "mean_output_pair_difference_squared": 77.0827196569418
+            },
+            "6": {
+              "mean_input_centered_energy": 45869.13094630139,
+              "mean_output_centered_energy": 46221.2626499842,
+              "mean_input_pair_difference_squared": 6115.884126173518,
+              "mean_output_pair_difference_squared": 6162.835019997893
+            },
+            "7": {
+              "mean_input_centered_energy": 0.24158587603736237,
+              "mean_output_centered_energy": 0.23676183359609126,
+              "mean_input_pair_difference_squared": 0.03221145013831498,
+              "mean_output_pair_difference_squared": 0.031568244479478834
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 69140.74620255566,
+            "mean_output_centered_energy": 0.001884852973194403,
+            "mean_input_norm": 1990.9260840630357,
+            "mean_output_norm": 7.704378392937425,
+            "mean_input_angular_dispersion": 2.1007905225221793e-06,
+            "mean_output_angular_dispersion": 2.1169379749981956e-06
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.022538515979684207,
+              "mean_output_centered_energy": 0.0034907145030864195,
+              "mean_input_pair_difference_squared": 0.003005135463957894,
+              "mean_output_pair_difference_squared": 0.0004654286004115226
+            },
+            "1": {
+              "mean_input_centered_energy": 0.15651068683572875,
+              "mean_output_centered_energy": 0.023580769144541814,
+              "mean_input_pair_difference_squared": 0.020868091578097166,
+              "mean_output_pair_difference_squared": 0.003144102552605575
+            },
+            "2": {
+              "mean_input_centered_energy": 0.8716959910869436,
+              "mean_output_centered_energy": 0.3970583297023304,
+              "mean_input_pair_difference_squared": 0.11622613214492582,
+              "mean_output_pair_difference_squared": 0.05294111062697739
+            },
+            "3": {
+              "mean_input_centered_energy": 1.2731999984122786,
+              "mean_output_centered_energy": 0.31663365251495473,
+              "mean_input_pair_difference_squared": 0.1697599997883038,
+              "mean_output_pair_difference_squared": 0.0422178203353273
+            },
+            "4": {
+              "mean_input_centered_energy": 7.713883290455406,
+              "mean_output_centered_energy": 7.619488444671515,
+              "mean_input_pair_difference_squared": 1.0285177720607208,
+              "mean_output_pair_difference_squared": 1.0159317926228686
+            },
+            "5": {
+              "mean_input_centered_energy": 0.039984913769685465,
+              "mean_output_centered_energy": 0.039258990991113546,
+              "mean_input_pair_difference_squared": 0.005331321835958062,
+              "mean_output_pair_difference_squared": 0.005234532132148473
+            },
+            "6": {
+              "mean_input_centered_energy": 495.1369120137887,
+              "mean_output_centered_energy": 498.93320451502063,
+              "mean_input_pair_difference_squared": 66.01825493517183,
+              "mean_output_pair_difference_squared": 66.52442726866941
+            },
+            "7": {
+              "mean_input_centered_energy": 0.0062659644406437565,
+              "mean_output_centered_energy": 0.006104266756835841,
+              "mean_input_pair_difference_squared": 0.0008354619254191675,
+              "mean_output_pair_difference_squared": 0.0008139022342447788
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 433.4801431680719,
+            "mean_output_centered_energy": 0.00011043570206082688,
+            "mean_input_norm": 1893.1847985558202,
+            "mean_output_norm": 7.704376440231933,
+            "mean_input_angular_dispersion": 1.2373694469360042e-07,
+            "mean_output_angular_dispersion": 1.240322925950167e-07
+          }
+        }
+      },
+      "development": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 103.62104559623783,
+              "mean_output_centered_energy": 75.75601728240012,
+              "mean_input_pair_difference_squared": 13.81613941283171,
+              "mean_output_pair_difference_squared": 10.100802304320016
+            },
+            "1": {
+              "mean_input_centered_energy": 51.66994678530332,
+              "mean_output_centered_energy": 28.448983797577785,
+              "mean_input_pair_difference_squared": 6.889326238040442,
+              "mean_output_pair_difference_squared": 3.7931978396770383
+            },
+            "2": {
+              "mean_input_centered_energy": 56.677341308265646,
+              "mean_output_centered_energy": 35.83335999834751,
+              "mean_input_pair_difference_squared": 7.556978841102087,
+              "mean_output_pair_difference_squared": 4.777781333113001
+            },
+            "3": {
+              "mean_input_centered_energy": 11.350910994293278,
+              "mean_output_centered_energy": 2.704296227655327,
+              "mean_input_pair_difference_squared": 1.5134547992391039,
+              "mean_output_pair_difference_squared": 0.3605728303540435
+            },
+            "4": {
+              "mean_input_centered_energy": 3716.6314580235357,
+              "mean_output_centered_energy": 3671.024534286125,
+              "mean_input_pair_difference_squared": 495.55086106980474,
+              "mean_output_pair_difference_squared": 489.4699379048166
+            },
+            "5": {
+              "mean_input_centered_energy": 582.1605257204743,
+              "mean_output_centered_energy": 572.1398332914582,
+              "mean_input_pair_difference_squared": 77.62140342939657,
+              "mean_output_pair_difference_squared": 76.28531110552777
+            },
+            "6": {
+              "mean_input_centered_energy": 40576.6655918342,
+              "mean_output_centered_energy": 40887.99595510122,
+              "mean_input_pair_difference_squared": 5410.222078911227,
+              "mean_output_pair_difference_squared": 5451.7327940134965
+            },
+            "7": {
+              "mean_input_centered_energy": 0.2364483487704092,
+              "mean_output_centered_energy": 0.231744942389696,
+              "mean_input_pair_difference_squared": 0.031526446502721225,
+              "mean_output_pair_difference_squared": 0.030899325651959467
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 62311.647011319146,
+            "mean_output_centered_energy": 0.0018130613839896018,
+            "mean_input_norm": 1988.9391366191371,
+            "mean_output_norm": 7.704379115383092,
+            "mean_input_angular_dispersion": 2.0215813976529917e-06,
+            "mean_output_angular_dispersion": 2.036306427862476e-06
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.022550791408358445,
+              "mean_output_centered_energy": 0.0035042793678072394,
+              "mean_input_pair_difference_squared": 0.003006772187781126,
+              "mean_output_pair_difference_squared": 0.00046723724904096527
+            },
+            "1": {
+              "mean_input_centered_energy": 0.1565701844324869,
+              "mean_output_centered_energy": 0.023621009875892184,
+              "mean_input_pair_difference_squared": 0.020876024590998254,
+              "mean_output_pair_difference_squared": 0.003149467983452291
+            },
+            "2": {
+              "mean_input_centered_energy": 0.8724382922997678,
+              "mean_output_centered_energy": 0.39748079859203345,
+              "mean_input_pair_difference_squared": 0.11632510563996905,
+              "mean_output_pair_difference_squared": 0.05299743981227113
+            },
+            "3": {
+              "mean_input_centered_energy": 1.274232741337627,
+              "mean_output_centered_energy": 0.3170303014808977,
+              "mean_input_pair_difference_squared": 0.16989769884501693,
+              "mean_output_pair_difference_squared": 0.0422707068641197
+            },
+            "4": {
+              "mean_input_centered_energy": 7.710454741361032,
+              "mean_output_centered_energy": 7.616102242582007,
+              "mean_input_pair_difference_squared": 1.028060632181471,
+              "mean_output_pair_difference_squared": 1.0154802990109342
+            },
+            "5": {
+              "mean_input_centered_energy": 0.039996005924143985,
+              "mean_output_centered_energy": 0.039269989163301156,
+              "mean_input_pair_difference_squared": 0.005332800789885865,
+              "mean_output_pair_difference_squared": 0.005235998555106821
+            },
+            "6": {
+              "mean_input_centered_energy": 495.0427694978739,
+              "mean_output_centered_energy": 498.8383228688299,
+              "mean_input_pair_difference_squared": 66.00570259971651,
+              "mean_output_pair_difference_squared": 66.51177638251065
+            },
+            "7": {
+              "mean_input_centered_energy": 0.006264593436185351,
+              "mean_output_centered_energy": 0.00610286487153644,
+              "mean_input_pair_difference_squared": 0.0008352791248247134,
+              "mean_output_pair_difference_squared": 0.0008137153162048586
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 433.4546886759458,
+            "mean_output_centered_energy": 0.00011043467873120272,
+            "mean_input_norm": 1893.1850680632178,
+            "mean_output_norm": 7.704376458470781,
+            "mean_input_angular_dispersion": 1.2373592774411282e-07,
+            "mean_output_angular_dispersion": 1.240311372376531e-07
+          }
+        }
+      },
+      "size_transfer": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 115.69193260750355,
+              "mean_output_centered_energy": 83.54186477618495,
+              "mean_input_pair_difference_squared": 3.672759765317573,
+              "mean_output_pair_difference_squared": 2.6521226913074583
+            },
+            "1": {
+              "mean_input_centered_energy": 77.94801118251382,
+              "mean_output_centered_energy": 34.30748984030317,
+              "mean_input_pair_difference_squared": 2.474540037540121,
+              "mean_output_pair_difference_squared": 1.089126661596926
+            },
+            "2": {
+              "mean_input_centered_energy": 89.65349142597816,
+              "mean_output_centered_energy": 47.44279506396958,
+              "mean_input_pair_difference_squared": 2.8461425849516875,
+              "mean_output_pair_difference_squared": 1.5061204782212563
+            },
+            "3": {
+              "mean_input_centered_energy": 20.88259791496617,
+              "mean_output_centered_energy": 4.735979015466026,
+              "mean_input_pair_difference_squared": 0.6629396163481325,
+              "mean_output_pair_difference_squared": 0.15034854017352464
+            },
+            "4": {
+              "mean_input_centered_energy": 4028.2030947421968,
+              "mean_output_centered_energy": 3978.0488028910177,
+              "mean_input_pair_difference_squared": 127.8794633251491,
+              "mean_output_pair_difference_squared": 126.28726358384182
+            },
+            "5": {
+              "mean_input_centered_energy": 603.0695369754726,
+              "mean_output_centered_energy": 592.6100174667808,
+              "mean_input_pair_difference_squared": 19.145064665888018,
+              "mean_output_pair_difference_squared": 18.81301642751685
+            },
+            "6": {
+              "mean_input_centered_energy": 81829.60147036613,
+              "mean_output_centered_energy": 82458.79463007921,
+              "mean_input_pair_difference_squared": 2597.7651260433695,
+              "mean_output_pair_difference_squared": 2617.7395120660067
+            },
+            "7": {
+              "mean_input_centered_energy": 0.7141524363262874,
+              "mean_output_centered_energy": 0.7000910308593973,
+              "mean_input_pair_difference_squared": 0.022671505915120235,
+              "mean_output_pair_difference_squared": 0.022225112090774518
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 109802.87046644438,
+            "mean_output_centered_energy": 0.0039089622251027335,
+            "mean_input_norm": 1976.7066645097652,
+            "mean_output_norm": 7.704387166824806,
+            "mean_input_angular_dispersion": 1.0313455569597322e-06,
+            "mean_output_angular_dispersion": 1.045304864154045e-06
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.0011214378319392517,
+              "mean_output_centered_energy": 2.207209691992894e-05,
+              "mean_input_pair_difference_squared": 3.5601201013944503e-05,
+              "mean_output_pair_difference_squared": 7.007014895215536e-07
+            },
+            "1": {
+              "mean_input_centered_energy": 0.006421186367770714,
+              "mean_output_centered_energy": 0.000390987771143326,
+              "mean_input_pair_difference_squared": 0.0002038471862784354,
+              "mean_output_pair_difference_squared": 1.2412310195026221e-05
+            },
+            "2": {
+              "mean_input_centered_energy": 0.3835071642508313,
+              "mean_output_centered_energy": 0.13409538474755325,
+              "mean_input_pair_difference_squared": 0.012174830611137501,
+              "mean_output_pair_difference_squared": 0.004256996341192167
+            },
+            "3": {
+              "mean_input_centered_energy": 0.04478270669426872,
+              "mean_output_centered_energy": 0.006720643860462767,
+              "mean_input_pair_difference_squared": 0.0014216732283894834,
+              "mean_output_pair_difference_squared": 0.00021335377334802435
+            },
+            "4": {
+              "mean_input_centered_energy": 50.172017330448035,
+              "mean_output_centered_energy": 49.56143853346006,
+              "mean_input_pair_difference_squared": 1.5927624549348582,
+              "mean_output_pair_difference_squared": 1.5733790010622242
+            },
+            "5": {
+              "mean_input_centered_energy": 0.11618917257143208,
+              "mean_output_centered_energy": 0.11353722203018823,
+              "mean_input_pair_difference_squared": 0.0036885451609978436,
+              "mean_output_pair_difference_squared": 0.0036043562549266106
+            },
+            "6": {
+              "mean_input_centered_energy": 2611.2580311302345,
+              "mean_output_centered_energy": 2631.299135150535,
+              "mean_input_pair_difference_squared": 82.89708035334078,
+              "mean_output_pair_difference_squared": 83.53330587779476
+            },
+            "7": {
+              "mean_input_centered_energy": 0.023111353804154078,
+              "mean_output_centered_energy": 0.022486686504436193,
+              "mean_input_pair_difference_squared": 0.0007336937715604469,
+              "mean_output_pair_difference_squared": 0.000713863063632895
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 1978.8031125803623,
+            "mean_output_centered_energy": 0.000446763225267403,
+            "mean_input_norm": 1891.8973308326986,
+            "mean_output_norm": 7.7043763729222405,
+            "mean_input_angular_dispersion": 1.1916287240438743e-07,
+            "mean_output_angular_dispersion": 1.1946842458961026e-07
+          }
+        }
+      }
+    },
+    "T": {
+      "training_subset": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 9.18956003352099,
+              "mean_output_centered_energy": 10.130811386419207,
+              "mean_input_pair_difference_squared": 1.2252746711361322,
+              "mean_output_pair_difference_squared": 1.350774851522561
+            },
+            "1": {
+              "mean_input_centered_energy": 1.3857971795934534,
+              "mean_output_centered_energy": 1.4704822221487834,
+              "mean_input_pair_difference_squared": 0.18477295727912713,
+              "mean_output_pair_difference_squared": 0.19606429628650446
+            },
+            "2": {
+              "mean_input_centered_energy": 0.2762489370757763,
+              "mean_output_centered_energy": 0.28718511607618313,
+              "mean_input_pair_difference_squared": 0.036833191610103504,
+              "mean_output_pair_difference_squared": 0.03829134881015775
+            },
+            "3": {
+              "mean_input_centered_energy": 0.07062548821037982,
+              "mean_output_centered_energy": 0.06988228801604891,
+              "mean_input_pair_difference_squared": 0.009416731761383974,
+              "mean_output_pair_difference_squared": 0.009317638402139856
+            },
+            "4": {
+              "mean_input_centered_energy": 0.8527621172390277,
+              "mean_output_centered_energy": 0.7632434126402468,
+              "mean_input_pair_difference_squared": 0.11370161563187037,
+              "mean_output_pair_difference_squared": 0.1017657883520329
+            },
+            "5": {
+              "mean_input_centered_energy": 0.0495304106101524,
+              "mean_output_centered_energy": 0.038962144072636526,
+              "mean_input_pair_difference_squared": 0.00660405474802032,
+              "mean_output_pair_difference_squared": 0.005194952543018203
+            },
+            "6": {
+              "mean_input_centered_energy": 0.9974269270107808,
+              "mean_output_centered_energy": 0.9526048399731719,
+              "mean_input_pair_difference_squared": 0.1329902569347708,
+              "mean_output_pair_difference_squared": 0.12701397866308958
+            },
+            "7": {
+              "mean_input_centered_energy": 0.04427887365876001,
+              "mean_output_centered_energy": 0.04303707737190844,
+              "mean_input_pair_difference_squared": 0.005903849821168001,
+              "mean_output_pair_difference_squared": 0.005738276982921126
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 74.60850431550054,
+            "mean_output_centered_energy": 0.502161962918328,
+            "mean_input_norm": 78.5310110296004,
+            "mean_output_norm": 8.010370726726295,
+            "mean_input_angular_dispersion": 0.0005285672828553546,
+            "mean_output_angular_dispersion": 0.000521768683309058
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.14178823952061967,
+              "mean_output_centered_energy": 0.1561919713710208,
+              "mean_input_pair_difference_squared": 0.018905098602749287,
+              "mean_output_pair_difference_squared": 0.020825596182802775
+            },
+            "1": {
+              "mean_input_centered_energy": 0.0759873275208218,
+              "mean_output_centered_energy": 0.07907786335360685,
+              "mean_input_pair_difference_squared": 0.010131643669442905,
+              "mean_output_pair_difference_squared": 0.010543715113814247
+            },
+            "2": {
+              "mean_input_centered_energy": 0.009756638866996676,
+              "mean_output_centered_energy": 0.00945179568793237,
+              "mean_input_pair_difference_squared": 0.0013008851822662235,
+              "mean_output_pair_difference_squared": 0.0012602394250576493
+            },
+            "3": {
+              "mean_input_centered_energy": 0.01872046886545379,
+              "mean_output_centered_energy": 0.018656427284552354,
+              "mean_input_pair_difference_squared": 0.0024960625153938386,
+              "mean_output_pair_difference_squared": 0.002487523637940314
+            },
+            "4": {
+              "mean_input_centered_energy": 0.0006657651175511537,
+              "mean_output_centered_energy": 0.0005960748733605386,
+              "mean_input_pair_difference_squared": 8.876868234015382e-05,
+              "mean_output_pair_difference_squared": 7.947664978140514e-05
+            },
+            "5": {
+              "mean_input_centered_energy": 0.00026629178188170504,
+              "mean_output_centered_energy": 0.0002270174028833213,
+              "mean_input_pair_difference_squared": 3.550557091756067e-05,
+              "mean_output_pair_difference_squared": 3.026898705110951e-05
+            },
+            "6": {
+              "mean_input_centered_energy": 0.17667497838800264,
+              "mean_output_centered_energy": 0.18340150899467406,
+              "mean_input_pair_difference_squared": 0.023556663785067013,
+              "mean_output_pair_difference_squared": 0.02445353453262321
+            },
+            "7": {
+              "mean_input_centered_energy": 0.05226910184691204,
+              "mean_output_centered_energy": 0.0534357936823055,
+              "mean_input_pair_difference_squared": 0.006969213579588271,
+              "mean_output_pair_difference_squared": 0.007124772490974066
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 5.691097398602067,
+            "mean_output_centered_energy": 0.061548857645027606,
+            "mean_input_norm": 75.0416371252205,
+            "mean_output_norm": 8.012111476803096,
+            "mean_input_angular_dispersion": 6.664926923335094e-05,
+            "mean_output_angular_dispersion": 6.391651205753878e-05
+          }
+        }
+      },
+      "development": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 9.556214375257944,
+              "mean_output_centered_energy": 10.540547234913554,
+              "mean_input_pair_difference_squared": 1.2741619167010594,
+              "mean_output_pair_difference_squared": 1.4054062979884738
+            },
+            "1": {
+              "mean_input_centered_energy": 1.3265041649843785,
+              "mean_output_centered_energy": 1.4088731584509662,
+              "mean_input_pair_difference_squared": 0.17686722199791716,
+              "mean_output_pair_difference_squared": 0.18784975446012883
+            },
+            "2": {
+              "mean_input_centered_energy": 0.2655222323891722,
+              "mean_output_centered_energy": 0.2765319249035061,
+              "mean_input_pair_difference_squared": 0.035402964318556294,
+              "mean_output_pair_difference_squared": 0.036870923320467486
+            },
+            "3": {
+              "mean_input_centered_energy": 0.06781860191607776,
+              "mean_output_centered_energy": 0.06720600073364504,
+              "mean_input_pair_difference_squared": 0.009042480255477032,
+              "mean_output_pair_difference_squared": 0.008960800097819339
+            },
+            "4": {
+              "mean_input_centered_energy": 0.8526369056704579,
+              "mean_output_centered_energy": 0.7631649402340561,
+              "mean_input_pair_difference_squared": 0.11368492075606106,
+              "mean_output_pair_difference_squared": 0.10175532536454081
+            },
+            "5": {
+              "mean_input_centered_energy": 0.0495768728805187,
+              "mean_output_centered_energy": 0.03899793326508984,
+              "mean_input_pair_difference_squared": 0.006610249717402493,
+              "mean_output_pair_difference_squared": 0.005199724435345312
+            },
+            "6": {
+              "mean_input_centered_energy": 0.887721129886947,
+              "mean_output_centered_energy": 0.8483510772708406,
+              "mean_input_pair_difference_squared": 0.11836281731825961,
+              "mean_output_pair_difference_squared": 0.1131134769694454
+            },
+            "7": {
+              "mean_input_centered_energy": 0.0404169674137368,
+              "mean_output_centered_energy": 0.03934054717373284,
+              "mean_input_pair_difference_squared": 0.00538892898849824,
+              "mean_output_pair_difference_squared": 0.005245406289831046
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 69.62986810143182,
+            "mean_output_centered_energy": 0.448107120166154,
+            "mean_input_norm": 78.5493126287918,
+            "mean_output_norm": 8.010438159247403,
+            "mean_input_angular_dispersion": 0.0004717995957791357,
+            "mean_output_angular_dispersion": 0.0004656011570094488
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.1462379724758967,
+              "mean_output_centered_energy": 0.16115260644037363,
+              "mean_input_pair_difference_squared": 0.01949839633011956,
+              "mean_output_pair_difference_squared": 0.02148701419204982
+            },
+            "1": {
+              "mean_input_centered_energy": 0.07600570778350839,
+              "mean_output_centered_energy": 0.07909174617427886,
+              "mean_input_pair_difference_squared": 0.010134094371134453,
+              "mean_output_pair_difference_squared": 0.010545566156570515
+            },
+            "2": {
+              "mean_input_centered_energy": 0.010253041985861331,
+              "mean_output_centered_energy": 0.009936387270863128,
+              "mean_input_pair_difference_squared": 0.0013670722647815107,
+              "mean_output_pair_difference_squared": 0.001324851636115084
+            },
+            "3": {
+              "mean_input_centered_energy": 0.018964006315284627,
+              "mean_output_centered_energy": 0.018901035973850257,
+              "mean_input_pair_difference_squared": 0.0025285341753712837,
+              "mean_output_pair_difference_squared": 0.0025201381298467014
+            },
+            "4": {
+              "mean_input_centered_energy": 0.0006654634988503836,
+              "mean_output_centered_energy": 0.0005958439949826442,
+              "mean_input_pair_difference_squared": 8.872846651338448e-05,
+              "mean_output_pair_difference_squared": 7.94458659976859e-05
+            },
+            "5": {
+              "mean_input_centered_energy": 0.00026413665320470045,
+              "mean_output_centered_energy": 0.00022542685950626554,
+              "mean_input_pair_difference_squared": 3.5218220427293396e-05,
+              "mean_output_pair_difference_squared": 3.0056914600835403e-05
+            },
+            "6": {
+              "mean_input_centered_energy": 0.17625685249641426,
+              "mean_output_centered_energy": 0.18296871473734663,
+              "mean_input_pair_difference_squared": 0.023500913666188568,
+              "mean_output_pair_difference_squared": 0.024395828631646216
+            },
+            "7": {
+              "mean_input_centered_energy": 0.052216847544041226,
+              "mean_output_centered_energy": 0.05338293990329504,
+              "mean_input_pair_difference_squared": 0.006962246339205495,
+              "mean_output_pair_difference_squared": 0.007117725320439338
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 5.682884901330776,
+            "mean_output_centered_energy": 0.06147524211432336,
+            "mean_input_norm": 75.04231753908353,
+            "mean_output_norm": 8.012110271476933,
+            "mean_input_angular_dispersion": 6.657283716827818e-05,
+            "mean_output_angular_dispersion": 6.384009605245921e-05
+          }
+        }
+      },
+      "size_transfer": {
+        "candidates": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 10.179734765602023,
+              "mean_output_centered_energy": 11.202932083041834,
+              "mean_input_pair_difference_squared": 0.32316618303498484,
+              "mean_output_pair_difference_squared": 0.3556486375568836
+            },
+            "1": {
+              "mean_input_centered_energy": 2.652937076334232,
+              "mean_output_centered_energy": 2.8154484479765514,
+              "mean_input_pair_difference_squared": 0.08422022464553117,
+              "mean_output_pair_difference_squared": 0.08937931580877942
+            },
+            "2": {
+              "mean_input_centered_energy": 0.4178156132082829,
+              "mean_output_centered_energy": 0.43314405804685147,
+              "mean_input_pair_difference_squared": 0.013263987720897872,
+              "mean_output_pair_difference_squared": 0.013750605017360364
+            },
+            "3": {
+              "mean_input_centered_energy": 0.13641168009000773,
+              "mean_output_centered_energy": 0.13456130884321696,
+              "mean_input_pair_difference_squared": 0.004330529526666912,
+              "mean_output_pair_difference_squared": 0.004271787582324348
+            },
+            "4": {
+              "mean_input_centered_energy": 0.9447939130445158,
+              "mean_output_centered_energy": 0.8456017826866883,
+              "mean_input_pair_difference_squared": 0.029993457556968754,
+              "mean_output_pair_difference_squared": 0.026844501037672643
+            },
+            "5": {
+              "mean_input_centered_energy": 0.058855622682441606,
+              "mean_output_centered_energy": 0.046347852787362316,
+              "mean_input_pair_difference_squared": 0.0018684324661092573,
+              "mean_output_pair_difference_squared": 0.00147136040594801
+            },
+            "6": {
+              "mean_input_centered_energy": 4.183228841133167,
+              "mean_output_centered_energy": 3.998672927325736,
+              "mean_input_pair_difference_squared": 0.13280091559152912,
+              "mean_output_pair_difference_squared": 0.1269419976928805
+            },
+            "7": {
+              "mean_input_centered_energy": 0.17639184550627146,
+              "mean_output_centered_energy": 0.17142784830715735,
+              "mean_input_pair_difference_squared": 0.005599741127183221,
+              "mean_output_pair_difference_squared": 0.0054421539145129314
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 220.37919453317298,
+            "mean_output_centered_energy": 1.946466948528592,
+            "mean_input_norm": 77.99203114232515,
+            "mean_output_norm": 8.010601241165501,
+            "mean_input_angular_dispersion": 0.0004868052774594177,
+            "mean_output_angular_dispersion": 0.00048151795744805177
+          }
+        },
+        "queries": {
+          "mixers": {
+            "0": {
+              "mean_input_centered_energy": 0.1795812763562748,
+              "mean_output_centered_energy": 0.1990791441339261,
+              "mean_input_pair_difference_squared": 0.005700992900199201,
+              "mean_output_pair_difference_squared": 0.006319972829648448
+            },
+            "1": {
+              "mean_input_centered_energy": 0.2692898472372883,
+              "mean_output_centered_energy": 0.2889101631755048,
+              "mean_input_pair_difference_squared": 0.008548884039278995,
+              "mean_output_pair_difference_squared": 0.009171751211920787
+            },
+            "2": {
+              "mean_input_centered_energy": 0.03827730993381723,
+              "mean_output_centered_energy": 0.037329227125767264,
+              "mean_input_pair_difference_squared": 0.001215152696311658,
+              "mean_output_pair_difference_squared": 0.001185054829389437
+            },
+            "3": {
+              "mean_input_centered_energy": 0.04545298387486872,
+              "mean_output_centered_energy": 0.04509220373073113,
+              "mean_input_pair_difference_squared": 0.0014429518690434516,
+              "mean_output_pair_difference_squared": 0.0014314985311343219
+            },
+            "4": {
+              "mean_input_centered_energy": 0.002327763808221716,
+              "mean_output_centered_energy": 0.0020826895115600244,
+              "mean_input_pair_difference_squared": 7.389726375307036e-05,
+              "mean_output_pair_difference_squared": 6.611712735111188e-05
+            },
+            "5": {
+              "mean_input_centered_energy": 0.00122091026945812,
+              "mean_output_centered_energy": 0.0010486647739735015,
+              "mean_input_pair_difference_squared": 3.875905617327365e-05,
+              "mean_output_pair_difference_squared": 3.329094520550799e-05
+            },
+            "6": {
+              "mean_input_centered_energy": 0.6010745399810181,
+              "mean_output_centered_energy": 0.6233188641991543,
+              "mean_input_pair_difference_squared": 0.019081731427968828,
+              "mean_output_pair_difference_squared": 0.0197879004507668
+            },
+            "7": {
+              "mean_input_centered_energy": 0.1770056398050915,
+              "mean_output_centered_energy": 0.18083698957847236,
+              "mean_input_pair_difference_squared": 0.005619226660479096,
+              "mean_output_pair_difference_squared": 0.005740856812014995
+            }
+          },
+          "terminal": {
+            "mean_input_centered_energy": 23.57621492936254,
+            "mean_output_centered_energy": 0.2518285727016301,
+            "mean_input_norm": 75.10628663498301,
+            "mean_output_norm": 8.011922862033588,
+            "mean_input_angular_dispersion": 6.494123763308915e-05,
+            "mean_output_angular_dispersion": 6.226830876822989e-05
+          }
+        }
+      }
+    }
+  },
+  "mhc": [
+    {
+      "block": "0",
+      "species": "SWA",
+      "positions": "candidate",
+      "input_centered_energy": "109.3278151342443",
+      "output_centered_energy": "80.21006346555758",
+      "energy_ratio": "0.7336656583419978",
+      "input_mean_pair_cosine": "0.7576753338485652",
+      "output_mean_pair_cosine": "0.7500004731517401",
+      "input_radial_fraction": "0.3313941708881708",
+      "output_radial_fraction": "0.3553524672363989",
+      "input_mean_pair_distance": "1.7029334545094488",
+      "output_mean_pair_distance": "1.323359098626682",
+      "block_input_centered_energy": "103.80762899677538",
+      "block_output_centered_energy": "208.24548200881108",
+      "twice_residual_cross": "24.227788938998206",
+      "centered_increment_fraction_leading_output": "0.9999612228819209"
+    },
+    {
+      "block": "0",
+      "species": "SWA",
+      "positions": "query",
+      "input_centered_energy": "0.022644505873599494",
+      "output_centered_energy": "0.003625672912912492",
+      "energy_ratio": "0.16011269723220362",
+      "input_mean_pair_cosine": "0.9998035795652154",
+      "output_mean_pair_cosine": "0.9999999915887757",
+      "input_radial_fraction": "0.096163382344891",
+      "output_radial_fraction": "0.999864456253102",
+      "input_mean_pair_distance": "0.044971414965410156",
+      "output_mean_pair_distance": "0.017886274388406228",
+      "block_input_centered_energy": "6.5895294573045975",
+      "block_output_centered_energy": "6.589535560674631",
+      "twice_residual_cross": "-0.0036198316274468866",
+      "centered_increment_fraction_leading_output": "0.9999317132885344"
+    },
+    {
+      "block": "1",
+      "species": "SWA",
+      "positions": "candidate",
+      "input_centered_energy": "54.152920313258576",
+      "output_centered_energy": "31.256703234648203",
+      "energy_ratio": "0.5771933083910794",
+      "input_mean_pair_cosine": "0.9020660182473619",
+      "output_mean_pair_cosine": "0.9999853173817544",
+      "input_radial_fraction": "0.6129513569710812",
+      "output_radial_fraction": "0.9999731648563672",
+      "input_mean_pair_distance": "1.6141375524812938",
+      "output_mean_pair_distance": "1.0351941549812274",
+      "block_input_centered_energy": "208.24548200881108",
+      "block_output_centered_energy": "354.11765299427793",
+      "twice_residual_cross": "114.61546981464438",
+      "centered_increment_fraction_leading_output": "0.9999442504594008"
+    },
+    {
+      "block": "1",
+      "species": "SWA",
+      "positions": "query",
+      "input_centered_energy": "0.15708470534068877",
+      "output_centered_energy": "0.02399658332708677",
+      "energy_ratio": "0.15276206092147832",
+      "input_mean_pair_cosine": "0.9988133737464354",
+      "output_mean_pair_cosine": "0.9999997194306",
+      "input_radial_fraction": "0.09420577643723585",
+      "output_radial_fraction": "0.999856341122308",
+      "input_mean_pair_distance": "0.11865680876529483",
+      "output_mean_pair_distance": "0.045161153067368204",
+      "block_input_centered_energy": "6.589535560674631",
+      "block_output_centered_energy": "6.625512438032006",
+      "twice_residual_cross": "0.011980141615845347",
+      "centered_increment_fraction_leading_output": "0.9998877218430025"
+    },
+    {
+      "block": "2",
+      "species": "GQA",
+      "positions": "candidate",
+      "input_centered_energy": "72.64776235949324",
+      "output_centered_energy": "48.50589182569273",
+      "energy_ratio": "0.6676859720147214",
+      "input_mean_pair_cosine": "0.5407781255798143",
+      "output_mean_pair_cosine": "0.08341536114084444",
+      "input_radial_fraction": "0.40790482697988434",
+      "output_radial_fraction": "0.5567214464096217",
+      "input_mean_pair_distance": "2.417245918219257",
+      "output_mean_pair_distance": "1.8926324087069337",
+      "block_input_centered_energy": "354.11765299427793",
+      "block_output_centered_energy": "581.9514868339738",
+      "twice_residual_cross": "179.32793687906087",
+      "centered_increment_fraction_leading_output": "0.9999649430812133"
+    },
+    {
+      "block": "2",
+      "species": "GQA",
+      "positions": "query",
+      "input_centered_energy": "0.8798398247946573",
+      "output_centered_energy": "0.40195303087868456",
+      "energy_ratio": "0.4568479620395621",
+      "input_mean_pair_cosine": "0.9900368613687337",
+      "output_mean_pair_cosine": "0.9999975701695234",
+      "input_radial_fraction": "0.19993473877580797",
+      "output_radial_fraction": "0.9999131581242734",
+      "input_mean_pair_distance": "0.2857023713784705",
+      "output_mean_pair_distance": "0.19139332631108955",
+      "block_input_centered_energy": "6.625512438032006",
+      "block_output_centered_energy": "7.27046005424566",
+      "twice_residual_cross": "0.24299471281457882",
+      "centered_increment_fraction_leading_output": "0.999968095246611"
+    },
+    {
+      "block": "3",
+      "species": "GQA",
+      "positions": "candidate",
+      "input_centered_energy": "18.624527147043242",
+      "output_centered_energy": "4.299207377042055",
+      "energy_ratio": "0.23083578676114636",
+      "input_mean_pair_cosine": "0.9907488371535849",
+      "output_mean_pair_cosine": "0.9999975199068666",
+      "input_radial_fraction": "0.043735156761306015",
+      "output_radial_fraction": "0.9992869722409294",
+      "input_mean_pair_distance": "1.2869514760700917",
+      "output_mean_pair_distance": "0.6030303532165263",
+      "block_input_centered_energy": "581.9514868339738",
+      "block_output_centered_energy": "646.8879951106203",
+      "twice_residual_cross": "60.637302721354736",
+      "centered_increment_fraction_leading_output": "0.9995705240878016"
+    },
+    {
+      "block": "3",
+      "species": "GQA",
+      "positions": "query",
+      "input_centered_energy": "1.2840209929598976",
+      "output_centered_energy": "0.32044926996108236",
+      "energy_ratio": "0.24956700218926295",
+      "input_mean_pair_cosine": "0.9993398633446435",
+      "output_mean_pair_cosine": "0.99999975508219",
+      "input_radial_fraction": "0.019558457314380443",
+      "output_radial_fraction": "0.9991406336152253",
+      "input_mean_pair_distance": "0.33946447781178496",
+      "output_mean_pair_distance": "0.16863358181953053",
+      "block_input_centered_energy": "7.27046005424566",
+      "block_output_centered_energy": "8.481696536567359",
+      "twice_residual_cross": "0.8907871275293",
+      "centered_increment_fraction_leading_output": "0.9995100718608187"
+    },
+    {
+      "block": "4",
+      "species": "GDN",
+      "positions": "candidate",
+      "input_centered_energy": "4184.776860104617",
+      "output_centered_energy": "4133.726008735595",
+      "energy_ratio": "0.9878008187591284",
+      "input_mean_pair_cosine": "0.9961735653818885",
+      "output_mean_pair_cosine": "0.999999756438162",
+      "input_radial_fraction": "0.997773446092901",
+      "output_radial_fraction": "0.9999998925992013",
+      "input_mean_pair_distance": "13.42224194833035",
+      "output_mean_pair_distance": "13.322914646921705",
+      "block_input_centered_energy": "646.8879951106203",
+      "block_output_centered_energy": "7069.385386021679",
+      "twice_residual_cross": "2288.7713908067394",
+      "centered_increment_fraction_leading_output": "0.9999998987350881"
+    },
+    {
+      "block": "4",
+      "species": "GDN",
+      "positions": "query",
+      "input_centered_energy": "7.680554480183886",
+      "output_centered_energy": "7.586554712033262",
+      "energy_ratio": "0.9877613304621239",
+      "input_mean_pair_cosine": "0.9999997696410124",
+      "output_mean_pair_cosine": "0.999999999994677",
+      "input_radial_fraction": "0.9988561830725259",
+      "output_radial_fraction": "0.9999999734939754",
+      "input_mean_pair_distance": "0.8508659338959378",
+      "output_mean_pair_distance": "0.8456345031683679",
+      "block_input_centered_energy": "8.481696536567359",
+      "block_output_centered_energy": "8.89048981601917",
+      "twice_residual_cross": "-7.177762448569805",
+      "centered_increment_fraction_leading_output": "0.9999998786685951"
+    },
+    {
+      "block": "5",
+      "species": "GDN",
+      "positions": "candidate",
+      "input_centered_energy": "595.7085507353357",
+      "output_centered_energy": "585.5023955615002",
+      "energy_ratio": "0.9828672004770836",
+      "input_mean_pair_cosine": "0.9995256790998567",
+      "output_mean_pair_cosine": "0.9999999781438687",
+      "input_radial_fraction": "0.994110940582993",
+      "output_radial_fraction": "0.999999576959787",
+      "input_mean_pair_distance": "4.172906950459059",
+      "output_mean_pair_distance": "4.0982986101253225",
+      "block_input_centered_energy": "7069.385386021679",
+      "block_output_centered_energy": "5119.638945355822",
+      "twice_residual_cross": "-2535.2488283628063",
+      "centered_increment_fraction_leading_output": "0.9999995934320632"
+    },
+    {
+      "block": "5",
+      "species": "GDN",
+      "positions": "query",
+      "input_centered_energy": "0.04004963710815446",
+      "output_centered_energy": "0.03932271143599664",
+      "energy_ratio": "0.9818493818010199",
+      "input_mean_pair_cosine": "0.9999999796006652",
+      "output_mean_pair_cosine": "0.9999999999998482",
+      "input_radial_fraction": "0.9970145679289517",
+      "output_radial_fraction": "0.9999999777060374",
+      "input_mean_pair_distance": "0.060865753538982006",
+      "output_mean_pair_distance": "0.06030017203074038",
+      "block_input_centered_energy": "8.89048981601917",
+      "block_output_centered_energy": "9.46584975055201",
+      "twice_residual_cross": "0.5360393462924407",
+      "centered_increment_fraction_leading_output": "0.9999998469727142"
+    },
+    {
+      "block": "6",
+      "species": "FFN",
+      "positions": "candidate",
+      "input_centered_energy": "42902.83911747858",
+      "output_centered_energy": "43231.69843402968",
+      "energy_ratio": "1.0076652110516648",
+      "input_mean_pair_cosine": "0.9999998746136866",
+      "output_mean_pair_cosine": "0.9999999999966303",
+      "input_radial_fraction": "0.9998996722299746",
+      "output_radial_fraction": "0.9999999972983356",
+      "input_mean_pair_distance": "49.34125182324315",
+      "output_mean_pair_distance": "49.52530466645047",
+      "block_input_centered_energy": "5119.638945355822",
+      "block_output_centered_energy": "69635.51171200605",
+      "twice_residual_cross": "21284.173395022615",
+      "centered_increment_fraction_leading_output": "0.9999999906446959"
+    },
+    {
+      "block": "6",
+      "species": "FFN",
+      "positions": "query",
+      "input_centered_energy": "494.15274442965165",
+      "output_centered_energy": "497.9417467498715",
+      "energy_ratio": "1.0076676743434727",
+      "input_mean_pair_cosine": "0.9999999988836543",
+      "output_mean_pair_cosine": "0.9999999999999666",
+      "input_radial_fraction": "0.9999345478358771",
+      "output_radial_fraction": "0.9999999980440494",
+      "input_mean_pair_distance": "6.827717399232053",
+      "output_mean_pair_distance": "6.853842627854488",
+      "block_input_centered_energy": "9.46584975055201",
+      "block_output_centered_energy": "436.0136553711927",
+      "twice_residual_cross": "-71.39404781518533",
+      "centered_increment_fraction_leading_output": "0.9999999915165407"
+    },
+    {
+      "block": "7",
+      "species": "FFN",
+      "positions": "candidate",
+      "input_centered_energy": "0.1447010937918094",
+      "output_centered_energy": "0.14163384647326893",
+      "energy_ratio": "0.9788028739924143",
+      "input_mean_pair_cosine": "0.9999999999037474",
+      "output_mean_pair_cosine": "0.9999999999999957",
+      "input_radial_fraction": "0.9966171761578908",
+      "output_radial_fraction": "0.9999998462086243",
+      "input_mean_pair_distance": "0.11129043825837842",
+      "output_mean_pair_distance": "0.1095110126157161",
+      "block_input_centered_energy": "69635.51171200605",
+      "block_output_centered_energy": "69632.37139313814",
+      "twice_residual_cross": "-3.28377197838563",
+      "centered_increment_fraction_leading_output": "0.999999844309422"
+    },
+    {
+      "block": "7",
+      "species": "FFN",
+      "positions": "query",
+      "input_centered_energy": "0.006262213402806083",
+      "output_centered_energy": "0.006099740752688376",
+      "energy_ratio": "0.9740550761101653",
+      "input_mean_pair_cosine": "0.9999999999900357",
+      "output_mean_pair_cosine": "0.999999999999997",
+      "input_radial_fraction": "0.991910658123874",
+      "output_radial_fraction": "0.999997541591635",
+      "input_mean_pair_distance": "0.02292963107545359",
+      "output_mean_pair_distance": "0.02253247285164901",
+      "block_input_centered_energy": "436.0136553711927",
+      "block_output_centered_energy": "433.1973544438224",
+      "twice_residual_cross": "-2.822467313526431",
+      "centered_increment_fraction_leading_output": "0.9999975508670294"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "description": "AGT-v3 research code and evidence for heterogeneous execution, persistent state, routing, and algorithmic task learning, including unsuccessful and inconclusive studies.",
+  "topics": [
+    "pytorch",
+    "algorithmic-reasoning",
+    "adaptive-computation",
+    "persistent-memory",
+    "reproducible-research",
+    "negative-results"
+  ],
+  "applied": false,
+  "reason": "Prepared values; GitHub metadata changes were not explicitly authorized."
+}

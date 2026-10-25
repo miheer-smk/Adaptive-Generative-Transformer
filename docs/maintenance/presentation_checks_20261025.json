@@ -1,0 +1,34 @@
+{
+  "audit_date": "2026-10-25",
+  "figure_data_check": "PASS: render_figures.py --check-data; all plotted values match retained inputs",
+  "tracked_diff_whitespace_check": "PASS: git diff --check",
+  "README_rendering": "PASS: GitHub Markdown API, GFM; HTML generated, four image elements; browser layout not reviewed",
+  "visual_review": {
+    "method": "Inspected PNG contact sheets generated from all outputs",
+    "figures": [
+      "architecture",
+      "token_execution",
+      "evidence_map",
+      "clrs_pipeline",
+      "clrs_outcomes",
+      "feature_contrasts",
+      "receiver_outcome",
+      "gradient_averaging",
+      "mhc_observed_transfer",
+      "feature_terminal_geometry"
+    ],
+    "result": "Readable labels and unclipped principal content; scope captions supplied in consuming documents"
+  },
+  "Mermaid_engine": "Not available; graph/source consistency checked; static SVG/PNG fallback used",
+  "secret_scan": {
+    "scope": "New documentation files only; local pattern scan",
+    "result": "No GitHub-token, AWS-key-ID or private-key-header pattern matches",
+    "limitations": "Not a live-credential verification or comprehensive historical secret audit"
+  },
+  "scientific_execution": false,
+  "project_test_suite_executed": false,
+  "metadata_changes": "About description/topics prepared only; not applied",
+  "all_added_file_whitespace_check": "PASS: per-file git diff --no-index --check; generated SVG lines normalized",
+  "SVG_XML": "PASS: parsed all ten SVG assets",
+  "portable_paths": "PASS: no new path collides by case with historical inventory; current results guide uses research_results.md to preserve RESULTS.md"
+}

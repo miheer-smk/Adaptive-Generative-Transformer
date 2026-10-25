@@ -1,0 +1,23 @@
+flowchart LR
+    input["Input / task encoder"]
+    state["Incoming committed state<br/>s, M, typed context C<br/>Pilot memory: 16 x 256"]
+    prepare["Clone working state<br/>Read(s_previous, M)<br/>R reused within token"]
+    prelude["Prelude -> h0<br/>Read-only token anchor"]
+    route["Execution path<br/>Canonical / scripted / controller<br/>Chosen by experiment"]
+    bank["Heterogeneous bank<br/>SWA x2 -> GQA x2<br/>-> GDN x2 -> FFN x2"]
+    context["Working typed context<br/>KV / SWA windows<br/>GDN state + conv buffers"]
+    commit["Terminal commit<br/>Normalize stream; write memory<br/>Commit all contextual entries"]
+    output["Task readout<br/>Parity projection /<br/>CLRS dynamic pointer head"]
+    next["Returned committed state<br/>s_new, M_new, C_new<br/>Carry to next token"]
+    input --> prelude
+    state --> prepare
+    prepare --> prelude
+    prelude --> route
+    route --> bank
+    prepare -->|"h0 / R"| bank
+    prepare -.->|"cloned context"| context
+    context -.->|"read only"| bank
+    bank -->|"h_terminal"| commit
+    context -.->|"plan inputs"| commit
+    commit -->|"s_new"| output
+    commit -->|"once only"| next

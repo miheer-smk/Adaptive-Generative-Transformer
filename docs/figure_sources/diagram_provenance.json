@@ -1,0 +1,58 @@
+[
+  {
+    "name": "architecture",
+    "caption": "AGT-v3: implemented token computation and persistent state",
+    "scope": "D64 research pilots; task adapters vary; fixed-execution HALT disabled",
+    "editable_source": "docs/figure_sources/architecture.mmd",
+    "graph_definition": "docs/figure_sources/diagrams.json",
+    "outputs": [
+      "docs/figures/architecture.svg",
+      "docs/figures/architecture.png"
+    ],
+    "source_map": "docs/architecture.md",
+    "command": "python scripts/documentation/render_diagrams.py",
+    "rendering": "Matplotlib fallback; Mermaid source generated from identical graph. Mermaid engine validation is recorded separately."
+  },
+  {
+    "name": "token_execution",
+    "caption": "One token: live execution ends at a single commit boundary",
+    "scope": "Corrected fixed-execution path; P=8 is a pilot setting, D counts decisions",
+    "editable_source": "docs/figure_sources/token_execution.mmd",
+    "graph_definition": "docs/figure_sources/diagrams.json",
+    "outputs": [
+      "docs/figures/token_execution.svg",
+      "docs/figures/token_execution.png"
+    ],
+    "source_map": "docs/architecture.md",
+    "command": "python scripts/documentation/render_diagrams.py",
+    "rendering": "Matplotlib fallback; Mermaid source generated from identical graph. Mermaid engine validation is recorded separately."
+  },
+  {
+    "name": "evidence_map",
+    "caption": "Research lineage: questions and evidence, not a chain of successes",
+    "scope": "Dashed arrows mean next question / reused substrate; exact statuses remain in the index",
+    "editable_source": "docs/figure_sources/evidence_map.mmd",
+    "graph_definition": "docs/figure_sources/diagrams.json",
+    "outputs": [
+      "docs/figures/evidence_map.svg",
+      "docs/figures/evidence_map.png"
+    ],
+    "source_map": "docs/experiment_index.md",
+    "command": "python scripts/documentation/render_diagrams.py",
+    "rendering": "Matplotlib fallback; Mermaid source generated from identical graph. Mermaid engine validation is recorded separately."
+  },
+  {
+    "name": "clrs_pipeline",
+    "caption": "Serialized official insertion-sort predecessor task",
+    "scope": "Fresh D64 AGT + task adapter; not the official CLRS GNN; fixed canonical execution",
+    "editable_source": "docs/figure_sources/clrs_pipeline.mmd",
+    "graph_definition": "docs/figure_sources/diagrams.json",
+    "outputs": [
+      "docs/figures/clrs_pipeline.svg",
+      "docs/figures/clrs_pipeline.png"
+    ],
+    "source_map": "docs/architecture.md",
+    "command": "python scripts/documentation/render_diagrams.py",
+    "rendering": "Matplotlib fallback; Mermaid source generated from identical graph. Mermaid engine validation is recorded separately."
+  }
+]
